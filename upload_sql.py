@@ -22,6 +22,21 @@ except Exception as e:
 
 SQL_FILE = '../../chitramaya_dump_live.sql'
 
+# Perform spelling correction on the SQL dump before upload
+if os.path.exists(SQL_FILE):
+    print("Performing Thalam/Chitramaya spelling corrections on SQL dump...")
+    with open(SQL_FILE, 'r', encoding='utf-8', errors='ignore') as f:
+        sql_data = f.read()
+    
+    # Replace page slug and page title
+    sql_data = sql_data.replace("'talam-studio'", "'thalam-studio'")
+    sql_data = sql_data.replace("'Talam Studio'", "'Thalam Studio'")
+    sql_data = sql_data.replace("talam-studio", "thalam-studio")
+    sql_data = sql_data.replace("Talam Studio", "Thalam Studio")
+    
+    with open(SQL_FILE, 'w', encoding='utf-8') as f:
+        f.write(sql_data)
+
 # Generate a one-time PHP importer that reads and executes the SQL, then self-deletes
 importer_php = f"""<?php
 $conn = new mysqli('{DB_HOST}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}');

@@ -4,7 +4,7 @@ Theme URI:
 Template: twentytwentyfive
 Author: CharNithi Software Crafts
 Author URI: 
-Description: A Brutalist, high-impact child theme for Chitramaya & Talam Studio.
+Description: A Brutalist, high-impact child theme for Chitramaya & Thalam Studio.
 Version: 1.1.0
 */
 
@@ -20,7 +20,7 @@ Version: 1.1.0
   /* Typography - Chitramaya (The Brain) */
   --font-primary: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   
-  /* Typography - Talam (The Functional Space) */
+  /* Typography - Thalam (The Functional Space) */
   --font-mono: 'IBM Plex Mono', monospace;
   
   --font-massive: 9vw;
@@ -78,8 +78,8 @@ html, body {
 .brut-grid { display: grid; }
 .brut-flex { display: flex; }
 
-/* Talam Functional UI */
-.talam-ui {
+/* Thalam Functional UI */
+.thalam-ui {
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: -0.03em;

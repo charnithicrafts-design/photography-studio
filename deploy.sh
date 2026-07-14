@@ -32,13 +32,7 @@ php -d memory_limit=512M "$SCRIPT_DIR/wp-cli.phar" \
 echo "[2b/5] Uploading SQL dump for remote import..."
 python "$SCRIPT_DIR/upload_sql.py"
 
-echo "[3/5] Compressing WordPress build..."
-rm -f "$WP_ROOT/chitramaya_wp.zip"
-(cd "$WP_ROOT" && zip -rq chitramaya_wp.zip . \
-  -x "*.git*" -x "wp-config.php" -x "chitramaya_wp.zip" \
-  -x "chitramaya_dump.sql" -x "themes/photography studio/.ftp-secret")
+echo "[3/5] Deploying files directly via FTP..."
+python "$SCRIPT_DIR/deploy_via_ftp.py"
 
-echo "[4/5] Initiating FTP Payload Upload & Config Provisioning..."
-python "$SCRIPT_DIR/upload_zip.py"
-
-echo "[5/5] Deployment complete! The server is unpacking the archive."
+echo "[4/5] Deployment complete! Changed files and database are updated."
