@@ -1,61 +1,260 @@
 <?php
 /**
- * Template Name: Chitramaya Narrative (Neo-Brutalism)
+ * Template Name: Chitramaya Creatives
  * Template Post Type: page
- * Description: Horizontal, enterprise UX portfolio flow with screen-filling text blocks and tactile images.
+ * Description: Full-page enterprise portfolio landing for Chitramaya Creatives.
  */
-get_header(); ?>
+// Bypass WordPress header/footer entirely — full design control
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chitramaya Creatives — Visual Storytelling Studio</title>
+  <meta name="description" content="Chitramaya Creatives is a premier visual storytelling studio crafting images so real, so tactile, you can feel them. Portfolio. Case Studies. Commissioned Work.">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <?php wp_head(); ?>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --white: #F5F4F0; --warm-grey: #B8B5B0;
+      --accent: #C8A96E; --border: 1px solid rgba(255,255,255,0.12);
+      --font-sans: 'Inter', sans-serif; --font-serif: 'EB Garamond', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-<main id="primary" class="site-main brut-container">
-    <!-- Hero Section: Clear USP & Frictionless CTA -->
-    <section class="chitramaya-hero brut-border-bottom" style="min-height: 90vh; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem;">
-        <div>
-            <h1 class="brut-massive-text">
-                Chitramaya<br>
-                Creatives
-            </h1>
-            <p style="font-size: 1.5rem; max-width: 600px; margin-top: 2rem; font-weight: 700; line-height: 1.4;">
-                We don't just capture images. We engineer visual authority through unapologetic emotion, rigorous process, and tactile aesthetics.
-            </p>
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; }
+    .nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--white); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--warm-grey); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+
+    .hero { position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: brightness(0.45) contrast(1.1); transform: scale(1.02); transition: transform 8s ease; }
+    .hero:hover .hero-img { transform: scale(1.0); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.1) 60%); }
+    .hero-content { position: relative; padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: flex-end; }
+    .hero-headline { font-weight: 900; font-size: clamp(4rem, 9vw, 10rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; }
+    .hero-headline em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.9em; color: var(--accent); }
+    .hero-right { display: flex; flex-direction: column; justify-content: flex-end; gap: 2rem; padding-bottom: 0.5rem; }
+    .hero-tagline { font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; line-height: 1.55; color: var(--warm-grey); max-width: 380px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--white); border: 1px solid rgba(255,255,255,0.4); padding: 1.1rem 2.2rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; width: fit-content; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .hero-cta::before { content: ''; position: absolute; inset: 0; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; z-index: -1; }
+    .hero-cta:hover { border-color: var(--accent); color: var(--black); }
+    .hero-cta:hover::before { transform: scaleX(1); }
+    .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollAnim 2s ease-in-out infinite; }
+    @keyframes scrollAnim { 0%,100% { opacity:1; transform:scaleY(1); } 50% { opacity:0.3; transform:scaleY(0.5); } }
+
+    .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-top: var(--border); }
+    .manifesto-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
+    .manifesto-text { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.25; }
+    .manifesto-body { font-size: 1rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 3rem; }
+    .manifesto-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: var(--border); padding-top: 2.5rem; }
+    .stat-num { font-weight: 900; font-size: 2.5rem; letter-spacing: -0.04em; }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); margin-top: 0.25rem; }
+
+    .tactile-section { padding: 0 3rem 8rem; }
+    .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: var(--border); }
+    .section-title { font-weight: 900; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
+    .section-link { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+    .tactile-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
+    .tactile-item { position: relative; overflow: hidden; cursor: pointer; }
+    .tactile-item:nth-child(1) { grid-row: 1 / 3; height: 85vh; }
+    .tactile-item:nth-child(2) { height: 40vh; }
+    .tactile-item:nth-child(3) { height: 44vh; }
+    .tactile-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease; filter: brightness(0.75) saturate(0.9); }
+    .tactile-item:hover .tactile-img { transform: scale(1.06); filter: brightness(0.88) saturate(1.1); }
+    .tactile-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2rem 1.5rem; background: linear-gradient(to top, rgba(8,8,8,0.9), transparent); transform: translateY(100%); transition: transform 0.4s ease; }
+    .tactile-item:hover .tactile-caption { transform: translateY(0); }
+    .tactile-caption h3 { font-family: var(--font-serif); font-style: italic; font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .tactile-caption p { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); }
+    .tactile-cta { display: inline-block; margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+    .services { border-top: var(--border); border-bottom: var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
+    .service-item { padding: 4rem 3rem; border-right: var(--border); transition: background 0.3s; }
+    .service-item:last-child { border-right: none; }
+    .service-item:hover { background: rgba(200,169,110,0.06); }
+    .service-num { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: block; }
+    .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1.25rem; line-height: 1; }
+    .service-desc { font-size: 0.9rem; line-height: 1.75; color: var(--warm-grey); margin-bottom: 2.5rem; }
+    .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 4px; transition: all 0.2s; }
+    .service-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .service-btn::after { content: '→'; transition: transform 0.2s; }
+    .service-btn:hover::after { transform: translateX(4px); }
+
+    .process { padding: 8rem 3rem; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 5rem; border-top: var(--border); }
+    .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); }
+    .process-step:last-child { border-right: none; padding-left: 2.5rem; padding-right: 0; }
+    .process-step:not(:first-child) { padding-left: 2.5rem; }
+    .step-num { font-weight: 900; font-size: 4rem; color: rgba(200,169,110,0.15); line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+    .step-title { font-weight: 700; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 1rem; }
+    .step-desc { font-size: 0.88rem; line-height: 1.75; color: var(--warm-grey); }
+
+    .testimonial { padding: 8rem 3rem; border-top: var(--border); display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; }
+    .testimonial-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+    .testimonial-quote { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.4; font-style: italic; }
+    .testimonial-author { margin-top: 2.5rem; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-grey); }
+
+    .cta-banner { position: relative; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 3rem; }
+    .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.3) contrast(1.2); }
+    .cta-banner-content { position: relative; }
+    .cta-banner-title { font-weight: 900; font-size: clamp(3rem, 7vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; }
+    .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
+    .cta-banner-btn { position: relative; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; background: var(--accent); color: var(--black); padding: 1.25rem 3rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
+    .cta-banner-btn:hover { background: var(--white); }
+
+    footer { padding: 3rem; border-top: var(--border); display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 0.78rem; color: var(--warm-grey); letter-spacing: 0.1em; }
+    .footer-talam { display: flex; align-items: center; gap: 1rem; }
+    .footer-talam span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm-grey); }
+    .footer-talam a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="<?php echo home_url('/'); ?>" class="nav-logo">Chitramaya Creatives</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Commission</a></li>
+      <li><a href="<?php echo home_url('/talam-studio'); ?>" style="color:var(--accent);">Talam Studio →</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="hero">
+    <img class="hero-img"
+      src="https://images.unsplash.com/photo-1603574670812-d24560880210?w=2400&q=85&auto=format&fit=crop"
+      alt="Extreme close-up of a human eye with dramatic studio lighting showing every skin texture and emotional depth — hero image for Chitramaya Creatives visual storytelling studio."
+      loading="eager">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline">Feel<br>the <em>image</em></h1>
+      <div class="hero-right">
+        <p class="hero-tagline">We do not merely capture moments. We render the physical weight, texture, and breath of a subject onto your screen — until the boundary between image and reality dissolves.</p>
+        <a href="#work" class="hero-cta">Explore the Work</a>
+      </div>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+  <section class="manifesto" id="about">
+    <div>
+      <div class="manifesto-label">Chitramaya Creatives — Our Creed</div>
+      <h2 class="manifesto-text">Every photograph is a physical argument that the world is worth feeling.</h2>
+    </div>
+    <div>
+      <p class="manifesto-body">Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chitramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.</p>
+      <div class="manifesto-stats">
+        <div><div class="stat-num">340+</div><div class="stat-label">Campaigns Delivered</div></div>
+        <div><div class="stat-num">12yr</div><div class="stat-label">Visual Authority</div></div>
+        <div><div class="stat-num">96%</div><div class="stat-label">Client Retention</div></div>
+        <div><div class="stat-num">3</div><div class="stat-label">National Awards</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tactile-section" id="work">
+    <div class="section-header">
+      <h2 class="section-title">Selected Work</h2>
+      <a href="#" class="section-link">View Full Archive</a>
+    </div>
+    <div class="tactile-grid">
+      <div class="tactile-item">
+        <img class="tactile-img"
+          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=90&auto=format&fit=crop"
+          alt="High-contrast studio portrait of a woman lit by a single dramatic sidelight, revealing every facial texture and emotional depth — Brand Identity Campaign for Heritage Label Co. by Chitramaya Creatives.">
+        <div class="tactile-caption">
+          <h3>Heritage Label Co. — Identity</h3>
+          <p>Portrait · Brand Campaign · 2024</p>
+          <a href="#" class="tactile-cta">View Case Study →</a>
         </div>
-        <div>
-            <a href="#process" class="brut-btn">Explore The Process ↓</a>
+      </div>
+      <div class="tactile-item">
+        <img class="tactile-img"
+          src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=1200&q=90&auto=format&fit=crop"
+          alt="Macro photograph of a freshly cut apple on black velvet where moisture and fruit fibre are rendered with extraordinary tactile realism — Product Photography for Orchard Collective by Chitramaya Creatives.">
+        <div class="tactile-caption">
+          <h3>Orchard Collective — Product</h3>
+          <p>Macro · E-Commerce · 2024</p>
+          <a href="#" class="tactile-cta">View Case Study →</a>
         </div>
-    </section>
+      </div>
+      <div class="tactile-item">
+        <img class="tactile-img"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=90&auto=format&fit=crop"
+          alt="Brutalist concrete interior with raking natural light casting hard geometric shadows, capturing raw surface texture — Architectural documentation for Forma Studio by Chitramaya Creatives.">
+        <div class="tactile-caption">
+          <h3>Forma Studio — Architecture</h3>
+          <p>Architectural · Editorial · 2023</p>
+          <a href="#" class="tactile-cta">View Case Study →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Case Study Section (Horizontal Scroll Simulation) -->
-    <section id="process" class="chitramaya-horizontal-flow" style="display: flex; flex-wrap: nowrap; overflow-x: auto; min-height: 100vh;">
-        
-        <!-- Step 1: The Problem -->
-        <article style="min-width: 100vw; padding: 2rem; display: flex; flex-direction: column; justify-content: center; border-right: var(--border-stark);">
-            <div style="max-width: 800px;">
-                <span class="talam-ui" style="display: block; margin-bottom: 1rem; color: var(--color-accent);">01 // The Problem</span>
-                <h2 class="brut-huge-text" style="margin-bottom: 2rem;">Digital<br>Apathy</h2>
-                <p style="font-size: 1.25rem; line-height: 1.6;">
-                    Modern audiences are desensitized to polished, artificial perfection. The challenge was to break through the endless digital scroll by forcing the viewer to <em>feel</em> the texture of the subject—to create a photograph so viscerally real that it borders on the tactile.
-                </p>
-            </div>
-        </article>
+  <section class="services" id="services">
+    <div class="service-item">
+      <span class="service-num">01 // Service</span>
+      <h3 class="service-title">Brand Identity Campaigns</h3>
+      <p class="service-desc">We craft visual systems that communicate your brand's core promise through emotionally resonant, strategically lit photography. Every image is a deliberate argument for your market position.</p>
+      <a href="#contact" class="service-btn">Commission a Campaign</a>
+    </div>
+    <div class="service-item">
+      <span class="service-num">02 // Service</span>
+      <h3 class="service-title">Editorial & Portfolio</h3>
+      <p class="service-desc">For editorial houses, creative directors, and artists who require a visual partner that understands narrative arc. We treat each editorial as a short film — with a beginning, a conflict, and a resolution.</p>
+      <a href="#contact" class="service-btn">Commission Editorial Work</a>
+    </div>
+    <div class="service-item">
+      <span class="service-num">03 // Service</span>
+      <h3 class="service-title">Product & Commercial</h3>
+      <p class="service-desc">We specialize in making manufactured objects feel handmade, organic, and real. Our product photography generates desire by rendering tactile authenticity that no CGI render can replicate.</p>
+      <a href="#contact" class="service-btn">Commission Product Work</a>
+    </div>
+  </section>
 
-        <!-- Step 2: The Tactile Result -->
-        <article style="min-width: 100vw; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; border-right: var(--border-stark);">
-            <div>
-                <span class="talam-ui" style="display: block; margin-bottom: 1rem; color: var(--color-accent);">02 // The Result</span>
-                <h2 class="brut-huge-text" style="margin-bottom: 2rem;">Tactile<br>Reality</h2>
-                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 500px; margin-bottom: 2rem;">
-                    By manipulating harsh studio lighting and leveraging uncompressed medium-format sensors, we extracted every ounce of physical texture from the subject. The result is an image you don't just see—you can feel the grit, the fabric, and the breath.
-                </p>
-                <a href="/contact" class="brut-btn">Commission A Study</a>
-            </div>
-            <div style="height: 80vh; overflow: hidden; border: var(--border-stark);">
-                <!-- Tactile Image Placeholder with Perfect SEO Alt Tag -->
-                <img src="https://images.unsplash.com/photo-1517429128955-67ff5c1e29da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                     alt="High-contrast black and white portrait demonstrating intense tactile texture, sharp focus on facial details, and emotional gravity, captured by Chitramaya Creatives."
-                     class="img-tactile" style="height: 100%;">
-            </div>
-        </article>
+  <section class="process" id="process">
+    <div class="section-header"><h2 class="section-title">How We Work</h2></div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">01</div><h3 class="step-title">Brief & Discovery</h3><p class="step-desc">We spend the first week understanding your audience's psychology, competitive landscape, and the specific emotional response your images must trigger. No camera is touched until this is complete.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h3 class="step-title">Light Architecture</h3><p class="step-desc">Every shoot has a designed lighting plan based on the tactile quality we need to extract from the subject. We treat the studio as a precision instrument, not a backdrop.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h3 class="step-title">Capture & Selection</h3><p class="step-desc">Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Ruthless curation is the most important part of our creative process.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h3 class="step-title">Delivery & Licensing</h3><p class="step-desc">Final assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified alt-text metadata for your SEO team. Full licensing documentation included.</p></div>
+    </div>
+  </section>
 
-    </section>
-</main>
+  <section class="testimonial" id="testimonials">
+    <div class="testimonial-label">Client Voice</div>
+    <div>
+      <blockquote class="testimonial-quote">"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No filter. No CGI. We increased conversion on that product page by 34% within a month."</blockquote>
+      <p class="testimonial-author">— Priya Sundaram, Creative Director · Maison Kaur</p>
+    </div>
+  </section>
 
-<?php get_footer(); ?>
+  <section class="cta-banner" id="contact">
+    <img class="cta-banner-img"
+      src="https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=2400&q=80&auto=format&fit=crop"
+      alt="A dark dramatic photography studio with a single powerful light source illuminating a workspace — the Chitramaya Creatives commission environment.">
+    <div class="cta-banner-content">
+      <h2 class="cta-banner-title">Start a<br><em>Commission</em></h2>
+    </div>
+    <a href="mailto:hello@chitramaya.com" class="cta-banner-btn">Speak to a Creative Director</a>
+  </section>
+
+  <footer>
+    <p>© <?php echo date('Y'); ?> Chitramaya Creatives. All rights reserved.</p>
+    <div class="footer-talam">
+      <span>Looking for studio booking & services?</span>
+      <a href="<?php echo home_url('/talam-studio'); ?>">Visit Talam Studio</a>
+    </div>
+  </footer>
+  <?php wp_footer(); ?>
+</body>
+</html>
