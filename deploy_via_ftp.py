@@ -29,11 +29,11 @@ files_to_upload = [
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
     ('chitramaya/chitramaya-landing.html', 'wp-content/themes/chitramaya/chitramaya-landing.html'),
-    ('chitramaya/talam-landing.html', 'wp-content/themes/chitramaya/talam-landing.html'),
+    ('chitramaya/thalam-landing.html', 'wp-content/themes/chitramaya/thalam-landing.html'),
     
     # Root files (optional but good for consistency)
     ('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'),
-    ('chitramaya/talam-landing.html', 'talam-landing.html'),
+    ('chitramaya/thalam-landing.html', 'thalam-landing.html'),
 ]
 
 for local_path, remote_path in files_to_upload:
