@@ -2,103 +2,60 @@
 /**
  * Template Name: Chitramaya Narrative (Neo-Brutalism)
  * Template Post Type: page
- * Description: Horizontal, narrative-driven flow with screen-filling text blocks.
+ * Description: Horizontal, enterprise UX portfolio flow with screen-filling text blocks and tactile images.
  */
-?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php wp_head(); ?>
-    <style>
-        /* Specific page overrides to bypass WP's layout container */
-        body { margin: 0; padding: 0; }
-        .wp-site-blocks { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
-        header.wp-block-template-part, footer.wp-block-template-part { display: none !important; }
-        .chitramaya-marquee {
-            white-space: nowrap;
-            overflow: hidden;
-            border-bottom: var(--border-stark);
-            padding: 1rem 0;
-            background: var(--color-black);
-            color: var(--color-accent);
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-    </style>
-</head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+get_header(); ?>
 
 <main id="primary" class="site-main brut-container">
-
-    <div class="chitramaya-marquee">
-        <div class="marquee-content">
-            CHITHRAMAYA CREATIVES &nbsp;&nbsp;&nbsp; // &nbsp;&nbsp;&nbsp; WE CRAFT VISUAL LEGACIES &nbsp;&nbsp;&nbsp; // &nbsp;&nbsp;&nbsp; CHITHRAMAYA CREATIVES &nbsp;&nbsp;&nbsp; // &nbsp;&nbsp;&nbsp; WE CRAFT VISUAL LEGACIES &nbsp;&nbsp;&nbsp; // &nbsp;&nbsp;&nbsp; 
-        </div>
-    </div>
-
-    <!-- Screen-filling typography section (Dumbar/Godmother style) -->
+    <!-- Hero Section: Clear USP & Frictionless CTA -->
     <section class="chitramaya-hero brut-border-bottom" style="min-height: 90vh; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem;">
-        <nav style="display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; font-weight: 600;">
-            <div>Chithramaya Creatives (Artist)</div>
-            <div><a href="/talam-studio" style="color: var(--color-black); text-decoration: none; border-bottom: 2px solid var(--color-black);">[ Switch to Talam Studio ]</a></div>
-        </nav>
-        <div style="margin-top: 4rem;">
+        <div>
             <h1 class="brut-massive-text">
-                Visual<br>
-                Legacies<br>
-                <span class="brut-accent-bg" style="display: inline-block; padding: 0 1rem; color: var(--color-black); margin-top: 1rem;">Forged</span>
+                Chitramaya<br>
+                Creatives
             </h1>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-top: 4rem; gap: 2rem;">
-            <p style="font-size: clamp(1.2rem, 3vw, 2rem); max-width: 800px; margin: 0; font-weight: 500; line-height: 1.3;">
-                Chithramaya Creatives is an exclusive, narrative-driven photography atelier dedicated to capturing the unvarnished emotion and undeniable authority of your most critical moments.
+            <p style="font-size: 1.5rem; max-width: 600px; margin-top: 2rem; font-weight: 700; line-height: 1.4;">
+                We don't just capture images. We engineer visual authority through unapologetic emotion, rigorous process, and tactile aesthetics.
             </p>
-            <a href="#explore" class="brut-btn" style="white-space: nowrap;">Enter Narrative ↓</a>
+        </div>
+        <div>
+            <a href="#process" class="brut-btn">Explore The Process ↓</a>
         </div>
     </section>
 
-    <!-- Narrative flow simulation -->
-    <section id="explore" class="chitramaya-horizontal-flow" style="display: flex; flex-wrap: wrap; width: 100%;">
-        <article style="flex: 1 1 33.33%; min-width: 300px; padding: 4rem 2rem; border-right: var(--border-stark); border-bottom: var(--border-stark);">
-            <div style="font-size: 4rem; font-weight: 700; margin-bottom: 2rem;">[01]</div>
-            <h2 class="brut-large-text">Narrative Dissonance</h2>
-            <p style="font-size: 1.5rem; margin-top: 2rem; line-height: 1.6;">We don't just document; we direct visual arcs that provoke raw emotion. Photography is not about capturing light, it is about capturing the absence of it.</p>
-        </article>
+    <!-- Case Study Section (Horizontal Scroll Simulation) -->
+    <section id="process" class="chitramaya-horizontal-flow" style="display: flex; flex-wrap: nowrap; overflow-x: auto; min-height: 100vh;">
         
-        <article style="flex: 1 1 33.33%; min-width: 300px; padding: 4rem 2rem; border-right: var(--border-stark); border-bottom: var(--border-stark); background-color: var(--color-black); color: var(--color-white);">
-            <div style="font-size: 4rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-accent);">[02]</div>
-            <h2 class="brut-large-text">Uncompromising Aesthetic</h2>
-            <p style="font-size: 1.5rem; margin-top: 2rem; line-height: 1.6;">High-contrast, uncompromising quality reserved for those who demand art, not just pictures. Every frame is a declaration.</p>
-        </article>
-
-        <article style="flex: 1 1 33.33%; min-width: 300px; padding: 4rem 2rem; border-bottom: var(--border-stark); background-color: var(--color-accent); color: var(--color-black);">
-            <div style="font-size: 4rem; font-weight: 700; margin-bottom: 2rem;">[03]</div>
-            <h2 class="brut-large-text">The Master's Touch</h2>
-            <p style="font-size: 1.5rem; margin-top: 2rem; line-height: 1.6;">Helmed by visionary curation, ensuring your story is not merely seen, but deeply felt and remembered for generations.</p>
-            <div style="margin-top: 3rem;">
-                <a href="https://www.instagram.com/chithramaya_creatives" target="_blank" class="brut-btn" style="width: 100%; text-align: center;">View Instagram ↗</a>
+        <!-- Step 1: The Problem -->
+        <article style="min-width: 100vw; padding: 2rem; display: flex; flex-direction: column; justify-content: center; border-right: var(--border-stark);">
+            <div style="max-width: 800px;">
+                <span class="talam-ui" style="display: block; margin-bottom: 1rem; color: var(--color-accent);">01 // The Problem</span>
+                <h2 class="brut-huge-text" style="margin-bottom: 2rem;">Digital<br>Apathy</h2>
+                <p style="font-size: 1.25rem; line-height: 1.6;">
+                    Modern audiences are desensitized to polished, artificial perfection. The challenge was to break through the endless digital scroll by forcing the viewer to <em>feel</em> the texture of the subject—to create a photograph so viscerally real that it borders on the tactile.
+                </p>
             </div>
         </article>
-    </section>
 
-    <!-- Massive Imagery -->
-    <section class="brut-border-bottom" style="padding: 2rem;">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop" style="width: 100%; height: 60vh; object-fit: cover; filter: grayscale(100%) contrast(120%); border: var(--border-stark); display: block;" alt="Photography Authority" />
+        <!-- Step 2: The Tactile Result -->
+        <article style="min-width: 100vw; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; border-right: var(--border-stark);">
+            <div>
+                <span class="talam-ui" style="display: block; margin-bottom: 1rem; color: var(--color-accent);">02 // The Result</span>
+                <h2 class="brut-huge-text" style="margin-bottom: 2rem;">Tactile<br>Reality</h2>
+                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 500px; margin-bottom: 2rem;">
+                    By manipulating harsh studio lighting and leveraging uncompressed medium-format sensors, we extracted every ounce of physical texture from the subject. The result is an image you don't just see—you can feel the grit, the fabric, and the breath.
+                </p>
+                <a href="/contact" class="brut-btn">Commission A Study</a>
+            </div>
+            <div style="height: 80vh; overflow: hidden; border: var(--border-stark);">
+                <!-- Tactile Image Placeholder with Perfect SEO Alt Tag -->
+                <img src="https://images.unsplash.com/photo-1517429128955-67ff5c1e29da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                     alt="High-contrast black and white portrait demonstrating intense tactile texture, sharp focus on facial details, and emotional gravity, captured by Chitramaya Creatives."
+                     class="img-tactile" style="height: 100%;">
+            </div>
+        </article>
+
     </section>
 </main>
 
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>
