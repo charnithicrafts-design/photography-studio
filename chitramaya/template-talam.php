@@ -11,8 +11,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thalam Studio — Ad Shoots &amp; Baby Photography, Kerala</title>
-  <meta name="description" content="Thalam Studio — Chitramaya's production house for ad shoots, baby &amp; newborn photography, and commercial sessions. Book your studio date in Kerala.">
+  <title>Thalam Studio — Ad Shoots &amp; Baby Photography</title>
+  <meta name="description" content="Thalam Studio — Chitramaya's production house for ad shoots, baby &amp; newborn photography, and commercial sessions. Book your studio date in .">
   <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,7 +152,7 @@
 
   <div class="system-bar">
     <span>[ Thalam Studio — Ad Shoots · Baby Photography · Operational ]</span>
-    <span>Kerala · WhatsApp: +91 98765 43210</span>
+    <span> · WhatsApp: +91 98765 43210</span>
   </div>
 
   <nav>
@@ -164,7 +164,7 @@
   <section class="hero" id="hero">
     <div class="hero-left">
       <div>
-        <div class="hero-tag">Production Hub // Kerala</div>
+        <div class="hero-tag">Production Hub // </div>
         <h1 class="hero-headline">We<br><span class="accent-word">Execute.</span><br>You<br>Deliver.</h1>
       </div>
       <div class="hero-body">
@@ -178,8 +178,8 @@
     <div class="hero-right">
       <img class="hero-img"
         src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=90&auto=format&fit=crop"
-        alt="Wide-angle view of a professional photography studio workspace with multiple light setups — Thalam Studio, Kerala.">
-      <div class="hero-img-caption">Thalam Studio · Kerala</div>
+        alt="Wide-angle view of a professional photography studio workspace with multiple light setups — Thalam Studio, .">
+      <div class="hero-img-caption">Thalam Studio · </div>
     </div>
   </section>
 
@@ -201,7 +201,7 @@
       <div class="service-index">01</div>
       <div class="service-img-cell">
         <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop"
-          alt="Commercial ad shoot with professional studio lighting — Thalam Studio ad photography, Kerala.">
+          alt="Commercial ad shoot with professional studio lighting — Thalam Studio ad photography, .">
       </div>
       <div class="service-info">
         <div><h3 class="service-name">Ad Shoots</h3>
@@ -227,7 +227,7 @@
       <div class="service-index">02</div>
       <div class="service-img-cell">
         <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=90&auto=format&fit=crop"
-          alt="Soft-lit newborn baby photography session in studio — Thalam Studio baby photography, Kerala.">
+          alt="Soft-lit newborn baby photography session in studio — Thalam Studio baby photography, .">
       </div>
       <div class="service-info">
         <div><h3 class="service-name">Baby &amp; Newborn</h3>
@@ -279,7 +279,7 @@
       <div class="service-index">04</div>
       <div class="service-img-cell">
         <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=90&auto=format&fit=crop"
-          alt="An intimate documentary wedding moment — Thalam Studio wedding photography, Kerala.">
+          alt="An intimate documentary wedding moment — Thalam Studio wedding photography, .">
       </div>
       <div class="service-info">
         <div><h3 class="service-name">Weddings</h3>
@@ -351,7 +351,7 @@
         </div>
         <div class="form-row">
           <div class="form-field"><label class="form-label" for="form-date">Preferred Date</label><input class="form-input" id="form-date" name="date" type="date" required></div>
-          <div class="form-field"><label class="form-label" for="form-location">Location / City</label><input class="form-input" id="form-location" name="location" type="text" placeholder="e.g. Kerala" required></div>
+          <div class="form-field"><label class="form-label" for="form-location">Location / City</label><input class="form-input" id="form-location" name="location" type="text" placeholder="e.g. " required></div>
         </div>
         <div class="form-field"><label class="form-label" for="form-email">Email Address</label><input class="form-input" id="form-email" name="email" type="email" placeholder="you@company.com" required></div>
         <button type="submit" class="form-submit"><span>Send Enquiry</span><span>→</span></button>
@@ -362,13 +362,13 @@
   <footer>
     <div class="footer-col">
       <div class="footer-col-label">Thalam Studio</div>
-      <p>Ad shoots, baby photography, and commercial production in Kerala.</p>
+      <p>Ad shoots, baby photography, and commercial production in .</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-label">Contact</div>
       <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Thalam%20Studio." target="_blank" rel="noopener">WhatsApp Us ↗</a>
       <a href="mailto:studio@thalam.in">studio@thalam.in</a>
-      <p>Kerala, India</p>
+      <p>, India</p>
     </div>
     <div class="footer-col" style="border-right:none;">
       <div class="footer-col-label">Part of</div>

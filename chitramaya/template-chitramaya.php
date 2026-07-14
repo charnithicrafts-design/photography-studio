@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chitramaya Creatives — Photography Studio, Kerala</title>
+  <title>Chitramaya Creatives — Photography Studio</title>
   <meta name="description" content="Chitramaya Creatives — Ad shoots, baby photography, and visual storytelling from Thalam Studio, Kerala. Every image is made to be felt.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -256,7 +256,7 @@
             <div class="thalam-service-chip-title">Product Shoots</div>
           </div>
           <div class="thalam-service-chip">
-            <div class="thalam-service-chip-label">Kerala Studio</div>
+            <div class="thalam-service-chip-label">Podcast Studio</div>
             <div class="thalam-service-chip-title">Book a Date</div>
           </div>
         </div>
