@@ -29,6 +29,9 @@ php -d memory_limit=512M "$SCRIPT_DIR/wp-cli.phar" \
   search-replace 'http://localhost:8080' 'http://chitramaya.charnithi.com' \
   --export="$WP_ROOT/chitramaya_dump_live.sql"
 
+echo "[2b/5] Uploading SQL dump for remote import..."
+python "$SCRIPT_DIR/upload_sql.py"
+
 echo "[3/5] Compressing WordPress build..."
 rm -f "$WP_ROOT/chitramaya_wp.zip"
 (cd "$WP_ROOT" && zip -rq chitramaya_wp.zip . \
