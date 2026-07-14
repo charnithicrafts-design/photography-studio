@@ -189,7 +189,7 @@
   <section class="hero" id="hero">
     <div class="hero-cursor-glow" id="hero-glow"></div>
     <img class="hero-img"
-      src="https://images.unsplash.com/photo-znAvsm-CsYE?w=2400&q=90&auto=format&fit=crop"
+      src="https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop"
       alt="Fine-art studio portrait with vibrant abstract paint — Chitramaya Creatives"
       loading="eager"
       onload="this.closest('.hero').classList.add('loaded')">
