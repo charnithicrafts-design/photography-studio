@@ -181,7 +181,7 @@
     </div>
     <div class="hero-right">
       <img class="hero-img"
-        src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=1600&q=90&auto=format&fit=crop"
+        src="https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=1600&q=90&auto=format&fit=crop"
         alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio.">
       <div class="hero-img-caption">Thalam Studio · </div>
     </div>
