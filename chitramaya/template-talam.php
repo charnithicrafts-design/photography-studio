@@ -41,21 +41,21 @@
     .nav-logo { font-family: var(--font-sans); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); }
     .nav-book a { display: inline-block; background: var(--accent); color: var(--bg-light); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 1rem; border-radius: 50px; transition: background 0.2s; }
 
-    .hero { position: relative; display: grid; grid-template-columns: 1fr; min-height: calc(100vh - 60px); border-bottom: var(--rule); background: var(--bg-light); overflow: hidden; }
-    .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle at 2px 2px, var(--text-dark) 1px, transparent 0); background-size: 32px 32px; pointer-events: none; }
-    .hero-left { position: relative; z-index: 2; padding: 4rem 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .hero { position: relative; min-height: calc(100vh - 60px); display: flex; align-items: flex-end; padding: 4rem 1.5rem; background: #1c1917; overflow: hidden; border-bottom: none; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 10s ease; }
+    .hero:hover .hero-img { transform: scale(1.05); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,25,23,0.95) 0%, rgba(28,25,23,0.2) 60%, transparent 100%); z-index: 2; pointer-events: none; }
+    .hero-content { position: relative; z-index: 3; width: 100%; display: flex; flex-direction: column; }
     .hero-tag { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
-    .hero-headline { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2.5rem, 10vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--text-dark); }
+    .hero-headline { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2.5rem, 10vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; color: #ffffff; }
     .hero-headline .accent-word { font-style: italic; color: var(--accent); }
     .hero-body { margin-top: 1.5rem; }
-    .hero-body p { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: var(--light-grey); max-width: 100%; margin-bottom: 2rem; }
+    .hero-body p { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 100%; margin-bottom: 2rem; }
     .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; }
-    .btn-pill-dark { display: inline-flex; align-items: center; justify-content: center; background: var(--text-dark); color: var(--bg-light); border: 1px solid var(--text-dark); padding: 1rem 2rem; border-radius: 50px; font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
-    .btn-pill-dark:hover { background: transparent; color: var(--text-dark); }
-    .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid rgba(28,25,23,0.2); padding: 1rem 2rem; border-radius: 50px; font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
-    .btn-pill-light:hover { border-color: var(--text-dark); }
-    .hero-right { position: relative; height: 50vh; width: 100%; overflow: hidden; }
-    .hero-img { width: 100%; height: 100%; object-fit: cover; }
+    .btn-pill-dark { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: var(--bg-light); border: 1px solid var(--accent); padding: 1rem 2rem; border-radius: 50px; font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .btn-pill-dark:hover { background: #ffffff; color: var(--text-dark); border-color: #ffffff; }
+    .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 1rem 2rem; border-radius: 50px; font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .btn-pill-light:hover { border-color: #ffffff; background: rgba(255,255,255,0.05); }
 
     .status-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: var(--rule); }
     .status-item { padding: 1.25rem 1.5rem; border-right: var(--rule); border-bottom: var(--rule); display: flex; align-items: center; gap: 0.75rem; }
@@ -137,17 +137,14 @@
       .nav-book a { padding: 0.6rem 1.4rem; font-size: 0.72rem; }
       .nav-book a:hover, .btn-pill-dark:hover { background: var(--accent); color: var(--bg-light); border-color: var(--accent); }
 
-      .hero { grid-template-columns: 1.2fr 1fr; align-items: center; }
-      .hero-left { padding: 4rem 2rem 4rem 8vw; }
-      .hero-headline { font-size: clamp(3rem, 4.5vw, 5rem); margin-bottom: 2rem; }
+      .hero { padding: 0; align-items: center; }
+      .hero-overlay { background: linear-gradient(to right, rgba(28,25,23,0.9) 0%, rgba(28,25,23,0.4) 50%, transparent 100%); }
+      .hero-content { padding: 4rem 3rem 4rem 8vw; max-width: 800px; }
+      .hero-headline { font-size: clamp(3rem, 5vw, 5.5rem); margin-bottom: 2rem; }
       .hero-body { margin-top: 0; }
-      .hero-body p { font-size: 1.1rem; max-width: 460px; margin-bottom: 2.5rem; }
+      .hero-body p { font-size: 1.1rem; max-width: 480px; margin-bottom: 2.5rem; }
       .hero-ctas { flex-direction: row; }
-      .btn-pill-dark, .btn-pill-light { padding: 1.1rem 2rem; font-size: 0.85rem; }
-      .hero-right { display: block; height: 100%; position: relative; overflow: hidden; }
-      .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-light) 0%, transparent 20%); z-index: 1; pointer-events: none; }
-      .hero-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-      .hero-right:hover .hero-img { transform: scale(1.02); }
+      .btn-pill-dark, .btn-pill-light { padding: 1.1rem 2.2rem; font-size: 0.85rem; }
 
       .status-grid { grid-template-columns: repeat(4, 1fr); }
       .status-item { padding: 1.5rem 2rem; border-right: var(--rule); border-bottom: none; }
@@ -225,8 +222,12 @@
   </nav>
 
   <section class="hero" id="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-left">
+    <img class="hero-img"
+      src="https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=2400&q=90&auto=format&fit=crop"
+      alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio."
+      loading="eager">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
       <span class="hero-tag">Thalam Studio</span>
       <h1 class="hero-headline">A sanctuary for light, space, and creative <span class="accent-word">precision.</span></h1>
       <div class="hero-body">
@@ -236,11 +237,6 @@
           <a href="#services" class="btn-pill-light">View Capabilities</a>
         </div>
       </div>
-    </div>
-    <div class="hero-right">
-      <img class="hero-img"
-        src="https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=1600&q=90&auto=format&fit=crop"
-        alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio.">
     </div>
   </section>
 
