@@ -263,8 +263,8 @@
     <div class="service-row" id="service-ad-shoots">
       <div class="service-index">01</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop"
-          alt="Commercial ad shoot with professional studio lighting — Thalam Studio ad photography, .">
+        <img src="https://images.unsplash.com/photo-1758613655304-48776efb25d8?w=800&q=90&auto=format&fit=crop"
+          alt="Professional photographer shooting a model in a high-end studio setting — Thalam Studio ad photography.">
       </div>
       <div class="service-info">
         <div><h3 class="service-name">Ad Shoots</h3>
