@@ -20,7 +20,7 @@
   <?php wp_head(); ?>
   <style>
     :root {
-      --bg-light: #f5f2eb;
+      --bg-light: #f7f5f0;
       --text-dark: #1c1917;
       --accent: #a96f44;
       --warm-grey: rgba(28,25,23,0.6);
@@ -31,28 +31,29 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg-light); color: var(--text-dark); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    /* MOBILE-FIRST BASE STYLES */
+    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; mix-blend-mode: difference; }
-    .nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: #fff; }
+    .nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #fff; }
     .nav-links { display: flex; gap: 1rem; list-style: none; }
     .nav-links a { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: #fff; transition: opacity 0.3s; }
     .nav-links a:hover { opacity: 0.6; }
-    .nav-thalam-pill { display: none; } /* Hidden on mobile by default to save space */
+    .nav-thalam-pill { display: none; }
 
-    .hero { position: relative; height: 100vh; width: 100%; overflow: hidden; cursor: crosshair; }
-    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
-    .hero-grain { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
-    .hero-brand { position: absolute; top: 50%; left: 1.25rem; transform: translateY(-50%); display: flex; flex-direction: column; gap: 1rem; }
-    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2.5rem, 14vw, 5rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; color: var(--bg-light); }
-    .hero-brand-name em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.52em; color: var(--accent); letter-spacing: 0.02em; line-height: 1.5; text-transform: none; }
-    .hero-corner { position: absolute; bottom: 2.5rem; right: 1.25rem; text-align: right; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; }
-    .hero-fragment { font-family: var(--font-serif); font-style: italic; font-size: clamp(1rem, 4vw, 1.4rem); color: var(--bg-light); line-height: 1.6; max-width: 200px; }
-    .hero-insta { display: none; }
-    .hero-scroll { position: absolute; bottom: 2.5rem; left: 1.25rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollAnim 2.5s ease-in-out infinite; }
-    .scroll-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(28,25,23,0.3); writing-mode: vertical-rl; transform: rotate(180deg); }
-    @keyframes scrollAnim { 0%,100% { opacity:1; transform:scaleY(1) translateY(0); } 50% { opacity:0.2; transform:scaleY(0.4) translateY(-10px); } }
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; width: 100%; overflow: hidden; display: grid; grid-template-columns: 1fr; background: var(--bg-light); }
+    .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle at 2px 2px, var(--text-dark) 1px, transparent 0); background-size: 32px 32px; pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; padding: 7rem 1.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 10vw, 5rem); line-height: 1.05; font-weight: 400; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .hero-subline { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: var(--warm-grey); max-width: 480px; margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; flex-direction: column; gap: 1rem; }
+    .btn-pill-dark { display: inline-flex; align-items: center; justify-content: center; background: var(--text-dark); color: var(--bg-light); border: 1px solid var(--text-dark); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .btn-pill-dark:hover { background: transparent; color: var(--text-dark); }
+    .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid rgba(28,25,23,0.2); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .btn-pill-light:hover { border-color: var(--text-dark); }
+    .hero-right { position: relative; height: 50vh; width: 100%; overflow: hidden; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
+    /* MANIFESTO */
     .manifesto { padding: 5rem 1.5rem; display: grid; grid-template-columns: 1fr; gap: 3rem; border-top: var(--border); }
     .manifesto-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
     .manifesto-text { font-family: var(--font-serif); font-size: clamp(1.8rem, 8vw, 3.2rem); line-height: 1.25; }
@@ -61,8 +62,9 @@
     .stat-num { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
     .stat-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); margin-top: 0.25rem; }
 
+    /* THALAM AD */
     .thalam-ad { position: relative; height: auto; display: flex; flex-direction: column; border-top: var(--border); background: #1c1917; }
-    .thalam-ad-bg { display: none; } /* Hide heavy image on mobile by default, just use color */
+    .thalam-ad-bg { display: none; }
     .thalam-ad-corner { display: none; }
     .thalam-ad-content { position: relative; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr; gap: 2rem; width: 100%; }
     .thalam-ad-eyebrow { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -77,6 +79,7 @@
     .thalam-service-chip-title { font-weight: 700; font-size: 0.9rem; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg-light); }
     .thalam-ad-cta { display: inline-flex; align-items: center; justify-content: space-between; background: var(--accent); color: var(--bg-light); text-decoration: none; padding: 1.25rem 1.5rem; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; }
 
+    /* TACTILE GRID */
     .tactile-section { padding: 5rem 1.5rem; }
     .section-header { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: var(--border); }
     .section-title { font-weight: 900; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
@@ -89,6 +92,7 @@
     .tactile-caption p { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
     .tactile-cta { display: inline-block; margin-top: 0.8rem; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
 
+    /* SERVICES */
     .services { border-top: var(--border); border-bottom: var(--border); display: grid; grid-template-columns: 1fr; }
     .service-item { padding: 3rem 1.5rem; border-bottom: var(--border); }
     .service-item:last-child { border-bottom: none; }
@@ -97,6 +101,7 @@
     .service-desc { font-size: 0.85rem; line-height: 1.6; color: var(--warm-grey); margin-bottom: 2rem; }
     .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; }
 
+    /* PROCESS */
     .process { padding: 5rem 1.5rem; }
     .process-steps { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; border-top: var(--border); padding-top: 3rem; }
     .process-step { border: none; padding: 0; }
@@ -104,11 +109,13 @@
     .step-title { font-weight: 700; font-size: 1rem; text-transform: uppercase; margin-bottom: 0.75rem; }
     .step-desc { font-size: 0.85rem; line-height: 1.6; color: var(--warm-grey); }
 
+    /* TESTIMONIAL */
     .testimonial { padding: 5rem 1.5rem; border-top: var(--border); display: grid; grid-template-columns: 1fr; gap: 2rem; }
     .testimonial-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
     .testimonial-quote { font-family: var(--font-serif); font-size: clamp(1.4rem, 6vw, 2.4rem); line-height: 1.4; font-style: italic; }
     .testimonial-author { margin-top: 1.5rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-grey); }
 
+    /* CTA BANNER */
     .cta-banner { position: relative; padding: 6rem 1.5rem; display: flex; flex-direction: column; gap: 2rem; align-items: center; text-align: center; background: #1c1917; }
     .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
     .cta-banner-content { position: relative; }
@@ -116,40 +123,36 @@
     .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
     .cta-banner-btn { position: relative; display: inline-block; background: var(--accent); color: #fff; padding: 1.25rem 2.5rem; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
 
+    /* FOOTER */
     footer { padding: 3rem 1.5rem; border-top: var(--border); display: flex; flex-direction: column; gap: 2rem; align-items: center; text-align: center; }
     footer p { font-size: 0.7rem; color: var(--warm-grey); letter-spacing: 0.1em; }
     .footer-thalam { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
     .footer-thalam span { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm-grey); }
     .footer-thalam a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
 
+    /* WHATSAPP */
     .whatsapp-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; display: flex; align-items: center; justify-content: center; background: #25D366; color: #fff; text-decoration: none; padding: 0.9rem; border-radius: 50%; box-shadow: 0 4px 24px rgba(37,211,102,0.35); }
     .whatsapp-fab span { display: none; }
     .whatsapp-fab svg { width: 22px; height: 22px; fill: #fff; }
 
     /* PROGRESSIVE ENHANCEMENT (TABLET & DESKTOP) */
     @media (min-width: 768px) {
-      nav { padding: 1.5rem 3rem; }
+      nav { padding: 1.5rem 3rem; background: transparent; }
       .nav-links { gap: 2.5rem; align-items: center; }
       .nav-links a { font-size: 0.72rem; }
-      .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; }
-      .nav-thalam-pill:hover { background: var(--text-dark) !important; transform: translateY(-1px); color: var(--bg-light) !important; }
+      .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--text-dark); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; border-radius: 50px; }
+      .nav-thalam-pill:hover { background: var(--accent) !important; transform: translateY(-1px); }
 
-      .hero-img { transform: scale(1.04); transition: transform 12s cubic-bezier(0.25,0.46,0.45,0.94); }
-      .hero.loaded .hero-img { transform: scale(1.0); }
-      .hero-brand { left: 3rem; gap: 1.2rem; }
-      .hero-brand-name { font-size: clamp(2.5rem, 12vw, 9rem); }
-      .hero-corner { bottom: 3.5rem; right: 3rem; }
-      .hero-fragment { max-width: 260px; font-size: clamp(1rem, 1.6vw, 1.4rem); }
-      .hero-insta { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); transition: color 0.3s; }
-      .hero-insta:hover { color: var(--accent); }
-      .hero-insta svg { width: 14px; height: 14px; fill: currentColor; }
-      .hero-scroll { bottom: 3.5rem; left: 3rem; }
-      .scroll-line { height: 60px; }
-      .scroll-label { font-size: 0.65rem; }
+      .hero { grid-template-columns: 1fr 1fr; align-items: center; }
+      .hero-content { padding: 4rem 3rem 4rem 8vw; }
+      .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); }
+      .hero-ctas { flex-direction: row; }
+      .hero-right { height: 100vh; }
+      .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-light) 0%, transparent 20%); z-index: 1; pointer-events: none; }
 
       .manifesto { padding: 8rem 3rem; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
       .manifesto-label { font-size: 0.72rem; margin-bottom: 2rem; }
-      .manifesto-text { font-size: clamp(1.8rem, 6vw, 3.2rem); }
+      .manifesto-text { font-size: clamp(1.8rem, 4vw, 3.2rem); }
       .manifesto-body { font-size: 1rem; margin-bottom: 3rem; }
       .manifesto-stats { gap: 2rem; padding-top: 2.5rem; }
       .stat-num { font-size: 2.5rem; }
@@ -245,27 +248,20 @@
 
   <!-- HERO — show, don't tell -->
   <section class="hero" id="hero">
-    <div class="hero-cursor-glow" id="hero-glow"></div>
-    <img class="hero-img"
-      src="https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop"
-      alt="Fine-art studio portrait with vibrant abstract paint — Chitramaya Creatives"
-      loading="eager"
-      onload="this.closest('.hero').classList.add('loaded')">
-    <div class="hero-overlay"></div>
-    <div class="hero-grain"></div>
-    <div class="hero-brand">
-      <h1 class="hero-brand-name">Chitra<br>maya<em>Creatives</em></h1>
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline">Every photograph is a physical argument that the world is worth feeling.</h1>
+      <p class="hero-subline">Chitramaya is a premier fine-art production hub engineering visual storytelling that makes your brand feel truly alive.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn-pill-dark">View Selected Work</a>
+        <a href="#thalam" class="btn-pill-light">Explore Thalam Studio ↗</a>
+      </div>
     </div>
-    <div class="hero-corner">
-      <p class="hero-fragment">Light, texture,<br>and the weight<br>of a real moment.</p>
-      <a href="https://www.instagram.com/chithramaya_creatives" target="_blank" rel="noopener" class="hero-insta">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @chithramaya_creatives
-      </a>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span class="scroll-label">Scroll</span>
+    <div class="hero-right">
+      <img class="hero-img"
+        src="https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop"
+        alt="Fine-art studio portrait with vibrant abstract paint — Chitramaya Creatives"
+        loading="eager">
     </div>
   </section>
 
