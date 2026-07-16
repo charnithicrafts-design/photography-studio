@@ -33,11 +33,11 @@
     body { background: var(--bg-light); color: var(--text-dark); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; }
-    .nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-    .nav-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--warm-grey); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text-dark); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; mix-blend-mode: difference; }
+    .nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: #fff; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: #fff; transition: opacity 0.3s; }
+    .nav-links a:hover { opacity: 0.6; }
     .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; }
     .nav-thalam-pill:hover { background: var(--text-dark) !important; transform: translateY(-1px); color: var(--bg-light) !important; }
 
@@ -49,7 +49,7 @@
     .hero-grain { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
     .hero-cursor-glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); transition: opacity 0.3s; opacity: 0; }
     .hero-brand { position: absolute; top: 50%; left: 3rem; transform: translateY(-50%); display: flex; flex-direction: column; gap: 1.2rem; }
-    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 8vw, 9rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; color: var(--bg-light); }
+    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2.5rem, 12vw, 9rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; color: var(--bg-light); }
     .hero-brand-name em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.52em; color: var(--accent); letter-spacing: 0.02em; line-height: 1.5; text-transform: none; }
     .hero-corner { position: absolute; bottom: 3.5rem; right: 3rem; text-align: right; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; }
     .hero-fragment { font-family: var(--font-serif); font-style: italic; font-size: clamp(1rem, 1.6vw, 1.4rem); color: var(--bg-light); line-height: 1.6; max-width: 260px; }
@@ -64,7 +64,7 @@
     /* MANIFESTO */
     .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-top: var(--border); }
     .manifesto-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
-    .manifesto-text { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.25; }
+    .manifesto-text { font-family: var(--font-serif); font-size: clamp(1.8rem, 6vw, 3.2rem); line-height: 1.25; }
     .manifesto-body { font-size: 1rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 3rem; }
     .manifesto-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: var(--border); padding-top: 2.5rem; }
     .stat-num { font-weight: 900; font-size: 2.5rem; letter-spacing: -0.04em; }
@@ -79,7 +79,7 @@
     .thalam-ad-content { position: relative; padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-end; width: 100%; }
     .thalam-ad-eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
-    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: var(--bg-light); }
+    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2.5rem, 10vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: var(--bg-light); }
     .thalam-ad-headline em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 0.65em; letter-spacing: 0; }
     .thalam-ad-right { display: flex; flex-direction: column; gap: 2.5rem; justify-content: flex-end; }
     .thalam-ad-services { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: var(--border); }
@@ -144,7 +144,7 @@
     .cta-banner { position: relative; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 3rem; }
     .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.3) contrast(1.2); }
     .cta-banner-content { position: relative; }
-    .cta-banner-title { font-weight: 900; font-size: clamp(3rem, 7vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; color: var(--bg-light); }
+    .cta-banner-title { font-weight: 900; font-size: clamp(2.5rem, 10vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; color: var(--bg-light); }
     .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
     .cta-banner-btn { position: relative; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; background: var(--accent); color: var(--bg-light); padding: 1.25rem 3rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
     .cta-banner-btn:hover { background: var(--text-dark); }
@@ -164,15 +164,23 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      .hero-brand { left: 1.5rem; }
-      .hero-brand-name { font-size: clamp(2.8rem, 14vw, 5rem); }
-      .hero-corner { right: 1.5rem; bottom: 2.5rem; }
-      .hero-scroll { left: 1.5rem; }
+      nav { padding: 1.25rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.6rem; }
+      .hero-brand { left: 1.25rem; }
+      .hero-brand-name { font-size: clamp(2.5rem, 14vw, 5rem); }
+      .hero-corner { right: 1.25rem; bottom: 2.5rem; }
+      .hero-scroll { left: 1.25rem; }
+      .manifesto { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+      .manifesto-stats { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
       .thalam-ad-content { grid-template-columns: 1fr; padding: 0 1.5rem 4rem; gap: 2rem; }
       .thalam-ad-services { grid-template-columns: 1fr; }
       .thalam-service-chip { border-right: none; }
+      .tactile-section { padding: 5rem 1.5rem; }
+      .tactile-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-banner { height: auto; padding: 6rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 1.5rem; }
+      .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; padding: 1.5rem; }
       .whatsapp-fab span { display: none; }
       .whatsapp-fab { padding: 0.9rem; border-radius: 50%; }
     }

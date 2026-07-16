@@ -145,8 +145,13 @@
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
-      .service-row { grid-template-columns: 60px 1fr 200px; }
+      .service-row { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .service-index { display: none; }
       .service-specs { display: none; }
+      .service-img-cell { height: 250px; }
+      .service-action { align-items: flex-start; gap: 1.5rem; }
+      .gallery-strip { grid-template-columns: 1fr 1fr; height: auto; }
+      .gallery-strip-item:nth-child(n+3) { display: none; }
       .whatsapp-fab span { display: none; }
       .whatsapp-fab { padding: 0.9rem; border-radius: 50%; }
     }
