@@ -367,8 +367,8 @@
   <div class="gallery-strip">
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?w=800&q=90&auto=format&fit=crop" alt="Woman in white hijab in grayscale — Thalam Studio fine-art portraiture."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1776090188315-c481a5753867?w=800&q=90&auto=format&fit=crop" alt="Vast empty industrial warehouse with overhead lighting — Thalam Studio industrial photography."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1675851210855-e7727076e829?w=800&q=90&auto=format&fit=crop" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1679398793606-ee25e2eb5caf?w=800&q=90&auto=format&fit=crop" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1668156387408-568256e1b4cf?w=800&q=90&auto=format&fit=crop" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1583710457367-47de0ea21fef?w=800&q=90&auto=format&fit=crop" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
   </div>
 
