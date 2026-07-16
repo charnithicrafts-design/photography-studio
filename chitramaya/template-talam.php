@@ -365,11 +365,11 @@
   </section>
 
   <div class="gallery-strip">
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1565439390234-5b4308a0653d?w=600&q=80&auto=format&fit=crop" alt="Close-up of industrial welding sparks — Thalam Studio industrial photography sample."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80&auto=format&fit=crop" alt="Corporate team in a meeting room — Thalam Studio corporate photography sample."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&auto=format&fit=crop" alt="Wedding couple at the altar — Thalam Studio wedding photography sample."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80&auto=format&fit=crop" alt="Open-plan office with natural daylight — Thalam Studio corporate space photography."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=600&q=80&auto=format&fit=crop" alt="Macro of industrial metal gears — Thalam Studio industrial close-up photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=90&auto=format&fit=crop" alt="Intimate, emotional fine-art portrait — Thalam Studio editorial photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800&q=90&auto=format&fit=crop" alt="Cinematic wedding photography capturing raw emotion — Thalam Studio weddings."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=800&q=90&auto=format&fit=crop" alt="Dynamic, expressive commercial movement — Thalam Studio ad campaigns."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop" alt="Moody, evocative visual storytelling — Thalam Studio fine-art production."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=90&auto=format&fit=crop" alt="Striking silhouette and cinematic light — Thalam Studio creative precision."></div>
   </div>
 
   <section class="trust" id="trust">
