@@ -368,7 +368,7 @@
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?w=800&q=90&auto=format&fit=crop" alt="Woman in white hijab in grayscale — Thalam Studio fine-art portraiture."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1776090188315-c481a5753867?w=800&q=90&auto=format&fit=crop" alt="Vast empty industrial warehouse with overhead lighting — Thalam Studio industrial photography."></div>
     <div class="gallery-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/wedding-staircase.jpg" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1583710457367-47de0ea21fef?w=800&q=90&auto=format&fit=crop" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
+    <div class="gallery-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/maternity-newborn.jpg" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
   </div>
 
