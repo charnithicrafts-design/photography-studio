@@ -49,10 +49,10 @@
     .hero-grain { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
     .hero-cursor-glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); transition: opacity 0.3s; opacity: 0; }
     .hero-brand { position: absolute; top: 50%; left: 3rem; transform: translateY(-50%); display: flex; flex-direction: column; gap: 1.2rem; }
-    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 8vw, 9rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; }
+    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 8vw, 9rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; color: var(--bg-light); }
     .hero-brand-name em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.52em; color: var(--accent); letter-spacing: 0.02em; line-height: 1.5; text-transform: none; }
     .hero-corner { position: absolute; bottom: 3.5rem; right: 3rem; text-align: right; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; }
-    .hero-fragment { font-family: var(--font-serif); font-style: italic; font-size: clamp(1rem, 1.6vw, 1.4rem); color: var(--text-dark); line-height: 1.6; max-width: 260px; }
+    .hero-fragment { font-family: var(--font-serif); font-style: italic; font-size: clamp(1rem, 1.6vw, 1.4rem); color: var(--bg-light); line-height: 1.6; max-width: 260px; }
     .hero-insta { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); transition: color 0.3s; }
     .hero-insta:hover { color: var(--accent); }
     .hero-insta svg { width: 14px; height: 14px; fill: currentColor; }
@@ -79,7 +79,7 @@
     .thalam-ad-content { position: relative; padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-end; width: 100%; }
     .thalam-ad-eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
-    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; }
+    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: var(--bg-light); }
     .thalam-ad-headline em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 0.65em; letter-spacing: 0; }
     .thalam-ad-right { display: flex; flex-direction: column; gap: 2.5rem; justify-content: flex-end; }
     .thalam-ad-services { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: var(--border); }
@@ -87,14 +87,14 @@
     .thalam-service-chip:nth-child(2n) { border-right: none; }
     .thalam-service-chip:nth-last-child(-n+2) { border-bottom: none; }
     .thalam-service-chip-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-    .thalam-service-chip-title { font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; text-transform: uppercase; }
+    .thalam-service-chip-title { font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg-light); }
     .thalam-ad-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; background: var(--accent); color: var(--bg-light); text-decoration: none; padding: 1.35rem 2rem; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; transition: background 0.25s, transform 0.25s; }
     .thalam-ad-cta:hover { background: var(--text-dark); transform: translateX(4px); }
     .thalam-ad-cta-arrow { font-size: 1.2rem; transition: transform 0.25s; }
     .thalam-ad-cta:hover .thalam-ad-cta-arrow { transform: translateX(6px); }
 
     /* TACTILE GRID */
-    .tactile-section { padding: 0 3rem 8rem; }
+    .tactile-section { padding: 8rem 3rem; }
     .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: var(--border); }
     .section-title { font-weight: 900; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
     .section-link { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
@@ -144,7 +144,7 @@
     .cta-banner { position: relative; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 3rem; }
     .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.3) contrast(1.2); }
     .cta-banner-content { position: relative; }
-    .cta-banner-title { font-weight: 900; font-size: clamp(3rem, 7vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; }
+    .cta-banner-title { font-weight: 900; font-size: clamp(3rem, 7vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; color: var(--bg-light); }
     .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
     .cta-banner-btn { position: relative; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; background: var(--accent); color: var(--bg-light); padding: 1.25rem 3rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
     .cta-banner-btn:hover { background: var(--text-dark); }
