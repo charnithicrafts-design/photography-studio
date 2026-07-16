@@ -51,11 +51,11 @@
     .btn-primary { display: inline-flex; align-items: center; justify-content: space-between; background: var(--accent); color: var(--bg-light); font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: background 0.2s; }
     .btn-primary:hover { background: var(--text-dark); }
     .btn-ghost { display: inline-flex; align-items: center; justify-content: space-between; border: var(--rule-light); color: var(--text-dark); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: all 0.2s; }
-    .btn-ghost:hover { border-color: var(--text-dark); background: rgba(255,255,255,0.04); }
+    .btn-ghost:hover { border-color: var(--text-dark); background: rgba(28,25,23,0.04); }
     .hero-right { position: relative; overflow: hidden; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .hero-right:hover .hero-img { transform: scale(1.02); }
-    .hero-img-caption { position: absolute; bottom: 2rem; right: 2rem; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .hero-img-caption { position: absolute; bottom: 2rem; right: 2rem; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(28,25,23,0.6); }
 
     .status-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: var(--rule); }
     .status-item { padding: 1.5rem 2rem; border-right: var(--rule); display: flex; align-items: center; gap: 0.75rem; }
@@ -70,7 +70,7 @@
     .services-header h2 { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-grey); }
     .services-header span { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-grey); }
     .service-row { display: grid; grid-template-columns: 80px 1fr 1fr 1fr 200px; align-items: stretch; border-bottom: var(--rule); transition: background 0.15s; cursor: pointer; }
-    .service-row:hover { background: rgba(232,255,0,0.03); }
+    .service-row:hover { background: rgba(169,111,68,0.08); }
     .service-row:last-child { border-bottom: none; }
     .service-index { padding: 2.5rem 2rem; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--mid-grey); border-right: var(--rule); display: flex; align-items: center; }
     .service-img-cell { border-right: var(--rule); overflow: hidden; height: 220px; }

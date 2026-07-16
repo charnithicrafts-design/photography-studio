@@ -58,7 +58,7 @@
     .hero-insta svg { width: 14px; height: 14px; fill: currentColor; }
     .hero-scroll { position: absolute; bottom: 3.5rem; left: 3rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
     .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollAnim 2.5s ease-in-out infinite; }
-    .scroll-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,244,240,0.3); writing-mode: vertical-rl; transform: rotate(180deg); }
+    .scroll-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(28,25,23,0.3); writing-mode: vertical-rl; transform: rotate(180deg); }
     @keyframes scrollAnim { 0%,100% { opacity:1; transform:scaleY(1) translateY(0); } 50% { opacity:0.2; transform:scaleY(0.4) translateY(-10px); } }
 
     /* MANIFESTO */
@@ -74,8 +74,8 @@
     .thalam-ad { position: relative; height: 100vh; overflow: hidden; display: flex; align-items: flex-end; border-top: var(--border); }
     .thalam-ad-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; filter: brightness(0.35) contrast(1.15) saturate(0.7); transform: scale(1.03); transition: transform 10s ease, filter 0.6s ease; }
     .thalam-ad:hover .thalam-ad-bg { transform: scale(1.0); filter: brightness(0.5) contrast(1.1) saturate(0.85); }
-    .thalam-ad-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.15) 55%), linear-gradient(to right, rgba(8,8,8,0.6) 0%, transparent 60%); }
-    .thalam-ad-corner { position: absolute; top: 3rem; right: 3rem; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,244,240,0.3); text-align: right; }
+    .thalam-ad-overlay { display: none; }
+    .thalam-ad-corner { position: absolute; top: 3rem; right: 3rem; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(28,25,23,0.3); text-align: right; }
     .thalam-ad-content { position: relative; padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-end; width: 100%; }
     .thalam-ad-eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
@@ -119,7 +119,7 @@
     .service-num { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: block; }
     .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1.25rem; line-height: 1; }
     .service-desc { font-size: 0.9rem; line-height: 1.75; color: var(--warm-grey); margin-bottom: 2.5rem; }
-    .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 4px; transition: all 0.2s; }
+    .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; transition: all 0.2s; }
     .service-btn:hover { color: var(--accent); border-color: var(--accent); }
     .service-btn::after { content: '→'; transition: transform 0.2s; }
     .service-btn:hover::after { transform: translateX(4px); }
@@ -130,7 +130,7 @@
     .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); }
     .process-step:last-child { border-right: none; padding-left: 2.5rem; padding-right: 0; }
     .process-step:not(:first-child) { padding-left: 2.5rem; }
-    .step-num { font-weight: 900; font-size: 4rem; color: rgba(200,169,110,0.15); line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+    .step-num { font-weight: 900; font-size: 4rem; color: rgba(28,25,23,0.08); line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
     .step-title { font-weight: 700; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 1rem; }
     .step-desc { font-size: 0.88rem; line-height: 1.75; color: var(--warm-grey); }
 
