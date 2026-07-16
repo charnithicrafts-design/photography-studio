@@ -11,17 +11,17 @@ Version: 1.1.0
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap');
 
 :root {
-  /* Brutalist Core Variables */
-  --color-black: #050505;
-  --color-white: #fcfcfc;
-  --color-accent: #ff3300; /* Electric accent */
+  /* Brutalist Core Variables (Preset values resolved from theme.json) */
+  --color-black: var(--wp--preset--color--chitramaya-black, #080808);
+  --color-white: var(--wp--preset--color--chitramaya-white, #F5F4F0);
+  --color-accent: var(--wp--preset--color--chitramaya-accent, #FF3300); /* Electric accent */
   --border-stark: 1px solid var(--color-black);
   
   /* Typography - Chitramaya (The Brain) */
-  --font-primary: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-primary: var(--wp--preset--font-family--inter, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif);
   
   /* Typography - Thalam (The Functional Space) */
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
   
   --font-massive: 9vw;
   --font-huge: 5vw;

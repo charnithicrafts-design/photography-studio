@@ -28,6 +28,7 @@ files_to_upload = [
     ('chitramaya/template-talam.php', 'wp-content/themes/chitramaya/template-talam.php'),
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
+    ('chitramaya/theme.json', 'wp-content/themes/chitramaya/theme.json'),
     ('chitramaya/chitramaya-landing.html', 'wp-content/themes/chitramaya/chitramaya-landing.html'),
     ('chitramaya/thalam-landing.html', 'wp-content/themes/chitramaya/thalam-landing.html'),
     

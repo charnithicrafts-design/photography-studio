@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "custom": true,
+      "customGradient": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "color": "#080808",
+          "name": "Chitramaya Black",
+          "slug": "chitramaya-black"
+        },
+        {
+          "color": "#F5F4F0",
+          "name": "Chitramaya White",
+          "slug": "chitramaya-white"
+        },
+        {
+          "color": "#FF3300",
+          "name": "Chitramaya Accent (Electric Red)",
+          "slug": "chitramaya-accent"
+        },
+        {
+          "color": "#8E8D89",
+          "name": "Chitramaya Warm Grey",
+          "slug": "chitramaya-warm-grey"
+        },
+        {
+          "color": "#0A0A0A",
+          "name": "Thalam Black",
+          "slug": "thalam-black"
+        },
+        {
+          "color": "#F2F0EB",
+          "name": "Thalam White",
+          "slug": "thalam-white"
+        },
+        {
+          "color": "#E8FF00",
+          "name": "Thalam Accent (Neon Lime)",
+          "slug": "thalam-accent"
+        },
+        {
+          "color": "#888885",
+          "name": "Thalam Mid Grey",
+          "slug": "thalam-mid-grey"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "Inter",
+          "slug": "inter"
+        },
+        {
+          "fontFamily": "'IBM Plex Mono', monospace",
+          "name": "IBM Plex Mono",
+          "slug": "ibm-plex-mono"
+        },
+        {
+          "fontFamily": "'IBM Plex Sans', sans-serif",
+          "name": "IBM Plex Sans",
+          "slug": "ibm-plex-sans"
+        }
+      ]
+    }
+  }
+}

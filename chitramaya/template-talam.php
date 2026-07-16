@@ -21,9 +21,13 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --black: #0A0A0A; --white: #F2F0EB; --mid-grey: #888885;
+      --black: var(--wp--preset--color--thalam-black, #0A0A0A);
+      --white: var(--wp--preset--color--thalam-white, #F2F0EB);
+      --mid-grey: var(--wp--preset--color--thalam-mid-grey, #888885);
       --light-grey: #DDDBD7; --rule: 1px solid #222; --rule-light: 1px solid #333;
-      --accent: #E8FF00; --font-mono: 'IBM Plex Mono', monospace; --font-sans: 'IBM Plex Sans', sans-serif;
+      --accent: var(--wp--preset--color--thalam-accent, #E8FF00);
+      --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
+      --font-sans: var(--wp--preset--font-family--ibm-plex-sans, 'IBM Plex Sans', sans-serif);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: var(--font-mono); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
