@@ -9,23 +9,23 @@
       "defaultPalette": false,
       "palette": [
         {
-          "color": "#161412",
-          "name": "Chitramaya Obsidian",
-          "slug": "chitramaya-base-dark"
+          "color": "#FFFFFF",
+          "name": "Chitramaya Pure White",
+          "slug": "chitramaya-base-light"
         },
         {
-          "color": "#EBE6DF",
-          "name": "Chitramaya Cotton",
-          "slug": "chitramaya-text-light"
+          "color": "#1C1917",
+          "name": "Chitramaya Charcoal",
+          "slug": "chitramaya-text-dark"
         },
         {
-          "color": "#C55A39",
-          "name": "Chitramaya Rust",
+          "color": "#A96F44",
+          "name": "Chitramaya Camel",
           "slug": "chitramaya-accent-vibrant"
         },
         {
-          "color": "#7A7571",
-          "name": "Chitramaya Warm Grey",
+          "color": "#D6D3D1",
+          "name": "Chitramaya Stone",
           "slug": "chitramaya-muted"
         },
         {

@@ -53,8 +53,8 @@
     .btn-ghost { display: inline-flex; align-items: center; justify-content: space-between; border: var(--rule-light); color: var(--text-light); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: all 0.2s; }
     .btn-ghost:hover { border-color: var(--text-light); background: rgba(255,255,255,0.04); }
     .hero-right { position: relative; overflow: hidden; }
-    .hero-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%) brightness(0.7) contrast(1.15); transition: filter 0.5s ease; }
-    .hero-right:hover .hero-img { filter: grayscale(40%) brightness(0.8) contrast(1.1); }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .hero-right:hover .hero-img { transform: scale(1.02); }
     .hero-img-caption { position: absolute; bottom: 2rem; right: 2rem; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 
     .status-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: var(--rule); }
@@ -74,8 +74,8 @@
     .service-row:last-child { border-bottom: none; }
     .service-index { padding: 2.5rem 2rem; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--mid-grey); border-right: var(--rule); display: flex; align-items: center; }
     .service-img-cell { border-right: var(--rule); overflow: hidden; height: 220px; }
-    .service-img-cell img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.6) contrast(1.2); transition: filter 0.4s ease, transform 0.5s ease; }
-    .service-row:hover .service-img-cell img { filter: grayscale(60%) brightness(0.75) contrast(1.1); transform: scale(1.05); }
+    .service-img-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .service-row:hover .service-img-cell img { transform: scale(1.05); }
     .service-info { padding: 2.5rem 2rem; border-right: var(--rule); display: flex; flex-direction: column; justify-content: space-between; }
     .service-name { font-weight: 700; font-size: 1.5rem; letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
     .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -108,8 +108,8 @@
     .gallery-strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 300px; border-bottom: var(--rule); }
     .gallery-strip-item { overflow: hidden; border-right: var(--rule); }
     .gallery-strip-item:last-child { border-right: none; }
-    .gallery-strip-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.55) contrast(1.3); transition: filter 0.4s ease, transform 0.5s ease; }
-    .gallery-strip-item:hover img { filter: grayscale(20%) brightness(0.8) contrast(1.1); transform: scale(1.08); }
+    .gallery-strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gallery-strip-item:hover img { transform: scale(1.08); }
 
     .booking { display: grid; grid-template-columns: 1fr 1fr; border-bottom: var(--rule); }
     .booking-left { padding: 5rem 3rem; border-right: var(--rule); }
