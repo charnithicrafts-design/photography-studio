@@ -25,7 +25,7 @@
       --text-light: var(--wp--preset--color--thalam-text-light, #F4F7F6);
       --mid-grey: var(--wp--preset--color--thalam-muted, #4A5568);
       --light-grey: #2D3748; --rule: 1px solid rgba(244,247,246,0.1); --rule-light: 1px solid rgba(244,247,246,0.05);
-      --accent: var(--wp--preset--color--thalam-accent-bold, #D4FF00);
+      --accent: var(--wp--preset--color--thalam-accent-bold, #A96F44);
       --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
       --font-sans: var(--wp--preset--font-family--ibm-plex-sans, 'IBM Plex Sans', sans-serif);
     }
