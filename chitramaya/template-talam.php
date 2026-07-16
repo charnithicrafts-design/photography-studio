@@ -21,7 +21,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg-light: var(--wp--preset--color--thalam-base-light, #FCF9F2);
+      --bg-light: var(--wp--preset--color--thalam-base-light, #E3DAC9);
       --text-dark: var(--wp--preset--color--thalam-text-dark, #1C1917);
       --mid-grey: var(--wp--preset--color--thalam-muted, #D6D3D1);
       --light-grey: #EAE6DF; --rule: 1px solid rgba(28,25,23,0.12); --rule-light: 1px solid rgba(28,25,23,0.06);
@@ -181,8 +181,8 @@
     </div>
     <div class="hero-right">
       <img class="hero-img"
-        src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1600&q=90&auto=format&fit=crop"
-        alt="Wide-angle view of a professional photography studio workspace with white seamless backdrop and camera — Thalam Studio.">
+        src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=1600&q=90&auto=format&fit=crop"
+        alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio.">
       <div class="hero-img-caption">Thalam Studio · </div>
     </div>
   </section>
