@@ -9,44 +9,44 @@
       "defaultPalette": false,
       "palette": [
         {
-          "color": "#080808",
-          "name": "Chitramaya Black",
-          "slug": "chitramaya-black"
+          "color": "#0A1128",
+          "name": "Chitramaya Deep Indigo",
+          "slug": "chitramaya-base-dark"
         },
         {
-          "color": "#F5F4F0",
-          "name": "Chitramaya White",
-          "slug": "chitramaya-white"
+          "color": "#FDFBF7",
+          "name": "Chitramaya Soft Cream",
+          "slug": "chitramaya-text-light"
         },
         {
-          "color": "#FF3300",
-          "name": "Chitramaya Accent (Electric Red)",
-          "slug": "chitramaya-accent"
+          "color": "#FF6B6B",
+          "name": "Chitramaya Vibrant Coral",
+          "slug": "chitramaya-accent-vibrant"
         },
         {
-          "color": "#8E8D89",
-          "name": "Chitramaya Warm Grey",
-          "slug": "chitramaya-warm-grey"
+          "color": "#5C668A",
+          "name": "Chitramaya Muted Slate",
+          "slug": "chitramaya-muted"
         },
         {
-          "color": "#0A0A0A",
-          "name": "Thalam Black",
-          "slug": "thalam-black"
+          "color": "#F4F1EA",
+          "name": "Thalam Parchment",
+          "slug": "thalam-bg-light"
         },
         {
-          "color": "#F2F0EB",
-          "name": "Thalam White",
-          "slug": "thalam-white"
+          "color": "#0A369D",
+          "name": "Thalam Cobalt Blue",
+          "slug": "thalam-grid-dark"
         },
         {
-          "color": "#E8FF00",
-          "name": "Thalam Accent (Neon Lime)",
-          "slug": "thalam-accent"
+          "color": "#FF5722",
+          "name": "Thalam Safety Orange",
+          "slug": "thalam-accent-bold"
         },
         {
-          "color": "#888885",
-          "name": "Thalam Mid Grey",
-          "slug": "thalam-mid-grey"
+          "color": "#8892B0",
+          "name": "Thalam Muted Slate",
+          "slug": "thalam-muted"
         }
       ]
     },
