@@ -39,6 +39,7 @@
     nav { position: sticky; top: 0; z-index: 100; background: var(--bg-light); border-bottom: var(--rule); display: flex; justify-content: space-between; align-items: center; padding: 0 1.25rem; height: 60px; }
     .nav-meta { display: none; }
     .nav-logo { font-family: var(--font-sans); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); }
+    .nav-book { text-align: right; }
     .nav-book a { display: inline-block; background: var(--accent); color: var(--bg-light); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 1rem; border-radius: 50px; transition: background 0.2s; }
 
     .hero { position: relative; min-height: calc(100vh - 60px); display: flex; flex-direction: column; background: #1c1917; overflow: hidden; border-bottom: none; padding: 0; }
@@ -222,7 +223,7 @@
   </div>
 
   <nav>
-    <div class="nav-meta"><?php echo home_url('/thalam-studio'); ?></div>
+    <div class="nav-meta"></div>
     <a href="<?php echo home_url('/thalam-studio'); ?>" class="nav-logo">Thalam Studio</a>
     <div class="nav-book"><a href="#booking">Book a Session ↓</a></div>
   </nav>
@@ -367,8 +368,8 @@
   <div class="gallery-strip">
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?w=800&q=90&auto=format&fit=crop" alt="Woman in white hijab in grayscale — Thalam Studio fine-art portraiture."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1776090188315-c481a5753867?w=800&q=90&auto=format&fit=crop" alt="Vast empty industrial warehouse with overhead lighting — Thalam Studio industrial photography."></div>
-    <div class="gallery-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/wedding-staircase.jpg" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
-    <div class="gallery-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/maternity-newborn.jpg" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
+    <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/wedding-staircase.jpg'); ?>" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
+    <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/maternity-newborn.jpg'); ?>" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
   </div>
 
