@@ -42,7 +42,7 @@
     /* HERO */
     .hero { position: relative; min-height: 100vh; width: 100%; overflow: hidden; display: flex; flex-direction: column; background: var(--bg-light); }
     .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle at 2px 2px, var(--text-dark) 1px, transparent 0); background-size: 32px 32px; pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; padding: 3rem 1.5rem 4rem; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
+    .hero-content { position: relative; z-index: 2; padding: clamp(6rem, 12vh, 8rem) 1.5rem 4rem; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
     .hero-headline { font-family: var(--font-serif); font-size: clamp(2.2rem, 8vw, 3.5rem); line-height: 1.05; font-weight: 400; color: var(--text-dark); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
     .hero-subline { font-family: var(--font-sans); font-size: 0.9rem; line-height: 1.5; color: var(--warm-grey); max-width: 480px; margin-bottom: 2rem; }
     .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -50,7 +50,7 @@
     .btn-pill-dark:hover { background: transparent; color: var(--text-dark); }
     .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid rgba(28,25,23,0.2); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.3s ease; }
     .btn-pill-light:hover { border-color: var(--text-dark); }
-    .hero-right { position: relative; height: 55vh; width: 100%; overflow: hidden; order: -1; }
+    .hero-right { position: relative; height: max(400px, 50vh); min-height: 400px; width: 100%; overflow: hidden; order: -1; flex-shrink: 0; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
     /* MANIFESTO */
@@ -143,15 +143,7 @@
       .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--text-dark); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; border-radius: 50px; }
       .nav-thalam-pill:hover { background: var(--accent) !important; transform: translateY(-1px); }
 
-      .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
-      .hero-content { padding: 4rem 3rem 4rem 8vw; }
-      .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); margin-bottom: 1.5rem; }
-      .hero-subline { font-size: 1rem; margin-bottom: 2.5rem; }
-      .hero-ctas { flex-direction: row; }
-      .btn-pill-dark, .btn-pill-light { padding: 1rem 2rem; font-size: 0.9rem; }
-      .hero-right { height: 100vh; order: 0; }
-      .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-light) 0%, transparent 20%); z-index: 1; pointer-events: none; }
-
+      
       .manifesto { padding: 8rem 3rem; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
       .manifesto-label { font-size: 0.72rem; margin-bottom: 2rem; }
       .manifesto-text { font-size: clamp(1.8rem, 4vw, 3.2rem); }
@@ -235,6 +227,20 @@
       .whatsapp-fab span { display: inline; }
       .whatsapp-fab:hover { transform: scale(1.07) translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
     }
+  
+    /* ULTRA-FLUID DESKTOP HERO (Requires wide AND tall enough screens) */
+    @media (min-width: 992px) and (min-height: 600px) {
+      .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 100vh; flex-direction: row; }
+      .hero-content { padding: calc(80px + 4rem) 3rem 4rem 8vw; justify-content: center; }
+      .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); margin-bottom: 1.5rem; }
+      .hero-subline { font-size: 1rem; margin-bottom: 2.5rem; }
+      .hero-ctas { flex-direction: row; }
+      .btn-pill-dark, .btn-pill-light { padding: 1rem 2rem; font-size: 0.9rem; }
+      .hero-right { height: auto; min-height: 100vh; order: 0; }
+      .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-light) 0%, transparent 20%); z-index: 1; pointer-events: none; }
+      .hero-img { height: 100%; width: 100%; object-fit: cover; }
+    }
+    
   </style>
 </head>
 <body>
