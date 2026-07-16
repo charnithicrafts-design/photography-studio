@@ -365,11 +365,11 @@
   </section>
 
   <div class="gallery-strip">
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=90&auto=format&fit=crop" alt="Intimate, emotional fine-art portrait — Thalam Studio editorial photography."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800&q=90&auto=format&fit=crop" alt="Cinematic wedding photography capturing raw emotion — Thalam Studio weddings."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=800&q=90&auto=format&fit=crop" alt="Dynamic, expressive commercial movement — Thalam Studio ad campaigns."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop" alt="Moody, evocative visual storytelling — Thalam Studio fine-art production."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=90&auto=format&fit=crop" alt="Striking silhouette and cinematic light — Thalam Studio creative precision."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?w=800&q=90&auto=format&fit=crop" alt="Woman in white hijab in grayscale — Thalam Studio fine-art portraiture."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1776090188315-c481a5753867?w=800&q=90&auto=format&fit=crop" alt="Vast empty industrial warehouse with overhead lighting — Thalam Studio industrial photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1675851210855-e7727076e829?w=800&q=90&auto=format&fit=crop" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1679398793606-ee25e2eb5caf?w=800&q=90&auto=format&fit=crop" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
   </div>
 
   <section class="trust" id="trust">
