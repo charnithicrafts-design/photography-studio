@@ -41,11 +41,11 @@
     .nav-logo { font-family: var(--font-sans); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); }
     .nav-book a { display: inline-block; background: var(--accent); color: var(--bg-light); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 1rem; border-radius: 50px; transition: background 0.2s; }
 
-    .hero { position: relative; min-height: calc(100vh - 60px); display: flex; align-items: flex-end; padding: 2rem 1.25rem 3rem; background: #1c1917; overflow: hidden; border-bottom: none; }
-    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 10s ease; }
+    .hero { position: relative; min-height: calc(100vh - 60px); display: flex; flex-direction: column; background: #1c1917; overflow: hidden; border-bottom: none; padding: 0; }
+    .hero-img { position: relative; width: 100%; height: 50vh; object-fit: cover; z-index: 1; transition: transform 10s ease; order: -1; }
     .hero:hover .hero-img { transform: scale(1.05); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,25,23,0.95) 0%, rgba(28,25,23,0.6) 45%, transparent 70%); z-index: 2; pointer-events: none; }
-    .hero-content { position: relative; z-index: 3; width: 100%; display: flex; flex-direction: column; }
+    .hero-overlay { display: none; }
+    .hero-content { position: relative; z-index: 3; width: 100%; display: flex; flex-direction: column; padding: 3rem 1.5rem 4rem; justify-content: center; flex-grow: 1; }
     .hero-tag { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
     .hero-headline { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.05; letter-spacing: -0.02em; color: #ffffff; }
     .hero-headline .accent-word { font-style: italic; color: var(--accent); }
@@ -137,8 +137,9 @@
       .nav-book a { padding: 0.6rem 1.4rem; font-size: 0.72rem; }
       .nav-book a:hover, .btn-pill-dark:hover { background: var(--accent); color: var(--bg-light); border-color: var(--accent); }
 
-      .hero { padding: 0; align-items: center; }
-      .hero-overlay { background: linear-gradient(to right, rgba(28,25,23,0.9) 0%, rgba(28,25,23,0.4) 50%, transparent 100%); }
+      .hero { align-items: center; justify-content: flex-start; }
+      .hero-img { position: absolute; inset: 0; height: 100%; order: 0; }
+      .hero-overlay { display: block; position: absolute; inset: 0; background: linear-gradient(to right, rgba(28,25,23,0.9) 0%, rgba(28,25,23,0.4) 50%, transparent 100%); z-index: 2; pointer-events: none; }
       .hero-content { padding: 4rem 3rem 4rem 8vw; max-width: 800px; }
       .hero-headline { font-size: clamp(2.5rem, 4.5vw, 4rem); margin-bottom: 1.5rem; }
       .hero-body { margin-top: 0; }
