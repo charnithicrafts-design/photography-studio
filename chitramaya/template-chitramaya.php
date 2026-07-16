@@ -40,17 +40,17 @@
     .nav-thalam-pill { display: none; }
 
     /* HERO */
-    .hero { position: relative; min-height: 100vh; width: 100%; overflow: hidden; display: grid; grid-template-columns: 1fr; background: var(--bg-light); }
+    .hero { position: relative; min-height: 100vh; width: 100%; overflow: hidden; display: flex; flex-direction: column; background: var(--bg-light); }
     .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle at 2px 2px, var(--text-dark) 1px, transparent 0); background-size: 32px 32px; pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; padding: 7rem 1.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
-    .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 10vw, 5rem); line-height: 1.05; font-weight: 400; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-    .hero-subline { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: var(--warm-grey); max-width: 480px; margin-bottom: 2.5rem; }
-    .hero-ctas { display: flex; flex-direction: column; gap: 1rem; }
-    .btn-pill-dark { display: inline-flex; align-items: center; justify-content: center; background: var(--text-dark); color: var(--bg-light); border: 1px solid var(--text-dark); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .hero-content { position: relative; z-index: 2; padding: 3rem 1.5rem 4rem; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
+    .hero-headline { font-family: var(--font-serif); font-size: clamp(2.2rem, 8vw, 3.5rem); line-height: 1.05; font-weight: 400; color: var(--text-dark); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+    .hero-subline { font-family: var(--font-sans); font-size: 0.9rem; line-height: 1.5; color: var(--warm-grey); max-width: 480px; margin-bottom: 2rem; }
+    .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-pill-dark { display: inline-flex; align-items: center; justify-content: center; background: var(--text-dark); color: var(--bg-light); border: 1px solid var(--text-dark); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.3s ease; }
     .btn-pill-dark:hover { background: transparent; color: var(--text-dark); }
-    .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid rgba(28,25,23,0.2); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
+    .btn-pill-light { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid rgba(28,25,23,0.2); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: all 0.3s ease; }
     .btn-pill-light:hover { border-color: var(--text-dark); }
-    .hero-right { position: relative; height: 50vh; width: 100%; overflow: hidden; }
+    .hero-right { position: relative; height: 55vh; width: 100%; overflow: hidden; order: -1; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
     /* MANIFESTO */
@@ -143,11 +143,13 @@
       .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--text-dark); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; border-radius: 50px; }
       .nav-thalam-pill:hover { background: var(--accent) !important; transform: translateY(-1px); }
 
-      .hero { grid-template-columns: 1fr 1fr; align-items: center; }
+      .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
       .hero-content { padding: 4rem 3rem 4rem 8vw; }
-      .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); }
+      .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); margin-bottom: 1.5rem; }
+      .hero-subline { font-size: 1rem; margin-bottom: 2.5rem; }
       .hero-ctas { flex-direction: row; }
-      .hero-right { height: 100vh; }
+      .btn-pill-dark, .btn-pill-light { padding: 1rem 2rem; font-size: 0.9rem; }
+      .hero-right { height: 100vh; order: 0; }
       .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-light) 0%, transparent 20%); z-index: 1; pointer-events: none; }
 
       .manifesto { padding: 8rem 3rem; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
