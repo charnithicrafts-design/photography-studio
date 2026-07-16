@@ -9,43 +9,43 @@
       "defaultPalette": false,
       "palette": [
         {
-          "color": "#0A1128",
-          "name": "Chitramaya Deep Indigo",
+          "color": "#161412",
+          "name": "Chitramaya Obsidian",
           "slug": "chitramaya-base-dark"
         },
         {
-          "color": "#FDFBF7",
-          "name": "Chitramaya Soft Cream",
+          "color": "#EBE6DF",
+          "name": "Chitramaya Cotton",
           "slug": "chitramaya-text-light"
         },
         {
-          "color": "#FF6B6B",
-          "name": "Chitramaya Vibrant Coral",
+          "color": "#C55A39",
+          "name": "Chitramaya Rust",
           "slug": "chitramaya-accent-vibrant"
         },
         {
-          "color": "#5C668A",
-          "name": "Chitramaya Muted Slate",
+          "color": "#7A7571",
+          "name": "Chitramaya Warm Grey",
           "slug": "chitramaya-muted"
         },
         {
-          "color": "#F4F1EA",
-          "name": "Thalam Parchment",
-          "slug": "thalam-bg-light"
+          "color": "#11161A",
+          "name": "Thalam Gunmetal",
+          "slug": "thalam-base-dark"
         },
         {
-          "color": "#0A369D",
-          "name": "Thalam Cobalt Blue",
-          "slug": "thalam-grid-dark"
+          "color": "#F4F7F6",
+          "name": "Thalam Stark White",
+          "slug": "thalam-text-light"
         },
         {
-          "color": "#FF5722",
-          "name": "Thalam Safety Orange",
+          "color": "#D4FF00",
+          "name": "Thalam Volt",
           "slug": "thalam-accent-bold"
         },
         {
-          "color": "#8892B0",
-          "name": "Thalam Muted Slate",
+          "color": "#4A5568",
+          "name": "Thalam Steel Grey",
           "slug": "thalam-muted"
         }
       ]
