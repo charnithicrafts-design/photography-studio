@@ -21,24 +21,24 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg-dark: var(--wp--preset--color--thalam-base-dark, #11161A);
-      --text-light: var(--wp--preset--color--thalam-text-light, #F4F7F6);
-      --mid-grey: var(--wp--preset--color--thalam-muted, #4A5568);
-      --light-grey: #2D3748; --rule: 1px solid rgba(244,247,246,0.1); --rule-light: 1px solid rgba(244,247,246,0.05);
+      --bg-light: var(--wp--preset--color--thalam-base-light, #FCF9F2);
+      --text-dark: var(--wp--preset--color--thalam-text-dark, #1C1917);
+      --mid-grey: var(--wp--preset--color--thalam-muted, #D6D3D1);
+      --light-grey: #EAE6DF; --rule: 1px solid rgba(28,25,23,0.12); --rule-light: 1px solid rgba(28,25,23,0.06);
       --accent: var(--wp--preset--color--thalam-accent-bold, #A96F44);
       --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
       --font-sans: var(--wp--preset--font-family--ibm-plex-sans, 'IBM Plex Sans', sans-serif);
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg-dark); color: var(--text-light); font-family: var(--font-mono); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body { background: var(--bg-light); color: var(--text-dark); font-family: var(--font-mono); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    .system-bar { background: var(--accent); color: var(--bg-dark); padding: 0.5rem 2rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; display: flex; justify-content: space-between; font-weight: 700; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-dark); border-bottom: var(--rule); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 2rem; height: 60px; }
+    .system-bar { background: var(--accent); color: var(--bg-light); padding: 0.5rem 2rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; display: flex; justify-content: space-between; font-weight: 700; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-light); border-bottom: var(--rule); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 2rem; height: 60px; }
     .nav-meta { font-size: 0.68rem; letter-spacing: 0.14em; color: var(--mid-grey); text-transform: uppercase; }
-    .nav-logo { text-align: center; font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text-light); }
+    .nav-logo { text-align: center; font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); }
     .nav-book { text-align: right; }
-    .nav-book a { display: inline-block; background: var(--accent); color: var(--bg-dark); font-family: var(--font-mono); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.6rem 1.4rem; transition: background 0.2s; }
-    .nav-book a:hover { background: var(--text-light); }
+    .nav-book a { display: inline-block; background: var(--accent); color: var(--bg-light); font-family: var(--font-mono); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.6rem 1.4rem; transition: background 0.2s; }
+    .nav-book a:hover { background: var(--text-dark); }
 
     .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 80px); border-bottom: var(--rule); }
     .hero-left { padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: space-between; border-right: var(--rule); }
@@ -48,10 +48,10 @@
     .hero-body { margin-top: 3rem; }
     .hero-body p { font-size: 0.9rem; line-height: 1.8; color: var(--mid-grey); max-width: 420px; margin-bottom: 2.5rem; }
     .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; }
-    .btn-primary { display: inline-flex; align-items: center; justify-content: space-between; background: var(--accent); color: var(--bg-dark); font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--text-light); }
-    .btn-ghost { display: inline-flex; align-items: center; justify-content: space-between; border: var(--rule-light); color: var(--text-light); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: all 0.2s; }
-    .btn-ghost:hover { border-color: var(--text-light); background: rgba(255,255,255,0.04); }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: space-between; background: var(--accent); color: var(--bg-light); font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--text-dark); }
+    .btn-ghost { display: inline-flex; align-items: center; justify-content: space-between; border: var(--rule-light); color: var(--text-dark); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 1.75rem; transition: all 0.2s; }
+    .btn-ghost:hover { border-color: var(--text-dark); background: rgba(255,255,255,0.04); }
     .hero-right { position: relative; overflow: hidden; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .hero-right:hover .hero-img { transform: scale(1.02); }
@@ -63,7 +63,7 @@
     .status-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
     @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
     .status-text { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); }
-    .status-text strong { color: var(--text-light); }
+    .status-text strong { color: var(--text-dark); }
 
     .services { border-bottom: var(--rule); }
     .services-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-bottom: var(--rule); }
@@ -86,9 +86,9 @@
     .spec-list li::before { content: '+'; position: absolute; left: 0; color: var(--accent); }
     .service-action { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: space-between; }
     .service-price { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 0.3rem; }
-    .service-price-val { font-weight: 700; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--text-light); }
-    .service-cta { display: flex; align-items: center; justify-content: space-between; background: transparent; border: var(--rule-light); color: var(--text-light); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 1rem; transition: all 0.2s; }
-    .service-cta:hover { background: var(--accent); color: var(--bg-dark); border-color: var(--accent); }
+    .service-price-val { font-weight: 700; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--text-dark); }
+    .service-cta { display: flex; align-items: center; justify-content: space-between; background: transparent; border: var(--rule-light); color: var(--text-dark); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 1rem; transition: all 0.2s; }
+    .service-cta:hover { background: var(--accent); color: var(--bg-light); border-color: var(--accent); }
 
     .trust { display: grid; grid-template-columns: 1fr 1fr; border-bottom: var(--rule); }
     .trust-left { padding: 4rem 3rem; border-right: var(--rule); }
@@ -101,7 +101,7 @@
     .kpi-item { padding: 3rem 2.5rem; border-right: var(--rule); border-bottom: var(--rule); }
     .kpi-item:nth-child(2n) { border-right: none; }
     .kpi-item:nth-child(3), .kpi-item:nth-child(4) { border-bottom: none; }
-    .kpi-val { font-weight: 700; font-size: 3rem; letter-spacing: -0.06em; line-height: 1; color: var(--text-light); }
+    .kpi-val { font-weight: 700; font-size: 3rem; letter-spacing: -0.06em; line-height: 1; color: var(--text-dark); }
     .kpi-val span { color: var(--accent); }
     .kpi-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); margin-top: 0.75rem; }
 
@@ -119,19 +119,19 @@
     .booking-right { padding: 5rem 3rem; }
     .form-field { margin-bottom: 1.5rem; }
     .form-label { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 0.5rem; }
-    .form-input, .form-select { width: 100%; background: transparent; border: none; border-bottom: var(--rule-light); color: var(--text-light); font-family: var(--font-mono); font-size: 0.9rem; padding: 0.75rem 0; outline: none; transition: border-color 0.2s; appearance: none; }
+    .form-input, .form-select { width: 100%; background: transparent; border: none; border-bottom: var(--rule-light); color: var(--text-dark); font-family: var(--font-mono); font-size: 0.9rem; padding: 0.75rem 0; outline: none; transition: border-color 0.2s; appearance: none; }
     .form-input:focus, .form-select:focus { border-color: var(--accent); }
-    .form-select option { background: #111; color: var(--text-light); }
+    .form-select option { background: #111; color: var(--text-dark); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .form-submit { margin-top: 2.5rem; display: flex; align-items: center; justify-content: space-between; width: 100%; background: var(--accent); color: var(--bg-dark); border: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.25rem 2rem; cursor: pointer; transition: background 0.2s; }
-    .form-submit:hover { background: var(--text-light); }
+    .form-submit { margin-top: 2.5rem; display: flex; align-items: center; justify-content: space-between; width: 100%; background: var(--accent); color: var(--bg-light); border: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.25rem 2rem; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--text-dark); }
 
     footer { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: var(--rule); }
     .footer-col { padding: 3rem 2rem; border-right: var(--rule); }
     .footer-col:last-child { border-right: none; }
     .footer-col-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 1.5rem; }
     .footer-col p, .footer-col a { display: block; font-size: 0.8rem; line-height: 2; color: var(--mid-grey); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--text-light); }
+    .footer-col a:hover { color: var(--text-dark); }
     .footer-bottom { border-top: var(--rule); padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     .footer-bottom p { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); }
     .footer-chitramaya-link { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--accent); }
@@ -181,8 +181,8 @@
     </div>
     <div class="hero-right">
       <img class="hero-img"
-        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=90&auto=format&fit=crop"
-        alt="Wide-angle view of a professional photography studio workspace with multiple light setups — Thalam Studio, .">
+        src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1600&q=90&auto=format&fit=crop"
+        alt="Wide-angle view of a professional photography studio workspace with white seamless backdrop and camera — Thalam Studio.">
       <div class="hero-img-caption">Thalam Studio · </div>
     </div>
   </section>
@@ -376,7 +376,7 @@
     </div>
     <div class="footer-col" style="border-right:none;">
       <div class="footer-col-label">Part of</div>
-      <a href="<?php echo home_url('/'); ?>" style="color:var(--text-light);font-weight:700;">Chitramaya Creatives ↗</a>
+      <a href="<?php echo home_url('/'); ?>" style="color:var(--text-dark);font-weight:700;">Chitramaya Creatives ↗</a>
       <p style="margin-top:0.5rem;">The portfolio &amp; editorial brand behind Thalam Studio.</p>
     </div>
   </footer>

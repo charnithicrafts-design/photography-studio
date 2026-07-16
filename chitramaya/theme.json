@@ -29,14 +29,14 @@
           "slug": "chitramaya-muted"
         },
         {
-          "color": "#11161A",
-          "name": "Thalam Gunmetal",
-          "slug": "thalam-base-dark"
+          "color": "#FCF9F2",
+          "name": "Thalam Studio Light",
+          "slug": "thalam-base-light"
         },
         {
-          "color": "#F4F7F6",
-          "name": "Thalam Stark White",
-          "slug": "thalam-text-light"
+          "color": "#1C1917",
+          "name": "Thalam Charcoal",
+          "slug": "thalam-text-dark"
         },
         {
           "color": "#A96F44",
@@ -44,8 +44,8 @@
           "slug": "thalam-accent-bold"
         },
         {
-          "color": "#4A5568",
-          "name": "Thalam Steel Grey",
+          "color": "#D6D3D1",
+          "name": "Thalam Stone",
           "slug": "thalam-muted"
         }
       ]
