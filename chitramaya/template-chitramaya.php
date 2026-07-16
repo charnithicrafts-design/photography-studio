@@ -258,8 +258,8 @@
   <section class="hero" id="hero">
     <div class="hero-bg-pattern"></div>
     <div class="hero-content">
-      <h1 class="hero-headline">Every photograph is a physical argument that the world is worth feeling.</h1>
-      <p class="hero-subline">Chitramaya is a premier fine-art production hub engineering visual storytelling that makes your brand feel truly alive.</p>
+      <h1 class="hero-headline">A fine-art production hub crafting visual stories that make your brand feel alive.</h1>
+      <p class="hero-subline">From high-end commercial campaigns to timeless portraiture and baby photography, Chitramaya engineers imagery that your audience does not just look at—they experience.</p>
       <div class="hero-ctas">
         <a href="#work" class="btn-pill-dark">View Selected Work</a>
         <a href="#thalam" class="btn-pill-light">Explore Thalam Studio ↗</a>
