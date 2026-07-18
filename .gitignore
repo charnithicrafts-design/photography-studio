@@ -1,1 +1,13 @@
 .ftp-secret
+wp-admin/
+wp-includes/
+wp-content/
+wp-*.php
+index.php
+license.txt
+readme.html
+xmlrpc.php
+chitramaya-landing.html
+thalam-landing.html
+import-db.php
+unzip.php
