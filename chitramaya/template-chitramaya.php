@@ -53,90 +53,9 @@
     .hero-right { position: relative; height: max(400px, 50vh); min-height: 400px; width: 100%; overflow: hidden; order: -1; flex-shrink: 0; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* MANIFESTO */
-    .manifesto { padding: 5rem 1.5rem; display: grid; grid-template-columns: 1fr; gap: 3rem; border-top: var(--border); }
-    .manifesto-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .manifesto-text { font-family: var(--font-serif); font-size: clamp(1.8rem, 8vw, 3.2rem); line-height: 1.25; }
-    .manifesto-body { font-size: 0.95rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 2rem; }
-    .manifesto-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 1rem; border-top: var(--border); padding-top: 2rem; }
-    .stat-num { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
-    .stat-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); margin-top: 0.25rem; }
-
-    /* THALAM AD */
-    .thalam-ad { position: relative; height: auto; display: flex; flex-direction: column; border-top: var(--border); background: #1c1917; }
-    .thalam-ad-bg { display: none; }
-    .thalam-ad-corner { display: none; }
-    .thalam-ad-content { position: relative; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr; gap: 2rem; width: 100%; }
-    .thalam-ad-eyebrow { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
-    .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent); }
-    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2.5rem, 10vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: var(--bg-light); }
-    .thalam-ad-headline em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 0.65em; letter-spacing: 0; }
-    .thalam-ad-right { display: flex; flex-direction: column; gap: 2rem; }
-    .thalam-ad-services { display: grid; grid-template-columns: 1fr; gap: 0; border: var(--border); border-color: rgba(255,255,255,0.1); }
-    .thalam-service-chip { padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .thalam-service-chip:last-child { border-bottom: none; }
-    .thalam-service-chip-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-    .thalam-service-chip-title { font-weight: 700; font-size: 0.9rem; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg-light); }
-    .thalam-ad-cta { display: inline-flex; align-items: center; justify-content: space-between; background: var(--accent); color: var(--bg-light); text-decoration: none; padding: 1.25rem 1.5rem; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    /* TACTILE GRID */
-    .tactile-section { padding: 5rem 1.5rem; }
-    .section-header { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: var(--border); }
-    .section-title { font-weight: 900; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
-    .section-link { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
-    .tactile-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .tactile-item { position: relative; overflow: hidden; height: 350px; }
-    .tactile-img { width: 100%; height: 100%; object-fit: cover; }
-    .tactile-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1.5rem 1rem; background: linear-gradient(to top, rgba(8,8,8,0.9), transparent); }
-    .tactile-caption h3 { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; margin-bottom: 0.4rem; color: #fff; }
-    .tactile-caption p { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
-    .tactile-cta { display: inline-block; margin-top: 0.8rem; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
-
-    /* SERVICES */
-    .services { border-top: var(--border); border-bottom: var(--border); display: grid; grid-template-columns: 1fr; }
-    .service-item { padding: 3rem 1.5rem; border-bottom: var(--border); }
-    .service-item:last-child { border-bottom: none; }
-    .service-num { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
-    .service-title { font-weight: 900; font-size: 1.5rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1rem; line-height: 1; }
-    .service-desc { font-size: 0.85rem; line-height: 1.6; color: var(--warm-grey); margin-bottom: 2rem; }
-    .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; }
-
-    /* PROCESS */
-    .process { padding: 5rem 1.5rem; }
-    .process-steps { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; border-top: var(--border); padding-top: 3rem; }
-    .process-step { border: none; padding: 0; }
-    .step-num { font-weight: 900; font-size: 3rem; color: rgba(28,25,23,0.08); line-height: 1; margin-bottom: 1rem; letter-spacing: -0.04em; }
-    .step-title { font-weight: 700; font-size: 1rem; text-transform: uppercase; margin-bottom: 0.75rem; }
-    .step-desc { font-size: 0.85rem; line-height: 1.6; color: var(--warm-grey); }
-
-    /* TESTIMONIAL */
-    .testimonial { padding: 5rem 1.5rem; border-top: var(--border); display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .testimonial-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
-    .testimonial-quote { font-family: var(--font-serif); font-size: clamp(1.4rem, 6vw, 2.4rem); line-height: 1.4; font-style: italic; }
-    .testimonial-author { margin-top: 1.5rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-grey); }
-
-    /* CTA BANNER */
-    .cta-banner { position: relative; padding: 6rem 1.5rem; display: flex; flex-direction: column; gap: 2rem; align-items: center; text-align: center; background: #1c1917; }
-    .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
-    .cta-banner-content { position: relative; }
-    .cta-banner-title { font-weight: 900; font-size: clamp(2.5rem, 10vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; color: #fff; }
-    .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
-    .cta-banner-btn { position: relative; display: inline-block; background: var(--accent); color: #fff; padding: 1.25rem 2.5rem; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
-
-    /* FOOTER */
-    footer { padding: 3rem 1.5rem; border-top: var(--border); display: flex; flex-direction: column; gap: 2rem; align-items: center; text-align: center; }
-    footer p { font-size: 0.7rem; color: var(--warm-grey); letter-spacing: 0.1em; }
-    .footer-thalam { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    .footer-thalam span { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm-grey); }
-    .footer-thalam a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
-
-    /* WHATSAPP */
-    .whatsapp-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; display: flex; align-items: center; justify-content: center; background: #25D366; color: #fff; text-decoration: none; padding: 0.9rem; border-radius: 50%; box-shadow: 0 4px 24px rgba(37,211,102,0.35); }
-    .whatsapp-fab span { display: none; }
-    .whatsapp-fab svg { width: 22px; height: 22px; fill: #fff; }
-
-    /* PROGRESSIVE ENHANCEMENT (TABLET & DESKTOP) */
+    
     @media (min-width: 768px) {
+      
       nav { padding: 1.5rem 3rem; background: transparent; }
       .nav-links { gap: 2.5rem; align-items: center; }
       .nav-links a { font-size: 0.72rem; }
@@ -144,92 +63,10 @@
       .nav-thalam-pill:hover { background: var(--accent) !important; transform: translateY(-1px); }
 
       
-      .manifesto { padding: 8rem 3rem; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-      .manifesto-label { font-size: 0.72rem; margin-bottom: 2rem; }
-      .manifesto-text { font-size: clamp(1.8rem, 4vw, 3.2rem); }
-      .manifesto-body { font-size: 1rem; margin-bottom: 3rem; }
-      .manifesto-stats { gap: 2rem; padding-top: 2.5rem; }
-      .stat-num { font-size: 2.5rem; }
-      .stat-label { font-size: 0.78rem; }
-
-      .thalam-ad { height: 100vh; justify-content: flex-end; background: transparent; }
-      .thalam-ad-bg { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; filter: brightness(0.35) contrast(1.15) saturate(0.7); transform: scale(1.03); transition: transform 10s ease, filter 0.6s ease; }
-      .thalam-ad:hover .thalam-ad-bg { transform: scale(1.0); filter: brightness(0.5) contrast(1.1) saturate(0.85); }
-      .thalam-ad-corner { display: block; position: absolute; top: 3rem; right: 3rem; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(28,25,23,0.3); text-align: right; }
-      .thalam-ad-content { padding: 0 3rem 5rem; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-end; }
-      .thalam-ad-eyebrow { font-size: 0.68rem; margin-bottom: 1.5rem; }
-      .thalam-ad-eyebrow::before { width: 28px; }
-      .thalam-ad-headline { font-size: clamp(2.5rem, 10vw, 8rem); }
-      .thalam-ad-right { gap: 2.5rem; justify-content: flex-end; }
-      .thalam-ad-services { grid-template-columns: 1fr 1fr; border-color: var(--border); }
-      .thalam-service-chip { border-right: var(--border); border-bottom: var(--border); padding: 1.25rem 1.5rem; }
-      .thalam-service-chip:nth-child(2n) { border-right: none; }
-      .thalam-service-chip:nth-last-child(-n+2) { border-bottom: none; }
-      .thalam-service-chip-label { font-size: 0.65rem; }
-      .thalam-service-chip-title { font-size: 1rem; }
-      .thalam-ad-cta { padding: 1.35rem 2rem; font-size: 0.82rem; transition: background 0.25s, transform 0.25s; }
-      .thalam-ad-cta:hover { background: var(--text-dark); transform: translateX(4px); }
-
-      .tactile-section { padding: 8rem 3rem; }
-      .section-header { flex-direction: row; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
-      .section-title { font-size: clamp(2rem, 4vw, 4rem); }
-      .section-link { font-size: 0.78rem; }
-      .tactile-grid { grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
-      .tactile-item { cursor: pointer; }
-      .tactile-item:nth-child(1) { grid-row: 1 / 3; height: 85vh; }
-      .tactile-item:nth-child(2) { height: 40vh; }
-      .tactile-item:nth-child(3) { height: 44vh; }
-      .tactile-img { transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease; filter: brightness(0.75) saturate(0.9); }
-      .tactile-item:hover .tactile-img { transform: scale(1.06); filter: brightness(0.88) saturate(1.1); }
-      .tactile-caption { padding: 2.5rem 2rem 1.5rem; transform: translateY(100%); transition: transform 0.4s ease; }
-      .tactile-item:hover .tactile-caption { transform: translateY(0); }
-      .tactile-caption h3 { font-size: 1.3rem; }
-      .tactile-caption p { font-size: 0.75rem; color: var(--warm-grey); }
-      .tactile-cta { font-size: 0.72rem; }
-
-      .services { grid-template-columns: repeat(3, 1fr); }
-      .service-item { padding: 4rem 3rem; border-right: var(--border); border-bottom: none; transition: background 0.3s; }
-      .service-item:hover { background: rgba(200,169,110,0.06); }
-      .service-num { font-size: 0.7rem; margin-bottom: 2rem; }
-      .service-title { font-size: 1.8rem; margin-bottom: 1.25rem; }
-      .service-desc { font-size: 0.9rem; margin-bottom: 2.5rem; }
-      .service-btn { font-size: 0.75rem; transition: all 0.2s; }
-      .service-btn:hover { color: var(--accent); border-color: var(--accent); }
-      .service-btn::after { content: '→'; transition: transform 0.2s; }
-      .service-btn:hover::after { transform: translateX(4px); }
-
-      .process { padding: 8rem 3rem; }
-      .process-steps { grid-template-columns: repeat(4, 1fr); margin-top: 5rem; border-top: var(--border); padding-top: 0; gap: 0; }
-      .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); }
-      .process-step:last-child { border-right: none; padding-left: 2.5rem; padding-right: 0; }
-      .process-step:not(:first-child) { padding-left: 2.5rem; }
-      .step-num { font-size: 4rem; margin-bottom: 1.5rem; }
-      .step-title { font-size: 1.1rem; margin-bottom: 1rem; }
-      .step-desc { font-size: 0.88rem; }
-
-      .testimonial { padding: 8rem 3rem; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; }
-      .testimonial-label { font-size: 0.72rem; }
-      .testimonial-quote { font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
-      .testimonial-author { margin-top: 2.5rem; font-size: 0.8rem; }
-
-      .cta-banner { height: 65vh; justify-content: center; padding: 0; gap: 3rem; }
-      .cta-banner-title { font-size: clamp(2.5rem, 10vw, 8rem); }
-      .cta-banner-btn { padding: 1.25rem 3rem; font-size: 0.85rem; transition: all 0.3s; }
-      .cta-banner-btn:hover { background: var(--text-dark); }
-
-      footer { flex-direction: row; justify-content: space-between; padding: 3rem; text-align: left; }
-      footer p { font-size: 0.78rem; }
-      .footer-thalam { flex-direction: row; gap: 1rem; }
-      .footer-thalam span { font-size: 0.72rem; }
-      .footer-thalam a { font-size: 0.78rem; }
-
-      .whatsapp-fab { padding: 0.85rem 1.5rem 0.85rem 1.1rem; border-radius: 50px; font-size: 0.8rem; gap: 0.75rem; transition: transform 0.25s, box-shadow 0.25s ease; }
-      .whatsapp-fab span { display: inline; }
-      .whatsapp-fab:hover { transform: scale(1.07) translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
+      
     }
-  
-    /* ULTRA-FLUID DESKTOP HERO (Requires wide AND tall enough screens) */
     @media (min-width: 992px) and (min-height: 600px) {
+      
       .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 100vh; flex-direction: row; }
       .hero-content { padding: calc(80px + 4rem) 3rem 4rem 8vw; justify-content: center; }
       .hero-headline { font-size: clamp(3rem, 4vw, 5.5rem); margin-bottom: 1.5rem; }
@@ -241,6 +78,7 @@
       .hero-img { height: 100%; width: 100%; object-fit: cover; }
     }
     
+  
   </style>
 </head>
 <body>
@@ -371,7 +209,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="services" id="services">
+  <section class="chitra-services" id="services">
     <div class="service-item">
       <span class="service-num">01 // Service</span>
       <h3 class="service-title">Ad Shoots</h3>
@@ -424,7 +262,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="chitra-footer">
     <p>© <?php echo date('Y'); ?> Chitramaya Creatives. All rights reserved.</p>
     <div class="footer-thalam">
       <span>Ad shoots · Baby photography · Studio bookings</span>
