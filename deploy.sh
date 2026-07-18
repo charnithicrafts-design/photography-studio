@@ -18,7 +18,7 @@ set -e
 
 # Resolve paths relative to this script's location
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-WP_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+WP_ROOT="$SCRIPT_DIR"
 
 echo "[1/5] Syncing workspace theme to active WordPress directory..."
 cp -r "$SCRIPT_DIR/chitramaya/" "$WP_ROOT/wp-content/themes/chitramaya/"
