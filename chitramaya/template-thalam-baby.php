@@ -193,6 +193,14 @@
     </div>
   </section>
 
+  <?php 
+    // Plant the garden: The tactile masonry gallery
+    get_template_part('template-parts/gallery-masonry'); 
+    
+    // The centerpiece: The art-themed showcase
+    get_template_part('template-parts/content-art-showcase'); 
+  ?>
+
   <?php wp_footer(); ?>
   
   <script>

@@ -194,3 +194,39 @@ h2, .brut-huge-text {
     .nav-grid a, .nav-grid span { font-size: 1rem; letter-spacing: -0.02em; }
     .nav-hook { font-size: 1.2rem; max-width: 500px; }
 }
+
+/* ==========================================================================
+   MODULE: TACTILE MASONRY GARDEN (Baby Gallery)
+   ========================================================================== */
+.thalam-masonry-garden { padding: 4rem 1.5rem; background: var(--color-light); }
+.masonry-container { column-count: 1; column-gap: 4px; padding-bottom: 2rem; }
+.masonry-item { break-inside: avoid; margin-bottom: 4px; overflow: hidden; position: relative; background: var(--color-dark); }
+.masonry-item img { display: block; width: 100%; height: auto; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease, opacity 0.6s ease; will-change: transform, filter; }
+
+/* The Hover Bloom Effect */
+@media (min-width: 992px) {
+  .thalam-masonry-garden { padding: 8rem max(4rem, calc((100vw - 1440px) / 2)); }
+  .masonry-container { column-count: 3; }
+  
+  /* When the container is hovered, softly dim all images */
+  .masonry-container:hover .masonry-item img { filter: saturate(0.5) brightness(0.7) blur(2px); opacity: 0.8; }
+  
+  /* The specific item hovered blooms back into full focus and scales slightly */
+  .masonry-container .masonry-item:hover img { filter: saturate(1.1) brightness(1) blur(0); opacity: 1; transform: scale(1.03); z-index: 2; position: relative; }
+}
+
+/* ==========================================================================
+   MODULE: ART-THEMED SHOWCASE
+   ========================================================================== */
+.thalam-art-showcase { background: var(--color-dark); color: var(--color-light); }
+.art-split-layout { display: flex; flex-direction: column; }
+.art-text-pane { padding: 6rem 1.5rem; display: flex; align-items: center; justify-content: center; text-align: center; }
+.art-headline { font-family: var(--font-primary); font-weight: 900; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
+.art-image-pane { position: relative; min-height: 60vh; }
+.art-image-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8) contrast(1.2); }
+
+@media (min-width: 992px) {
+  .art-split-layout { flex-direction: row; min-height: 100vh; }
+  .art-text-pane { flex: 1; padding: 6rem; text-align: left; }
+  .art-image-pane { flex: 1; min-height: 100vh; }
+}

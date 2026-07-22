@@ -100,6 +100,43 @@ function chitramaya_register_acf_fields() {
                 array( 'key' => 'field_journey_step_4_title', 'label' => 'Step 4: Title', 'name' => 'step_4_title', 'type' => 'text', 'default_value' => 'The Tapestry.' ),
                 array( 'key' => 'field_journey_step_4_desc', 'label' => 'Step 4: Description', 'name' => 'step_4_description', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'A seamless, documentary-style archiving of your entire journey. Because you shouldn\'t have to choose which memory to keep.' ),
                 array( 'key' => 'field_journey_step_4_image', 'label' => 'Step 4: Image', 'name' => 'step_4_image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium' ),
+                
+                // Masonry Garden (Newborn Gallery)
+                array(
+                    'key' => 'field_baby_masonry_gallery',
+                    'label' => 'Masonry Garden Gallery',
+                    'name' => 'baby_masonry_gallery',
+                    'type' => 'gallery',
+                    'instructions' => 'Upload images for the tactile masonry grid. Best if images have varying aspect ratios.',
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'insert' => 'append',
+                    'library' => 'all',
+                ),
+
+                // Art-Themed Showcase
+                array(
+                    'key' => 'field_art_showcase_heading',
+                    'label' => 'Art Showcase Heading',
+                    'name' => 'art_showcase_heading',
+                    'type' => 'text',
+                    'default_value' => 'NOT JUST A PHOTO. AN ARCHIVE OF ART.',
+                ),
+                array(
+                    'key' => 'field_art_showcase_image',
+                    'label' => 'Art Showcase Feature Image (Media Library)',
+                    'name' => 'art_showcase_image',
+                    'type' => 'image',
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                ),
+                array(
+                    'key' => 'field_art_showcase_image_url',
+                    'label' => 'Art Showcase Feature Image (External URL)',
+                    'name' => 'art_showcase_image_url',
+                    'type' => 'url',
+                    'default_value' => 'https://images.unsplash.com/photo-1510018146743-34e857ff17be?w=1200&q=90&auto=format&fit=crop',
+                ),
             ),
             'location' => array(
                 array(

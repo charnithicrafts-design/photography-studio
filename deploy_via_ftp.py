@@ -31,6 +31,8 @@ files_to_upload = [
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
     ('chitramaya/theme.json', 'wp-content/themes/chitramaya/theme.json'),
+    ('chitramaya/inc/acf-home.php', 'wp-content/themes/chitramaya/inc/acf-home.php'),
+    ('chitramaya/inc/acf-thalam.php', 'wp-content/themes/chitramaya/inc/acf-thalam.php'),
     ('chitramaya/chitramaya-landing.html', 'wp-content/themes/chitramaya/chitramaya-landing.html'),
     ('chitramaya/thalam-landing.html', 'wp-content/themes/chitramaya/thalam-landing.html'),
     
