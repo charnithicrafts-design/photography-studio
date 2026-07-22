@@ -3,6 +3,12 @@
  * Chitramaya Child Theme functions and definitions
  */
 
+if ( ! function_exists( 'get_field' ) ) {
+    function get_field( $selector, $post_id = false, $format_value = true ) {
+        return false; // Safely fail so our templates can use their hardcoded fallbacks
+    }
+}
+
 function chitramaya_enqueue_styles() {
     $parent_style = 'twentytwentyfive-style';
     
