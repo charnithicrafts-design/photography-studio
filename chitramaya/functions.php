@@ -86,6 +86,15 @@ function chitramaya_register_acf_fields() {
                             'type' => 'text',
                         ),
                         array(
+                            'key' => 'field_journey_step_image',
+                            'label' => 'Step Image',
+                            'name' => 'step_image',
+                            'type' => 'image',
+                            'return_format' => 'array',
+                            'preview_size' => 'medium',
+                            'library' => 'all',
+                        ),
+                        array(
                             'key' => 'field_journey_step_title',
                             'label' => 'Title',
                             'name' => 'title',

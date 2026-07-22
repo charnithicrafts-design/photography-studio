@@ -47,15 +47,25 @@
     .manifesto-title { font-weight: 900; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
     .manifesto-body { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 500px; }
 
-    /* JOURNEY GRID */
+    /* JOURNEY ACCORDION */
     .journey { padding: 4rem 1.5rem; background: var(--bg-light); color: #1a1a1a; display: flex; flex-direction: column; gap: 3rem; }
     .journey-header { margin-bottom: 2rem; }
     .journey-header h2 { font-weight: 900; font-size: clamp(2.5rem, 10vw, 5rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; }
-    .journey-grid { display: flex; flex-direction: column; gap: 2rem; }
-    .journey-card { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem; }
+    .journey-layout { display: flex; flex-direction: column; gap: 2rem; }
+    .journey-accordion { display: flex; flex-direction: column; }
+    .journey-card { border-top: 1px solid rgba(0,0,0,0.1); }
+    .journey-card:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .journey-card-toggle { width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0; cursor: pointer; font-family: inherit; color: inherit; }
     .journey-card-step { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.5rem; display: block; }
-    .journey-card-title { font-family: var(--font-serif); font-style: italic; font-size: 2rem; margin-bottom: 1rem; }
-    .journey-card-desc { font-size: 0.9rem; line-height: 1.6; color: rgba(0,0,0,0.6); }
+    .journey-card-title { font-family: var(--font-serif); font-style: italic; font-size: 2rem; transition: color 0.3s ease; }
+    .journey-card.is-active .journey-card-title, .journey-card-toggle:hover .journey-card-title { color: var(--accent-warm); }
+    
+    .journey-card-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; }
+    .journey-card.is-active .journey-card-content { max-height: 1200px; opacity: 1; padding-bottom: 1.5rem; }
+    .journey-card-desc { font-size: 0.9rem; line-height: 1.6; color: rgba(0,0,0,0.6); margin-bottom: 1.5rem; max-width: 400px; }
+    .journey-card-img-mobile { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; }
+    
+    .journey-gallery { display: none; }
 
     /* DESKTOP OVERRIDES */
     @media (min-width: 992px) {
@@ -66,7 +76,11 @@
       .manifesto { padding: 5rem var(--container-pad); flex-direction: row; gap: 6rem; align-items: flex-start; justify-content: space-between; }
       .manifesto-body { font-size: 1.15rem; }
       .journey { padding: 8rem var(--container-pad); }
-      .journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
+      .journey-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: stretch; }
+      .journey-card-img-mobile { display: none; }
+      .journey-gallery { display: block; position: relative; width: 100%; min-height: 600px; }
+      .journey-gallery-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
+      .journey-gallery-img.is-active { opacity: 1; z-index: 1; }
     }
   </style>
 </head>
@@ -116,42 +130,77 @@
     <div class="journey-header">
       <h2><?php echo wp_kses_post( get_field('journey_heading') ?: 'The Archive<br>of You.' ); ?></h2>
     </div>
-    <div class="journey-grid">
-      <?php 
-      $steps = get_field('journey_steps');
-      if ( $steps ) : 
-        foreach( $steps as $step ) : ?>
-          <div class="journey-card">
-            <span class="journey-card-step"><?php echo esc_html( $step['step_label'] ); ?></span>
-            <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
-            <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>
-          </div>
-        <?php endforeach; 
-      else : ?>
-        <div class="journey-card">
-          <span class="journey-card-step">01 — Maternity</span>
-          <h3 class="journey-card-title">The Prelude.</h3>
-          <p class="journey-card-desc">Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.</p>
-        </div>
-        <div class="journey-card">
-          <span class="journey-card-step">02 — Newborn</span>
-          <h3 class="journey-card-title">The Arrival.</h3>
-          <p class="journey-card-desc">Intimate, art-directed studio sessions or house visits within the first critical weeks. We handle the aesthetics; you handle the cuddles.</p>
-        </div>
-        <div class="journey-card">
-          <span class="journey-card-step">03 — Toddler</span>
-          <h3 class="journey-card-title">The Milestone.</h3>
-          <p class="journey-card-desc">Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly in our studio.</p>
-        </div>
-        <div class="journey-card">
-          <span class="journey-card-step">04 — Bump to Baby</span>
-          <h3 class="journey-card-title">The Tapestry.</h3>
-          <p class="journey-card-desc">A seamless, documentary-style archiving of your entire journey. Because you shouldn't have to choose which memory to keep.</p>
-        </div>
-      <?php endif; ?>
+    
+    <div class="journey-layout">
+      <div class="journey-accordion">
+        <?php 
+        $steps = get_field('journey_steps');
+        if ( $steps ) : 
+          foreach( $steps as $index => $step ) : 
+            $is_active = ($index === 0) ? 'is-active' : '';
+        ?>
+            <div class="journey-card <?php echo $is_active; ?>" data-index="<?php echo $index; ?>">
+              <button class="journey-card-toggle">
+                <span class="journey-card-step"><?php echo esc_html( $step['step_label'] ); ?></span>
+                <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
+              </button>
+              <div class="journey-card-content">
+                <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>
+                <?php if ( !empty($step['step_image']['url']) ) : ?>
+                  <img class="journey-card-img-mobile" src="<?php echo esc_url($step['step_image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endforeach; 
+        endif; ?>
+      </div>
+      
+      <div class="journey-gallery">
+        <?php 
+        if ( $steps ) :
+          foreach( $steps as $index => $step ) : 
+            $is_active = ($index === 0) ? 'is-active' : '';
+            if ( !empty($step['step_image']['url']) ) :
+        ?>
+              <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['step_image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
+            <?php else : ?>
+              <!-- Fallback placeholder if no image uploaded -->
+              <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
+        <?php 
+            endif;
+          endforeach; 
+        endif; 
+        ?>
+      </div>
     </div>
   </section>
 
   <?php wp_footer(); ?>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.journey-card');
+      const galleryImgs = document.querySelectorAll('.journey-gallery-img');
+      
+      cards.forEach(card => {
+        const toggle = card.querySelector('.journey-card-toggle');
+        toggle.addEventListener('click', () => {
+          // If already active, do nothing (keeps at least one open)
+          if(card.classList.contains('is-active')) return;
+          
+          const index = card.getAttribute('data-index');
+          
+          // Deactivate all
+          cards.forEach(c => c.classList.remove('is-active'));
+          galleryImgs.forEach(img => img.classList.remove('is-active'));
+          
+          // Activate clicked
+          card.classList.add('is-active');
+          const targetImg = document.querySelector(`.journey-gallery-img[data-index="${index}"]`);
+          if(targetImg) targetImg.classList.add('is-active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
