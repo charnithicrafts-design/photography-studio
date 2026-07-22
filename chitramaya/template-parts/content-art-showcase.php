@@ -5,7 +5,7 @@
 
 $heading = get_field('art_showcase_heading') ?: 'NOT JUST A PHOTO.<br>AN ARCHIVE OF ART.';
 $image = get_field('art_showcase_image');
-$image_url = get_field('art_showcase_image_url') ?: 'https://images.unsplash.com/photo-1510018146743-34e857ff17be?w=1200&q=90&auto=format&fit=crop';
+$image_url = get_field('art_showcase_image_url') ?: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=90&auto=format&fit=crop';
 
 $final_image_url = ($image && is_array($image)) ? $image['sizes']['large'] : $image_url;
 ?>
