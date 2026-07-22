@@ -308,7 +308,7 @@
       </div>
       <div class="service-action">
         <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;12,000</div></div>
-        <a href="#booking" class="service-cta" id="cta-baby">Book Baby Session →</a>
+        <a href="<?php echo esc_url(home_url('/thalam-baby')); ?>" class="service-cta" id="cta-baby">View The Journey →</a>
       </div>
     </div>
 

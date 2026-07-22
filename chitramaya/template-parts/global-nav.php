@@ -56,8 +56,8 @@
             <!-- Panel 3 -->
             <div class="nav-panel" id="panel-3">
                 <ul class="nav-grid">
-                    <li><a href="#thalam">Newborn & Infant (Art-Themed)</a></li>
-                    <li><a href="#thalam">Maternity & Bump-to-Baby</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn & Infant (Art-Themed)</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Maternity & Bump-to-Baby</a></li>
                     <li><a href="#thalam">Food & Product Architecture</a></li>
                     <li><a href="#thalam">Podcast & Interview Production (Audio/Visual)</a></li>
                 </ul>
