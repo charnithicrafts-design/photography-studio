@@ -24,29 +24,38 @@ function chitramaya_remove_core_patterns() {
 }
 add_action('after_setup_theme', 'chitramaya_remove_core_patterns');
 
-// Register Custom Blocks
-function chitramaya_register_blocks() {
-    register_block_type( __DIR__ . '/blocks/journey' );
-}
-add_action( 'init', 'chitramaya_register_blocks' );
-
-// Register ACF Fields for the Block
+// Register ACF Fields for the Thalam Baby Page Template
 function chitramaya_register_acf_fields() {
     if ( function_exists( 'acf_add_local_field_group' ) ) {
         acf_add_local_field_group( array(
-            'key' => 'group_journey_block',
-            'title' => 'Baby Journey Block',
+            'key' => 'group_thalam_baby_page',
+            'title' => 'Thalam Baby & Maternity Settings',
             'fields' => array(
                 array(
+                    'key' => 'field_hero_headline',
+                    'label' => 'Hero Headline',
+                    'name' => 'hero_headline',
+                    'type' => 'text',
+                    'default_value' => 'The Weight of a Real Moment.',
+                ),
+                array(
+                    'key' => 'field_hero_desc',
+                    'label' => 'Hero Description',
+                    'name' => 'hero_desc',
+                    'type' => 'textarea',
+                    'rows' => 3,
+                    'default_value' => 'They are only this small for a second. We archive the magic, the chaos, and the delicate art of your family\'s beginning.',
+                ),
+                array(
                     'key' => 'field_journey_heading',
-                    'label' => 'Heading',
+                    'label' => 'Journey Heading',
                     'name' => 'journey_heading',
                     'type' => 'text',
                     'default_value' => 'The Archive<br>of You.',
                 ),
                 array(
                     'key' => 'field_journey_steps',
-                    'label' => 'Steps',
+                    'label' => 'Journey Steps',
                     'name' => 'journey_steps',
                     'type' => 'repeater',
                     'layout' => 'block',
@@ -77,9 +86,9 @@ function chitramaya_register_acf_fields() {
             'location' => array(
                 array(
                     array(
-                        'param' => 'block',
+                        'param' => 'page_template',
                         'operator' => '==',
-                        'value' => 'acf/journey',
+                        'value' => 'template-thalam-baby.php',
                     ),
                 ),
             ),
