@@ -32,11 +32,21 @@ function chitramaya_register_acf_fields() {
             'title' => 'Thalam Baby & Maternity Settings',
             'fields' => array(
                 array(
+                    'key' => 'field_hero_bg_image',
+                    'label' => 'Hero Background Image (Media Library)',
+                    'name' => 'hero_bg_image',
+                    'type' => 'image',
+                    'instructions' => 'Upload or select an image from the Media Library. If this is left blank, it will fall back to the External URL below.',
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                ),
+                array(
                     'key' => 'field_hero_bg_url',
-                    'label' => 'Hero Background Image URL',
+                    'label' => 'Hero Background Image (External URL)',
                     'name' => 'hero_bg_url',
                     'type' => 'url',
-                    'instructions' => 'Paste an image link from Unsplash, Pexels, or your Media Library.',
+                    'instructions' => 'Paste an image link from Unsplash or Pexels.',
                     'default_value' => 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=2400&q=80',
                 ),
                 array(

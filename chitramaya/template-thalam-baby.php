@@ -72,8 +72,23 @@
   <?php get_template_part('template-parts/global-nav'); ?>
 
   <section class="hero">
-    <!-- Using a highly emotional, tactile Unsplash image of a mother and newborn -->
-    <img src="<?php echo esc_url( get_field('hero_bg_url') ?: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=2400&q=80' ); ?>" alt="Hero background" class="hero-img">
+    <!-- Using a highly emotional, tactile image of a mother and newborn -->
+    <?php 
+      $hero_bg_image = get_field('hero_bg_image');
+      $hero_bg_url = get_field('hero_bg_url');
+      
+      $bg_src = 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=2400&q=80';
+      $bg_alt = 'Mother gently holding newborn baby';
+      
+      if ( $hero_bg_image && isset($hero_bg_image['url']) ) {
+          $bg_src = $hero_bg_image['url'];
+          $bg_alt = $hero_bg_image['alt'] ?: 'Hero background';
+      } elseif ( $hero_bg_url ) {
+          $bg_src = $hero_bg_url;
+          $bg_alt = 'Hero background';
+      }
+    ?>
+    <img src="<?php echo esc_url( $bg_src ); ?>" alt="<?php echo esc_attr( $bg_alt ); ?>" class="hero-img">
     
     <!-- The gradient overlay creates the emotional transition from the image into the brutalist layout -->
     <div class="hero-overlay"></div>
