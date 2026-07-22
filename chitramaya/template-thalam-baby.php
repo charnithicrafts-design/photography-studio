@@ -80,8 +80,8 @@
     
     <div class="hero-content">
       <span class="hero-eyebrow">Thalam Studio</span>
-      <h1 class="hero-headline">The Weight of a<br>Real Moment.</h1>
-      <p class="hero-desc">They are only this small for a second. We archive the magic, the chaos, and the delicate art of your family's beginning.</p>
+      <h1 class="hero-headline"><?php echo wp_kses_post( get_field('hero_headline') ?: 'The Weight of a<br>Real Moment.' ); ?></h1>
+      <p class="hero-desc"><?php echo esc_html( get_field('hero_desc') ?: 'They are only this small for a second. We archive the magic, the chaos, and the delicate art of your family\'s beginning.' ); ?></p>
     </div>
   </section>
 
@@ -96,29 +96,41 @@
 
   <section class="journey">
     <div class="journey-header">
-      <h2>The Archive<br>of You.</h2>
+      <h2><?php echo wp_kses_post( get_field('journey_heading') ?: 'The Archive<br>of You.' ); ?></h2>
     </div>
     <div class="journey-grid">
-      <div class="journey-card">
-        <span class="journey-card-step">01 — Maternity</span>
-        <h3 class="journey-card-title">The Prelude.</h3>
-        <p class="journey-card-desc">Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.</p>
-      </div>
-      <div class="journey-card">
-        <span class="journey-card-step">02 — Newborn</span>
-        <h3 class="journey-card-title">The Arrival.</h3>
-        <p class="journey-card-desc">Intimate, art-directed studio sessions or house visits within the first critical weeks. We handle the aesthetics; you handle the cuddles.</p>
-      </div>
-      <div class="journey-card">
-        <span class="journey-card-step">03 — Toddler</span>
-        <h3 class="journey-card-title">The Milestone.</h3>
-        <p class="journey-card-desc">Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly in our studio.</p>
-      </div>
-      <div class="journey-card">
-        <span class="journey-card-step">04 — Bump to Baby</span>
-        <h3 class="journey-card-title">The Tapestry.</h3>
-        <p class="journey-card-desc">A seamless, documentary-style archiving of your entire journey. Because you shouldn't have to choose which memory to keep.</p>
-      </div>
+      <?php 
+      $steps = get_field('journey_steps');
+      if ( $steps ) : 
+        foreach( $steps as $step ) : ?>
+          <div class="journey-card">
+            <span class="journey-card-step"><?php echo esc_html( $step['step_label'] ); ?></span>
+            <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
+            <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>
+          </div>
+        <?php endforeach; 
+      else : ?>
+        <div class="journey-card">
+          <span class="journey-card-step">01 — Maternity</span>
+          <h3 class="journey-card-title">The Prelude.</h3>
+          <p class="journey-card-desc">Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.</p>
+        </div>
+        <div class="journey-card">
+          <span class="journey-card-step">02 — Newborn</span>
+          <h3 class="journey-card-title">The Arrival.</h3>
+          <p class="journey-card-desc">Intimate, art-directed studio sessions or house visits within the first critical weeks. We handle the aesthetics; you handle the cuddles.</p>
+        </div>
+        <div class="journey-card">
+          <span class="journey-card-step">03 — Toddler</span>
+          <h3 class="journey-card-title">The Milestone.</h3>
+          <p class="journey-card-desc">Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly in our studio.</p>
+        </div>
+        <div class="journey-card">
+          <span class="journey-card-step">04 — Bump to Baby</span>
+          <h3 class="journey-card-title">The Tapestry.</h3>
+          <p class="journey-card-desc">A seamless, documentary-style archiving of your entire journey. Because you shouldn't have to choose which memory to keep.</p>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
 
