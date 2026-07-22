@@ -60,7 +60,7 @@
     /* DESKTOP OVERRIDES */
     @media (min-width: 992px) {
       .hero { padding: 6rem 4rem; }
-      .manifesto { padding: 10rem 4rem; flex-direction: row; gap: 6rem; align-items: flex-start; justify-content: space-between; }
+      .manifesto { padding: 5rem 4rem; flex-direction: row; gap: 6rem; align-items: flex-start; justify-content: space-between; }
       .manifesto-body { font-size: 1.15rem; }
       .journey { padding: 8rem 4rem; }
       .journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
