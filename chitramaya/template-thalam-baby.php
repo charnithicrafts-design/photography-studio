@@ -132,92 +132,63 @@
     </div>
     
     <div class="journey-layout">
+      <?php 
+      // Manually construct the steps array from the 4 flat ACF field groups (or defaults)
+      $steps = array(
+        array(
+          'label' => get_field('step_1_label') ?: '01 — Maternity',
+          'title' => get_field('step_1_title') ?: 'The Prelude.',
+          'description' => get_field('step_1_description') ?: 'Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.',
+          'image' => get_field('step_1_image')
+        ),
+        array(
+          'label' => get_field('step_2_label') ?: '02 — Newborn',
+          'title' => get_field('step_2_title') ?: 'The Arrival.',
+          'description' => get_field('step_2_description') ?: 'Intimate, art-directed studio sessions or house visits within the first critical weeks.',
+          'image' => get_field('step_2_image')
+        ),
+        array(
+          'label' => get_field('step_3_label') ?: '03 — Toddler',
+          'title' => get_field('step_3_title') ?: 'The Milestone.',
+          'description' => get_field('step_3_description') ?: 'Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly.',
+          'image' => get_field('step_3_image')
+        ),
+        array(
+          'label' => get_field('step_4_label') ?: '04 — Bump to Baby',
+          'title' => get_field('step_4_title') ?: 'The Tapestry.',
+          'description' => get_field('step_4_description') ?: 'A seamless, documentary-style archiving of your entire journey. Because you shouldn\'t have to choose which memory to keep.',
+          'image' => get_field('step_4_image')
+        )
+      );
+      ?>
       <div class="journey-accordion">
-        <?php 
-        $steps = get_field('journey_steps');
-        if ( $steps ) : 
-          foreach( $steps as $index => $step ) : 
-            $is_active = ($index === 0) ? 'is-active' : '';
-        ?>
-            <div class="journey-card <?php echo $is_active; ?>" data-index="<?php echo $index; ?>">
-              <button class="journey-card-toggle">
-                <span class="journey-card-step"><?php echo esc_html( $step['step_label'] ); ?></span>
-                <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
-              </button>
-              <div class="journey-card-content">
-                <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>
-                <?php if ( !empty($step['step_image']['url']) ) : ?>
-                  <img class="journey-card-img-mobile" src="<?php echo esc_url($step['step_image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
-                <?php endif; ?>
-              </div>
-            </div>
-          <?php endforeach; 
-        else : ?>
-          <!-- FALLBACK ACCORDION CARDS (If ACF is empty) -->
-          <div class="journey-card is-active" data-index="0">
+        <?php foreach( $steps as $index => $step ) : $is_active = ($index === 0) ? 'is-active' : ''; ?>
+          <div class="journey-card <?php echo $is_active; ?>" data-index="<?php echo $index; ?>">
             <button class="journey-card-toggle">
-              <span class="journey-card-step">01 — Maternity</span>
-              <h3 class="journey-card-title">The Prelude.</h3>
+              <span class="journey-card-step"><?php echo esc_html( $step['label'] ); ?></span>
+              <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
             </button>
             <div class="journey-card-content">
-              <p class="journey-card-desc">Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.</p>
-              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Maternity Placeholder">
+              <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>
+              <?php if ( !empty($step['image']['url']) ) : ?>
+                <img class="journey-card-img-mobile" src="<?php echo esc_url($step['image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
+              <?php else : ?>
+                <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
+              <?php endif; ?>
             </div>
           </div>
-          <div class="journey-card" data-index="1">
-            <button class="journey-card-toggle">
-              <span class="journey-card-step">02 — Newborn</span>
-              <h3 class="journey-card-title">The Arrival.</h3>
-            </button>
-            <div class="journey-card-content">
-              <p class="journey-card-desc">Intimate, art-directed studio sessions or house visits within the first critical weeks.</p>
-              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Newborn Placeholder">
-            </div>
-          </div>
-          <div class="journey-card" data-index="2">
-            <button class="journey-card-toggle">
-              <span class="journey-card-step">03 — Toddler</span>
-              <h3 class="journey-card-title">The Milestone.</h3>
-            </button>
-            <div class="journey-card-content">
-              <p class="journey-card-desc">Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly.</p>
-              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
-            </div>
-          </div>
-          <div class="journey-card" data-index="3">
-            <button class="journey-card-toggle">
-              <span class="journey-card-step">04 — Bump to Baby</span>
-              <h3 class="journey-card-title">The Tapestry.</h3>
-            </button>
-            <div class="journey-card-content">
-              <p class="journey-card-desc">A seamless, documentary-style archiving of your entire journey. Because you shouldn't have to choose which memory to keep.</p>
-              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Tapestry Placeholder">
-            </div>
-          </div>
-        <?php endif; ?>
+        <?php endforeach; ?>
       </div>
       
       <div class="journey-gallery">
-        <?php 
-        if ( $steps ) :
-          foreach( $steps as $index => $step ) : 
-            $is_active = ($index === 0) ? 'is-active' : '';
-            if ( !empty($step['step_image']['url']) ) :
-        ?>
-              <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['step_image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
-            <?php else : ?>
-              <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
-        <?php 
-            endif;
-          endforeach; 
-        else : ?>
-          <!-- FALLBACK GALLERY IMAGES -->
-          <img class="journey-gallery-img is-active" data-index="0" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Maternity Placeholder">
-          <img class="journey-gallery-img" data-index="1" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Newborn Placeholder">
-          <img class="journey-gallery-img" data-index="2" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
-          <img class="journey-gallery-img" data-index="3" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Tapestry Placeholder">
-        <?php endif; 
-        ?>
+        <?php foreach( $steps as $index => $step ) : $is_active = ($index === 0) ? 'is-active' : ''; ?>
+          <?php if ( !empty($step['image']['url']) ) : ?>
+            <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
+          <?php else : ?>
+            <!-- Fallback placeholder if no image uploaded -->
+            <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
+          <?php endif; ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
