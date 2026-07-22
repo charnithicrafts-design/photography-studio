@@ -25,7 +25,8 @@ ftp.cwd('chitramaya.charnithi.com')
 files_to_upload = [
     # Theme files
     ('chitramaya/template-chitramaya.php', 'wp-content/themes/chitramaya/template-chitramaya.php'),
-    ('chitramaya/template-talam.php', 'wp-content/themes/chitramaya/template-talam.php'),
+    ('chitramaya/template-thalam.php', 'wp-content/themes/chitramaya/template-thalam.php'),
+    ('chitramaya/template-thalam-baby.php', 'wp-content/themes/chitramaya/template-thalam-baby.php'),
     ('chitramaya/template-parts/global-nav.php', 'wp-content/themes/chitramaya/template-parts/global-nav.php'),
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
