@@ -109,3 +109,6 @@ function chitramaya_register_acf_fields() {
     }
 }
 add_action( 'acf/init', 'chitramaya_register_acf_fields' );
+
+// Include additional ACF field registrations
+require_once get_stylesheet_directory() . '/inc/acf-home.php';

@@ -193,21 +193,20 @@
 <body>
   <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO — show, don't tell -->
   <section class="hero" id="hero">
     <div class="hero-cursor-glow" id="hero-glow"></div>
     <img class="hero-img"
-      src="https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop"
+      src="<?php echo esc_url( get_field('home_hero_bg_url') ?: 'https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop' ); ?>"
       alt="Fine-art studio portrait with vibrant abstract paint — Chitramaya Creatives"
       loading="eager"
       onload="this.closest('.hero').classList.add('loaded')">
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
     <div class="hero-brand">
-      <h1 class="hero-brand-name">Chitra<br>maya<em>Creatives</em></h1>
+      <h1 class="hero-brand-name"><?php echo wp_kses_post( get_field('home_hero_headline') ?: 'Chitra<br>maya<em>Creatives</em>' ); ?></h1>
     </div>
     <div class="hero-corner">
-      <p class="hero-fragment">Light, texture,<br>and the weight<br>of a real moment.</p>
+      <p class="hero-fragment"><?php echo wp_kses_post( get_field('home_hero_fragment') ?: 'Light, texture,<br>and the weight<br>of a real moment.' ); ?></p>
       <a href="https://www.instagram.com/chithramaya_creatives" target="_blank" rel="noopener" class="hero-insta">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         @chithramaya_creatives
@@ -219,14 +218,13 @@
     </div>
   </section>
 
-  <!-- MANIFESTO -->
   <section class="manifesto" id="about">
     <div>
-      <div class="manifesto-label">Chitramaya Creatives — Our Creed</div>
-      <h2 class="manifesto-text">Every photograph is a physical argument that the world is worth feeling.</h2>
+      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'Chitramaya Creatives — Our Creed' ); ?></div>
+      <h2 class="manifesto-text"><?php echo wp_kses_post( get_field('home_manifesto_headline') ?: 'Every photograph is a physical argument that the world is worth feeling.' ); ?></h2>
     </div>
     <div>
-      <p class="manifesto-body">Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chitramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.</p>
+      <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chitramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.' ); ?></p>
       <div class="manifesto-stats">
         <div><div class="stat-num">340+</div><div class="stat-label">Campaigns Delivered</div></div>
         <div><div class="stat-num">12yr</div><div class="stat-label">Visual Authority</div></div>
@@ -236,10 +234,9 @@
     </div>
   </section>
 
-  <!-- THALAM STUDIO AD SECTION -->
   <section class="thalam-ad" id="thalam">
     <img class="thalam-ad-bg"
-      src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=2400&q=90&auto=format&fit=crop"
+      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=2400&q=90&auto=format&fit=crop' ); ?>"
       alt="Professional studio set with dramatic lighting — Thalam Studio, Chitramaya Creatives"
       loading="lazy">
     <div class="thalam-ad-overlay"></div>
@@ -247,7 +244,7 @@
     <div class="thalam-ad-content">
       <div>
         <div class="thalam-ad-eyebrow">Studio. Story. Shoot.</div>
-        <h2 class="thalam-ad-headline">Your <em>brand,</em> lit right.</h2>
+        <h2 class="thalam-ad-headline"><?php echo wp_kses_post( get_field('home_thalam_headline') ?: 'Your <em>brand,</em> lit right.' ); ?></h2>
       </div>
       <div class="thalam-ad-right">
         <div class="thalam-ad-services">
@@ -349,22 +346,20 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
   <section class="testimonial" id="testimonials">
     <div class="testimonial-label">Client Voice</div>
     <div>
-      <blockquote class="testimonial-quote">"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No filter. No CGI. We increased conversion on that product page by 34% within a month."</blockquote>
-      <p class="testimonial-author">— Priya Sundaram, Creative Director · Maison Kaur</p>
+      <blockquote class="testimonial-quote"><?php echo wp_kses_post( get_field('home_testi_quote') ?: '"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No filter. No CGI. We increased conversion on that product page by 34% within a month."' ); ?></blockquote>
+      <p class="testimonial-author"><?php echo esc_html( get_field('home_testi_author') ?: '— Priya Sundaram, Creative Director · Maison Kaur' ); ?></p>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
   <section class="cta-banner" id="contact">
     <img class="cta-banner-img"
-      src="https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=2400&q=80&auto=format&fit=crop"
+      src="<?php echo esc_url( get_field('home_cta_bg_url') ?: 'https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=2400&q=80&auto=format&fit=crop' ); ?>"
       alt="A dark dramatic photography studio with a single powerful light source — the Chitramaya Creatives commission environment.">
     <div class="cta-banner-content">
-      <h2 class="cta-banner-title">Start a<br><em>Commission</em></h2>
+      <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'Start a<br><em>Commission</em>' ); ?></h2>
     </div>
     <a href="mailto:hello@chitramaya.com" class="cta-banner-btn">Speak to a Creative Director</a>
   </section>
