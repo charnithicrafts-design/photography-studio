@@ -2,6 +2,7 @@
 wp-admin/
 wp-includes/
 wp-content/
+resources/
 wp-*.php
 index.php
 license.txt
