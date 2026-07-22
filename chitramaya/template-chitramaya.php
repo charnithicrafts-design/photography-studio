@@ -282,31 +282,31 @@
     <div class="tactile-grid">
       <div class="tactile-item">
         <img class="tactile-img"
-          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=90&auto=format&fit=crop"
-          alt="High-contrast studio portrait of a woman lit by a single dramatic sidelight, revealing every facial texture and emotional depth — Brand Identity Campaign for Heritage Label Co. by Chitramaya Creatives.">
+          src="<?php echo esc_url( get_field('home_work_1_img_url') ?: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=90&auto=format&fit=crop' ); ?>"
+          alt="Portfolio image 1">
         <div class="tactile-caption">
-          <h3>Heritage Label Co. — Identity</h3>
-          <p>Portrait · Brand Campaign · 2024</p>
+          <h3><?php echo esc_html( get_field('home_work_1_client') ?: 'Heritage Label Co. — Identity' ); ?></h3>
+          <p><?php echo esc_html( get_field('home_work_1_category') ?: 'Portrait · Brand Campaign · 2024' ); ?></p>
           <a href="#" class="tactile-cta">View Case Study →</a>
         </div>
       </div>
       <div class="tactile-item">
         <img class="tactile-img"
-          src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=1200&q=90&auto=format&fit=crop"
-          alt="Macro photograph of a freshly cut apple where moisture and fruit fibre are rendered with extraordinary tactile realism — Product Photography for Orchard Collective by Chitramaya Creatives.">
+          src="<?php echo esc_url( get_field('home_work_2_img_url') ?: 'https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=1200&q=90&auto=format&fit=crop' ); ?>"
+          alt="Portfolio image 2">
         <div class="tactile-caption">
-          <h3>Orchard Collective — Product</h3>
-          <p>Macro · E-Commerce · 2024</p>
+          <h3><?php echo esc_html( get_field('home_work_2_client') ?: 'Orchard Collective — Product' ); ?></h3>
+          <p><?php echo esc_html( get_field('home_work_2_category') ?: 'Macro · E-Commerce · 2024' ); ?></p>
           <a href="#" class="tactile-cta">View Case Study →</a>
         </div>
       </div>
       <div class="tactile-item">
         <img class="tactile-img"
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=90&auto=format&fit=crop"
-          alt="Brutalist concrete interior with raking natural light casting hard geometric shadows — Architectural documentation for Forma Studio by Chitramaya Creatives.">
+          src="<?php echo esc_url( get_field('home_work_3_img_url') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=90&auto=format&fit=crop' ); ?>"
+          alt="Portfolio image 3">
         <div class="tactile-caption">
-          <h3>Forma Studio — Architecture</h3>
-          <p>Architectural · Editorial · 2023</p>
+          <h3><?php echo esc_html( get_field('home_work_3_client') ?: 'Forma Studio — Architecture' ); ?></h3>
+          <p><?php echo esc_html( get_field('home_work_3_category') ?: 'Architectural · Editorial · 2023' ); ?></p>
           <a href="#" class="tactile-cta">View Case Study →</a>
         </div>
       </div>
@@ -317,20 +317,20 @@
   <section class="services" id="services">
     <div class="service-item">
       <span class="service-num">01 // Service</span>
-      <h3 class="service-title">Ad Shoots</h3>
-      <p class="service-desc">Commercial photography that sells. Conceived, lit, and delivered from Thalam Studio — with the art direction, brand alignment, and production value your campaign demands.</p>
+      <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Ad Shoots' ); ?></h3>
+      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Commercial photography that sells. Conceived, lit, and delivered from Thalam Studio — with the art direction, brand alignment, and production value your campaign demands.' ); ?></p>
       <a href="<?php echo home_url('/thalam-studio'); ?>#booking" class="service-btn">Book an Ad Shoot</a>
     </div>
     <div class="service-item">
       <span class="service-num">02 // Service</span>
-      <h3 class="service-title">Baby &amp; Newborn</h3>
-      <p class="service-desc">The first year passes in a breath. Our baby sessions at Thalam Studio are crafted to capture weight, warmth, and the particular softness of new life — before it changes.</p>
+      <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Baby &amp; Newborn' ); ?></h3>
+      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'The first year passes in a breath. Our baby sessions at Thalam Studio are crafted to capture weight, warmth, and the particular softness of new life — before it changes.' ); ?></p>
       <a href="<?php echo home_url('/thalam-studio'); ?>#booking" class="service-btn">Book a Baby Session</a>
     </div>
     <div class="service-item">
       <span class="service-num">03 // Service</span>
-      <h3 class="service-title">Editorial &amp; Portfolio</h3>
-      <p class="service-desc">For brands, artists, and creative directors who need a visual partner that understands narrative. We treat each commission as a short film — with intention, conflict, and resolution.</p>
+      <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Editorial &amp; Portfolio' ); ?></h3>
+      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'For brands, artists, and creative directors who need a visual partner that understands narrative. We treat each commission as a short film — with intention, conflict, and resolution.' ); ?></p>
       <a href="#contact" class="service-btn">Commission Editorial Work</a>
     </div>
   </section>
@@ -339,10 +339,10 @@
   <section class="process" id="process">
     <div class="section-header"><h2 class="section-title">How We Work</h2></div>
     <div class="process-steps">
-      <div class="process-step"><div class="step-num">01</div><h3 class="step-title">Brief &amp; Discovery</h3><p class="step-desc">We spend the first week understanding your audience's psychology, competitive landscape, and the specific emotional response your images must trigger. No camera is touched until this is complete.</p></div>
-      <div class="process-step"><div class="step-num">02</div><h3 class="step-title">Light Architecture</h3><p class="step-desc">Every shoot has a designed lighting plan based on the tactile quality we need to extract from the subject. We treat the studio as a precision instrument, not a backdrop.</p></div>
-      <div class="process-step"><div class="step-num">03</div><h3 class="step-title">Capture &amp; Selection</h3><p class="step-desc">Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Ruthless curation is the most important part of our creative process.</p></div>
-      <div class="process-step"><div class="step-num">04</div><h3 class="step-title">Delivery &amp; Licensing</h3><p class="step-desc">Final assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified alt-text metadata for your SEO team. Full licensing documentation included.</p></div>
+      <div class="process-step"><div class="step-num">01</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_1_title') ?: 'Brief &amp; Discovery' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_1_desc') ?: 'We spend the first week understanding your audience\'s psychology, competitive landscape, and the specific emotional response your images must trigger. No camera is touched until this is complete.' ); ?></p></div>
+      <div class="process-step"><div class="step-num">02</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_2_title') ?: 'Light Architecture' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_2_desc') ?: 'Every shoot has a designed lighting plan based on the tactile quality we need to extract from the subject. We treat the studio as a precision instrument, not a backdrop.' ); ?></p></div>
+      <div class="process-step"><div class="step-num">03</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_3_title') ?: 'Capture &amp; Selection' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_3_desc') ?: 'Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Ruthless curation is the most important part of our creative process.' ); ?></p></div>
+      <div class="process-step"><div class="step-num">04</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_4_title') ?: 'Delivery &amp; Licensing' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_4_desc') ?: 'Final assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified alt-text metadata for your SEO team. Full licensing documentation included.' ); ?></p></div>
     </div>
   </section>
 
