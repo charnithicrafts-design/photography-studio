@@ -28,6 +28,8 @@ files_to_upload = [
     ('chitramaya/template-thalam.php', 'wp-content/themes/chitramaya/template-thalam.php'),
     ('chitramaya/template-thalam-baby.php', 'wp-content/themes/chitramaya/template-thalam-baby.php'),
     ('chitramaya/template-parts/global-nav.php', 'wp-content/themes/chitramaya/template-parts/global-nav.php'),
+    ('chitramaya/template-parts/gallery-masonry.php', 'wp-content/themes/chitramaya/template-parts/gallery-masonry.php'),
+    ('chitramaya/template-parts/content-art-showcase.php', 'wp-content/themes/chitramaya/template-parts/content-art-showcase.php'),
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
     ('chitramaya/theme.json', 'wp-content/themes/chitramaya/theme.json'),
