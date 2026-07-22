@@ -73,7 +73,7 @@ function chitramaya_register_thalam_acf_fields() {
                     array(
                         'param' => 'page_template',
                         'operator' => '==',
-                        'value' => 'template-talam.php',
+                        'value' => 'template-thalam.php',
                     ),
                 ),
             ),
