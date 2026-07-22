@@ -20,7 +20,7 @@ except Exception as e:
     print(f"Error loading secrets: {e}")
     exit(1)
 
-SQL_FILE = '../../chitramaya_dump_live.sql'
+SQL_FILE = './chitramaya_dump_live.sql'
 
 # Perform spelling correction on the SQL dump before upload
 if os.path.exists(SQL_FILE):
@@ -51,7 +51,7 @@ unlink(__DIR__ . '/chitramaya_dump_live.sql');
 echo 'DB import complete. Files cleaned up.';
 ?>"""
 
-with open('../../db_import.php', 'w') as f:
+with open('./db_import.php', 'w') as f:
     f.write(importer_php)
 
 ftp = ftplib.FTP(FTP_HOST)
@@ -63,11 +63,11 @@ with open(SQL_FILE, 'rb') as f:
     ftp.storbinary('STOR chitramaya_dump_live.sql', f)
 
 print("Uploading DB importer...")
-with open('../../db_import.php', 'rb') as f:
+with open('./db_import.php', 'rb') as f:
     ftp.storbinary('STOR db_import.php', f)
 
 ftp.quit()
-os.remove('../../db_import.php')
+os.remove('./db_import.php')
 
 print("Triggering remote DB import...")
 req = urllib.request.Request(

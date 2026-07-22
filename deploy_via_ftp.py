@@ -26,6 +26,7 @@ files_to_upload = [
     # Theme files
     ('chitramaya/template-chitramaya.php', 'wp-content/themes/chitramaya/template-chitramaya.php'),
     ('chitramaya/template-talam.php', 'wp-content/themes/chitramaya/template-talam.php'),
+    ('chitramaya/template-parts/global-nav.php', 'wp-content/themes/chitramaya/template-parts/global-nav.php'),
     ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
     ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
     ('chitramaya/theme.json', 'wp-content/themes/chitramaya/theme.json'),
@@ -41,6 +42,18 @@ for local_path, remote_path in files_to_upload:
     if os.path.exists(local_path):
         print(f"Uploading {local_path} to {remote_path}...")
         try:
+            # Create remote directory if it doesn't exist
+            remote_dir = os.path.dirname(remote_path)
+            if remote_dir:
+                dirs = remote_dir.split('/')
+                current_dir = ''
+                for d in dirs:
+                    current_dir = f"{current_dir}/{d}" if current_dir else d
+                    try:
+                        ftp.mkd(current_dir)
+                    except ftplib.error_perm:
+                        pass # Directory already exists
+                        
             with open(local_path, 'rb') as f:
                 ftp.storbinary(f'STOR {remote_path}', f)
             print(f"Successfully uploaded {remote_path}")
