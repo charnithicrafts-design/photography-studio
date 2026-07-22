@@ -184,6 +184,16 @@
               <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
             </div>
           </div>
+          <div class="journey-card" data-index="3">
+            <button class="journey-card-toggle">
+              <span class="journey-card-step">04 — Bump to Baby</span>
+              <h3 class="journey-card-title">The Tapestry.</h3>
+            </button>
+            <div class="journey-card-content">
+              <p class="journey-card-desc">A seamless, documentary-style archiving of your entire journey. Because you shouldn't have to choose which memory to keep.</p>
+              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Tapestry Placeholder">
+            </div>
+          </div>
         <?php endif; ?>
       </div>
       
@@ -196,7 +206,6 @@
         ?>
               <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['step_image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
             <?php else : ?>
-              <!-- Fallback placeholder if no image uploaded -->
               <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
         <?php 
             endif;
@@ -206,6 +215,7 @@
           <img class="journey-gallery-img is-active" data-index="0" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Maternity Placeholder">
           <img class="journey-gallery-img" data-index="1" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Newborn Placeholder">
           <img class="journey-gallery-img" data-index="2" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
+          <img class="journey-gallery-img" data-index="3" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Tapestry Placeholder">
         <?php endif; 
         ?>
       </div>
