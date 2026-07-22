@@ -13,7 +13,6 @@ $fallback_images = [
     'https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800&q=90&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1511289081-d06dda19034d?w=800&q=90&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=90&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1542037104-58e376043640?w=800&q=90&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=90&auto=format&fit=crop'
 ];
 ?>
@@ -31,7 +30,7 @@ $fallback_images = [
             // Output fallback garden
             foreach ( $fallback_images as $url ) {
                 echo '<div class="masonry-item">';
-                echo '<img src="' . esc_url($url) . '" alt="Emotional Newborn Photography Archive" loading="lazy" />';
+                echo '<img src="' . esc_url($url) . '" alt="Thalam Studio" loading="lazy" />';
                 echo '</div>';
             }
         }
