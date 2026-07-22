@@ -187,11 +187,11 @@
   <section class="hero" id="hero">
     <div class="hero-left">
       <div>
-        <div class="hero-tag">Production Hub // </div>
-        <h1 class="hero-headline">We<br><span class="accent-word">Execute.</span><br>You<br>Deliver.</h1>
+        <div class="hero-tag"><?php echo esc_html( get_field('thalam_hero_tag') ?: 'Production Hub // ' ); ?></div>
+        <h1 class="hero-headline"><?php echo wp_kses_post( get_field('thalam_hero_headline') ?: 'We<br><span class="accent-word">Execute.</span><br>You<br>Deliver.' ); ?></h1>
       </div>
       <div class="hero-body">
-        <p>Thalam is the operational studio of Chitramaya Creatives — specialising in ad shoots and baby photography. Controlled light. Real moments. Zero friction from brief to delivery.</p>
+        <p><?php echo wp_kses_post( get_field('thalam_hero_body') ?: 'Thalam is the operational studio of Chitramaya Creatives — specialising in ad shoots and baby photography. Controlled light. Real moments. Zero friction from brief to delivery.' ); ?></p>
         <div class="hero-ctas">
           <a href="#services" class="btn-primary">View All Services →</a>
           <a href="#booking" class="btn-ghost">Book a Session →</a>
@@ -200,22 +200,22 @@
     </div>
     <div class="hero-right">
       <img class="hero-img"
-        src="https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=1600&q=90&auto=format&fit=crop"
+        src="<?php echo esc_url( get_field('thalam_hero_img_url') ?: 'https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=1600&q=90&auto=format&fit=crop' ); ?>"
         alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio.">
       <div class="hero-img-caption">Thalam Studio · </div>
     </div>
   </section>
 
   <div class="status-grid">
-    <div class="status-item"><div class="status-dot"></div><div class="status-text"><strong>3 Sessions</strong> Active Today</div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text">Delivery: <strong>&lt;48 Hours</strong></div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text">Next Available: <strong>July 18</strong></div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text">Format: <strong>Medium Format · Full Frame</strong></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_1') ?: '<strong>3 Sessions</strong> Active Today' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_2') ?: 'Delivery: <strong>&lt;48 Hours</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_3') ?: 'Next Available: <strong>July 18</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_4') ?: 'Format: <strong>Medium Format · Full Frame</strong>' ); ?></div></div>
   </div>
 
   <section class="services" id="services">
     <div class="services-header">
-      <h2>Service Directory // 4 Active</h2>
+      <h2><?php echo esc_html( get_field('thalam_services_title') ?: 'Service Directory // 4 Active' ); ?></h2>
       <span>All inclusive of editing &amp; licensing</span>
     </div>
 
@@ -223,11 +223,11 @@
     <div class="service-row" id="service-ad-shoots">
       <div class="service-index">01</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop"
-          alt="Commercial ad shoot with professional studio lighting — Thalam Studio ad photography, .">
+        <img src="<?php echo esc_url( get_field('thalam_service_1_img') ?: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=90&auto=format&fit=crop' ); ?>"
+          alt="Commercial ad shoot with professional studio lighting">
       </div>
       <div class="service-info">
-        <div><h3 class="service-name">Ad Shoots</h3>
+        <div><h3 class="service-name"><?php echo esc_html( get_field('thalam_service_1_title') ?: 'Ad Shoots' ); ?></h3>
         <div class="service-tags"><span class="service-tag">Commercial</span><span class="service-tag">Brand Campaigns</span><span class="service-tag">Product Ads</span></div></div>
       </div>
       <div class="service-specs">
@@ -240,7 +240,7 @@
         </ul>
       </div>
       <div class="service-action">
-        <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;25,000</div></div>
+        <div><div class="service-price">Starting From</div><div class="service-price-val"><?php echo wp_kses_post( get_field('thalam_service_1_price') ?: '&#8377;25,000' ); ?></div></div>
         <a href="#booking" class="service-cta" id="cta-ad-shoots">Book Ad Shoot →</a>
       </div>
     </div>
@@ -351,8 +351,8 @@
 
   <section class="booking" id="booking">
     <div class="booking-left">
-      <h2>Book a<br><span>Session</span></h2>
-      <p>Fill in the brief on the right and we will respond within 4 business hours with availability, crew allocation, and a formal quote. No obligations.</p>
+      <h2><?php echo wp_kses_post( get_field('thalam_booking_headline') ?: 'Book a<br><span>Session</span>' ); ?></h2>
+      <p><?php echo wp_kses_post( get_field('thalam_booking_body') ?: 'Fill in the brief on the right and we will respond within 4 business hours with availability, crew allocation, and a formal quote. No obligations.' ); ?></p>
     </div>
     <div class="booking-right">
       <form id="booking-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">

@@ -112,3 +112,4 @@ add_action( 'acf/init', 'chitramaya_register_acf_fields' );
 
 // Include additional ACF field registrations
 require_once get_stylesheet_directory() . '/inc/acf-home.php';
+require_once get_stylesheet_directory() . '/inc/acf-thalam.php';
