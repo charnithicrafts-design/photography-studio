@@ -152,7 +152,39 @@
               </div>
             </div>
           <?php endforeach; 
-        endif; ?>
+        else : ?>
+          <!-- FALLBACK ACCORDION CARDS (If ACF is empty) -->
+          <div class="journey-card is-active" data-index="0">
+            <button class="journey-card-toggle">
+              <span class="journey-card-step">01 — Maternity</span>
+              <h3 class="journey-card-title">The Prelude.</h3>
+            </button>
+            <div class="journey-card-content">
+              <p class="journey-card-desc">Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.</p>
+              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Maternity Placeholder">
+            </div>
+          </div>
+          <div class="journey-card" data-index="1">
+            <button class="journey-card-toggle">
+              <span class="journey-card-step">02 — Newborn</span>
+              <h3 class="journey-card-title">The Arrival.</h3>
+            </button>
+            <div class="journey-card-content">
+              <p class="journey-card-desc">Intimate, art-directed studio sessions or house visits within the first critical weeks.</p>
+              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Newborn Placeholder">
+            </div>
+          </div>
+          <div class="journey-card" data-index="2">
+            <button class="journey-card-toggle">
+              <span class="journey-card-step">03 — Toddler</span>
+              <h3 class="journey-card-title">The Milestone.</h3>
+            </button>
+            <div class="journey-card-content">
+              <p class="journey-card-desc">Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly.</p>
+              <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
       
       <div class="journey-gallery">
@@ -169,7 +201,12 @@
         <?php 
             endif;
           endforeach; 
-        endif; 
+        else : ?>
+          <!-- FALLBACK GALLERY IMAGES -->
+          <img class="journey-gallery-img is-active" data-index="0" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Maternity Placeholder">
+          <img class="journey-gallery-img" data-index="1" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Newborn Placeholder">
+          <img class="journey-gallery-img" data-index="2" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80" alt="Toddler Placeholder">
+        <?php endif; 
         ?>
       </div>
     </div>
