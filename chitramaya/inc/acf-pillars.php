@@ -79,6 +79,26 @@ acf_add_local_field_group(array(
             'type' => 'image',
             'return_format' => 'url',
         ),
+        // SECTION 4
+        array(
+            'key' => 'field_pillar_sec4_title',
+            'label' => 'Section 4 Title',
+            'name' => 'pillar_sec4_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_pillar_sec4_desc',
+            'label' => 'Section 4 Description',
+            'name' => 'pillar_sec4_desc',
+            'type' => 'textarea',
+        ),
+        array(
+            'key' => 'field_pillar_sec4_img',
+            'label' => 'Section 4 Image',
+            'name' => 'pillar_sec4_img',
+            'type' => 'image',
+            'return_format' => 'url',
+        ),
     ),
     'location' => array(
         array(
@@ -107,6 +127,13 @@ acf_add_local_field_group(array(
                 'param' => 'page_template',
                 'operator' => '==',
                 'value' => 'template-production.php',
+            ),
+        ),
+        array(
+            array(
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'template-maternity.php',
             ),
         ),
     ),
