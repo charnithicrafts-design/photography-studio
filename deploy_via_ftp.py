@@ -21,27 +21,21 @@ ftp.login(FTP_USER, FTP_PASS)
 print("Connecting to FTP...")
 ftp.cwd('chitramaya.charnithi.com')
 
-# Define local-to-remote mapping
-files_to_upload = [
-    # Theme files
-    ('chitramaya/template-chitramaya.php', 'wp-content/themes/chitramaya/template-chitramaya.php'),
-    ('chitramaya/template-thalam.php', 'wp-content/themes/chitramaya/template-thalam.php'),
-    ('chitramaya/template-thalam-baby.php', 'wp-content/themes/chitramaya/template-thalam-baby.php'),
-    ('chitramaya/template-parts/global-nav.php', 'wp-content/themes/chitramaya/template-parts/global-nav.php'),
-    ('chitramaya/template-parts/gallery-masonry.php', 'wp-content/themes/chitramaya/template-parts/gallery-masonry.php'),
-    ('chitramaya/template-parts/content-art-showcase.php', 'wp-content/themes/chitramaya/template-parts/content-art-showcase.php'),
-    ('chitramaya/style.css', 'wp-content/themes/chitramaya/style.css'),
-    ('chitramaya/functions.php', 'wp-content/themes/chitramaya/functions.php'),
-    ('chitramaya/theme.json', 'wp-content/themes/chitramaya/theme.json'),
-    ('chitramaya/inc/acf-home.php', 'wp-content/themes/chitramaya/inc/acf-home.php'),
-    ('chitramaya/inc/acf-thalam.php', 'wp-content/themes/chitramaya/inc/acf-thalam.php'),
-    ('chitramaya/chitramaya-landing.html', 'wp-content/themes/chitramaya/chitramaya-landing.html'),
-    ('chitramaya/thalam-landing.html', 'wp-content/themes/chitramaya/thalam-landing.html'),
-    
-    # Root files (optional but good for consistency)
-    ('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'),
-    ('chitramaya/thalam-landing.html', 'thalam-landing.html'),
-]
+files_to_upload = []
+# Automatically gather all files in the chitramaya theme folder
+for root, dirs, files in os.walk('chitramaya'):
+    for file in files:
+        if file.startswith('.'):
+            continue
+        local_path = os.path.join(root, file)
+        # Convert OS path separator to FTP path separator
+        local_path = local_path.replace('\\', '/')
+        remote_path = 'wp-content/themes/' + local_path
+        files_to_upload.append((local_path, remote_path))
+
+# Root files (optional but good for consistency)
+files_to_upload.append(('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'))
+files_to_upload.append(('chitramaya/thalam-landing.html', 'thalam-landing.html'))
 
 for local_path, remote_path in files_to_upload:
     if os.path.exists(local_path):
@@ -61,7 +55,6 @@ for local_path, remote_path in files_to_upload:
                         
             with open(local_path, 'rb') as f:
                 ftp.storbinary(f'STOR {remote_path}', f)
-            print(f"Successfully uploaded {remote_path}")
         except Exception as e:
             print(f"Failed to upload {remote_path}: {e}")
     else:
