@@ -166,6 +166,9 @@ require_once get_stylesheet_directory() . '/inc/acf-thalam.php';
 require_once get_stylesheet_directory() . '/inc/acf-services.php';
 require_once get_stylesheet_directory() . '/inc/acf-pillars.php';
 
+// Include Admin Tools
+require_once get_stylesheet_directory() . '/inc/admin-image-verifier.php';
+
 // Include Portfolio Architecture (CPT & ACF)
 require_once get_stylesheet_directory() . '/inc/cpt-portfolio.php';
 require_once get_stylesheet_directory() . '/inc/acf-portfolio.php';
