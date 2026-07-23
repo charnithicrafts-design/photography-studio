@@ -45,7 +45,7 @@
             <!-- Panel 2 -->
             <div class="nav-panel" id="panel-2">
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Maternity & Bump-to-Baby</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity & Bump-to-Baby</a></li>
                     <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn, Infant & Toddler</a></li>
                     <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Weddings & Destination Celebrations</a></li>
                     <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Generational & Cultural Milestones</a></li>
