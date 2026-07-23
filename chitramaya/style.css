@@ -23,10 +23,18 @@ Version: 1.1.0
   /* Typography - Thalam (The Functional Space) */
   --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
   
-  --font-massive: 9vw;
-  --font-huge: 5vw;
-  --font-large: 3rem;
-  --font-base: 1.125rem;
+  /* 
+   * FLUID MODULAR TYPOGRAPHY 
+   * Mobile Scale: Major Third (1.25)
+   * Desktop Scale: Perfect Fifth (1.5)
+   * Provides extreme contrast and distinct hierarchy.
+   */
+  --type-step-0: clamp(1.00rem, 0.96rem + 0.18vw, 1.125rem); /* Base */
+  --type-step-1: clamp(1.25rem, 1.125rem + 0.63vw, 1.6875rem);
+  --type-step-2: clamp(1.56rem, 1.29rem + 1.34vw, 2.53rem);
+  --type-step-3: clamp(1.95rem, 1.40rem + 2.68vw, 3.80rem);
+  --type-step-4: clamp(2.44rem, 1.51rem + 4.64vw, 5.69rem);
+  --type-step-5: clamp(3.05rem, 1.51rem + 7.77vw, 8.54rem);
   
   /* Reset WP Bloat */
   --wp--style--global--padding: 0;
@@ -89,7 +97,7 @@ html, body {
 h1, .brut-massive-text {
   font-family: var(--font-primary);
   font-weight: 900;
-  font-size: var(--font-massive);
+  font-size: var(--type-step-5);
   line-height: 0.85;
   text-transform: uppercase;
   margin: 0;
@@ -99,7 +107,7 @@ h1, .brut-massive-text {
 h2, .brut-huge-text {
   font-family: var(--font-primary);
   font-weight: 900;
-  font-size: var(--font-huge);
+  font-size: var(--type-step-4);
   line-height: 0.9;
   text-transform: uppercase;
   margin: 0;
@@ -220,13 +228,13 @@ h2, .brut-huge-text {
    ========================================================================== */
 .thalam-art-showcase { background: var(--color-dark); color: var(--color-light); }
 .art-split-layout { display: flex; flex-direction: column; }
-.art-text-pane { padding: 6rem 1.5rem; display: flex; align-items: center; justify-content: center; text-align: center; }
-.art-headline { font-family: var(--font-primary); font-weight: 900; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
+.art-text-pane { padding: 4rem 1.5rem; display: flex; align-items: center; justify-content: center; text-align: center; }
+.art-headline { font-family: var(--font-primary); font-weight: 900; font-size: var(--type-step-4); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
 .art-image-pane { position: relative; min-height: 60vh; }
-.art-image-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8) contrast(1.2); }
+.art-image-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; filter: saturate(0.8) contrast(1.2); }
 
 @media (min-width: 992px) {
   .art-split-layout { flex-direction: row; min-height: 100vh; }
-  .art-text-pane { flex: 1; padding: 6rem; text-align: left; }
+  .art-text-pane { flex: 1; padding: 5rem; text-align: left; }
   .art-image-pane { flex: 1; min-height: 100vh; }
 }
