@@ -140,3 +140,59 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+/**
+ * Dynamic Label UX for Pillar Pages
+ * Transforms generic "Section 1" labels into template-specific contextual labels
+ */
+add_filter('acf/prepare_field', 'chitramaya_dynamic_pillar_labels');
+function chitramaya_dynamic_pillar_labels($field) {
+    global $post;
+    if (!$post) return $field;
+    
+    // Only target the unified pillar fields
+    if (strpos($field['name'], 'pillar_sec') !== 0) return $field;
+    
+    $template = get_page_template_slug($post->ID);
+    
+    // Extract section number from field name (e.g., pillar_sec1_title -> 1)
+    if (!preg_match('/pillar_sec(\d+)/', $field['name'], $matches)) return $field;
+    $sec = $matches[1];
+    
+    $custom_labels = [
+        'template-corporate.php' => [
+            '1' => 'Executive Leadership',
+            '2' => 'The Workspace',
+            '3' => 'Corporate Events',
+            '4' => 'Cinematic Production',
+        ],
+        'template-commercial.php' => [
+            '1' => 'Product & E-Commerce',
+            '2' => 'Food & Lifestyle',
+            '3' => 'Architecture & 360',
+        ],
+        'template-events.php' => [
+            '1' => 'Weddings & Destination',
+            '2' => 'Cultural Ceremonies',
+            '3' => 'The Details',
+        ],
+        'template-production.php' => [
+            '1' => 'Podcast & Interview',
+            '2' => 'Brand Identity',
+            '3' => 'OOH Campaigns',
+        ],
+        'template-maternity.php' => [
+            '1' => 'The Studio',
+            '2' => 'The Location',
+            '3' => 'The Village Awaits',
+            '4' => 'Bump to Baby',
+        ]
+    ];
+    
+    if (isset($custom_labels[$template][$sec])) {
+        $context = $custom_labels[$template][$sec];
+        $field['label'] = str_replace("Section $sec", "$context (Section $sec)", $field['label']);
+    }
+    
+    return $field;
+}
