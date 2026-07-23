@@ -5,17 +5,25 @@ function chitramaya_register_services_acf_fields() {
         
         $fields = array();
         
+        $tab_names = [
+            1 => 'Commercial & Brand',
+            2 => 'Events & Portrait',
+            3 => 'Talam Studio Space',
+            4 => 'The Workflow',
+            5 => 'Brand Design'
+        ];
+        
         // ACF Free does not support the Repeater field.
         // We will statically allocate 5 Horizontals, and up to 6 Verticals per Horizontal.
         for ($h = 1; $h <= 5; $h++) {
-            $fields[] = array( 'key' => "tab_horizontal_{$h}", 'label' => "Horizontal {$h}", 'type' => 'tab' );
-            $fields[] = array( 'key' => "field_h{$h}_title", 'label' => 'Horizontal Name', 'name' => "h{$h}_title", 'type' => 'text' );
+            $fields[] = array( 'key' => "tab_horizontal_{$h}", 'label' => $tab_names[$h], 'type' => 'tab' );
+            $fields[] = array( 'key' => "field_h{$h}_title", 'label' => 'Category Display Name', 'name' => "h{$h}_title", 'type' => 'text' );
             $fields[] = array( 'key' => "field_h{$h}_headline", 'label' => 'Punchy Headline', 'name' => "h{$h}_headline", 'type' => 'text' );
-            $fields[] = array( 'key' => "field_h{$h}_manifesto", 'label' => 'Manifesto', 'name' => "h{$h}_manifesto", 'type' => 'textarea', 'rows' => 4 );
+            $fields[] = array( 'key' => "field_h{$h}_manifesto", 'label' => 'Core Manifesto', 'name' => "h{$h}_manifesto", 'type' => 'textarea', 'rows' => 4 );
             
             for ($v = 1; $v <= 6; $v++) {
-                $fields[] = array( 'key' => "field_h{$h}_v{$v}_title", 'label' => "Vertical {$v} Title", 'name' => "h{$h}_v{$v}_title", 'type' => 'text', 'wrapper' => array('width' => '50') );
-                $fields[] = array( 'key' => "field_h{$h}_v{$v}_desc", 'label' => "Vertical {$v} Description", 'name' => "h{$h}_v{$v}_desc", 'type' => 'textarea', 'rows' => 2, 'wrapper' => array('width' => '50') );
+                $fields[] = array( 'key' => "field_h{$h}_v{$v}_title", 'label' => "Service {$v} Name", 'name' => "h{$h}_v{$v}_title", 'type' => 'text', 'wrapper' => array('width' => '50') );
+                $fields[] = array( 'key' => "field_h{$h}_v{$v}_desc", 'label' => "Service {$v} Description", 'name' => "h{$h}_v{$v}_desc", 'type' => 'textarea', 'rows' => 2, 'wrapper' => array('width' => '50') );
             }
         }
 
