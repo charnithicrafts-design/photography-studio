@@ -71,8 +71,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">The Grand<br>Heirloom.</h1>
-      <p class="hero-desc">An intimate, unscripted archiving of your most significant cultural milestones. Because you shouldn’t have to choose which memory to keep.</p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Grand<br>Heirloom.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'An intimate, unscripted archiving of your most significant cultural milestones. Because you shouldn’t have to choose which memory to keep.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Reserve Your Date</a>
     </div>
   </section>
@@ -81,33 +81,33 @@
     <!-- Story 1 -->
     <div class="story-row">
       <div class="story-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Weddings">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings">
       </div>
       <div class="story-content">
-        <h2 class="story-title">Weddings & Destination</h2>
-        <p class="story-desc">Pre/post wedding documentation and destination coverage. We approach your wedding not as an event, but as a cinematic narrative that demands the highest level of storytelling.</p>
+        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Weddings & Destination' ); ?></h2>
+        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Pre/post wedding documentation and destination coverage. We approach your wedding not as an event, but as a cinematic narrative that demands the highest level of storytelling.' ); ?></p>
       </div>
     </div>
 
     <!-- Story 2 -->
     <div class="story-row">
       <div class="story-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1530047139082-54337d58f3bf?auto=format&fit=crop&w=1200&q=80" alt="Cultural Milestones">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1530047139082-54337d58f3bf?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cultural Milestones">
       </div>
       <div class="story-content">
-        <h2 class="story-title">Cultural Milestones</h2>
-        <p class="story-desc">Respectful, comprehensive archiving of Sastiyabthapoorthi, Upanayanam, and Sadhabishegam. Documenting generations coming together with authenticity and grace.</p>
+        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Cultural Milestones' ); ?></h2>
+        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Respectful, comprehensive archiving of Sastiyabthapoorthi, Upanayanam, and Sadhabishegam. Documenting generations coming together with authenticity and grace.' ); ?></p>
       </div>
     </div>
 
     <!-- Story 3 -->
     <div class="story-row">
       <div class="story-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80" alt="Family Portraits">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Portraits">
       </div>
       <div class="story-content">
-        <h2 class="story-title">The Grand Portrait</h2>
-        <p class="story-desc">Studio or house-visit art-themed family portraits designed to hang on your walls for the next fifty years.</p>
+        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'The Grand Portrait' ); ?></h2>
+        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Studio or house-visit art-themed family portraits designed to hang on your walls for the next fifty years.' ); ?></p>
       </div>
     </div>
   </section>

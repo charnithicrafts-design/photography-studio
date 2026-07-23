@@ -67,8 +67,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Identity is a Strategic Weapon.</h1>
-      <p class="hero-desc">From broadcast-grade podcast production to comprehensive brand design. We don’t just capture images; we architect lasting recognition.</p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Identity is a Strategic Weapon.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'From broadcast-grade podcast production to comprehensive brand design. We don’t just capture images; we architect lasting recognition.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Discuss Your Brand</a>
     </div>
   </section>
@@ -78,31 +78,31 @@
       <!-- 1 -->
       <div class="feature-card">
         <div class="feature-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80" alt="Podcast Production">
+          <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
         </div>
         <span class="feature-number">01 // PRODUCTION</span>
-        <h2 class="feature-title">Podcast & Interview</h2>
-        <p class="feature-desc">Multi-camera setups and professional audio engineering for creators and entrepreneurs looking to build a strong media presence.</p>
+        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Podcast & Interview' ); ?></h2>
+        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Multi-camera setups and professional audio engineering for creators and entrepreneurs looking to build a strong media presence.' ); ?></p>
       </div>
       
       <!-- 2 -->
       <div class="feature-card">
         <div class="feature-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1626785772602-f1051cef8c71?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity">
+          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1626785772602-f1051cef8c71?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Identity">
         </div>
         <span class="feature-number">02 // DESIGN</span>
-        <h2 class="feature-title">Brand Identity</h2>
-        <p class="feature-desc">Logo creation, typography, and color palettes that translate your mission into tangible visual assets. Building cohesive ecosystems.</p>
+        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Brand Identity' ); ?></h2>
+        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Logo creation, typography, and color palettes that translate your mission into tangible visual assets. Building cohesive ecosystems.' ); ?></p>
       </div>
 
       <!-- 3 -->
       <div class="feature-card">
         <div class="feature-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="OOH Campaigns">
+          <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="OOH Campaigns">
         </div>
         <span class="feature-number">03 // STRATEGY</span>
-        <h2 class="feature-title">Marketing & OOH</h2>
-        <p class="feature-desc">Illustrative posters, out-of-home campaign design, and comprehensive brand guidelines ensuring consistency across all touchpoints.</p>
+        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Marketing & OOH' ); ?></h2>
+        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Illustrative posters, out-of-home campaign design, and comprehensive brand guidelines ensuring consistency across all touchpoints.' ); ?></p>
       </div>
     </div>
   </section>

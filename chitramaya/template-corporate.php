@@ -75,8 +75,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">The Visual<br>Architecture of <em>Authority</em>.</h1>
-      <p class="hero-desc">Presenting a strong, authentic visual identity. From the boardroom to the production floor, we document the reality of your corporate culture.</p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Visual<br>Architecture of <em>Authority</em>.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Presenting a strong, authentic visual identity. From the boardroom to the production floor, we document the reality of your corporate culture.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Commission a Corporate Shoot</a>
     </div>
   </section>
@@ -86,30 +86,30 @@
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">01</span>
-        <h2 class="service-title">Executive<br>Leadership</h2>
-        <p class="service-desc">Headshots and professional portraits designed to humanize the brand for your website, annual reports, and executive platforms.</p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive<br>Leadership' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Headshots and professional portraits designed to humanize the brand for your website, annual reports, and executive platforms.' ); ?></p>
       </div>
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80" alt="Executive Portrait" class="service-image">
+      <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
     </div>
 
     <!-- 02 -->
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">02</span>
-        <h2 class="service-title">The<br>Workspace</h2>
-        <p class="service-desc">Environmental and lifestyle portraits capturing staff in their natural workspace, effectively reflecting your operational culture and infrastructure.</p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'The<br>Workspace' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace, effectively reflecting your operational culture and infrastructure.' ); ?></p>
       </div>
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Corporate Workspace" class="service-image">
+      <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
     </div>
 
     <!-- 03 -->
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">03</span>
-        <h2 class="service-title">Corporate<br>Events</h2>
-        <p class="service-desc">Comprehensive, non-intrusive coverage of conferences, seminars, marketing events, and high-profile product launches.</p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate<br>Events' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Comprehensive, non-intrusive coverage of conferences, seminars, marketing events, and high-profile product launches.' ); ?></p>
       </div>
-      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80" alt="Corporate Events" class="service-image">
+      <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
     </div>
   </section>
 

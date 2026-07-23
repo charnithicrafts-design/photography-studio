@@ -66,8 +66,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Purpose-Driven Visuals.<br>Engineered to Convert.</h1>
-      <p class="hero-desc">Capturing, enhancing, and delivering high-quality images that align seamlessly with your marketing goals.</p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Purpose-Driven Visuals.<br>Engineered to Convert.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Capturing, enhancing, and delivering high-quality images that align seamlessly with your marketing goals.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Book a Commercial Campaign</a>
     </div>
   </section>
@@ -76,26 +76,26 @@
     <div class="masonry-grid">
       <!-- Item 1 -->
       <div class="masonry-item">
-        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Product Photography">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Product Photography">
         <div class="masonry-caption">
-          <h3>Product & E-Commerce</h3>
-          <p>Clean, clinical, and tactile.</p>
+          <h3><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Product & E-Commerce' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Clean, clinical, and tactile.' ); ?></p>
         </div>
       </div>
       <!-- Item 2 -->
       <div class="masonry-item">
-        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80" alt="Food Lifestyle">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Food Lifestyle">
         <div class="masonry-caption">
-          <h3>Food & Lifestyle</h3>
-          <p>Aspirational real-life scenarios.</p>
+          <h3><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Food & Lifestyle' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Aspirational real-life scenarios.' ); ?></p>
         </div>
       </div>
       <!-- Item 3 -->
       <div class="masonry-item">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Architecture">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Architecture">
         <div class="masonry-caption">
-          <h3>Architecture & 360</h3>
-          <p>Cinematic walkthroughs & timelapses.</p>
+          <h3><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Architecture & 360' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Cinematic walkthroughs & timelapses.' ); ?></p>
         </div>
       </div>
     </div>
