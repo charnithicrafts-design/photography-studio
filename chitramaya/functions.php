@@ -142,7 +142,7 @@ function chitramaya_register_acf_fields() {
                     'label' => 'Art Showcase Feature Image (External URL)',
                     'name' => 'art_showcase_image_url',
                     'type' => 'url',
-                    'default_value' => 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=90&auto=format&fit=crop',
+                    'default_value' => 'https://images.unsplash.com/photo-1765267566923-4ce452dd9b02?w=1200&q=90&auto=format&fit=crop',
                 ),
             ),
             'location' => array(

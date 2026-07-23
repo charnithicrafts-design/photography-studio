@@ -221,7 +221,7 @@ h2, .brut-huge-text {
 .thalam-art-showcase { background: var(--color-dark); color: var(--color-light); }
 .art-split-layout { display: flex; flex-direction: column; }
 .art-text-pane { padding: 6rem 1.5rem; display: flex; align-items: center; justify-content: center; text-align: center; }
-.art-headline { font-family: var(--font-primary); font-weight: 900; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
+.art-headline { font-family: var(--font-primary); font-weight: 900; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
 .art-image-pane { position: relative; min-height: 60vh; }
 .art-image-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8) contrast(1.2); }
 
