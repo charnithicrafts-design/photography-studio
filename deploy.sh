@@ -21,7 +21,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 WP_ROOT="$SCRIPT_DIR"
 
 echo "[1/5] Syncing workspace theme to active WordPress directory..."
-cp -r "$SCRIPT_DIR/chitramaya/" "$WP_ROOT/wp-content/themes/chitramaya/"
+cp -a "$SCRIPT_DIR/chitramaya/." "$WP_ROOT/wp-content/themes/chitramaya/"
 
 echo "[2/5] Exporting live SQL dump..."
 php -d memory_limit=512M "$SCRIPT_DIR/wp-cli.phar" \
