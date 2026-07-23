@@ -164,3 +164,7 @@ add_action( 'acf/init', 'chitramaya_register_acf_fields' );
 require_once get_stylesheet_directory() . '/inc/acf-home.php';
 require_once get_stylesheet_directory() . '/inc/acf-thalam.php';
 require_once get_stylesheet_directory() . '/inc/acf-services.php';
+
+// Include Portfolio Architecture (CPT & ACF)
+require_once get_stylesheet_directory() . '/inc/cpt-portfolio.php';
+require_once get_stylesheet_directory() . '/inc/acf-portfolio.php';
