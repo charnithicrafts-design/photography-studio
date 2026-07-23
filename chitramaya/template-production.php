@@ -88,7 +88,7 @@
       <!-- 2 -->
       <div class="feature-card">
         <div class="feature-img-wrapper">
-          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1626785772602-f1051cef8c71?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Identity">
+          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Identity">
         </div>
         <span class="feature-number">02 // DESIGN</span>
         <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Brand Identity' ); ?></h2>

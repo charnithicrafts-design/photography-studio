@@ -92,7 +92,7 @@
     <!-- Story 2 -->
     <div class="story-row">
       <div class="story-img-wrapper">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cultural Milestones">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cultural Milestones">
       </div>
       <div class="story-content">
         <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Cultural Milestones' ); ?></h2>
