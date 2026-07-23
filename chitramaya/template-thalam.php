@@ -216,6 +216,7 @@
   </style>
 </head>
 <body>
+<?php get_template_part('template-parts/global-nav'); ?>
 
   <div class="system-bar">
     <span>[ Thalam Studio — Ad Shoots · Baby Photography · Operational ]</span>

@@ -88,6 +88,9 @@
   }
 
 </style>
+</head>
+<body>
+<?php get_template_part('template-parts/global-nav'); ?>
 
 <main class="maternity-page">
   <!-- HERO -->
