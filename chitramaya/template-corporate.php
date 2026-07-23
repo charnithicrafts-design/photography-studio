@@ -47,8 +47,9 @@
     /* SERVICES GRID */
     .services-section { padding: 8rem 3rem; background: var(--bg-light); }
     .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 8rem; }
-    .service-block:nth-child(even) { direction: rtl; }
-    .service-block:nth-child(even) > * { direction: ltr; }
+    .service-block:nth-child(odd) .service-content { justify-self: end; }
+    .service-block:nth-child(even) .service-content { order: 2; justify-self: start; }
+    .service-block:nth-child(even) .service-image { order: 1; }
     
     .service-content { max-width: 500px; }
     .service-num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--accent); font-style: italic; margin-bottom: 1rem; display: block; }

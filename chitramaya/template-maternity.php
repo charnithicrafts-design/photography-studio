@@ -61,8 +61,9 @@
 
   /* 5. STANDARD SECTIONS */
   .info-section { display: grid; grid-template-columns: 1fr; gap: 4rem; padding: 6rem 2rem; max-width: 1400px; margin: 0 auto; align-items: center; }
-  .info-section.reverse { direction: rtl; }
-  .info-section.reverse > * { direction: ltr; }
+  .info-section:not(.reverse) .info-content { justify-self: start; }
+  .info-section.reverse .info-content { order: 1; justify-self: end; }
+  .info-section.reverse .info-img-wrapper { order: 2; }
   .info-img-wrapper { position: relative; aspect-ratio: 4/5; overflow: hidden; }
   .info-img { width: 100%; height: 100%; object-fit: cover; }
   .info-content { max-width: 500px; padding: 0 2rem; }
