@@ -3,7 +3,9 @@
  * Template part for displaying the Art-Themed Showcase
  */
 
-$heading = get_field('art_showcase_heading') ?: 'NOT JUST A PHOTO.<br>AN ARCHIVE OF ART.';
+$raw_heading = get_field('art_showcase_heading') ?: 'NOT JUST A PHOTO.<br>AN ARCHIVE OF ART.';
+// Automatically upgrade <br> tags to a structural span so we can control the rhythm via CSS
+$heading = str_replace(array('<br>', '<br/>', '<br />'), '<span class="headline-gap"></span>', $raw_heading);
 $image = get_field('art_showcase_image');
 $image_url = get_field('art_showcase_image_url') ?: 'https://images.unsplash.com/photo-1765267566923-4ce452dd9b02?w=1200&q=90&auto=format&fit=crop';
 

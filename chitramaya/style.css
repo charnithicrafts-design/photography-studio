@@ -230,6 +230,7 @@ h2, .brut-huge-text {
 .art-split-layout { display: flex; flex-direction: column; }
 .art-text-pane { padding: 4rem 1.5rem; display: flex; align-items: center; justify-content: center; text-align: center; }
 .art-headline { font-family: var(--font-primary); font-weight: 900; font-size: var(--type-step-4); line-height: 1.05; text-transform: uppercase; letter-spacing: -0.03em; }
+.headline-gap { display: block; height: 0.35em; }
 .art-image-pane { position: relative; min-height: 60vh; }
 .art-image-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; filter: saturate(0.8) contrast(1.2); }
 
