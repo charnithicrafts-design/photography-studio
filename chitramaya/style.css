@@ -253,7 +253,8 @@ h2, .brut-huge-text {
 }
 
 /* Cinematic Fixed Background + Dark Gradient */
-.services-page::before {
+.services-page::before,
+.portfolio-archive-page::before {
   content: '';
   position: fixed;
   inset: 0;
@@ -302,6 +303,9 @@ h2, .brut-huge-text {
     background-color: var(--color-dark);
     color: var(--color-light);
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
 }
 
 .portfolio-header {
@@ -324,12 +328,12 @@ h2, .brut-huge-text {
 @media (min-width: 992px) {
     .project-meta {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
-        gap: 6rem;
+        gap: 8rem; /* Use a strict gap instead of space-between to prevent the river of whitespace */
     }
-    .project-info { flex: 1; position: sticky; top: 8rem; }
-    .project-manifesto { flex: 1.5; }
+    .project-info { flex: 0 0 350px; position: sticky; top: 8rem; }
+    .project-manifesto { flex: 1; max-width: 800px; }
 }
 
 .project-title {
