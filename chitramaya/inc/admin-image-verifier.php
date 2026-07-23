@@ -68,7 +68,24 @@ function chitramaya_render_verifier_page() {
             $unique_results[] = $r;
         }
     }
-    $results = $unique_results;
+    
+    $unique_results = array_values($unique_results);
+
+    // Pagination Logic
+    $per_page = 20;
+    $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
+    $total_items = count($unique_results);
+    $total_pages = ceil($total_items / $per_page);
+    $results = array_slice($unique_results, ($current_page - 1) * $per_page, $per_page);
+
+    $page_links = paginate_links( array(
+        'base' => add_query_arg( 'paged', '%#%' ),
+        'format' => '',
+        'prev_text' => __('&laquo;'),
+        'next_text' => __('&raquo;'),
+        'total' => $total_pages,
+        'current' => $current_page
+    ) );
     ?>
     <div class="wrap">
         <h1 class="wp-heading-inline">External Asset Link Verifier</h1>
@@ -81,6 +98,15 @@ function chitramaya_render_verifier_page() {
             .status-error { color: #d63638; }
             .verifier-url { width: 100%; font-family: monospace; font-size: 11px; padding: 4px 8px; color: #555; background: #f9f9f9; border: 1px solid #ddd; }
         </style>
+
+        <?php if ( $page_links ) : ?>
+            <div class="tablenav top">
+                <div class="tablenav-pages">
+                    <span class="displaying-num"><?php echo $total_items; ?> items</span>
+                    <span class="pagination-links"><?php echo $page_links; ?></span>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <table class="wp-list-table widefat fixed striped table-view-list">
             <thead>
@@ -117,6 +143,16 @@ function chitramaya_render_verifier_page() {
                 <?php endif; ?>
             </tbody>
         </table>
+
+        <?php if ( $page_links ) : ?>
+            <div class="tablenav bottom">
+                <div class="tablenav-pages">
+                    <span class="displaying-num"><?php echo $total_items; ?> items</span>
+                    <span class="pagination-links"><?php echo $page_links; ?></span>
+                </div>
+            </div>
+        <?php endif; ?>
+
     </div>
 
     <script>
