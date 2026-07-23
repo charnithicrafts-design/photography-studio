@@ -19,10 +19,10 @@
         <!-- Left Column: Primary Horizontals -->
         <div class="nav-horizontals">
             <button class="nav-horizontal-item is-active" data-target="panel-1">COMMERCIAL & BRAND</button>
-            <button class="nav-horizontal-item" data-target="panel-2">EVENTS & LEGACY</button>
+            <button class="nav-horizontal-item" data-target="panel-2">EVENTS & PORTRAIT</button>
             <button class="nav-horizontal-item" data-target="panel-3">TALAM STUDIO SPACE</button>
             <button class="nav-horizontal-item" data-target="panel-4">THE WORKFLOW</button>
-            <button class="nav-horizontal-item" data-target="panel-5">BRAND DESIGN <span class="nav-soon">[COMING SOON]</span></button>
+            <button class="nav-horizontal-item" data-target="panel-5">BRAND DESIGN</button>
         </div>
 
         <!-- Right Column: Vertical Sub-services -->
@@ -32,37 +32,39 @@
             <div class="nav-panel is-active" id="panel-1">
                 <ul class="nav-grid">
                     <li><a href="#work">Executive Portfolios & Team Identity</a></li>
+                    <li><a href="#work">Workspace & Cinematic Culture</a></li>
                     <li><a href="#work">E-Commerce & Product Catalogues</a></li>
-                    <li><a href="#work">OOH Campaigns & Fashion Lookbooks</a></li>
-                    <li><a href="#work">Architecture & Cinematic Walkthroughs</a></li>
+                    <li><a href="#work">Events, Seminars & Brand Launches</a></li>
+                    <li><a href="#work">Corporate Film & Brand TVCs</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Purpose-driven visuals designed to scale. From the boardroom to the billboard, we engineer images that influence perception and drive engagement.
+                    Engineering visual authority. Every frame is calibrated to command respect, build profound trust, and assert your market dominance.
                 </div>
             </div>
 
             <!-- Panel 2 -->
             <div class="nav-panel" id="panel-2">
                 <ul class="nav-grid">
-                    <li><a href="#events">Destination & Pre-Wedding</a></li>
-                    <li><a href="#events">Sastiyabthapoorthi & Sadhabishegam</a></li>
-                    <li><a href="#events">Family Portraits (Studio & Location)</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Maternity & Bump-to-Baby</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn, Infant & Toddler</a></li>
+                    <li><a href="#events">Weddings & Destination Celebrations</a></li>
+                    <li><a href="#events">Generational & Cultural Milestones</a></li>
+                    <li><a href="#events">The Grand Family Heirloom</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Uncompromising documentation of your most critical milestones. We capture heritage, scale, and raw emotion.
+                    Preserving the human milestone. We create a timeless, emotional archive of the people you love the most.
                 </div>
             </div>
 
             <!-- Panel 3 -->
             <div class="nav-panel" id="panel-3">
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn & Infant (Art-Themed)</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Maternity & Bump-to-Baby</a></li>
-                    <li><a href="#thalam">Food & Product Architecture</a></li>
-                    <li><a href="#thalam">Podcast & Interview Production (Audio/Visual)</a></li>
+                    <li><a href="#thalam">The Studio Space & Engineering</a></li>
+                    <li><a href="#thalam">Content Editing & Distribution</a></li>
+                    <li><a href="#thalam">Podcast Branding & Asset Creation</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Precision meets imagination. Our fully equipped onsite space is optimized for intimate portraits, high-fidelity audio, and clinical product shoots.
+                    The theater of dialogue. Fusing broadcast-grade audio engineering with cinematic visual production to elevate your media property.
                 </div>
             </div>
 
@@ -82,12 +84,14 @@
             <!-- Panel 5 -->
             <div class="nav-panel" id="panel-5">
                 <ul class="nav-grid">
-                    <li><span class="nav-disabled">Logos & Iconography</span></li>
-                    <li><span class="nav-disabled">Brand Identity Systems</span></li>
-                    <li><span class="nav-disabled">Typography Guidelines</span></li>
+                    <li><a href="#brand">Logo & Core Identity Systems</a></li>
+                    <li><a href="#brand">OOH Campaigns & Installation Design</a></li>
+                    <li><a href="#brand">Product Design & Tactile Packaging</a></li>
+                    <li><a href="#brand">Marketing Collaterals & Posters</a></li>
+                    <li><a href="#brand">Comprehensive Brand Guidelines</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Logos. Identity. Guidelines. A comprehensive creative solution is loading.
+                    Identity is not merely an aesthetic; it is a strategic weapon. We do not just design graphics; we architect lasting recognition.
                 </div>
             </div>
 
