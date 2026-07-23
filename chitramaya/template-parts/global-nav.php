@@ -31,11 +31,11 @@
             <!-- Panel 1 -->
             <div class="nav-panel is-active" id="panel-1">
                 <ul class="nav-grid">
-                    <li><a href="#work">Executive Portfolios & Team Identity</a></li>
-                    <li><a href="#work">Workspace & Cinematic Culture</a></li>
-                    <li><a href="#work">E-Commerce & Product Catalogues</a></li>
-                    <li><a href="#work">Events, Seminars & Brand Launches</a></li>
-                    <li><a href="#work">Corporate Film & Brand TVCs</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Executive Portfolios & Team Identity</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Workspace & Cinematic Culture</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">E-Commerce & Product Catalogues</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Events, Seminars & Brand Launches</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Corporate Film & Brand TVCs</a></li>
                 </ul>
                 <div class="nav-hook">
                     Engineering visual authority. Every frame is calibrated to command respect, build profound trust, and assert your market dominance.
@@ -47,9 +47,9 @@
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Maternity & Bump-to-Baby</a></li>
                     <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn, Infant & Toddler</a></li>
-                    <li><a href="#events">Weddings & Destination Celebrations</a></li>
-                    <li><a href="#events">Generational & Cultural Milestones</a></li>
-                    <li><a href="#events">The Grand Family Heirloom</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Weddings & Destination Celebrations</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Generational & Cultural Milestones</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">The Grand Family Heirloom</a></li>
                 </ul>
                 <div class="nav-hook">
                     Preserving the human milestone. We create a timeless, emotional archive of the people you love the most.
@@ -59,9 +59,9 @@
             <!-- Panel 3 -->
             <div class="nav-panel" id="panel-3">
                 <ul class="nav-grid">
-                    <li><a href="#thalam">The Studio Space & Engineering</a></li>
-                    <li><a href="#thalam">Content Editing & Distribution</a></li>
-                    <li><a href="#thalam">Podcast Branding & Asset Creation</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">The Studio Space & Engineering</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Content Editing & Distribution</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Podcast Branding & Asset Creation</a></li>
                 </ul>
                 <div class="nav-hook">
                     The theater of dialogue. Fusing broadcast-grade audio engineering with cinematic visual production to elevate your media property.
@@ -84,11 +84,11 @@
             <!-- Panel 5 -->
             <div class="nav-panel" id="panel-5">
                 <ul class="nav-grid">
-                    <li><a href="#brand">Logo & Core Identity Systems</a></li>
-                    <li><a href="#brand">OOH Campaigns & Installation Design</a></li>
-                    <li><a href="#brand">Product Design & Tactile Packaging</a></li>
-                    <li><a href="#brand">Marketing Collaterals & Posters</a></li>
-                    <li><a href="#brand">Comprehensive Brand Guidelines</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Logo & Core Identity Systems</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">OOH Campaigns & Installation Design</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Product Design & Tactile Packaging</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Marketing Collaterals & Posters</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Comprehensive Brand Guidelines</a></li>
                 </ul>
                 <div class="nav-hook">
                     Identity is not merely an aesthetic; it is a strategic weapon. We do not just design graphics; we architect lasting recognition.
