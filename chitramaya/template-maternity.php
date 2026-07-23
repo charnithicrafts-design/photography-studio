@@ -45,10 +45,13 @@
   .pane-content { position: relative; z-index: 2; }
   .pane-subtitle { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--accent-warm); display: block; }
   .pane-title { font-family: var(--font-serif); font-size: 3rem; font-style: italic; line-height: 1; margin-bottom: 1rem; }
-  .pane-desc { opacity: 0; transform: translateY(10px); transition: 0.4s ease; max-width: 400px; line-height: 1.6; }
+  .pane-desc { max-width: 400px; line-height: 1.6; opacity: 1; transform: translateY(0); transition: 0.4s ease; }
   
-  .pane:hover .pane-img { transform: scale(1.05); filter: brightness(0.9); }
-  .pane:hover .pane-desc { opacity: 1; transform: translateY(0); }
+  @media (hover: hover) and (pointer: fine) {
+    .pane-desc { opacity: 0; transform: translateY(10px); }
+    .pane:hover .pane-img { transform: scale(1.05); filter: brightness(0.9); }
+    .pane:hover .pane-desc { opacity: 1; transform: translateY(0); }
+  }
 
   @media(min-width: 768px) {
     .dual-pane { flex-direction: row; height: 85vh; }
