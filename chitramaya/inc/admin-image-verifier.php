@@ -33,6 +33,42 @@ function chitramaya_render_verifier_page() {
         ORDER BY p.post_title ASC
         LIMIT 200
     ");
+
+    // Sweep Active Theme Files for Hardcoded URLs
+    $theme_dir = get_stylesheet_directory();
+    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($theme_dir));
+    foreach ($files as $file) {
+        if ($file->isFile() && $file->getExtension() === 'php') {
+            $content = file_get_contents($file->getPathname());
+            if (preg_match_all('/https?:\/\/[^\s\'"]+(?:unsplash\.com|\.jpg|\.png|\.webp)[^\s\'"]*/i', $content, $matches)) {
+                foreach ($matches[0] as $url) {
+                    $url = esc_url_raw($url);
+                    $obj = new stdClass();
+                    $obj->post_id = 0;
+                    $obj->post_title = 'Theme: ' . basename($file->getPathname());
+                    $obj->meta_key = 'hardcoded_in_file';
+                    $obj->meta_value = $url;
+                    $obj->edit_link = admin_url('theme-editor.php?file=' . basename($file->getPathname()) . '&theme=' . get_stylesheet());
+                    $results[] = $obj;
+                }
+            }
+        }
+    }
+    
+    // De-duplicate results by URL
+    $unique_results = [];
+    $seen = [];
+    foreach ($results as $r) {
+        if (!in_array($r->meta_value, $seen)) {
+            $seen[] = $r->meta_value;
+            // Give DB results standard edit link if not defined
+            if (!isset($r->edit_link)) {
+                $r->edit_link = get_edit_post_link($r->post_id);
+            }
+            $unique_results[] = $r;
+        }
+    }
+    $results = $unique_results;
     ?>
     <div class="wrap">
         <h1 class="wp-heading-inline">External Asset Link Verifier</h1>
@@ -68,14 +104,14 @@ function chitramaya_render_verifier_page() {
                                 <img src="<?php echo esc_url($row->meta_value); ?>" class="verifier-preview" loading="lazy" onerror="this.style.display='none'">
                             </td>
                             <td><input type="text" class="verifier-url" readonly value="<?php echo esc_attr($row->meta_value); ?>" onclick="this.select();"></td>
-                            <td><strong><a href="<?php echo get_edit_post_link($row->post_id); ?>"><?php echo esc_html($row->post_title); ?></a></strong></td>
+                            <td><strong><a href="<?php echo esc_url($row->edit_link); ?>"><?php echo esc_html($row->post_title); ?></a></strong></td>
                             <td><code><?php echo esc_html($row->meta_key); ?></code></td>
                             <td class="status-cell">
                                 <div class="verifier-status">
                                     <span class="spinner is-active" style="float:none; margin:0;"></span> <span>Scanning...</span>
                                 </div>
                             </td>
-                            <td><a href="<?php echo get_edit_post_link($row->post_id); ?>" class="button button-small">Edit Post</a></td>
+                            <td><a href="<?php echo esc_url($row->edit_link); ?>" class="button button-small">Edit Code</a></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
