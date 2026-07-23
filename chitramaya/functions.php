@@ -168,3 +168,18 @@ require_once get_stylesheet_directory() . '/inc/acf-services.php';
 // Include Portfolio Architecture (CPT & ACF)
 require_once get_stylesheet_directory() . '/inc/cpt-portfolio.php';
 require_once get_stylesheet_directory() . '/inc/acf-portfolio.php';
+
+// Include Leads Architecture (CPT & AJAX Handlers)
+require_once get_stylesheet_directory() . '/inc/cpt-leads.php';
+require_once get_stylesheet_directory() . '/inc/ajax-booking.php';
+
+// Enqueue Global AJAX variables for Frontend
+function chitramaya_frontend_ajax() {
+    // Note: JS file will be created in Phase 3
+    wp_enqueue_script('chitramaya-booking', get_stylesheet_directory_uri() . '/js/booking.js', array(), wp_get_theme()->get('Version'), true);
+    wp_localize_script('chitramaya-booking', 'chitramayaAjax', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'chitramaya_booking_action' )
+    ));
+}
+add_action('wp_enqueue_scripts', 'chitramaya_frontend_ajax');
