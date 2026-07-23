@@ -225,7 +225,7 @@
   <nav>
     <div class="nav-meta"></div>
     <a href="<?php echo home_url('/thalam-studio'); ?>" class="nav-logo">Thalam Studio</a>
-    <div class="nav-book"><a href="#booking">Book a Session ↓</a></div>
+    <div class="nav-book"><a href="#" data-trigger="booking">Book a Session ↓</a></div>
   </nav>
 
   <section class="hero" id="hero">
@@ -240,7 +240,7 @@
       <div class="hero-body">
         <p><?php echo wp_kses_post( get_field('thalam_hero_body') ?: 'A purpose-built, 2,400 sq ft production environment engineered for high-volume e-commerce, commercial ad shoots, and precision tabletop photography.' ); ?></p>
         <div class="hero-ctas">
-          <a href="#booking" class="btn-pill-dark">Book The Studio</a>
+          <a href="#" class="btn-pill-dark" data-trigger="booking">Book The Studio</a>
           <a href="#services" class="btn-pill-light">View Capabilities</a>
         </div>
       </div>
@@ -282,7 +282,7 @@
       </div>
       <div class="service-action">
         <div><div class="service-price">Starting From</div><div class="service-price-val"><?php echo wp_kses_post( get_field('thalam_service_1_price') ?: '&#8377;25,000' ); ?></div></div>
-        <a href="#booking" class="service-cta" id="cta-ad-shoots">Book Ad Shoot →</a>
+        <a href="#" class="service-cta" id="cta-ad-shoots" data-trigger="booking">Book Ad Shoot →</a>
       </div>
     </div>
 
@@ -334,7 +334,7 @@
       </div>
       <div class="service-action">
         <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;45,000</div></div>
-        <a href="#booking" class="service-cta" id="cta-industrial">Book Industrial →</a>
+        <a href="#" class="service-cta" id="cta-industrial" data-trigger="booking">Book Industrial →</a>
       </div>
     </div>
 
@@ -360,7 +360,7 @@
       </div>
       <div class="service-action">
         <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;80,000</div></div>
-        <a href="#booking" class="service-cta" id="cta-weddings">Book Weddings →</a>
+        <a href="#" class="service-cta" id="cta-weddings" data-trigger="booking">Book Weddings →</a>
       </div>
     </div>
   </section>

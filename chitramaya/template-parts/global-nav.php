@@ -134,5 +134,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
-
-<?php require_once get_stylesheet_directory() . '/template-parts/global-booking.php'; ?>

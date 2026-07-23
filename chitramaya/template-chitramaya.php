@@ -319,19 +319,19 @@
       <span class="service-num">01 // Service</span>
       <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Ad Shoots' ); ?></h3>
       <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Commercial photography that sells. Conceived, lit, and delivered from Thalam Studio — with the art direction, brand alignment, and production value your campaign demands.' ); ?></p>
-      <a href="<?php echo home_url('/thalam-studio'); ?>#booking" class="service-btn">Book an Ad Shoot</a>
+      <a href="#" class="service-btn" data-trigger="booking">Book an Ad Shoot</a>
     </div>
     <div class="service-item">
       <span class="service-num">02 // Service</span>
       <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Baby &amp; Newborn' ); ?></h3>
       <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'The first year passes in a breath. Our baby sessions at Thalam Studio are crafted to capture weight, warmth, and the particular softness of new life — before it changes.' ); ?></p>
-      <a href="<?php echo home_url('/thalam-studio'); ?>#booking" class="service-btn">Book a Baby Session</a>
+      <a href="#" class="service-btn" data-trigger="booking">Book a Baby Session</a>
     </div>
     <div class="service-item">
       <span class="service-num">03 // Service</span>
       <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Editorial &amp; Portfolio' ); ?></h3>
       <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'For brands, artists, and creative directors who need a visual partner that understands narrative. We treat each commission as a short film — with intention, conflict, and resolution.' ); ?></p>
-      <a href="#contact" class="service-btn">Commission Editorial Work</a>
+      <a href="#" class="service-btn" data-trigger="booking">Commission Editorial Work</a>
     </div>
   </section>
 
@@ -361,7 +361,7 @@
     <div class="cta-banner-content">
       <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'Start a<br><em>Commission</em>' ); ?></h2>
     </div>
-    <a href="mailto:hello@chitramaya.com" class="cta-banner-btn">Speak to a Creative Director</a>
+    <a href="#" class="cta-banner-btn" data-trigger="booking">Speak to a Creative Director</a>
   </section>
 
   <!-- FOOTER -->
