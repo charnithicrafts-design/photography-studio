@@ -176,6 +176,7 @@
     <button class="hero-btn" data-trigger="booking" style="border-color: #fff; color: #fff;">Begin the Consultation</button>
   </section>
 </main>
+<?php get_template_part('template-parts/global-footer'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

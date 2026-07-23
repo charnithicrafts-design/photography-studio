@@ -201,6 +201,7 @@
     get_template_part('template-parts/content-art-showcase'); 
   ?>
 
+<?php get_template_part('template-parts/global-footer'); ?>
   <?php wp_footer(); ?>
   
   <script>
