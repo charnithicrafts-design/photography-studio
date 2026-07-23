@@ -176,7 +176,7 @@ require_once get_stylesheet_directory() . '/inc/ajax-booking.php';
 // Enqueue Global AJAX variables for Frontend
 function chitramaya_frontend_ajax() {
     // Only load the script and variables if we are on a page that uses the booking engine
-    if ( is_page_template( array('template-chitramaya.php', 'template-thalam.php', 'template-thalam-baby.php') ) ) {
+    if ( is_page_template( array('template-chitramaya.php', 'template-thalam.php', 'template-thalam-baby.php', 'template-corporate.php', 'template-commercial.php', 'template-events.php', 'template-production.php') ) ) {
         wp_enqueue_script('chitramaya-booking', get_stylesheet_directory_uri() . '/js/booking.js', array(), wp_get_theme()->get('Version'), true);
         wp_localize_script('chitramaya-booking', 'chitramayaAjax', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -188,7 +188,7 @@ add_action('wp_enqueue_scripts', 'chitramaya_frontend_ajax');
 
 // Inject Booking Overlay exclusively on specific templates to prevent DOM bloat
 function chitramaya_inject_booking_overlay() {
-    if ( is_page_template( array('template-chitramaya.php', 'template-thalam.php', 'template-thalam-baby.php') ) ) {
+    if ( is_page_template( array('template-chitramaya.php', 'template-thalam.php', 'template-thalam-baby.php', 'template-corporate.php', 'template-commercial.php', 'template-events.php', 'template-production.php') ) ) {
         require_once get_stylesheet_directory() . '/template-parts/global-booking.php';
     }
 }
