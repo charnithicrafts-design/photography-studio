@@ -69,10 +69,7 @@
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
-  <nav>
-    <a href="<?php echo home_url('/'); ?>" class="nav-logo">Chitramaya Creatives</a>
-    <div class="nav-book"><a href="#" data-trigger="booking">Commission a Shoot ↓</a></div>
-  </nav>
+
 
   <section class="hero">
     <div class="hero-content">

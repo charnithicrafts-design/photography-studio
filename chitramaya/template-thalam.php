@@ -223,11 +223,7 @@
     <span> · WhatsApp: +91 98765 43210</span>
   </div>
 
-  <nav>
-    <div class="nav-meta"></div>
-    <a href="<?php echo home_url('/thalam-studio'); ?>" class="nav-logo">Thalam Studio</a>
-    <div class="nav-book"><a href="#" data-trigger="booking">Book a Session ↓</a></div>
-  </nav>
+
 
   <section class="hero" id="hero">
     <img class="hero-img"
