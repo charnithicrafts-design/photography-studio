@@ -244,24 +244,32 @@ h2, .brut-huge-text {
    MODULE: GLOBAL SERVICES ECOSYSTEM
    ========================================================================== */
 .services-page { background: var(--color-dark); color: var(--color-light); }
-.services-header { padding: 6rem 1.5rem 3rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.services-header { padding: 6rem 1.5rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.services-header h1 { font-size: var(--type-step-4); } /* Slightly scale down page title on mobile */
 
-.service-horizontal { padding: 4rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 3rem; }
+.service-horizontal { padding: 3rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 2.5rem; }
 .horizontal-intro { max-width: 800px; display: flex; flex-direction: column; gap: 1rem; }
+.horizontal-intro h2 { font-size: var(--type-step-3); line-height: 1.1; margin-bottom: 0.5rem; } /* Reduce from step-4 to step-3 to prevent clashing */
 .horizontal-headline { font-family: var(--font-primary); font-weight: 700; font-size: var(--type-step-1); text-transform: uppercase; color: var(--color-accent); margin: 0; }
-.horizontal-manifesto { font-family: var(--font-primary); font-size: var(--type-step-0); line-height: 1.6; opacity: 0.8; margin: 0; }
+.horizontal-manifesto { font-family: var(--font-primary); font-size: 1.1rem; line-height: 1.6; opacity: 0.8; margin: 0; }
 
-.verticals-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-.vertical-item { padding: 2rem; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: crosshair; }
-.vertical-title { font-family: var(--font-mono); font-size: 1rem; font-weight: 700; text-transform: uppercase; margin: 0 0 0.5rem 0; color: var(--color-light); transition: color 0.3s ease; }
-.vertical-desc { font-family: var(--font-primary); font-size: 0.9rem; line-height: 1.5; opacity: 0.7; margin: 0; }
+.verticals-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.vertical-item { padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: crosshair; }
+.vertical-title { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; margin: 0 0 0.5rem 0; color: var(--color-light); transition: color 0.3s ease; letter-spacing: -0.02em; }
+.vertical-desc { font-family: var(--font-primary); font-size: 1rem; line-height: 1.5; opacity: 0.7; margin: 0; }
 
 .vertical-item:hover { background: rgba(255,255,255,0.02); transform: translateY(-4px); box-shadow: 4px 4px 0px var(--color-accent); border-color: var(--color-accent); }
 .vertical-item:hover .vertical-title { color: var(--color-accent); }
 
 @media (min-width: 992px) {
-  .services-header { padding: 8rem 3rem 4rem; text-align: left; }
+  .services-header { padding: 8rem 3rem 4rem; }
+  .services-header h1 { font-size: var(--type-step-5); }
+  
   .service-horizontal { padding: 8rem 3rem; flex-direction: row; align-items: stretch; gap: 6rem; }
   .horizontal-intro { flex: 1; position: sticky; top: 8rem; height: max-content; }
-  .verticals-grid { flex: 1; grid-template-columns: repeat(2, 1fr); align-content: start; }
+  .horizontal-intro h2 { font-size: var(--type-step-4); margin-bottom: 1rem; }
+  .horizontal-manifesto { font-size: var(--type-step-0); }
+  
+  .verticals-grid { flex: 1; grid-template-columns: repeat(2, 1fr); align-content: start; gap: 2rem; }
+  .vertical-item { padding: 2rem; }
 }
