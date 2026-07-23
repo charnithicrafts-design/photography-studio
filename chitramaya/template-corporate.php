@@ -110,6 +110,15 @@
       </div>
       <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
     </div>
+    <!-- 04 -->
+    <div class="service-block">
+      <div class="service-content">
+        <span class="service-num">04</span>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Cinematic<br>Production' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'High-end corporate profile videos, brand ads, and TVCs designed to articulate your mission and captivate stakeholders.' ); ?></p>
+      </div>
+      <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cinematic Production" class="service-image">
+    </div>
   </section>
 
 <?php get_template_part('template-parts/global-footer'); ?>
