@@ -2,8 +2,18 @@
 /**
  * Template Name: Global Services Layout
  */
-get_header();
+// Bypass WordPress FSE header/footer entirely for full design control
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Architecture — Chitramaya & Thalam Studio</title>
+  <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+  <?php get_template_part('template-parts/global-nav'); ?>
 
 <main id="primary" class="site-main services-page">
     
@@ -64,5 +74,6 @@ get_header();
 
 </main>
 
-<?php
-get_footer();
+<?php wp_footer(); ?>
+</body>
+</html>
