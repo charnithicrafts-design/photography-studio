@@ -1,7 +1,9 @@
 <?php
-if( function_exists('acf_add_local_field_group') ):
+add_action('acf/init', 'chitramaya_register_pillar_acf_fields');
+function chitramaya_register_pillar_acf_fields() {
+    if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array(
+    acf_add_local_field_group(array(
     'key' => 'group_pillar_content',
     'title' => 'Pillar Page Content (Unified Architecture)',
     'fields' => array(
@@ -171,7 +173,8 @@ acf_add_local_field_group(array(
     'style' => 'default',
 ));
 
-endif;
+    endif;
+}
 
 /**
  * Dynamic Label UX for Pillar Pages
