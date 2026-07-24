@@ -119,3 +119,75 @@
     </div>
   </div>
 </div>
+
+<!-- 6. Studio & Production -->
+<div class="service-drawer" id="drawer-studio">
+  <button class="drawer-close">&times; CLOSE</button>
+  <div class="drawer-inner">
+    <h2 class="drawer-title">STUDIO & PRODUCTION</h2>
+    <div class="drawer-grid">
+      <div class="drawer-manifesto">
+        <p>A world-class podcast requires more than just good conversation; it demands broadcast-grade acoustic engineering. Our in-house Thalam Studio provides an acoustically treated, multi-camera environment equipped with industry-leading microphones and lighting. We eliminate technical friction so you can focus entirely on the dialogue.</p>
+      </div>
+      <div class="drawer-deliverables">
+        <ul>
+          <li>Broadcast-Grade Audio Recording</li>
+          <li>Multi-Camera 4K Video Setup</li>
+          <li>Professional Lighting Design</li>
+          <li>On-Site Technical Support</li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer-action">
+      <a href="#" class="drawer-cta" data-trigger="booking">Book the Studio &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Content & Media -->
+<div class="service-drawer" id="drawer-content">
+  <button class="drawer-close">&times; CLOSE</button>
+  <div class="drawer-inner">
+    <h2 class="drawer-title">CONTENT & MEDIA STRATEGY</h2>
+    <div class="drawer-grid">
+      <div class="drawer-manifesto">
+        <p>Recording the podcast is only the beginning. True impact comes from how that content is structured, edited, and distributed. We handle the comprehensive post-production process—sculpting the narrative flow, mixing the audio for clarity, and strategically distributing the media across platforms to maximize audience retention and reach.</p>
+      </div>
+      <div class="drawer-deliverables">
+        <ul>
+          <li>Narrative Audio &amp; Video Editing</li>
+          <li>Sound Design &amp; Audio Mixing</li>
+          <li>Platform Distribution Strategy</li>
+          <li>SEO-Optimized Show Notes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer-action">
+      <a href="#" class="drawer-cta" data-trigger="booking">Scale Your Reach &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Podcast Branding -->
+<div class="service-drawer" id="drawer-podcast-branding">
+  <button class="drawer-close">&times; CLOSE</button>
+  <div class="drawer-inner">
+    <h2 class="drawer-title">PHOTOGRAPHY & BRANDING</h2>
+    <div class="drawer-grid">
+      <div class="drawer-manifesto">
+        <p>A podcast without a visual identity gets lost in the noise. We ensure your show looks as professional as it sounds. From capturing high-end promotional photography of the hosts in action, to designing the core show artwork, we build a cohesive visual ecosystem that signals authority and quality before the listener even hits play.</p>
+      </div>
+      <div class="drawer-deliverables">
+        <ul>
+          <li>Podcast Cover Art Design</li>
+          <li>In-Studio Promotional Photography</li>
+          <li>Social Media Video Snippets (Reels/Shorts)</li>
+          <li>Visual Identity Assets</li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer-action">
+      <a href="#" class="drawer-cta" data-trigger="booking">Design Your Show &rarr;</a>
+    </div>
+  </div>
+</div>

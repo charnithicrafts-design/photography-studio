@@ -81,8 +81,28 @@
     .drawer-cta { display: inline-block; padding: 1rem 2rem; background: #FDFBF7; color: #0A1128; text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
     .drawer-cta:hover { background: var(--accent); color: #fff; }
     
-    .card-list a.drawer-trigger { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3); transition: 0.3s; cursor: pointer; }
-    .card-list a.drawer-trigger:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .card-list a.drawer-trigger { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      color: inherit; 
+      text-decoration: none; 
+      transition: 0.3s; 
+      cursor: pointer; 
+      padding: 0.25rem 0;
+    }
+    .card-list a.drawer-trigger::after {
+      content: '+ Explore';
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+    .card-list a.drawer-trigger:hover { color: var(--accent); }
+    .card-list a.drawer-trigger:hover::after { opacity: 1; transform: translateX(5px); }
     
     @media (max-width: 1024px) {
       .cards-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -138,9 +158,9 @@
           <h2 class="card-title">Comprehensive Content Creation.</h2>
           <p class="card-desc">Podcast and interview services have evolved into comprehensive content solutions that seamlessly combine audio, visual, and branding elements. Using professional lighting, multi-camera setups, and refined post-production, we craft broadcast-grade output.</p>
           <ul class="card-list">
-            <li><strong>Studio &amp; Production:</strong> A well-equipped environment with technical support for broadcast-grade recording (facilitated at Thalam).</li>
-            <li><strong>Content &amp; Media:</strong> Creation, editing, and distribution strategies to maximize reach.</li>
-            <li><strong>Photography &amp; Branding:</strong> High-quality visuals to ensure your podcast looks market-ready.</li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-studio">Studio &amp; Production</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-content">Content &amp; Media Strategy</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-podcast-branding">Photography &amp; Branding</a></li>
           </ul>
           <div class="card-action">
             <a href="#" class="card-cta" data-trigger="booking">Book Production &rarr;</a>
