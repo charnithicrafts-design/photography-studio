@@ -155,8 +155,8 @@ h2, .brut-huge-text {
    MODULE: GLOBAL NAVIGATION (MOBILE FIRST)
    ========================================================================== */
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; mix-blend-mode: difference; }
-.nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #fff; z-index: 10001; transition: opacity 0.3s; }
-.nav-toggle { background: transparent; border: none; color: #fff; font-family: var(--wp--preset--font-family--inter, sans-serif); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; z-index: 10001; padding: 0.5rem; outline: none; transition: opacity 0.3s; }
+.nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #fff !important; z-index: 10001; transition: opacity 0.3s; }
+.nav-toggle { background: transparent; border: none; color: #fff !important; font-family: var(--wp--preset--font-family--inter, sans-serif); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; z-index: 10001; padding: 0.5rem; outline: none; transition: opacity 0.3s; }
 .nav-logo:hover, .nav-toggle:hover { opacity: 0.6; }
 
 /* Mobile Menu Base */
