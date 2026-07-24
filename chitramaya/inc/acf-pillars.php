@@ -7,6 +7,12 @@ acf_add_local_field_group(array(
     'fields' => array(
         // HERO SECTION
         array(
+            'key' => 'tab_pillar_hero',
+            'label' => 'Hero',
+            'name' => '',
+            'type' => 'tab',
+        ),
+        array(
             'key' => 'field_pillar_hero_title',
             'label' => 'Hero Title',
             'name' => 'pillar_hero_title',
@@ -20,6 +26,12 @@ acf_add_local_field_group(array(
             'type' => 'textarea',
         ),
         // SECTION 1
+        array(
+            'key' => 'field_tab_pillar_sec1',
+            'label' => 'Section 1',
+            'name' => 'tab_pillar_sec1',
+            'type' => 'tab',
+        ),
         array(
             'key' => 'field_pillar_sec1_title',
             'label' => 'Section 1 Title',
@@ -41,6 +53,12 @@ acf_add_local_field_group(array(
         ),
         // SECTION 2
         array(
+            'key' => 'field_tab_pillar_sec2',
+            'label' => 'Section 2',
+            'name' => 'tab_pillar_sec2',
+            'type' => 'tab',
+        ),
+        array(
             'key' => 'field_pillar_sec2_title',
             'label' => 'Section 2 Title',
             'name' => 'pillar_sec2_title',
@@ -61,6 +79,12 @@ acf_add_local_field_group(array(
         ),
         // SECTION 3
         array(
+            'key' => 'field_tab_pillar_sec3',
+            'label' => 'Section 3',
+            'name' => 'tab_pillar_sec3',
+            'type' => 'tab',
+        ),
+        array(
             'key' => 'field_pillar_sec3_title',
             'label' => 'Section 3 Title',
             'name' => 'pillar_sec3_title',
@@ -80,6 +104,12 @@ acf_add_local_field_group(array(
             'return_format' => 'url',
         ),
         // SECTION 4
+        array(
+            'key' => 'field_tab_pillar_sec4',
+            'label' => 'Section 4',
+            'name' => 'tab_pillar_sec4',
+            'type' => 'tab',
+        ),
         array(
             'key' => 'field_pillar_sec4_title',
             'label' => 'Section 4 Title',
@@ -147,7 +177,7 @@ endif;
  * Dynamic Label UX for Pillar Pages
  * Transforms generic "Section 1" labels into template-specific contextual labels
  */
-add_filter('acf/load_field', 'chitramaya_dynamic_pillar_labels');
+add_filter('acf/prepare_field', 'chitramaya_dynamic_pillar_labels');
 function chitramaya_dynamic_pillar_labels($field) {
     $post_id = false;
     if (isset($_POST['post_id'])) { $post_id = intval($_POST['post_id']); } 
@@ -158,7 +188,7 @@ function chitramaya_dynamic_pillar_labels($field) {
     if (!$post_id) return $field;
     
     // Only target the unified pillar fields by KEY
-    if (strpos($field['key'], 'field_pillar_sec') !== 0) return $field;
+    if (strpos($field['key'], 'pillar_sec') === false) return $field;
     
     $template = get_page_template_slug($post_id);
     if (!$template || $template === 'default') {
@@ -173,8 +203,8 @@ function chitramaya_dynamic_pillar_labels($field) {
         }
     }
     
-    // Extract section number from field key (e.g., field_pillar_sec1_title -> 1)
-    if (!preg_match('/field_pillar_sec(\d+)/', $field['key'], $matches)) return $field;
+    // Extract section number from field key
+    if (!preg_match('/pillar_sec(\d+)/', $field['key'], $matches)) return $field;
     $sec = $matches[1];
     
     $custom_labels = [
@@ -209,7 +239,7 @@ function chitramaya_dynamic_pillar_labels($field) {
     
     if (isset($custom_labels[$template][$sec])) {
         $context = $custom_labels[$template][$sec];
-        $field['label'] = str_replace("Section $sec", "$context (Section $sec)", $field['label']);
+        $field['label'] = str_replace("Section $sec", $context, $field['label']);
     }
     
     return $field;
