@@ -140,7 +140,7 @@
 
       <!-- 04 -->
       <div class="service-card">
-        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
+        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
         <div class="service-content">
           <span class="service-num">04</span>
           <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure & Ambiance' ); ?></h2>
@@ -151,7 +151,7 @@
 
       <!-- 05 -->
       <div class="service-card">
-        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
+        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1637250067262-758c5b8fb18c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
         <div class="service-content">
           <span class="service-num">05</span>
           <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product & Cinematic' ); ?></h2>
