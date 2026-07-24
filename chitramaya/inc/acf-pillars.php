@@ -137,6 +137,7 @@ acf_add_local_field_group(array(
             ),
         ),
     ),
+    'style' => 'default',
 ));
 
 endif;
@@ -147,13 +148,17 @@ endif;
  */
 add_filter('acf/prepare_field', 'chitramaya_dynamic_pillar_labels');
 function chitramaya_dynamic_pillar_labels($field) {
-    global $post;
-    if (!$post) return $field;
+    $post_id = false;
+    if (isset($_POST['post_id'])) { $post_id = intval($_POST['post_id']); } 
+    elseif (isset($_GET['post'])) { $post_id = intval($_GET['post']); } 
+    else { global $post; if ($post) $post_id = $post->ID; }
+    
+    if (!$post_id) return $field;
     
     // Only target the unified pillar fields
     if (strpos($field['name'], 'pillar_sec') !== 0) return $field;
     
-    $template = get_page_template_slug($post->ID);
+    $template = get_page_template_slug($post_id);
     
     // Extract section number from field name (e.g., pillar_sec1_title -> 1)
     if (!preg_match('/pillar_sec(\d+)/', $field['name'], $matches)) return $field;
@@ -195,4 +200,25 @@ function chitramaya_dynamic_pillar_labels($field) {
     }
     
     return $field;
+}
+
+/**
+ * Dynamic Meta Box Title
+ */
+add_filter('acf/load_field_group', 'chitramaya_dynamic_pillar_group_title');
+function chitramaya_dynamic_pillar_group_title($group) {
+    if ($group['key'] !== 'group_pillar_content') return $group;
+    
+    $post_id = false;
+    if (isset($_POST['post_id'])) { $post_id = intval($_POST['post_id']); } 
+    elseif (isset($_GET['post'])) { $post_id = intval($_GET['post']); } 
+    else { global $post; if ($post) $post_id = $post->ID; }
+    
+    if ($post_id) {
+        $post_title = get_the_title($post_id);
+        if ($post_title) {
+            $group['title'] = $post_title . ' Page Content';
+        }
+    }
+    return $group;
 }
