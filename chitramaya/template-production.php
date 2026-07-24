@@ -41,21 +41,22 @@
     .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 3rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; font-family: var(--font-display); }
     .hero-btn:hover { background: #fff; color: var(--text); }
     
-    /* GRID LAYOUT */
-    .feature-section { padding: 8rem 3rem; }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; }
+    /* PILLAR SPLIT LAYOUT */
+    .pillar-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .pillar-split-content { padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .pillar-split-img { position: relative; }
+    .pillar-split-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .pillar-label { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .pillar-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 2rem; letter-spacing: -0.03em; text-transform: uppercase; }
+    .pillar-desc { font-size: 1.1rem; line-height: 1.7; color: #555; margin-bottom: 1.5rem; max-width: 600px; }
+    .pillar-list { list-style: none; margin-top: 1rem; }
+    .pillar-list li { font-size: 1.05rem; line-height: 1.8; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 1rem; }
+    .pillar-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
     
-    .feature-card { display: flex; flex-direction: column; }
-    .feature-img-wrapper { position: relative; overflow: hidden; margin-bottom: 2rem; aspect-ratio: 16/9; background: #000; }
-    .feature-img-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s; }
-    .feature-card:hover .feature-img-wrapper img { opacity: 1; transform: scale(1.03); }
-    .feature-number { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; display: block; }
-    .feature-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.03em; }
-    .feature-desc { font-size: 1.1rem; line-height: 1.6; color: #555; }
-    
-    @media (max-width: 768px) {
-      .hero, .feature-section { padding: 5rem 1.5rem; }
-      .feature-grid { grid-template-columns: 1fr; gap: 3rem; }
+    @media (max-width: 1024px) {
+      .pillar-split { grid-template-columns: 1fr; }
+      .pillar-split-content { padding: 4rem 2rem; order: 2; }
+      .pillar-split-img { min-height: 400px; order: 1; }
     }
   </style>
 </head>
@@ -71,37 +72,40 @@
     </div>
   </section>
 
-  <section class="feature-section">
-    <div class="feature-grid">
-      <!-- 1 -->
-      <div class="feature-card">
-        <div class="feature-img-wrapper">
-          <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
-        </div>
-        <span class="feature-number">01 // PRODUCTION</span>
-        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Podcast & Interview' ); ?></h2>
-        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Multi-camera setups and professional audio engineering for creators and entrepreneurs looking to build a strong media presence.' ); ?></p>
-      </div>
-      
-      <!-- 2 -->
-      <div class="feature-card">
-        <div class="feature-img-wrapper">
-          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Identity">
-        </div>
-        <span class="feature-number">02 // DESIGN</span>
-        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Brand Identity' ); ?></h2>
-        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Logo creation, typography, and color palettes that translate your mission into tangible visual assets. Building cohesive ecosystems.' ); ?></p>
-      </div>
+  <!-- BRAND DESIGN -->
+  <section class="pillar-split">
+    <div class="pillar-split-content">
+      <span class="pillar-label">01 // Brand Design</span>
+      <h2 class="pillar-title">Architecting Lasting Recognition.</h2>
+      <p class="pillar-desc">Brand design is the strategic process of creating visual elements that define a company’s identity and communicate its core values. By translating a brand’s mission and vision into tangible visual assets, we ensure a cohesive and meaningful representation across all touchpoints.</p>
+      <p class="pillar-desc">These elements are consistently applied across platforms—enhancing visual appeal, building trust, and reinforcing market positioning.</p>
+      <ul class="pillar-list">
+        <li>Logo design &amp; Brand identity</li>
+        <li>Product design &amp; Tactile packaging</li>
+        <li>Marketing collaterals &amp; Illustrative posters</li>
+        <li>OOH campaign &amp; Installations design</li>
+        <li>Comprehensive Brand guidelines</li>
+      </ul>
+    </div>
+    <div class="pillar-split-img">
+      <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1614036634955-ae5e90f9b9eb?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Design">
+    </div>
+  </section>
 
-      <!-- 3 -->
-      <div class="feature-card">
-        <div class="feature-img-wrapper">
-          <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="OOH Campaigns">
-        </div>
-        <span class="feature-number">03 // STRATEGY</span>
-        <h2 class="feature-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Marketing & OOH' ); ?></h2>
-        <p class="feature-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Illustrative posters, out-of-home campaign design, and comprehensive brand guidelines ensuring consistency across all touchpoints.' ); ?></p>
-      </div>
+  <!-- PODCAST PRODUCTION -->
+  <section class="pillar-split">
+    <div class="pillar-split-img">
+      <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
+    </div>
+    <div class="pillar-split-content">
+      <span class="pillar-label">02 // Podcast & Interview</span>
+      <h2 class="pillar-title">Comprehensive Content Creation.</h2>
+      <p class="pillar-desc">Podcast and interview services have evolved into comprehensive content solutions that seamlessly combine audio, visual, and branding elements. Using professional lighting, multi-camera setups, and refined post-production, we craft output that meets the standards of modern digital audiences.</p>
+      <ul class="pillar-list">
+        <li><strong>Studio &amp; Production:</strong> A well-equipped environment with technical support for broadcast-grade recording (facilitated in-house at Thalam).</li>
+        <li><strong>Content &amp; Media:</strong> Creation, editing, and distribution strategies to maximize reach and engagement.</li>
+        <li><strong>Photography &amp; Branding:</strong> High-quality promotional visuals and cohesive identity to ensure your podcast sounds professional and looks market-ready.</li>
+      </ul>
     </div>
   </section>
 
