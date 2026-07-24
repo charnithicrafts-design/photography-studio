@@ -118,6 +118,14 @@
         <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'High-end corporate profile videos, brand ads, and TVCs designed to articulate your mission and captivate stakeholders.' ); ?></p>
       </div>
       <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cinematic Production" class="service-image">
+    <!-- 05 -->
+    <div class="service-block">
+      <div class="service-content">
+        <span class="service-num">05</span>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Events &<br>Launches' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-stakes documentation for brand launches, global seminars, and corporate milestones. We capture the energy and deliver a visual package ready for immediate PR distribution.' ); ?></p>
+      </div>
+      <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Events and Launches" class="service-image">
     </div>
   </section>
 

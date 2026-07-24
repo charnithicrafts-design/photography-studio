@@ -131,6 +131,32 @@ function chitramaya_register_pillar_acf_fields() {
             'type' => 'image',
             'return_format' => 'url',
         ),
+        // SECTION 5
+        array(
+            'key' => 'field_tab_pillar_sec5',
+            'label' => 'Section 5',
+            'name' => 'tab_pillar_sec5',
+            'type' => 'tab',
+        ),
+        array(
+            'key' => 'field_pillar_sec5_title',
+            'label' => 'Section 5 Title',
+            'name' => 'pillar_sec5_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_pillar_sec5_desc',
+            'label' => 'Section 5 Description',
+            'name' => 'pillar_sec5_desc',
+            'type' => 'textarea',
+        ),
+        array(
+            'key' => 'field_pillar_sec5_img',
+            'label' => 'Section 5 Image',
+            'name' => 'pillar_sec5_img',
+            'type' => 'image',
+            'return_format' => 'url',
+        ),
     ),
     'location' => array(
         array(
@@ -216,6 +242,7 @@ function chitramaya_dynamic_pillar_labels($field) {
             '2' => 'The Workspace',
             '3' => 'Corporate Events',
             '4' => 'Cinematic Production',
+            '5' => 'Events & Launches',
         ],
         'template-commercial.php' => [
             '1' => 'Product & E-Commerce',
