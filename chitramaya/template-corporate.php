@@ -36,13 +36,13 @@
     .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     
     /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem; text-align: center; background: #0a0a0a; color: #fff; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem; text-align: center; background: #F9F9F9; color: #1C1917; }
     .hero-content { position: relative; z-index: 10; max-width: 900px; }
     .hero-title { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 2rem; text-transform: uppercase; }
     .hero-title em { font-family: var(--font-serif); font-weight: 400; font-style: italic; color: var(--accent); }
-    .hero-desc { font-size: 1.25rem; line-height: 1.6; color: #a3a3a3; margin-bottom: 3rem; max-width: 600px; margin-inline: auto; }
-    .hero-btn { display: inline-block; padding: 1rem 2.5rem; background: #fff; color: #000; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
-    .hero-btn:hover { background: var(--accent); color: #fff; }
+    .hero-desc { font-size: 1.25rem; line-height: 1.6; color: #57534e; margin-bottom: 3rem; max-width: 600px; margin-inline: auto; }
+    .hero-btn { display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
+    .hero-btn:hover { background: #1C1917; color: #fff; }
     
     /* SERVICES GRID */
     .services-section { padding: 8rem 3rem; background: var(--bg-light); }
@@ -56,8 +56,8 @@
     .service-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
     .service-desc { font-size: 1.1rem; color: #57534e; line-height: 1.6; margin-bottom: 2rem; }
     
-    .service-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: 0.6s; }
-    .service-block:hover .service-image { filter: grayscale(0%) contrast(1); }
+    .service-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: 0.6s; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .service-block:hover .service-image { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
     
     /* MOBILE */
     @media (max-width: 768px) {
@@ -74,8 +74,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Visual<br>Architecture of <em>Authority</em>.' ); ?></h1>
-      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Presenting a strong, authentic visual identity. From the boardroom to the production floor, we document the reality of your corporate culture.' ); ?></p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Strong and Authentic<br><em>Visual Identity</em>.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'A comprehensive range of services designed to humanize your brand and build profound trust with your clients and stakeholders.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Commission a Corporate Shoot</a>
     </div>
   </section>
@@ -85,8 +85,8 @@
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">01</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive<br>Leadership' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Headshots and professional portraits designed to humanize the brand for your website, annual reports, and executive platforms.' ); ?></p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive<br>Headshots' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Humanize the brand by showcasing team members with professional, authentic portraits designed for company websites and platforms like LinkedIn.' ); ?></p>
       </div>
       <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
     </div>
@@ -95,8 +95,8 @@
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">02</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'The<br>Workspace' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace, effectively reflecting your operational culture and infrastructure.' ); ?></p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Culture &<br>Workspace' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace or in action, effectively reflecting the company’s culture and work environment.' ); ?></p>
       </div>
       <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
     </div>
@@ -106,27 +106,42 @@
       <div class="service-content">
         <span class="service-num">03</span>
         <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate<br>Events' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Comprehensive, non-intrusive coverage of conferences, seminars, marketing events, and high-profile product launches.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Ensure that important moments from conferences, seminars, and product launches are professionally documented.' ); ?></p>
       </div>
       <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
     </div>
+
     <!-- 04 -->
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">04</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Cinematic<br>Production' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'High-end corporate profile videos, brand ads, and TVCs designed to articulate your mission and captivate stakeholders.' ); ?></p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure<br>& Ambiance' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Office and workplace photography highlighting the organization’s infrastructure and operational environment to build credibility with stakeholders.' ); ?></p>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cinematic Production" class="service-image">
+      <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
+    </div>
+
     <!-- 05 -->
     <div class="service-block">
       <div class="service-content">
         <span class="service-num">05</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Events &<br>Launches' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-stakes documentation for brand launches, global seminars, and corporate milestones. We capture the energy and deliver a visual package ready for immediate PR distribution.' ); ?></p>
+        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product &<br>Cinematic' ); ?></h2>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and e-commerce platforms.' ); ?></p>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Events and Launches" class="service-image">
+      <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
     </div>
+  </section>
+
+  <!-- HOW WE WORK & PIPELINE -->
+  <section class="workflow-teaser" style="padding: 6rem 3rem; background: #fff; text-align: center; border-top: 1px solid var(--border);">
+    <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em;">How We Work</h2>
+    <p style="font-size: 1.1rem; color: #57534e; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">From initial consultation to final delivery, our comprehensive pipeline ensures transparency and builds trust every step of the way.</p>
+    <a href="#" class="hero-btn" style="background: var(--text-dark); color: #fff;">Explore Our Pipeline</a>
+  </section>
+
+  <!-- UPCOMING SERVICES ANTICIPATION -->
+  <section class="upcoming-services" style="padding: 4rem 3rem; background: #F9F9F9; text-align: center;">
+    <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--accent); font-style: italic;">Anticipate more. Upcoming creative solutions in Brand Design & Advertisement Commercials.</p>
   </section>
 
 <?php get_template_part('template-parts/global-footer'); ?>
