@@ -37,7 +37,8 @@
     
     /* HERO */
     .hero { position: relative; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; border-bottom: var(--rule); }
-    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(30%) contrast(1.1); mix-blend-mode: overlay; pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; text-align: center; }
     .hero-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
     .hero-title { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 6rem); font-style: italic; line-height: 1; margin-bottom: 1.5rem; color: var(--text-light); }
     .hero-desc { font-size: 1.1rem; line-height: 1.6; color: var(--mid-grey); max-width: 600px; margin: 0 auto 3rem; }
@@ -88,6 +89,7 @@
 <?php get_template_part('template-parts/global-nav'); ?>
 
   <section class="hero">
+    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1553986782-9f6de60b51b4?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Grand Heirloom">
     <div class="hero-content">
       <span class="hero-tag">Events & Portrait</span>
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Grand Heirloom.' ); ?></h1>
@@ -131,7 +133,7 @@
     <div class="service-row" id="service-cultural">
       <div class="service-index">02</div>
       <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Events & Milestones">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1730130596425-197566414dc4?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Events & Milestones">
       </div>
       <div class="service-info">
         <div>
