@@ -66,14 +66,14 @@
     .card-cta:hover { background: var(--text); color: #fff; }
     
     /* SLIDE-OUT DRAWERS (UX & UI Fixes) */
-    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; opacity: 0; pointer-events: none; transition: 0.4s ease; }
+    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 99998; opacity: 0; pointer-events: none; transition: 0.4s ease; }
     .service-drawer-overlay.active { opacity: 1; pointer-events: all; backdrop-filter: blur(5px); }
     
-    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: var(--bg); color: var(--text); z-index: 1000; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); overflow-y: auto; padding: 5rem 3rem 4rem; box-shadow: none; border-left: 1px solid rgba(0,0,0,0.1); }
+    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: var(--bg); color: var(--text); z-index: 99999; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); overflow-y: auto; padding: 5rem 3rem 4rem; box-shadow: none; border-left: 1px solid rgba(0,0,0,0.1); }
     .service-drawer.active { right: 0; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
     
     /* Highly accessible close button */
-    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--text); color: var(--bg); border: none; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.75rem 1.25rem; border-radius: 4px; transition: 0.3s; z-index: 1001; }
+    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--text); color: var(--bg); border: none; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.75rem 1.25rem; border-radius: 4px; transition: 0.3s; z-index: 999999; }
     .drawer-close:hover { background: var(--accent); color: #fff; }
     
     .drawer-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 2.5rem; border-bottom: 2px solid var(--accent); padding-bottom: 1.5rem; color: var(--accent); }
