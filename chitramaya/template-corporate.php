@@ -58,27 +58,24 @@
     .impact-card h3 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem; }
     .impact-card p { font-size: 1rem; color: #57534e; line-height: 1.6; }
 
-    /* SERVICES GRID */
+    /* SERVICES GRID REWRITE (CRO EDITORIAL) */
     .services-section { padding: 8rem 3rem; background: var(--bg-light); }
-    .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 8rem; }
-    .service-block:nth-child(odd) .service-content { justify-self: end; }
-    .service-block:nth-child(even) .service-content { order: 2; justify-self: start; }
-    .service-block:nth-child(even) .service-image { order: 1; }
-    
-    .service-content { max-width: 500px; }
-    .service-num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--accent); font-style: italic; margin-bottom: 1rem; display: block; }
-    .service-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-    .service-desc { font-size: 1.1rem; color: #57534e; line-height: 1.6; margin-bottom: 2rem; }
-    
-    .service-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: 0.6s; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .service-block:hover .service-image { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
+    .service-card { background: #fff; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
+    .service-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--border); }
+    .service-content { padding: 2.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .service-num { font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent); font-style: italic; margin-bottom: 0.5rem; }
+    .service-title { font-size: 1.75rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .service-desc { font-size: 1rem; color: #57534e; line-height: 1.6; margin-bottom: 2.5rem; flex-grow: 1; }
+    .service-btn { align-self: flex-start; padding: 0.75rem 1.5rem; border: 1px solid var(--text-dark); color: var(--text-dark); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
+    .service-card:hover .service-btn { background: var(--text-dark); color: #fff; }
     
     /* MOBILE */
     @media (max-width: 768px) {
-      .service-block { grid-template-columns: 1fr; gap: 2rem; }
-      .service-block:nth-child(even) { direction: ltr; }
       .hero { padding: 6rem 1.5rem; }
       .services-section { padding: 4rem 1.5rem; }
+      .impact-grid, .logo-grid { gap: 2rem; }
     }
   </style>
 </head>
@@ -129,54 +126,61 @@
   </section>
 
   <section class="services-section">
-    <!-- 01 -->
-    <div class="service-block">
-      <div class="service-content">
-        <span class="service-num">01</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive<br>Headshots' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Humanize the brand by showcasing team members with professional, authentic portraits designed for company websites and platforms like LinkedIn.' ); ?></p>
+    <div class="services-grid">
+      <!-- 01 -->
+      <div class="service-card">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
+        <div class="service-content">
+          <span class="service-num">01</span>
+          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive Headshots' ); ?></h2>
+          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Humanize the brand by showcasing team members with professional, authentic portraits designed for company websites and platforms like LinkedIn.' ); ?></p>
+          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
+        </div>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
-    </div>
 
-    <!-- 02 -->
-    <div class="service-block">
-      <div class="service-content">
-        <span class="service-num">02</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Culture &<br>Workspace' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace or in action, effectively reflecting the company’s culture and work environment.' ); ?></p>
+      <!-- 02 -->
+      <div class="service-card">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
+        <div class="service-content">
+          <span class="service-num">02</span>
+          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Culture & Workspace' ); ?></h2>
+          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace or in action, effectively reflecting the company’s culture and work environment.' ); ?></p>
+          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
+        </div>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
-    </div>
 
-    <!-- 03 -->
-    <div class="service-block">
-      <div class="service-content">
-        <span class="service-num">03</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate<br>Events' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Ensure that important moments from conferences, seminars, and product launches are professionally documented.' ); ?></p>
+      <!-- 03 -->
+      <div class="service-card">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
+        <div class="service-content">
+          <span class="service-num">03</span>
+          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate Events' ); ?></h2>
+          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Ensure that important moments from conferences, seminars, and product launches are professionally documented.' ); ?></p>
+          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
+        </div>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
-    </div>
 
-    <!-- 04 -->
-    <div class="service-block">
-      <div class="service-content">
-        <span class="service-num">04</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure<br>& Ambiance' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Office and workplace photography highlighting the organization’s infrastructure and operational environment to build credibility with stakeholders.' ); ?></p>
+      <!-- 04 -->
+      <div class="service-card">
+        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
+        <div class="service-content">
+          <span class="service-num">04</span>
+          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure & Ambiance' ); ?></h2>
+          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Office and workplace photography highlighting the organization’s infrastructure and operational environment to build credibility with stakeholders.' ); ?></p>
+          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
+        </div>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
-    </div>
 
-    <!-- 05 -->
-    <div class="service-block">
-      <div class="service-content">
-        <span class="service-num">05</span>
-        <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product &<br>Cinematic' ); ?></h2>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and e-commerce platforms.' ); ?></p>
+      <!-- 05 -->
+      <div class="service-card">
+        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
+        <div class="service-content">
+          <span class="service-num">05</span>
+          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product & Cinematic' ); ?></h2>
+          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and e-commerce platforms.' ); ?></p>
+          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
+        </div>
       </div>
-      <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
     </div>
   </section>
 
