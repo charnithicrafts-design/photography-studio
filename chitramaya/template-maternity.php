@@ -98,15 +98,15 @@
   <section class="hero">
     <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Maternity Hero">
     <div class="hero-content">
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Art of <em>Anticipation</em>.' ); ?></h1>
-      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Documenting the most profound transformation of your life. A cinematic celebration of motherhood, from the first flutter to the grand arrival.' ); ?></p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Genesis of Your <em>Legacy</em>.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'There is a sacred quiet that comes with pregnancy. It is the feeling of holding a whole new world inside you. Before they are a person you can hold in your arms, they are a seed of wonder growing in the secret, safe sanctuary of your own heart.' ); ?></p>
       <button class="hero-btn" data-trigger="booking">Preserve Your Legacy</button>
     </div>
   </section>
 
   <!-- MANIFESTO -->
   <section class="manifesto">
-    <h2>Your body is writing a legacy. We are here to archive it with the reverence it deserves.</h2>
+    <h2>Like a seed in the earth, you are growing in silence, shielded by love, ready to meet the sun. Your body is doing holy work. We are here to archive its breathtaking power.</h2>
   </section>
 
   <!-- DUAL PANE -->
@@ -115,9 +115,9 @@
     <div class="pane">
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Maternity">
       <div class="pane-content">
-        <span class="pane-subtitle">01 // The Studio</span>
-        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Art-Themed Portraiture' ); ?></h3>
-        <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Sculpted by light. Fine-art editorial portraiture in our private Thalam studio, designed to capture power and vulnerability.' ); ?></p>
+        <span class="pane-subtitle">01 // The Sanctuary</span>
+        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'The Sanctuary Studio' ); ?></h3>
+        <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'A private, warm sanctuary where you can feel completely secure and cared for. Sculpted by gentle light, designed to capture power and vulnerability.' ); ?></p>
       </div>
     </div>
     <!-- Outdoor -->
@@ -125,8 +125,8 @@
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Outdoor Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">02 // The Location</span>
-        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Bathed in Nature' ); ?></h3>
-        <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Ethereal, location-oriented sessions that capture your glow at golden hour in sweeping natural environments.' ); ?></p>
+        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'The Natural Bloom' ); ?></h3>
+        <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Step into nature and celebrate the organic blossoming of motherhood under golden light. Ethereal, location-oriented sessions.' ); ?></p>
       </div>
     </div>
   </section>
@@ -138,7 +138,7 @@
     </div>
     <div class="info-content">
       <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'The Village Awaits' ); ?></h3>
-      <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Joyful, documentary-style coverage of your baby shower and generational family portraits. We capture the overwhelming support and anticipation of the community waiting to welcome your child.' ); ?></p>
+      <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'A return ticket to the fleeting season of becoming. Joyful, documentary-style coverage of your baby shower and generational family portraits, capturing the community waiting to welcome your child.' ); ?></p>
     </div>
   </section>
 
@@ -148,8 +148,8 @@
       <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Bump to Baby">
     </div>
     <div class="info-content">
-      <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Bump to Baby' ); ?></h3>
-      <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'The complete journey. A cohesive visual story spanning your pregnancy through to your newborn’s first weeks. We preserve the seamless transition from anticipation to arrival.' ); ?></p>
+      <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'The Complete Journey' ); ?></h3>
+      <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'A cohesive visual story spanning your pregnancy through to your newborn’s first weeks. We preserve the seamless transition from brave anticipation to joyous arrival.' ); ?></p>
     </div>
   </section>
 
