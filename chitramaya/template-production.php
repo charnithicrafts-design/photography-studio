@@ -34,7 +34,8 @@
     .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     
     /* HERO */
-    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding: 6rem 3rem; background: var(--text); color: var(--bg); }
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding: 6rem 3rem; background: var(--text); color: var(--bg); overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; filter: grayscale(40%) contrast(1.2); mix-blend-mode: luminosity; pointer-events: none; z-index: 1; }
     .hero-content { position: relative; z-index: 10; max-width: 1000px; }
     .hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 2rem; text-transform: uppercase; }
     .hero-desc { font-size: 1.25rem; line-height: 1.5; color: #999; margin-bottom: 3rem; max-width: 600px; font-weight: 400; }
@@ -65,6 +66,7 @@
 
 
   <section class="hero">
+    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1632062549850-44a0a6eede16?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Branding & Value">
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Identity is a Strategic Weapon.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'From broadcast-grade podcast production to comprehensive brand design. We don’t just capture images; we architect lasting recognition.' ); ?></p>
