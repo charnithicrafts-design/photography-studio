@@ -145,7 +145,7 @@
 
       .services-header { padding: 2rem; }
       .services-header h2, .services-header span { font-size: 0.72rem; }
-      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; padding: 0; align-items: stretch; gap: 0; cursor: pointer; }
+      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; padding: 0; align-items: stretch; gap: 0; cursor: pointer; scroll-margin-top: 100px; }
       .service-row:hover { background: rgba(169,111,68,0.08); }
       .service-index { display: flex; padding: 2.5rem 2rem; border-right: var(--rule); font-size: 0.7rem; letter-spacing: 0.14em; }
       .service-img-cell { height: auto; border-right: var(--rule); border-radius: 0; }
@@ -235,7 +235,7 @@
       <span class="hero-tag"><?php echo esc_html( get_field('thalam_hero_tag') ?: 'Thalam Studio' ); ?></span>
       <h1 class="hero-headline"><?php echo wp_kses_post( get_field('thalam_hero_headline') ?: 'A sanctuary for light, space, and creative <span class="accent-word">precision.</span>' ); ?></h1>
       <div class="hero-body">
-        <p><?php echo wp_kses_post( get_field('thalam_hero_body') ?: 'A purpose-built, 2,400 sq ft production environment engineered for high-volume e-commerce, commercial ad shoots, and precision tabletop photography.' ); ?></p>
+        <p><?php echo wp_kses_post( get_field('thalam_hero_body') ?: 'A purpose-built, 2,400 sq ft production environment engineered for high-volume e-commerce, commercial ad shoots, and precision tabletop photography. Located in the heart of Thillai Nagar, Trichy.' ); ?></p>
         <div class="hero-ctas">
           <a href="#" class="btn-pill-dark" data-trigger="booking">Book The Studio</a>
           <a href="#services" class="btn-pill-light">View Capabilities</a>
@@ -245,10 +245,10 @@
   </section>
 
   <div class="status-grid">
-    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_1') ?: '<strong>3 Sessions</strong> Active Today' ); ?></div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_2') ?: 'Delivery: <strong>&lt;48 Hours</strong>' ); ?></div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_3') ?: 'Next Available: <strong>July 18</strong>' ); ?></div></div>
-    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_4') ?: 'Format: <strong>Medium Format · Full Frame</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_1') ?: 'Location: <strong>Prime Thillai Nagar, Trichy</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_2') ?: 'Space: <strong>2,400 sq ft · Sound-Treated</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_3') ?: 'Format: <strong>Medium Format · Full Frame Cinema</strong>' ); ?></div></div>
+    <div class="status-item"><div class="status-dot"></div><div class="status-text"><?php echo wp_kses_post( get_field('thalam_status_4') ?: 'Lighting: <strong>Profoto & Aputure Ecosystem</strong>' ); ?></div></div>
   </div>
 
   <section class="services" id="services">
@@ -278,8 +278,7 @@
         </ul>
       </div>
       <div class="service-action">
-        <div><div class="service-price">Starting From</div><div class="service-price-val"><?php echo wp_kses_post( get_field('thalam_service_1_price') ?: '&#8377;25,000' ); ?></div></div>
-        <a href="#" class="service-cta" id="cta-ad-shoots" data-trigger="booking">Book Ad Shoot →</a>
+        <a href="#" class="service-cta" id="cta-ad-shoots" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
 
@@ -304,7 +303,6 @@
         </ul>
       </div>
       <div class="service-action">
-        <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;12,000</div></div>
         <a href="<?php echo esc_url(home_url('/thalam-baby')); ?>" class="service-cta" id="cta-baby">View The Journey →</a>
       </div>
     </div>
@@ -330,8 +328,7 @@
         </ul>
       </div>
       <div class="service-action">
-        <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;45,000</div></div>
-        <a href="#" class="service-cta" id="cta-industrial" data-trigger="booking">Book Industrial →</a>
+        <a href="#" class="service-cta" id="cta-industrial" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
 
@@ -356,8 +353,7 @@
         </ul>
       </div>
       <div class="service-action">
-        <div><div class="service-price">Starting From</div><div class="service-price-val">&#8377;80,000</div></div>
-        <a href="#" class="service-cta" id="cta-weddings" data-trigger="booking">Book Weddings →</a>
+        <a href="#" class="service-cta" id="cta-weddings" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
   </section>
@@ -374,16 +370,16 @@
     <div class="trust-left">
       <div class="trust-label">// Verified Client Telemetry</div>
       <div class="testimonials">
-        <div class="testi-item"><p class="testi-quote">"Delivered 1,200 edited assets in 48 hours flat. Zero disruption to the factory floor. The images are razor sharp — our procurement team used them in an international tender document."</p><p class="testi-source">— Ravi Krishnamurthy, GM Operations · Apex Precision Mfg.</p></div>
-        <div class="testi-item"><p class="testi-quote">"We had 600 people at our annual summit. Thalam covered every panel, every session, every meal. We had the press-ready gallery in our inbox before midnight."</p><p class="testi-source">— Shruti Menon, Head of Marketing · GlobalTech Summit</p></div>
-        <div class="testi-item"><p class="testi-quote">"They captured every moment without us even knowing they were there. When we saw the gallery, we saw our entire wedding as we actually felt it — not posed, not performed."</p><p class="testi-source">— Anjali &amp; Rohan Pillai · Wedding Clients</p></div>
+        <div class="testi-item"><p class="testi-quote">"We walked in with a rough concept and walked out with a national-grade campaign. The way they manipulate light and space in that studio makes the impossible look effortless."</p><p class="testi-source">— Commercial Ad Client</p></div>
+        <div class="testi-item"><p class="testi-quote">"As a new mother, I was so anxious. But the studio was a warm, quiet sanctuary. I didn't just get beautiful photos; I felt completely safe and cared for."</p><p class="testi-source">— Maternity & Newborn Client</p></div>
+        <div class="testi-item"><p class="testi-quote">"When we saw the gallery, we didn't just see pictures; we relived the exact emotions of that day. They gave us our memories back, preserved in breathtaking cinematic quality."</p><p class="testi-source">— Wedding Documentation Client</p></div>
       </div>
     </div>
     <div class="trust-right">
-      <div class="kpi-item"><div class="kpi-val">1.2k<span>+</span></div><div class="kpi-label">Assets per project avg.</div></div>
-      <div class="kpi-item"><div class="kpi-val">48<span>h</span></div><div class="kpi-label">Max turnaround</div></div>
-      <div class="kpi-item"><div class="kpi-val">98<span>%</span></div><div class="kpi-label">On-time delivery rate</div></div>
-      <div class="kpi-item"><div class="kpi-val">12<span>yr</span></div><div class="kpi-label">Production experience</div></div>
+      <div class="kpi-item"><div class="kpi-val">Prime<span>.</span></div><div class="kpi-label">Thillai Nagar Location</div></div>
+      <div class="kpi-item"><div class="kpi-val">2.4k<span>sq ft</span></div><div class="kpi-label">Shooting Area & Lounge</div></div>
+      <div class="kpi-item"><div class="kpi-val">100<span>%</span></div><div class="kpi-label">Controlled Lighting & Sound</div></div>
+      <div class="kpi-item"><div class="kpi-val">12<span>yr</span></div><div class="kpi-label">Production Pedigree</div></div>
     </div>
   </section>
 

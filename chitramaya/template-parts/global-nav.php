@@ -20,7 +20,7 @@
         <div class="nav-horizontals">
             <button class="nav-horizontal-item is-active" data-target="panel-1">COMMERCIAL & BRAND</button>
             <button class="nav-horizontal-item" data-target="panel-2">EVENTS & PORTRAIT</button>
-            <button class="nav-horizontal-item" data-target="panel-3">TALAM STUDIO SPACE</button>
+            <button class="nav-horizontal-item" data-target="panel-3">THALAM STUDIO SPACE</button>
             <button class="nav-horizontal-item" data-target="panel-4">THE WORKFLOW</button>
             <button class="nav-horizontal-item" data-target="panel-5">BRAND DESIGN</button>
         </div>
@@ -59,12 +59,13 @@
             <!-- Panel 3 -->
             <div class="nav-panel" id="panel-3">
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">The Studio Space & Engineering</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Content Editing & Distribution</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Podcast Branding & Asset Creation</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-ad-shoots">Commercial Ad Shoots</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-baby">Baby & Newborn</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-industrial">Industrial Documentation</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-weddings">Wedding Documentation</a></li>
                 </ul>
                 <div class="nav-hook">
-                    The theater of dialogue. Fusing broadcast-grade audio engineering with cinematic visual production to elevate your media property.
+                    A sanctuary for light, space, and creative precision. Engineered for high-volume commercial production in the heart of Thillai Nagar.
                 </div>
             </div>
 
