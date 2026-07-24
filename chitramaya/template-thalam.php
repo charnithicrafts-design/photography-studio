@@ -117,7 +117,7 @@
     .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     .form-submit { margin-top: 2rem; width: 100%; background: var(--accent); color: var(--bg-light); border: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.25rem 2rem; cursor: pointer; border-radius: 50px; }
 
-    footer { display: grid; grid-template-columns: 1fr; border-top: var(--rule); }
+    .thalam-footer { display: grid; grid-template-columns: 1fr; border-top: var(--rule); }
     .footer-col { padding: 2.5rem 1.5rem; border-bottom: var(--rule); }
     .footer-col:last-child { border-bottom: none; }
     .footer-col-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 1.25rem; }
@@ -187,7 +187,7 @@
       .form-submit { margin-top: 2.5rem; width: 100%; display: flex; justify-content: center; padding: 1.25rem 2rem; font-size: 0.85rem; }
       .form-submit:hover { background: var(--text-dark); }
 
-      footer { grid-template-columns: 1fr 1fr 1fr; }
+      .thalam-footer { grid-template-columns: 1fr 1fr 1fr; }
       .footer-col { padding: 3rem 2rem; border-right: var(--rule); border-bottom: none; }
       .footer-col-label { font-size: 0.65rem; margin-bottom: 1.5rem; }
       .footer-col p, .footer-col a { font-size: 0.8rem; transition: color 0.2s; }
@@ -420,7 +420,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="thalam-footer">
     <div class="footer-col">
       <div class="footer-col-label">Thalam Studio</div>
       <p>Ad shoots, baby photography, and commercial production in .</p>
