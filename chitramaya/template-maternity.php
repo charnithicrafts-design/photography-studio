@@ -35,8 +35,10 @@
   .hero-btn:hover { background: #fff; color: #000; }
 
   /* 3. MANIFESTO */
-  .manifesto { padding: 8rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
-  .manifesto h2 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.5rem); font-style: italic; font-weight: 400; line-height: 1.3; color: var(--text-dark); }
+  .manifesto { padding: 10rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .manifesto-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 2rem; display: block; }
+  .manifesto h2 { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-style: italic; font-weight: 400; line-height: 1.2; color: var(--text-dark); text-transform: none; margin-bottom: 2rem; }
+  .manifesto p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 500px; }
 
   /* 4. DUAL PANE - STUDIO VS OUTDOOR */
   .dual-pane { display: flex; flex-direction: column; height: auto; }
@@ -106,7 +108,9 @@
 
   <!-- MANIFESTO -->
   <section class="manifesto">
-    <h2>Like a seed in the earth, you are growing in silence, shielded by love, ready to meet the sun. Your body is doing holy work. We are here to archive its breathtaking power.</h2>
+    <span class="manifesto-label">The Seed of Wonder</span>
+    <h2>Like a seed in the earth, you are growing in silence, shielded by love, ready to meet the sun.</h2>
+    <p>Your body is doing holy work. We are here to archive its breathtaking power.</p>
   </section>
 
   <!-- DUAL PANE -->
