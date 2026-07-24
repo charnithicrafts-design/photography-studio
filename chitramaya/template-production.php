@@ -191,6 +191,12 @@
         drawers.forEach(d => d.classList.remove('active'));
         if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
+        const header = document.querySelector('.site-header');
+        if (header) {
+            header.style.opacity = '1';
+            header.style.pointerEvents = 'auto';
+            header.style.transition = 'opacity 0.3s ease';
+        }
       }
       
       triggers.forEach(trigger => {
@@ -204,6 +210,12 @@
             targetDrawer.classList.add('active');
             if (overlay) overlay.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            const header = document.querySelector('.site-header');
+            if (header) {
+                header.style.opacity = '0';
+                header.style.pointerEvents = 'none';
+                header.style.transition = 'opacity 0.3s ease';
+            }
           }
         });
       });
