@@ -65,6 +65,25 @@
     .card-cta { display: inline-flex; padding: 1rem 2rem; background: transparent; border: 1px solid var(--text); color: var(--text); text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
     .card-cta:hover { background: var(--text); color: #fff; }
     
+    /* SLIDE-OUT DRAWERS */
+    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 999; opacity: 0; pointer-events: none; transition: 0.4s ease; }
+    .service-drawer-overlay.active { opacity: 1; pointer-events: all; backdrop-filter: blur(5px); }
+    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: #0A1128; color: #FDFBF7; z-index: 1000; transition: right 0.5s cubic-bezier(0.19, 1, 0.22, 1); overflow-y: auto; padding: 4rem 3rem; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+    .service-drawer.active { right: 0; }
+    .drawer-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: #FDFBF7; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.5rem; transition: 0.3s; }
+    .drawer-close:hover { color: var(--accent); }
+    .drawer-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2rem; }
+    .drawer-grid { display: flex; flex-direction: column; gap: 3rem; margin-bottom: 3rem; }
+    .drawer-manifesto p { font-size: 1.1rem; line-height: 1.7; color: #D1D5DB; }
+    .drawer-deliverables ul { list-style: none; padding: 0; }
+    .drawer-deliverables li { font-size: 1rem; line-height: 1.8; color: #FDFBF7; padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+    .drawer-deliverables li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+    .drawer-cta { display: inline-block; padding: 1rem 2rem; background: #FDFBF7; color: #0A1128; text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
+    .drawer-cta:hover { background: var(--accent); color: #fff; }
+    
+    .card-list a.drawer-trigger { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3); transition: 0.3s; cursor: pointer; }
+    .card-list a.drawer-trigger:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    
     @media (max-width: 1024px) {
       .cards-grid { grid-template-columns: 1fr; gap: 3rem; }
       .services-container { padding: 4rem 1.5rem; }
@@ -97,11 +116,11 @@
           <h2 class="card-title">Architecting Lasting Recognition.</h2>
           <p class="card-desc">Brand design is the strategic process of creating visual elements that define a company’s identity and communicate its core values. By translating a brand’s mission and vision into tangible visual assets, we ensure a cohesive and meaningful representation across all touchpoints.</p>
           <ul class="card-list">
-            <li>Logo design &amp; Brand identity</li>
-            <li>Product design &amp; Tactile packaging</li>
-            <li>Marketing collaterals &amp; Illustrative posters</li>
-            <li>OOH campaign &amp; Installations design</li>
-            <li>Comprehensive Brand guidelines</li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-logo">Logo design &amp; Brand identity</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-product">Product design &amp; Tactile packaging</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-marketing">Marketing collaterals &amp; Illustrative posters</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-ooh">OOH campaign &amp; Installations design</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-guidelines">Comprehensive Brand guidelines</a></li>
           </ul>
           <div class="card-action">
             <a href="#" class="card-cta" data-trigger="booking">Start a Project &rarr;</a>
@@ -131,7 +150,56 @@
     </div>
   </section>
 
+<?php get_template_part('template-parts/drawer-brand-services'); ?>
+
 <?php get_template_part('template-parts/global-footer'); ?>
   <?php wp_footer(); ?>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const triggers = document.querySelectorAll('.drawer-trigger');
+      const overlay = document.querySelector('.service-drawer-overlay');
+      const closeBtns = document.querySelectorAll('.drawer-close');
+      const drawers = document.querySelectorAll('.service-drawer');
+      
+      function closeAllDrawers() {
+        drawers.forEach(d => d.classList.remove('active'));
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-drawer');
+          const targetDrawer = document.getElementById(targetId);
+          
+          if (targetDrawer) {
+            closeAllDrawers(); // Ensure any open drawer is closed
+            targetDrawer.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          }
+        });
+      });
+      
+      closeBtns.forEach(btn => {
+        btn.addEventListener('click', closeAllDrawers);
+      });
+      
+      if (overlay) {
+        overlay.addEventListener('click', closeAllDrawers);
+      }
+      
+      // Hook the drawer CTAs to close the drawer before opening the booking modal
+      const drawerCtas = document.querySelectorAll('.drawer-cta[data-trigger="booking"]');
+      drawerCtas.forEach(cta => {
+        cta.addEventListener('click', function(e) {
+            // Let the global booking.js handle the modal, just close the drawer
+            closeAllDrawers();
+        });
+      });
+    });
+  </script>
 </body>
 </html>
