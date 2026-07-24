@@ -145,8 +145,6 @@
 
       .services-header { padding: 2rem; }
       .services-header h2, .services-header span { font-size: 0.72rem; }
-      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; padding: 0; align-items: stretch; gap: 0; cursor: pointer; scroll-margin-top: 100px; }
-      .service-row:hover { background: rgba(169,111,68,0.08); }
       .service-index { display: flex; padding: 2.5rem 2rem; border-right: var(--rule); font-size: 0.7rem; letter-spacing: 0.14em; }
       .service-img-cell { height: auto; border-right: var(--rule); border-radius: 0; }
       .service-row:hover .service-img-cell img { transform: scale(1.05); }
@@ -213,6 +211,11 @@
       .btn-pill-dark, .btn-pill-light { padding: 1rem 2rem; font-size: 0.85rem; }
     }
 
+    @media (min-width: 1024px) {
+      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; padding: 0; align-items: stretch; gap: 0; cursor: pointer; scroll-margin-top: 100px; }
+      .service-row:hover { background: rgba(169,111,68,0.08); }
+    }
+    
   </style>
 </head>
 <body>
@@ -274,7 +277,7 @@
           <li>Art direction included</li>
           <li>Studio + location options</li>
           <li>Social &amp; print formats</li>
-          <li>48h turnaround available</li>
+          <li>Cinematic lighting ecosystem</li>
         </ul>
       </div>
       <div class="service-action">
@@ -324,7 +327,7 @@
           <li>No-disruption shooting protocol</li>
           <li>Safety-compliant crew gear</li>
           <li>800–1200 raw images</li>
-          <li>150 edited finals in 48h</li>
+          <li>Architectural &amp; scale focus</li>
         </ul>
       </div>
       <div class="service-action">
