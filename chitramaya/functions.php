@@ -197,3 +197,15 @@ function chitramaya_inject_booking_overlay() {
     }
 }
 add_action('wp_footer', 'chitramaya_inject_booking_overlay');
+
+/**
+ * Fix Gutenberg ACF Padding Bug
+ * Enforces proper spacing around fields inside the block editor
+ */
+add_action('admin_head', function() {
+    echo '<style>
+        .acf-postbox { margin-bottom: 20px !important; }
+        .acf-fields > .acf-field { padding: 15px 12px !important; }
+        .acf-fields > .acf-tab-wrap { padding: 10px 12px !important; background: #f9f9f9; border-bottom: 1px solid #ccc; }
+    </style>';
+});
