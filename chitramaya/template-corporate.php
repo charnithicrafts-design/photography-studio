@@ -103,28 +103,6 @@
     </div>
   </section>
 
-  <!-- CRO: PAIN-POINT MATRIX (CONSISTENCY, SPEED, QUALITY) -->
-  <section class="impact-matrix">
-    <h2 class="impact-title">The Impact of Professional Assets</h2>
-    <div class="impact-grid">
-      <div class="impact-card">
-        <div class="impact-icon">✦</div>
-        <h3>Consistency</h3>
-        <p>Maintain a cohesive, professional image across all channels and locations. Build visual trust with unwavering consistency.</p>
-      </div>
-      <div class="impact-card">
-        <div class="impact-icon">⚡</div>
-        <h3>Speed</h3>
-        <p>Fast turnarounds meeting demanding corporate timelines. Deliver assets quickly without compromising visual excellence.</p>
-      </div>
-      <div class="impact-card">
-        <div class="impact-icon">🏆</div>
-        <h3>Quality</h3>
-        <p>High-definition, professional photography capturing authenticity and professionalism. Premium assets for high-stakes business.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="services-section">
     <div class="services-grid">
       <!-- 01 -->
@@ -180,6 +158,28 @@
           <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and e-commerce platforms.' ); ?></p>
           <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRO: PAIN-POINT MATRIX (CONSISTENCY, SPEED, QUALITY) -->
+  <section class="impact-matrix">
+    <h2 class="impact-title">The Impact of Professional Assets</h2>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">✦</div>
+        <h3>Consistency</h3>
+        <p>Maintain a cohesive, professional image across all channels and locations. Build visual trust with unwavering consistency.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">⚡</div>
+        <h3>Speed</h3>
+        <p>Fast turnarounds meeting demanding corporate timelines. Deliver assets quickly without compromising visual excellence.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏆</div>
+        <h3>Quality</h3>
+        <p>High-definition, professional photography capturing authenticity and professionalism. Premium assets for high-stakes business.</p>
       </div>
     </div>
   </section>
