@@ -70,7 +70,7 @@
     .services { border-bottom: var(--rule); }
     .services-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: var(--rule); }
     .services-header h2, .services-header span { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-grey); }
-    
+
     .service-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; border-bottom: var(--rule); transition: background 0.15s; }
     .service-index { display: none; }
     .service-img-cell { height: 200px; overflow: hidden; border-radius: 8px; }
@@ -138,7 +138,7 @@
       .nav-book a { padding: 0.6rem 1.4rem; font-size: 0.72rem; }
       .nav-book a:hover, .btn-pill-dark:hover { background: var(--accent); color: var(--bg-light); border-color: var(--accent); }
 
-      
+
       .status-grid { grid-template-columns: repeat(4, 1fr); }
       .status-item { padding: 1.5rem 2rem; border-right: var(--rule); border-bottom: none; }
       .status-text { font-size: 0.7rem; }
@@ -199,7 +199,7 @@
       .whatsapp-fab span { display: inline; }
       .whatsapp-fab:hover { transform: scale(1.07) translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.5); animation: none; }
     }
-  
+
     /* ULTRA-FLUID DESKTOP HERO */
     @media (min-width: 992px) and (min-height: 600px) {
       .hero { align-items: center; justify-content: flex-start; flex-direction: row; min-height: calc(100vh - 60px); }
@@ -212,16 +212,16 @@
       .hero-ctas { flex-direction: row; }
       .btn-pill-dark, .btn-pill-light { padding: 1rem 2rem; font-size: 0.85rem; }
     }
-    
+
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <div class="system-bar">
+  <!--<div class="system-bar">
     <span>[ Thalam Studio — Ad Shoots · Baby Photography · Operational ]</span>
     <span> · WhatsApp: +91 98765 43210</span>
-  </div>
+  </div>-->
 
 
 
