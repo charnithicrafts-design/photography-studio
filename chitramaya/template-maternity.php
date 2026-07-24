@@ -96,7 +96,7 @@
 <main class="maternity-page">
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Maternity Hero">
+    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1654894811904-d17107a20c29?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Maternity Hero">
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Genesis of Your <em>Legacy</em>.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'There is a sacred quiet that comes with pregnancy. It is the feeling of holding a whole new world inside you. Before they are a person you can hold in your arms, they are a seed of wonder growing in the secret, safe sanctuary of your own heart.' ); ?></p>
@@ -113,7 +113,7 @@
   <section class="dual-pane">
     <!-- Studio -->
     <div class="pane">
-      <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Maternity">
+      <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">01 // The Sanctuary</span>
         <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'The Sanctuary Studio' ); ?></h3>
@@ -122,7 +122,7 @@
     </div>
     <!-- Outdoor -->
     <div class="pane">
-      <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Outdoor Maternity">
+      <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1705746401414-8bae063ee19f?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Outdoor Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">02 // The Location</span>
         <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'The Natural Bloom' ); ?></h3>
@@ -134,7 +134,7 @@
   <!-- FAMILY & BABY SHOWER -->
   <section class="info-section">
     <div class="info-img-wrapper">
-      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Baby Shower">
+      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1579736283361-4008b21c7ed6?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Baby Shower">
     </div>
     <div class="info-content">
       <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'The Village Awaits' ); ?></h3>
@@ -145,7 +145,7 @@
   <!-- BUMP TO BABY -->
   <section class="info-section reverse">
     <div class="info-img-wrapper">
-      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Bump to Baby">
+      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1643758320140-59d2cb557c41?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Bump to Baby">
     </div>
     <div class="info-content">
       <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'The Complete Journey' ); ?></h3>
