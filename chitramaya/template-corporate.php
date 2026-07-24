@@ -44,6 +44,20 @@
     .hero-btn { display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
     .hero-btn:hover { background: #1C1917; color: #fff; }
     
+    /* CRO MODULES */
+    .logo-farm { padding: 4rem 3rem; background: #fff; border-bottom: 1px solid var(--border); text-align: center; }
+    .logo-farm-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a8a29e; margin-bottom: 2rem; }
+    .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; align-items: center; opacity: 0.6; filter: grayscale(100%); }
+    
+    .impact-matrix { padding: 6rem 3rem; background: #F9F9F9; }
+    .impact-title { text-align: center; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 4rem; letter-spacing: -0.02em; }
+    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; }
+    .impact-card { background: #fff; padding: 3rem 2rem; text-align: center; border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s; }
+    .impact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--accent); }
+    .impact-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
+    .impact-card h3 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem; }
+    .impact-card p { font-size: 1rem; color: #57534e; line-height: 1.6; }
+
     /* SERVICES GRID */
     .services-section { padding: 8rem 3rem; background: var(--bg-light); }
     .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 8rem; }
@@ -77,6 +91,40 @@
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Strong and Authentic<br><em>Visual Identity</em>.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'A comprehensive range of services designed to humanize your brand and build profound trust with your clients and stakeholders.' ); ?></p>
       <a href="#" class="hero-btn" data-trigger="booking">Commission a Corporate Shoot</a>
+    </div>
+  </section>
+
+  <!-- CRO: LOGO FARM (SOCIAL PROOF) -->
+  <section class="logo-farm">
+    <div class="logo-farm-title">Trusted By Corporate Leaders</div>
+    <div class="logo-grid">
+      <h2 style="font-size: 1.5rem; font-weight: 900;">Google</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 900;">Deloitte.</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 900;">McKinsey</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 900;">Salesforce</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 900;">ORACLE</h2>
+    </div>
+  </section>
+
+  <!-- CRO: PAIN-POINT MATRIX (CONSISTENCY, SPEED, QUALITY) -->
+  <section class="impact-matrix">
+    <h2 class="impact-title">The Impact of Professional Assets</h2>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">✦</div>
+        <h3>Consistency</h3>
+        <p>Maintain a cohesive, professional image across all channels and locations. Build visual trust with unwavering consistency.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">⚡</div>
+        <h3>Speed</h3>
+        <p>Fast turnarounds meeting demanding corporate timelines. Deliver assets quickly without compromising visual excellence.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏆</div>
+        <h3>Quality</h3>
+        <p>High-definition, professional photography capturing authenticity and professionalism. Premium assets for high-stakes business.</p>
+      </div>
     </div>
   </section>
 
