@@ -42,22 +42,29 @@
     .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 3rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; font-family: var(--font-display); }
     .hero-btn:hover { background: #fff; color: var(--text); }
     
-    /* PILLAR SPLIT LAYOUT */
-    .pillar-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; border-bottom: 1px solid rgba(0,0,0,0.1); }
-    .pillar-split-content { padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-    .pillar-split-img { position: relative; }
-    .pillar-split-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .pillar-label { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
-    .pillar-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 2rem; letter-spacing: -0.03em; text-transform: uppercase; }
-    .pillar-desc { font-size: 1.1rem; line-height: 1.7; color: #555; margin-bottom: 1.5rem; max-width: 600px; }
-    .pillar-list { list-style: none; margin-top: 1rem; }
-    .pillar-list li { font-size: 1.05rem; line-height: 1.8; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 1rem; }
-    .pillar-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    /* CARD GRID LAYOUT (UX Laws applied) */
+    .services-container { padding: 6rem 3rem; max-width: 1400px; margin: 0 auto; }
+    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    
+    .service-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(0,0,0,0.05); }
+    .card-img-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .service-card:hover .card-img-wrapper img { transform: scale(1.05); }
+    
+    .card-content { padding: 3rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-label { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .card-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; text-transform: uppercase; }
+    .card-desc { font-size: 1rem; line-height: 1.6; color: #555; margin-bottom: 2rem; }
+    
+    .card-list { list-style: none; margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); }
+    .card-list li { font-size: 0.95rem; line-height: 1.6; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; }
+    .card-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .card-list strong { color: var(--text); font-weight: 600; }
     
     @media (max-width: 1024px) {
-      .pillar-split { grid-template-columns: 1fr; }
-      .pillar-split-content { padding: 4rem 2rem; order: 2; }
-      .pillar-split-img { min-height: 400px; order: 1; }
+      .cards-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-container { padding: 4rem 1.5rem; }
+      .card-content { padding: 2rem; }
     }
   </style>
 </head>
@@ -74,40 +81,43 @@
     </div>
   </section>
 
-  <!-- BRAND DESIGN -->
-  <section class="pillar-split">
-    <div class="pillar-split-content">
-      <span class="pillar-label">01 // Brand Design</span>
-      <h2 class="pillar-title">Architecting Lasting Recognition.</h2>
-      <p class="pillar-desc">Brand design is the strategic process of creating visual elements that define a company’s identity and communicate its core values. By translating a brand’s mission and vision into tangible visual assets, we ensure a cohesive and meaningful representation across all touchpoints.</p>
-      <p class="pillar-desc">These elements are consistently applied across platforms—enhancing visual appeal, building trust, and reinforcing market positioning.</p>
-      <ul class="pillar-list">
-        <li>Logo design &amp; Brand identity</li>
-        <li>Product design &amp; Tactile packaging</li>
-        <li>Marketing collaterals &amp; Illustrative posters</li>
-        <li>OOH campaign &amp; Installations design</li>
-        <li>Comprehensive Brand guidelines</li>
-      </ul>
-    </div>
-    <div class="pillar-split-img">
-      <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1614036634955-ae5e90f9b9eb?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Design">
-    </div>
-  </section>
+  <section class="services-container">
+    <div class="cards-grid">
+      <!-- BRAND DESIGN -->
+      <div class="service-card">
+        <div class="card-img-wrapper">
+          <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1614036634955-ae5e90f9b9eb?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Design">
+        </div>
+        <div class="card-content">
+          <span class="card-label">01 // Brand Design</span>
+          <h2 class="card-title">Architecting Lasting Recognition.</h2>
+          <p class="card-desc">Brand design is the strategic process of creating visual elements that define a company’s identity and communicate its core values. By translating a brand’s mission and vision into tangible visual assets, we ensure a cohesive and meaningful representation across all touchpoints.</p>
+          <ul class="card-list">
+            <li>Logo design &amp; Brand identity</li>
+            <li>Product design &amp; Tactile packaging</li>
+            <li>Marketing collaterals &amp; Illustrative posters</li>
+            <li>OOH campaign &amp; Installations design</li>
+            <li>Comprehensive Brand guidelines</li>
+          </ul>
+        </div>
+      </div>
 
-  <!-- PODCAST PRODUCTION -->
-  <section class="pillar-split">
-    <div class="pillar-split-img">
-      <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
-    </div>
-    <div class="pillar-split-content">
-      <span class="pillar-label">02 // Podcast & Interview</span>
-      <h2 class="pillar-title">Comprehensive Content Creation.</h2>
-      <p class="pillar-desc">Podcast and interview services have evolved into comprehensive content solutions that seamlessly combine audio, visual, and branding elements. Using professional lighting, multi-camera setups, and refined post-production, we craft output that meets the standards of modern digital audiences.</p>
-      <ul class="pillar-list">
-        <li><strong>Studio &amp; Production:</strong> A well-equipped environment with technical support for broadcast-grade recording (facilitated in-house at Thalam).</li>
-        <li><strong>Content &amp; Media:</strong> Creation, editing, and distribution strategies to maximize reach and engagement.</li>
-        <li><strong>Photography &amp; Branding:</strong> High-quality promotional visuals and cohesive identity to ensure your podcast sounds professional and looks market-ready.</li>
-      </ul>
+      <!-- PODCAST PRODUCTION -->
+      <div class="service-card">
+        <div class="card-img-wrapper">
+          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
+        </div>
+        <div class="card-content">
+          <span class="card-label">02 // Podcast & Interview</span>
+          <h2 class="card-title">Comprehensive Content Creation.</h2>
+          <p class="card-desc">Podcast and interview services have evolved into comprehensive content solutions that seamlessly combine audio, visual, and branding elements. Using professional lighting, multi-camera setups, and refined post-production, we craft broadcast-grade output.</p>
+          <ul class="card-list">
+            <li><strong>Studio &amp; Production:</strong> A well-equipped environment with technical support for broadcast-grade recording (facilitated at Thalam).</li>
+            <li><strong>Content &amp; Media:</strong> Creation, editing, and distribution strategies to maximize reach.</li>
+            <li><strong>Photography &amp; Branding:</strong> High-quality visuals to ensure your podcast looks market-ready.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
