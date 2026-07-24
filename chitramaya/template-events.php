@@ -21,91 +21,159 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg-dark: #12100E;
+      --bg-light: #1A1816;
       --text-light: #F7F5F0;
+      --mid-grey: #a3a3a3;
       --accent: #E5A97A;
+      --rule: 1px solid rgba(255,255,255,0.1);
       --font-sans: 'Inter', sans-serif;
       --font-serif: 'EB Garamond', serif;
     }
     body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
     
     /* NAV */
-    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: difference; color: #fff; }
+    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: difference; color: #fff; border-bottom: var(--rule); background: var(--bg-dark); mix-blend-mode: normal; }
     .nav-logo { font-weight: 900; letter-spacing: -0.02em; text-decoration: none; color: inherit; font-size: 1.25rem; }
-    .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     
     /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 6rem 3rem; background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(18,16,14,0.9) 0%, rgba(18,16,14,0.4) 100%); }
-    .hero-content { position: relative; z-index: 10; max-width: 800px; }
-    .hero-title { font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 8rem); font-style: italic; line-height: 0.9; margin-bottom: 2rem; font-weight: 400; color: var(--accent); }
-    .hero-desc { font-size: 1.25rem; line-height: 1.6; color: #e5e5e5; margin-bottom: 3rem; max-width: 500px; font-weight: 300; }
-    .hero-btn { display: inline-block; padding: 1.25rem 3rem; background: var(--accent); color: var(--bg-dark); text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; }
-    .hero-btn:hover { background: #fff; }
+    .hero { position: relative; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; border-bottom: var(--rule); }
+    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
+    .hero-title { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 6rem); font-style: italic; line-height: 1; margin-bottom: 1.5rem; color: var(--text-light); }
+    .hero-desc { font-size: 1.1rem; line-height: 1.6; color: var(--mid-grey); max-width: 600px; margin: 0 auto 3rem; }
+    .hero-btn { display: inline-block; padding: 1rem 2rem; border: 1px solid var(--accent); color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; }
+    .hero-btn:hover { background: var(--accent); color: var(--bg-dark); }
     
-    /* STORY SECTIONS */
-    .story-section { padding: 8rem 3rem; }
-    .story-row { display: flex; align-items: center; gap: 5rem; margin-bottom: 10rem; }
-    .story-row:nth-child(even) { flex-direction: row-reverse; }
+    /* SERVICES GRID */
+    .services { border-bottom: var(--rule); }
+    .services-header { padding: 2rem; border-bottom: var(--rule); display: flex; justify-content: space-between; align-items: center; }
+    .services-header h2, .services-header span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); }
     
-    .story-img-wrapper { flex: 1; position: relative; }
-    .story-img-wrapper img { width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3; }
-    .story-img-wrapper::after { content: ''; position: absolute; top: 2rem; left: 2rem; right: -2rem; bottom: -2rem; border: 1px solid rgba(255,255,255,0.1); z-index: -1; }
-    .story-row:nth-child(even) .story-img-wrapper::after { left: -2rem; right: 2rem; }
+    .service-row { display: grid; grid-template-columns: 1fr; border-bottom: var(--rule); }
+    .service-row:last-child { border-bottom: none; }
     
-    .story-content { flex: 1; }
-    .story-title { font-size: 2.5rem; font-family: var(--font-serif); font-style: italic; color: var(--accent); margin-bottom: 1.5rem; }
-    .story-desc { font-size: 1.1rem; line-height: 1.8; color: #a3a3a3; }
+    .service-index { display: none; }
+    .service-img-cell { height: 250px; overflow: hidden; }
+    .service-img-cell img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.6s ease; }
+    .service-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+    .service-name { font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; margin-bottom: 1rem; color: var(--accent); }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .service-tag { font-size: 0.65rem; border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid-grey); }
+    .service-specs { padding: 2rem; border-top: var(--rule); }
+    .spec-list { list-style: none; }
+    .spec-list li { font-size: 0.9rem; line-height: 2; color: var(--text-light); padding-left: 1.5rem; position: relative; }
+    .spec-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+    .service-action { padding: 2rem; border-top: var(--rule); display: flex; align-items: center; }
+    .service-cta { display: inline-block; padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); color: var(--text-light); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.3s; width: 100%; text-align: center; }
+    .service-cta:hover { background: var(--accent); color: var(--bg-dark); border-color: var(--accent); }
     
-    @media (max-width: 768px) {
-      .hero, .story-section { padding: 4rem 1.5rem; }
-      .story-row, .story-row:nth-child(even) { flex-direction: column; gap: 3rem; margin-bottom: 6rem; }
-      .story-img-wrapper::after { display: none; }
+    /* TABLET & DESKTOP */
+    @media (min-width: 768px) {
+      .services-header { padding: 2rem 4rem; }
+      .service-index { display: flex; padding: 3rem; border-right: var(--rule); align-items: center; justify-content: center; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--mid-grey); }
+      .service-img-cell { height: auto; border-right: var(--rule); }
+      .service-row:hover .service-img-cell img { transform: scale(1.05); }
+      .service-info { padding: 3rem; border-right: var(--rule); border-top: none; }
+      .service-specs { padding: 3rem; border-right: var(--rule); border-top: none; }
+      .service-action { padding: 3rem; border-top: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; scroll-margin-top: 100px; }
+      .service-cta { width: auto; }
     }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
-
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Grand<br>Heirloom.' ); ?></h1>
+      <span class="hero-tag">Events & Portrait</span>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Grand Heirloom.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'An intimate, unscripted archiving of your most significant cultural milestones. Because you shouldn’t have to choose which memory to keep.' ); ?></p>
-      <a href="#" class="hero-btn" data-trigger="booking">Reserve Your Date</a>
+      <a href="#services" class="hero-btn">View Capabilities</a>
     </div>
   </section>
 
-  <section class="story-section">
-    <!-- Story 1 -->
-    <div class="story-row">
-      <div class="story-img-wrapper">
-        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings">
+  <section class="services" id="services">
+    <div class="services-header">
+      <h2>Service Directory // 3 Active</h2>
+      <span>All inclusive of editing &amp; licensing</span>
+    </div>
+
+    <!-- Weddings & Destination -->
+    <div class="service-row" id="service-weddings">
+      <div class="service-index">01</div>
+      <div class="service-img-cell">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings & Destination">
       </div>
-      <div class="story-content">
-        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Weddings & Destination' ); ?></h2>
-        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Pre/post wedding documentation and destination coverage. We approach your wedding not as an event, but as a cinematic narrative that demands the highest level of storytelling.' ); ?></p>
+      <div class="service-info">
+        <div>
+          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Weddings' ); ?></h3>
+          <div class="service-tags"><span class="service-tag">Destination</span><span class="service-tag">Documentary</span><span class="service-tag">Cinematic</span></div>
+        </div>
+      </div>
+      <div class="service-specs">
+        <ul class="spec-list">
+          <li>Pre &amp; Post wedding documentation</li>
+          <li>Unobtrusive cinematic narrative</li>
+          <li>2+ lead photographers</li>
+          <li>Comprehensive event archiving</li>
+        </ul>
+      </div>
+      <div class="service-action">
+        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
 
-    <!-- Story 2 -->
-    <div class="story-row">
-      <div class="story-img-wrapper">
+    <!-- Cultural Milestones -->
+    <div class="service-row" id="service-cultural">
+      <div class="service-index">02</div>
+      <div class="service-img-cell">
         <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cultural Milestones">
       </div>
-      <div class="story-content">
-        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Cultural Milestones' ); ?></h2>
-        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Respectful, comprehensive archiving of Sastiyabthapoorthi, Upanayanam, and Sadhabishegam. Documenting generations coming together with authenticity and grace.' ); ?></p>
+      <div class="service-info">
+        <div>
+          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Milestones' ); ?></h3>
+          <div class="service-tags"><span class="service-tag">Sastiyabthapoorthi</span><span class="service-tag">Upanayanam</span><span class="service-tag">Authentic</span></div>
+        </div>
+      </div>
+      <div class="service-specs">
+        <ul class="spec-list">
+          <li>Respectful, traditional archiving</li>
+          <li>Multi-generational focus</li>
+          <li>High-volume candid capture</li>
+          <li>Premium album integration</li>
+        </ul>
+      </div>
+      <div class="service-action">
+        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
 
-    <!-- Story 3 -->
-    <div class="story-row">
-      <div class="story-img-wrapper">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Portraits">
+    <!-- The Grand Portrait -->
+    <div class="service-row" id="service-portrait">
+      <div class="service-index">03</div>
+      <div class="service-img-cell">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="The Grand Portrait">
       </div>
-      <div class="story-content">
-        <h2 class="story-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'The Grand Portrait' ); ?></h2>
-        <p class="story-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Studio or house-visit art-themed family portraits designed to hang on your walls for the next fifty years.' ); ?></p>
+      <div class="service-info">
+        <div>
+          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Portraits' ); ?></h3>
+          <div class="service-tags"><span class="service-tag">Heirloom</span><span class="service-tag">Studio</span><span class="service-tag">House Visit</span></div>
+        </div>
+      </div>
+      <div class="service-specs">
+        <ul class="spec-list">
+          <li>Art-themed family portraits</li>
+          <li>Thalam Studio or house-visit</li>
+          <li>Fine-art print delivery</li>
+          <li>Engineered to last 50+ years</li>
+        </ul>
+      </div>
+      <div class="service-action">
+        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
   </section>
