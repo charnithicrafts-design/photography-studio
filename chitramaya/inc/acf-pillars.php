@@ -137,6 +137,7 @@ acf_add_local_field_group(array(
             ),
         ),
     ),
+    'position' => 'normal',
     'style' => 'default',
 ));
 
@@ -146,22 +147,34 @@ endif;
  * Dynamic Label UX for Pillar Pages
  * Transforms generic "Section 1" labels into template-specific contextual labels
  */
-add_filter('acf/prepare_field', 'chitramaya_dynamic_pillar_labels');
+add_filter('acf/load_field', 'chitramaya_dynamic_pillar_labels');
 function chitramaya_dynamic_pillar_labels($field) {
     $post_id = false;
     if (isset($_POST['post_id'])) { $post_id = intval($_POST['post_id']); } 
+    elseif (isset($_GET['post_id'])) { $post_id = intval($_GET['post_id']); }
     elseif (isset($_GET['post'])) { $post_id = intval($_GET['post']); } 
     else { global $post; if ($post) $post_id = $post->ID; }
     
     if (!$post_id) return $field;
     
-    // Only target the unified pillar fields
-    if (strpos($field['name'], 'pillar_sec') !== 0) return $field;
+    // Only target the unified pillar fields by KEY
+    if (strpos($field['key'], 'field_pillar_sec') !== 0) return $field;
     
     $template = get_page_template_slug($post_id);
+    if (!$template || $template === 'default') {
+        $post_obj = get_post($post_id);
+        if ($post_obj) {
+            $slug = $post_obj->post_name;
+            if ($slug === 'corporate-brand') $template = 'template-corporate.php';
+            elseif ($slug === 'commercial') $template = 'template-commercial.php';
+            elseif ($slug === 'events') $template = 'template-events.php';
+            elseif ($slug === 'production-brand-design') $template = 'template-production.php';
+            elseif ($slug === 'maternity') $template = 'template-maternity.php';
+        }
+    }
     
-    // Extract section number from field name (e.g., pillar_sec1_title -> 1)
-    if (!preg_match('/pillar_sec(\d+)/', $field['name'], $matches)) return $field;
+    // Extract section number from field key (e.g., field_pillar_sec1_title -> 1)
+    if (!preg_match('/field_pillar_sec(\d+)/', $field['key'], $matches)) return $field;
     $sec = $matches[1];
     
     $custom_labels = [
