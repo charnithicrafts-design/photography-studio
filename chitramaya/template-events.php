@@ -106,20 +106,20 @@
     <div class="service-row" id="service-weddings">
       <div class="service-index">01</div>
       <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings & Destination">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings & Destination">
       </div>
       <div class="service-info">
         <div>
           <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Weddings' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Destination</span><span class="service-tag">Documentary</span><span class="service-tag">Cinematic</span></div>
+          <div class="service-tags"><span class="service-tag">Destination</span><span class="service-tag">Pre/Post</span><span class="service-tag">Song Creation</span></div>
         </div>
       </div>
       <div class="service-specs">
         <ul class="spec-list">
           <li>Pre &amp; Post wedding documentation</li>
+          <li>Global destination coverage</li>
+          <li>Original song creation &amp; scoring</li>
           <li>Unobtrusive cinematic narrative</li>
-          <li>2+ lead photographers</li>
-          <li>Comprehensive event archiving</li>
         </ul>
       </div>
       <div class="service-action">
@@ -131,20 +131,20 @@
     <div class="service-row" id="service-cultural">
       <div class="service-index">02</div>
       <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Cultural Milestones">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Events & Milestones">
       </div>
       <div class="service-info">
         <div>
-          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Milestones' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Sastiyabthapoorthi</span><span class="service-tag">Upanayanam</span><span class="service-tag">Authentic</span></div>
+          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Family Events' ); ?></h3>
+          <div class="service-tags"><span class="service-tag">Tradition</span><span class="service-tag">Legacy</span><span class="service-tag">Authentic</span></div>
         </div>
       </div>
       <div class="service-specs">
         <ul class="spec-list">
-          <li>Respectful, traditional archiving</li>
-          <li>Multi-generational focus</li>
-          <li>High-volume candid capture</li>
-          <li>Premium album integration</li>
+          <li>Sastiyabthapoorthi &amp; Sadhabishegam</li>
+          <li>Upanayanam ceremonies</li>
+          <li>Ear piercing / Ayushomam</li>
+          <li>Respectful, multi-generational archiving</li>
         </ul>
       </div>
       <div class="service-action">
@@ -156,20 +156,20 @@
     <div class="service-row" id="service-portrait">
       <div class="service-index">03</div>
       <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="The Grand Portrait">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1514960919797-5ff58c52e5ba?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Portraits">
       </div>
       <div class="service-info">
         <div>
-          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Portraits' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Heirloom</span><span class="service-tag">Studio</span><span class="service-tag">House Visit</span></div>
+          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Family Portraits' ); ?></h3>
+          <div class="service-tags"><span class="service-tag">Heirloom</span><span class="service-tag">Grand Scale</span><span class="service-tag">Art-Themed</span></div>
         </div>
       </div>
       <div class="service-specs">
         <ul class="spec-list">
-          <li>Art-themed family portraits</li>
-          <li>Thalam Studio or house-visit</li>
-          <li>Fine-art print delivery</li>
-          <li>Engineered to last 50+ years</li>
+          <li>Grand family picture — House Visit</li>
+          <li>Grand family picture — Thalam Studio</li>
+          <li>Outdoor styled &amp; art-themed direction</li>
+          <li>Fine-art physical print delivery</li>
         </ul>
       </div>
       <div class="service-action">
