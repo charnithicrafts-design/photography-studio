@@ -61,6 +61,10 @@
     .card-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
     .card-list strong { color: var(--text); font-weight: 600; }
     
+    .card-action { margin-top: 2rem; }
+    .card-cta { display: inline-flex; padding: 1rem 2rem; background: transparent; border: 1px solid var(--text); color: var(--text); text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
+    .card-cta:hover { background: var(--text); color: #fff; }
+    
     @media (max-width: 1024px) {
       .cards-grid { grid-template-columns: 1fr; gap: 3rem; }
       .services-container { padding: 4rem 1.5rem; }
@@ -99,6 +103,9 @@
             <li>OOH campaign &amp; Installations design</li>
             <li>Comprehensive Brand guidelines</li>
           </ul>
+          <div class="card-action">
+            <a href="#" class="card-cta" data-trigger="booking">Start a Project &rarr;</a>
+          </div>
         </div>
       </div>
 
@@ -116,6 +123,9 @@
             <li><strong>Content &amp; Media:</strong> Creation, editing, and distribution strategies to maximize reach.</li>
             <li><strong>Photography &amp; Branding:</strong> High-quality visuals to ensure your podcast looks market-ready.</li>
           </ul>
+          <div class="card-action">
+            <a href="#" class="card-cta" data-trigger="booking">Book Production &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
