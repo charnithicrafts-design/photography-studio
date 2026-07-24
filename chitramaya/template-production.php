@@ -65,21 +65,26 @@
     .card-cta { display: inline-flex; padding: 1rem 2rem; background: transparent; border: 1px solid var(--text); color: var(--text); text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
     .card-cta:hover { background: var(--text); color: #fff; }
     
-    /* SLIDE-OUT DRAWERS */
-    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 999; opacity: 0; pointer-events: none; transition: 0.4s ease; }
+    /* SLIDE-OUT DRAWERS (UX & UI Fixes) */
+    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; opacity: 0; pointer-events: none; transition: 0.4s ease; }
     .service-drawer-overlay.active { opacity: 1; pointer-events: all; backdrop-filter: blur(5px); }
-    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: #0A1128; color: #FDFBF7; z-index: 1000; transition: right 0.5s cubic-bezier(0.19, 1, 0.22, 1); overflow-y: auto; padding: 4rem 3rem; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
-    .service-drawer.active { right: 0; }
-    .drawer-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: #FDFBF7; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.5rem; transition: 0.3s; }
-    .drawer-close:hover { color: var(--accent); }
-    .drawer-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2rem; }
-    .drawer-grid { display: flex; flex-direction: column; gap: 3rem; margin-bottom: 3rem; }
-    .drawer-manifesto p { font-size: 1.1rem; line-height: 1.7; color: #D1D5DB; }
+    
+    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: var(--bg); color: var(--text); z-index: 1000; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); overflow-y: auto; padding: 5rem 3rem 4rem; box-shadow: none; border-left: 1px solid rgba(0,0,0,0.1); }
+    .service-drawer.active { right: 0; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+    
+    /* Highly accessible close button */
+    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--text); color: var(--bg); border: none; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.75rem 1.25rem; border-radius: 4px; transition: 0.3s; z-index: 1001; }
+    .drawer-close:hover { background: var(--accent); color: #fff; }
+    
+    .drawer-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 2.5rem; border-bottom: 2px solid var(--accent); padding-bottom: 1.5rem; color: var(--accent); }
+    .drawer-grid { display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 3rem; }
+    .drawer-manifesto p { font-size: 1.1rem; line-height: 1.7; color: #444; }
     .drawer-deliverables ul { list-style: none; padding: 0; }
-    .drawer-deliverables li { font-size: 1rem; line-height: 1.8; color: #FDFBF7; padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
-    .drawer-deliverables li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
-    .drawer-cta { display: inline-block; padding: 1rem 2rem; background: #FDFBF7; color: #0A1128; text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
-    .drawer-cta:hover { background: var(--accent); color: #fff; }
+    .drawer-deliverables li { font-size: 1rem; line-height: 1.8; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+    .drawer-deliverables li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    
+    .drawer-cta { display: inline-block; padding: 1.25rem 2.5rem; background: var(--accent); color: #fff; text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-radius: 2px; }
+    .drawer-cta:hover { background: var(--text); color: #fff; }
     
     .card-list a.drawer-trigger { 
       display: flex; 

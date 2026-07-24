@@ -6,7 +6,7 @@
 <!-- Booking Modal Overlay -->
 <div class="booking-overlay" id="bookingOverlay" aria-hidden="true">
     <div class="booking-container">
-        <button class="booking-close" id="bookingClose" aria-label="Close Booking Form">CLOS[X]</button>
+        <button class="booking-close" id="bookingClose" aria-label="Close Booking Form">&times; CLOSE</button>
         
         <div class="booking-content">
             
