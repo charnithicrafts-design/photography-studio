@@ -31,11 +31,11 @@
             <!-- Panel 1 -->
             <div class="nav-panel is-active" id="panel-1">
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Executive Portfolios & Team Identity</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Workspace & Cinematic Culture</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">E-Commerce & Product Catalogues</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Events, Seminars & Brand Launches</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Corporate Film & Brand TVCs</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-1">Executive Headshots</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-2">Culture & Workspace</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-3">Corporate Events</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-4">Infrastructure & Ambiance</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-5">Product & Cinematic</a></li>
                 </ul>
                 <div class="nav-hook">
                     Engineering visual authority. Every frame is calibrated to command respect, build profound trust, and assert your market dominance.
@@ -132,5 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
         activeItem.classList.add('is-active');
         document.getElementById(targetId).classList.add('is-active');
     }
+
+    // Auto-close menu when clicking a link (vital for smooth anchor scrolling)
+    const navLinks = document.querySelectorAll('#globalNav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
+            toggle.querySelector('.nav-toggle-text').innerText = 'Menu';
+        });
+    });
 });
 </script>

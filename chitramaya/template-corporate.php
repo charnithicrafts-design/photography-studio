@@ -61,7 +61,7 @@
     /* SERVICES GRID REWRITE (CRO EDITORIAL) */
     .services-section { padding: 8rem 3rem; background: var(--bg-light); }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
-    .service-card { background: #fff; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
+    .service-card { background: #fff; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; scroll-margin-top: 100px; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
     .service-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--border); }
     .service-content { padding: 2.5rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -106,7 +106,7 @@
   <section class="services-section">
     <div class="services-grid">
       <!-- 01 -->
-      <div class="service-card">
+      <div class="service-card" id="service-1">
         <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
         <div class="service-content">
           <span class="service-num">01</span>
@@ -117,7 +117,7 @@
       </div>
 
       <!-- 02 -->
-      <div class="service-card">
+      <div class="service-card" id="service-2">
         <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
         <div class="service-content">
           <span class="service-num">02</span>
@@ -128,7 +128,7 @@
       </div>
 
       <!-- 03 -->
-      <div class="service-card">
+      <div class="service-card" id="service-3">
         <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
         <div class="service-content">
           <span class="service-num">03</span>
@@ -139,7 +139,7 @@
       </div>
 
       <!-- 04 -->
-      <div class="service-card">
+      <div class="service-card" id="service-4">
         <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
         <div class="service-content">
           <span class="service-num">04</span>
@@ -150,7 +150,7 @@
       </div>
 
       <!-- 05 -->
-      <div class="service-card">
+      <div class="service-card" id="service-5">
         <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1637250067262-758c5b8fb18c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
         <div class="service-content">
           <span class="service-num">05</span>
