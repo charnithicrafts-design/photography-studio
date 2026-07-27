@@ -196,7 +196,7 @@ function chitramaya_register_pillar_acf_fields() {
         ),
     ),
     'position' => 'normal',
-    'style' => 'default',
+    'style' => 'seamless',
 ));
 
     endif;

@@ -55,6 +55,41 @@ function chitramaya_register_portfolio_acf_fields() {
                     ),
                 ),
             ),
+            'position' => 'normal',
+            'style' => 'seamless',
+            'active' => true,
+        ) );
+
+        // Register ACF Fields for Portfolio Page Template
+        acf_add_local_field_group( array(
+            'key' => 'group_portfolio_page',
+            'title' => 'Portfolio Page Settings',
+            'fields' => array(
+                array(
+                    'key' => 'field_portfolio_hero_title',
+                    'label' => 'Hero Title',
+                    'name' => 'portfolio_hero_title',
+                    'type' => 'text',
+                    'default_value' => 'THE ARCHIVE',
+                ),
+                array(
+                    'key' => 'field_portfolio_hero_desc',
+                    'label' => 'Hero Description',
+                    'name' => 'portfolio_hero_desc',
+                    'type' => 'textarea',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'template-portfolio.php',
+                    ),
+                ),
+            ),
+            'position' => 'normal',
+            'style' => 'seamless',
             'active' => true,
         ) );
     }

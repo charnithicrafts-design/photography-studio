@@ -19,7 +19,14 @@
     <main id="primary" class="site-main portfolio-archive-page">
         
         <header class="portfolio-header">
-            <h1 class="brut-massive-text">THE ARCHIVE</h1>
+            <?php 
+                $hero_title = get_field('portfolio_hero_title') ?: 'THE ARCHIVE';
+                $hero_desc = get_field('portfolio_hero_desc');
+            ?>
+            <h1 class="brut-massive-text"><?php echo wp_kses_post($hero_title); ?></h1>
+            <?php if($hero_desc): ?>
+                <p class="portfolio-hero-desc" style="max-width: 800px; margin: 2rem auto; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);"><?php echo esc_html($hero_desc); ?></p>
+            <?php endif; ?>
         </header>
 
         <section class="portfolio-grid">
