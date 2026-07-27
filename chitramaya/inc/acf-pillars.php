@@ -11,7 +11,6 @@ function chitramaya_register_pillar_acf_fields() {
         array(
             'key' => 'tab_pillar_hero',
             'label' => 'Hero',
-            'name' => '',
             'type' => 'tab',
         ),
         array(
@@ -29,9 +28,8 @@ function chitramaya_register_pillar_acf_fields() {
         ),
         // SECTION 1
         array(
-            'key' => 'field_tab_pillar_sec1',
+            'key' => 'tab_pillar_sec1',
             'label' => 'Section 1',
-            'name' => 'tab_pillar_sec1',
             'type' => 'tab',
         ),
         array(
@@ -55,9 +53,8 @@ function chitramaya_register_pillar_acf_fields() {
         ),
         // SECTION 2
         array(
-            'key' => 'field_tab_pillar_sec2',
+            'key' => 'tab_pillar_sec2',
             'label' => 'Section 2',
-            'name' => 'tab_pillar_sec2',
             'type' => 'tab',
         ),
         array(
@@ -81,9 +78,8 @@ function chitramaya_register_pillar_acf_fields() {
         ),
         // SECTION 3
         array(
-            'key' => 'field_tab_pillar_sec3',
+            'key' => 'tab_pillar_sec3',
             'label' => 'Section 3',
-            'name' => 'tab_pillar_sec3',
             'type' => 'tab',
         ),
         array(
@@ -107,9 +103,8 @@ function chitramaya_register_pillar_acf_fields() {
         ),
         // SECTION 4
         array(
-            'key' => 'field_tab_pillar_sec4',
+            'key' => 'tab_pillar_sec4',
             'label' => 'Section 4',
-            'name' => 'tab_pillar_sec4',
             'type' => 'tab',
         ),
         array(
@@ -133,9 +128,8 @@ function chitramaya_register_pillar_acf_fields() {
         ),
         // SECTION 5
         array(
-            'key' => 'field_tab_pillar_sec5',
+            'key' => 'tab_pillar_sec5',
             'label' => 'Section 5',
-            'name' => 'tab_pillar_sec5',
             'type' => 'tab',
         ),
         array(
@@ -206,7 +200,7 @@ function chitramaya_register_pillar_acf_fields() {
  * Dynamic Label UX for Pillar Pages
  * Transforms generic "Section 1" labels into template-specific contextual labels
  */
-add_filter('acf/prepare_field', 'chitramaya_dynamic_pillar_labels');
+add_filter('acf/load_field', 'chitramaya_dynamic_pillar_labels');
 function chitramaya_dynamic_pillar_labels($field) {
     $post_id = false;
     if (isset($_POST['post_id'])) { $post_id = intval($_POST['post_id']); } 
