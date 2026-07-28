@@ -18,10 +18,10 @@
         
         <!-- Left Column: Primary Horizontals -->
         <div class="nav-horizontals">
-            <button class="nav-horizontal-item is-active" data-target="panel-1">COMMERCIAL & BRAND</button>
-            <button class="nav-horizontal-item" data-target="panel-2">EVENTS & PORTRAIT</button>
-            <button class="nav-horizontal-item" data-target="panel-3">THALAM STUDIO SPACE</button>
-            <button class="nav-horizontal-item" data-target="panel-4">THE WORKFLOW</button>
+            <button class="nav-horizontal-item is-active" data-target="panel-1">BRAND & CORPORATE</button>
+            <button class="nav-horizontal-item" data-target="panel-2">COMMERCIAL PHOTOGRAPHY</button>
+            <button class="nav-horizontal-item" data-target="panel-3">EVENTS & PORTRAIT</button>
+            <button class="nav-horizontal-item" data-target="panel-4">PODCAST & INTERVIEW</button>
             <button class="nav-horizontal-item" data-target="panel-5">BRAND DESIGN</button>
         </div>
 
@@ -30,21 +30,36 @@
             
             <!-- Panel 1 -->
             <div class="nav-panel is-active" id="panel-1">
-                <a href="<?php echo esc_url(home_url('/corporate-brand')); ?>" class="nav-panel-title">Commercial & Brand Overview &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/corporate-brand')); ?>" class="nav-panel-title">Brand & Corporate Overview &rarr;</a>
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-1">Executive Headshots</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-2">Culture & Workspace</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-3">Corporate Events</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-4">Infrastructure & Ambiance</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-5">Product & Cinematic</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-1">Executive Headshots & Portraits</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-2">Website & Team Photography</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-3">Corporate Video & Profile</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-4">Product Launches & Seminars</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-5">Brand Ads & TVC</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Engineering visual authority. Every frame is calibrated to command respect, build profound trust, and assert your market dominance.
+                    Humanizing your brand and capturing your corporate culture. We build trust and credibility with authentic, high-quality visuals of your team, infrastructure, and corporate events.
                 </div>
             </div>
 
             <!-- Panel 2 -->
             <div class="nav-panel" id="panel-2">
+                <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="nav-panel-title">Commercial Photography Overview &rarr;</a>
+                <ul class="nav-grid">
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>#service-1">OOH Marketing Collaterals</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>#service-2">E-commerce & Product</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>#service-3">Food & Lifestyle</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>#service-4">Architecture & 360 Photography</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/commercial')); ?>#service-5">Social Media & PR Campaigns</a></li>
+                </ul>
+                <div class="nav-hook">
+                    Purpose-driven visuals designed to influence consumer perception. From clean clinical products to real-life lifestyle scenarios, we architect images that sell.
+                </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="nav-panel" id="panel-3">
                 <a href="<?php echo esc_url(home_url('/events-portrait')); ?>" class="nav-panel-title">Events & Portrait Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity & Bump-to-Baby</a></li>
@@ -54,50 +69,36 @@
                     <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">The Grand Family Heirloom</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Preserving the human milestone. We create a timeless, emotional archive of the people you love the most.
-                </div>
-            </div>
-
-            <!-- Panel 3 -->
-            <div class="nav-panel" id="panel-3">
-                <a href="<?php echo esc_url(home_url('/thalam-studio')); ?>" class="nav-panel-title">Thalam Studio Space Overview &rarr;</a>
-                <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-ad-shoots">Commercial Ad Shoots</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-baby">Baby & Newborn</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-industrial">Industrial Documentation</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-weddings">Wedding Documentation</a></li>
-                </ul>
-                <div class="nav-hook">
-                    A sanctuary for light, space, and creative precision. Engineered for high-volume commercial production in the heart of Thillai Nagar.
+                    Preserving the human milestone. We create a timeless, emotional archive of the people you love the most, from the first breath to grand generational gatherings.
                 </div>
             </div>
 
             <!-- Panel 4 -->
             <div class="nav-panel" id="panel-4">
-                <a href="<?php echo esc_url(home_url('/the-workflow')); ?>" class="nav-panel-title">The Workflow Overview &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/podcast-interview')); ?>" class="nav-panel-title">Podcast & Interview Overview &rarr;</a>
                 <ul class="nav-grid">
-                    <li><a href="#process">1. Initial Consultation</a></li>
-                    <li><a href="#process">2. Pre-Production & Light Architecture</a></li>
-                    <li><a href="#process">3. The Execution</a></li>
-                    <li><a href="#process">4. Zero-Latency CDN Delivery</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Studio & Production Services</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Content & Media Distribution</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Photography & Branding Assets</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Multi-Camera & Lighting Setups</a></li>
                 </ul>
                 <div class="nav-hook">
-                    From initial consultation to zero-latency CDN delivery. See exactly how we execute.
+                    Comprehensive content creation solutions combining audio, visual, and branding elements. We ensure your podcast not only sounds professional but looks visually compelling.
                 </div>
             </div>
 
             <!-- Panel 5 -->
             <div class="nav-panel" id="panel-5">
-                <a href="<?php echo esc_url(home_url('/production-brand-design')); ?>" class="nav-panel-title">Brand Design Overview &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/brand-design')); ?>" class="nav-panel-title">Brand Design Overview &rarr;</a>
                 <ul class="nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Logo & Core Identity Systems</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">OOH Campaigns & Installation Design</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Product Design & Tactile Packaging</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Marketing Collaterals & Posters</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Comprehensive Brand Guidelines</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Logo & Core Identity Systems</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">OOH Campaigns & Installation Design</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Product Design & Tactile Packaging</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Marketing Collaterals & Posters</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Comprehensive Brand Guidelines</a></li>
                 </ul>
                 <div class="nav-hook">
-                    Identity is not merely an aesthetic; it is a strategic weapon. We do not just design graphics; we architect lasting recognition.
+                    Identity is a strategic weapon. By translating a brand’s mission into tangible visual assets, we don't just design graphics; we architect lasting market recognition.
                 </div>
             </div>
 
