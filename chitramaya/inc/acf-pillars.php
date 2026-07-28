@@ -264,6 +264,10 @@ function chitramaya_dynamic_pillar_labels($field) {
     if (isset($custom_labels[$template][$sec])) {
         $context = $custom_labels[$template][$sec];
         $field['label'] = str_replace("Section $sec", $context, $field['label']);
+    } elseif (isset($custom_labels[$template])) {
+        // If the current template is defined in our array but does NOT define this section,
+        // it means this section is unused. Returning false completely removes the field from the ACF UI.
+        return false;
     }
     
     return $field;
