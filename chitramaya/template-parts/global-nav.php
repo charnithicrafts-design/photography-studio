@@ -30,6 +30,7 @@
             
             <!-- Panel 1 -->
             <div class="nav-panel is-active" id="panel-1">
+                <a href="<?php echo esc_url(home_url('/corporate-brand')); ?>" class="nav-panel-title">Commercial & Brand Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-1">Executive Headshots</a></li>
                     <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>#service-2">Culture & Workspace</a></li>
@@ -44,6 +45,7 @@
 
             <!-- Panel 2 -->
             <div class="nav-panel" id="panel-2">
+                <a href="<?php echo esc_url(home_url('/events-portrait')); ?>" class="nav-panel-title">Events & Portrait Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity & Bump-to-Baby</a></li>
                     <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn, Infant & Toddler</a></li>
@@ -58,6 +60,7 @@
 
             <!-- Panel 3 -->
             <div class="nav-panel" id="panel-3">
+                <a href="<?php echo esc_url(home_url('/thalam-studio')); ?>" class="nav-panel-title">Thalam Studio Space Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-ad-shoots">Commercial Ad Shoots</a></li>
                     <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#service-baby">Baby & Newborn</a></li>
@@ -71,6 +74,7 @@
 
             <!-- Panel 4 -->
             <div class="nav-panel" id="panel-4">
+                <a href="<?php echo esc_url(home_url('/the-workflow')); ?>" class="nav-panel-title">The Workflow Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="#process">1. Initial Consultation</a></li>
                     <li><a href="#process">2. Pre-Production & Light Architecture</a></li>
@@ -84,6 +88,7 @@
 
             <!-- Panel 5 -->
             <div class="nav-panel" id="panel-5">
+                <a href="<?php echo esc_url(home_url('/production-brand-design')); ?>" class="nav-panel-title">Brand Design Overview &rarr;</a>
                 <ul class="nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Logo & Core Identity Systems</a></li>
                     <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">OOH Campaigns & Installation Design</a></li>
