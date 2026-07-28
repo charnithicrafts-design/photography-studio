@@ -11,10 +11,10 @@ if ( ! function_exists( 'get_field' ) ) {
 
 function chitramaya_enqueue_styles() {
     $parent_style = 'twentytwentyfive-style';
-    
+
     // Enqueue parent theme style
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    
+
     // Enqueue child theme style
     wp_enqueue_style( 'chitramaya-style',
         get_stylesheet_directory_uri() . '/style.css',
@@ -87,7 +87,7 @@ function chitramaya_register_acf_fields() {
                 array( 'key' => 'field_journey_step_1_title', 'label' => 'Step 1: Title', 'name' => 'step_1_title', 'type' => 'text', 'default_value' => 'The Prelude.' ),
                 array( 'key' => 'field_journey_step_1_desc', 'label' => 'Step 1: Description', 'name' => 'step_1_description', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.' ),
                 array( 'key' => 'field_journey_step_1_image', 'label' => 'Step 1: Image', 'name' => 'step_1_image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium' ),
-                
+
                 // Step 2 Fields
                 array( 'key' => 'field_journey_step_2_label', 'label' => 'Step 2: Label', 'name' => 'step_2_label', 'type' => 'text', 'default_value' => '02 — Newborn' ),
                 array( 'key' => 'field_journey_step_2_title', 'label' => 'Step 2: Title', 'name' => 'step_2_title', 'type' => 'text', 'default_value' => 'The Arrival.' ),
@@ -105,7 +105,7 @@ function chitramaya_register_acf_fields() {
                 array( 'key' => 'field_journey_step_4_title', 'label' => 'Step 4: Title', 'name' => 'step_4_title', 'type' => 'text', 'default_value' => 'The Tapestry.' ),
                 array( 'key' => 'field_journey_step_4_desc', 'label' => 'Step 4: Description', 'name' => 'step_4_description', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'A seamless, documentary-style archiving of your entire journey. Because you shouldn\'t have to choose which memory to keep.' ),
                 array( 'key' => 'field_journey_step_4_image', 'label' => 'Step 4: Image', 'name' => 'step_4_image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium' ),
-                
+
                 // Tab: Masonry Garden
                 array( 'key' => 'field_tab_baby_masonry', 'label' => 'Masonry Garden', 'name' => '', 'type' => 'tab' ),
                 array(
