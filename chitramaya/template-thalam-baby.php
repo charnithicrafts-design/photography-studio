@@ -139,25 +139,29 @@
           'label' => get_field('step_1_label') ?: '01 — Maternity',
           'title' => get_field('step_1_title') ?: 'The Prelude.',
           'description' => get_field('step_1_description') ?: 'Studio or location-oriented sessions that honor the quiet power and anticipation of motherhood.',
-          'image' => get_field('step_1_image')
+          'image' => get_field('step_1_image'),
+          'fallback_image' => 'https://plus.unsplash.com/premium_photo-1664053453708-ec77b643c533?auto=format&fit=crop&w=1200&q=80'
         ),
         array(
           'label' => get_field('step_2_label') ?: '02 — Newborn',
           'title' => get_field('step_2_title') ?: 'The Arrival.',
           'description' => get_field('step_2_description') ?: 'Intimate, art-directed studio sessions or house visits within the first critical weeks.',
-          'image' => get_field('step_2_image')
+          'image' => get_field('step_2_image'),
+          'fallback_image' => 'https://plus.unsplash.com/premium_photo-1665787379772-0581473a0d94?auto=format&fit=crop&w=1200&q=80'
         ),
         array(
           'label' => get_field('step_3_label') ?: '03 — Toddler',
           'title' => get_field('step_3_title') ?: 'The Milestone.',
           'description' => get_field('step_3_description') ?: 'Capturing the chaotic, beautiful energy of their first year. Unscripted, outdoors, or styled flawlessly.',
-          'image' => get_field('step_3_image')
+          'image' => get_field('step_3_image'),
+          'fallback_image' => 'https://plus.unsplash.com/premium_photo-1664355811153-408074237f94?auto=format&fit=crop&w=1200&q=80'
         ),
         array(
           'label' => get_field('step_4_label') ?: '04 — Bump to Baby',
           'title' => get_field('step_4_title') ?: 'The Tapestry.',
           'description' => get_field('step_4_description') ?: 'A seamless, documentary-style archiving of your entire journey. Because you shouldn\'t have to choose which memory to keep.',
-          'image' => get_field('step_4_image')
+          'image' => get_field('step_4_image'),
+          'fallback_image' => 'https://plus.unsplash.com/premium_photo-1661741017786-e098fb1fb7f3?auto=format&fit=crop&w=1200&q=80'
         )
       );
       ?>
@@ -173,7 +177,7 @@
               <?php if ( !empty($step['image']['url']) ) : ?>
                 <img class="journey-card-img-mobile" src="<?php echo esc_url($step['image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
               <?php else : ?>
-                <img class="journey-card-img-mobile" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
+                <img class="journey-card-img-mobile" src="<?php echo esc_url($step['fallback_image']); ?>" alt="Placeholder">
               <?php endif; ?>
             </div>
           </div>
@@ -186,7 +190,7 @@
             <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['image']['url']); ?>" alt="<?php echo esc_attr($step['title']); ?>">
           <?php else : ?>
             <!-- Fallback placeholder if no image uploaded -->
-            <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Placeholder">
+            <img class="journey-gallery-img <?php echo $is_active; ?>" data-index="<?php echo $index; ?>" src="<?php echo esc_url($step['fallback_image']); ?>" alt="Placeholder">
           <?php endif; ?>
         <?php endforeach; ?>
       </div>
