@@ -178,7 +178,14 @@ function chitramaya_register_pillar_acf_fields() {
             array(
                 'param' => 'page_template',
                 'operator' => '==',
-                'value' => 'template-production.php',
+                'value' => 'template-podcast.php',
+            ),
+        ),
+        array(
+            array(
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'template-brand-design.php',
             ),
         ),
         array(
@@ -221,7 +228,8 @@ function chitramaya_dynamic_pillar_labels($field) {
             if ($slug === 'corporate-brand') $template = 'template-corporate.php';
             elseif ($slug === 'commercial') $template = 'template-commercial.php';
             elseif ($slug === 'events') $template = 'template-events.php';
-            elseif ($slug === 'production-brand-design') $template = 'template-production.php';
+            elseif ($slug === 'podcast-interview') $template = 'template-podcast.php';
+            elseif ($slug === 'brand-design') $template = 'template-brand-design.php';
             elseif ($slug === 'maternity') $template = 'template-maternity.php';
         }
     }
@@ -239,19 +247,29 @@ function chitramaya_dynamic_pillar_labels($field) {
             '5' => 'Events & Launches',
         ],
         'template-commercial.php' => [
-            '1' => 'Product & E-Commerce',
-            '2' => 'Food & Lifestyle',
-            '3' => 'Architecture & 360',
+            '1' => 'OOH Marketing Collaterals',
+            '2' => 'Product & E-Commerce',
+            '3' => 'Food & Lifestyle',
+            '4' => 'Architecture & 360',
+            '5' => 'Social Media & PR',
         ],
         'template-events.php' => [
             '1' => 'Weddings & Destination',
             '2' => 'Cultural Ceremonies',
             '3' => 'The Details',
         ],
-        'template-production.php' => [
-            '1' => 'Podcast & Interview',
-            '2' => 'Brand Identity',
-            '3' => 'OOH Campaigns',
+        'template-podcast.php' => [
+            '1' => 'Studio & Production',
+            '2' => 'Content & Media',
+            '3' => 'Photography & Branding',
+            '4' => 'Multi-Camera & Lighting',
+        ],
+        'template-brand-design.php' => [
+            '1' => 'Logo & Brand Identity',
+            '2' => 'Product & Packaging',
+            '3' => 'Marketing Collaterals',
+            '4' => 'OOH & Installations',
+            '5' => 'Brand Guidelines',
         ],
         'template-maternity.php' => [
             '1' => 'The Studio',

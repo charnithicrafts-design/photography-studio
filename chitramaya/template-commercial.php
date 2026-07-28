@@ -73,7 +73,7 @@
   <section class="gallery-section">
     <div class="masonry-grid">
       <!-- Item 1 -->
-      <div class="masonry-item">
+      <div class="masonry-item" id="service-1" style="scroll-margin-top: 100px;">
         <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Product Photography">
         <div class="masonry-caption">
           <h3><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Product & E-Commerce' ); ?></h3>
@@ -81,7 +81,7 @@
         </div>
       </div>
       <!-- Item 2 -->
-      <div class="masonry-item">
+      <div class="masonry-item" id="service-2" style="scroll-margin-top: 100px;">
         <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Food Lifestyle">
         <div class="masonry-caption">
           <h3><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Food & Lifestyle' ); ?></h3>
@@ -89,11 +89,27 @@
         </div>
       </div>
       <!-- Item 3 -->
-      <div class="masonry-item">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Architecture">
+      <div class="masonry-item" id="service-3" style="scroll-margin-top: 100px;">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Food Lifestyle">
         <div class="masonry-caption">
-          <h3><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Architecture & 360' ); ?></h3>
-          <p><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Cinematic walkthroughs & timelapses.' ); ?></p>
+          <h3><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Food & Lifestyle' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Aspirational real-life scenarios.' ); ?></p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="masonry-item" id="service-4" style="scroll-margin-top: 100px;">
+        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Architecture">
+        <div class="masonry-caption">
+          <h3><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Architecture & 360' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Cinematic walkthroughs & timelapses.' ); ?></p>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="masonry-item" id="service-5" style="scroll-margin-top: 100px;">
+        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Social Media">
+        <div class="masonry-caption">
+          <h3><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Social Media & PR' ); ?></h3>
+          <p><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'Campaigns that drive engagement.' ); ?></p>
         </div>
       </div>
     </div>
