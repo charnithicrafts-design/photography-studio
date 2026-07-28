@@ -18,7 +18,7 @@ function chitramaya_register_pillar_acf_fields() {
             'label' => 'Hero Title',
             'name' => 'pillar_hero_title',
             'type' => 'text',
-            'instructions' => 'Use <em> tags for the italicized serif accent word.',
+            'instructions' => 'Use &lt;em&gt; tags for the italicized serif accent word.',
         ),
         array(
             'key' => 'field_pillar_hero_desc',
