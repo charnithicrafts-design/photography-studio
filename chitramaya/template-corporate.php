@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Pillar — Corporate & Brand
+ * Template Name: Pillar — Corporate & Brand (Z-Pattern Brutalist)
  * Template Post Type: page
- * Description: The comprehensive pillar page for Brand and Corporate Photography.
  */
 ?>
 <!DOCTYPE html>
@@ -15,188 +14,274 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg-light: #FFFFFF;
-      --text-dark: #1C1917;
-      --warm-grey: #D6D3D1;
-      --accent: #A96F44;
-      --border: 1px solid rgba(28,25,23,0.12);
       --font-sans: 'Inter', sans-serif;
-      --font-serif: 'EB Garamond', serif;
+      --border-raw: 4px solid #111;
+      --bg-raw: #FFFFFF; /* Pure White for Corporate starkness */
+      --text-dark: #111;
+      --accent: #A96F44;
     }
-    body { font-family: var(--font-sans); background: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
+    
+    body { font-family: var(--font-sans); background: var(--bg-raw); color: var(--text-dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     
     /* NAV */
-    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: difference; color: #fff; }
-    .nav-logo { font-weight: 900; letter-spacing: -0.02em; text-decoration: none; color: inherit; font-size: 1.25rem; }
-    .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: var(--bg-raw); border-bottom: var(--border-raw); }
+    .nav-logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -0.05em; color: var(--text-dark); text-decoration: none; }
     
-    /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem; text-align: center; background: #F9F9F9; color: #1C1917; }
-    .hero-content { position: relative; z-index: 10; max-width: 900px; }
-    .hero-title { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 2rem; text-transform: uppercase; }
-    .hero-title em { font-family: var(--font-serif); font-weight: 400; font-style: italic; color: var(--accent); }
-    .hero-desc { font-size: 1.25rem; line-height: 1.6; color: #57534e; margin-bottom: 3rem; max-width: 600px; margin-inline: auto; }
-    .hero-btn { display: inline-block; padding: 1rem 2.5rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
-    .hero-btn:hover { background: #1C1917; color: #fff; }
-    
-    /* CRO MODULES */
-    .logo-farm { padding: 4rem 3rem; background: #fff; border-bottom: 1px solid var(--border); text-align: center; }
-    .logo-farm-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a8a29e; margin-bottom: 2rem; }
-    .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; align-items: center; opacity: 0.6; filter: grayscale(100%); }
-    
-    .impact-matrix { padding: 6rem 3rem; background: #F9F9F9; }
-    .impact-title { text-align: center; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 4rem; letter-spacing: -0.02em; }
-    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; }
-    .impact-card { background: #fff; padding: 3rem 2rem; text-align: center; border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s; }
-    .impact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--accent); }
-    .impact-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
-    .impact-card h3 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem; }
-    .impact-card p { font-size: 1rem; color: #57534e; line-height: 1.6; }
+    /* STICKY VERTICAL NAV */
+    .local-pillar-nav { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); z-index: 50; mix-blend-mode: difference; }
+    .local-pillar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+    .local-pillar-nav a { display: block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: transparent; transition: 0.3s; position: relative; }
+    .local-pillar-nav a:hover, .local-pillar-nav a.active { background: #fff; transform: scale(1.3); }
+    @media (max-width: 1024px) { .local-pillar-nav { display: none; } }
 
-    /* SERVICES GRID REWRITE (CRO EDITORIAL) */
-    .services-section { padding: 8rem 3rem; background: var(--bg-light); }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
-    .service-card { background: #fff; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; scroll-margin-top: 100px; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
-    .service-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--border); }
-    .service-content { padding: 2.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-    .service-num { font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent); font-style: italic; margin-bottom: 0.5rem; }
-    .service-title { font-size: 1.75rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    .service-desc { font-size: 1rem; color: #57534e; line-height: 1.6; margin-bottom: 2.5rem; flex-grow: 1; }
-    .service-btn { align-self: flex-start; padding: 0.75rem 1.5rem; border: 1px solid var(--text-dark); color: var(--text-dark); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
-    .service-card:hover .service-btn { background: var(--text-dark); color: #fff; }
+    /* HERO */
+    .hero-container { padding: 8rem 2rem 4rem; max-width: 1600px; margin: 0 auto; display: grid; gap: 2rem; border-bottom: var(--border-raw); }
+    @media (min-width: 1024px) {
+      .hero-container { grid-template-columns: repeat(12, 1fr); align-items: end; padding: 10rem 4rem 6rem; }
+      .hero-card { grid-column: 1 / 7; }
+      .hero-img-wrapper { grid-column: 8 / 13; }
+    }
     
-    /* MOBILE */
+    .hero-card { margin-bottom: 2rem; }
+    .hero-title { font-weight: 900; font-size: clamp(3rem, 6vw, 6rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text-dark); }
+    .hero-desc { font-weight: 700; font-size: 1.25rem; line-height: 1.5; color: var(--text-dark); border-top: 2px solid #111; padding-top: 1rem; }
+    
+    .hero-img-wrapper img { width: 100%; height: auto; border: var(--border-raw); display: block; box-shadow: 16px 16px 0px #111; }
+    
+    /* MANIFESTO / LOGO FARM */
+    .manifesto { padding: 6rem 2rem; background: var(--text-dark); color: #fff; border-bottom: var(--border-raw); text-align: center; }
+    .manifesto-inner { max-width: 1200px; margin: 0 auto; display: grid; gap: 4rem; }
+    .manifesto h2 { font-weight: 900; font-size: clamp(2.5rem, 4vw, 4rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.02em; }
+    
+    .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; align-items: center; opacity: 0.7; }
+    .logo-grid h3 { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; }
+    
+    /* Z-PATTERN BRUTALIST GRID */
+    .services-container { padding: 6rem 2rem; max-width: 1600px; margin: 0 auto; display: flex; flex-direction: column; gap: 8rem; }
+    
+    .service-row { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    
+    @media (min-width: 1024px) {
+      .services-container { padding: 8rem 4rem; gap: 12rem; }
+      .service-row { grid-template-columns: repeat(12, 1fr); gap: 2rem; }
+      
+      .service-img { grid-column: 1 / 8; }
+      .service-card { grid-column: 9 / 13; }
+      
+      .service-row:nth-child(even) .service-img { grid-column: 6 / 13; grid-row: 1; }
+      .service-row:nth-child(even) .service-card { grid-column: 1 / 5; grid-row: 1; }
+    }
+    
+    .service-img img { width: 100%; height: auto; display: block; border: var(--border-raw); box-shadow: 16px 16px 0px #111; }
+    @media (min-width: 1024px) {
+      .service-row:nth-child(even) .service-img img { box-shadow: -16px 16px 0px #111; }
+    }
+    
+    .service-card { background: var(--bg-raw); display: flex; flex-direction: column; }
+    
+    .service-title { font-weight: 900; font-size: clamp(2.5rem, 4vw, 4rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.05em; color: var(--text-dark); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: var(--border-raw); }
+    .service-desc { font-size: 1.15rem; line-height: 1.5; margin-bottom: 2rem; font-weight: 700; color: var(--text-dark); }
+    
+    .service-deliv { margin-bottom: 2.5rem; }
+    .service-deliv ul { list-style: none; border-top: 2px solid #111; }
+    .service-deliv li { padding: 1rem 0; border-bottom: 2px solid #111; font-weight: 900; text-transform: uppercase; font-size: 0.95rem; letter-spacing: -0.02em; display: flex; justify-content: space-between; color: var(--text-dark); }
+    .service-deliv li::after { content: '+'; font-weight: 900; color: var(--accent); }
+    
+    .service-cta { display: block; width: 100%; padding: 1.5rem; text-align: center; border: var(--border-raw); background: var(--text-dark); color: #fff; font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: -0.02em; text-decoration: none; transition: 0.1s; }
+    .service-cta:active { transform: translateY(4px); box-shadow: none; }
+    .service-cta:hover { background: var(--accent); box-shadow: 4px 4px 0px #111; }
+
     @media (max-width: 768px) {
-      .hero { padding: 6rem 1.5rem; }
-      .services-section { padding: 4rem 1.5rem; }
-      .impact-grid, .logo-grid { gap: 2rem; }
+      .service-img img { box-shadow: 8px 8px 0px #111; }
+      .hero-img-wrapper img { box-shadow: 8px 8px 0px #111; }
     }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
+  <!-- STICKY VERTICAL NAV -->
+  <nav class="local-pillar-nav" aria-label="Section Navigation">
+    <ul>
+      <li><a href="#service-1" aria-label="Go to Service 1"></a></li>
+      <li><a href="#service-2" aria-label="Go to Service 2"></a></li>
+      <li><a href="#service-3" aria-label="Go to Service 3"></a></li>
+      <li><a href="#service-4" aria-label="Go to Service 4"></a></li>
+      <li><a href="#service-5" aria-label="Go to Service 5"></a></li>
+    </ul>
+  </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Strong and Authentic<br><em>Visual Identity</em>.' ); ?></h1>
-      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'A comprehensive range of services designed to humanize your brand and build profound trust with your clients and stakeholders.' ); ?></p>
-      <a href="#" class="hero-btn" data-trigger="booking">Commission a Corporate Shoot</a>
+  <!-- HERO -->
+  <section class="hero-container">
+    <div class="hero-card">
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Strong and<br>Authentic<br>Identity.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'A comprehensive range of services designed to humanize your brand and build profound trust with your clients and stakeholders. We document the reality of your corporate culture.' ); ?></p>
+    </div>
+    <div class="hero-img-wrapper">
+      <img src="<?php echo esc_url( get_field('pillar_hero_img') ?: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Brand Hero">
     </div>
   </section>
 
-  <!-- CRO: LOGO FARM (SOCIAL PROOF) -->
-  <section class="logo-farm">
-    <div class="logo-farm-title">Trusted By Corporate Leaders</div>
-    <div class="logo-grid">
-      <h2 style="font-size: 1.5rem; font-weight: 900;">Google</h2>
-      <h2 style="font-size: 1.5rem; font-weight: 900;">Deloitte.</h2>
-      <h2 style="font-size: 1.5rem; font-weight: 900;">McKinsey</h2>
-      <h2 style="font-size: 1.5rem; font-weight: 900;">Salesforce</h2>
-      <h2 style="font-size: 1.5rem; font-weight: 900;">ORACLE</h2>
-    </div>
-  </section>
-
-  <section class="services-section">
-    <div class="services-grid">
-      <!-- 01 -->
-      <div class="service-card" id="service-1">
-        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Portrait" class="service-image">
-        <div class="service-content">
-          <span class="service-num">01</span>
-          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive Headshots' ); ?></h2>
-          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Humanize the brand by showcasing team members with professional, authentic portraits designed for company websites and platforms like LinkedIn.' ); ?></p>
-          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 02 -->
-      <div class="service-card" id="service-2">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Workspace" class="service-image">
-        <div class="service-content">
-          <span class="service-num">02</span>
-          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Culture & Workspace' ); ?></h2>
-          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace or in action, effectively reflecting the company’s culture and work environment.' ); ?></p>
-          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 03 -->
-      <div class="service-card" id="service-3">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events" class="service-image">
-        <div class="service-content">
-          <span class="service-num">03</span>
-          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate Events' ); ?></h2>
-          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Ensure that important moments from conferences, seminars, and product launches are professionally documented.' ); ?></p>
-          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 04 -->
-      <div class="service-card" id="service-4">
-        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure and Ambiance" class="service-image">
-        <div class="service-content">
-          <span class="service-num">04</span>
-          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure & Ambiance' ); ?></h2>
-          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Office and workplace photography highlighting the organization’s infrastructure and operational environment to build credibility with stakeholders.' ); ?></p>
-          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 05 -->
-      <div class="service-card" id="service-5">
-        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1637250067262-758c5b8fb18c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic" class="service-image">
-        <div class="service-content">
-          <span class="service-num">05</span>
-          <h2 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product & Cinematic' ); ?></h2>
-          <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and e-commerce platforms.' ); ?></p>
-          <a href="#" class="service-btn" data-trigger="booking">Learn More &rarr;</a>
-        </div>
+  <!-- MANIFESTO / LOGO FARM -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <h2>Trusted by Corporate Leaders</h2>
+      <div class="logo-grid">
+        <h3>GOOGLE</h3>
+        <h3>DELOITTE</h3>
+        <h3>MCKINSEY</h3>
+        <h3>SALESFORCE</h3>
+        <h3>ORACLE</h3>
       </div>
     </div>
   </section>
 
-  <!-- CRO: PAIN-POINT MATRIX (CONSISTENCY, SPEED, QUALITY) -->
-  <section class="impact-matrix">
-    <h2 class="impact-title">The Impact of Professional Assets</h2>
-    <div class="impact-grid">
-      <div class="impact-card">
-        <div class="impact-icon">✦</div>
-        <h3>Consistency</h3>
-        <p>Maintain a cohesive, professional image across all channels and locations. Build visual trust with unwavering consistency.</p>
+  <!-- Z-PATTERN BRUTALIST GRID -->
+  <section class="services-container">
+    
+    <!-- 01: EXECUTIVE HEADSHOTS -->
+    <article class="service-row" id="service-1">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Executive Headshots">
       </div>
-      <div class="impact-card">
-        <div class="impact-icon">⚡</div>
-        <h3>Speed</h3>
-        <p>Fast turnarounds meeting demanding corporate timelines. Deliver assets quickly without compromising visual excellence.</p>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Executive Headshots' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Humanize the brand by showcasing team members with professional, authentic portraits designed for company websites and platforms like LinkedIn.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_1 = get_field('pillar_sec1_deliverables') ?: "C-Suite Portraits\nLinkedIn Optimization\nStudio Backgrounds\nEnvironmental Portraits";
+            $deliv_1_arr = array_filter(array_map('trim', explode("\n", $deliv_1)));
+          ?>
+          <ul>
+            <?php foreach($deliv_1_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec1_cta_text') ?: 'Book Headshots' ); ?></a>
       </div>
-      <div class="impact-card">
-        <div class="impact-icon">🏆</div>
-        <h3>Quality</h3>
-        <p>High-definition, professional photography capturing authenticity and professionalism. Premium assets for high-stakes business.</p>
-      </div>
-    </div>
-  </section>
+    </article>
 
-  <!-- HOW WE WORK & PIPELINE -->
-  <section class="workflow-teaser" style="padding: 6rem 3rem; background: #fff; text-align: center; border-top: 1px solid var(--border);">
-    <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em;">How We Work</h2>
-    <p style="font-size: 1.1rem; color: #57534e; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">From initial consultation to final delivery, our comprehensive pipeline ensures transparency and builds trust every step of the way.</p>
-    <a href="#" class="hero-btn" style="background: var(--text-dark); color: #fff;">Explore Our Pipeline</a>
-  </section>
+    <!-- 02: CULTURE & WORKSPACE -->
+    <article class="service-row" id="service-2">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Culture and Workspace">
+      </div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Culture & Workspace' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Environmental and lifestyle portraits capturing staff in their natural workspace, effectively reflecting the company’s culture and operational environment.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_2 = get_field('pillar_sec2_deliverables') ?: "Candid Operations\nTeam Interactions\nFacility Lifestyle\nBrand Authenticity";
+            $deliv_2_arr = array_filter(array_map('trim', explode("\n", $deliv_2)));
+          ?>
+          <ul>
+            <?php foreach($deliv_2_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec2_cta_text') ?: 'Book Culture Shoot' ); ?></a>
+      </div>
+    </article>
 
-  <!-- UPCOMING SERVICES ANTICIPATION -->
-  <section class="upcoming-services" style="padding: 4rem 3rem; background: #F9F9F9; text-align: center;">
-    <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--accent); font-style: italic;">Anticipate more. Upcoming creative solutions in Brand Design & Advertisement Commercials.</p>
+    <!-- 03: CORPORATE EVENTS -->
+    <article class="service-row" id="service-3">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Corporate Events">
+      </div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Corporate Events' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Ensure that important moments from conferences, seminars, and product launches are professionally documented.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_3 = get_field('pillar_sec3_deliverables') ?: "Keynote Speakers\nNetworking Candid\nAward Ceremonies\nSponsor Branding";
+            $deliv_3_arr = array_filter(array_map('trim', explode("\n", $deliv_3)));
+          ?>
+          <ul>
+            <?php foreach($deliv_3_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec3_cta_text') ?: 'Book Event Coverage' ); ?></a>
+      </div>
+    </article>
+
+    <!-- 04: INFRASTRUCTURE -->
+    <article class="service-row" id="service-4">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Infrastructure">
+      </div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Infrastructure' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Office and workplace photography highlighting the organization’s infrastructure and operational environment to build credibility.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_4 = get_field('pillar_sec4_deliverables') ?: "Architectural Exteriors\nOffice Interiors\nIndustrial Facilities\nRetail Spaces";
+            $deliv_4_arr = array_filter(array_map('trim', explode("\n", $deliv_4)));
+          ?>
+          <ul>
+            <?php foreach($deliv_4_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec4_cta_text') ?: 'Book Infrastructure' ); ?></a>
+      </div>
+    </article>
+
+    <!-- 05: PRODUCT & CINEMATIC -->
+    <article class="service-row" id="service-5">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec5_img') ?: 'https://images.unsplash.com/photo-1637250067262-758c5b8fb18c?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Product and Cinematic">
+      </div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Product Launches' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'High-quality product photography and cinematic profile videos tailored for marketing campaigns and investor relations.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_5 = get_field('pillar_sec5_deliverables') ?: "Product Launches\nCorporate Documentaries\nBrand Anthem Videos\nE-Commerce Assets";
+            $deliv_5_arr = array_filter(array_map('trim', explode("\n", $deliv_5)));
+          ?>
+          <ul>
+            <?php foreach($deliv_5_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec5_cta_text') ?: 'Book Launch Shoot' ); ?></a>
+      </div>
+    </article>
+
   </section>
 
 <?php get_template_part('template-parts/global-footer'); ?>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.local-pillar-nav a').forEach(link => link.classList.remove('active'));
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`.local-pillar-nav a[href="#${id}"]`);
+            if(activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      document.querySelectorAll('.service-row').forEach(row => {
+        observer.observe(row);
+      });
+    });
+  </script>
+  
   <?php wp_footer(); ?>
 </body>
 </html>
