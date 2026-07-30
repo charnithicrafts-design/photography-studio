@@ -120,7 +120,7 @@
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">01 // The Sanctuary</span>
-        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Studio Style' ); ?></h3>
+        <h3 class="pane-title">Studio Style</h3>
         <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Art themed sessions crafted to capture the quiet power and beauty of your journey.' ); ?></p>
       </div>
     </div>
@@ -129,7 +129,7 @@
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1705746401414-8bae063ee19f?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Outdoor Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">02 // The Location</span>
-        <h3 class="pane-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Outdoor Style' ); ?></h3>
+        <h3 class="pane-title">Outdoor Style</h3>
         <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Location oriented sessions celebrating the organic blossoming of motherhood in beautiful, natural light.' ); ?></p>
       </div>
     </div>
@@ -141,7 +141,7 @@
       <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1579736283361-4008b21c7ed6?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Baby Shower">
     </div>
     <div class="info-content">
-      <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Family Portraits & Baby Shower' ); ?></h3>
+      <h3 class="info-title">Family Portraits & Baby Shower</h3>
       <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'A return ticket to the fleeting season of becoming. Joyful, documentary-style coverage of your baby shower and generational family portraits, capturing the community waiting to welcome your child.' ); ?></p>
     </div>
   </section>
@@ -152,7 +152,7 @@
       <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1643758320140-59d2cb557c41?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Bump to Baby">
     </div>
     <div class="info-content">
-      <h3 class="info-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Bump to Baby' ); ?></h3>
+      <h3 class="info-title">Bump to Baby</h3>
       <p class="info-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'A cohesive visual story spanning your pregnancy through to your newborn’s first weeks. We preserve the seamless transition from brave anticipation to joyous arrival.' ); ?></p>
     </div>
   </section>
