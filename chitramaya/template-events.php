@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Pillar — Events & Portrait
+ * Template Name: Pillar — Events & Portrait (Z-Pattern Brutalist)
  * Template Post Type: page
- * Description: The comprehensive pillar page for Weddings, Heirlooms, and Cultural Milestones.
  */
 ?>
 <!DOCTYPE html>
@@ -10,174 +9,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events & Portrait Photography — Chitramaya Creatives</title>
-  <meta name="description" content="An intimate, unscripted archiving of your most significant cultural milestones.">
+  <title>Events & Portrait — Chitramaya Creatives</title>
   <link rel="canonical" href="<?php echo esc_url(home_url('/events-portrait')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg-dark: #12100E;
-      --bg-light: #1A1816;
-      --text-light: #F7F5F0;
-      --mid-grey: #a3a3a3;
-      --accent: #E5A97A;
-      --rule: 1px solid rgba(255,255,255,0.1);
       --font-sans: 'Inter', sans-serif;
-      --font-serif: 'EB Garamond', serif;
+      --border-raw: 4px solid #111;
+      --bg-raw: #F2F0EB;
+      --text-dark: #111;
     }
-    body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
+    
+    body { font-family: var(--font-sans); background: var(--bg-raw); color: var(--text-dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     
     /* NAV */
-    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: difference; color: #fff; border-bottom: var(--rule); background: var(--bg-dark); mix-blend-mode: normal; }
-    .nav-logo { font-weight: 900; letter-spacing: -0.02em; text-decoration: none; color: inherit; font-size: 1.25rem; }
+    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: var(--bg-raw); border-bottom: var(--border-raw); }
+    .nav-logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -0.05em; color: var(--text-dark); text-decoration: none; }
     
     /* HERO */
-    .hero { position: relative; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; border-bottom: var(--rule); }
-    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(30%) contrast(1.1); mix-blend-mode: overlay; pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; text-align: center; }
-    .hero-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
-    .hero-title { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 6rem); font-style: italic; line-height: 1; margin-bottom: 1.5rem; color: var(--text-light); }
-    .hero-desc { font-size: 1.1rem; line-height: 1.6; color: var(--mid-grey); max-width: 600px; margin: 0 auto 3rem; }
-    .hero-btn { display: inline-block; padding: 1rem 2rem; border: 1px solid var(--accent); color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; }
-    .hero-btn:hover { background: var(--accent); color: var(--bg-dark); }
-    
-    /* SERVICES GRID */
-    .services { border-bottom: var(--rule); }
-    .services-header { padding: 2rem; border-bottom: var(--rule); display: flex; justify-content: space-between; align-items: center; }
-    .services-header h2, .services-header span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); }
-    
-    .service-row { display: grid; grid-template-columns: 1fr; border-bottom: var(--rule); }
-    .service-row:last-child { border-bottom: none; }
-    
-    .service-index { display: none; }
-    .service-img-cell { height: 250px; overflow: hidden; }
-    .service-img-cell img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.6s ease; }
-    .service-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
-    .service-name { font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; margin-bottom: 1rem; color: var(--accent); }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .service-tag { font-size: 0.65rem; border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid-grey); }
-    .service-specs { padding: 2rem; border-top: var(--rule); }
-    .spec-list { list-style: none; }
-    .spec-list li { font-size: 0.9rem; line-height: 2; color: var(--text-light); padding-left: 1.5rem; position: relative; }
-    .spec-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
-    .service-action { padding: 2rem; border-top: var(--rule); display: flex; align-items: center; }
-    .service-cta { display: inline-block; padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); color: var(--text-light); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.3s; width: 100%; text-align: center; }
-    .service-cta:hover { background: var(--accent); color: var(--bg-dark); border-color: var(--accent); }
-    
-    /* TABLET & DESKTOP */
-    @media (min-width: 768px) {
-      .services-header { padding: 2rem 4rem; }
-      .service-index { display: flex; padding: 3rem; border-right: var(--rule); align-items: center; justify-content: center; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--mid-grey); }
-      .service-img-cell { height: auto; border-right: var(--rule); }
-      .service-row:hover .service-img-cell img { transform: scale(1.05); }
-      .service-info { padding: 3rem; border-right: var(--rule); border-top: none; }
-      .service-specs { padding: 3rem; border-right: var(--rule); border-top: none; }
-      .service-action { padding: 3rem; border-top: none; }
-    }
-
+    .hero-container { padding: 8rem 2rem 4rem; max-width: 1600px; margin: 0 auto; display: grid; gap: 2rem; border-bottom: var(--border-raw); }
     @media (min-width: 1024px) {
-      .service-row { grid-template-columns: 80px 1fr 1fr 1fr 200px; scroll-margin-top: 100px; }
-      .service-cta { width: auto; }
+      .hero-container { grid-template-columns: repeat(12, 1fr); align-items: end; padding: 10rem 4rem 6rem; }
+      .hero-card { grid-column: 1 / 6; }
+      .hero-img-wrapper { grid-column: 7 / 13; }
+    }
+    
+    .hero-card { margin-bottom: 2rem; }
+    .hero-title { font-weight: 900; font-size: clamp(3rem, 6vw, 6rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text-dark); }
+    .hero-desc { font-weight: 700; font-size: 1.25rem; line-height: 1.5; color: var(--text-dark); border-top: 2px solid #111; padding-top: 1rem; }
+    
+    .hero-img-wrapper img { width: 100%; height: auto; border: var(--border-raw); display: block; box-shadow: 16px 16px 0px #111; }
+    
+    /* MANIFESTO */
+    .manifesto { padding: 6rem 2rem; background: var(--bg-raw); border-bottom: var(--border-raw); }
+    .manifesto-inner { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; }
+    @media (min-width: 1024px) { .manifesto-inner { grid-template-columns: 1fr 1fr; align-items: center; } }
+    .manifesto h2 { font-weight: 900; font-size: clamp(3rem, 5vw, 4.5rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.02em; }
+    .manifesto p { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; font-weight: 700; }
+    
+    /* Z-PATTERN BRUTALIST GRID (Law of Proximity + Negative Space) */
+    .services-container { padding: 6rem 2rem; max-width: 1600px; margin: 0 auto; display: flex; flex-direction: column; gap: 8rem; }
+    
+    .service-row { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    
+    @media (min-width: 1024px) {
+      .services-container { padding: 8rem 4rem; gap: 12rem; }
+      .service-row { grid-template-columns: repeat(12, 1fr); gap: 2rem; }
+      
+      /* Image spans 7 cols, Text spans 4 cols. 1 col of micro negative space */
+      .service-img { grid-column: 1 / 8; }
+      .service-card { grid-column: 9 / 13; }
+      
+      /* Alternating Z-Pattern */
+      .service-row:nth-child(even) .service-img { grid-column: 6 / 13; grid-row: 1; }
+      .service-row:nth-child(even) .service-card { grid-column: 1 / 5; grid-row: 1; }
+    }
+    
+    /* The Art (Uncropped, Original Ratio) */
+    .service-img img { width: 100%; height: auto; display: block; border: var(--border-raw); box-shadow: 16px 16px 0px #111; }
+    @media (min-width: 1024px) {
+      .service-row:nth-child(even) .service-img img { box-shadow: -16px 16px 0px #111; }
+    }
+    
+    /* The Truth (Honest Brutalist Card) */
+    .service-card { background: var(--bg-raw); display: flex; flex-direction: column; }
+    
+    .service-title { font-weight: 900; font-size: clamp(3rem, 4vw, 4.5rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.05em; color: var(--text-dark); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: var(--border-raw); }
+    .service-desc { font-size: 1.15rem; line-height: 1.5; margin-bottom: 2rem; font-weight: 700; color: var(--text-dark); }
+    
+    .service-deliv { margin-bottom: 2.5rem; }
+    .service-deliv ul { list-style: none; border-top: 2px solid #111; }
+    .service-deliv li { padding: 1rem 0; border-bottom: 2px solid #111; font-weight: 900; text-transform: uppercase; font-size: 0.95rem; letter-spacing: -0.02em; display: flex; justify-content: space-between; color: var(--text-dark); }
+    .service-deliv li::after { content: '+'; font-weight: 900; }
+    
+    .service-cta { display: block; width: 100%; padding: 1.5rem; text-align: center; border: var(--border-raw); background: var(--text-dark); color: #fff; font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: -0.02em; text-decoration: none; transition: 0.1s; }
+    .service-cta:active { transform: translateY(4px); box-shadow: none; }
+    .service-cta:hover { background: #000; box-shadow: 4px 4px 0px #111; }
+
+    @media (max-width: 768px) {
+      .service-img img { box-shadow: 8px 8px 0px #111; }
+      .hero-img-wrapper img { box-shadow: 8px 8px 0px #111; }
     }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <section class="hero">
-    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1553986782-9f6de60b51b4?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Grand Heirloom">
-    <div class="hero-content">
-      <span class="hero-tag">Events & Portrait</span>
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Grand Heirloom.' ); ?></h1>
-      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'An intimate, unscripted archiving of your most significant cultural milestones. Because you shouldn’t have to choose which memory to keep.' ); ?></p>
-      <a href="#services" class="hero-btn">View Capabilities</a>
+  <!-- HERO -->
+  <section class="hero-container">
+    <div class="hero-card">
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Mastering<br>the Unseen.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'We do not merely document; we elevate reality into a masterpiece. From the sacred fires of an Upanayanam to the surreal anticipation of maternity, we weave creative narratives into the very fabric of your legacy.' ); ?></p>
+    </div>
+    <div class="hero-img-wrapper">
+      <img src="<?php echo esc_url( get_field('pillar_hero_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/cultural.jpg' ); ?>" alt="Chitramaya Hero">
     </div>
   </section>
 
-  <section class="services" id="services">
-    <div class="services-header">
-      <h2>Service Directory // 3 Active</h2>
-      <span>All inclusive of editing &amp; licensing</span>
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <h2><?php echo wp_kses_post( get_field('pillar_manifesto_title') ?: 'Your legacy, painted in light.' ); ?></h2>
+      <p><?php echo wp_kses_post( get_field('pillar_manifesto_desc') ?: 'True portraiture transcends the ordinary. It is about capturing the invisible—the profound reverence of a Sadhabishegam, the chaotic joy of a toddler, or the deep spiritual bond of a Sastiyabthapoorthi. At Chitramaya, we apply an editorial, cinematic eye to your cultural milestones.' ); ?></p>
     </div>
+  </section>
 
-    <!-- Weddings & Destination -->
-    <div class="service-row" id="service-weddings">
-      <div class="service-index">01</div>
-      <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Weddings & Destination">
+  <!-- Z-PATTERN BRUTALIST GRID -->
+  <section class="services-container">
+    
+    <!-- 01: MATERNITY -->
+    <article class="service-row">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/maternity.jpg' ); ?>" alt="Maternity Portrait">
       </div>
-      <div class="service-info">
-        <div>
-          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Weddings' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Destination</span><span class="service-tag">Pre/Post</span><span class="service-tag">Song Creation</span></div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Maternity' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'The quiet magnitude of creation. We document the transformative journey of motherhood with profound reverence.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_1 = get_field('pillar_sec1_deliverables') ?: "Studio Art-Themed Sessions\nLocation Oriented Magic\nBump to Baby Journeys\nThe Village Awaits";
+            $deliv_1_arr = array_filter(array_map('trim', explode("\n", $deliv_1)));
+          ?>
+          <ul>
+            <?php foreach($deliv_1_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
         </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec1_cta_text') ?: 'Book Maternity' ); ?></a>
       </div>
-      <div class="service-specs">
-        <ul class="spec-list">
-          <li>Pre &amp; Post wedding documentation</li>
-          <li>Global destination coverage</li>
-          <li>Original song creation &amp; scoring</li>
-          <li>Unobtrusive cinematic narrative</li>
-        </ul>
-      </div>
-      <div class="service-action">
-        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
-      </div>
-    </div>
+    </article>
 
-    <!-- Cultural Milestones -->
-    <div class="service-row" id="service-cultural">
-      <div class="service-index">02</div>
-      <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1730130596425-197566414dc4?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Events & Milestones">
+    <!-- 02: NEWBORN -->
+    <article class="service-row">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/baby.jpg' ); ?>" alt="Newborn Portrait">
       </div>
-      <div class="service-info">
-        <div>
-          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Family Events' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Tradition</span><span class="service-tag">Legacy</span><span class="service-tag">Authentic</span></div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Newborn' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'The fleeting poetry of the beginning. We craft timeless, art-themed portraits to preserve the fragile beauty of your newest chapter.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_2 = get_field('pillar_sec2_deliverables') ?: "1st Birthday Celebrations\nNewborn Art-Themed Shoots\nInfant & Toddler Home Visits\nToddler Outdoor Style";
+            $deliv_2_arr = array_filter(array_map('trim', explode("\n", $deliv_2)));
+          ?>
+          <ul>
+            <?php foreach($deliv_2_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
         </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec2_cta_text') ?: 'Book Baby' ); ?></a>
       </div>
-      <div class="service-specs">
-        <ul class="spec-list">
-          <li>Sastiyabthapoorthi &amp; Sadhabishegam</li>
-          <li>Upanayanam ceremonies</li>
-          <li>Ear piercing / Ayushomam</li>
-          <li>Respectful, multi-generational archiving</li>
-        </ul>
-      </div>
-      <div class="service-action">
-        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
-      </div>
-    </div>
+    </article>
 
-    <!-- The Grand Portrait -->
-    <div class="service-row" id="service-portrait">
-      <div class="service-index">03</div>
-      <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1514960919797-5ff58c52e5ba?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Family Portraits">
+    <!-- 03: CULTURAL -->
+    <article class="service-row">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/cultural.jpg' ); ?>" alt="Cultural Milestones">
       </div>
-      <div class="service-info">
-        <div>
-          <h3 class="service-name"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Family Portraits' ); ?></h3>
-          <div class="service-tags"><span class="service-tag">Heirloom</span><span class="service-tag">Grand Scale</span><span class="service-tag">Art-Themed</span></div>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Cultural' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Anchoring your lineage in cinematic light. We orchestrate grand portraits and document deeply sacred cultural milestones with a creative perspective.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_3 = get_field('pillar_sec3_deliverables') ?: "Sastiyabthapoorthi & Sadhabishegam\nUpanayanam & Ayushomam\nGrand Family Portraits\nBaby Showers";
+            $deliv_3_arr = array_filter(array_map('trim', explode("\n", $deliv_3)));
+          ?>
+          <ul>
+            <?php foreach($deliv_3_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
         </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec3_cta_text') ?: 'Book Event' ); ?></a>
       </div>
-      <div class="service-specs">
-        <ul class="spec-list">
-          <li>Grand family picture — House Visit</li>
-          <li>Grand family picture — Thalam Studio</li>
-          <li>Outdoor styled &amp; art-themed direction</li>
-          <li>Fine-art physical print delivery</li>
-        </ul>
+    </article>
+
+    <!-- 04: WEDDINGS -->
+    <article class="service-row">
+      <div class="service-img">
+        <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/wedding.jpg' ); ?>" alt="Cinematic Weddings">
       </div>
-      <div class="service-action">
-        <a href="#" class="service-cta" data-trigger="booking">Explore Capabilities →</a>
+      <div class="service-card">
+        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Weddings' ); ?></h3>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'The epic romance of your defining day. From quiet pre-wedding intimacy to the grand spectacle of a destination celebration.' ); ?></p>
+        <div class="service-deliv">
+          <?php 
+            $deliv_4 = get_field('pillar_sec4_deliverables') ?: "Destination Weddings\nPre/Post Wedding Magic\nCustom Song Creation\nEditorial Coverage";
+            $deliv_4_arr = array_filter(array_map('trim', explode("\n", $deliv_4)));
+          ?>
+          <ul>
+            <?php foreach($deliv_4_arr as $item): ?>
+            <li><?php echo esc_html($item); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec4_cta_text') ?: 'Book Wedding' ); ?></a>
       </div>
-    </div>
+    </article>
+
   </section>
 
 <?php get_template_part('template-parts/global-footer'); ?>
