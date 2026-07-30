@@ -160,10 +160,10 @@
   <section class="info-section">
     <div class="bento-wrapper bento-2">
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Generational Family Gathering">
+        <img src="https://images.unsplash.com/photo-1760328249117-18488466e34c?auto=format&fit=crop&w=800&q=80" alt="Generational Family Gathering">
       </div>
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1535295972055-1c762f4483e5?auto=format&fit=crop&w=600&q=80" alt="Baby Shower Decor Details">
+        <img src="https://plus.unsplash.com/premium_photo-1677654190250-e9a946a29a5a?auto=format&fit=crop&w=600&q=80" alt="Baby Shower Decor Details">
       </div>
     </div>
     <div class="info-content">
@@ -176,13 +176,13 @@
   <section class="info-section reverse">
     <div class="bento-wrapper bento-3">
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1517424164803-12cb0df0e7b9?auto=format&fit=crop&w=800&q=80" alt="Maternity Bump Portrait">
+        <img src="https://images.unsplash.com/photo-1569952524646-705a421e054c?auto=format&fit=crop&w=800&q=80" alt="Maternity Bump Portrait">
       </div>
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80" alt="Newborn Details Hands">
+        <img src="https://images.unsplash.com/photo-1605988178022-c85ec62c7267?auto=format&fit=crop&w=600&q=80" alt="Newborn Details Hands">
       </div>
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1537655780520-1e392efaafd0?auto=format&fit=crop&w=600&q=80" alt="Parents Holding Newborn">
+        <img src="https://images.unsplash.com/photo-1715433485680-9adc962bbcbc?auto=format&fit=crop&w=600&q=80" alt="Parents Holding Newborn">
       </div>
     </div>
     <div class="info-content">
