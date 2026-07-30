@@ -1,7 +1,8 @@
 <?php
 /**
- * Template Name: Pillar — Podcast & Interview (Z-Pattern Brutalist)
+ * Template Name: Pillar — Podcast & Interview
  * Template Post Type: page
+ * Description: The comprehensive pillar page for Podcast & Interview Production.
  */
 ?>
 <!DOCTYPE html>
@@ -14,218 +15,228 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/podcast-interview')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --font-sans: 'Inter', sans-serif;
-      --border-raw: 4px solid #111;
-      --bg-raw: #FFFFFF;
-      --text-dark: #111;
-      --accent: #A96F44; /* Chitramaya Camel */
+      --bg: #FAFAFA;
+      --text: #111111;
+      --accent: #FF3300;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
     }
-    
-    body { font-family: var(--font-sans); background: var(--bg-raw); color: var(--text-dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; }
     
     /* NAV */
-    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: var(--bg-raw); border-bottom: var(--border-raw); }
-    .nav-logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -0.05em; color: var(--text-dark); text-decoration: none; }
+    nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; mix-blend-mode: difference; color: #fff; }
+    .nav-logo { font-weight: 700; font-family: var(--font-display); text-decoration: none; color: inherit; font-size: 1.25rem; letter-spacing: -0.05em; text-transform: uppercase; }
+    .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     
-    /* STICKY VERTICAL NAV */
-    .local-pillar-nav { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); z-index: 50; mix-blend-mode: difference; }
-    .local-pillar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
-    .local-pillar-nav a { display: block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: transparent; transition: 0.3s; position: relative; }
-    .local-pillar-nav a:hover, .local-pillar-nav a.active { background: #fff; transform: scale(1.3); }
-    @media (max-width: 1024px) { .local-pillar-nav { display: none; } }
-
     /* HERO */
-    .hero-container { padding: 8rem 2rem 4rem; max-width: 1600px; margin: 0 auto; display: grid; gap: 2rem; border-bottom: var(--border-raw); }
-    @media (min-width: 1024px) {
-      .hero-container { grid-template-columns: repeat(12, 1fr); align-items: end; padding: 10rem 4rem 6rem; }
-      .hero-card { grid-column: 1 / 7; }
-      .hero-img-wrapper { grid-column: 8 / 13; }
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding: 6rem 3rem; background: var(--text); color: var(--bg); overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; filter: grayscale(40%) contrast(1.2); mix-blend-mode: luminosity; pointer-events: none; z-index: 1; }
+    .hero-content { position: relative; z-index: 10; max-width: 1000px; }
+    .hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 2rem; text-transform: uppercase; }
+    .hero-desc { font-size: 1.25rem; line-height: 1.5; color: #999; margin-bottom: 3rem; max-width: 600px; font-weight: 400; }
+    .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 3rem; background: var(--accent); color: #fff; text-transform: uppercase; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; font-family: var(--font-display); }
+    .hero-btn:hover { background: #fff; color: var(--text); }
+    
+    /* CARD GRID LAYOUT (UX Laws applied) */
+    .services-container { padding: 6rem 3rem; max-width: 1400px; margin: 0 auto; }
+    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    
+    .service-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(0,0,0,0.05); }
+    .card-img-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .service-card:hover .card-img-wrapper img { transform: scale(1.05); }
+    
+    .card-content { padding: 3rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-label { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .card-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; text-transform: uppercase; }
+    .card-desc { font-size: 1rem; line-height: 1.6; color: #555; margin-bottom: 2rem; }
+    
+    .card-list { list-style: none; margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); }
+    .card-list li { font-size: 0.95rem; line-height: 1.6; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; }
+    .card-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .card-list strong { color: var(--text); font-weight: 600; }
+    
+    .card-action { margin-top: 2rem; }
+    .card-cta { display: inline-flex; padding: 1rem 2rem; background: transparent; border: 1px solid var(--text); color: var(--text); text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; }
+    .card-cta:hover { background: var(--text); color: #fff; }
+    
+    /* SLIDE-OUT DRAWERS (UX & UI Fixes) */
+    .service-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 99998; opacity: 0; pointer-events: none; transition: 0.4s ease; }
+    .service-drawer-overlay.active { opacity: 1; pointer-events: all; backdrop-filter: blur(5px); }
+    
+    .service-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 600px; height: 100vh; background: var(--bg); color: var(--text); z-index: 99999; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); overflow-y: auto; padding: 5rem 3rem 4rem; box-shadow: none; border-left: 1px solid rgba(0,0,0,0.1); }
+    .service-drawer.active { right: 0; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+    
+    /* Highly accessible close button */
+    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--text); color: var(--bg); border: none; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase; padding: 0.75rem 1.25rem; border-radius: 4px; transition: 0.3s; z-index: 999999; }
+    .drawer-close:hover { background: var(--accent); color: #fff; }
+    
+    .drawer-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 2.5rem; border-bottom: 2px solid var(--accent); padding-bottom: 1.5rem; color: var(--accent); }
+    .drawer-grid { display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 3rem; }
+    .drawer-manifesto p { font-size: 1.1rem; line-height: 1.7; color: #444; }
+    .drawer-deliverables ul { list-style: none; padding: 0; }
+    .drawer-deliverables li { font-size: 1rem; line-height: 1.8; color: var(--text); padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+    .drawer-deliverables li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    
+    .drawer-cta { display: inline-block; padding: 1.25rem 2.5rem; background: var(--accent); color: #fff; text-transform: uppercase; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-radius: 2px; }
+    .drawer-cta:hover { background: var(--text); color: #fff; }
+    
+    .card-list a.drawer-trigger { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      color: inherit; 
+      text-decoration: none; 
+      transition: 0.3s; 
+      cursor: pointer; 
+      padding: 0.25rem 0;
     }
-    
-    .hero-card { margin-bottom: 2rem; }
-    .hero-title { font-weight: 900; font-size: clamp(3rem, 6vw, 6.5rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text-dark); }
-    .hero-desc { font-weight: 700; font-size: 1.25rem; line-height: 1.5; color: var(--text-dark); border-top: 2px solid #111; padding-top: 1rem; }
-    
-    .hero-img-wrapper img { width: 100%; height: auto; border: var(--border-raw); display: block; box-shadow: 16px 16px 0px #111; }
-    
-    /* MANIFESTO */
-    .manifesto { padding: 6rem 2rem; background: var(--text-dark); color: #fff; border-bottom: var(--border-raw); text-align: center; }
-    .manifesto-inner { max-width: 1000px; margin: 0 auto; }
-    .manifesto h2 { font-weight: 900; font-size: clamp(2.5rem, 4vw, 4rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 2rem; }
-    .manifesto p { font-size: 1.25rem; font-weight: 700; line-height: 1.5; color: #E3DAC9; }
-    
-    /* Z-PATTERN BRUTALIST GRID */
-    .services-container { padding: 6rem 2rem; max-width: 1600px; margin: 0 auto; display: flex; flex-direction: column; gap: 8rem; }
-    
-    .service-row { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
-    
-    @media (min-width: 1024px) {
-      .services-container { padding: 8rem 4rem; gap: 12rem; }
-      .service-row { grid-template-columns: repeat(12, 1fr); gap: 2rem; }
-      
-      .service-img { grid-column: 1 / 8; }
-      .service-card { grid-column: 9 / 13; }
-      
-      .service-row:nth-child(even) .service-img { grid-column: 6 / 13; grid-row: 1; }
-      .service-row:nth-child(even) .service-card { grid-column: 1 / 5; grid-row: 1; }
+    .card-list a.drawer-trigger::after {
+      content: '+ Explore';
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.8;
+      transition: 0.3s;
     }
+    .card-list a.drawer-trigger:hover { color: var(--accent); }
+    .card-list a.drawer-trigger:hover::after { opacity: 1; transform: translateX(5px); }
     
-    .service-img img { width: 100%; height: auto; display: block; border: var(--border-raw); box-shadow: 16px 16px 0px #111; }
-    @media (min-width: 1024px) {
-      .service-row:nth-child(even) .service-img img { box-shadow: -16px 16px 0px #111; }
-    }
-    
-    .service-card { background: var(--bg-raw); display: flex; flex-direction: column; }
-    
-    .service-title { font-weight: 900; font-size: clamp(2.5rem, 4vw, 4rem); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.05em; color: var(--text-dark); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: var(--border-raw); }
-    .service-desc { font-size: 1.15rem; line-height: 1.5; margin-bottom: 2rem; font-weight: 700; color: var(--text-dark); }
-    
-    .service-deliv { margin-bottom: 2.5rem; }
-    .service-deliv ul { list-style: none; border-top: 2px solid #111; }
-    .service-deliv li { padding: 1rem 0; border-bottom: 2px solid #111; font-weight: 900; text-transform: uppercase; font-size: 0.95rem; letter-spacing: -0.02em; display: flex; justify-content: space-between; color: var(--text-dark); }
-    .service-deliv li::after { content: '+'; font-weight: 900; color: var(--accent); }
-    
-    .service-cta { display: block; width: 100%; padding: 1.5rem; text-align: center; border: var(--border-raw); background: var(--text-dark); color: #fff; font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: -0.02em; text-decoration: none; transition: 0.1s; }
-    .service-cta:active { transform: translateY(4px); box-shadow: none; }
-    .service-cta:hover { background: var(--accent); box-shadow: 4px 4px 0px #111; }
-
-    @media (max-width: 768px) {
-      .service-img img { box-shadow: 8px 8px 0px #111; }
-      .hero-img-wrapper img { box-shadow: 8px 8px 0px #111; }
+    @media (max-width: 1024px) {
+      .cards-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-container { padding: 4rem 1.5rem; }
+      .card-content { padding: 2rem; }
     }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- STICKY VERTICAL NAV -->
-  <nav class="local-pillar-nav" aria-label="Section Navigation">
-    <ul>
-      <li><a href="#service-1" aria-label="Go to Service 1"></a></li>
-      <li><a href="#service-2" aria-label="Go to Service 2"></a></li>
-      <li><a href="#service-3" aria-label="Go to Service 3"></a></li>
-    </ul>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero-container">
-    <div class="hero-card">
-      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Broadcast<br>Grade<br>Authority.' ); ?></h1>
-      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Comprehensive content creation solutions seamlessly combining audio, visual, and branding elements. We build your platform.' ); ?></p>
-    </div>
-    <div class="hero-img-wrapper">
-      <img src="<?php echo esc_url( get_field('pillar_hero_img') ?: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Studio Hero">
+  <section class="hero">
+    <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1632062549850-44a0a6eede16?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Branding & Value">
+    <div class="hero-content">
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Identity is a Strategic Weapon.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'From broadcast-grade podcast production to comprehensive brand design. We don’t just capture images; we architect lasting recognition.' ); ?></p>
+      <a href="#" class="hero-btn" data-trigger="booking">Discuss Your Brand</a>
     </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <div class="manifesto-inner">
-      <h2><?php echo wp_kses_post( get_field('pillar_manifesto_title') ?: 'The Voice of Leadership' ); ?></h2>
-      <p><?php echo wp_kses_post( get_field('pillar_manifesto_desc') ?: 'Podcast and interview services have evolved into essential thought-leadership channels. Using professional lighting, multi-camera setups, and refined post-production, we craft output that commands respect and captures attention.' ); ?></p>
-    </div>
-  </section>
-
-  <!-- Z-PATTERN BRUTALIST GRID -->
   <section class="services-container">
-    
-    <!-- 01: STUDIO & PRODUCTION -->
-    <article class="service-row" id="service-1">
-      <div class="service-img">
-        <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1598550880863-4e8aa3d0edb4?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Production">
-      </div>
+    <div class="cards-grid">
+      <!-- BRAND DESIGN -->
       <div class="service-card">
-        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Studio Production' ); ?></h3>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'State-of-the-art acoustic treatment, broadcast-quality microphones, and full multi-camera video capability for an uncompromising audio-visual experience.' ); ?></p>
-        <div class="service-deliv">
-          <?php 
-            $deliv_1 = get_field('pillar_sec1_deliverables') ?: "Multi-Camera Video Setup\nBroadcast-Grade Audio\nLive Switching\nAcoustic Environment";
-            $deliv_1_arr = array_filter(array_map('trim', explode("\n", $deliv_1)));
-          ?>
-          <ul>
-            <?php foreach($deliv_1_arr as $item): ?>
-            <li><?php echo esc_html($item); ?></li>
-            <?php endforeach; ?>
-          </ul>
+        <div class="card-img-wrapper">
+          <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1614036634955-ae5e90f9b9eb?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Brand Design">
         </div>
-        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec1_cta_text') ?: 'Book Studio Session' ); ?></a>
+        <div class="card-content">
+          <span class="card-label">01 // Brand Design</span>
+          <h2 class="card-title">Architecting Lasting Recognition.</h2>
+          <p class="card-desc">Brand design is the strategic process of creating visual elements that define a company’s identity and communicate its core values. By translating a brand’s mission and vision into tangible visual assets, we ensure a cohesive and meaningful representation across all touchpoints.</p>
+          <ul class="card-list">
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-logo">Logo design &amp; Brand identity</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-product">Product design &amp; Tactile packaging</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-marketing">Marketing collaterals &amp; Illustrative posters</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-ooh">OOH campaign &amp; Installations design</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-guidelines">Comprehensive Brand guidelines</a></li>
+          </ul>
+          <div class="card-action">
+            <a href="#" class="card-cta" data-trigger="booking">Start a Project &rarr;</a>
+          </div>
+        </div>
       </div>
-    </article>
 
-    <!-- 02: CONTENT & MEDIA STRATEGY -->
-    <article class="service-row" id="service-2">
-      <div class="service-img">
-        <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Content and Media Strategy">
-      </div>
+      <!-- PODCAST PRODUCTION -->
       <div class="service-card">
-        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Media Strategy' ); ?></h3>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'We slice your flagship content into high-impact micro-assets optimized for TikTok, Reels, and YouTube Shorts to maximize your reach.' ); ?></p>
-        <div class="service-deliv">
-          <?php 
-            $deliv_2 = get_field('pillar_sec2_deliverables') ?: "Short-form Video Slicing\nPlatform Optimization\nAudiograms\nDistribution Strategy";
-            $deliv_2_arr = array_filter(array_map('trim', explode("\n", $deliv_2)));
-          ?>
-          <ul>
-            <?php foreach($deliv_2_arr as $item): ?>
-            <li><?php echo esc_html($item); ?></li>
-            <?php endforeach; ?>
-          </ul>
+        <div class="card-img-wrapper">
+          <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Podcast Production">
         </div>
-        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec2_cta_text') ?: 'Consult Strategy' ); ?></a>
-      </div>
-    </article>
-
-    <!-- 03: PHOTOGRAPHY & BRANDING -->
-    <article class="service-row" id="service-3">
-      <div class="service-img">
-        <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Photography and Branding">
-      </div>
-      <div class="service-card">
-        <h3 class="service-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Brand Alignment' ); ?></h3>
-        <p class="service-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Behind-the-scenes photography, custom podcast cover art, and promotional lifestyle imagery that aligns perfectly with your show’s aesthetic.' ); ?></p>
-        <div class="service-deliv">
-          <?php 
-            $deliv_3 = get_field('pillar_sec3_deliverables') ?: "Cover Art Photography\nBTS Documentation\nHost Headshots\nPromotional Assets";
-            $deliv_3_arr = array_filter(array_map('trim', explode("\n", $deliv_3)));
-          ?>
-          <ul>
-            <?php foreach($deliv_3_arr as $item): ?>
-            <li><?php echo esc_html($item); ?></li>
-            <?php endforeach; ?>
+        <div class="card-content">
+          <span class="card-label">02 // Podcast & Interview</span>
+          <h2 class="card-title">Comprehensive Content Creation.</h2>
+          <p class="card-desc">Podcast and interview services have evolved into comprehensive content solutions that seamlessly combine audio, visual, and branding elements. Using professional lighting, multi-camera setups, and refined post-production, we craft broadcast-grade output.</p>
+          <ul class="card-list">
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-studio">Studio &amp; Production</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-content">Content &amp; Media Strategy</a></li>
+            <li><a href="#" class="drawer-trigger" data-drawer="drawer-podcast-branding">Photography &amp; Branding</a></li>
           </ul>
+          <div class="card-action">
+            <a href="#" class="card-cta" data-trigger="booking">Book Production &rarr;</a>
+          </div>
         </div>
-        <a href="#" class="service-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec3_cta_text') ?: 'Book Photography' ); ?></a>
       </div>
-    </article>
-
+    </div>
   </section>
+
+<?php get_template_part('template-parts/drawer-brand-services'); ?>
 
 <?php get_template_part('template-parts/global-footer'); ?>
-
+  <?php wp_footer(); ?>
+  
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.querySelectorAll('.local-pillar-nav a').forEach(link => link.classList.remove('active'));
-            const id = entry.target.getAttribute('id');
-            const activeLink = document.querySelector(`.local-pillar-nav a[href="#${id}"]`);
-            if(activeLink) activeLink.classList.add('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const triggers = document.querySelectorAll('.drawer-trigger');
+      const overlay = document.querySelector('.service-drawer-overlay');
+      const closeBtns = document.querySelectorAll('.drawer-close');
+      const drawers = document.querySelectorAll('.service-drawer');
+      
+      function closeAllDrawers() {
+        drawers.forEach(d => d.classList.remove('active'));
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        const header = document.querySelector('.site-header');
+        if (header) {
+            header.style.opacity = '1';
+            header.style.pointerEvents = 'auto';
+            header.style.transition = 'opacity 0.3s ease';
+        }
+      }
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-drawer');
+          const targetDrawer = document.getElementById(targetId);
+          
+          if (targetDrawer) {
+            closeAllDrawers(); // Ensure any open drawer is closed
+            targetDrawer.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            const header = document.querySelector('.site-header');
+            if (header) {
+                header.style.opacity = '0';
+                header.style.pointerEvents = 'none';
+                header.style.transition = 'opacity 0.3s ease';
+            }
           }
         });
-      }, { threshold: 0.5 });
+      });
       
-      document.querySelectorAll('.service-row').forEach(row => {
-        observer.observe(row);
+      closeBtns.forEach(btn => {
+        btn.addEventListener('click', closeAllDrawers);
+      });
+      
+      if (overlay) {
+        overlay.addEventListener('click', closeAllDrawers);
+      }
+      
+      // Hook the drawer CTAs to close the drawer before opening the booking modal
+      const drawerCtas = document.querySelectorAll('.drawer-cta[data-trigger="booking"]');
+      drawerCtas.forEach(cta => {
+        cta.addEventListener('click', function(e) {
+            // Let the global booking.js handle the modal, just close the drawer
+            closeAllDrawers();
+        });
       });
     });
   </script>
-  
-  <?php wp_footer(); ?>
 </body>
 </html>
