@@ -113,10 +113,10 @@
             <div class="c-nav-panel" id="panel-3">
                 <a href="<?php echo esc_url(home_url('/events-portrait')); ?>" class="c-nav-panel-title">Events Overview &rarr;</a>
                 <ul class="c-nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Maternity & Bump-to-Baby</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Newborn & Infant</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Weddings & Celebrations</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Cultural Milestones</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity & Bump-to-Baby</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn & Infant</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>#service-4">Weddings & Celebrations</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>#service-3">Cultural Milestones</a></li>
                 </ul>
                 <div class="c-nav-hook">Preserving the human milestone with a cinematic, deeply emotional editorial eye.</div>
             </div>
