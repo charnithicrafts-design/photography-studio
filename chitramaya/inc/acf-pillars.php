@@ -26,6 +26,25 @@ function chitramaya_register_pillar_acf_fields() {
             'name' => 'pillar_hero_desc',
             'type' => 'textarea',
         ),
+        array(
+            'key' => 'field_pillar_hero_img',
+            'label' => 'Hero Background Image',
+            'name' => 'pillar_hero_img',
+            'type' => 'image',
+            'return_format' => 'url',
+        ),
+        array(
+            'key' => 'field_pillar_manifesto_title',
+            'label' => 'Manifesto Title',
+            'name' => 'pillar_manifesto_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_pillar_manifesto_desc',
+            'label' => 'Manifesto Description',
+            'name' => 'pillar_manifesto_desc',
+            'type' => 'textarea',
+        ),
         // SECTION 1
         array(
             'key' => 'tab_pillar_sec1',
@@ -50,6 +69,19 @@ function chitramaya_register_pillar_acf_fields() {
             'name' => 'pillar_sec1_img',
             'type' => 'image',
             'return_format' => 'url',
+        ),
+        array(
+            'key' => 'field_pillar_sec1_deliverables',
+            'label' => 'Section 1 Deliverables',
+            'name' => 'pillar_sec1_deliverables',
+            'type' => 'textarea',
+            'instructions' => 'Enter each deliverable on a new line.',
+        ),
+        array(
+            'key' => 'field_pillar_sec1_cta_text',
+            'label' => 'Section 1 CTA Text',
+            'name' => 'pillar_sec1_cta_text',
+            'type' => 'text',
         ),
         // SECTION 2
         array(
@@ -76,6 +108,19 @@ function chitramaya_register_pillar_acf_fields() {
             'type' => 'image',
             'return_format' => 'url',
         ),
+        array(
+            'key' => 'field_pillar_sec2_deliverables',
+            'label' => 'Section 2 Deliverables',
+            'name' => 'pillar_sec2_deliverables',
+            'type' => 'textarea',
+            'instructions' => 'Enter each deliverable on a new line.',
+        ),
+        array(
+            'key' => 'field_pillar_sec2_cta_text',
+            'label' => 'Section 2 CTA Text',
+            'name' => 'pillar_sec2_cta_text',
+            'type' => 'text',
+        ),
         // SECTION 3
         array(
             'key' => 'tab_pillar_sec3',
@@ -100,6 +145,19 @@ function chitramaya_register_pillar_acf_fields() {
             'name' => 'pillar_sec3_img',
             'type' => 'image',
             'return_format' => 'url',
+        ),
+        array(
+            'key' => 'field_pillar_sec3_deliverables',
+            'label' => 'Section 3 Deliverables',
+            'name' => 'pillar_sec3_deliverables',
+            'type' => 'textarea',
+            'instructions' => 'Enter each deliverable on a new line.',
+        ),
+        array(
+            'key' => 'field_pillar_sec3_cta_text',
+            'label' => 'Section 3 CTA Text',
+            'name' => 'pillar_sec3_cta_text',
+            'type' => 'text',
         ),
         // SECTION 4
         array(
@@ -126,6 +184,19 @@ function chitramaya_register_pillar_acf_fields() {
             'type' => 'image',
             'return_format' => 'url',
         ),
+        array(
+            'key' => 'field_pillar_sec4_deliverables',
+            'label' => 'Section 4 Deliverables',
+            'name' => 'pillar_sec4_deliverables',
+            'type' => 'textarea',
+            'instructions' => 'Enter each deliverable on a new line.',
+        ),
+        array(
+            'key' => 'field_pillar_sec4_cta_text',
+            'label' => 'Section 4 CTA Text',
+            'name' => 'pillar_sec4_cta_text',
+            'type' => 'text',
+        ),
         // SECTION 5
         array(
             'key' => 'tab_pillar_sec5',
@@ -150,6 +221,19 @@ function chitramaya_register_pillar_acf_fields() {
             'name' => 'pillar_sec5_img',
             'type' => 'image',
             'return_format' => 'url',
+        ),
+        array(
+            'key' => 'field_pillar_sec5_deliverables',
+            'label' => 'Section 5 Deliverables',
+            'name' => 'pillar_sec5_deliverables',
+            'type' => 'textarea',
+            'instructions' => 'Enter each deliverable on a new line.',
+        ),
+        array(
+            'key' => 'field_pillar_sec5_cta_text',
+            'label' => 'Section 5 CTA Text',
+            'name' => 'pillar_sec5_cta_text',
+            'type' => 'text',
         ),
     ),
     'location' => array(
