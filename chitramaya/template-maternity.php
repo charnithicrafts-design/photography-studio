@@ -90,6 +90,27 @@
     .timeline-step:first-child { border-left: none; padding-left: 0; }
   }
 
+  /* 7. EMPATHETIC BRUTALISM BENTO BOXES */
+  .bento-wrapper { width: 100%; display: grid; gap: 1rem; }
+  .bento-item { overflow: hidden; border: 4px solid #111; box-shadow: 8px 8px 0px #111; background: #fff; }
+  .bento-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.9); transition: 0.4s ease; }
+  .bento-item:hover img { filter: saturate(1.1); transform: scale(1.02); }
+
+  .bento-2 { grid-template-columns: 3fr 2fr; height: 500px; }
+  .bento-2 .bento-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .bento-2 .bento-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+
+  .bento-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; height: 600px; }
+  .bento-3 .bento-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+  .bento-3 .bento-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .bento-3 .bento-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+
+  @media(max-width: 768px) {
+    .bento-2, .bento-3 { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    .bento-2 .bento-item, .bento-3 .bento-item { grid-column: 1 !important; grid-row: auto !important; aspect-ratio: 4/3; }
+    .bento-item { box-shadow: 4px 4px 0px #111; }
+  }
+
 </style>
 </head>
 <body>
@@ -137,8 +158,13 @@
 
   <!-- FAMILY & BABY SHOWER -->
   <section class="info-section">
-    <div class="info-img-wrapper">
-      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec3_img') ?: 'https://images.unsplash.com/photo-1579736283361-4008b21c7ed6?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Baby Shower">
+    <div class="bento-wrapper bento-2">
+      <div class="bento-item">
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Generational Family Gathering">
+      </div>
+      <div class="bento-item">
+        <img src="https://images.unsplash.com/photo-1535295972055-1c762f4483e5?auto=format&fit=crop&w=600&q=80" alt="Baby Shower Decor Details">
+      </div>
     </div>
     <div class="info-content">
       <h3 class="info-title">Family Portraits & Baby Shower</h3>
@@ -148,8 +174,16 @@
 
   <!-- BUMP TO BABY -->
   <section class="info-section reverse">
-    <div class="info-img-wrapper">
-      <img class="info-img" src="<?php echo esc_url( get_field('pillar_sec4_img') ?: 'https://images.unsplash.com/photo-1643758320140-59d2cb557c41?auto=format&fit=crop&w=800&q=80' ); ?>" alt="Bump to Baby">
+    <div class="bento-wrapper bento-3">
+      <div class="bento-item">
+        <img src="https://images.unsplash.com/photo-1517424164803-12cb0df0e7b9?auto=format&fit=crop&w=800&q=80" alt="Maternity Bump Portrait">
+      </div>
+      <div class="bento-item">
+        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80" alt="Newborn Details Hands">
+      </div>
+      <div class="bento-item">
+        <img src="https://images.unsplash.com/photo-1537655780520-1e392efaafd0?auto=format&fit=crop&w=600&q=80" alt="Parents Holding Newborn">
+      </div>
     </div>
     <div class="info-content">
       <h3 class="info-title">Bump to Baby</h3>
