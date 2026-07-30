@@ -34,7 +34,7 @@
     .nav-book a { text-decoration: none; color: inherit; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
     
     /* HERO */
-    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem; text-align: center; background: url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat; color: #ffffff; }
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem; text-align: center; background: center/cover no-repeat; color: #ffffff; }
     .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.65); z-index: 1; }
     .hero-content { position: relative; z-index: 10; max-width: 1000px; }
     .hero-title { font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin-bottom: 1.5rem; text-transform: uppercase; word-wrap: break-word; }
@@ -112,7 +112,7 @@
 <?php get_template_part('template-parts/global-nav'); ?>
 
 
-  <section class="hero">
+  <section class="hero" style="background-image: url('<?php echo esc_url( get_field('pillar_hero_img') ?: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=2000&q=80' ); ?>');">
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Influence<br>Perception.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'We don\'t just capture what a product looks like; we capture how it feels to own it. High-impact commercial imagery designed to disrupt the market and create undeniable emotional connection.' ); ?></p>
@@ -122,8 +122,8 @@
 
   <section class="manifesto">
     <div class="manifesto-inner">
-      <h2>A photograph isn't just an image.<br>It's a revenue engine.</h2>
-      <p>In the commercial space, aesthetics mean nothing without strategy. Your visuals must arrest scrolling fingers, communicate instant value, and effortlessly guide the consumer toward conversion. We engineer every pixel to drive your bottom line.</p>
+      <h2><?php echo wp_kses_post( get_field('pillar_manifesto_title') ?: "A photograph isn't just an image.<br>It's a revenue engine." ); ?></h2>
+      <p><?php echo wp_kses_post( get_field('pillar_manifesto_desc') ?: "In the commercial space, aesthetics mean nothing without strategy. Your visuals must arrest scrolling fingers, communicate instant value, and effortlessly guide the consumer toward conversion. We engineer every pixel to drive your bottom line." ); ?></p>
     </div>
   </section>
 
@@ -186,71 +186,86 @@
   <!-- Drawer 1 -->
   <aside class="drawer-panel" id="drawer-1">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Product & E-Commerce</h2>
-    <p class="drawer-desc">Elevating the clinical into the coveted. We transform everyday objects into obsessions through meticulous control of light, shadow, and texture. Whether for your direct-to-consumer storefront or global distribution, our high-resolution imagery removes hesitation and drives immediate add-to-cart actions.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Product & E-Commerce' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Elevating the clinical into the coveted. We transform everyday objects into obsessions through meticulous control of light, shadow, and texture. Whether for your direct-to-consumer storefront or global distribution, our high-resolution imagery removes hesitation and drives immediate add-to-cart actions.' ); ?></p>
+    <?php 
+      $deliv_1 = get_field('pillar_sec1_deliverables') ?: "Studio White-Background\nStylized Product Groupings\nMacro Texture Shots\nE-Commerce Optimization";
+      $deliv_1_arr = array_filter(array_map('trim', explode("\n", $deliv_1)));
+    ?>
     <ul class="drawer-list">
-      <li>Studio White-Background</li>
-      <li>Stylized Product Groupings</li>
-      <li>Macro Texture Shots</li>
-      <li>E-Commerce Optimization</li>
+      <?php foreach($deliv_1_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Book Product Photography</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec1_cta_text') ?: 'Book Product Photography' ); ?></a>
   </aside>
 
   <!-- Drawer 2 -->
   <aside class="drawer-panel" id="drawer-2">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Food & Lifestyle</h2>
-    <p class="drawer-desc">Crafting the taste before the first bite. We create aspirational scenarios that place your consumer exactly where they want to be. Through vibrant styling, dynamic lighting, and authentic human interaction, we make your culinary or lifestyle brand deeply visceral.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Food & Lifestyle' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Crafting the taste before the first bite. We create aspirational scenarios that place your consumer exactly where they want to be. Through vibrant styling, dynamic lighting, and authentic human interaction, we make your culinary or lifestyle brand deeply visceral.' ); ?></p>
+    <?php 
+      $deliv_2 = get_field('pillar_sec2_deliverables') ?: "Professional Food Styling\nAction Shots (Pouring/Sizzling)\nImmersive Lifestyle Context\nMenu Imagery";
+      $deliv_2_arr = array_filter(array_map('trim', explode("\n", $deliv_2)));
+    ?>
     <ul class="drawer-list">
-      <li>Professional Food Styling</li>
-      <li>Action Shots (Pouring/Sizzling)</li>
-      <li>Immersive Lifestyle Context</li>
-      <li>Menu Imagery</li>
+      <?php foreach($deliv_2_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Book Lifestyle Photography</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec2_cta_text') ?: 'Book Lifestyle Photography' ); ?></a>
   </aside>
 
   <!-- Drawer 3 -->
   <aside class="drawer-panel" id="drawer-3">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Fashion & Editorial</h2>
-    <p class="drawer-desc">Weaving narratives that dictate the culture. We produce bold, attitude-driven portraiture and lookbooks that command attention. From studio setups to dynamic on-location shoots, we capture the movement, fabric, and soul of your collection.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Fashion & Editorial' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Weaving narratives that dictate the culture. We produce bold, attitude-driven portraiture and lookbooks that command attention. From studio setups to dynamic on-location shoots, we capture the movement, fabric, and soul of your collection.' ); ?></p>
+    <?php 
+      $deliv_3 = get_field('pillar_sec3_deliverables') ?: "Seasonal Lookbooks\nHigh-End Editorial Storytelling\nModel Casting & Styling\nOn-Location Shoots";
+      $deliv_3_arr = array_filter(array_map('trim', explode("\n", $deliv_3)));
+    ?>
     <ul class="drawer-list">
-      <li>Seasonal Lookbooks</li>
-      <li>High-End Editorial Storytelling</li>
-      <li>Model Casting & Styling</li>
-      <li>On-Location Shoots</li>
+      <?php foreach($deliv_3_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Book Fashion Photography</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec3_cta_text') ?: 'Book Fashion Photography' ); ?></a>
   </aside>
 
   <!-- Drawer 4 -->
   <aside class="drawer-panel" id="drawer-4">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Architecture & Spaces</h2>
-    <p class="drawer-desc">Capturing the soul of physical environments. We translate brick, mortar, and steel into cinematic, immersive experiences. Ideal for premium real estate and hospitality, we use advanced perspective control to showcase the true scale and intent of your spaces.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'Architecture & Spaces' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Capturing the soul of physical environments. We translate brick, mortar, and steel into cinematic, immersive experiences. Ideal for premium real estate and hospitality, we use advanced perspective control to showcase the true scale and intent of your spaces.' ); ?></p>
+    <?php 
+      $deliv_4 = get_field('pillar_sec4_deliverables') ?: "Interior & Exterior Twilight\nPerspective Correction\n360 Walkthroughs\nDrone & Aerials";
+      $deliv_4_arr = array_filter(array_map('trim', explode("\n", $deliv_4)));
+    ?>
     <ul class="drawer-list">
-      <li>Interior & Exterior Twilight</li>
-      <li>Perspective Correction</li>
-      <li>360 Walkthroughs</li>
-      <li>Drone & Aerials</li>
+      <?php foreach($deliv_4_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Book Architectural Photography</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec4_cta_text') ?: 'Book Architectural Photography' ); ?></a>
   </aside>
 
   <!-- Drawer 5 -->
   <aside class="drawer-panel" id="drawer-5">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Campaigns & Social PR</h2>
-    <p class="drawer-desc">Visuals engineered to disrupt the endless scroll. In a world of fleeting attention, we produce high-impact aesthetic assets that spark conversation, increase shareability, and turn passive scrollers into active brand advocates.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Campaigns & Social PR' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'Visuals engineered to disrupt the endless scroll. In a world of fleeting attention, we produce high-impact aesthetic assets that spark conversation, increase shareability, and turn passive scrollers into active brand advocates.' ); ?></p>
+    <?php 
+      $deliv_5 = get_field('pillar_sec5_deliverables') ?: "Social Media Content Banks\nAesthetic Flatlays\nPR Coverage\nShort-Form Stop Motion";
+      $deliv_5_arr = array_filter(array_map('trim', explode("\n", $deliv_5)));
+    ?>
     <ul class="drawer-list">
-      <li>Social Media Content Banks</li>
-      <li>Aesthetic Flatlays</li>
-      <li>PR Coverage</li>
-      <li>Short-Form Stop Motion</li>
+      <?php foreach($deliv_5_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Book Campaign Photography</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec5_cta_text') ?: 'Book Campaign Photography' ); ?></a>
   </aside>
 
   <script>

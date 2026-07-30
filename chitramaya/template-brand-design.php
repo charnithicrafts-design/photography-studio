@@ -31,7 +31,7 @@
     body { font-family: var(--font-body); background: var(--bg-pure); color: var(--text-main); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     
     /* HERO: Full Width Background */
-    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: flex-start; padding: 10rem 3rem 4rem; position: relative; overflow: hidden; background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat; }
+    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: flex-start; padding: 10rem 3rem 4rem; position: relative; overflow: hidden; background: center/cover no-repeat; }
     
     /* Creative Blue/White Overlay */
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 40%, rgba(14, 165, 233, 0.4) 100%); pointer-events: none; z-index: 1; }
@@ -101,19 +101,19 @@
 
   <?php get_template_part('template-parts/global-nav'); ?>
 
-  <section class="hero">
+  <section class="hero" style="background-image: url('<?php echo esc_url( get_field('pillar_hero_img') ?: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=80' ); ?>');">
     <div class="hero-content-left">
       <div class="hero-eyebrow">The Art of Identity</div>
-      <h1 class="hero-title">Designing Your<br>Core Essence.</h1>
-      <p class="hero-desc">Before your audience reads a single word, they feel exactly who you are. We weave your deepest values into colors, typography, and textures, crafting an identity that speaks directly to the heart and refuses to be forgotten.</p>
+      <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Designing Your<br>Core Essence.' ); ?></h1>
+      <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'Before your audience reads a single word, they feel exactly who you are. We weave your deepest values into colors, typography, and textures, crafting an identity that speaks directly to the heart and refuses to be forgotten.' ); ?></p>
       <a href="#services" class="hero-cta" data-trigger="booking">Start a Project</a>
     </div>
   </section>
 
   <section class="manifesto">
     <div class="manifesto-inner">
-      <h2 class="manifesto-title">Every detail is a silent promise.</h2>
-      <p class="manifesto-copy">Trust isn't demanded; it is quietly earned through consistency. From the satisfying weight of your packaging to the deliberate hue of your digital presence, your brand lives entirely in the minds of those who experience it. We don't just build logos—we craft the profound feeling of reliability that lingers long after the first glance.</p>
+      <h2 class="manifesto-title"><?php echo wp_kses_post( get_field('pillar_manifesto_title') ?: "Every detail is a silent promise." ); ?></h2>
+      <p class="manifesto-copy"><?php echo wp_kses_post( get_field('pillar_manifesto_desc') ?: "Trust isn't demanded; it is quietly earned through consistency. From the satisfying weight of your packaging to the deliberate hue of your digital presence, your brand lives entirely in the minds of those who experience it. We don't just build logos—we craft the profound feeling of reliability that lingers long after the first glance." ); ?></p>
     </div>
   </section>
 
@@ -190,71 +190,86 @@
   <!-- Drawer 1 -->
   <aside class="drawer-panel" id="drawer-1">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Logo & Brand Identity</h2>
-    <p class="drawer-desc">We develop timeless logos, comprehensive color palettes, and typographic systems that form the core DNA of your company.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec1_title') ?: 'Logo & Brand Identity' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'We develop timeless logos, comprehensive color palettes, and typographic systems that form the core DNA of your company.' ); ?></p>
+    <?php 
+      $deliv_1 = get_field('pillar_sec1_deliverables') ?: "Primary Logo Design\nTypography Selection\nColor Architecture\nVisual Motif Creation";
+      $deliv_1_arr = array_filter(array_map('trim', explode("\n", $deliv_1)));
+    ?>
     <ul class="drawer-list">
-      <li>Primary Logo Design</li>
-      <li>Typography Selection</li>
-      <li>Color Architecture</li>
-      <li>Visual Motif Creation</li>
+      <?php foreach($deliv_1_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Start a Project</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec1_cta_text') ?: 'Start a Project' ); ?></a>
   </aside>
 
   <!-- Drawer 2 -->
   <aside class="drawer-panel" id="drawer-2">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Product & Packaging</h2>
-    <p class="drawer-desc">Packaging is the physical manifestation of your brand. We design boxes, labels, and physical goods that demand to be held.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec2_title') ?: 'Product & Packaging' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec2_desc') ?: 'Packaging is the physical manifestation of your brand. We design boxes, labels, and physical goods that demand to be held.' ); ?></p>
+    <?php 
+      $deliv_2 = get_field('pillar_sec2_deliverables') ?: "Box & Label Design\nMaterial Sourcing Consultation\nUnboxing Experience Flow\n3D Mockups";
+      $deliv_2_arr = array_filter(array_map('trim', explode("\n", $deliv_2)));
+    ?>
     <ul class="drawer-list">
-      <li>Box & Label Design</li>
-      <li>Material Sourcing Consultation</li>
-      <li>Unboxing Experience Flow</li>
-      <li>3D Mockups</li>
+      <?php foreach($deliv_2_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Start a Project</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec2_cta_text') ?: 'Start a Project' ); ?></a>
   </aside>
 
   <!-- Drawer 3 -->
   <aside class="drawer-panel" id="drawer-3">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Marketing Collaterals</h2>
-    <p class="drawer-desc">Your sales tools need to look as expensive as the deals you’re closing. We create highly persuasive editorial designs.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec3_title') ?: 'Marketing Collaterals' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec3_desc') ?: 'Your sales tools need to look as expensive as the deals you’re closing. We create highly persuasive editorial designs.' ); ?></p>
+    <?php 
+      $deliv_3 = get_field('pillar_sec3_deliverables') ?: "Pitch Decks & Presentations\nCompany Profiles\nDigital & Print Brochures\nBusiness Cards";
+      $deliv_3_arr = array_filter(array_map('trim', explode("\n", $deliv_3)));
+    ?>
     <ul class="drawer-list">
-      <li>Pitch Decks & Presentations</li>
-      <li>Company Profiles</li>
-      <li>Digital & Print Brochures</li>
-      <li>Business Cards</li>
+      <?php foreach($deliv_3_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Start a Project</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec3_cta_text') ?: 'Start a Project' ); ?></a>
   </aside>
 
   <!-- Drawer 4 -->
   <aside class="drawer-panel" id="drawer-4">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">OOH & Installations</h2>
-    <p class="drawer-desc">Command attention in the real world. We design high-impact billboards, retail spaces, and experiential event installations.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec4_title') ?: 'OOH & Installations' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec4_desc') ?: 'Command attention in the real world. We design high-impact billboards, retail spaces, and experiential event installations.' ); ?></p>
+    <?php 
+      $deliv_4 = get_field('pillar_sec4_deliverables') ?: "Billboard & Hoarding Design\nExhibition Booths\nEvent Signage\nWayfinding Systems";
+      $deliv_4_arr = array_filter(array_map('trim', explode("\n", $deliv_4)));
+    ?>
     <ul class="drawer-list">
-      <li>Billboard & Hoarding Design</li>
-      <li>Exhibition Booths</li>
-      <li>Event Signage</li>
-      <li>Wayfinding Systems</li>
+      <?php foreach($deliv_4_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Start a Project</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec4_cta_text') ?: 'Start a Project' ); ?></a>
   </aside>
 
   <!-- Drawer 5 -->
   <aside class="drawer-panel" id="drawer-5">
     <button class="drawer-close">&times;</button>
-    <h2 class="drawer-title">Brand Guidelines</h2>
-    <p class="drawer-desc">A brand is only as strong as its enforcement. We deliver comprehensive brand bibles that dictate exactly how your identity should be used.</p>
+    <h2 class="drawer-title"><?php echo wp_kses_post( get_field('pillar_sec5_title') ?: 'Brand Guidelines' ); ?></h2>
+    <p class="drawer-desc"><?php echo wp_kses_post( get_field('pillar_sec5_desc') ?: 'A brand is only as strong as its enforcement. We deliver comprehensive brand bibles that dictate exactly how your identity should be used.' ); ?></p>
+    <?php 
+      $deliv_5 = get_field('pillar_sec5_deliverables') ?: "Logo Usage Rules\nTone of Voice Guidelines\nPhotography Style Guide\nDigital Asset Libraries";
+      $deliv_5_arr = array_filter(array_map('trim', explode("\n", $deliv_5)));
+    ?>
     <ul class="drawer-list">
-      <li>Logo Usage Rules</li>
-      <li>Tone of Voice Guidelines</li>
-      <li>Photography Style Guide</li>
-      <li>Digital Asset Libraries</li>
+      <?php foreach($deliv_5_arr as $item): ?>
+      <li><?php echo esc_html($item); ?></li>
+      <?php endforeach; ?>
     </ul>
-    <a href="#" class="drawer-cta" data-trigger="booking">Start a Project</a>
+    <a href="#" class="drawer-cta" data-trigger="booking"><?php echo esc_html( get_field('pillar_sec5_cta_text') ?: 'Start a Project' ); ?></a>
   </aside>
 
   <?php get_template_part('template-parts/global-booking'); ?>
