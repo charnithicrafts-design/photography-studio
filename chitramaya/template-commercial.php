@@ -106,11 +106,28 @@
     .drawer-cta:hover { background: var(--accent); }
     
     .masonry-item { cursor: pointer; }
+    
+    /* STICKY VERTICAL NAV */
+    .local-pillar-nav { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); z-index: 50; mix-blend-mode: difference; }
+    .local-pillar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+    .local-pillar-nav a { display: block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: transparent; transition: 0.3s; position: relative; }
+    .local-pillar-nav a:hover, .local-pillar-nav a.active { background: #fff; transform: scale(1.3); }
+    @media (max-width: 1024px) { .local-pillar-nav { display: none; } }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
 
+  <!-- STICKY VERTICAL NAV -->
+  <nav class="local-pillar-nav" aria-label="Section Navigation">
+    <ul>
+      <li><a href="#service-1" aria-label="Go to Service 1"></a></li>
+      <li><a href="#service-2" aria-label="Go to Service 2"></a></li>
+      <li><a href="#service-3" aria-label="Go to Service 3"></a></li>
+      <li><a href="#service-4" aria-label="Go to Service 4"></a></li>
+      <li><a href="#service-5" aria-label="Go to Service 5"></a></li>
+    </ul>
+  </nav>
 
   <section class="hero" style="background-image: url('<?php echo esc_url( get_field('pillar_hero_img') ?: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=2000&q=80' ); ?>');">
     <div class="hero-content">
@@ -302,6 +319,21 @@
       
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeAllDrawers();
+      });
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.local-pillar-nav a').forEach(link => link.classList.remove('active'));
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`.local-pillar-nav a[href="#${id}"]`);
+            if(activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      document.querySelectorAll('.masonry-item').forEach(item => {
+        observer.observe(item);
       });
     });
   </script>

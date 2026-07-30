@@ -94,10 +94,27 @@
       .service-img img { box-shadow: 8px 8px 0px #111; }
       .hero-img-wrapper img { box-shadow: 8px 8px 0px #111; }
     }
+    
+    /* STICKY VERTICAL NAV */
+    .local-pillar-nav { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); z-index: 50; mix-blend-mode: difference; }
+    .local-pillar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+    .local-pillar-nav a { display: block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: transparent; transition: 0.3s; position: relative; }
+    .local-pillar-nav a:hover, .local-pillar-nav a.active { background: #fff; transform: scale(1.3); }
+    @media (max-width: 1024px) { .local-pillar-nav { display: none; } }
   </style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
+
+  <!-- STICKY VERTICAL NAV -->
+  <nav class="local-pillar-nav" aria-label="Section Navigation">
+    <ul>
+      <li><a href="#service-1" aria-label="Go to Service 1"></a></li>
+      <li><a href="#service-2" aria-label="Go to Service 2"></a></li>
+      <li><a href="#service-3" aria-label="Go to Service 3"></a></li>
+      <li><a href="#service-4" aria-label="Go to Service 4"></a></li>
+    </ul>
+  </nav>
 
   <!-- HERO -->
   <section class="hero-container">
@@ -122,7 +139,7 @@
   <section class="services-container">
     
     <!-- 01: MATERNITY -->
-    <article class="service-row">
+    <article class="service-row" id="service-1">
       <div class="service-img">
         <img src="<?php echo esc_url( get_field('pillar_sec1_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/maternity.jpg' ); ?>" alt="Maternity Portrait">
       </div>
@@ -145,7 +162,7 @@
     </article>
 
     <!-- 02: NEWBORN -->
-    <article class="service-row">
+    <article class="service-row" id="service-2">
       <div class="service-img">
         <img src="<?php echo esc_url( get_field('pillar_sec2_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/baby.jpg' ); ?>" alt="Newborn Portrait">
       </div>
@@ -168,7 +185,7 @@
     </article>
 
     <!-- 03: CULTURAL -->
-    <article class="service-row">
+    <article class="service-row" id="service-3">
       <div class="service-img">
         <img src="<?php echo esc_url( get_field('pillar_sec3_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/cultural.jpg' ); ?>" alt="Cultural Milestones">
       </div>
@@ -191,7 +208,7 @@
     </article>
 
     <!-- 04: WEDDINGS -->
-    <article class="service-row">
+    <article class="service-row" id="service-4">
       <div class="service-img">
         <img src="<?php echo esc_url( get_field('pillar_sec4_img') ?: get_stylesheet_directory_uri() . '/images/events-portrait/wedding.jpg' ); ?>" alt="Cinematic Weddings">
       </div>
@@ -216,6 +233,26 @@
   </section>
 
 <?php get_template_part('template-parts/global-footer'); ?>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.local-pillar-nav a').forEach(link => link.classList.remove('active'));
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`.local-pillar-nav a[href="#${id}"]`);
+            if(activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      document.querySelectorAll('.service-row').forEach(row => {
+        observer.observe(row);
+      });
+    });
+  </script>
+  
   <?php wp_footer(); ?>
 </body>
 </html>
