@@ -146,11 +146,11 @@
             <div class="c-nav-panel" id="panel-5">
                 <a href="<?php echo esc_url(home_url('/brand-design')); ?>" class="c-nav-panel-title">Design Overview &rarr;</a>
                 <ul class="c-nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Logo & Core Identity</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Tactile Packaging</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Brand Guidelines</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>#identity">Core Identity</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>#physical">Physical Presence</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>#campaign">Campaign & Distribution</a></li>
                 </ul>
-                <div class="c-nav-hook">Translating mission into tangible assets. We don't just design; we architect recognition.</div>
+                <div class="c-nav-hook">Translating mission into tangible assets. We architect visual recognition and structural brand identity.</div>
             </div>
         </div>
 

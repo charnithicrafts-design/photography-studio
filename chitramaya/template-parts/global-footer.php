@@ -99,7 +99,8 @@
         <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Corporate & Brand Identity</a></li>
         <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial Campaigns</a></li>
         <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Weddings & Cultural Milestones</a></li>
-        <li><a href="<?php echo esc_url(home_url('/production-brand-design')); ?>">Production & Assets</a></li>
+        <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Brand Design</a></li>
+        <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast & Interview</a></li>
         <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity & Bump-to-Baby</a></li>
         <li><a href="<?php echo esc_url(home_url('/thalam-baby')); ?>">Newborn, Infant & Toddler</a></li>
       </ul>
