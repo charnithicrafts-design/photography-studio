@@ -125,16 +125,16 @@
         <!-- Panel 4 -->
         <div class="c-nav-group">
             <button class="c-nav-btn" aria-expanded="false" aria-controls="panel-4">
-                PODCAST & INTERVIEW <span class="c-nav-icon">+</span>
+                THALAM STUDIO <span class="c-nav-icon">+</span>
             </button>
             <div class="c-nav-panel" id="panel-4">
-                <a href="<?php echo esc_url(home_url('/podcast-interview')); ?>" class="c-nav-panel-title">Podcast Overview &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/podcast-interview')); ?>" class="c-nav-panel-title">Podcast & Interview &rarr;</a>
                 <ul class="c-nav-grid">
-                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Studio Production</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Media Distribution</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Multi-Camera Setup</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#production">Studio & Production</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#media">Content & Media</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#branding">Photography & Branding</a></li>
                 </ul>
-                <div class="c-nav-hook">Comprehensive content creation combining pristine audio with striking visual identity.</div>
+                <div class="c-nav-hook">A comprehensive content creation environment combining pristine audio, cinematic multi-camera visuals, and cohesive branding.</div>
             </div>
         </div>
 
@@ -153,6 +153,7 @@
                 <div class="c-nav-hook">Translating mission into tangible assets. We don't just design; we architect recognition.</div>
             </div>
         </div>
+
 
     </div>
 </div>
