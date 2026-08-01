@@ -22,8 +22,9 @@
   }
   @media (min-width: 768px) {
     .global-footer-grid {
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 2rem;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      gap: 4rem;
     }
   }
   .footer-brand h2 {
@@ -110,9 +111,8 @@
       <h3>Connect</h3>
       <ul>
         <li><a href="mailto:studio@chithramaya.com">studio@chithramaya.com</a></li>
-        <li><a href="#">+91 80980 14123 (WhatsApp)</a></li>
-        <li style="margin-top: 1.5rem;"><a href="#" target="_blank">Instagram</a></li>
-        <li><a href="#" target="_blank">LinkedIn</a></li>
+        <li><a href="https://wa.me/918098014123" target="_blank" rel="noopener noreferrer">+91 80980 14123 (WhatsApp)</a></li>
+        <li style="margin-top: 1.5rem;"><a href="https://www.instagram.com/chithramaya_creatives/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       </ul>
     </div>
   </div>
