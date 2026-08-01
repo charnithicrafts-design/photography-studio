@@ -110,7 +110,7 @@
       <h3>Connect</h3>
       <ul>
         <li><a href="mailto:studio@chithramaya.com">studio@chithramaya.com</a></li>
-        <li><a href="#">+91 98765 43210 (WhatsApp)</a></li>
+        <li><a href="#">+91 80980 14123 (WhatsApp)</a></li>
         <li style="margin-top: 1.5rem;"><a href="#" target="_blank">Instagram</a></li>
         <li><a href="#" target="_blank">LinkedIn</a></li>
       </ul>
