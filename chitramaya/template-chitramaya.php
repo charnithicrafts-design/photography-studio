@@ -219,7 +219,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
     <div class="hero-brand">
-      <h1 class="hero-brand-name"><?php echo wp_kses_post( get_field('home_hero_headline') ?: 'Chitra<br>maya<em>Creatives</em>' ); ?></h1>
+      <h1 class="hero-brand-name"><?php echo wp_kses_post( get_field('home_hero_headline') ?: 'Chithra<br>maya<em>Creatives</em>' ); ?></h1>
     </div>
     <div class="hero-corner">
       <p class="hero-fragment"><?php echo wp_kses_post( get_field('home_hero_fragment') ?: 'Light, texture,<br>and the weight<br>of a real moment.' ); ?></p>

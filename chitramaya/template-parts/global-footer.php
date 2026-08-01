@@ -1,7 +1,7 @@
 <?php
 /**
  * Global Footer
- * Elegant, structured footer for Chitramaya Creatives.
+ * Elegant, structured footer for Chithramaya Creatives.
  */
 ?>
 <style>
@@ -89,7 +89,7 @@
 <footer class="global-footer">
   <div class="global-footer-grid">
     <div class="footer-brand">
-      <h2>Chitramaya Creatives</h2>
+      <h2>Chithramaya Creatives</h2>
       <p>An archivist of human experience. We preserve fleeting, powerful moments and immortalize them in a timeless, cinematic form.</p>
     </div>
     
@@ -118,7 +118,7 @@
   </div>
   
   <div class="footer-bottom">
-    <span>&copy; <?php echo date('Y'); ?> Chitramaya Creatives. All rights reserved.</span>
+    <span>&copy; <?php echo date('Y'); ?> Chithramaya Creatives. All rights reserved.</span>
     <span style="text-align: right;">Designed with intent by CharNithi Software Crafts.<br>Select photography generously provided by creators on <a href="https://unsplash.com/?utm_source=chitramaya_creatives&utm_medium=referral" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Unsplash</a>.</span>
   </div>
 </footer>

@@ -17,7 +17,7 @@ function chitramaya_register_home_acf_fields() {
                 ),
                 array(
                     'key' => 'field_home_hero_headline', 'label' => 'Brand Headline', 'name' => 'home_hero_headline', 'type' => 'textarea', 'rows' => 2,
-                    'default_value' => 'Chitra<br>maya<em>Creatives</em>'
+                    'default_value' => 'Chithra<br>maya<em>Creatives</em>'
                 ),
                 array(
                     'key' => 'field_home_hero_fragment', 'label' => 'Poetic Fragment', 'name' => 'home_hero_fragment', 'type' => 'textarea', 'rows' => 3,
