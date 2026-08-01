@@ -550,3 +550,49 @@ h2, .brut-huge-text {
 }
 .booking-feedback.success { color: #4CAF50; }
 .booking-feedback.error { color: #F44336; }
+
+/* ==========================================================================
+   WHATSAPP FLOATING CTA
+   ========================================================================== */
+.whatsapp-fab { 
+  position: fixed; 
+  bottom: 2rem; 
+  right: 2rem; 
+  z-index: 9999; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem; 
+  background: #25D366; 
+  color: #fff; 
+  text-decoration: none; 
+  padding: 0.85rem 1.5rem 0.85rem 1.1rem; 
+  border-radius: 50px; 
+  font-size: 0.8rem; 
+  font-weight: 700; 
+  letter-spacing: 0.06em; 
+  box-shadow: 0 4px 24px rgba(37,211,102,0.35); 
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; 
+  animation: waDrift 4s ease-in-out infinite; 
+}
+.whatsapp-fab:hover { 
+  transform: scale(1.07) translateY(-2px); 
+  box-shadow: 0 8px 32px rgba(37,211,102,0.5); 
+  animation: none; 
+}
+.whatsapp-fab svg { 
+  width: 22px; 
+  height: 22px; 
+  fill: #fff; 
+  flex-shrink: 0; 
+}
+.whatsapp-fab span { 
+  display: none; 
+}
+@media (min-width: 992px) {
+  .whatsapp-fab span { display: inline; }
+  .whatsapp-fab { padding: 0.85rem 1.5rem 0.85rem 1.1rem; border-radius: 50px; }
+}
+@keyframes waDrift { 
+  0%,100% { transform: translateY(0); } 
+  50% { transform: translateY(-5px); } 
+}
