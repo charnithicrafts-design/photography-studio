@@ -248,7 +248,7 @@
 
   <section class="thalam-ad" id="thalam">
     <img class="thalam-ad-bg"
-      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1603525208620-1e5b1efeb8ce?auto=format&fit=crop&w=2400&q=80' ); ?>"
+      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=2400&q=90&auto=format&fit=crop' ); ?>"
       alt="Professional studio set with dramatic lighting — Thalam Studio, Chithramaya Creatives"
       loading="lazy">
     <div class="thalam-ad-overlay"></div>

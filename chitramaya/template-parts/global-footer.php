@@ -27,12 +27,14 @@
     }
   }
   .footer-brand h2 {
-    font-family: var(--font-serif, 'EB Garamond', serif);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-style: italic;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.5rem;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
     margin-bottom: 1rem;
-    line-height: 1;
-    font-weight: 400;
+    line-height: 1.2;
   }
   .footer-brand p {
     color: rgba(255,255,255,0.6);
