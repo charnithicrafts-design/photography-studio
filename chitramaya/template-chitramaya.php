@@ -112,14 +112,23 @@
     .services { border-top: var(--border); border-bottom: var(--border); display: flex; flex-direction: column; }
     .service-item { padding: 3.5rem 1.5rem; border-bottom: var(--border); transition: background 0.3s; }
     .service-item:last-child { border-bottom: none; }
-    .service-item:hover { background: rgba(200,169,110,0.06); }
-    .service-num { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: block; }
-    .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1.25rem; line-height: 1; }
-    .service-desc { font-size: 0.9rem; line-height: 1.75; color: var(--warm-grey); margin-bottom: 2.5rem; }
+    .service-item:hover { background: rgba(200,169,110,0.04); }
+    .service-item.is-upcoming { background: rgba(169,111,68,0.04); }
+    .service-item.is-upcoming:hover { background: rgba(169,111,68,0.07); }
+    .service-num { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.25rem; display: block; }
+    .service-coming-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.28rem 0.8rem; margin-bottom: 1.25rem; border-radius: 2px; }
+    .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1rem; line-height: 1; }
+    .service-sub-head { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--accent); margin-bottom: 1.25rem; }
+    .service-desc { font-size: 0.9rem; line-height: 1.75; color: var(--warm-grey); margin-bottom: 1rem; }
+    .service-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .service-list li { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--warm-grey); padding-left: 1.2rem; position: relative; }
+    .service-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
     .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; transition: all 0.2s; }
     .service-btn:hover { color: var(--accent); border-color: var(--accent); }
     .service-btn::after { content: '→'; transition: transform 0.2s; }
     .service-btn:hover::after { transform: translateX(4px); }
+    .service-notify-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1.25rem; transition: all 0.2s; }
+    .service-notify-btn:hover { background: var(--accent); color: #fff; }
 
     /* PROCESS (Mobile First) */
     .process { padding: 5rem 1.5rem; }
@@ -176,8 +185,10 @@
       .tactile-item:nth-child(1) { grid-row: 1 / 3; height: 85vh; }
       .tactile-item:nth-child(2) { height: 40vh; }
       .tactile-item:nth-child(3) { height: 44vh; }
-      .services { display: grid; grid-template-columns: repeat(3, 1fr); }
-      .service-item { padding: 4rem 3rem; border-right: var(--border); border-bottom: none; }
+      .services { display: flex; flex-direction: column; }
+      .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; }
+      .service-item:last-child { border-bottom: none; }
+      .service-list { flex-direction: row; flex-wrap: wrap; gap: 0.3rem 2.5rem; }
       .process { padding: 8rem 3rem; }
       .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); flex-direction: row; margin-top: 5rem; }
       .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); border-bottom: none; }
@@ -224,7 +235,7 @@
       <h2 class="manifesto-text"><?php echo wp_kses_post( get_field('home_manifesto_headline') ?: 'Every photograph is a physical argument that the world is worth feeling.' ); ?></h2>
     </div>
     <div>
-      <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chitramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.' ); ?></p>
+      <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'We believe every image should do more than inform — it should stay with you. Through deliberate lighting, medium-format capture, and restrained post-production, we craft photographs that your audience does not just look at — they feel. Each commission begins with a single question: what must this image make someone experience?' ); ?></p>
       <div class="manifesto-stats">
         <div><div class="stat-num">340+</div><div class="stat-label">Campaigns Delivered</div></div>
         <div><div class="stat-num">12yr</div><div class="stat-label">Visual Authority</div></div>
@@ -315,24 +326,114 @@
 
   <!-- SERVICES -->
   <section class="services" id="services">
+
+    <!-- 01: Brand & Corporate Photography -->
     <div class="service-item">
-      <span class="service-num">01 // Service</span>
-      <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Ad Shoots' ); ?></h3>
-      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Commercial photography that sells. Conceived, lit, and delivered from Thalam Studio — with the art direction, brand alignment, and production value your campaign demands.' ); ?></p>
-      <a href="#" class="service-btn" data-trigger="booking">Book an Ad Shoot</a>
+      <div class="service-item-left">
+        <span class="service-num">01 // Brand &amp; Corporate</span>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Executive & Corporate Photography' ); ?></h3>
+        <p class="service-sub-head">Humanise your authority.</p>
+      </div>
+      <div class="service-item-right">
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Your people are your strongest asset. We document them with precision and clarity — from executive headshots designed for websites and LinkedIn, to team portraits, corporate event coverage, and office lifestyle pictures that reflect your organisation\'s culture. Every image is built to build trust.' ); ?></p>
+        <ul class="service-list">
+          <li>Executive Headshots &amp; Professional Portraits</li>
+          <li>Website &amp; Team Photography</li>
+          <li>Corporate Video &amp; Company Profile Video</li>
+          <li>Company Lifestyle Pictures</li>
+          <li>Product Photography for Marketing</li>
+          <li>Brand Ads / TVCs</li>
+          <li>Product Launches, Seminars &amp; Conferences</li>
+          <li>Corporate Events &amp; Marketing Events</li>
+        </ul>
+        <a href="#" class="service-btn" data-trigger="booking">Book a Corporate Session</a>
+      </div>
     </div>
+
+    <!-- 02: Commercial Photography -->
     <div class="service-item">
-      <span class="service-num">02 // Service</span>
-      <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Baby &amp; Newborn' ); ?></h3>
-      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'The first year passes in a breath. Our baby sessions at Thalam Studio are crafted to capture weight, warmth, and the particular softness of new life — before it changes.' ); ?></p>
-      <a href="#" class="service-btn" data-trigger="booking">Book a Baby Session</a>
+      <div class="service-item-left">
+        <span class="service-num">02 // Commercial</span>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Commercial Photography' ); ?></h3>
+        <p class="service-sub-head">Visuals made to move people.</p>
+      </div>
+      <div class="service-item-right">
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'Every frame has a job. We make sure it does it. From OOH billboard campaigns and e-commerce catalogues to food, fashion, lifestyle, and civil construction documentation — we work closely with your art directors and marketing teams to deliver visuals that align with your brief and move your audience to act.' ); ?></p>
+        <ul class="service-list">
+          <li>OOH Marketing Collaterals</li>
+          <li>E-Commerce Catalogue Photography</li>
+          <li>Food &amp; Lifestyle Photography</li>
+          <li>Fashion &amp; Architecture Photography</li>
+          <li>Civil Construction Timelapse</li>
+          <li>Cinematic Walkthrough &amp; 360° Photography</li>
+          <li>Social Media Campaign Creation</li>
+          <li>Personal Branding &amp; PR Campaigns</li>
+          <li>Content Creation</li>
+        </ul>
+        <a href="#" class="service-btn" data-trigger="booking">Start a Commercial Brief</a>
+      </div>
     </div>
+
+    <!-- 03: Events & Portrait Photography -->
     <div class="service-item">
-      <span class="service-num">03 // Service</span>
-      <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Editorial &amp; Portfolio' ); ?></h3>
-      <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'For brands, artists, and creative directors who need a visual partner that understands narrative. We treat each commission as a short film — with intention, conflict, and resolution.' ); ?></p>
-      <a href="#" class="service-btn" data-trigger="booking">Commission Editorial Work</a>
+      <div class="service-item-left">
+        <span class="service-num">03 // Events &amp; Portrait</span>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Events & Portrait Photography' ); ?></h3>
+        <p class="service-sub-head">The archive of your legacy.</p>
+      </div>
+      <div class="service-item-right">
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'These moments are only this fleeting once. We archive the full arc of your family\'s most sacred milestones — the quiet anticipation of maternity, the softness of a newborn in the first weeks, the chaotic joy of a toddler\'s first year, and the ceremonies that bind generations. Studio-styled, art-themed, house visit, or outdoor — we witness and preserve.' ); ?></p>
+        <ul class="service-list">
+          <li>Baby Portraits (Newborn, Infant, Toddler, 1st Birthday)</li>
+          <li>Maternity &amp; Bump to Baby Sessions</li>
+          <li>Wedding Photography (Pre/Post, Destination, Song Creation)</li>
+          <li>Family Portraits &amp; Baby Shower</li>
+          <li>Sashtiabdhapoorthi, Upanayanam, Sadhabishegam</li>
+          <li>Ear Piercing / Ayushomam</li>
+          <li>Grand Family Pictures (Studio, Outdoor, House Visit)</li>
+        </ul>
+        <a href="#" class="service-btn" data-trigger="booking">Book a Portrait Session</a>
+      </div>
     </div>
+
+    <!-- 04: Podcast & Interview Production -->
+    <div class="service-item">
+      <div class="service-item-left">
+        <span class="service-num">04 // Podcast &amp; Interview</span>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_4_title') ?: 'Podcast & Interview Production' ); ?></h3>
+        <p class="service-sub-head">Sound and vision, aligned.</p>
+      </div>
+      <div class="service-item-right">
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_4_desc') ?: 'A microphone alone does not build an audience. We deliver a complete content production solution — professional studio space, multi-camera setups, broadcast-quality audio, and post-production and branding assets your show needs to look and sound market-ready. Designed for creators, brands, and entrepreneurs building a long-term media presence.' ); ?></p>
+        <ul class="service-list">
+          <li>Studio &amp; Production — Space, equipment, technical support</li>
+          <li>Content &amp; Media — Editing, distribution, reach</li>
+          <li>Photography &amp; Branding — Visuals, promotional assets, identity</li>
+        </ul>
+        <a href="#" class="service-btn" data-trigger="booking">Book the Podcast Studio</a>
+      </div>
+    </div>
+
+    <!-- 05: Coming Soon — Brand Design & Ad Commercials -->
+    <div class="service-item is-upcoming">
+      <div class="service-item-left">
+        <span class="service-coming-badge">Coming Soon</span>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_5_title') ?: 'Brand Design & Ad Commercials' ); ?></h3>
+        <p class="service-sub-head">The complete creative studio.</p>
+      </div>
+      <div class="service-item-right">
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chitramaya Creatives is expanding. Soon, our offering will grow to include full brand design and advertisement commercial production — bringing the complete creative pipeline under one roof. From logo and identity systems to OOH installations, brand guidelines, and TVC production.' ); ?></p>
+        <ul class="service-list">
+          <li>Logo Design &amp; Brand Identity</li>
+          <li>Product Design &amp; Marketing Collaterals</li>
+          <li>Illustrative Posters &amp; OOH Campaign Design</li>
+          <li>Installation Design &amp; Brand Guidelines</li>
+          <li>Advertisement Commercials &amp; TVC Production</li>
+        </ul>
+        <a href="#" class="service-notify-btn" data-trigger="booking">Notify Me When Live</a>
+      </div>
+    </div>
+
   </section>
 
   <!-- PROCESS -->
@@ -340,7 +441,7 @@
     <div class="section-header"><h2 class="section-title">How We Work</h2></div>
     <div class="process-steps">
       <div class="process-step"><div class="step-num">01</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_1_title') ?: 'Brief &amp; Discovery' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_1_desc') ?: 'We spend the first week understanding your audience\'s psychology, competitive landscape, and the specific emotional response your images must trigger. No camera is touched until this is complete.' ); ?></p></div>
-      <div class="process-step"><div class="step-num">02</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_2_title') ?: 'Light Architecture' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_2_desc') ?: 'Every shoot has a designed lighting plan based on the tactile quality we need to extract from the subject. We treat the studio as a precision instrument, not a backdrop.' ); ?></p></div>
+      <div class="process-step"><div class="step-num">02</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_2_title') ?: 'Lighting & Setup' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_2_desc') ?: 'Every shoot has a deliberate lighting plan drawn from the mood and quality we need to draw from the subject. We treat the studio as a precision instrument, not a backdrop.' ); ?></p></div>
       <div class="process-step"><div class="step-num">03</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_3_title') ?: 'Capture &amp; Selection' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_3_desc') ?: 'Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Ruthless curation is the most important part of our creative process.' ); ?></p></div>
       <div class="process-step"><div class="step-num">04</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_4_title') ?: 'Delivery &amp; Licensing' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_4_desc') ?: 'Final assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified alt-text metadata for your SEO team. Full licensing documentation included.' ); ?></p></div>
     </div>
