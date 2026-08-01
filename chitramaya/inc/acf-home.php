@@ -1,10 +1,10 @@
 <?php
-// Register ACF Fields for the Chitramaya Home Page Template
+// Register ACF Fields for the Chithramaya Home Page Template
 function chitramaya_register_home_acf_fields() {
     if ( function_exists( 'acf_add_local_field_group' ) ) {
         acf_add_local_field_group( array(
             'key' => 'group_chitramaya_home_page',
-            'title' => 'Chitramaya Home Page Settings',
+            'title' => 'Chithramaya Home Page Settings',
             'fields' => array(
                 
                 /* =======================
@@ -28,9 +28,9 @@ function chitramaya_register_home_acf_fields() {
                    MANIFESTO SECTION
                 ======================= */
                 array( 'key' => 'tab_home_manifesto', 'label' => 'Manifesto Section', 'type' => 'tab' ),
-                array( 'key' => 'field_home_manifesto_label', 'label' => 'Eyebrow Label', 'name' => 'home_manifesto_label', 'type' => 'text', 'default_value' => 'Chitramaya Creatives — Our Creed' ),
+                array( 'key' => 'field_home_manifesto_label', 'label' => 'Eyebrow Label', 'name' => 'home_manifesto_label', 'type' => 'text', 'default_value' => 'Chithramaya Creatives — Our Creed' ),
                 array( 'key' => 'field_home_manifesto_headline', 'label' => 'Main Headline', 'name' => 'home_manifesto_headline', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Every photograph is a physical argument that the world is worth feeling.' ),
-                array( 'key' => 'field_home_manifesto_body', 'label' => 'Body Text', 'name' => 'home_manifesto_body', 'type' => 'textarea', 'rows' => 5, 'default_value' => 'Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chitramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.' ),
+                array( 'key' => 'field_home_manifesto_body', 'label' => 'Body Text', 'name' => 'home_manifesto_body', 'type' => 'textarea', 'rows' => 5, 'default_value' => 'Founded on the belief that the greatest failure of digital photography is its inability to replicate touch, Chithramaya Creatives engineers each image to overcome that limitation. Through rigorous light architecture, uncompressed medium-format capture, and obsessive post-production restraint, we produce photographs that your audience does not just look at — they experience.' ),
                 
                 /* =======================
                    THALAM AD SECTION

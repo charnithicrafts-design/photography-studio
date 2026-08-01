@@ -29,7 +29,7 @@ function chitramaya_register_services_acf_fields() {
 
         acf_add_local_field_group( array(
             'key' => 'group_services_architecture',
-            'title' => 'Chitramaya Service Ecosystem (Global Architecture)',
+            'title' => 'Chithramaya Service Ecosystem (Global Architecture)',
             'fields' => $fields,
             'location' => array(
                 array(

@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Design — Chitramaya Creatives</title>
+  <title>Brand Design — Chithramaya Creatives</title>
   <meta name="description" content="Brand design is a strategic process. We translate your mission and vision into tangible visual assets that define your identity across every touchpoint.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/brand-design')); ?>">
   <?php wp_head(); ?>

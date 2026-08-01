@@ -33,6 +33,7 @@ if os.path.exists(SQL_FILE):
     sql_data = sql_data.replace("'Talam Studio'", "'Thalam Studio'")
     sql_data = sql_data.replace("talam-studio", "thalam-studio")
     sql_data = sql_data.replace("Talam Studio", "Thalam Studio")
+    sql_data = sql_data.replace("Chitramaya", "Chithramaya")
     
     with open(SQL_FILE, 'w', encoding='utf-8') as f:
         f.write(sql_data)

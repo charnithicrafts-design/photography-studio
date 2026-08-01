@@ -25,7 +25,7 @@
 .c-nav-btn[aria-expanded="true"] { color: #111; }
 .c-nav-btn:hover { color: #111; transform: translateX(10px); }
 
-/* Vibrant Active States - Unified to Chitramaya Camel */
+/* Vibrant Active States - Unified to Chithramaya Camel */
 .c-nav-btn[aria-expanded="true"] { color: #A96F44; }
 
 .c-nav-icon { font-weight: 400; font-size: 2rem; transition: transform 0.3s; color: inherit; }
@@ -62,7 +62,7 @@
 </style>
 
 <header class="site-header">
-    <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo">Chitramaya Creatives</a>
+    <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo">Chithramaya Creatives</a>
     <button class="nav-toggle" id="cNavToggle" aria-expanded="false" aria-controls="cGlobalNav">
         <span class="nav-toggle-text">Menu</span>
     </button>

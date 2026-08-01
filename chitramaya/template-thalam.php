@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thalam Studio — Ad Shoots &amp; Baby Photography</title>
-  <meta name="description" content="Thalam Studio — Chitramaya's production house for ad shoots, baby &amp; newborn photography, and commercial sessions. Book your studio date in .">
+  <meta name="description" content="Thalam Studio — Chithramaya's production house for ad shoots, baby &amp; newborn photography, and commercial sessions. Book your studio date in .">
   <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -433,13 +433,13 @@
     </div>
     <div class="footer-col" style="border-right:none;">
       <div class="footer-col-label">Part of</div>
-      <a href="<?php echo home_url('/'); ?>" style="color:var(--text-dark);font-weight:700;">Chitramaya Creatives ↗</a>
+      <a href="<?php echo home_url('/'); ?>" style="color:var(--text-dark);font-weight:700;">Chithramaya Creatives ↗</a>
       <p style="margin-top:0.5rem;">The portfolio &amp; editorial brand behind Thalam Studio.</p>
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>&copy; <?php echo date('Y'); ?> Thalam Studio. A Chitramaya Creatives Company.</p>
-    <a href="<?php echo home_url('/'); ?>" class="footer-chitramaya-link">← Chitramaya Creatives</a>
+    <p>&copy; <?php echo date('Y'); ?> Thalam Studio. A Chithramaya Creatives Company.</p>
+    <a href="<?php echo home_url('/'); ?>" class="footer-chitramaya-link">← Chithramaya Creatives</a>
   </div>
 
   <!-- WHATSAPP FLOATING CTA -->

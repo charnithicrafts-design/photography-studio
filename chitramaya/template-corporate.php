@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand & Corporate Photography — Chitramaya</title>
+  <title>Brand & Corporate Photography — Chithramaya</title>
   <meta name="description" content="A comprehensive range of services offered to help businesses present a strong and authentic visual identity.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand')); ?>">
   <?php wp_head(); ?>

@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commercial Photography — Chitramaya</title>
+  <title>Commercial Photography — Chithramaya</title>
   <meta name="description" content="Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/commercial')); ?>">
   <?php wp_head(); ?>

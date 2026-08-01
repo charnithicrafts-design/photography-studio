@@ -1,6 +1,6 @@
 <?php
 /**
- * Chitramaya Child Theme functions and definitions
+ * Chithramaya Child Theme functions and definitions
  */
 
 if ( ! function_exists( 'get_field' ) ) {

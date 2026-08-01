@@ -1,10 +1,10 @@
 /*
-Theme Name: Chitramaya
+Theme Name: Chithramaya
 Theme URI: 
 Template: twentytwentyfive
 Author: CharNithi Software Crafts
 Author URI: 
-Description: A Brutalist, high-impact child theme for Chitramaya & Thalam Studio.
+Description: A Brutalist, high-impact child theme for Chithramaya & Thalam Studio.
 Version: 1.1.0
 */
 
@@ -17,7 +17,7 @@ Version: 1.1.0
   --color-accent: var(--wp--preset--color--chitramaya-accent-vibrant, #FF6B6B);
   --border-stark: 1px solid var(--color-dark);
   
-  /* Typography - Chitramaya (The Brain) */
+  /* Typography - Chithramaya (The Brain) */
   --font-primary: var(--wp--preset--font-family--inter, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif);
   
   /* Typography - Thalam (The Functional Space) */
@@ -57,7 +57,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Image Tactility (For Chitramaya) */
+/* Image Tactility (For Chithramaya) */
 .img-tactile {
   width: 100%;
   height: auto;

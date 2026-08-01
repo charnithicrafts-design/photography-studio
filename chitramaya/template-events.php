@@ -9,14 +9,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events & Portrait Photography — Chitramaya</title>
+  <title>Events & Portrait Photography — Chithramaya</title>
   <meta name="description" content="Preserving the human milestone with a cinematic, deeply emotional editorial eye.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/events-portrait')); ?>">
   <?php wp_head(); ?>
   <style>
     :root {
       --color-dark: #0a0a0a; /* Stark Brutalist Dark */
-      --color-accent: #A96F44; /* Chitramaya Camel */
+      --color-accent: #A96F44; /* Chithramaya Camel */
     }
 
     /* OVERFLOW PROTECTION FOR MOBILE */

@@ -109,7 +109,7 @@
     <div class="footer-column">
       <h3>Connect</h3>
       <ul>
-        <li><a href="mailto:studio@chitramaya.com">studio@chitramaya.com</a></li>
+        <li><a href="mailto:studio@chithramaya.com">studio@chithramaya.com</a></li>
         <li><a href="#">+91 98765 43210 (WhatsApp)</a></li>
         <li style="margin-top: 1.5rem;"><a href="#" target="_blank">Instagram</a></li>
         <li><a href="#" target="_blank">LinkedIn</a></li>

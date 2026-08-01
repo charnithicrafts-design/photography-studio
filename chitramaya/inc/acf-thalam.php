@@ -13,7 +13,7 @@ function chitramaya_register_thalam_acf_fields() {
                 array( 'key' => 'tab_thalam_hero', 'label' => 'Hero Section', 'type' => 'tab' ),
                 array( 'key' => 'field_thalam_hero_tag', 'label' => 'Hero Tag', 'name' => 'thalam_hero_tag', 'type' => 'text', 'default_value' => 'Production Hub // ' ),
                 array( 'key' => 'field_thalam_hero_headline', 'label' => 'Hero Headline', 'name' => 'thalam_hero_headline', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'We<br><span class="accent-word">Execute.</span><br>You<br>Deliver.' ),
-                array( 'key' => 'field_thalam_hero_body', 'label' => 'Hero Body', 'name' => 'thalam_hero_body', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Thalam is the operational studio of Chitramaya Creatives — specialising in ad shoots and baby photography. Controlled light. Real moments. Zero friction from brief to delivery.' ),
+                array( 'key' => 'field_thalam_hero_body', 'label' => 'Hero Body', 'name' => 'thalam_hero_body', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Thalam is the operational studio of Chithramaya Creatives — specialising in ad shoots and baby photography. Controlled light. Real moments. Zero friction from brief to delivery.' ),
                 array( 'key' => 'field_thalam_hero_img_url', 'label' => 'Hero Image (URL)', 'name' => 'thalam_hero_img_url', 'type' => 'url', 'default_value' => 'https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=1600&q=90&auto=format&fit=crop' ),
 
                 /* =======================

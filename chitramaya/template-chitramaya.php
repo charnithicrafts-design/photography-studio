@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Chitramaya Creatives
+ * Template Name: Chithramaya Creatives
  * Template Post Type: page
- * Description: Full-page enterprise portfolio landing for Chitramaya Creatives.
+ * Description: Full-page enterprise portfolio landing for Chithramaya Creatives.
  */
 // Bypass WordPress header/footer entirely — full design control
 ?>
@@ -11,8 +11,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chitramaya Creatives — Photography Studio</title>
-  <meta name="description" content="Chitramaya Creatives — Ad shoots, baby photography, and visual storytelling from Thalam Studio, Kerala. Every image is made to be felt.">
+  <title>Chithramaya Creatives — Photography Studio</title>
+  <meta name="description" content="Chithramaya Creatives — Ad shoots, baby photography, and visual storytelling from Thalam Studio, Kerala. Every image is made to be felt.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -213,7 +213,7 @@
     <div class="hero-cursor-glow" id="hero-glow"></div>
     <img class="hero-img"
       src="<?php echo esc_url( get_field('home_hero_bg_url') ?: 'https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop' ); ?>"
-      alt="Fine-art studio portrait with vibrant abstract paint — Chitramaya Creatives"
+      alt="Fine-art studio portrait with vibrant abstract paint — Chithramaya Creatives"
       loading="eager"
       onload="this.closest('.hero').classList.add('loaded')">
     <div class="hero-overlay"></div>
@@ -236,7 +236,7 @@
 
   <section class="manifesto" id="about">
     <div>
-      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'Chitramaya Creatives — Our Creed' ); ?></div>
+      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'Chithramaya Creatives — Our Creed' ); ?></div>
       <h2 class="manifesto-text"><?php echo wp_kses_post( get_field('home_manifesto_headline') ?: 'Every photograph is a physical argument that the world is worth feeling.' ); ?></h2>
     </div>
     <div>
@@ -253,10 +253,10 @@
   <section class="thalam-ad" id="thalam">
     <img class="thalam-ad-bg"
       src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=2400&q=90&auto=format&fit=crop' ); ?>"
-      alt="Professional studio set with dramatic lighting — Thalam Studio, Chitramaya Creatives"
+      alt="Professional studio set with dramatic lighting — Thalam Studio, Chithramaya Creatives"
       loading="lazy">
     <div class="thalam-ad-overlay"></div>
-    <div class="thalam-ad-corner">Thalam Studio — Chitramaya Production Hub</div>
+    <div class="thalam-ad-corner">Thalam Studio — Chithramaya Production Hub</div>
     <div class="thalam-ad-content">
       <div>
         <div class="thalam-ad-eyebrow">Studio. Story. Shoot.</div>
@@ -421,7 +421,7 @@
         <p class="service-sub-head">The complete creative studio.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chitramaya is expanding. Soon we will offer logo design, brand identity, OOH campaign design, and full TVC production — bringing the complete creative pipeline together.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chithramaya is expanding. Soon we will offer logo design, brand identity, OOH campaign design, and full TVC production — bringing the complete creative pipeline together.' ); ?></p>
         <ul class="service-list">
           <li>Logo &amp; Brand Identity</li>
           <li>Marketing Collaterals</li>
@@ -457,7 +457,7 @@
   <section class="cta-banner" id="contact">
     <img class="cta-banner-img"
       src="<?php echo esc_url( get_field('home_cta_bg_url') ?: 'https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=2400&q=80&auto=format&fit=crop' ); ?>"
-      alt="A dark dramatic photography studio with a single powerful light source — the Chitramaya Creatives commission environment.">
+      alt="A dark dramatic photography studio with a single powerful light source — the Chithramaya Creatives commission environment.">
     <div class="cta-banner-content">
       <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'Start a<br><em>Commission</em>' ); ?></h2>
     </div>
@@ -466,7 +466,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© <?php echo date('Y'); ?> Chitramaya Creatives. All rights reserved.</p>
+    <p>© <?php echo date('Y'); ?> Chithramaya Creatives. All rights reserved.</p>
     <div class="footer-thalam">
       <span>Ad shoots · Baby photography · Studio bookings</span>
       <a href="<?php echo home_url('/thalam-studio'); ?>">Thalam Studio →</a>
@@ -474,7 +474,7 @@
   </footer>
 
   <!-- WHATSAPP FLOATING CTA -->
-  <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20session%20at%20Chitramaya%20Creatives."
+  <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20session%20at%20Chithramaya%20Creatives."
     class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span>Chat with us</span>

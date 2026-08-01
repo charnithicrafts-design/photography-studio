@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Production & Brand Design — Chitramaya Creatives</title>
+  <title>Production & Brand Design — Chithramaya Creatives</title>
   <meta name="description" content="From broadcast-grade podcast production to comprehensive brand design. We architect lasting recognition.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/production-brand-design')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">

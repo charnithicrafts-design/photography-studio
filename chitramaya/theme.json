@@ -10,22 +10,22 @@
       "palette": [
         {
           "color": "#FFFFFF",
-          "name": "Chitramaya Pure White",
+          "name": "Chithramaya Pure White",
           "slug": "chitramaya-base-light"
         },
         {
           "color": "#1C1917",
-          "name": "Chitramaya Charcoal",
+          "name": "Chithramaya Charcoal",
           "slug": "chitramaya-text-dark"
         },
         {
           "color": "#A96F44",
-          "name": "Chitramaya Camel",
+          "name": "Chithramaya Camel",
           "slug": "chitramaya-accent-vibrant"
         },
         {
           "color": "#57534E",
-          "name": "Chitramaya Stone",
+          "name": "Chithramaya Stone",
           "slug": "chitramaya-muted"
         },
         {

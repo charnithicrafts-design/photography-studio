@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Architecture — Chitramaya & Thalam Studio</title>
+  <title>Our Architecture — Chithramaya & Thalam Studio</title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
