@@ -448,14 +448,7 @@
     <a href="#" class="cta-banner-btn" data-trigger="booking">Speak to a Creative Director</a>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© <?php echo date('Y'); ?> Chithramaya Creatives. All rights reserved.</p>
-    <div class="footer-thalam">
-      <span>Ad shoots · Baby photography · Studio bookings</span>
-      <a href="<?php echo home_url('/thalam-studio'); ?>">Thalam Studio →</a>
-    </div>
-  </footer>
+
 
   <!-- WHATSAPP FLOATING CTA -->
   <a href="https://wa.me/918098014123?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20session%20at%20Chithramaya%20Creatives."
