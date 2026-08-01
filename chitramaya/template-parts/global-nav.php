@@ -128,8 +128,9 @@
                 THALAM STUDIO <span class="c-nav-icon">+</span>
             </button>
             <div class="c-nav-panel" id="panel-4">
-                <a href="<?php echo esc_url(home_url('/podcast-interview')); ?>" class="c-nav-panel-title">Podcast & Interview &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/thalam-studio')); ?>" class="c-nav-panel-title">Thalam Studio Facility &rarr;</a>
                 <ul class="c-nav-grid">
+                    <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast & Interview</a></li>
                     <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#production">Studio & Production</a></li>
                     <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#media">Content & Media</a></li>
                     <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>#branding">Photography & Branding</a></li>
