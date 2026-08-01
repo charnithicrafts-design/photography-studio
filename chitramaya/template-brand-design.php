@@ -26,7 +26,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(253,251,247,0.6) 0%, rgba(253,251,247,1) 100%), url('https://unsplash.com/photos/5oyQQ178qJI/download?w=2400');
+      background-image: linear-gradient(to bottom, rgba(253,251,247,0.6) 0%, rgba(253,251,247,1) 100%), url('https://images.unsplash.com/photo-1654309184038-f9b689cfbdcb?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -110,7 +110,7 @@
         </ul>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/wwqRpSNBPq4/download?w=1600" alt="Brand Identity" class="block-img">
+        <img src="https://images.unsplash.com/photo-1508599589920-14cfa1c1fe4d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Brand Identity" class="block-img">
       </div>
     </div>
   </section>
@@ -128,7 +128,7 @@
         </ul>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/VbxDnN0thzs/download?w=1600" alt="Physical Presence" class="block-img">
+        <img src="https://images.unsplash.com/photo-1574367157590-3454fe866961?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Physical Presence" class="block-img">
       </div>
     </div>
   </section>
@@ -147,7 +147,7 @@
         </ul>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/JoMUpNRfxdw/download?w=1600" alt="Campaign Distribution" class="block-img">
+        <img src="https://images.unsplash.com/photo-1636247498175-d2a8d052c2b0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Campaign Distribution" class="block-img">
       </div>
     </div>
   </section>

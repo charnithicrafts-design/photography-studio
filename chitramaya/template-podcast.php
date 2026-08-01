@@ -26,7 +26,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(10,17,40,0.1) 0%, rgba(10,17,40,0.85) 100%), url('https://unsplash.com/photos/SgxTZZKAcTg/download?w=2400');
+      background-image: linear-gradient(to bottom, rgba(10,17,40,0.1) 0%, rgba(10,17,40,0.85) 100%), url('https://images.unsplash.com/photo-1664277497087-51787d2b9d15?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -100,7 +100,7 @@
         <p class="block-copy">Focusing on a well-equipped environment with technical support to ensure smooth recording and high production quality. Step into Thalam—a meticulously engineered physical space equipped with professional lighting and multi-camera setups.</p>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/pPxJTtxfV1A/download?w=1600" alt="Studio Microphone" class="block-img">
+        <img src="https://images.unsplash.com/photo-1554941829-202a0b2403b8?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Studio Microphone" class="block-img">
       </div>
     </div>
   </section>
@@ -114,7 +114,7 @@
         <p class="block-copy">Emphasizing the creation, editing, and distribution of podcast material, helping clients maximize reach and engagement. Our pipeline ensures your content meets the exacting standards of modern digital audiences.</p>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/25OWIrAtGMM/download?w=1600" alt="Editing Content" class="block-img">
+        <img src="https://images.unsplash.com/photo-1749410342681-3510f9edb7ad?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Editing Content" class="block-img">
       </div>
     </div>
   </section>
@@ -128,7 +128,7 @@
         <p class="block-copy">Complementing the production by delivering high-quality visuals, promotional assets, and a cohesive brand identity, ensuring that the podcast not only sounds professional but looks visually compelling and market-ready.</p>
       </div>
       <div class="block-img-wrapper">
-        <img src="https://unsplash.com/photos/HENZpJ-KWg0/download?w=1600" alt="Branding & Visuals" class="block-img">
+        <img src="https://images.unsplash.com/photo-1764664035176-8e92ff4f128e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Branding & Visuals" class="block-img">
       </div>
     </div>
   </section>

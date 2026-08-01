@@ -119,6 +119,6 @@
   
   <div class="footer-bottom">
     <span>&copy; <?php echo date('Y'); ?> Chitramaya Creatives. All rights reserved.</span>
-    <span>Designed with intent by CharNithi Software Crafts.</span>
+    <span style="text-align: right;">Designed with intent by CharNithi Software Crafts.<br>Select photography generously provided by creators on <a href="https://unsplash.com/?utm_source=chitramaya_creatives&utm_medium=referral" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Unsplash</a>.</span>
   </div>
 </footer>

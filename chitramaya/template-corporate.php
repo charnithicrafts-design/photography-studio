@@ -170,7 +170,7 @@
   <!-- 01 // EXECUTIVE PORTRAITS -->
   <article class="editorial-section" id="service-1">
     <div class="editorial-img-wrapper">
-      <img src="https://unsplash.com/photos/xQLiFkWCSvM/download?w=1600" alt="Executive Portrait" class="editorial-img">
+      <img src="https://images.unsplash.com/photo-1742981365879-7ad5b7e7e4ce?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Executive Portrait" class="editorial-img">
     </div>
     <div class="editorial-content">
       <div class="editorial-text-col">

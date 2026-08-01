@@ -36,7 +36,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(10,17,40,0.2) 0%, rgba(10,17,40,0.9) 100%), url('https://unsplash.com/photos/wDKS844Aeqw/download?w=2400');
+      background-image: linear-gradient(to bottom, rgba(10,17,40,0.2) 0%, rgba(10,17,40,0.9) 100%), url('https://images.unsplash.com/photo-1758084413534-ca441e8376a3?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -221,7 +221,7 @@
     <!-- CHAPTER 01 -->
     <article class="monumental-section" id="service-1">
       <div class="monumental-img-wrapper">
-        <img src="https://unsplash.com/photos/-G2iJF_aUws/download?w=1600" alt="The Anticipation (Maternity)" class="monumental-img">
+        <img src="https://images.unsplash.com/photo-1586102728466-46b99b3bc411?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Anticipation (Maternity)" class="monumental-img">
       </div>
       <div class="monumental-content">
         <div class="monumental-chapter">Chapter 01</div>
@@ -238,7 +238,7 @@
     <!-- CHAPTER 02 -->
     <article class="monumental-section" id="service-2">
       <div class="monumental-img-wrapper">
-        <img src="https://unsplash.com/photos/KAUHsfTbQB0/download?w=1600" alt="The Arrival (Baby)" class="monumental-img">
+        <img src="https://images.unsplash.com/photo-1757691723728-76c52b7e2a02?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Arrival (Baby)" class="monumental-img">
       </div>
       <div class="monumental-content">
         <div class="monumental-chapter">Chapter 02</div>
@@ -255,7 +255,7 @@
     <!-- CHAPTER 03 -->
     <article class="monumental-section" id="service-3">
       <div class="monumental-img-wrapper">
-        <img src="https://unsplash.com/photos/VUlpFpZea_w/download?w=1600" alt="The Union (Wedding)" class="monumental-img">
+        <img src="https://images.unsplash.com/photo-1640654454711-c559b85417e9?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Union (Wedding)" class="monumental-img">
       </div>
       <div class="monumental-content">
         <div class="monumental-chapter">Chapter 03</div>
@@ -272,7 +272,7 @@
     <!-- CHAPTER 04 -->
     <article class="monumental-section" id="service-4">
       <div class="monumental-img-wrapper">
-        <img src="https://unsplash.com/photos/kwKy9Rrm16o/download?w=1600" alt="The Legacy (Family)" class="monumental-img">
+        <img src="https://images.unsplash.com/photo-1640162558363-88cb21a08021?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Legacy (Family)" class="monumental-img">
       </div>
       <div class="monumental-content">
         <div class="monumental-chapter">Chapter 04</div>
