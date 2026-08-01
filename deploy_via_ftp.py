@@ -19,7 +19,7 @@ ftp = ftplib.FTP(FTP_HOST)
 ftp.login(FTP_USER, FTP_PASS)
 
 print("Connecting to FTP...")
-ftp.cwd('chitramaya.charnithi.com')
+ftp.cwd('chithramaya.charnithi.com')
 
 files_to_upload = []
 # Automatically gather all files in the chitramaya theme folder

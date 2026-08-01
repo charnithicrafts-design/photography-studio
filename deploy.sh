@@ -26,7 +26,7 @@ cp -a "$SCRIPT_DIR/chitramaya/." "$WP_ROOT/wp-content/themes/chitramaya/"
 echo "[2/5] Exporting live SQL dump..."
 php -d memory_limit=512M "$SCRIPT_DIR/wp-cli.phar" \
   --path="$WP_ROOT" \
-  search-replace 'http://localhost:8080' 'http://chitramaya.charnithi.com' \
+  search-replace 'http://localhost:8080' 'https://chithramaya.charnithi.com' \
   --export="$WP_ROOT/chitramaya_dump_live.sql"
 
 echo "[2b/5] Uploading SQL dump for remote import..."

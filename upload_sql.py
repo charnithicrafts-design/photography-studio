@@ -57,7 +57,7 @@ with open('./db_import.php', 'w') as f:
 
 ftp = ftplib.FTP(FTP_HOST)
 ftp.login(FTP_USER, FTP_PASS)
-ftp.cwd('chitramaya.charnithi.com')
+ftp.cwd('chithramaya.charnithi.com')
 
 print("Uploading SQL dump...")
 with open(SQL_FILE, 'rb') as f:
@@ -72,7 +72,7 @@ os.remove('./db_import.php')
 
 print("Triggering remote DB import...")
 req = urllib.request.Request(
-    "http://chitramaya.charnithi.com/db_import.php",
+    "https://chithramaya.charnithi.com/db_import.php",
     headers={'User-Agent': 'Mozilla/5.0'}
 )
 try:
