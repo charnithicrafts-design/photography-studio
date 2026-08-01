@@ -126,8 +126,15 @@
     .footer-bottom { border-top: var(--rule); padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
     .footer-bottom p, .footer-chitramaya-link { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); }
 
+    /* CAPABILITIES STATEMENT */
+    .studio-capabilities { padding: 4rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .cap-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; color: var(--text-dark); line-height: 1.1; letter-spacing: -0.02em; max-width: 700px; margin-bottom: 1.5rem; }
+    .cap-title em { font-style: italic; color: var(--accent); }
+    .cap-desc { font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.6; color: var(--mid-grey); max-width: 500px; }
+
     /* PROGRESSIVE ENHANCEMENT (TABLET & DESKTOP) */
     @media (min-width: 768px) {
+      .studio-capabilities { padding: 6rem 2rem; }
       .system-bar { padding: 0.5rem 2rem; font-size: 0.72rem; }
       nav { display: grid; grid-template-columns: 1fr auto 1fr; padding: 0 2rem; }
       .nav-meta { display: block; }
@@ -377,6 +384,12 @@
         <a href="#" class="service-cta" id="cta-food" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
+  </section>
+
+  <!-- STUDIO CAPABILITIES -->
+  <section class="studio-capabilities">
+    <h2 class="cap-title">A meticulously designed sanctuary for <em>creative excellence</em>.</h2>
+    <p class="cap-desc">Engineered for infinite adaptability with industry-leading lighting grids, dedicated client lounges, and an expansive aesthetic that elevates every production.</p>
   </section>
 
   <div class="gallery-strip">
