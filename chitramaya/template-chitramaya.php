@@ -155,12 +155,7 @@
     .cta-banner-btn { position: relative; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; background: var(--accent); color: var(--bg-light); padding: 1.25rem 3rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
     .cta-banner-btn:hover { background: var(--text-dark); }
 
-    /* FOOTER (Mobile First) */
-    footer { padding: 2.5rem 1.5rem; border-top: var(--border); display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-    footer p { font-size: 0.78rem; color: var(--warm-grey); letter-spacing: 0.1em; }
-    .footer-thalam { display: flex; align-items: center; gap: 1rem; }
-    .footer-thalam span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm-grey); }
-    .footer-thalam a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
 
     /* WHATSAPP */
     .whatsapp-fab { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; display: flex; align-items: center; gap: 0.75rem; background: #25D366; color: #fff; text-decoration: none; padding: 0.85rem 1.5rem 0.85rem 1.1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; box-shadow: 0 4px 24px rgba(37,211,102,0.35); transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; animation: waDrift 4s ease-in-out infinite; }
@@ -196,7 +191,7 @@
       .process-step:not(:first-child) { padding-left: 2.5rem; }
       .process-step:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
       .testimonial { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; }
-      footer { padding: 3rem; flex-direction: row; justify-content: space-between; align-items: center; }
+
       .whatsapp-fab span { display: inline; }
       .whatsapp-fab { padding: 0.85rem 1.5rem 0.85rem 1.1rem; border-radius: 50px; }
     }
