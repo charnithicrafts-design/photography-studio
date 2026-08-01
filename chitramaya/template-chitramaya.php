@@ -119,9 +119,9 @@
     .service-coming-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.28rem 0.8rem; margin-bottom: 1.25rem; border-radius: 2px; }
     .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1rem; line-height: 1; }
     .service-sub-head { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--accent); margin-bottom: 1.25rem; }
-    .service-desc { font-size: 0.9rem; line-height: 1.75; color: var(--warm-grey); margin-bottom: 1rem; }
+    .service-desc { font-size: 0.95rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 1.25rem; max-width: 62ch; }
     .service-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.3rem; }
-    .service-list li { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--warm-grey); padding-left: 1.2rem; position: relative; }
+    .service-list li { font-size: 0.85rem; letter-spacing: 0; text-transform: none; color: var(--warm-grey); padding-left: 1.2rem; position: relative; }
     .service-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
     .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; transition: all 0.2s; }
     .service-btn:hover { color: var(--accent); border-color: var(--accent); }
@@ -186,8 +186,10 @@
       .tactile-item:nth-child(2) { height: 40vh; }
       .tactile-item:nth-child(3) { height: 44vh; }
       .services { display: flex; flex-direction: column; }
-      .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; }
+      .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; border-left: 3px solid transparent; padding-left: calc(3rem - 3px); transition: border-left-color 0.3s; }
       .service-item:last-child { border-bottom: none; }
+      .service-item:hover { border-left-color: var(--accent); }
+      .service-item.is-upcoming:hover { border-left-color: rgba(169,111,68,0.4); }
       .service-list { flex-direction: row; flex-wrap: wrap; gap: 0.3rem 2.5rem; }
       .process { padding: 8rem 3rem; }
       .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); flex-direction: row; margin-top: 5rem; }
@@ -335,16 +337,13 @@
         <p class="service-sub-head">Humanise your authority.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Your people are your strongest asset. We document them with precision and clarity — from executive headshots designed for websites and LinkedIn, to team portraits, corporate event coverage, and office lifestyle pictures that reflect your organisation\'s culture. Every image is built to build trust.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Your people are your most credible asset. We photograph executive portraits, team sessions, corporate events, and office environments that build immediate trust across every platform.' ); ?></p>
         <ul class="service-list">
-          <li>Executive Headshots &amp; Professional Portraits</li>
-          <li>Website &amp; Team Photography</li>
-          <li>Corporate Video &amp; Company Profile Video</li>
-          <li>Company Lifestyle Pictures</li>
-          <li>Product Photography for Marketing</li>
-          <li>Brand Ads / TVCs</li>
-          <li>Product Launches, Seminars &amp; Conferences</li>
-          <li>Corporate Events &amp; Marketing Events</li>
+          <li>Executive Headshots</li>
+          <li>Team &amp; Website Photography</li>
+          <li>Corporate Events</li>
+          <li>Company Profile Video</li>
+          <li>Product Photography</li>
         </ul>
         <a href="#" class="service-btn" data-trigger="booking">Book a Corporate Session</a>
       </div>
@@ -358,16 +357,12 @@
         <p class="service-sub-head">Visuals made to move people.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'Every frame has a job. We make sure it does it. From OOH billboard campaigns and e-commerce catalogues to food, fashion, lifestyle, and civil construction documentation — we work closely with your art directors and marketing teams to deliver visuals that align with your brief and move your audience to act.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'Every frame has a job. We deliver OOH campaigns, e-commerce catalogues, fashion, food, and lifestyle photography in close collaboration with your brief and your team.' ); ?></p>
         <ul class="service-list">
-          <li>OOH Marketing Collaterals</li>
-          <li>E-Commerce Catalogue Photography</li>
-          <li>Food &amp; Lifestyle Photography</li>
-          <li>Fashion &amp; Architecture Photography</li>
-          <li>Civil Construction Timelapse</li>
-          <li>Cinematic Walkthrough &amp; 360° Photography</li>
-          <li>Social Media Campaign Creation</li>
-          <li>Personal Branding &amp; PR Campaigns</li>
+          <li>OOH &amp; Billboard Campaigns</li>
+          <li>E-Commerce Catalogues</li>
+          <li>Food, Fashion &amp; Lifestyle</li>
+          <li>Social Media Campaigns</li>
           <li>Content Creation</li>
         </ul>
         <a href="#" class="service-btn" data-trigger="booking">Start a Commercial Brief</a>
@@ -382,15 +377,13 @@
         <p class="service-sub-head">The archive of your legacy.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'These moments are only this fleeting once. We archive the full arc of your family\'s most sacred milestones — the quiet anticipation of maternity, the softness of a newborn in the first weeks, the chaotic joy of a toddler\'s first year, and the ceremonies that bind generations. Studio-styled, art-themed, house visit, or outdoor — we witness and preserve.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'These moments happen only once. We archive maternity, newborn, toddler milestones, weddings, and multi-generational family ceremonies — studio-styled, outdoor, or at home.' ); ?></p>
         <ul class="service-list">
-          <li>Baby Portraits (Newborn, Infant, Toddler, 1st Birthday)</li>
-          <li>Maternity &amp; Bump to Baby Sessions</li>
-          <li>Wedding Photography (Pre/Post, Destination, Song Creation)</li>
-          <li>Family Portraits &amp; Baby Shower</li>
-          <li>Sashtiabdhapoorthi, Upanayanam, Sadhabishegam</li>
-          <li>Ear Piercing / Ayushomam</li>
-          <li>Grand Family Pictures (Studio, Outdoor, House Visit)</li>
+          <li>Baby &amp; Maternity Sessions</li>
+          <li>Wedding Photography</li>
+          <li>Cultural Events (Sadhabishegam, Upanayanam, etc.)</li>
+          <li>Family Portraits</li>
+          <li>Destination &amp; Outdoor Sessions</li>
         </ul>
         <a href="#" class="service-btn" data-trigger="booking">Book a Portrait Session</a>
       </div>
@@ -404,11 +397,11 @@
         <p class="service-sub-head">Sound and vision, aligned.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_4_desc') ?: 'A microphone alone does not build an audience. We deliver a complete content production solution — professional studio space, multi-camera setups, broadcast-quality audio, and post-production and branding assets your show needs to look and sound market-ready. Designed for creators, brands, and entrepreneurs building a long-term media presence.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_4_desc') ?: 'A microphone alone does not build an audience. We provide the studio, multi-camera setup, audio production, and branding assets to make your show look and sound market-ready.' ); ?></p>
         <ul class="service-list">
-          <li>Studio &amp; Production — Space, equipment, technical support</li>
-          <li>Content &amp; Media — Editing, distribution, reach</li>
-          <li>Photography &amp; Branding — Visuals, promotional assets, identity</li>
+          <li>Studio &amp; Production</li>
+          <li>Content Editing &amp; Distribution</li>
+          <li>Photography &amp; Branding</li>
         </ul>
         <a href="#" class="service-btn" data-trigger="booking">Book the Podcast Studio</a>
       </div>
@@ -422,13 +415,13 @@
         <p class="service-sub-head">The complete creative studio.</p>
       </div>
       <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chitramaya Creatives is expanding. Soon, our offering will grow to include full brand design and advertisement commercial production — bringing the complete creative pipeline under one roof. From logo and identity systems to OOH installations, brand guidelines, and TVC production.' ); ?></p>
+        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chitramaya is expanding. Soon we will offer logo design, brand identity, OOH campaign design, and full TVC production — bringing the complete creative pipeline together.' ); ?></p>
         <ul class="service-list">
-          <li>Logo Design &amp; Brand Identity</li>
-          <li>Product Design &amp; Marketing Collaterals</li>
-          <li>Illustrative Posters &amp; OOH Campaign Design</li>
-          <li>Installation Design &amp; Brand Guidelines</li>
-          <li>Advertisement Commercials &amp; TVC Production</li>
+          <li>Logo &amp; Brand Identity</li>
+          <li>Marketing Collaterals</li>
+          <li>OOH Campaign Design</li>
+          <li>Brand Guidelines</li>
+          <li>Ad Commercials &amp; TVC</li>
         </ul>
         <a href="#" class="service-notify-btn" data-trigger="booking">Notify Me When Live</a>
       </div>
