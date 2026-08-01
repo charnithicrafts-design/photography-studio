@@ -248,7 +248,7 @@
 
   <section class="thalam-ad" id="thalam">
     <img class="thalam-ad-bg"
-      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=2400&q=90&auto=format&fit=crop' ); ?>"
+      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1735989917786-7c0af070a2fa?q=80&w=1170&auto=format&fit=crop' ); ?>"
       alt="Professional studio set with dramatic lighting — Thalam Studio, Chithramaya Creatives"
       loading="lazy">
     <div class="thalam-ad-overlay"></div>
@@ -257,7 +257,7 @@
       <div>
         <div class="thalam-ad-eyebrow">THALAM STUDIO</div>
         <h2 class="thalam-ad-headline">SPACE TO CREATE.</h2>
-        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--warm-grey); max-width: 480px; margin-top: 1.5rem;">A purpose-built environment for total creative control. From the expansive cyclorama to the complete light setup, every square foot is designed to bring your most ambitious concepts into the light.</p>
+        <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255, 255, 255, 0.85); max-width: 480px; margin-top: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">A true space to create means zero friction between your idea and its execution. We've prepared the seamless cyclorama, set the lighting, and curated the amenities—giving you the ultimate blank canvas to focus entirely on your craft.</p>
       </div>
       <div class="thalam-ad-right">
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
