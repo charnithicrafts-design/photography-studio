@@ -110,6 +110,7 @@
 
     /* SERVICES (Mobile First) */
     .services { border-top: var(--border); border-bottom: var(--border); display: flex; flex-direction: column; }
+    .services-header { padding: 5rem 1.5rem 2rem; border-bottom: var(--border); margin-bottom: 0; }
     .service-item { padding: 3.5rem 1.5rem; border-bottom: var(--border); transition: background 0.3s; }
     .service-item:last-child { border-bottom: none; }
     .service-item:hover { background: rgba(200,169,110,0.04); }
@@ -186,11 +187,13 @@
       .tactile-item:nth-child(2) { height: 40vh; }
       .tactile-item:nth-child(3) { height: 44vh; }
       .services { display: flex; flex-direction: column; }
-      .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; border-left: 3px solid transparent; padding-left: calc(3rem - 3px); transition: border-left-color 0.3s; }
+      .services-header { padding: 6rem 3rem 2rem; }
+      .service-item { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; border-left: 3px solid transparent; padding-left: calc(3rem - 3px); transition: border-left-color 0.3s; }
       .service-item:last-child { border-bottom: none; }
       .service-item:hover { border-left-color: var(--accent); }
       .service-item.is-upcoming:hover { border-left-color: rgba(169,111,68,0.4); }
-      .service-list { flex-direction: row; flex-wrap: wrap; gap: 0.3rem 2.5rem; }
+      .service-item-right { max-width: 800px; }
+      .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem; align-items: start; }
       .process { padding: 8rem 3rem; }
       .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); flex-direction: row; margin-top: 5rem; }
       .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); border-bottom: none; }
@@ -328,6 +331,9 @@
 
   <!-- SERVICES -->
   <section class="services" id="services">
+    <div class="section-header services-header">
+      <h2 class="section-title">Our Services</h2>
+    </div>
 
     <!-- 01: Brand & Corporate Photography -->
     <div class="service-item">
