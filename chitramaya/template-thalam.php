@@ -307,7 +307,7 @@
     <div class="service-row" id="service-podcast">
       <div class="service-index">03</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1664555182325-e2323f836760?w=800&q=90&auto=format&fit=crop"
           alt="Professional podcast microphone setup in studio — Thalam Studio podcast and interview recording.">
       </div>
       <div class="service-info">
@@ -332,7 +332,7 @@
     <div class="service-row" id="service-product">
       <div class="service-index">04</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1528269939634-633003023e32?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1698943510859-e97dc93127e9?w=800&q=90&auto=format&fit=crop"
           alt="Minimalist product photography setup — Thalam Studio product shoots.">
       </div>
       <div class="service-info">
@@ -357,7 +357,7 @@
     <div class="service-row" id="service-food">
       <div class="service-index">05</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1728910156510-77488f19b152?w=800&q=90&auto=format&fit=crop"
           alt="High-end culinary photography — Thalam Studio food and beverage.">
       </div>
       <div class="service-info">
