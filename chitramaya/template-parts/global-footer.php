@@ -110,7 +110,7 @@
     <div class="footer-column">
       <h3>Connect</h3>
       <ul>
-        <li><a href="mailto:studio@chithramaya.com">studio@chithramaya.com</a></li>
+        <li><a href="mailto:sriramsridharan.designer@gmail.com">sriramsridharan.designer@gmail.com</a></li>
         <li><a href="https://wa.me/918098014123" target="_blank" rel="noopener noreferrer">+91 80980 14123 (WhatsApp)</a></li>
         <li style="margin-top: 1.5rem;"><a href="https://www.instagram.com/chithramaya_creatives/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       </ul>
