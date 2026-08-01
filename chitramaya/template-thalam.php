@@ -249,7 +249,7 @@
 
   <section class="services" id="services">
     <div class="services-header">
-      <h2><?php echo esc_html( get_field('thalam_services_title') ?: 'Service Directory // 4 Active' ); ?></h2>
+      <h2><?php echo esc_html( get_field('thalam_services_title') ?: 'Service Directory // 5 Active' ); ?></h2>
       <span>All inclusive of editing &amp; licensing</span>
     </div>
 
@@ -299,64 +299,88 @@
         </ul>
       </div>
       <div class="service-action">
-        <a href="<?php echo esc_url(home_url('/thalam-baby')); ?>" class="service-cta" id="cta-baby">View The Journey →</a>
+        <a href="<?php echo esc_url(home_url('/maternity')); ?>" class="service-cta" id="cta-baby">View The Journey →</a>
       </div>
     </div>
 
-    <!-- Industrial -->
-    <div class="service-row" id="service-industrial">
+    <!-- Podcast & Interview -->
+    <div class="service-row" id="service-podcast">
       <div class="service-index">03</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&q=90&auto=format&fit=crop"
-          alt="Heavy industrial manufacturing environment — Thalam Studio industrial photography service.">
+        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=90&auto=format&fit=crop"
+          alt="Professional podcast microphone setup in studio — Thalam Studio podcast and interview recording.">
       </div>
       <div class="service-info">
-        <div><h3 class="service-name">Industrial</h3>
-        <div class="service-tags"><span class="service-tag">Factory Floors</span><span class="service-tag">Machinery</span><span class="service-tag">Zero-Disruption</span></div></div>
+        <div><h3 class="service-name">Podcast &amp; Interview</h3>
+        <div class="service-tags"><span class="service-tag">Video Podcasts</span><span class="service-tag">Interviews</span><span class="service-tag">Live Streams</span></div></div>
       </div>
       <div class="service-specs">
         <ul class="spec-list">
-          <li>Full-day factory documentation</li>
-          <li>No-disruption shooting protocol</li>
-          <li>Safety-compliant crew gear</li>
-          <li>800–1200 raw images</li>
-          <li>Architectural &amp; scale focus</li>
+          <li>Multi-cam 4K setup</li>
+          <li>Sound-treated environment</li>
+          <li>Broadcast-quality audio</li>
+          <li>Set design &amp; styling</li>
+          <li>Live switching capability</li>
         </ul>
       </div>
       <div class="service-action">
-        <a href="#" class="service-cta" id="cta-industrial" data-trigger="booking">Explore Capabilities →</a>
+        <a href="#" class="service-cta" id="cta-podcast" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
 
-    <!-- Weddings -->
-    <div class="service-row" id="service-weddings">
+    <!-- Product Photography -->
+    <div class="service-row" id="service-product">
       <div class="service-index">04</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=90&auto=format&fit=crop"
-          alt="An intimate documentary wedding moment — Thalam Studio wedding photography, .">
+        <img src="https://images.unsplash.com/photo-1528269939634-633003023e32?w=800&q=90&auto=format&fit=crop"
+          alt="Minimalist product photography setup — Thalam Studio product shoots.">
       </div>
       <div class="service-info">
-        <div><h3 class="service-name">Weddings</h3>
-        <div class="service-tags"><span class="service-tag">Documentary</span><span class="service-tag">Unobtrusive</span><span class="service-tag">High Volume</span></div></div>
+        <div><h3 class="service-name">Product Photography</h3>
+        <div class="service-tags"><span class="service-tag">E-Commerce</span><span class="service-tag">Tabletop</span><span class="service-tag">Styling</span></div></div>
       </div>
       <div class="service-specs">
         <ul class="spec-list">
-          <li>8–12 hour full-day coverage</li>
-          <li>2 photographers + 1 second</li>
-          <li>600+ edited finals</li>
-          <li>Private AI-powered gallery</li>
-          <li>Printed album option</li>
+          <li>High-volume e-commerce</li>
+          <li>Creative tabletop staging</li>
+          <li>Precision macro lighting</li>
+          <li>Custom background colors</li>
+          <li>Retouching &amp; clipping paths</li>
         </ul>
       </div>
       <div class="service-action">
-        <a href="#" class="service-cta" id="cta-weddings" data-trigger="booking">Explore Capabilities →</a>
+        <a href="#" class="service-cta" id="cta-product" data-trigger="booking">Explore Capabilities →</a>
+      </div>
+    </div>
+
+    <!-- Food & Beverage -->
+    <div class="service-row" id="service-food">
+      <div class="service-index">05</div>
+      <div class="service-img-cell">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=90&auto=format&fit=crop"
+          alt="High-end culinary photography — Thalam Studio food and beverage.">
+      </div>
+      <div class="service-info">
+        <div><h3 class="service-name">Food &amp; Beverage</h3>
+        <div class="service-tags"><span class="service-tag">Culinary Arts</span><span class="service-tag">Menu Shoots</span><span class="service-tag">Props</span></div></div>
+      </div>
+      <div class="service-specs">
+        <ul class="spec-list">
+          <li>Food styling assistance</li>
+          <li>Extensive prop library</li>
+          <li>Appetizing lighting setups</li>
+          <li>Action shots (pours, splashes)</li>
+          <li>Social &amp; menu formats</li>
+        </ul>
+      </div>
+      <div class="service-action">
+        <a href="#" class="service-cta" id="cta-food" data-trigger="booking">Explore Capabilities →</a>
       </div>
     </div>
   </section>
 
   <div class="gallery-strip">
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?w=800&q=90&auto=format&fit=crop" alt="Woman in white hijab in grayscale — Thalam Studio fine-art portraiture."></div>
-    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1776090188315-c481a5753867?w=800&q=90&auto=format&fit=crop" alt="Vast empty industrial warehouse with overhead lighting — Thalam Studio industrial photography."></div>
     <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/wedding-staircase.jpg'); ?>" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
     <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/maternity-newborn.jpg'); ?>" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
@@ -397,9 +421,9 @@
             <option value="">Select a service</option>
             <option value="ad-shoots">Ad Shoot / Commercial</option>
             <option value="baby">Baby &amp; Newborn Photography</option>
-            <option value="industrial">Industrial Documentation</option>
-            <option value="events">Corporate Event Coverage</option>
-            <option value="weddings">Wedding Photography</option>
+            <option value="podcast">Podcast &amp; Interview</option>
+            <option value="product">Product Photography</option>
+            <option value="food">Food &amp; Beverage</option>
           </select>
         </div>
         <div class="form-row">

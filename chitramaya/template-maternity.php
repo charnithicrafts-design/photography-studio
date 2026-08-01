@@ -137,14 +137,14 @@
   <!-- DUAL PANE -->
   <section class="dual-pane">
     <!-- Studio -->
-    <div class="pane">
+    <a href="<?php echo esc_url(home_url('/thalam-studio')); ?>" class="pane" style="text-decoration:none; color:inherit;">
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec1_img') ?: 'https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Studio Maternity">
       <div class="pane-content">
         <span class="pane-subtitle">01 // The Sanctuary</span>
         <h3 class="pane-title">Studio Style</h3>
         <p class="pane-desc"><?php echo wp_kses_post( get_field('pillar_sec1_desc') ?: 'Art themed sessions crafted to capture the quiet power and beauty of your journey.' ); ?></p>
       </div>
-    </div>
+    </a>
     <!-- Outdoor -->
     <div class="pane">
       <img class="pane-img" src="<?php echo esc_url( get_field('pillar_sec2_img') ?: 'https://images.unsplash.com/photo-1705746401414-8bae063ee19f?auto=format&fit=crop&w=1200&q=80' ); ?>" alt="Outdoor Maternity">
