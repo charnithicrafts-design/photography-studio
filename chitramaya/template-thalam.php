@@ -257,7 +257,7 @@
     <div class="service-row" id="service-ad-shoots">
       <div class="service-index">01</div>
       <div class="service-img-cell">
-        <img src="<?php echo esc_url( get_field('thalam_service_1_img') ?: 'https://images.unsplash.com/photo-1758613655304-48776efb25d8?w=800&q=90&auto=format&fit=crop' ); ?>"
+        <img src="<?php echo esc_url( get_field('thalam_service_1_img') ?: 'https://images.unsplash.com/photo-1758613655304-48776efb25d8?w=800&h=600&q=90&auto=format&fit=crop' ); ?>"
           alt="Professional photographer shooting a model in a high-end studio setting — Thalam Studio ad photography.">
       </div>
       <div class="service-info">
@@ -282,7 +282,7 @@
     <div class="service-row" id="service-baby">
       <div class="service-index">02</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&h=600&q=90&auto=format&fit=crop"
           alt="Soft-lit newborn baby photography session in studio — Thalam Studio baby photography, .">
       </div>
       <div class="service-info">
@@ -307,7 +307,7 @@
     <div class="service-row" id="service-podcast">
       <div class="service-index">03</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1664555182325-e2323f836760?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1664555182325-e2323f836760?w=800&h=600&q=90&auto=format&fit=crop"
           alt="Professional podcast microphone setup in studio — Thalam Studio podcast and interview recording.">
       </div>
       <div class="service-info">
@@ -332,7 +332,7 @@
     <div class="service-row" id="service-product">
       <div class="service-index">04</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1698943510859-e97dc93127e9?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1698943510859-e97dc93127e9?w=800&h=600&q=90&auto=format&fit=crop&crop=bottom"
           alt="Minimalist product photography setup — Thalam Studio product shoots.">
       </div>
       <div class="service-info">
@@ -357,7 +357,7 @@
     <div class="service-row" id="service-food">
       <div class="service-index">05</div>
       <div class="service-img-cell">
-        <img src="https://images.unsplash.com/photo-1728910156510-77488f19b152?w=800&q=90&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1728910156510-77488f19b152?w=800&h=600&q=90&auto=format&fit=crop"
           alt="High-end culinary photography — Thalam Studio food and beverage.">
       </div>
       <div class="service-info">
@@ -384,6 +384,7 @@
     <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/wedding-staircase.jpg'); ?>" alt="A bride and groom standing on a staircase — Thalam Studio wedding photography."></div>
     <div class="gallery-strip-item"><img src="<?php echo content_url('themes/chitramaya/assets/img/maternity-newborn.jpg'); ?>" alt="A woman holding a newborn baby in her arms — Thalam Studio maternity and newborn."></div>
     <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1656633702381-939966720da4?w=800&q=90&auto=format&fit=crop" alt="A baby sleeping peacefully on a blanket — Thalam Studio newborn photography."></div>
+    <div class="gallery-strip-item"><img src="https://images.unsplash.com/photo-1577897113176-6888367369bf?w=800&q=90&auto=format&fit=crop" alt="A family of three sitting together for a portrait — Thalam Studio family photography."></div>
   </div>
 
   <section class="trust" id="trust">
