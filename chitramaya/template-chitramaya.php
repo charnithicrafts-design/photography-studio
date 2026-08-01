@@ -351,7 +351,7 @@
           <li>Company Profile Video</li>
           <li>Product Photography</li>
         </ul>
-        <a href="#" class="service-btn" data-trigger="booking">Book a Corporate Session</a>
+        <a href="<?php echo esc_url(home_url('/corporate')); ?>" class="service-btn">Explore Corporate Photography</a>
       </div>
     </div>
 
@@ -371,7 +371,7 @@
           <li>Social Media Campaigns</li>
           <li>Content Creation</li>
         </ul>
-        <a href="#" class="service-btn" data-trigger="booking">Start a Commercial Brief</a>
+        <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="service-btn">Explore Commercial Photography</a>
       </div>
     </div>
 
@@ -391,7 +391,7 @@
           <li>Family Portraits</li>
           <li>Destination &amp; Outdoor Sessions</li>
         </ul>
-        <a href="#" class="service-btn" data-trigger="booking">Book a Portrait Session</a>
+        <a href="<?php echo esc_url(home_url('/events')); ?>" class="service-btn">Explore Events &amp; Portraits</a>
       </div>
     </div>
 
@@ -409,7 +409,7 @@
           <li>Content Editing &amp; Distribution</li>
           <li>Photography &amp; Branding</li>
         </ul>
-        <a href="#" class="service-btn" data-trigger="booking">Book the Podcast Studio</a>
+        <a href="<?php echo esc_url(home_url('/podcast')); ?>" class="service-btn">Explore Podcast Production</a>
       </div>
     </div>
 
