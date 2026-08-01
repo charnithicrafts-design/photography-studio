@@ -255,18 +255,18 @@
     <div class="thalam-ad-corner">Thalam Studio — Chithramaya Production Hub</div>
     <div class="thalam-ad-content">
       <div>
-        <div class="thalam-ad-eyebrow">THE THALAM SPACE</div>
-        <h2 class="thalam-ad-headline">CRAFTED FOR CONTROL.</h2>
-        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--warm-grey); max-width: 480px; margin-top: 1.5rem;">A purpose-built sanctuary engineered for absolute creative command. From expansive cyclorama sweeps to precision-controlled lighting, every square foot is designed to bring your most ambitious concepts into the light.</p>
+        <div class="thalam-ad-eyebrow">THALAM STUDIO</div>
+        <h2 class="thalam-ad-headline">SPACE TO CREATE.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--warm-grey); max-width: 480px; margin-top: 1.5rem;">A purpose-built environment for total creative control. From the expansive cyclorama to the complete light setup, every square foot is designed to bring your most ambitious concepts into the light.</p>
       </div>
       <div class="thalam-ad-right">
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">01 &mdash; Infinite Cyclorama Wall</li>
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">02 &mdash; Precision Light Architecture</li>
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">03 &mdash; Curated Baby Suite Amenities</li>
+          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">01 &mdash; Wide Cyclorama Wall</li>
+          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">02 &mdash; Complete Light Setup</li>
+          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">03 &mdash; Baby Shoot Amenities</li>
         </ul>
         <a href="<?php echo home_url('/thalam-studio'); ?>" class="thalam-ad-cta" style="border-radius: 50px; justify-content: center;">
-          <span>Step Into Thalam Studio</span>
+          <span>Explore Thalam Studio</span>
           <span class="thalam-ad-cta-arrow">→</span>
         </a>
       </div>
