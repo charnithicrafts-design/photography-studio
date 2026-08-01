@@ -173,7 +173,7 @@
       .hero-brand { left: 3rem; right: auto; }
       .hero-corner { right: 3rem; bottom: 3.5rem; }
       .hero-scroll { left: 3rem; bottom: 3.5rem; }
-      .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+      .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1.5fr 1fr; gap: 10rem; align-items: flex-start; max-width: 1400px; margin: 0 auto; }
       .thalam-ad-content { padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-end; }
       .thalam-ad-services { grid-template-columns: 1fr 1fr; }
       .thalam-service-chip { border-right: var(--border); border-bottom: var(--border); }
@@ -243,9 +243,9 @@
       <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'We believe every image should do more than inform — it should stay with you. Through deliberate lighting, medium-format capture, and restrained post-production, we craft photographs that your audience does not just look at — they feel. Each commission begins with a single question: what must this image make someone experience?' ); ?></p>
       <div class="manifesto-stats">
         <div><div class="stat-num">340+</div><div class="stat-label">Campaigns Delivered</div></div>
-        <div><div class="stat-num">12yr</div><div class="stat-label">Visual Authority</div></div>
+        <div><div class="stat-num">20+ Yr</div><div class="stat-label">Lens Experience</div></div>
         <div><div class="stat-num">96%</div><div class="stat-label">Client Retention</div></div>
-        <div><div class="stat-num">3</div><div class="stat-label">National Awards</div></div>
+        <div><div class="stat-num">3 Yr</div><div class="stat-label">Studio Expansion</div></div>
       </div>
     </div>
   </section>
