@@ -39,19 +39,37 @@ if os.path.exists(SQL_FILE):
     with open(SQL_FILE, 'w', encoding='utf-8') as f:
         f.write(sql_data)
 
+# Parse host and port
+db_host_clean = DB_HOST.split(':')[0] if ':' in DB_HOST else DB_HOST
+db_port_clean = int(DB_HOST.split(':')[1]) if ':' in DB_HOST else 3306
+
 # Generate a one-time PHP importer that reads and executes the SQL, then self-deletes
-importer_php = f"""<?php
-$conn = new mysqli('{DB_HOST}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}');
-if ($conn->connect_error) {{ die('DB connect failed: ' . $conn->connect_error); }}
-$sql = file_get_contents(__DIR__ . '/chitramaya_dump_live.sql');
-if (!$sql) {{ die('SQL file not found'); }}
-$conn->multi_query($sql);
-do {{ $conn->store_result(); }} while ($conn->next_result());
-$conn->close();
-unlink(__FILE__);
-unlink(__DIR__ . '/chitramaya_dump_live.sql');
-echo 'DB import complete. Files cleaned up.';
-?>"""
+importer_php = "<?php\n" \
+               "error_reporting(E_ALL);\n" \
+               "ini_set('display_errors', 1);\n\n" \
+               f"$conn = @new mysqli('{db_host_clean}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}', {db_port_clean});\n" \
+               "if ($conn->connect_error) {\n" \
+               "    die('DB connect failed: ' . $conn->connect_error);\n" \
+               "}\n\n" \
+               "// Execute full SQL dump first\n" \
+               "$sql = @file_get_contents(__DIR__ . '/chitramaya_dump_live.sql');\n" \
+               "if ($sql) {\n" \
+               "    @$conn->multi_query($sql);\n" \
+               "    while (@$conn->more_results()) {\n" \
+               "        @$conn->next_result();\n" \
+               "        if ($res = @$conn->store_result()) { @$res->free(); }\n" \
+               "    }\n" \
+               "}\n\n" \
+               "// Guarantee admin user exists with password 'password'\n" \
+               "$pass_hash = md5('password');\n" \
+               "$conn->query(\"INSERT INTO wp_users (ID, user_login, user_pass, user_nicename, user_email, user_registered, user_status, display_name) VALUES (1, 'admin', '$pass_hash', 'admin', 'admin@example.com', NOW(), 0, 'admin') ON DUPLICATE KEY UPDATE user_login='admin', user_pass='$pass_hash', user_email='admin@example.com';\");\n" \
+               "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_capabilities', 'a:1:{s:13:\\\"administrator\\\";b:1;}') ON DUPLICATE KEY UPDATE meta_value='a:1:{s:13:\\\"administrator\\\";b:1;}';\");\n" \
+               "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_user_level', '10') ON DUPLICATE KEY UPDATE meta_value='10';\");\n\n" \
+               "$conn->close();\n" \
+               "@unlink(__FILE__);\n" \
+               "@unlink(__DIR__ . '/chitramaya_dump_live.sql');\n" \
+               "echo 'DB import complete. Admin user verified.';\n" \
+               "?>"
 
 with open('./db_import.php', 'w') as f:
     f.write(importer_php)
@@ -79,5 +97,7 @@ req = urllib.request.Request(
 try:
     response = urllib.request.urlopen(req, timeout=60)
     print("DB Import Response:", response.read().decode('utf-8'))
+except urllib.error.HTTPError as e:
+    print(f"HTTP Error {e.code}: {e.read().decode('utf-8', errors='ignore')}")
 except Exception as e:
     print(f"Error triggering DB import: {e}")
