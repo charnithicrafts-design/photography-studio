@@ -12,6 +12,7 @@ class Chitramaya_Proofing_System {
 		add_action( 'rest_api_init', array( $this, 'register_rest_routes' ) );
 		add_filter( 'template_include', array( $this, 'template_override' ) );
 		add_action( 'wp_ajax_chitramaya_scan_directory', array( $this, 'ajax_scan_directory' ) );
+		add_action( 'wp_ajax_chitramaya_upload_photo', array( $this, 'ajax_upload_photo' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 	}
 
@@ -154,7 +155,7 @@ class Chitramaya_Proofing_System {
 				<th><?php _e( 'Lightroom Filter String', 'chitramaya-proofing' ); ?></th>
 				<td>
 					<div style="background: #1e1e1e; padding: 10px; border-radius: 4px; position: relative;">
-						<textarea readonly id="lr_filter_string" style="width: 100%; height: 80px; background: transparent; color: #00ff66; border: none; font-family: monospace; resize: none;"><?php echo esc_textarea( $lr_string ); ?></textarea>
+						<textarea id="lr_filter_string" style="width: 100%; height: 80px; background: transparent; color: #00ff66; border: none; font-family: monospace; resize: none; user-select: text;" title="Click to select all, then copy"><?php echo esc_textarea( $lr_string ); ?></textarea>
 					</div>
 					<button type="button" class="button button-secondary" style="margin-top: 10px;" onclick="var copyText = document.getElementById('lr_filter_string'); copyText.select(); document.execCommand('copy'); alert('Copied!');">Copy to Clipboard</button>
 					<p class="description">Paste this in Lightroom's text search (Any Searchable Field, Contains All) to filter selected photos.</p>
@@ -167,16 +168,147 @@ class Chitramaya_Proofing_System {
 	public function render_upload_meta_box( $post ) {
 		$upload_dir = wp_upload_dir();
 		$session_dir = $upload_dir['basedir'] . '/proofing-sessions/' . $post->ID;
-		$session_url = $upload_dir['baseurl'] . '/proofing-sessions/' . $post->ID;
-		
+		$upload_nonce = wp_create_nonce( 'upload_photo_nonce' );
+		$scan_nonce   = wp_create_nonce( 'scan_dir_nonce' );
 		?>
-		<div id="proofing-scan-area">
-			<p>Upload photos via FTP to: <code><?php echo esc_html( $session_dir ); ?></code></p>
-			<button type="button" class="button button-primary" id="proofing-scan-btn" data-post_id="<?php echo esc_attr( $post->ID ); ?>" data-nonce="<?php echo wp_create_nonce('scan_dir_nonce'); ?>">Scan Directory</button>
-			<span id="proofing-scan-result" style="margin-left: 10px;"></span>
+		<style>
+			#proofing-drop-zone {
+				border: 2px dashed #c3c4c7;
+				border-radius: 6px;
+				padding: 32px 20px;
+				text-align: center;
+				cursor: pointer;
+				background: #f9f9f9;
+				transition: background 0.2s, border-color 0.2s;
+				margin-bottom: 12px;
+			}
+			#proofing-drop-zone.dragover { background: #e8f0fe; border-color: #2271b1; }
+			#proofing-drop-zone p { margin: 6px 0; color: #646970; font-size: 13px; }
+			#proofing-drop-zone .drop-icon { font-size: 36px; margin-bottom: 8px; }
+			#proofing-upload-progress { display: none; margin-top: 10px; }
+			#proofing-upload-bar-wrap { background: #e0e0e0; border-radius: 4px; height: 8px; margin-top: 6px; overflow: hidden; }
+			#proofing-upload-bar { height: 100%; background: #2271b1; width: 0%; transition: width 0.2s; }
+			#proofing-upload-status { font-size: 12px; color: #646970; margin-top: 4px; }
+			#proofing-thumb-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+			#proofing-thumb-strip img { width: 64px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+		</style>
+
+		<div id="proofing-drop-zone">
+			<div class="drop-icon">📸</div>
+			<p><strong>Drag &amp; drop photos here</strong> to upload</p>
+			<p>or <label for="proofing-file-input" style="color:#2271b1;cursor:pointer;">click to browse files</label></p>
+			<p style="font-size:11px;">Accepted: .webp, .jpg, .jpeg, .png</p>
+			<input type="file" id="proofing-file-input" accept=".webp,.jpg,.jpeg,.png" multiple style="display:none;">
 		</div>
-		<p class="description">Currently handles bulk upload by reading from the session folder. Click Scan to update the database with new photos found in the folder.</p>
+
+		<div id="proofing-upload-progress">
+			<div id="proofing-upload-bar-wrap"><div id="proofing-upload-bar"></div></div>
+			<div id="proofing-upload-status">Uploading 0 / 0...</div>
+		</div>
+
+		<div id="proofing-thumb-strip"></div>
+
+		<hr style="margin: 16px 0;">
+		<p style="margin-bottom: 6px;">Or upload via FTP to <code><?php echo esc_html( $session_dir ); ?></code> and scan:</p>
+		<button type="button" class="button" id="proofing-scan-btn"
+			data-post_id="<?php echo esc_attr( $post->ID ); ?>"
+			data-nonce="<?php echo esc_attr( $scan_nonce ); ?>">Scan Directory</button>
+		<span id="proofing-scan-result" style="margin-left: 10px;"></span>
+		<p id="proofing-photo-count" class="description" style="margin-top:6px;">
+			<?php
+			$photos_json = get_post_meta( $post->ID, '_proofing_photos_json', true );
+			$photos = json_decode( $photos_json, true );
+			$count = is_array( $photos ) ? count( $photos ) : 0;
+			echo esc_html( $count ) . ' photo(s) currently in session.';
+			?>
+		</p>
+
+		<input type="hidden" id="proofing-upload-nonce" value="<?php echo esc_attr( $upload_nonce ); ?>">
+		<input type="hidden" id="proofing-post-id" value="<?php echo esc_attr( $post->ID ); ?>">
 		<?php
+	}
+
+	public function ajax_upload_photo() {
+		check_ajax_referer( 'upload_photo_nonce', 'nonce' );
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error( array( 'message' => 'Permission denied.' ) );
+		}
+
+		$post_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
+		if ( ! $post_id ) {
+			wp_send_json_error( array( 'message' => 'Invalid post ID.' ) );
+		}
+
+		if ( empty( $_FILES['photo'] ) ) {
+			wp_send_json_error( array( 'message' => 'No file received.' ) );
+		}
+
+		$upload_dir  = wp_upload_dir();
+		$session_dir = $upload_dir['basedir'] . '/proofing-sessions/' . $post_id;
+		$session_url = $upload_dir['baseurl'] . '/proofing-sessions/' . $post_id;
+
+		if ( ! file_exists( $session_dir ) ) {
+			wp_mkdir_p( $session_dir );
+		}
+
+		// Override upload dir for this request
+		$overrider = function( $dirs ) use ( $session_dir, $session_url ) {
+			$dirs['path']   = $session_dir;
+			$dirs['url']    = $session_url;
+			$dirs['subdir'] = '';
+			return $dirs;
+		};
+		add_filter( 'upload_dir', $overrider );
+
+		$allowed_types = array( 'image/webp', 'image/jpeg', 'image/png' );
+		$overrides = array(
+			'test_form'   => false,
+			'mimes'       => array(
+				'webp' => 'image/webp',
+				'jpg|jpeg' => 'image/jpeg',
+				'png' => 'image/png',
+			),
+		);
+
+		$file = $_FILES['photo'];
+		$result = wp_handle_upload( $file, $overrides );
+
+		remove_filter( 'upload_dir', $overrider );
+
+		if ( isset( $result['error'] ) ) {
+			wp_send_json_error( array( 'message' => $result['error'] ) );
+		}
+
+		$filename = basename( $result['file'] );
+		$url      = $result['url'];
+
+		// Merge into photos JSON
+		$photos_json    = get_post_meta( $post_id, '_proofing_photos_json', true );
+		$existing       = json_decode( $photos_json, true );
+		if ( ! is_array( $existing ) ) $existing = array();
+
+		$existing_map = array();
+		foreach ( $existing as $p ) {
+			if ( isset( $p['filename'] ) ) $existing_map[ $p['filename'] ] = true;
+		}
+
+		if ( ! isset( $existing_map[ $filename ] ) ) {
+			$existing[] = array(
+				'id'       => md5( $filename . time() ),
+				'filename' => $filename,
+				'url'      => $url,
+				'status'   => 'unreviewed',
+				'note'     => '',
+			);
+			update_post_meta( $post_id, '_proofing_photos_json', wp_json_encode( $existing ) );
+		}
+
+		wp_send_json_success( array(
+			'filename'    => $filename,
+			'url'         => $url,
+			'total_count' => count( $existing ),
+		) );
 	}
 
 	public function save_meta_boxes( $post_id ) {
@@ -216,6 +348,8 @@ class Chitramaya_Proofing_System {
 		?>
 		<script>
 		jQuery(document).ready(function($) {
+
+			// --- Scan Directory (no page reload) ---
 			$('#proofing-scan-btn').on('click', function(e) {
 				e.preventDefault();
 				var btn = $(this);
@@ -232,12 +366,96 @@ class Chitramaya_Proofing_System {
 					btn.prop('disabled', false).text('Scan Directory');
 					if (response.success) {
 						$('#proofing-scan-result').css('color', 'green').text(response.data.message);
-						setTimeout(function(){ location.reload(); }, 1500);
+						// Update count inline — no page reload needed
+						if (response.data.total !== undefined) {
+							$('#proofing-photo-count').text(response.data.total + ' photo(s) currently in session.');
+						}
 					} else {
 						$('#proofing-scan-result').css('color', 'red').text(response.data.message || 'Error scanning directory');
 					}
 				});
 			});
+
+			// --- Drag & Drop Upload ---
+			var dropZone    = $('#proofing-drop-zone');
+			var fileInput   = $('#proofing-file-input');
+			var uploadNonce = $('#proofing-upload-nonce').val();
+			var postId      = $('#proofing-post-id').val();
+
+			dropZone.on('click', function() { fileInput.trigger('click'); });
+			fileInput.on('change', function() { handleFiles(this.files); });
+
+			dropZone.on('dragover dragenter', function(e) {
+				e.preventDefault();
+				$(this).addClass('dragover');
+			}).on('dragleave drop', function(e) {
+				e.preventDefault();
+				$(this).removeClass('dragover');
+				if (e.type === 'drop') handleFiles(e.originalEvent.dataTransfer.files);
+			});
+
+			function handleFiles(files) {
+				if (!files || !files.length) return;
+				var total    = files.length;
+				var done     = 0;
+				var errors   = [];
+				$('#proofing-upload-progress').show();
+				updateBar(0, total);
+
+				Array.from(files).forEach(function(file) {
+					var fd = new FormData();
+					fd.append('action',  'chitramaya_upload_photo');
+					fd.append('nonce',   uploadNonce);
+					fd.append('post_id', postId);
+					fd.append('photo',   file);
+
+					$.ajax({
+						url: ajaxurl,
+						type: 'POST',
+						data: fd,
+						processData: false,
+						contentType: false,
+						success: function(res) {
+							done++;
+							updateBar(done, total);
+							if (res.success) {
+								// Add thumbnail
+								$('#proofing-thumb-strip').append(
+									$('<img>').attr({src: res.data.url, title: res.data.filename})
+								);
+								// Update count
+								$('#proofing-photo-count').text(res.data.total_count + ' photo(s) currently in session.');
+							} else {
+								errors.push(file.name + ': ' + (res.data.message || 'Upload failed'));
+							}
+							if (done === total) finishUpload(errors);
+						},
+						error: function() {
+							done++;
+							errors.push(file.name + ': Server error');
+							updateBar(done, total);
+							if (done === total) finishUpload(errors);
+						}
+					});
+				});
+			}
+
+			function updateBar(done, total) {
+				var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+				$('#proofing-upload-bar').css('width', pct + '%');
+				$('#proofing-upload-status').text('Uploading ' + done + ' / ' + total + '...');
+			}
+
+			function finishUpload(errors) {
+				$('#proofing-upload-bar').css('width', '100%');
+				if (errors.length) {
+					$('#proofing-upload-status').css('color','red').text('Done with errors: ' + errors.join('; '));
+				} else {
+					$('#proofing-upload-status').css('color','green').text('All files uploaded successfully!');
+					setTimeout(function() { $('#proofing-upload-progress').fadeOut(); }, 3000);
+				}
+			}
+
 		});
 		</script>
 		<?php
@@ -299,7 +517,10 @@ class Chitramaya_Proofing_System {
 
 		update_post_meta( $post_id, '_proofing_photos_json', wp_json_encode( $new_photos ) );
 
-		wp_send_json_success( array( 'message' => sprintf( 'Found %d files. %d new files added.', count( $files ), $added_count ) ) );
+		wp_send_json_success( array(
+			'message' => sprintf( 'Found %d files. %d new files added.', count( $files ), $added_count ),
+			'total'   => count( $new_photos ),
+		) );
 	}
 
 	public function register_rest_routes() {
