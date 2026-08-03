@@ -2,6 +2,9 @@
 wp-admin/
 wp-includes/
 wp-content/
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/chitramaya-proofing/
 resources/
 wp-*.php
 index.php

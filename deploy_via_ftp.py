@@ -33,6 +33,21 @@ for root, dirs, files in os.walk('chitramaya'):
         remote_path = 'wp-content/themes/' + local_path
         files_to_upload.append((local_path, remote_path))
 
+# Automatically gather plugin files (chitramaya-proofing)
+plugin_local_dir = 'wp-content/plugins/chitramaya-proofing'
+if os.path.exists(plugin_local_dir):
+    for root, dirs, files in os.walk(plugin_local_dir):
+        # Skip the tools/ directory (local-only CLI, not needed on server)
+        if '/tools' in root or '\\tools' in root:
+            continue
+        for file in files:
+            if file.startswith('.'):
+                continue
+            local_path = os.path.join(root, file)
+            local_path = local_path.replace('\\', '/')
+            remote_path = local_path  # Already has wp-content/plugins/... path
+            files_to_upload.append((local_path, remote_path))
+
 # Root files (optional but good for consistency)
 files_to_upload.append(('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'))
 files_to_upload.append(('chitramaya/thalam-landing.html', 'thalam-landing.html'))
