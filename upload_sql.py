@@ -46,13 +46,26 @@ db_port_clean = int(DB_HOST.split(':')[1]) if ':' in DB_HOST else 3306
 # Generate a one-time PHP importer that reads and executes the SQL, then self-deletes
 importer_php = "<?php\n" \
                "error_reporting(E_ALL);\n" \
-               "ini_set('display_errors', 1);\n\n" \
-               f"$conn = @new mysqli('{db_host_clean}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}', {db_port_clean});\n" \
+               "ini_set('display_errors', 1);\n" \
+               "@ini_set('memory_limit', '512M');\n" \
+               "@set_time_limit(300);\n\n" \
+               "if (file_exists(__DIR__ . '/wp-config.php')) {\n" \
+               "    require_once __DIR__ . '/wp-config.php';\n" \
+               "    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);\n" \
+               "    $prefix = isset($table_prefix) ? $table_prefix : 'wp_';\n" \
+               "} else {\n" \
+               f"    $conn = new mysqli('{db_host_clean}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}', {db_port_clean});\n" \
+               "    $prefix = 'wp_';\n" \
+               "}\n\n" \
                "if ($conn->connect_error) {\n" \
                "    die('DB connect failed: ' . $conn->connect_error);\n" \
                "}\n\n" \
-               "// Execute full SQL dump first\n" \
+               "// 1. Read SQL dump and rewrite table prefixes to match active live prefix\n" \
                "$sql = @file_get_contents(__DIR__ . '/chitramaya_dump_live.sql');\n" \
+               "if ($sql && $prefix !== 'wp_') {\n" \
+               "    $sql = preg_replace('/(?<=\\b|\\`)(wp_)(?=[a-zA-Z0-9_]+)/', $prefix, $sql);\n" \
+               "}\n\n" \
+               "// 2. Import SQL dump into active prefix tables\n" \
                "if ($sql) {\n" \
                "    @$conn->multi_query($sql);\n" \
                "    while (@$conn->more_results()) {\n" \
@@ -60,15 +73,15 @@ importer_php = "<?php\n" \
                "        if ($res = @$conn->store_result()) { @$res->free(); }\n" \
                "    }\n" \
                "}\n\n" \
-               "// Guarantee admin user exists with password 'password' (working WP bcrypt hash)\n" \
-               "$pass_hash = '$wp$2y$12$3xNrUtX9gcGe0BxAHUTEpuefV5Yp7AhA.7A0OS8VeTlrJhs0e3jWG';\n" \
-               "$conn->query(\"INSERT INTO wp_users (ID, user_login, user_pass, user_nicename, user_email, user_registered, user_status, display_name) VALUES (1, 'admin', '$pass_hash', 'admin', 'admin@example.com', NOW(), 0, 'admin') ON DUPLICATE KEY UPDATE user_login='admin', user_pass='$pass_hash', user_email='admin@example.com';\");\n" \
-               "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_capabilities', 'a:1:{s:13:\\\"administrator\\\";b:1;}') ON DUPLICATE KEY UPDATE meta_value='a:1:{s:13:\\\"administrator\\\";b:1;}';\");\n" \
-               "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_user_level', '10') ON DUPLICATE KEY UPDATE meta_value='10';\");\n\n" \
+               "// 3. Guarantee 'admin' account exists in ACTIVE prefix tables ({$prefix}users)\n" \
+               "$pass_hash = '\\$wp\\$2y\\$12\\$3xNrUtX9gcGe0BxAHUTEpuefV5Yp7AhA.7A0OS8VeTlrJhs0e3jWG';\n" \
+               "$conn->query(\"INSERT INTO {$prefix}users (ID, user_login, user_pass, user_nicename, user_email, user_registered, user_status, display_name) VALUES (1, 'admin', '$pass_hash', 'admin', 'admin@example.com', NOW(), 0, 'admin') ON DUPLICATE KEY UPDATE user_login='admin', user_pass='$pass_hash', user_email='admin@example.com';\");\n" \
+               "$conn->query(\"INSERT INTO {$prefix}usermeta (user_id, meta_key, meta_value) VALUES (1, '{$prefix}capabilities', 'a:1:{s:13:\\\"administrator\\\";b:1;}') ON DUPLICATE KEY UPDATE meta_value='a:1:{s:13:\\\"administrator\\\";b:1;}';\");\n" \
+               "$conn->query(\"INSERT INTO {$prefix}usermeta (user_id, meta_key, meta_value) VALUES (1, '{$prefix}user_level', '10') ON DUPLICATE KEY UPDATE meta_value='10';\");\n\n" \
                "$conn->close();\n" \
                "@unlink(__FILE__);\n" \
                "@unlink(__DIR__ . '/chitramaya_dump_live.sql');\n" \
-               "echo 'DB import complete. Admin user verified.';\n" \
+               "echo 'DB import complete. Admin account verified for prefix: ' . $prefix;\n" \
                "?>"
 
 with open('./db_import.php', 'w') as f:
