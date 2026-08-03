@@ -132,7 +132,11 @@ class Chitramaya_Proofing_Uploader {
 			var postId      = $('#proofing-post-id').val();
 			var maxDim      = 2048; // Max width/height for proofing
 
-			dropZone.on('click', function() { fileInput.trigger('click'); });
+			dropZone.on('click', function(e) { 
+				if (e.target.id !== 'proofing-file-input' && e.target.tagName !== 'LABEL') {
+					fileInput.trigger('click'); 
+				}
+			});
 			fileInput.on('change', function() { processFiles(this.files); });
 
 			dropZone.on('dragover dragenter', function(e) {
