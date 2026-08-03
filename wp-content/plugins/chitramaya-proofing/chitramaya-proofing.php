@@ -14,13 +14,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'CHITRAMAYA_PROOFING_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CHITRAMAYA_PROOFING_URL', plugin_dir_url( __FILE__ ) );
 
-// Include the CPT class
+// Include classes
 require_once CHITRAMAYA_PROOFING_PATH . 'inc/class-proofing-cpt.php';
+require_once CHITRAMAYA_PROOFING_PATH . 'inc/class-proofing-uploader.php';
+require_once CHITRAMAYA_PROOFING_PATH . 'inc/class-proofing-api.php';
+require_once CHITRAMAYA_PROOFING_PATH . 'inc/class-proofing-mailer.php';
 
 // Initialize the system
 function chitramaya_proofing_init() {
 	$proofing_system = new Chitramaya_Proofing_System();
 	$proofing_system->init();
+
+	$proofing_uploader = new Chitramaya_Proofing_Uploader();
+	$proofing_uploader->init();
+
+	$proofing_api = new Chitramaya_Proofing_API();
+	$proofing_api->init();
+
+	$proofing_mailer = new Chitramaya_Proofing_Mailer();
+	$proofing_mailer->init();
 }
 add_action( 'plugins_loaded', 'chitramaya_proofing_init' );
 
