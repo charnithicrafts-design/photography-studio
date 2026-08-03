@@ -182,7 +182,6 @@ class Chitramaya_Proofing_Uploader {
 					reader.onload = function(e) {
 						var img = new Image();
 						img.onload = function() {
-							var canvas = document.createElement('canvas');
 							var width = img.width;
 							var height = img.height;
 
@@ -196,15 +195,60 @@ class Chitramaya_Proofing_Uploader {
 								}
 							}
 
-							canvas.width = width;
-							canvas.height = height;
-							var ctx = canvas.getContext('2d');
-							ctx.drawImage(img, 0, 0, width, height);
+							var canvas = document.createElement('canvas');
+							var ctx = canvas.getContext('2d', { alpha: false, colorSpace: 'srgb' });
+							
+							// Multi-step downscaling for crystal clear quality
+							if (img.width > width * 2 || img.height > height * 2) {
+								var stepCanvas = document.createElement('canvas');
+								var stepCtx = stepCanvas.getContext('2d', { alpha: false, colorSpace: 'srgb' });
+								
+								var currentWidth = img.width;
+								var currentHeight = img.height;
+								
+								// First step down to half
+								currentWidth = Math.floor(currentWidth / 2);
+								currentHeight = Math.floor(currentHeight / 2);
+								stepCanvas.width = currentWidth;
+								stepCanvas.height = currentHeight;
+								stepCtx.drawImage(img, 0, 0, currentWidth, currentHeight);
+								
+								// Continue stepping down by half until we are close to the target
+								while (currentWidth > width * 2 || currentHeight > height * 2) {
+									var nextWidth = Math.floor(currentWidth / 2);
+									var nextHeight = Math.floor(currentHeight / 2);
+									
+									var nextCanvas = document.createElement('canvas');
+									var nextCtx = nextCanvas.getContext('2d', { alpha: false, colorSpace: 'srgb' });
+									nextCanvas.width = nextWidth;
+									nextCanvas.height = nextHeight;
+									
+									nextCtx.drawImage(stepCanvas, 0, 0, nextWidth, nextHeight);
+									
+									stepCanvas = nextCanvas;
+									currentWidth = nextWidth;
+									currentHeight = nextHeight;
+								}
+								
+								// Final draw to target size with high quality smoothing
+								canvas.width = width;
+								canvas.height = height;
+								ctx.imageSmoothingEnabled = true;
+								ctx.imageSmoothingQuality = 'high';
+								ctx.drawImage(stepCanvas, 0, 0, width, height);
+							} else {
+								// Direct draw if not downsizing significantly
+								canvas.width = width;
+								canvas.height = height;
+								ctx.imageSmoothingEnabled = true;
+								ctx.imageSmoothingQuality = 'high';
+								ctx.drawImage(img, 0, 0, width, height);
+							}
 							
 							canvas.toBlob(function(blob) {
 								if (blob) resolve(blob);
 								else reject(new Error('Canvas toBlob failed'));
-							}, 'image/webp', 0.90);
+							}, 'image/webp', 0.95);
 						};
 						img.onerror = function() { reject(new Error('Invalid image')); };
 						img.src = e.target.result;
