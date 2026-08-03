@@ -94,8 +94,9 @@ class Chitramaya_Proofing_Uploader {
 	}
 
 	public function client_side_optimization_js() {
+		$module_url = plugins_url( 'assets/js/dist/optimizer.mjs', dirname(__FILE__) );
 		?>
-		<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+		<script type="module" src="<?php echo esc_url( $module_url ); ?>"></script>
 		<script>
 		jQuery(document).ready(function($) {
 
@@ -160,19 +161,21 @@ class Chitramaya_Proofing_Uploader {
 				// Process sequentially via high-quality Web Worker
 				for (var i = 0; i < files.length; i++) {
 					var file = files[i];
-					$('#proofing-upload-status').text('Optimizing ' + file.name + '...');
+					$('#proofing-upload-status').text('Initializing ' + file.name + '...');
 					
 					try {
-						// Use browser-image-compression (preserves EXIF, rotation, multi-step scaling)
-						var options = {
-							maxSizeMB: 1.5,
-							maxWidthOrHeight: maxDim,
-							useWebWorker: true,
-							fileType: 'image/webp',
-							initialQuality: 0.95
-						};
+						// Wait for the ES module to load and attach jsquashCompress
+						if (typeof window.jsquashCompress !== 'function') {
+							await new Promise(r => setTimeout(r, 1000));
+							if (typeof window.jsquashCompress !== 'function') {
+								throw new Error("WASM compressor failed to load.");
+							}
+						}
 						
-						var optimizedBlob = await imageCompression(file, options);
+						var optimizedBlob = await window.jsquashCompress(file, function(statusText) {
+							$('#proofing-upload-status').text(statusText + ' (' + file.name + ')');
+						});
+						
 						var originalName = file.name.replace(/\.[^/.]+$/, "") + ".webp";
 						var optimizedFile = new File([optimizedBlob], originalName, { type: 'image/webp' });
 						
