@@ -30,22 +30,7 @@ window.jsquashCompress = async function(file, onProgress) {
         throw new Error('Decoding failed: ' + e.message);
     }
     
-    let { width, height } = imageData;
-    const maxDim = 2048;
-    
-    if (width > maxDim || height > maxDim) {
-        if (width > height) {
-            height = Math.round(height * (maxDim / width));
-            width = maxDim;
-        } else {
-            width = Math.round(width * (maxDim / height));
-            height = maxDim;
-        }
-        
-        if (onProgress) onProgress('Resizing...');
-        // High quality Lanczos3 resizing via Squoosh WASM
-        imageData = await resize(imageData, { width, height, method: 'lanczos3' });
-    }
+
     
     if (onProgress) onProgress('Encoding WebP...');
     
