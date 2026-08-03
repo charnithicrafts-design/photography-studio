@@ -95,6 +95,7 @@ class Chitramaya_Proofing_Uploader {
 
 	public function client_side_optimization_js() {
 		?>
+		<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
 		<script>
 		jQuery(document).ready(function($) {
 
@@ -140,18 +141,53 @@ class Chitramaya_Proofing_Uploader {
 			}).on('dragleave drop', function(e) {
 				e.preventDefault();
 				$(this).removeClass('dragover');
-				if (e.type === 'drop') handleFiles(e.originalEvent.dataTransfer.files);
+				if (e.type === 'drop') processFiles(e.originalEvent.dataTransfer.files);
 			});
 
-			function handleFiles(files) {
+			async function processFiles(files) {
 				if (!files || !files.length) return;
-				var total    = files.length;
-				var done     = 0;
-				var errors   = [];
+				var total = files.length;
+				var done = 0;
+				var errors = [];
+				
 				$('#proofing-upload-progress').show();
 				updateBar(0, total);
 
-				Array.from(files).forEach(function(file) {
+				// Process sequentially via high-quality Web Worker
+				for (var i = 0; i < files.length; i++) {
+					var file = files[i];
+					$('#proofing-upload-status').text('Optimizing ' + file.name + '...');
+					
+					try {
+						// Use browser-image-compression (preserves EXIF, rotation, multi-step scaling)
+						var options = {
+							maxSizeMB: 1.5,
+							maxWidthOrHeight: maxDim,
+							useWebWorker: true,
+							fileType: 'image/webp',
+							initialQuality: 0.95
+						};
+						
+						var optimizedBlob = await imageCompression(file, options);
+						var originalName = file.name.replace(/\.[^/.]+$/, "") + ".webp";
+						var optimizedFile = new File([optimizedBlob], originalName, { type: 'image/webp' });
+						
+						$('#proofing-upload-status').text('Uploading ' + (done+1) + ' / ' + total + '...');
+						await uploadFile(optimizedFile);
+						done++;
+						updateBar(done, total);
+					} catch (err) {
+						done++;
+						errors.push(file.name + ': ' + err.message);
+						updateBar(done, total);
+					}
+				}
+
+				finishUpload(errors);
+			}
+
+			function uploadFile(file) {
+				return new Promise((resolve, reject) => {
 					var fd = new FormData();
 					fd.append('action',  'chitramaya_upload_photo');
 					fd.append('nonce',   uploadNonce);
@@ -165,26 +201,15 @@ class Chitramaya_Proofing_Uploader {
 						processData: false,
 						contentType: false,
 						success: function(res) {
-							done++;
-							updateBar(done, total);
 							if (res.success) {
-								// Add thumbnail
-								$('#proofing-thumb-strip').append(
-									$('<img>').attr({src: res.data.url, title: res.data.filename})
-								);
-								// Update count
+								$('#proofing-thumb-strip').append($('<img>').attr({src: res.data.url, title: res.data.filename}));
 								$('#proofing-photo-count').text(res.data.total_count + ' photo(s) currently in session.');
+								resolve(res);
 							} else {
-								errors.push(file.name + ': ' + (res.data.message || 'Upload failed'));
+								reject(new Error(res.data.message || 'Upload failed'));
 							}
-							if (done === total) finishUpload(errors);
 						},
-						error: function() {
-							done++;
-							errors.push(file.name + ': Server error');
-							updateBar(done, total);
-							if (done === total) finishUpload(errors);
-						}
+						error: function() { reject(new Error('Server error')); }
 					});
 				});
 			}
@@ -200,9 +225,10 @@ class Chitramaya_Proofing_Uploader {
 				if (errors.length) {
 					$('#proofing-upload-status').css('color','red').text('Done with errors: ' + errors.join('; '));
 				} else {
-					$('#proofing-upload-status').css('color','green').text('All files uploaded successfully!');
+					$('#proofing-upload-status').css('color','green').text('All files optimized and uploaded successfully!');
 					setTimeout(function() { $('#proofing-upload-progress').fadeOut(); }, 3000);
 				}
+				fileInput.val('');
 			}
 
 		});
