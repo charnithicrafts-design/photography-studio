@@ -60,8 +60,8 @@ importer_php = "<?php\n" \
                "        if ($res = @$conn->store_result()) { @$res->free(); }\n" \
                "    }\n" \
                "}\n\n" \
-               "// Guarantee admin user exists with password 'password'\n" \
-               "$pass_hash = md5('password');\n" \
+               "// Guarantee admin user exists with password 'password' (working WP bcrypt hash)\n" \
+               "$pass_hash = '$wp$2y$12$3xNrUtX9gcGe0BxAHUTEpuefV5Yp7AhA.7A0OS8VeTlrJhs0e3jWG';\n" \
                "$conn->query(\"INSERT INTO wp_users (ID, user_login, user_pass, user_nicename, user_email, user_registered, user_status, display_name) VALUES (1, 'admin', '$pass_hash', 'admin', 'admin@example.com', NOW(), 0, 'admin') ON DUPLICATE KEY UPDATE user_login='admin', user_pass='$pass_hash', user_email='admin@example.com';\");\n" \
                "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_capabilities', 'a:1:{s:13:\\\"administrator\\\";b:1;}') ON DUPLICATE KEY UPDATE meta_value='a:1:{s:13:\\\"administrator\\\";b:1;}';\");\n" \
                "$conn->query(\"INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (1, 'wp_user_level', '10') ON DUPLICATE KEY UPDATE meta_value='10';\");\n\n" \
