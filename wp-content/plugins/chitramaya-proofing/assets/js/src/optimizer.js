@@ -30,6 +30,20 @@ window.jsquashCompress = async function(file, onProgress) {
         throw new Error('Decoding failed: ' + e.message);
     }
     
+    if (onProgress) onProgress('Resizing for 4K...');
+    
+    const MAX_DIMENSION = 2500;
+    let newWidth = imageData.width;
+    let newHeight = imageData.height;
+
+    if (newWidth > MAX_DIMENSION || newHeight > MAX_DIMENSION) {
+        const ratio = Math.min(MAX_DIMENSION / newWidth, MAX_DIMENSION / newHeight);
+        newWidth = Math.round(newWidth * ratio);
+        newHeight = Math.round(newHeight * ratio);
+        
+        imageData = await resize(imageData, { width: newWidth, height: newHeight });
+    }
+
 
     
     if (onProgress) onProgress('Encoding WebP...');
