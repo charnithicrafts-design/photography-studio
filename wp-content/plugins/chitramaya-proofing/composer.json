@@ -1,0 +1,18 @@
+{
+    "name": "chitramaya/proofing",
+    "description": "Chitramaya Photo Proofing Plugin",
+    "type": "wordpress-plugin",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "yoast/phpunit-polyfills": "^2.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chitramaya\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:verbose": "phpunit --testdox"
+    }
+}
