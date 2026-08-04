@@ -22,6 +22,12 @@ class Chitramaya_Proofing_API {
 			'permission_callback' => '__return_true',
 		) );
 
+		register_rest_route( 'chitramaya/v1', '/proofing/reselect', array(
+			'methods'             => 'POST',
+			'callback'            => array( $this, 'api_reselect_proofing' ),
+			'permission_callback' => '__return_true',
+		) );
+
 		register_rest_route( 'chitramaya/v1', '/proofing/session/(?P<id>\d+)', array(
 			'methods'             => 'GET',
 			'callback'            => array( $this, 'api_get_session' ),
@@ -94,6 +100,23 @@ class Chitramaya_Proofing_API {
 
 		// Fire an action so the Mailer class can handle it
 		do_action( 'chitramaya_proofing_submitted', $post->ID );
+
+		return rest_ensure_response( array( 'success' => true ) );
+	}
+
+	public function api_reselect_proofing( $request ) {
+		$post = $this->validate_api_request( $request );
+		if ( is_wp_error( $post ) ) return $post;
+
+		$status = get_post_meta( $post->ID, '_proofing_status', true );
+		if ( $status !== 'submitted' ) {
+			return new WP_Error( 'not_submitted', 'Reselection can only be requested for submitted sessions.', array( 'status' => 400 ) );
+		}
+
+		update_post_meta( $post->ID, '_proofing_status', 'in_review' );
+		update_post_meta( $post->ID, '_proofing_last_reselection_request', time() );
+
+		do_action( 'chitramaya_proofing_reselection_requested', $post->ID );
 
 		return rest_ensure_response( array( 'success' => true ) );
 	}
