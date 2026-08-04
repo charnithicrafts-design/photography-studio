@@ -51,7 +51,7 @@ class ApiValidationTest extends WP_UnitTestCase {
         $request = new WP_REST_Request( 'GET', '/chitramaya/v1/proofing/session/' . $this->post_id );
         $request->set_param( 'token', 'VALID_TOKEN' );
         $response = $this->server->dispatch( $request );
-        $this->assertEquals( 200, $response->get_status() );
+        $this->assertEquals( 200, (is_wp_error($response) ? $response->get_error_data()["status"] : $response->get_status()) );
     }
 
     /**
@@ -63,7 +63,7 @@ class ApiValidationTest extends WP_UnitTestCase {
         $request->set_param( 'token', 'VALID_TOKEN' );
         $request->set_param( 'photos', [] );
         $response = $this->server->dispatch( $request );
-        $this->assertEquals( 200, $response->get_status() );
+        $this->assertEquals( 200, (is_wp_error($response) ? $response->get_error_data()["status"] : $response->get_status()) );
     }
 
     protected function assertErrorResponse( $code, $response, $status ) {

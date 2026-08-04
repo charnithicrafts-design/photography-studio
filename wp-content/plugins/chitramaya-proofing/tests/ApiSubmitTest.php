@@ -27,7 +27,7 @@ class ApiSubmitTest extends WP_UnitTestCase {
         $request->set_param( 'session_id', $this->post_id );
         $request->set_param( 'token', 'testcode123' );
         
-        $this->api->submit( $request );
+        $this->api->api_submit_proofing( $request );
         
         $status = get_post_meta( $this->post_id, '_proofing_status', true );
         $this->assertEquals( 'submitted', $status );
@@ -41,7 +41,7 @@ class ApiSubmitTest extends WP_UnitTestCase {
         $request->set_param( 'session_id', $this->post_id );
         $request->set_param( 'token', 'testcode123' );
         
-        $this->api->submit( $request );
+        $this->api->api_submit_proofing( $request );
         
         $this->assertGreaterThan( 0, did_action( 'chitramaya_proofing_submitted' ) );
     }
@@ -54,10 +54,10 @@ class ApiSubmitTest extends WP_UnitTestCase {
         $request->set_param( 'session_id', $this->post_id );
         $request->set_param( 'token', 'testcode123' );
         
-        $this->api->submit( $request );
+        $this->api->api_submit_proofing( $request );
         $status1 = get_post_meta( $this->post_id, '_proofing_status', true );
         
-        $this->api->submit( $request );
+        $this->api->api_submit_proofing( $request );
         $status2 = get_post_meta( $this->post_id, '_proofing_status', true );
         
         $this->assertEquals( 'submitted', $status1 );
@@ -75,14 +75,14 @@ class ApiSubmitTest extends WP_UnitTestCase {
         $request->set_param( 'session_id', $this->post_id );
         $request->set_param( 'token', 'testcode123' );
         
-        $response = $this->api->save( $request );
+        $response = $this->api->api_save_proofing( $request );
         
-        $this->assertTrue( is_wp_error( $response ) || ( method_exists( $response, 'get_status' ) && $response->get_status() === 403 ) || ( isset( $response->status ) && $response->status === 403 ) );
+        $this->assertTrue( is_wp_error( $response ) || ( method_exists( $response, 'get_status' ) && (is_wp_error($response) ? $response->get_error_data()["status"] : $response->get_status()) === 403 ) || ( isset( $response->status ) && $response->status === 403 ) );
         
         if ( is_wp_error( $response ) ) {
             $this->assertEquals( 'session_locked', $response->get_error_code() );
         } elseif ( method_exists( $response, 'get_status' ) ) {
-            $this->assertEquals( 403, $response->get_status() );
+            $this->assertEquals( 403, (is_wp_error($response) ? $response->get_error_data()["status"] : $response->get_status()) );
         }
     }
 }
