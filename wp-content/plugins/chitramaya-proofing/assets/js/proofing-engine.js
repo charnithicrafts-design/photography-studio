@@ -23,7 +23,9 @@ const filterTabs          = document.querySelectorAll('.filter-tab');
 const viewBtns            = document.querySelectorAll('.view-btn');
 const btnSubmitModal      = document.getElementById('btn-submit-modal');
 const savingInd           = document.getElementById('saving-indicator');
-const submittedOverlay    = document.getElementById('submitted-overlay');
+const submittedGalleryView= document.getElementById('submitted-gallery-view');
+const submittedGalleryGrid= document.getElementById('submitted-gallery-grid');
+const btnRequestReselect  = document.getElementById('btn-request-reselect');
 const progressFillBar     = document.getElementById('progress-fill-bar');
 
 // Quota Ring
@@ -58,7 +60,13 @@ async function init() {
 		const res  = await fetch(`${ChitramayaProofing.API_URL}/session/${ChitramayaProofing.SESSION_ID}?token=${ChitramayaProofing.TOKEN}`);
 		const data = await res.json();
 
-		if (data.status === 'submitted') { showSubmittedOverlay(); return; }
+		if (data.status === 'submitted') {
+			state.photos = data.photos || [];
+			state.quota  = data.quota  || 30;
+			state.status = data.status || 'in_review';
+			showSubmittedOverlay();
+			return;
+		}
 
 		state.photos = data.photos || [];
 		state.quota  = data.quota  || 30;
@@ -470,6 +478,11 @@ function setupEventListeners() {
 	btnSubmitModal.addEventListener('click', openModal);
 	btnModalCancel.addEventListener('click', () => { submitModal.style.display = 'none'; });
 	btnModalConfirm.addEventListener('click', submitFinal);
+	
+	// Reselect
+	if (btnRequestReselect) {
+		btnRequestReselect.addEventListener('click', requestReselection);
+	}
 }
 
 // =====================================================
@@ -527,7 +540,39 @@ async function submitFinal() {
 
 function showSubmittedOverlay() {
 	appEl.style.display = 'none';
-	submittedOverlay.style.display = 'flex';
+	submittedGalleryView.style.display = 'block';
+	
+	submittedGalleryGrid.innerHTML = '';
+	const selected = state.photos.filter(p => p.status === 'selected');
+	selected.forEach(p => {
+		submittedGalleryGrid.innerHTML += `<img src="${p.url}" loading="lazy" alt="${p.filename || 'Photo'}">`;
+	});
+}
+
+async function requestReselection() {
+	const conf = confirm('Are you sure you want to request a reselection? Your session will be unlocked.');
+	if (!conf) return;
+
+	btnRequestReselect.disabled = true;
+	btnRequestReselect.textContent = 'Requesting...';
+
+	try {
+		const res = await fetch(`${ChitramayaProofing.API_URL}/reselect`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ session_id: ChitramayaProofing.SESSION_ID, token: ChitramayaProofing.TOKEN })
+		});
+
+		if (res.ok) {
+			window.location.reload();
+		} else {
+			throw new Error('Server error');
+		}
+	} catch (e) {
+		alert('Error requesting reselection. Please try again.');
+		btnRequestReselect.disabled = false;
+		btnRequestReselect.textContent = 'Request Reselection';
+	}
 }
 
 // =====================================================

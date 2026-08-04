@@ -190,13 +190,14 @@ if ( isset( $_GET['token'] ) && $_GET['token'] === $access_code ) {
 		</div>
 	</div>
 
-	<!-- ===== SUBMITTED OVERLAY ===== -->
-	<div class="submitted-overlay" id="submitted-overlay">
-		<div class="submitted-inner">
-			<div class="submitted-check">✓</div>
-			<h1>Selection Submitted!</h1>
-			<p>Your photos have been sent to Chithramaya Creatives. You'll hear from us soon.</p>
+	<!-- ===== SUBMITTED GALLERY VIEW ===== -->
+	<div class="submitted-gallery-view" id="submitted-gallery-view" style="display:none">
+		<div class="submitted-banner">
+			<h2>Your Selection is Confirmed!</h2>
+			<p>Thank you for submitting your photos. We've received your selection and will process it shortly.</p>
+			<p class="reselect-text">Changed your mind or missed something? <button class="btn-outline" id="btn-request-reselect">Request Reselection</button></p>
 		</div>
+		<div class="submitted-gallery-grid" id="submitted-gallery-grid"></div>
 	</div>
 
 	<div class="saving-indicator" id="saving-indicator">Saving…</div>
