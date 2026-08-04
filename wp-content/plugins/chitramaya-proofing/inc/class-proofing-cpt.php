@@ -90,7 +90,7 @@ class Chitramaya_Proofing_System {
 			if ( $status === 'submitted' ) {
 				$status_label = 'Submitted';
 				$status_color = '#5cb85c';
-			} elseif ( get_post_meta( $session->ID, '_proofing_last_reselection_request', true ) && $status === 'in_review' ) {
+			} elseif ( $status === 'reselection_requested' || (get_post_meta( $session->ID, '_proofing_last_reselection_request', true ) && $status === 'in_review') ) {
 				$status_label = 'Reselection Requested';
 				$status_color = '#d9534f';
 			}
@@ -212,6 +212,7 @@ class Chitramaya_Proofing_System {
 				<td>
 					<select id="_proofing_status" name="_proofing_status">
 						<option value="in_review" <?php selected( $status, 'in_review' ); ?>><?php _e( 'In Review', 'chitramaya-proofing' ); ?></option>
+						<option value="reselection_requested" <?php selected( $status, 'reselection_requested' ); ?>><?php _e( 'Reselection Requested', 'chitramaya-proofing' ); ?></option>
 						<option value="submitted" <?php selected( $status, 'submitted' ); ?>><?php _e( 'Submitted', 'chitramaya-proofing' ); ?></option>
 					</select>
 				</td>

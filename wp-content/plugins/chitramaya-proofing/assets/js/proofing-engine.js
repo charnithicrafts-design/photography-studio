@@ -64,6 +64,7 @@ async function init() {
 			state.photos = data.photos || [];
 			state.quota  = data.quota  || 30;
 			state.status = data.status || 'in_review';
+			setupEventListeners();
 			showSubmittedOverlay();
 			return;
 		}

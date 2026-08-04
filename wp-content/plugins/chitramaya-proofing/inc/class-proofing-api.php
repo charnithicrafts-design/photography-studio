@@ -113,7 +113,7 @@ class Chitramaya_Proofing_API {
 			return new WP_Error( 'not_submitted', 'Reselection can only be requested for submitted sessions.', array( 'status' => 400 ) );
 		}
 
-		update_post_meta( $post->ID, '_proofing_status', 'in_review' );
+		update_post_meta( $post->ID, '_proofing_status', 'reselection_requested' );
 		update_post_meta( $post->ID, '_proofing_last_reselection_request', time() );
 
 		do_action( 'chitramaya_proofing_reselection_requested', $post->ID );
