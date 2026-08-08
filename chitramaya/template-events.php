@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Pillar — Events & Portrait (Monumental Z-Pattern)
+ * Template Name: Pillar — Events & Portrait (Brutalist Accordion)
  * Template Post Type: page
  */
 ?>
@@ -10,288 +10,238 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events & Portrait Photography — Chithramaya</title>
-  <meta name="description" content="Preserving the human milestone with a cinematic, deeply emotional editorial eye.">
+  <meta name="description" content="Preserving your family's most meaningful moments with genuine warmth and pure emotion.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/events-portrait')); ?>">
   <?php wp_head(); ?>
   <style>
-    :root {
-      --color-dark: #0a0a0a; /* Stark Brutalist Dark */
-      --color-accent: #A96F44; /* Chithramaya Camel */
-    }
-
     /* OVERFLOW PROTECTION FOR MOBILE */
-    .brut-protect-overflow {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-      max-width: 100vw;
-    }
+    .brut-protect-overflow { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; max-width: 100vw; }
 
-    /* HERO SECTION (Cinematic Full-Bleed) */
-    .events-hero {
-      position: relative;
-      min-height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(10,17,40,0.2) 0%, rgba(10,17,40,0.9) 100%), url('https://images.unsplash.com/photo-1758084413534-ca441e8376a3?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+    /* NO-PHOTO HERO SECTION (SPLIT COMPOSITION) */
+    .corp-hero {
+      position: relative; min-height: 80vh; width: 100vw; display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 1.5rem 6rem; background: var(--color-light); color: var(--color-dark); border-bottom: 2px solid var(--color-dark);
     }
-
-    .events-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
+    .corp-hero-content { 
+      position: relative; z-index: 2; width: 100%; max-width: 1600px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 4rem;
     }
-
-    .events-hero-h1 {
-      font-size: var(--type-step-5);
-      font-weight: 900;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-      color: var(--color-light);
+    .corp-hero-h1 { 
+      font-size: clamp(3rem, 9vw, 9rem); font-family: var(--font-sans, 'Inter', sans-serif); 
+      font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; color: inherit; margin: 0; word-break: normal;
     }
-
-    .events-hero-sub {
-      font-size: var(--type-step-1);
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 700px;
-      margin-bottom: 3rem;
-    }
-
-    @media (min-width: 992px) {
-      .events-hero {
-        padding: 6rem 4rem;
-      }
-    }
-
-    /* MONUMENTAL Z-PATTERN GALLERY */
-    .monumental-container {
-      padding: 8rem 1.5rem;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
+    .corp-hero-meta { max-width: 450px; text-align: left; }
+    .corp-hero-sub { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.5; color: var(--color-dark); opacity: 0.8; margin-bottom: 3rem; }
     
-    .monumental-section {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      margin-bottom: 8rem;
-    }
-    .monumental-section:last-child {
-      margin-bottom: 0;
-    }
+    @media (min-width: 992px) { .corp-hero { padding: 10rem 4rem 6rem; } }
 
-    .monumental-img-wrapper {
-      width: 100%;
-      background: var(--color-dark);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-    }
+    /* BRUTALIST SERVICES ACCORDION GRID */
+    .services-wrapper { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; background: var(--color-light); color: var(--color-dark); }
+    .services-grid { display: grid; gap: 4rem; }
+    @media (min-width: 992px) { .services-grid { grid-template-columns: 1fr 2fr; gap: 8rem; align-items: start; } }
 
-    /* ZERO NEGATIVE LENS - 100% PURE PHOTOGRAPHY */
-    .monumental-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s ease;
-    }
-    .monumental-img-wrapper:hover .monumental-img {
-      transform: scale(1.03);
-    }
+    /* Left Column */
+    .services-intro-title { font-size: var(--type-step-3); font-family: var(--font-serif, 'Cormorant Garamond', serif); font-weight: 400; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid var(--color-dark); padding-bottom: 0.5rem; }
+    .services-intro-text { font-size: var(--type-step-0); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.6; color: var(--color-dark); margin-bottom: 2rem; }
 
-    .monumental-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    /* Right Column (Accordion) */
+    .b-accordion { border-top: 2px solid var(--color-dark); }
+    .b-accordion-group { border-bottom: 2px solid var(--color-dark); }
+    .b-accordion-btn { 
+      width: 100%; background: transparent; border: none; padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; 
+      font-size: clamp(1.25rem, 3vw, 2.5rem); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: var(--color-dark); transition: color 0.2s; 
     }
+    .b-accordion-btn:hover { color: var(--color-accent); }
+    .b-accordion-btn[aria-expanded="true"] { color: var(--color-accent); }
+    .b-accordion-num { font-weight: 400; opacity: 1; margin-right: 1.5rem; color: var(--color-accent); font-family: var(--font-sans); }
+    .b-accordion-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; }
+    .b-accordion-btn[aria-expanded="true"] .b-accordion-icon { transform: rotate(45deg); }
 
-    .monumental-chapter {
-      font-family: var(--font-mono, monospace);
-      font-size: var(--type-step-0);
-      font-weight: 700;
-      color: var(--color-accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
+    .b-accordion-panel { display: none; padding: 0 0 2.5rem 0; overflow: hidden; }
+    .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel { display: block; animation: slideDown 0.3s ease forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-    .monumental-header {
-      font-size: var(--type-step-4);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--color-dark);
-      margin-bottom: 1rem;
-    }
+    /* Accordion Content with Landscape Photos */
+    .b-accordion-content-wrapper { display: flex; flex-direction: column; gap: 2rem; }
+    @media (min-width: 768px) { .b-accordion-content-wrapper { flex-direction: row; align-items: flex-start; gap: 3rem; } }
+    .b-accordion-img { width: 100%; max-width: 400px; aspect-ratio: 4/3; object-fit: cover; object-position: top center; border: 2px solid var(--color-dark); }
+    .b-accordion-details { flex: 1; }
+    
+    .b-accordion-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.9; margin-bottom: 1.5rem; font-weight: 500; }
+    .b-accordion-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .b-accordion-list li { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: var(--color-dark); opacity: 0.9; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; }
 
-    .monumental-copy {
-      font-size: var(--type-step-1);
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 3rem;
-      max-width: 600px;
-    }
-
-    .monumental-deliverables {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .monumental-deliverables span {
-      font-size: var(--type-step-1);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--color-dark);
-      line-height: 1.2;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      padding-bottom: 0.5rem;
-    }
-    .monumental-deliverables span:last-child {
-      border-bottom: none;
-    }
-
-    /* DESKTOP Z-PATTERN GRID */
-    @media (min-width: 992px) {
-      .monumental-container {
-        padding: 12rem 4rem;
-      }
-      .monumental-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6rem;
-        align-items: center;
-        margin-bottom: 16rem; /* Massive emotional breathing room */
-      }
-      
-      .monumental-img-wrapper {
-        aspect-ratio: 3/4; /* Elegant portrait crop */
-      }
-
-      /* Odd: Image Left, Text Right */
-      .monumental-section:nth-child(odd) .monumental-img-wrapper {
-        order: 1;
-      }
-      .monumental-section:nth-child(odd) .monumental-content {
-        order: 2;
-        padding-left: 2rem;
-      }
-
-      /* Even: Image Right, Text Left */
-      .monumental-section:nth-child(even) .monumental-img-wrapper {
-        order: 2;
-      }
-      .monumental-section:nth-child(even) .monumental-content {
-        order: 1;
-        padding-right: 2rem;
-      }
-    }
+    /* IMPACT SECTION */
+    .brut-impact { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; border-top: 2px solid var(--color-dark); border-bottom: 2px solid var(--color-dark); background: var(--color-light); }
+    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; color: var(--color-dark); }
+    .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+    @media (min-width: 992px) { .brut-impact-grid { grid-template-columns: repeat(3, 1fr); } }
+    .impact-card { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 2px solid var(--color-dark); }
+    .impact-num { font-size: var(--type-step-5); font-family: var(--font-sans); font-weight: 900; color: var(--color-accent); line-height: 0.8; margin-bottom: 1rem; }
+    .impact-header { font-size: var(--type-step-2); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-dark); }
+    .impact-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.8; }
 
     /* GLOBAL CTA */
-    .global-cta { padding: 8rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
-    .global-cta-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 3rem; }
+    .global-cta { padding: 10rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
+    .global-cta-title { font-size: clamp(3rem, 8vw, 6rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 4rem; }
   </style>
 </head>
-<body>
+<body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION -->
-  <section class="events-hero">
-    <div class="events-hero-content">
-      <h1 class="events-hero-h1 brut-protect-overflow">Events &<br>Portrait.</h1>
-      <p class="events-hero-sub brut-protect-overflow">Preserving the human milestone with a cinematic, deeply emotional editorial eye.</p>
-      <div>
-        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Begin Your Story</a>
+  <!-- HERO SECTION (NO PHOTOS) -->
+  <section class="corp-hero">
+    <div class="corp-hero-content">
+      <h1 class="corp-hero-h1">Events &<br>Portrait.</h1>
+      
+      <div class="corp-hero-meta">
+        <p class="corp-hero-sub brut-protect-overflow">Preserving your family's most meaningful moments with genuine warmth and pure emotion.</p>
+        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Begin Your Story</a>
       </div>
     </div>
   </section>
 
-  <!-- MONUMENTAL GALLERY -->
-  <div class="monumental-container">
-    
-    <!-- CHAPTER 01 -->
-    <article class="monumental-section" id="service-1">
-      <div class="monumental-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1586102728466-46b99b3bc411?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Anticipation (Maternity)" class="monumental-img">
+  <!-- ACCORDION SERVICES WITH LANDSCAPE PHOTOS -->
+  <section class="services-wrapper">
+    <div class="services-grid">
+      
+      <div class="services-left">
+        <h2 class="services-intro-title">SERVICES —</h2>
+        <p class="services-intro-text">Your Family's Story.</p>
+        <p class="services-intro-text">We honor the quiet, intimate moments and the grand celebrations that shape your lives.</p>
       </div>
-      <div class="monumental-content">
-        <div class="monumental-chapter">Chapter 01</div>
-        <h2 class="monumental-header brut-protect-overflow">The Anticipation</h2>
-        <p class="monumental-copy">Honoring the quiet, profound moments before life changes forever.</p>
-        <div class="monumental-deliverables brut-protect-overflow">
-          <span>Studio & Outdoor Art-Themed Maternity</span>
-          <span>Bump-to-Baby Journeys</span>
-          <span>Family Portraits (Baby Shower)</span>
+
+      <div class="services-right">
+        <div class="b-accordion">
+          
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="true">
+              <span><span class="b-accordion-num">01</span> The Anticipation</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <div class="b-accordion-content-wrapper">
+                <img src="https://images.unsplash.com/photo-1586102728466-46b99b3bc411?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Anticipation" class="b-accordion-img">
+                <div class="b-accordion-details">
+                  <p class="b-accordion-desc">Honoring the quiet, beautiful moments before your family grows.</p>
+                  <ul class="b-accordion-list">
+                    <li>Studio & Outdoor Art-Themed Maternity</li>
+                    <li>Bump-to-Baby Journeys</li>
+                    <li>Family Portraits (Baby Shower)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">02</span> The Arrival</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <div class="b-accordion-content-wrapper">
+                <img src="https://images.unsplash.com/photo-1757691723728-76c52b7e2a02?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Arrival" class="b-accordion-img">
+                <div class="b-accordion-details">
+                  <p class="b-accordion-desc">Capturing the fleeting, irreplaceable first moments of your baby.</p>
+                  <ul class="b-accordion-list">
+                    <li>Newborn & Infant (Studio & House Visit)</li>
+                    <li>Toddler (Outdoor & Studio)</li>
+                    <li>1st Birthday Celebrations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">03</span> The Union</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <div class="b-accordion-content-wrapper">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/portfolio/img-035.jpg" alt="The Union" class="b-accordion-img">
+                <div class="b-accordion-details">
+                  <p class="b-accordion-desc">A deeply emotional and joyous celebration of two families becoming one.</p>
+                  <ul class="b-accordion-list">
+                    <li>Pre/Post Wedding Photography</li>
+                    <li>Destination Weddings</li>
+                    <li>Bespoke Song Creation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">04</span> The Legacy</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <div class="b-accordion-content-wrapper">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/portfolio/port-6.jpg" alt="The Legacy" class="b-accordion-img">
+                <div class="b-accordion-details">
+                  <p class="b-accordion-desc">Preserving your cultural traditions and family bonds for generations to come.</p>
+                  <ul class="b-accordion-list">
+                    <li>Cultural Milestones (Sastiyabthapoorthi, Upanayanam)</li>
+                    <li>Cultural Milestones (Sadhabishegam, Ayushomam)</li>
+                    <li>Grand Family Portraits (Studio, House Visit, Outdoor)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </article>
 
-    <!-- CHAPTER 02 -->
-    <article class="monumental-section" id="service-2">
-      <div class="monumental-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1757691723728-76c52b7e2a02?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Arrival (Baby)" class="monumental-img">
-      </div>
-      <div class="monumental-content">
-        <div class="monumental-chapter">Chapter 02</div>
-        <h2 class="monumental-header brut-protect-overflow">The Arrival</h2>
-        <p class="monumental-copy">Capturing the fleeting, irreplaceable first milestones of a new life.</p>
-        <div class="monumental-deliverables brut-protect-overflow">
-          <span>Newborn & Infant (Studio & House Visit)</span>
-          <span>Toddler (Outdoor & Studio)</span>
-          <span>1st Birthday Celebrations</span>
-        </div>
-      </div>
-    </article>
+    </div>
+  </section>
 
-    <!-- CHAPTER 03 -->
-    <article class="monumental-section" id="service-3">
-      <div class="monumental-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1640654454711-c559b85417e9?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Union (Wedding)" class="monumental-img">
+  <!-- IMPACT SECTION -->
+  <section class="brut-impact">
+    <h2 class="brut-impact-title brut-protect-overflow">A Lasting Legacy</h2>
+    <div class="brut-impact-grid">
+      <div class="impact-card">
+        <span class="impact-num">01</span>
+        <h3 class="impact-header">Authentic Connection</h3>
+        <p class="impact-desc">We document every event by focusing on the real, unfiltered emotions and genuine connections between your loved ones.</p>
       </div>
-      <div class="monumental-content">
-        <div class="monumental-chapter">Chapter 03</div>
-        <h2 class="monumental-header brut-protect-overflow">The Union</h2>
-        <p class="monumental-copy">A cinematic, deeply emotional documentation of two families becoming one.</p>
-        <div class="monumental-deliverables brut-protect-overflow">
-          <span>Pre/Post Wedding Photography</span>
-          <span>Destination Weddings</span>
-          <span>Bespoke Song Creation</span>
-        </div>
+      <div class="impact-card">
+        <span class="impact-num">02</span>
+        <h3 class="impact-header">Honoring Traditions</h3>
+        <p class="impact-desc">Deep respect and understanding of your family's unique traditions, ensuring your beautiful heritage is celebrated.</p>
       </div>
-    </article>
-
-    <!-- CHAPTER 04 -->
-    <article class="monumental-section" id="service-4">
-      <div class="monumental-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1640162558363-88cb21a08021?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="The Legacy (Family)" class="monumental-img">
+      <div class="impact-card">
+        <span class="impact-num">03</span>
+        <h3 class="impact-header">A Lasting Legacy</h3>
+        <p class="impact-desc">Creating timeless, heartfelt portraits that will hang on the walls of your family's home for decades.</p>
       </div>
-      <div class="monumental-content">
-        <div class="monumental-chapter">Chapter 04</div>
-        <h2 class="monumental-header brut-protect-overflow">The Legacy</h2>
-        <p class="monumental-copy">Preserving cultural heritage and generational bonds for the decades to come.</p>
-        <div class="monumental-deliverables brut-protect-overflow">
-          <span>Cultural Milestones (Sastiyabthapoorthi, Upanayanam)</span>
-          <span>Cultural Milestones (Sadhabishegam, Ayushomam)</span>
-          <span>Grand Family Portraits (Studio, House Visit, Outdoor)</span>
-        </div>
-      </div>
-    </article>
-
-  </div>
+    </div>
+  </section>
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Ready to Preserve Your Legacy?</h2>
-    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Reserve Your Date</a>
+    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Reserve Your Date</a>
   </section>
+
+<script>
+  // Simple Vanilla JS for the Brutalist Services Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.b-accordion-btn');
+    accordions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Toggle current
+        btn.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  });
+</script>
 
 <?php get_template_part('template-parts/global-footer'); ?>
 <?php wp_footer(); ?>
