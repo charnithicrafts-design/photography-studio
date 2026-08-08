@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Pillar — Commercial (Lookbook Grid)
+ * Template Name: Pillar — Commercial (No-Photo Brutalist)
  * Template Post Type: page
  */
 ?>
@@ -10,285 +10,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commercial Photography — Chithramaya</title>
-  <meta name="description" content="Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands.">
+  <meta name="description" content="Purpose-driven visuals engineered to influence perception and drive immediate consumer desire.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/commercial')); ?>">
   <?php wp_head(); ?>
   <style>
-    :root {
-      --color-dark: #0a0a0a;
-      --color-accent: #A96F44;
-    }
-    
     /* OVERFLOW PROTECTION FOR MOBILE */
-    .brut-protect-overflow {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-      max-width: 100vw;
-    }
+    .brut-protect-overflow { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; max-width: 100vw; }
 
-    /* HERO SECTION BEST PRACTICES (Cinematic Full-Bleed) */
+    /* NO-PHOTO HERO SECTION (SPLIT COMPOSITION) */
     .corp-hero {
-      position: relative;
-      min-height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(10,17,40,0.3) 0%, rgba(10,17,40,0.95) 100%), url('https://images.unsplash.com/photo-1683091532994-f4e3f191282f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      position: relative; min-height: 80vh; width: 100vw; display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 1.5rem 6rem; background: var(--color-light); color: var(--color-dark); border-bottom: 2px solid var(--color-dark);
     }
-
-    .corp-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
+    .corp-hero-content { 
+      position: relative; z-index: 2; width: 100%; max-width: 1600px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 4rem;
     }
-
-    .corp-hero-h1 {
-      font-size: var(--type-step-5);
-      font-weight: 900;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-      color: var(--color-light);
+    .corp-hero-h1 { 
+      font-size: clamp(2.2rem, 7.5vw, 8rem); font-family: var(--font-sans, 'Inter', sans-serif); 
+      font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; color: inherit; margin: 0; word-break: normal;
     }
-
-    .corp-hero-sub {
-      font-size: var(--type-step-1);
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 700px;
-      margin-bottom: 3rem;
-    }
-
-    @media (min-width: 992px) {
-      .corp-hero {
-        padding: 6rem 4rem;
-      }
-    }
-
-    /* BRUTALIST ASYMMETRICAL LOOKBOOK */
-    .lookbook-container {
-      padding: 6rem 1.5rem;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
+    .corp-hero-meta { max-width: 450px; text-align: left; }
+    .corp-hero-sub { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.5; color: var(--color-dark); opacity: 0.8; margin-bottom: 3rem; }
     
-    .lookbook-section {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      margin-bottom: 8rem;
-    }
-    .lookbook-section:last-child {
-      margin-bottom: 0;
-    }
+    @media (min-width: 992px) { .corp-hero { padding: 10rem 4rem 6rem; } }
 
-    .lookbook-img-wrapper {
-      width: 100%;
-      background: var(--color-dark);
-      overflow: hidden;
-    }
+    /* BRUTALIST SERVICES ACCORDION GRID */
+    .services-wrapper { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; background: var(--color-light); color: var(--color-dark); }
+    .services-grid { display: grid; gap: 4rem; }
+    @media (min-width: 992px) { .services-grid { grid-template-columns: 1fr 2fr; gap: 8rem; align-items: start; } }
 
-    .lookbook-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: grayscale(15%) contrast(1.1);
-      transition: transform 0.8s ease, filter 0.8s ease;
-    }
-    .lookbook-img-wrapper:hover .lookbook-img {
-      transform: scale(1.03);
-      filter: grayscale(0%) contrast(1);
-    }
+    /* Left Column */
+    .services-intro-title { font-size: var(--type-step-3); font-family: var(--font-serif, 'Cormorant Garamond', serif); font-weight: 400; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid var(--color-dark); padding-bottom: 0.5rem; }
+    .services-intro-text { font-size: var(--type-step-0); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.6; color: var(--color-dark); margin-bottom: 2rem; }
 
-    .lookbook-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    /* Right Column (Accordion) */
+    .b-accordion { border-top: 2px solid var(--color-dark); }
+    .b-accordion-group { border-bottom: 2px solid var(--color-dark); }
+    .b-accordion-btn { 
+      width: 100%; background: transparent; border: none; padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; 
+      font-size: clamp(1.25rem, 3vw, 2.5rem); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: var(--color-dark); transition: color 0.2s; 
     }
+    .b-accordion-btn:hover { color: var(--color-accent); }
+    .b-accordion-btn[aria-expanded="true"] { color: var(--color-accent); }
+    .b-accordion-num { font-weight: 400; opacity: 1; margin-right: 1.5rem; color: var(--color-accent); font-family: var(--font-sans); }
+    .b-accordion-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; }
+    .b-accordion-btn[aria-expanded="true"] .b-accordion-icon { transform: rotate(45deg); }
 
-    .lookbook-number {
-      font-family: var(--font-mono, monospace);
-      font-size: var(--type-step-5);
-      font-weight: 900;
-      color: var(--color-accent);
-      opacity: 0.8;
-      line-height: 0.8;
-      letter-spacing: -0.05em;
-    }
+    .b-accordion-panel { display: none; padding: 0 0 2.5rem 0; overflow: hidden; }
+    .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel { display: block; animation: slideDown 0.3s ease forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-    .lookbook-header {
-      font-size: var(--type-step-3);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--color-dark);
-      margin-bottom: 1rem;
-    }
+    .b-accordion-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .b-accordion-list li { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; color: var(--color-dark); opacity: 0.9; border-left: 2px solid var(--color-accent); padding-left: 1.5rem; }
 
-    .lookbook-copy {
-      font-size: var(--type-step-0);
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .lookbook-deliverables {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      border-left: 4px solid var(--color-accent);
-      padding-left: 1.5rem;
-    }
-    .lookbook-deliverables span {
-      font-size: var(--type-step-1);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--color-dark);
-      line-height: 1.2;
-    }
-
-    /* DESKTOP ASYMMETRICAL GRID */
-    @media (min-width: 992px) {
-      .lookbook-container {
-        padding: 10rem 4rem;
-      }
-      .lookbook-section {
-        display: grid;
-        grid-template-columns: 7fr 4fr;
-        gap: 6rem;
-        align-items: center;
-        margin-bottom: 12rem;
-      }
-
-      /* Pillar Odd: Image Left, Text Right */
-      .lookbook-section:nth-child(odd) {
-        grid-template-columns: 7fr 4fr;
-      }
-
-      /* Pillar Even: Text Left, Image Right */
-      .lookbook-section:nth-child(even) {
-        grid-template-columns: 4fr 7fr;
-        gap: 8rem;
-      }
-      .lookbook-section:nth-child(even) .lookbook-img-wrapper {
-        order: 2;
-      }
-      .lookbook-section:nth-child(even) .lookbook-content {
-        order: 1;
-      }
-    }
-
-    .brut-impact { padding: 8rem 1.5rem; max-width: 1400px; margin: 0 auto; border-top: 2px solid var(--text-dark); border-bottom: 2px solid var(--text-dark); }
-    .brut-impact-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; }
+    .brut-impact { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; border-top: 2px solid var(--color-dark); border-bottom: 2px solid var(--color-dark); background: var(--color-light); }
+    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; color: var(--color-dark); }
     .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
     @media (min-width: 992px) { .brut-impact-grid { grid-template-columns: repeat(3, 1fr); } }
-    .impact-card { display: flex; flex-direction: column; gap: 1rem; }
-    .impact-num { font-size: var(--type-step-5); font-weight: 900; color: var(--color-accent); opacity: 0.9; line-height: 0.8; margin-bottom: 1rem; }
-    .impact-header { font-size: var(--type-step-2); font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; }
-    .impact-desc { font-size: var(--type-step-0); line-height: 1.6; color: #333; }
-
-    .brut-pipeline { padding: 8rem 1.5rem; text-align: center; background: var(--color-light); }
-    .brut-pipeline-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 2rem; }
-    .brut-pipeline-desc { font-size: var(--type-step-1); max-width: 600px; margin: 0 auto 4rem; color: #333; line-height: 1.5; }
+    .impact-card { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 2px solid var(--color-dark); }
+    .impact-num { font-size: var(--type-step-5); font-family: var(--font-sans); font-weight: 900; color: var(--color-accent); line-height: 0.8; margin-bottom: 1rem; }
+    .impact-header { font-size: var(--type-step-2); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-dark); }
+    .impact-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.8; }
 
     /* GLOBAL CTA */
-    .global-cta { padding: 8rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
-    .global-cta-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 3rem; }
+    .global-cta { padding: 10rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
+    .global-cta-title { font-size: clamp(3rem, 8vw, 6rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 4rem; }
   </style>
 </head>
-<body>
+<body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION WITH BEST PRACTICES -->
+  <!-- HERO SECTION WITH NO PHOTOS -->
   <section class="corp-hero">
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1 brut-protect-overflow">Commercial.</h1>
-      <p class="corp-hero-sub brut-protect-overflow">Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands.</p>
-      <div>
-        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Commission a Project</a>
+      <h1 class="corp-hero-h1">Commercial<br>Photography</h1>
+      
+      <div class="corp-hero-meta">
+        <p class="corp-hero-sub brut-protect-overflow">Purpose-driven photography spanning e-commerce, lifestyle, and fashion. We deliver high-quality visuals seamlessly aligned with your core marketing goals.</p>
+        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
       </div>
     </div>
   </section>
 
-  <div class="lookbook-container">
-    <!-- 01 // OOH & E-COMMERCE -->
-    <article class="lookbook-section" id="service-1">
-      <div class="lookbook-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1778294087477-e3764266e245?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="OOH & E-Commerce" class="lookbook-img">
+  <!-- NO-PHOTO SERVICES ACCORDION -->
+  <section class="services-wrapper">
+    <div class="services-grid">
+      
+      <div class="services-left">
+        <h2 class="services-intro-title">SERVICES —</h2>
+        <p class="services-intro-text">From clinical studio perfection to authentic real-life scenarios.</p>
+        <p class="services-intro-text">We capture, enhance, and deliver purpose-driven imagery that influences consumer perception and drives deep engagement.</p>
       </div>
-      <div class="lookbook-content">
-        <div class="lookbook-number">01</div>
-        <h2 class="lookbook-header brut-protect-overflow">OOH &<br>E-Commerce</h2>
-        <p class="lookbook-copy">Purpose-driven visuals engineered to influence perception across billboards and digital catalogs.</p>
-        <div class="lookbook-deliverables brut-protect-overflow">
-          <span>OOH marketing collaterals</span>
-          <span>E-commerce website catalogue pictures</span>
-          <span>Product photography</span>
-        </div>
-      </div>
-    </article>
 
-    <!-- 02 // FOOD & LIFESTYLE -->
-    <article class="lookbook-section" id="service-2">
-      <div class="lookbook-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1758522487726-12ed599b30f7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Food & Lifestyle" class="lookbook-img">
-      </div>
-      <div class="lookbook-content">
-        <div class="lookbook-number">02</div>
-        <h2 class="lookbook-header brut-protect-overflow">Food &<br>Lifestyle</h2>
-        <p class="lookbook-copy">Showcasing products in authentic, real-life scenarios that drive immediate consumer desire.</p>
-        <div class="lookbook-deliverables brut-protect-overflow">
-          <span>Food photography</span>
-          <span>Lifestyle photography</span>
-        </div>
-      </div>
-    </article>
+      <div class="services-right">
+        <div class="b-accordion">
+          
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="true">
+              <span><span class="b-accordion-num">01</span> OOH & E-Commerce</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>OOH marketing collaterals</li>
+                <li>E-commerce website catalogue pictures</li>
+                <li>Product photography</li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 03 // ARCHITECTURE & SPATIAL -->
-    <article class="lookbook-section" id="service-3">
-      <div class="lookbook-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Architecture & Spatial" class="lookbook-img">
-      </div>
-      <div class="lookbook-content">
-        <div class="lookbook-number">03</div>
-        <h2 class="lookbook-header brut-protect-overflow">Architecture<br>& Spatial</h2>
-        <p class="lookbook-copy">Capturing scale and progress, from pristine architectural forms to civil construction timelapses.</p>
-        <div class="lookbook-deliverables brut-protect-overflow">
-          <span>Architecture photography</span>
-          <span>Civil construction timelapse</span>
-          <span>Cinematic walkthrough & 360</span>
-        </div>
-      </div>
-    </article>
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">02</span> Food & Lifestyle</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Food photography</li>
+                <li>Lifestyle photography</li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 04 // FASHION, PR & CAMPAIGNS -->
-    <article class="lookbook-section" id="service-4">
-      <div class="lookbook-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1758613655976-e8c8f85849a2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Fashion, PR & Campaigns" class="lookbook-img">
-      </div>
-      <div class="lookbook-content">
-        <div class="lookbook-number">04</div>
-        <h2 class="lookbook-header brut-protect-overflow">Fashion &<br>Campaigns</h2>
-        <p class="lookbook-copy">High-end visual storytelling tailored for magazines, social campaigns, and personal branding.</p>
-        <div class="lookbook-deliverables brut-protect-overflow">
-          <span>Fashion photography</span>
-          <span>Personal branding</span>
-          <span>Social media campaigns</span>
-          <span>PR campaigns</span>
-          <span>Content Creation</span>
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">03</span> Architecture & Spatial</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Architecture photography</li>
+                <li>Civil construction timelapse</li>
+                <li>Cinematic walkthrough & 360</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">04</span> Fashion & Campaigns</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Fashion photography</li>
+                <li>Personal branding</li>
+                <li>Social media campaigns</li>
+                <li>PR campaigns</li>
+                <li>Content Creation</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
-    </article>
-  </div>
+
+    </div>
+  </section>
 
   <!-- IMPACT OF PROFESSIONAL ASSETS -->
   <section class="brut-impact">
@@ -296,33 +175,42 @@
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Conversion</h3>
-        <p class="impact-desc">High-impact visuals scientifically designed to capture attention and accelerate the path to purchase.</p>
+        <h3 class="impact-header">Collaborative Creation</h3>
+        <p class="impact-desc">We work in tight sync with your art directors to meticulously craft visuals that align perfectly with your clearly defined creative brief.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Velocity</h3>
+        <h3 class="impact-header">Campaign Velocity</h3>
         <p class="impact-desc">Fast, scalable content pipelines delivering campaign-ready assets at the speed of modern retail.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Aesthetics</h3>
-        <p class="impact-desc">Uncompromising artistic direction that elevates your product above the noise of a saturated market.</p>
+        <h3 class="impact-header">Market Conversion</h3>
+        <p class="impact-desc">Visually compelling and strategically effective assets designed to influence consumer perception, drive deep engagement, and actively sell your product.</p>
       </div>
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section class="brut-pipeline">
-    <h2 class="brut-pipeline-title brut-protect-overflow">The Production Pipeline</h2>
-    <p class="brut-pipeline-desc">From initial art direction and moodboarding to final high-end post-production, our rigorous pipeline ensures your creative brief is executed flawlessly.</p>
-    <a href="#pipeline" class="brut-btn" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Explore Our Pipeline</a>
-  </section>
-
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Ready to Drive Engagement?</h2>
-    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Commission a Project</a>
+    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
   </section>
+
+<script>
+  // Simple Vanilla JS for the Brutalist Services Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.b-accordion-btn');
+    accordions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Toggle current
+        btn.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  });
+</script>
 
 <?php get_template_part('template-parts/global-footer'); ?>
 <?php wp_footer(); ?>

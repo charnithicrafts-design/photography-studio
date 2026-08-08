@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Pillar — Brand Design (Vibrant Brutalism)
+ * Template Name: Pillar — Brand Design (No-Photo Brutalist)
  * Template Post Type: page
  */
 ?>
@@ -9,155 +9,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Design — Chithramaya Creatives</title>
-  <meta name="description" content="Brand design is a strategic process. We translate your mission and vision into tangible visual assets that define your identity across every touchpoint.">
+  <title>Brand Design — Chithramaya</title>
+  <meta name="description" content="Identity engineered for impact. We build visual systems that command attention and define your core.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/brand-design')); ?>">
   <?php wp_head(); ?>
   <style>
-    /* OVERFLOW PROTECTION */
+    /* OVERFLOW PROTECTION FOR MOBILE */
     .brut-protect-overflow { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; max-width: 100vw; }
 
-    /* HERO SECTION (Stark White / High Impact) */
-    .brand-hero {
-      position: relative;
-      min-height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(253,251,247,0.6) 0%, rgba(253,251,247,1) 100%), url('https://images.unsplash.com/photo-1654309184038-f9b689cfbdcb?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #111111;
-      border-bottom: 4px solid #111;
+    /* NO-PHOTO HERO SECTION (SPLIT COMPOSITION) */
+    .corp-hero {
+      position: relative; min-height: 80vh; width: 100vw; display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 1.5rem 6rem; background: var(--color-light); color: var(--color-dark); border-bottom: 2px solid var(--color-dark);
     }
-
-    .brand-hero-content { position: relative; z-index: 2; max-width: 1400px; }
-    
-    .brand-hero-h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-    .brand-hero-sub { font-size: var(--type-step-1); line-height: 1.5; color: #444; max-width: 800px; margin-bottom: 3rem; }
-
-    @media (min-width: 992px) { .brand-hero { padding: 6rem 4rem; } }
-
-    /* VIBRANT COLOR BLOCKS (Elegant Spacing) */
-    .color-block { padding: 6rem 1.5rem; width: 100%; border-bottom: 4px solid #111; }
-    @media (min-width: 992px) { .color-block { padding: 10rem 4rem; } }
-
-    /* PILLAR 01: Core Identity */
-    .block-identity { background-color: #ea580c; color: #111111; }
-    
-    /* PILLAR 02: Physical Presence */
-    .block-physical { background-color: #A96F44; color: #FDFBF7; }
-    
-    /* PILLAR 03: Campaign & Distribution */
-    .block-campaign { background-color: #FDFBF7; color: #111111; }
-
-    .block-inner { display: grid; gap: 3rem; max-width: 1600px; margin: 0 auto; }
-    @media (min-width: 992px) {
-      .block-inner { grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-      /* Alternate Grid Direction */
-      .block-physical .block-inner .block-text { order: 2; }
-      .block-physical .block-inner .block-img-wrapper { order: 1; }
+    .corp-hero-content { 
+      position: relative; z-index: 2; width: 100%; max-width: 1600px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 4rem;
     }
-
-    .block-img-wrapper { width: 100%; background: #111; overflow: hidden; border: 4px solid currentColor; }
-    .block-img { width: 100%; height: auto; display: block; object-fit: contain; transition: transform 0.6s ease; }
-    .block-img-wrapper:hover .block-img { transform: scale(1.02); }
-
-    .block-text { display: flex; flex-direction: column; gap: 1.5rem; }
+    .corp-hero-h1 { 
+      font-size: clamp(3rem, 9vw, 9rem); font-family: var(--font-sans, 'Inter', sans-serif); 
+      font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; color: inherit; margin: 0; word-break: normal;
+    }
+    .corp-hero-meta { max-width: 450px; text-align: left; }
+    .corp-hero-sub { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.5; color: var(--color-dark); opacity: 0.8; margin-bottom: 3rem; }
     
-    .block-label { font-family: var(--font-mono, monospace); font-size: var(--type-step-4); font-weight: 900; line-height: 1; opacity: 0.2; }
-    .block-header { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; line-height: 1; margin-bottom: 1rem; }
-    .block-copy { font-size: var(--type-step-1); line-height: 1.6; max-width: 600px; font-weight: 600; margin-bottom: 2rem; }
+    @media (min-width: 992px) { .corp-hero { padding: 10rem 4rem 6rem; } }
 
-    .deliverables-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
-    .deliverable { font-size: var(--type-step-1); font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; padding: 1rem 0; border-bottom: 2px solid currentColor; }
-    .deliverable:first-child { border-top: 2px solid currentColor; }
-    .deliverable::before { content: '→'; display: inline-block; margin-right: 1.5rem; }
+    /* BRUTALIST SERVICES ACCORDION GRID */
+    .services-wrapper { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; background: var(--color-light); color: var(--color-dark); }
+    .services-grid { display: grid; gap: 4rem; }
+    @media (min-width: 992px) { .services-grid { grid-template-columns: 1fr 2fr; gap: 8rem; align-items: start; } }
+
+    /* Left Column */
+    .services-intro-title { font-size: var(--type-step-3); font-family: var(--font-serif, 'Cormorant Garamond', serif); font-weight: 400; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid var(--color-dark); padding-bottom: 0.5rem; }
+    .services-intro-text { font-size: var(--type-step-0); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.6; color: var(--color-dark); margin-bottom: 2rem; }
+
+    /* Right Column (Accordion) */
+    .b-accordion { border-top: 2px solid var(--color-dark); }
+    .b-accordion-group { border-bottom: 2px solid var(--color-dark); }
+    .b-accordion-btn { 
+      width: 100%; background: transparent; border: none; padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; 
+      font-size: clamp(1.25rem, 3vw, 2.5rem); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: var(--color-dark); transition: color 0.2s; 
+    }
+    .b-accordion-btn:hover { color: var(--color-accent); }
+    .b-accordion-btn[aria-expanded="true"] { color: var(--color-accent); }
+    .b-accordion-num { font-weight: 400; opacity: 1; margin-right: 1.5rem; color: var(--color-accent); font-family: var(--font-sans); }
+    .b-accordion-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; }
+    .b-accordion-btn[aria-expanded="true"] .b-accordion-icon { transform: rotate(45deg); }
+
+    .b-accordion-panel { display: none; padding: 0 0 2.5rem 0; overflow: hidden; }
+    .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel { display: block; animation: slideDown 0.3s ease forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .b-accordion-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .b-accordion-list li { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; color: var(--color-dark); opacity: 0.9; border-left: 2px solid var(--color-accent); padding-left: 1.5rem; }
+
+    /* BRUTALIST MARKETING BLOCKS */
+    .brut-marquee { padding: 4rem 1.5rem; background: var(--color-dark); color: var(--color-light); text-align: center; overflow: hidden; }
+    .brut-marquee-title { font-size: 1rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 3rem; }
+    .brut-marquee-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center; }
+    .brut-marquee-logos span { font-size: clamp(2rem, 4vw, 4rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; }
+
+    .brut-impact { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; border-top: 2px solid var(--color-dark); border-bottom: 2px solid var(--color-dark); background: var(--color-light); }
+    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; color: var(--color-dark); }
+    .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+    @media (min-width: 992px) { .brut-impact-grid { grid-template-columns: repeat(3, 1fr); } }
+    .impact-card { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 2px solid var(--color-dark); }
+    .impact-num { font-size: var(--type-step-5); font-family: var(--font-sans); font-weight: 900; color: var(--color-accent); line-height: 0.8; margin-bottom: 1rem; }
+    .impact-header { font-size: var(--type-step-2); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-dark); }
+    .impact-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.8; }
 
     /* GLOBAL CTA */
-    .global-cta { padding: 8rem 1.5rem; text-align: center; background: #111; color: #FDFBF7; }
-    .global-cta-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-    .global-cta-sub { font-size: var(--type-step-1); max-width: 600px; margin: 0 auto 3rem; color: rgba(253,251,247,0.8); line-height: 1.6; }
-    .brut-btn-light { display: inline-block; padding: 1.5rem 4rem; font-size: var(--type-step-0); font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; border: 2px solid #FDFBF7; background: transparent; color: #FDFBF7; transition: all 0.3s; }
-    .brut-btn-light:hover { background: #FDFBF7; color: #111; }
+    .global-cta { padding: 10rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
+    .global-cta-title { font-size: clamp(3rem, 8vw, 6rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 4rem; }
   </style>
 </head>
-<body>
+<body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION -->
-  <section class="brand-hero">
-    <div class="brand-hero-content">
-      <h1 class="brand-hero-h1 brut-protect-overflow">Architecting<br>Core Values.</h1>
-      <p class="brand-hero-sub brut-protect-overflow">Brand design is a strategic process. We translate your mission and vision into tangible visual assets that define your identity across every touchpoint.</p>
-    </div>
-  </section>
-
-  <!-- 01 CORE IDENTITY (ORANGE) -->
-  <section class="color-block block-identity" id="identity">
-    <div class="block-inner">
-      <div class="block-text">
-        <div class="block-label">01</div>
-        <h2 class="block-header brut-protect-overflow">Core Identity</h2>
-        <p class="block-copy">Developing visual elements that define your company’s identity and communicate its core values.</p>
-        <ul class="deliverables-list">
-          <li class="deliverable">Logo Design</li>
-          <li class="deliverable">Brand Identity</li>
-          <li class="deliverable">Brand Guidelines</li>
-        </ul>
-      </div>
-      <div class="block-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1508599589920-14cfa1c1fe4d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Brand Identity" class="block-img">
+  <!-- HERO SECTION WITH NO PHOTOS -->
+  <section class="corp-hero">
+    <div class="corp-hero-content">
+      <h1 class="corp-hero-h1">Brand<br>Design</h1>
+      
+      <div class="corp-hero-meta">
+        <p class="corp-hero-sub brut-protect-overflow">Identity engineered for impact. We build visual systems that command attention and define your core.</p>
+        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
       </div>
     </div>
   </section>
 
-  <!-- 02 PHYSICAL PRESENCE (CAMEL) -->
-  <section class="color-block block-physical" id="physical">
-    <div class="block-inner">
-      <div class="block-text">
-        <div class="block-label">02</div>
-        <h2 class="block-header brut-protect-overflow">Physical Presence</h2>
-        <p class="block-copy">Translating your mission into tangible assets that create a lasting physical impression.</p>
-        <ul class="deliverables-list">
-          <li class="deliverable">Product Design</li>
-          <li class="deliverable">Installations Design</li>
-        </ul>
+
+
+  <!-- NO-PHOTO SERVICES ACCORDION -->
+  <section class="services-wrapper">
+    <div class="services-grid">
+      
+      <div class="services-left">
+        <h2 class="services-intro-title">SERVICES —</h2>
+        <p class="services-intro-text">Consistency builds trust.</p>
+        <p class="services-intro-text">We forge tangible visual assets that enforce your market positioning across every touchpoint.</p>
       </div>
-      <div class="block-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1574367157590-3454fe866961?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Physical Presence" class="block-img">
+
+      <div class="services-right">
+        <div class="b-accordion">
+          
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="true">
+              <span><span class="b-accordion-num">01</span> Core Identity</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Logo design</li>
+                <li>Brand identity</li>
+                <li>Brand guidelines</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">02</span> Physical Presence</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Product design</li>
+                <li>Installations design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">03</span> Campaign & Outreach</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Marketing collaterals</li>
+                <li>Illustrative posters</li>
+                <li>OOH campaign design</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMPACT OF PROFESSIONAL ASSETS -->
+  <section class="brut-impact">
+    <h2 class="brut-impact-title brut-protect-overflow">The Value of Identity</h2>
+    <div class="brut-impact-grid">
+      <div class="impact-card">
+        <span class="impact-num">01</span>
+        <h3 class="impact-header">Instant Connection</h3>
+        <p class="impact-desc">Your identity is your first handshake. We engineer visual assets that instantly connect with your audience and leave a memorable mark.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">02</span>
+        <h3 class="impact-header">Absolute Trust</h3>
+        <p class="impact-desc">A unified design system proves your reliability. We forge a cohesive visual language that builds deep, unwavering trust across every touchpoint.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">03</span>
+        <h3 class="impact-header">Market Authority</h3>
+        <p class="impact-desc">Aesthetic dictates value. We elevate your brand's visual presence so you can confidently command market leadership and premium pricing.</p>
       </div>
     </div>
   </section>
 
-  <!-- 03 CAMPAIGN & DISTRIBUTION (WHITE) -->
-  <section class="color-block block-campaign" id="campaign">
-    <div class="block-inner">
-      <div class="block-text">
-        <div class="block-label">03</div>
-        <h2 class="block-header brut-protect-overflow">Campaign & Distribution</h2>
-        <p class="block-copy">Consistently applying your visual appeal across platforms to build trust and reinforce positioning.</p>
-        <ul class="deliverables-list">
-          <li class="deliverable">Marketing Collaterals</li>
-          <li class="deliverable">Illustrative Posters</li>
-          <li class="deliverable">OOH Campaign Design</li>
-        </ul>
-      </div>
-      <div class="block-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1636247498175-d2a8d052c2b0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Campaign Distribution" class="block-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA (BLACK) -->
   <section class="global-cta">
-    <h2 class="global-cta-title brut-protect-overflow">Consistency Builds Trust.</h2>
-    <p class="global-cta-sub">A well-executed brand design enhances visual appeal, reinforces positioning, and creates a lasting impression in the minds of your audience.</p>
-    <a href="#book" class="brut-btn-light" data-trigger="booking">Start a Project</a>
+    <h2 class="global-cta-title brut-protect-overflow">Ready to Define Your Identity?</h2>
+    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
   </section>
+
+<script>
+  // Simple Vanilla JS for the Brutalist Services Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.b-accordion-btn');
+    accordions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Toggle current
+        btn.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  });
+</script>
 
 <?php get_template_part('template-parts/global-footer'); ?>
 <?php wp_footer(); ?>

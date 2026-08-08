@@ -125,7 +125,7 @@
         <div class="b-accordion">
           
           <div class="b-accordion-group">
-            <button class="b-accordion-btn" aria-expanded="false">
+            <button class="b-accordion-btn" aria-expanded="true">
               <span><span class="b-accordion-num">01</span> Executive Portraits</span>
               <span class="b-accordion-icon">+</span>
             </button>
@@ -236,8 +236,9 @@
     accordions.forEach(btn => {
       btn.addEventListener('click', () => {
         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        // Optional: close all others
-        // accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Close all others
+        accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Toggle current
         btn.setAttribute('aria-expanded', !isExpanded);
       });
     });
