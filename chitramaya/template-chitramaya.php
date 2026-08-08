@@ -16,18 +16,18 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg-light: var(--wp--preset--color--chitramaya-base-light, #FFFFFF);
-      --text-dark: var(--wp--preset--color--chitramaya-text-dark, #1C1917);
+      --bg-light: #F7F5F2; /* Warm Linen */
+      --text-dark: #2A2724; /* Espresso */
       --warm-grey: var(--wp--preset--color--chitramaya-muted, #D6D3D1);
-      --accent: var(--wp--preset--color--chitramaya-accent-vibrant, #A96F44);
-      --border: 1px solid rgba(28,25,23,0.12);
-      --font-sans: var(--wp--preset--font-family--inter, 'Inter', sans-serif);
-      --font-serif: 'EB Garamond', serif;
+      --accent: #C06547; /* Vibrant Terracotta */
+      --border: 1px solid rgba(42,39,36,0.12);
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg-light); color: var(--text-dark); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -41,152 +41,110 @@
     .nav-thalam-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: var(--bg-light) !important; padding: 0.45rem 1.1rem; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.14em !important; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s !important; }
     .nav-thalam-pill:hover { background: var(--text-dark) !important; transform: translateY(-1px); color: var(--bg-light) !important; }
 
-    /* HERO */
-    .hero { position: relative; height: 100vh; width: 100%; overflow: hidden; cursor: crosshair; }
-    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; transform: scale(1.04); transition: transform 12s cubic-bezier(0.25,0.46,0.45,0.94); }
-    .hero.loaded .hero-img { transform: scale(1.0); }
-    .hero-overlay { display: block; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.3) 25%, transparent 100%); z-index: 1; pointer-events: none; }
-    .hero-grain { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 2; }
-    .hero-cursor-glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); transition: opacity 0.3s; opacity: 0; }
-    .hero-brand { position: absolute; top: 50%; left: 1.5rem; right: 1.5rem; transform: translateY(-50%); display: flex; flex-direction: column; gap: 1.2rem; z-index: 3; }
-    .hero-brand-name { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 14vw, 9rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; color: var(--bg-light); text-shadow: 0 4px 24px rgba(0,0,0,0.5); }
-    .hero-brand-name em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.52em; color: var(--bg-light); letter-spacing: 0.02em; line-height: 1.5; text-transform: none; text-shadow: none; }
-    .hero-corner { position: absolute; bottom: 2.5rem; right: 1.5rem; text-align: right; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; z-index: 3; }
-    .hero-fragment { font-family: var(--font-serif); font-style: italic; font-size: clamp(1rem, 1.6vw, 1.4rem); color: var(--bg-light); line-height: 1.6; max-width: 260px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-    .hero-insta { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); transition: color 0.3s; }
-    .hero-insta:hover { color: var(--bg-light); }
-    .hero-insta svg { width: 14px; height: 14px; fill: currentColor; }
-    .hero-scroll { position: absolute; bottom: 2.5rem; left: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; z-index: 3; }
-    .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); animation: scrollAnim 2.5s ease-in-out infinite; }
-    .scroll-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(28,25,23,0.3); writing-mode: vertical-rl; transform: rotate(180deg); }
-    @keyframes scrollAnim { 0%,100% { opacity:1; transform:scaleY(1) translateY(0); } 50% { opacity:0.2; transform:scaleY(0.4) translateY(-10px); } }
+    /* HERO - SPACIOUS EDITORIAL PROPORTIONS */
+    .hero { position: relative; min-height: 100vh; width: 100%; background-color: var(--bg-light); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15vh 0; }
 
-    /* MANIFESTO (Mobile First) */
-    .manifesto { padding: 5rem 1.5rem; display: flex; flex-direction: column; gap: 3rem; border-top: var(--border); }
-    .manifesto-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .manifesto-text { font-family: var(--font-serif); font-size: clamp(2rem, 8vw, 3.2rem); line-height: 1.25; }
-    .manifesto-body { font-size: 1rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 3rem; }
-    .manifesto-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: var(--border); padding-top: 2.5rem; }
-    .stat-num { font-weight: 900; font-size: 2.5rem; letter-spacing: -0.04em; }
-    .stat-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); margin-top: 0.25rem; }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 1400px; padding: 0 1.5rem; text-align: center; gap: 4rem; }
 
-    /* THALAM AD SECTION (Mobile First) */
-    .thalam-ad { position: relative; min-height: 100vh; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; border-top: var(--border); }
-    .thalam-ad-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; filter: brightness(0.35) contrast(1.15) saturate(0.7); transform: scale(1.03); transition: transform 10s ease, filter 0.6s ease; }
-    .thalam-ad:hover .thalam-ad-bg { transform: scale(1.0); filter: brightness(0.5) contrast(1.1) saturate(0.85); }
-    .thalam-ad-overlay { display: none; }
-    .thalam-ad-corner { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(28,25,23,0.3); text-align: right; }
-    .thalam-ad-content { position: relative; padding: 4rem 1.5rem 3rem; display: flex; flex-direction: column; gap: 2.5rem; width: 100%; }
-    .thalam-ad-eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-    .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
-    .thalam-ad-headline { font-family: var(--font-sans); font-weight: 900; font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: var(--bg-light); }
-    .thalam-ad-headline em { display: block; font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 0.65em; letter-spacing: 0; }
-    .thalam-ad-right { display: flex; flex-direction: column; gap: 2rem; }
-    .thalam-ad-services { display: grid; grid-template-columns: 1fr; gap: 0; border: var(--border); }
-    .thalam-service-chip { padding: 1.25rem 1.5rem; border-bottom: var(--border); }
-    .thalam-service-chip:last-child { border-bottom: none; }
-    .thalam-service-chip-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-    .thalam-service-chip-title { font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg-light); }
-    .thalam-ad-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; background: var(--accent); color: var(--bg-light); text-decoration: none; padding: 1.35rem 2rem; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; transition: background 0.25s, transform 0.25s; }
-    .thalam-ad-cta:hover { background: var(--text-dark); transform: translateX(4px); }
-    .thalam-ad-cta-arrow { font-size: 1.2rem; transition: transform 0.25s; }
-    .thalam-ad-cta:hover .thalam-ad-cta-arrow { transform: translateX(6px); }
+    .hero-brand-name { display: flex; align-items: baseline; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0; }
+    .brand-heavy { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3.2rem, 9vw, 8.5rem); letter-spacing: -0.04em; color: var(--text-dark); line-height: 1; text-transform: uppercase; }
+    .brand-elegant { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(3.2rem, 9vw, 8.5rem); color: var(--text-dark); line-height: 1; letter-spacing: -0.02em; }
 
-    /* TACTILE GRID (Mobile First) */
-    .tactile-section { padding: 5rem 1.5rem; }
-    .section-header { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: var(--border); }
-    .section-title { font-weight: 900; font-size: clamp(2.2rem, 10vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
-    .section-link { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; align-self: flex-start; }
-    .tactile-grid { display: flex; flex-direction: column; gap: 1rem; }
-    .tactile-item { position: relative; overflow: hidden; cursor: pointer; height: 50vh; }
-    .tactile-item:nth-child(1) { height: 60vh; }
-    .tactile-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease; filter: brightness(0.75) saturate(0.9); }
-    .tactile-item:hover .tactile-img { transform: scale(1.06); filter: brightness(0.88) saturate(1.1); }
-    .tactile-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2rem 1.5rem; background: linear-gradient(to top, rgba(8,8,8,0.9), transparent); transform: translateY(100%); transition: transform 0.4s ease; }
-    .tactile-item:hover .tactile-caption { transform: translateY(0); }
-    .tactile-caption h3 { font-family: var(--font-serif); font-style: italic; font-size: 1.3rem; margin-bottom: 0.4rem; }
-    .tactile-caption p { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-grey); }
-    .tactile-cta { display: inline-block; margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+    .hero-intro { font-family: var(--font-sans); font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.5; color: var(--text-dark); max-width: 800px; margin: 0 auto; font-weight: 400; }
 
-    /* SERVICES (Mobile First) */
-    .services { border-top: var(--border); border-bottom: var(--border); display: flex; flex-direction: column; }
-    .services-header { padding: 5rem 1.5rem 2rem; border-bottom: var(--border); margin-bottom: 0; }
-    .service-item { padding: 3.5rem 1.5rem; border-bottom: var(--border); transition: background 0.3s; }
+    .hero-pills { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0; width: 100%; }
+    .hero-pill { border: 1px solid var(--text-dark); color: var(--text-dark); padding: 0.8rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.3s, color 0.3s; }
+    .hero-pill-link { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; background: transparent; color: var(--text-dark); }
+    .hero-pill-link:hover { background: rgba(42,39,36,0.05); color: var(--text-dark); }
+    .hero-pill-link svg { width: 14px; height: 14px; fill: none; }
+
+    .hero-btn { display: inline-block; border: 1px solid var(--accent); background: var(--accent); padding: 1.1rem 2.5rem; color: var(--bg-light); text-decoration: none; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
+    .hero-btn:hover { background: transparent; color: var(--accent); }
+
+    /* MANIFESTO (Brutalist Overhaul) */
+    .manifesto { padding: 5rem 1.5rem; display: flex; flex-direction: column; gap: 3rem; background-color: var(--bg-light); color: var(--text-dark); }
+    .manifesto-label { font-size: 0.65rem; font-family: var(--font-sans); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .manifesto-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+    .manifesto-text { font-family: var(--font-serif); font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 400; line-height: 1; letter-spacing: -0.02em; text-transform: none; color: var(--text-dark); max-width: 900px; }
+    .manifesto-body { font-family: var(--font-sans); font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 400; line-height: 1.6; color: var(--text-dark); margin-bottom: 3rem; max-width: 600px; }
+    .manifesto-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--text-dark); border-bottom: none; border-right: none; }
+    .stat-box { border-bottom: 1px solid var(--text-dark); border-right: 1px solid var(--text-dark); padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+    .stat-num { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2.5rem, 4vw, 3.5rem); letter-spacing: -0.05em; color: var(--text-dark); line-height: 1; }
+    .stat-label { font-family: var(--font-sans); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-top: 0.75rem; }
+
+    /* THALAM AD SECTION (Brutalist Overhaul) */
+    .thalam-ad { background-color: var(--bg-light); border-top: 1px solid var(--text-dark); padding: 5rem 1.5rem; display: flex; flex-direction: column; gap: 3rem; }
+    .thalam-ad-content { display: flex; flex-direction: column; gap: 2.5rem; width: 100%; }
+    .thalam-ad-eyebrow { font-size: 0.65rem; font-family: var(--font-sans); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .thalam-ad-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+    .thalam-ad-headline { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3.2rem, 8vw, 8rem); line-height: 0.85; letter-spacing: -0.02em; text-transform: none; color: var(--text-dark); }
+    .thalam-ad-right { display: flex; flex-direction: column; }
+    .thalam-list { list-style: none; display: flex; flex-direction: column; border-top: 1px solid var(--text-dark); margin-bottom: 3rem; padding: 0; }
+    .thalam-list li { display: flex; align-items: baseline; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--text-dark); color: var(--text-dark); transition: padding-left 0.3s; }
+    .thalam-list li:hover { padding-left: 1rem; background: rgba(28,25,23,0.03); }
+    .thalam-list-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; color: var(--accent); width: 24px; }
+    .thalam-list-text { font-family: var(--font-sans); font-weight: 700; font-size: clamp(1.2rem, 2vw, 2rem); letter-spacing: -0.02em; text-transform: uppercase; }
+    .thalam-ad-cta { display: inline-flex; align-items: center; gap: 1rem; border: 1px solid var(--accent); background: var(--accent); padding: 1rem 2.5rem; color: var(--bg-light); text-decoration: none; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; align-self: flex-start; }
+    .thalam-ad-cta:hover { background: transparent; color: var(--accent); }
+
+
+
+    /* SERVICES (Brutalist Accordion) */
+    .services { border-top: 1px solid var(--text-dark); border-bottom: 1px solid var(--text-dark); display: flex; flex-direction: column; background: var(--bg-light); }
+    .services-header { padding: 5rem 1.5rem 2rem; border-bottom: 1px solid var(--text-dark); margin-bottom: 0; color: var(--text-dark); }
+    .service-item { display: flex; flex-direction: column; padding: 3rem 1.5rem; border-bottom: 1px solid var(--text-dark); transition: background 0.3s; color: var(--text-dark); }
     .service-item:last-child { border-bottom: none; }
-    .service-item:hover { background: rgba(200,169,110,0.04); }
-    .service-item.is-upcoming { background: rgba(169,111,68,0.04); }
-    .service-item.is-upcoming:hover { background: rgba(169,111,68,0.07); }
-    .service-num { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.25rem; display: block; }
-    .service-coming-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.28rem 0.8rem; margin-bottom: 1.25rem; border-radius: 2px; }
-    .service-title { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 1rem; line-height: 1; }
-    .service-sub-head { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--accent); margin-bottom: 1.25rem; }
-    .service-desc { font-size: 0.95rem; line-height: 1.8; color: var(--warm-grey); margin-bottom: 1.25rem; max-width: 62ch; }
-    .service-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.3rem; }
-    .service-list li { font-size: 0.85rem; letter-spacing: 0; text-transform: none; color: var(--warm-grey); padding-left: 1.2rem; position: relative; }
-    .service-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
-    .service-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid rgba(28,25,23,0.15); padding-bottom: 4px; transition: all 0.2s; }
+    .service-item:hover { background: rgba(28,25,23,0.03); }
+    .service-item-header { display: flex; flex-direction: column; gap: 0.5rem; }
+    .service-num { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; }
+    .service-title { font-family: var(--font-sans); font-weight: 900; font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 1; }
+    .service-item-content { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .service-desc { font-size: 0.95rem; line-height: 1.6; color: var(--text-dark); max-width: 600px; }
+    .service-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; border-left: 1px solid var(--text-dark); padding-left: 1.5rem; }
+    .service-list li { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-dark); }
+    .service-btn { display: inline-flex; align-self: flex-start; margin-top: 1rem; align-items: center; gap: 0.75rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--text-dark); border-bottom: 1px solid var(--text-dark); padding-bottom: 4px; transition: all 0.2s; }
     .service-btn:hover { color: var(--accent); border-color: var(--accent); }
-    .service-btn::after { content: '→'; transition: transform 0.2s; }
-    .service-btn:hover::after { transform: translateX(4px); }
-    .service-notify-btn { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1.25rem; transition: all 0.2s; }
-    .service-notify-btn:hover { background: var(--accent); color: #fff; }
 
-    /* PROCESS (Mobile First) */
-    .process { padding: 5rem 1.5rem; }
-    .process-steps { display: flex; flex-direction: column; margin-top: 3rem; border-top: var(--border); }
-    .process-step { padding: 2.5rem 0; border-bottom: var(--border); }
-    .process-step:last-child { border-bottom: none; padding-bottom: 0; }
-    .step-num { font-weight: 900; font-size: 4rem; color: rgba(28,25,23,0.08); line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
-    .step-title { font-weight: 700; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 1rem; }
-    .step-desc { font-size: 0.88rem; line-height: 1.75; color: var(--warm-grey); }
+    /* PROCESS (Brutalist Overhaul) */
+    .process { padding: 5rem 1.5rem; background: var(--bg-light); border-top: 1px solid var(--text-dark); color: var(--text-dark); }
+    .process-steps { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 3rem; border-top: 1px solid var(--text-dark); }
+    .process-step { padding: 3rem 0; border-bottom: 1px solid var(--text-dark); display: flex; flex-direction: column; gap: 1rem; }
+    .process-step:last-child { border-bottom: none; }
+    .step-num { font-family: var(--font-sans); font-weight: 900; font-size: 3rem; color: var(--text-dark); line-height: 1; letter-spacing: -0.05em; }
+    .step-title { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em; }
+    .step-desc { font-size: 0.95rem; line-height: 1.6; color: var(--text-dark); max-width: 500px; }
 
-    /* TESTIMONIAL (Mobile First) */
-    .testimonial { padding: 5rem 1.5rem; border-top: var(--border); display: flex; flex-direction: column; gap: 3rem; }
-    .testimonial-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
-    .testimonial-quote { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.4; font-style: italic; }
-    .testimonial-author { margin-top: 2.5rem; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-grey); }
+    /* TESTIMONIAL */
+    .testimonial { padding: 5rem 1.5rem; border-top: 1px solid var(--text-dark); display: flex; flex-direction: column; gap: 3rem; background: var(--bg-light); color: var(--text-dark); }
+    .testimonial-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .testimonial-quote { font-family: var(--font-sans); font-weight: 900; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; letter-spacing: -0.03em; text-transform: uppercase; }
+    .testimonial-author { margin-top: 2.5rem; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); }
 
-    /* CTA BANNER */
-    .cta-banner { position: relative; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 3rem; }
-    .cta-banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.3) contrast(1.2); }
-    .cta-banner-content { position: relative; }
-    .cta-banner-title { font-weight: 900; font-size: clamp(3rem, 7vw, 8rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; color: var(--bg-light); }
-    .cta-banner-title em { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
-    .cta-banner-btn { position: relative; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; background: var(--accent); color: var(--bg-light); padding: 1.25rem 3rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
-    .cta-banner-btn:hover { background: var(--text-dark); }
-
-
-
-
+    /* CTA BANNER (Brutalist Typography) */
+    .cta-banner { position: relative; padding: 8rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--bg-light); border-top: 1px solid var(--text-dark); overflow: hidden; gap: 3rem; }
+    .cta-banner-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; width: 100%; }
+    .cta-banner-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 10vw, 8rem); letter-spacing: -0.02em; text-transform: none; line-height: 0.9; color: var(--text-dark); width: 100%; }
+    .cta-banner-btn { position: relative; z-index: 2; display: inline-flex; align-items: center; background: var(--accent); color: var(--bg-light); border: 1px solid var(--accent); padding: 1.25rem 3rem; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+    .cta-banner-btn:hover { background: transparent; color: var(--accent); }
 
     /* RESPONSIVE: DESKTOP OVERRIDES */
     @media (min-width: 992px) {
-      .hero-brand { left: 3rem; right: auto; }
-      .hero-corner { right: 3rem; bottom: 3.5rem; }
-      .hero-scroll { left: 3rem; bottom: 3.5rem; }
-      .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1.5fr 1fr; gap: 10rem; align-items: flex-start; max-width: 1400px; margin: 0 auto; }
-      .thalam-ad-content { padding: 0 3rem 5rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; }
-      .tactile-section { padding: 8rem 3rem; }
-      .section-header { flex-direction: row; align-items: flex-end; margin-bottom: 3rem; }
-      .section-link { align-self: auto; }
-      .tactile-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
-      .tactile-item:nth-child(1) { grid-row: 1 / 3; height: 85vh; }
-      .tactile-item:nth-child(2) { height: 40vh; }
-      .tactile-item:nth-child(3) { height: 44vh; }
-      .services { display: flex; flex-direction: column; }
-      .services-header { padding: 6rem 3rem 2rem; }
-      .service-item { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; padding: 4.5rem 3rem; border-bottom: var(--border); border-right: none; align-items: start; border-left: 3px solid transparent; padding-left: calc(3rem - 3px); transition: border-left-color 0.3s; }
-      .service-item:last-child { border-bottom: none; }
-      .service-item:hover { border-left-color: var(--accent); }
-      .service-item.is-upcoming:hover { border-left-color: rgba(169,111,68,0.4); }
-      .service-item-right { max-width: 800px; }
-      .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem; align-items: start; }
-      .process { padding: 8rem 3rem; }
-      .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); flex-direction: row; margin-top: 5rem; }
-      .process-step { padding: 3rem 2.5rem 3rem 0; border-right: var(--border); border-bottom: none; }
+      .hero-pills { padding: 0 1rem; }
+      .hero-portfolio-peek { transform: translateY(45%); }
+      .manifesto { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: flex-start; max-width: 1400px; margin: 0 auto; }
+      .thalam-ad-content { padding: 8rem 3rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; max-width: 1400px; margin: 0 auto; }
+      .tactile-section { padding: 0 3rem 8rem; }
+      .tactile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1400px; margin: 0 auto; margin-top: -10vh; z-index: 10; position: relative; align-items: start; }
+      .services { padding: 0; }
+      .services-header { max-width: 1400px; margin: 0 auto; width: 100%; padding: 8rem 3rem 2rem; border-bottom: 1px solid var(--text-dark); }
+      .service-item { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; padding: 5rem 3rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+      .service-item-content { margin-top: 0; }
+      .process { padding: 8rem 3rem; max-width: 1400px; margin: 0 auto; border-top: none; }
+      .process-steps { grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--text-dark); margin-top: 5rem; }
+      .process-step { border-bottom: none; border-right: 1px solid var(--text-dark); padding: 3rem 2.5rem 3rem 0; }
       .process-step:not(:first-child) { padding-left: 2.5rem; }
-      .process-step:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
-      .testimonial { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; }
+      .process-step:last-child { border-right: none; padding-right: 0; }
+      .testimonial { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center; max-width: 1400px; margin: 0 auto; border-top: none; }
 
     }
   </style>
@@ -195,109 +153,63 @@
   <?php get_template_part('template-parts/global-nav'); ?>
 
   <section class="hero" id="hero">
-    <div class="hero-cursor-glow" id="hero-glow"></div>
-    <img class="hero-img"
-      src="<?php echo esc_url( get_field('home_hero_bg_url') ?: 'https://images.unsplash.com/photo-1750645438141-7deb206e17f6?w=2400&q=90&auto=format&fit=crop' ); ?>"
-      alt="Fine-art studio portrait with vibrant abstract paint — Chithramaya Creatives"
-      loading="eager"
-      onload="this.closest('.hero').classList.add('loaded')">
-    <div class="hero-overlay"></div>
-    <div class="hero-grain"></div>
-    <div class="hero-brand">
-      <h1 class="hero-brand-name"><?php echo wp_kses_post( get_field('home_hero_headline') ?: 'Chithra<br>maya<em>Creatives</em>' ); ?></h1>
-    </div>
-    <div class="hero-corner">
-      <p class="hero-fragment"><?php echo wp_kses_post( get_field('home_hero_fragment') ?: 'Light, texture,<br>and the weight<br>of a real moment.' ); ?></p>
-      <a href="https://www.instagram.com/chithramaya_creatives" target="_blank" rel="noopener" class="hero-insta">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @chithramaya_creatives
-      </a>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span class="scroll-label">Scroll</span>
+
+    <div class="hero-content">
+      <h1 class="hero-brand-name">
+        <span class="brand-heavy"><?php echo esc_html( get_field('home_hero_title_1') ?: 'CHITHRAMAYA' ); ?></span>
+        <span class="brand-elegant"><?php echo esc_html( get_field('home_hero_title_2') ?: 'Creatives' ); ?></span>
+      </h1>
+
+      <div class="hero-pills">
+        <span class="hero-pill">Commercial</span>
+        <span class="hero-pill">Portraits</span>
+        <span class="hero-pill">Podcast</span>
+        <a href="#services" class="hero-pill hero-pill-link">All services
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-width="2" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
+        </a>
+      </div>
+
+      <p class="hero-intro">
+        We capture, curate, and craft visual experiences for brands and families that demand perfection.
+      </p>
+
+      <a href="#contact" class="hero-btn">Book a call</a>
     </div>
   </section>
 
   <section class="manifesto" id="about">
     <div>
-      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'Chithramaya Creatives — Our Creed' ); ?></div>
+      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'OUR CREED' ); ?></div>
       <h2 class="manifesto-text"><?php echo wp_kses_post( get_field('home_manifesto_headline') ?: 'Every photograph is a physical argument that the world is worth feeling.' ); ?></h2>
     </div>
     <div>
       <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'We believe every image should do more than inform — it should stay with you. Through deliberate lighting, medium-format capture, and restrained post-production, we craft photographs that your audience does not just look at — they feel. Each commission begins with a single question: what must this image make someone experience?' ); ?></p>
       <div class="manifesto-stats">
-        <div><div class="stat-num">340+</div><div class="stat-label">Campaigns Delivered</div></div>
-        <div><div class="stat-num">20+ Yr</div><div class="stat-label">Lens Experience</div></div>
-        <div><div class="stat-num">96%</div><div class="stat-label">Client Retention</div></div>
-        <div><div class="stat-num">3 Yr</div><div class="stat-label">Studio Expansion</div></div>
+        <div class="stat-box"><div class="stat-num">340+</div><div class="stat-label">Campaigns</div></div>
+        <div class="stat-box"><div class="stat-num">20 YR</div><div class="stat-label">Experience</div></div>
+        <div class="stat-box"><div class="stat-num">96%</div><div class="stat-label">Retention</div></div>
+        <div class="stat-box"><div class="stat-num">3 YR</div><div class="stat-label">Expansion</div></div>
       </div>
     </div>
   </section>
 
   <section class="thalam-ad" id="thalam">
-    <img class="thalam-ad-bg"
-      src="<?php echo esc_url( get_field('home_thalam_bg_url') ?: 'https://images.unsplash.com/photo-1735989917786-7c0af070a2fa?q=80&w=1170&auto=format&fit=crop' ); ?>"
-      alt="Professional studio set with dramatic lighting — Thalam Studio, Chithramaya Creatives"
-      loading="lazy">
-    <div class="thalam-ad-overlay"></div>
-    <div class="thalam-ad-corner">Thalam Studio — Chithramaya Production Hub</div>
     <div class="thalam-ad-content">
       <div>
         <div class="thalam-ad-eyebrow">THALAM STUDIO</div>
-        <h2 class="thalam-ad-headline">SPACE TO CREATE.</h2>
-        <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255, 255, 255, 0.85); max-width: 480px; margin-top: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">A true space to create means zero friction between your idea and its execution. We've prepared the seamless cyclorama, set the lighting, and curated the amenities—giving you the ultimate blank canvas to focus entirely on your craft.</p>
+        <h2 class="thalam-ad-headline">SPACE TO<br>CREATE.</h2>
+        <p style="font-family: var(--font-sans); font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 480px; margin-top: 1.5rem;">A true space to create means zero friction between your idea and its execution. We've prepared the seamless cyclorama, set the lighting, and curated the amenities—giving you the ultimate blank canvas to focus entirely on your craft.</p>
       </div>
       <div class="thalam-ad-right">
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">01 &mdash; Wide Cyclorama Wall</li>
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">02 &mdash; Complete Light Setup</li>
-          <li style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--bg-light);">03 &mdash; Baby Shoot Amenities</li>
+        <ul class="thalam-list">
+          <li><span class="thalam-list-num">01</span><span class="thalam-list-text">Wide Cyclorama Wall</span></li>
+          <li><span class="thalam-list-num">02</span><span class="thalam-list-text">Complete Light Setup</span></li>
+          <li><span class="thalam-list-num">03</span><span class="thalam-list-text">Baby Shoot Amenities</span></li>
         </ul>
-        <a href="<?php echo home_url('/thalam-studio'); ?>" class="thalam-ad-cta" style="border-radius: 50px; justify-content: center;">
-          <span>Explore Thalam Studio</span>
-          <span class="thalam-ad-cta-arrow">→</span>
+        <a href="<?php echo home_url('/thalam-studio'); ?>" class="thalam-ad-cta">
+          Explore Thalam Studio
+          <span>→</span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TACTILE WORK GRID -->
-  <section class="tactile-section" id="work">
-    <div class="section-header">
-      <h2 class="section-title">Selected Work</h2>
-      <a href="#" class="section-link">View Full Archive</a>
-    </div>
-    <div class="tactile-grid">
-      <div class="tactile-item">
-        <img class="tactile-img"
-          src="<?php echo esc_url( get_field('home_work_1_img_url') ?: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=90&auto=format&fit=crop' ); ?>"
-          alt="Portfolio image 1">
-        <div class="tactile-caption">
-          <h3><?php echo esc_html( get_field('home_work_1_client') ?: 'Heritage Label Co. — Identity' ); ?></h3>
-          <p><?php echo esc_html( get_field('home_work_1_category') ?: 'Portrait · Brand Campaign · 2024' ); ?></p>
-          <a href="#" class="tactile-cta">View Case Study →</a>
-        </div>
-      </div>
-      <div class="tactile-item">
-        <img class="tactile-img"
-          src="<?php echo esc_url( get_field('home_work_2_img_url') ?: 'https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=1200&q=90&auto=format&fit=crop' ); ?>"
-          alt="Portfolio image 2">
-        <div class="tactile-caption">
-          <h3><?php echo esc_html( get_field('home_work_2_client') ?: 'Orchard Collective — Product' ); ?></h3>
-          <p><?php echo esc_html( get_field('home_work_2_category') ?: 'Macro · E-Commerce · 2024' ); ?></p>
-          <a href="#" class="tactile-cta">View Case Study →</a>
-        </div>
-      </div>
-      <div class="tactile-item">
-        <img class="tactile-img"
-          src="<?php echo esc_url( get_field('home_work_3_img_url') ?: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=90&auto=format&fit=crop' ); ?>"
-          alt="Portfolio image 3">
-        <div class="tactile-caption">
-          <h3><?php echo esc_html( get_field('home_work_3_client') ?: 'Forma Studio — Architecture' ); ?></h3>
-          <p><?php echo esc_html( get_field('home_work_3_category') ?: 'Architectural · Editorial · 2023' ); ?></p>
-          <a href="#" class="tactile-cta">View Case Study →</a>
-        </div>
       </div>
     </div>
   </section>
@@ -305,155 +217,103 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="section-header services-header">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title">Services</h2>
     </div>
 
     <!-- 01: Brand & Corporate Photography -->
     <div class="service-item">
-      <div class="service-item-left">
+      <div class="service-item-header">
         <span class="service-num">01 // Brand &amp; Corporate</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Executive & Corporate Photography' ); ?></h3>
-        <p class="service-sub-head">Humanise your authority.</p>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Executive & Corporate' ); ?></h3>
       </div>
-      <div class="service-item-right">
+      <div class="service-item-content">
         <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Your people are your most credible asset. We photograph executive portraits, team sessions, corporate events, and office environments that build immediate trust across every platform.' ); ?></p>
         <ul class="service-list">
           <li>Executive Headshots</li>
           <li>Team &amp; Website Photography</li>
           <li>Corporate Events</li>
-          <li>Company Profile Video</li>
-          <li>Product Photography</li>
         </ul>
-        <a href="<?php echo esc_url(home_url('/corporate')); ?>" class="service-btn">Explore Corporate Photography</a>
+        <a href="<?php echo esc_url(home_url('/corporate')); ?>" class="service-btn">Explore Corporate</a>
       </div>
     </div>
 
     <!-- 02: Commercial Photography -->
     <div class="service-item">
-      <div class="service-item-left">
+      <div class="service-item-header">
         <span class="service-num">02 // Commercial</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Commercial Photography' ); ?></h3>
-        <p class="service-sub-head">Visuals made to move people.</p>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Commercial Production' ); ?></h3>
       </div>
-      <div class="service-item-right">
+      <div class="service-item-content">
         <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'Every frame has a job. We deliver OOH campaigns, e-commerce catalogues, fashion, food, and lifestyle photography in close collaboration with your brief and your team.' ); ?></p>
         <ul class="service-list">
           <li>OOH &amp; Billboard Campaigns</li>
           <li>E-Commerce Catalogues</li>
           <li>Food, Fashion &amp; Lifestyle</li>
-          <li>Social Media Campaigns</li>
-          <li>Content Creation</li>
         </ul>
-        <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="service-btn">Explore Commercial Photography</a>
+        <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="service-btn">Explore Commercial</a>
       </div>
     </div>
 
     <!-- 03: Events & Portrait Photography -->
     <div class="service-item">
-      <div class="service-item-left">
+      <div class="service-item-header">
         <span class="service-num">03 // Events &amp; Portrait</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Events & Portrait Photography' ); ?></h3>
-        <p class="service-sub-head">The archive of your legacy.</p>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Events & Portraiture' ); ?></h3>
       </div>
-      <div class="service-item-right">
+      <div class="service-item-content">
         <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'These moments happen only once. We archive maternity, newborn, toddler milestones, weddings, and multi-generational family ceremonies — studio-styled, outdoor, or at home.' ); ?></p>
         <ul class="service-list">
           <li>Baby &amp; Maternity Sessions</li>
           <li>Wedding Photography</li>
-          <li>Cultural Events (Sadhabishegam, Upanayanam, etc.)</li>
           <li>Family Portraits</li>
-          <li>Destination &amp; Outdoor Sessions</li>
         </ul>
-        <a href="<?php echo esc_url(home_url('/events')); ?>" class="service-btn">Explore Events &amp; Portraits</a>
+        <a href="<?php echo esc_url(home_url('/events')); ?>" class="service-btn">Explore Events</a>
       </div>
     </div>
 
     <!-- 04: Podcast & Interview Production -->
     <div class="service-item">
-      <div class="service-item-left">
+      <div class="service-item-header">
         <span class="service-num">04 // Podcast &amp; Interview</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_4_title') ?: 'Podcast & Interview Production' ); ?></h3>
-        <p class="service-sub-head">Sound and vision, aligned.</p>
+        <h3 class="service-title"><?php echo esc_html( get_field('home_service_4_title') ?: 'Podcast Production' ); ?></h3>
       </div>
-      <div class="service-item-right">
+      <div class="service-item-content">
         <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_4_desc') ?: 'A microphone alone does not build an audience. We provide the studio, multi-camera setup, audio production, and branding assets to make your show look and sound market-ready.' ); ?></p>
         <ul class="service-list">
           <li>Studio &amp; Production</li>
           <li>Content Editing &amp; Distribution</li>
-          <li>Photography &amp; Branding</li>
         </ul>
-        <a href="<?php echo esc_url(home_url('/podcast')); ?>" class="service-btn">Explore Podcast Production</a>
+        <a href="<?php echo esc_url(home_url('/podcast')); ?>" class="service-btn">Explore Podcast</a>
       </div>
     </div>
-
-    <!-- 05: Coming Soon — Brand Design & Ad Commercials -->
-    <div class="service-item is-upcoming">
-      <div class="service-item-left">
-        <span class="service-coming-badge">Coming Soon</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_5_title') ?: 'Brand Design & Ad Commercials' ); ?></h3>
-        <p class="service-sub-head">The complete creative studio.</p>
-      </div>
-      <div class="service-item-right">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_5_desc') ?: 'Chithramaya is expanding. Soon we will offer logo design, brand identity, OOH campaign design, and full TVC production — bringing the complete creative pipeline together.' ); ?></p>
-        <ul class="service-list">
-          <li>Logo &amp; Brand Identity</li>
-          <li>Marketing Collaterals</li>
-          <li>OOH Campaign Design</li>
-          <li>Brand Guidelines</li>
-          <li>Ad Commercials &amp; TVC</li>
-        </ul>
-        <a href="#" class="service-notify-btn" data-trigger="booking">Notify Me When Live</a>
-      </div>
-    </div>
-
   </section>
 
   <!-- PROCESS -->
   <section class="process" id="process">
-    <div class="section-header"><h2 class="section-title">How We Work</h2></div>
+    <div class="section-header"><h2 class="section-title">Methodology</h2></div>
     <div class="process-steps">
-      <div class="process-step"><div class="step-num">01</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_1_title') ?: 'Brief &amp; Discovery' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_1_desc') ?: 'We spend the first week understanding your audience\'s psychology, competitive landscape, and the specific emotional response your images must trigger. No camera is touched until this is complete.' ); ?></p></div>
-      <div class="process-step"><div class="step-num">02</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_2_title') ?: 'Lighting & Setup' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_2_desc') ?: 'Every shoot has a deliberate lighting plan drawn from the mood and quality we need to draw from the subject. We treat the studio as a precision instrument, not a backdrop.' ); ?></p></div>
-      <div class="process-step"><div class="step-num">03</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_3_title') ?: 'Capture &amp; Selection' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_3_desc') ?: 'Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Ruthless curation is the most important part of our creative process.' ); ?></p></div>
-      <div class="process-step"><div class="step-num">04</div><h3 class="step-title"><?php echo esc_html( get_field('home_process_4_title') ?: 'Delivery &amp; Licensing' ); ?></h3><p class="step-desc"><?php echo wp_kses_post( get_field('home_process_4_desc') ?: 'Final assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified alt-text metadata for your SEO team. Full licensing documentation included.' ); ?></p></div>
+      <div class="process-step"><div class="step-num">01</div><h3 class="step-title">Brief &amp; Discovery</h3><p class="step-desc">We spend the first week understanding your audience's psychology, competitive landscape, and the emotional response required.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h3 class="step-title">Lighting & Setup</h3><p class="step-desc">Every shoot has a deliberate lighting plan drawn from the mood and quality we need to draw from the subject.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h3 class="step-title">Capture &amp; Selection</h3><p class="step-desc">Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Curation is vital.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h3 class="step-title">Final Delivery</h3><p class="step-desc">Assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified metadata.</p></div>
     </div>
   </section>
 
   <section class="testimonial" id="testimonials">
     <div class="testimonial-label">Client Voice</div>
     <div>
-      <blockquote class="testimonial-quote"><?php echo wp_kses_post( get_field('home_testi_quote') ?: '"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No filter. No CGI. We increased conversion on that product page by 34% within a month."' ); ?></blockquote>
+      <blockquote class="testimonial-quote"><?php echo wp_kses_post( get_field('home_testi_quote') ?: '"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No CGI. We increased conversion on that product page by 34% within a month."' ); ?></blockquote>
       <p class="testimonial-author"><?php echo esc_html( get_field('home_testi_author') ?: '— Priya Sundaram, Creative Director · Maison Kaur' ); ?></p>
     </div>
   </section>
 
   <section class="cta-banner" id="contact">
-    <img class="cta-banner-img"
-      src="<?php echo esc_url( get_field('home_cta_bg_url') ?: 'https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=2400&q=80&auto=format&fit=crop' ); ?>"
-      alt="A dark dramatic photography studio with a single powerful light source — the Chithramaya Creatives commission environment.">
     <div class="cta-banner-content">
-      <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'Start a<br><em>Commission</em>' ); ?></h2>
+      <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'START THE PROJECT.' ); ?></h2>
+      <a href="#" class="cta-banner-btn" data-trigger="booking">Speak to a Creative Director</a>
     </div>
-    <a href="#" class="cta-banner-btn" data-trigger="booking">Speak to a Creative Director</a>
   </section>
 
-
-
-
-
-  <script>
-    const hero = document.getElementById('hero');
-    const glow = document.getElementById('hero-glow');
-    if (hero && glow) {
-      hero.addEventListener('mousemove', (e) => {
-        const rect = hero.getBoundingClientRect();
-        glow.style.left = (e.clientX - rect.left) + 'px';
-        glow.style.top = (e.clientY - rect.top) + 'px';
-        glow.style.opacity = '1';
-      });
-      hero.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-    }
-  </script>
   <?php get_template_part('template-parts/global-footer'); ?>
   <?php wp_footer(); ?>
 </body>
