@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Pillar — Corporate Brand (Editorial Scroll)
+ * Template Name: Pillar — Corporate Brand (No-Photo Brutalist)
  * Template Post Type: page
  */
 ?>
@@ -10,147 +10,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand & Corporate Photography — Chithramaya</title>
-  <meta name="description" content="A comprehensive range of services offered to help businesses present a strong and authentic visual identity.">
+  <meta name="description" content="Visual authority engineered for B2B. Zero friction. Absolute precision.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand')); ?>">
   <?php wp_head(); ?>
   <style>
     /* OVERFLOW PROTECTION FOR MOBILE */
-    .brut-protect-overflow {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-      max-width: 100vw;
-    }
+    .brut-protect-overflow { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; max-width: 100vw; }
 
-    /* HERO SECTION BEST PRACTICES (Cinematic Full-Bleed) */
+    /* NO-PHOTO HERO SECTION (SPLIT COMPOSITION) */
     .corp-hero {
-      position: relative;
-      min-height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 4rem 1.5rem;
-      background-image: linear-gradient(to bottom, rgba(10,17,40,0.3) 0%, rgba(10,17,40,0.95) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      position: relative; min-height: 80vh; width: 100vw; display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 1.5rem 6rem; background: var(--color-light); color: var(--color-dark); border-bottom: 2px solid var(--color-dark);
     }
-
-    .corp-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
+    .corp-hero-content { 
+      position: relative; z-index: 2; width: 100%; max-width: 1600px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 4rem;
     }
-
-    .corp-hero-h1 {
-      font-size: var(--type-step-5);
-      font-weight: 900;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-      color: var(--color-light);
+    .corp-hero-h1 { 
+      font-size: clamp(3rem, 9vw, 9rem); font-family: var(--font-sans, 'Inter', sans-serif); 
+      font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; color: inherit; margin: 0; word-break: normal;
     }
+    .corp-hero-meta { max-width: 450px; text-align: left; }
+    .corp-hero-sub { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.5; color: var(--color-dark); opacity: 0.8; margin-bottom: 3rem; }
+    
+    @media (min-width: 992px) { .corp-hero { padding: 10rem 4rem 6rem; } }
 
-    .corp-hero-sub {
-      font-size: var(--type-step-1);
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 700px;
-      margin-bottom: 3rem;
+    /* BRUTALIST SERVICES ACCORDION GRID */
+    .services-wrapper { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; background: var(--color-light); color: var(--color-dark); }
+    .services-grid { display: grid; gap: 4rem; }
+    @media (min-width: 992px) { .services-grid { grid-template-columns: 1fr 2fr; gap: 8rem; align-items: start; } }
+
+    /* Left Column */
+    .services-intro-title { font-size: var(--type-step-3); font-family: var(--font-serif, 'Cormorant Garamond', serif); font-weight: 400; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid var(--color-dark); padding-bottom: 0.5rem; }
+    .services-intro-text { font-size: var(--type-step-0); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; line-height: 1.6; color: var(--color-dark); margin-bottom: 2rem; }
+
+    /* Right Column (Accordion) */
+    .b-accordion { border-top: 2px solid var(--color-dark); }
+    .b-accordion-group { border-bottom: 2px solid var(--color-dark); }
+    .b-accordion-btn { 
+      width: 100%; background: transparent; border: none; padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; 
+      font-size: clamp(1.25rem, 3vw, 2.5rem); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: var(--color-dark); transition: color 0.2s; 
     }
+    .b-accordion-btn:hover { color: var(--color-accent); }
+    .b-accordion-btn[aria-expanded="true"] { color: var(--color-accent); }
+    .b-accordion-num { font-weight: 400; opacity: 1; margin-right: 1.5rem; color: var(--color-accent); font-family: var(--font-sans); }
+    .b-accordion-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; }
+    .b-accordion-btn[aria-expanded="true"] .b-accordion-icon { transform: rotate(45deg); }
 
-    @media (min-width: 992px) {
-      .corp-hero {
-        padding: 6rem 4rem;
-      }
-    }
+    .b-accordion-panel { display: none; padding: 0 0 2.5rem 0; overflow: hidden; }
+    .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel { display: block; animation: slideDown 0.3s ease forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* EDITORIAL SCROLL FRAMEWORK */
-    .editorial-section { padding: 6rem 1.5rem; max-width: 1400px; margin: 0 auto; border-bottom: 2px solid var(--text-dark); }
-    .editorial-section:last-of-type { border-bottom: none; }
-
-    @media (min-width: 768px) {
-      .editorial-section { padding: 8rem 3rem; }
-    }
-
-    .editorial-img-wrapper { width: 100%; aspect-ratio: 16/9; overflow: hidden; margin-bottom: 4rem; background: #000; }
-    .editorial-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%) contrast(1.1); transition: transform 0.8s ease, filter 0.8s ease; }
-    .editorial-img-wrapper:hover .editorial-img { transform: scale(1.02); filter: grayscale(0%) contrast(1); }
-
-    .editorial-content { display: grid; gap: 3rem; }
-    @media (min-width: 1024px) {
-      .editorial-content { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    }
-
-    .editorial-text-col { max-width: 800px; }
-
-    .editorial-header {
-      font-size: var(--type-step-4);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      line-height: 0.95;
-      color: var(--color-dark);
-    }
-
-    .editorial-copy {
-      font-size: var(--type-step-0);
-      font-weight: 400;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .editorial-deliverables { display: flex; flex-direction: column; gap: 0.5rem; }
-    .editorial-deliverables span {
-      font-size: var(--type-step-1);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--color-dark);
-      line-height: 1.2;
-      text-transform: capitalize;
-    }
+    .b-accordion-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .b-accordion-list li { font-size: var(--type-step-1); font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 500; color: var(--color-dark); opacity: 0.9; border-left: 2px solid var(--color-accent); padding-left: 1.5rem; }
 
     /* BRUTALIST MARKETING BLOCKS */
     .brut-marquee { padding: 4rem 1.5rem; background: var(--color-dark); color: var(--color-light); text-align: center; overflow: hidden; }
-    .brut-marquee-title { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 3rem; }
+    .brut-marquee-title { font-size: 1rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 3rem; }
     .brut-marquee-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center; }
-    .brut-marquee-logos span { font-size: clamp(2rem, 4vw, 4rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase; }
+    .brut-marquee-logos span { font-size: clamp(2rem, 4vw, 4rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; }
 
-    .brut-impact { padding: 8rem 1.5rem; max-width: 1400px; margin: 0 auto; border-top: 2px solid var(--text-dark); border-bottom: 2px solid var(--text-dark); }
-    .brut-impact-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; }
+    .brut-impact { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; border-top: 2px solid var(--color-dark); border-bottom: 2px solid var(--color-dark); background: var(--color-light); }
+    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; color: var(--color-dark); }
     .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
     @media (min-width: 992px) { .brut-impact-grid { grid-template-columns: repeat(3, 1fr); } }
-    .impact-card { display: flex; flex-direction: column; gap: 1rem; }
-    .impact-num { font-size: var(--type-step-5); font-weight: 900; color: var(--color-accent); opacity: 0.9; line-height: 0.8; margin-bottom: 1rem; }
-    .impact-header { font-size: var(--type-step-2); font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; }
-    .impact-desc { font-size: var(--type-step-0); line-height: 1.6; color: #333; }
-
-    .brut-pipeline { padding: 8rem 1.5rem; text-align: center; background: var(--color-light); }
-    .brut-pipeline-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 2rem; }
-    .brut-pipeline-desc { font-size: var(--type-step-1); max-width: 600px; margin: 0 auto 4rem; color: #333; line-height: 1.5; }
+    .impact-card { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 2px solid var(--color-dark); }
+    .impact-num { font-size: var(--type-step-5); font-family: var(--font-sans); font-weight: 900; color: var(--color-accent); line-height: 0.8; margin-bottom: 1rem; }
+    .impact-header { font-size: var(--type-step-2); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-dark); }
+    .impact-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.8; }
 
     /* GLOBAL CTA */
-    .global-cta { padding: 8rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
-    .global-cta-title { font-size: var(--type-step-4); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; margin-bottom: 3rem; }
-
-    @media (max-width: 768px) {
-      .editorial-img-wrapper { aspect-ratio: 4/3; margin-bottom: 2rem; }
-    }
+    .global-cta { padding: 10rem 1.5rem; text-align: center; background: var(--color-dark); color: var(--color-light); }
+    .global-cta-title { font-size: clamp(3rem, 8vw, 6rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 4rem; }
   </style>
 </head>
-<body>
+<body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION WITH BEST PRACTICES -->
+  <!-- HERO SECTION WITH NO PHOTOS -->
   <section class="corp-hero">
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1 brut-protect-overflow">Brand &<br>Corporate</h1>
-      <p class="corp-hero-sub brut-protect-overflow">A comprehensive range of services offered to help businesses present a strong and authentic visual identity.</p>
-      <div>
-        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Commission a Project</a>
+      <h1 class="corp-hero-h1">Brand &<br>Corporate</h1>
+      
+      <div class="corp-hero-meta">
+        <p class="corp-hero-sub brut-protect-overflow">Visual authority engineered for B2B. Zero friction. Absolute precision.</p>
+        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
       </div>
     </div>
   </section>
@@ -167,97 +111,96 @@
     </div>
   </section>
 
-  <!-- 01 // EXECUTIVE PORTRAITS -->
-  <article class="editorial-section" id="service-1">
-    <div class="editorial-img-wrapper">
-      <img src="https://images.unsplash.com/photo-1742981365879-7ad5b7e7e4ce?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Executive Portrait" class="editorial-img">
-    </div>
-    <div class="editorial-content">
-      <div class="editorial-text-col">
-        <h2 class="editorial-header brut-protect-overflow">01 // Executive Portraits</h2>
-        <p class="editorial-copy">Designed to humanize the brand by showcasing team members on company websites and platforms like LinkedIn.</p>
+  <!-- NO-PHOTO SERVICES ACCORDION -->
+  <section class="services-wrapper">
+    <div class="services-grid">
+      
+      <div class="services-left">
+        <h2 class="services-intro-title">SERVICES —</h2>
+        <p class="services-intro-text">Your first impression is your only impression.</p>
+        <p class="services-intro-text">We arm your executive and marketing teams with assets that demand respect and close deals.</p>
       </div>
-      <div class="editorial-deliverables brut-protect-overflow">
-        <span>Executive headshots</span>
-        <span>Website photography</span>
-        <span>Team photography</span>
-      </div>
-    </div>
-  </article>
 
-  <!-- 02 // ENVIRONMENTAL PORTRAITS -->
-  <article class="editorial-section" id="service-2">
-    <div class="editorial-img-wrapper">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" alt="Environmental Portrait" class="editorial-img">
-    </div>
-    <div class="editorial-content">
-      <div class="editorial-text-col">
-        <h2 class="editorial-header brut-protect-overflow">02 // Environmental Portraits</h2>
-        <p class="editorial-copy">Capturing staff in their natural workspace or in action, effectively reflecting the company’s culture and work environment.</p>
-      </div>
-      <div class="editorial-deliverables brut-protect-overflow">
-        <span>Company lifestyle pictures</span>
-        <span>Corporate video</span>
-        <span>Company profile video</span>
-      </div>
-    </div>
-  </article>
+      <div class="services-right">
+        <div class="b-accordion">
+          
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">01</span> Executive Portraits</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Executive headshots</li>
+                <li>Website photography</li>
+                <li>Team photography</li>
+              </ul>
+            </div>
+          </div>
 
-  <!-- 03 // PRODUCT & CINEMATIC -->
-  <article class="editorial-section" id="service-3">
-    <div class="editorial-img-wrapper">
-      <img src="https://images.unsplash.com/photo-1637250067262-758c5b8fb18c?auto=format&fit=crop&w=1600&q=80" alt="Product Photography" class="editorial-img">
-    </div>
-    <div class="editorial-content">
-      <div class="editorial-text-col">
-        <h2 class="editorial-header brut-protect-overflow">03 // Product & Cinematic</h2>
-        <p class="editorial-copy">Delivering high-quality images and video tailored for marketing campaigns and e-commerce platforms.</p>
-      </div>
-      <div class="editorial-deliverables brut-protect-overflow">
-        <span>Product photography</span>
-        <span>Brand Ads / videos</span>
-        <span>TVC</span>
-      </div>
-    </div>
-  </article>
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">02</span> Environmental Portraits</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Company lifestyle pictures</li>
+                <li>Corporate video</li>
+                <li>Company profile video</li>
+              </ul>
+            </div>
+          </div>
 
-  <!-- 04 // CORPORATE EVENTS -->
-  <article class="editorial-section" id="service-4">
-    <div class="editorial-img-wrapper">
-      <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80" alt="Corporate Event Coverage" class="editorial-img">
-    </div>
-    <div class="editorial-content">
-      <div class="editorial-text-col">
-        <h2 class="editorial-header brut-protect-overflow">04 // Event Coverage</h2>
-        <p class="editorial-copy">Ensuring that important moments from conferences, seminars, and product launches are professionally documented.</p>
-      </div>
-      <div class="editorial-deliverables brut-protect-overflow">
-        <span>Corporate events</span>
-        <span>Marketing events</span>
-        <span>Seminars</span>
-        <span>Conferences</span>
-        <span>Product launches</span>
-      </div>
-    </div>
-  </article>
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">03</span> Product & Cinematic</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Product photography</li>
+                <li>Brand Ads / videos</li>
+                <li>TVC</li>
+              </ul>
+            </div>
+          </div>
 
-  <!-- 05 // OFFICE & WORKPLACE -->
-  <article class="editorial-section" id="service-5">
-    <div class="editorial-img-wrapper">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80" alt="Office Infrastructure" class="editorial-img">
-    </div>
-    <div class="editorial-content">
-      <div class="editorial-text-col">
-        <h2 class="editorial-header brut-protect-overflow">05 // Workplace</h2>
-        <p class="editorial-copy">Highlighting the organization’s infrastructure, ambiance, and operational environment, helping build trust and credibility.</p>
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">04</span> Event Coverage</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Corporate events</li>
+                <li>Marketing events</li>
+                <li>Seminars</li>
+                <li>Conferences</li>
+                <li>Product launches</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="b-accordion-group">
+            <button class="b-accordion-btn" aria-expanded="false">
+              <span><span class="b-accordion-num">05</span> Workplace & Infra</span>
+              <span class="b-accordion-icon">+</span>
+            </button>
+            <div class="b-accordion-panel">
+              <ul class="b-accordion-list">
+                <li>Infrastructure</li>
+                <li>Ambiance</li>
+                <li>Operational environment</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="editorial-deliverables brut-protect-overflow">
-        <span>Infrastructure</span>
-        <span>Ambiance</span>
-        <span>Operational environment</span>
-      </div>
+
     </div>
-  </article>
+  </section>
 
   <!-- IMPACT OF PROFESSIONAL ASSETS -->
   <section class="brut-impact">
@@ -281,17 +224,25 @@
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section class="brut-pipeline">
-    <h2 class="brut-pipeline-title brut-protect-overflow">How We Work</h2>
-    <p class="brut-pipeline-desc">From initial consultation to final delivery, our comprehensive pipeline ensures transparency and builds trust every step of the way.</p>
-    <a href="#pipeline" class="brut-btn" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Explore Our Pipeline</a>
-  </section>
-
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Ready to Humanize Your Brand?</h2>
-    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border-color:var(--color-accent);">Commission a Project</a>
+    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Commission a Project</a>
   </section>
+
+<script>
+  // Simple Vanilla JS for the Brutalist Services Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.b-accordion-btn');
+    accordions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        // Optional: close all others
+        // accordions.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        btn.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  });
+</script>
 
 <?php get_template_part('template-parts/global-footer'); ?>
 <?php wp_footer(); ?>
