@@ -96,7 +96,7 @@
       $hero_bg_image = get_field('hero_bg_image');
       $hero_bg_url = get_field('hero_bg_url');
       
-      $bg_src = 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=2400&q=80';
+      $bg_src = 'https://images.unsplash.com/photo-1753705745770-6ceefc22ed33?auto=format&fit=crop&w=2400&q=80';
       $bg_alt = 'Mother gently holding newborn baby';
       
       if ( $hero_bg_image && isset($hero_bg_image['url']) ) {
