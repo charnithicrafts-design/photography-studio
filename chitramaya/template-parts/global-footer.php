@@ -129,3 +129,52 @@
     <span>Chat with us</span>
   </a>
 </footer>
+
+<script>
+  // Global WhatsApp CTA Router
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingBtns = document.querySelectorAll('[data-trigger="booking"]');
+    bookingBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        let msg = "Hi! I'd like to speak with a Creative Director about an upcoming project.";
+        const path = window.location.pathname;
+        const id = btn.id;
+        
+        if (btn.hasAttribute('data-wa-msg')) {
+           msg = btn.getAttribute('data-wa-msg');
+        } else if (path.includes('brand-design') || path.includes('drawer-brand')) {
+           msg = "Hi! I'm interested in commissioning a Brand Design project with Chithramaya. I'd love to discuss building my brand's visual identity.";
+        } else if (path.includes('commercial')) {
+           msg = "Hi! I'm interested in booking a Commercial Campaign shoot. I'd love to discuss the creative direction and timelines.";
+        } else if (path.includes('corporate')) {
+           msg = "Hi! I'm looking to commission a Corporate & Brand Identity project to elevate my brand's visual assets.";
+        } else if (path.includes('events-portrait')) {
+           msg = "Hi! I'd like to check availability and reserve a date for an upcoming Event/Portrait session.";
+        } else if (path.includes('podcast')) {
+           msg = "Hi! I'm interested in booking the Thalam Podcast Studio for an upcoming recording session.";
+        } else if (path.includes('maternity') || path.includes('thalam-baby')) {
+           msg = "Hi! I'd like to book a Maternity/Bump-to-Baby session to document my family's journey.";
+        } else if (path.includes('thalam-studio')) {
+           if (id === 'cta-ad-shoots') {
+             msg = "Hi! I'm interested in booking the Thalam Studio for a Commercial Ad Shoot.";
+           } else if (id === 'cta-podcast') {
+             msg = "Hi! I'm interested in booking the Thalam Podcast Studio for an upcoming recording session.";
+           } else if (id === 'cta-product') {
+             msg = "Hi! I'm interested in booking the Thalam Studio for a Product Photography shoot.";
+           } else if (id === 'cta-food') {
+             msg = "Hi! I'm interested in booking the Thalam Studio for a Food & Beverage shoot.";
+           } else {
+             msg = "Hi! I'm interested in renting the Thalam Studio space.";
+           }
+        } else if (path.includes('production') || path.includes('chitramaya-landing') || path === '/' || path === '') {
+           msg = "Hi! I'd like to speak with a Creative Director about an upcoming project.";
+        }
+        
+        const whatsappUrl = 'https://wa.me/918098014123?text=' + encodeURIComponent(msg);
+        window.open(whatsappUrl, '_blank');
+      });
+    });
+  });
+</script>

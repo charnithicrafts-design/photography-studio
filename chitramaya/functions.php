@@ -190,12 +190,6 @@ function chitramaya_frontend_ajax() {
 }
 add_action('wp_enqueue_scripts', 'chitramaya_frontend_ajax');
 
-// Inject Booking Overlay exclusively on specific templates to prevent DOM bloat
-function chitramaya_inject_booking_overlay() {
-    if ( is_page_template( array('template-chitramaya.php', 'template-thalam.php', 'template-thalam-baby.php', 'template-corporate.php', 'template-commercial.php', 'template-events.php', 'template-production.php', 'template-maternity.php') ) ) {
-        require_once get_stylesheet_directory() . '/template-parts/global-booking.php';
-    }
-}
-add_action('wp_footer', 'chitramaya_inject_booking_overlay');
+// Booking overlay has been replaced with direct WhatsApp CTAs
 
 
