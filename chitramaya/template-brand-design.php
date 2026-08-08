@@ -71,10 +71,10 @@
     .brut-marquee-logos span { font-size: clamp(2rem, 4vw, 4rem); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; }
 
     .brut-impact { padding: 8rem 1.5rem; max-width: 1600px; margin: 0 auto; border-top: 2px solid var(--color-dark); border-bottom: 2px solid var(--color-dark); background: var(--color-light); }
-    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin-bottom: 6rem; line-height: 1; color: var(--color-dark); }
-    .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+    .brut-impact-title { font-size: clamp(2rem, 5vw, 5rem); font-family: var(--font-sans); font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; text-align: center; margin: 0 auto 6rem auto; max-width: 1200px; line-height: 1; color: var(--color-dark); }
+    .brut-impact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; }
     @media (min-width: 992px) { .brut-impact-grid { grid-template-columns: repeat(3, 1fr); } }
-    .impact-card { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 2px solid var(--color-dark); }
+    .impact-card { display: flex; flex-direction: column; gap: 1rem; }
     .impact-num { font-size: var(--type-step-5); font-family: var(--font-sans); font-weight: 900; color: var(--color-accent); line-height: 0.8; margin-bottom: 1rem; }
     .impact-header { font-size: var(--type-step-2); font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; color: var(--color-dark); }
     .impact-desc { font-size: 1.1rem; font-family: var(--font-sans); line-height: 1.6; color: var(--color-dark); opacity: 0.8; }
