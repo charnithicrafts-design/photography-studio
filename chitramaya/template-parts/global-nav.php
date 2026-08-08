@@ -68,7 +68,7 @@
                 <ul class="c-nav-grid">
                     <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>">Thalam Studio Facility</a></li>
                     <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast & Interview</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#photography">Photography & Branding</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>#services">Photography & Branding</a></li>
                 </ul>
             </div>
         </div>
