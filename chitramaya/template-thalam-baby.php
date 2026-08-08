@@ -55,9 +55,11 @@
     .journey-accordion { display: flex; flex-direction: column; }
     .journey-card { border-top: 1px solid rgba(0,0,0,0.1); }
     .journey-card:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
-    .journey-card-toggle { width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0; cursor: pointer; font-family: inherit; color: inherit; }
+    .journey-card-toggle { width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0; cursor: pointer; font-family: inherit; color: inherit; display: flex; justify-content: space-between; align-items: center; }
     .journey-card-step { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.5rem; display: block; }
-    .journey-card-title { font-family: var(--font-serif); font-style: italic; font-size: 2rem; transition: color 0.3s ease; }
+    .journey-card-title { font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; font-size: 2rem; transition: color 0.3s ease; }
+    .journey-card-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; font-family: var(--font-sans); color: inherit; }
+    .journey-card.is-active .journey-card-icon { transform: rotate(45deg); color: var(--accent-warm); }
     .journey-card.is-active .journey-card-title, .journey-card-toggle:hover .journey-card-title { color: var(--accent-warm); }
     
     .journey-card-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; }
@@ -169,8 +171,11 @@
         <?php foreach( $steps as $index => $step ) : $is_active = ($index === 0) ? 'is-active' : ''; ?>
           <div class="journey-card <?php echo $is_active; ?>" data-index="<?php echo $index; ?>">
             <button class="journey-card-toggle">
-              <span class="journey-card-step"><?php echo esc_html( $step['label'] ); ?></span>
-              <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
+              <div>
+                <span class="journey-card-step"><?php echo esc_html( $step['label'] ); ?></span>
+                <h3 class="journey-card-title"><?php echo esc_html( $step['title'] ); ?></h3>
+              </div>
+              <span class="journey-card-icon">+</span>
             </button>
             <div class="journey-card-content">
               <p class="journey-card-desc"><?php echo wp_kses_post( $step['description'] ); ?></p>

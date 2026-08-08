@@ -33,12 +33,24 @@ for root, dirs, files in os.walk('chitramaya'):
         remote_path = 'wp-content/themes/' + local_path
         files_to_upload.append((local_path, remote_path))
 
+# Directories to never upload to the server
+SKIP_DIR_SEGMENTS = [
+    'node_modules',
+    '.git',
+    'tools',
+    '__pycache__',
+    '.cache',
+    'src',          # Vite source — only dist/ is needed
+]
+
 # Automatically gather plugin files (chitramaya-proofing)
 plugin_local_dir = 'wp-content/plugins/chitramaya-proofing'
 if os.path.exists(plugin_local_dir):
     for root, dirs, files in os.walk(plugin_local_dir):
-        # Skip the tools/ directory (local-only CLI, not needed on server)
-        if '/tools' in root or '\\tools' in root:
+        # Prune walk into skip dirs in-place (prevents descending into them)
+        dirs[:] = [d for d in dirs if d not in SKIP_DIR_SEGMENTS]
+        # Also skip if any path segment matches
+        if any(seg in root.replace('\\', '/').split('/') for seg in SKIP_DIR_SEGMENTS):
             continue
         for file in files:
             if file.startswith('.'):
