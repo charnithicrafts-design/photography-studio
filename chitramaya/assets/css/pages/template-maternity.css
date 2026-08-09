@@ -30,7 +30,7 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0.6;
-  filter: saturate(0.8) contrast(1.1);
+  filter: grayscale(1) contrast(1.1);
 }
 .hero-content {
   position: relative;
@@ -47,6 +47,8 @@ body {
   font-style: italic;
 }
 .hero-desc {
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: clamp(1rem, 2vw, 1.25rem);
   max-width: 600px;
   color: rgba(255, 255, 255, 0.8);
