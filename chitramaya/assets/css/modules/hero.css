@@ -3,11 +3,16 @@
   .graphic-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(80px);
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.8;
   pointer-events: none;
-  /* mix-blend-mode removed to support dark backgrounds */
+  mix-blend-mode: multiply;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+}
+.graphic-orb.blend-screen {
+  mix-blend-mode: screen;
 }
 .graphic-orb.orb-lg {
   width: 40vw;
