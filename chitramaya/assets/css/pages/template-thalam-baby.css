@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   padding: 0;
+  background: var(--bg-dark);
 }
 
 /* The Background: An emotional connection using a warm, moody Unsplash image and a deep gradient */
