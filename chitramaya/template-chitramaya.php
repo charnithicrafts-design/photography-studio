@@ -25,10 +25,10 @@
   <?php get_template_part('template-parts/global-nav'); ?>
 
   <section class="hero section-illusion-wrapper" id="hero">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
 
-    <div class="hero-content">
+    <div class="hero-content glass-panel" style="padding: 4rem; border-radius: 40px; border: 1px solid rgba(0,0,0,0.05);">
       <h1 class="hero-brand-name">
         <span class="brand-heavy"><?php echo esc_html( get_field('home_hero_title_1') ?: 'CHITHRAMAYA' ); ?></span>
         <span class="brand-elegant"><?php echo esc_html( get_field('home_hero_title_2') ?: 'Creatives' ); ?></span>
