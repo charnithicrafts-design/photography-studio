@@ -42,24 +42,25 @@
     .nav-thalam-pill:hover { background: var(--text-dark) !important; transform: translateY(-1px); color: var(--bg-light) !important; }
 
     /* HERO - SPACIOUS EDITORIAL PROPORTIONS */
-    .hero { position: relative; min-height: 100vh; width: 100%; background-color: var(--bg-light); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15vh 0; }
+    .hero { position: relative; min-height: 100vh; width: 100%; background-color: var(--bg-light); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10vh 0; }
 
-    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 1400px; padding: 0 1.5rem; text-align: center; gap: 4rem; }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 1400px; padding: 2rem 1rem; text-align: center; gap: 2.5rem; }
+    .hero-content.glass-panel { padding: 2rem 1rem; border-radius: 24px; border: 1px solid rgba(0,0,0,0.05); width: 90%; }
+    @media (min-width: 992px) { .hero-content.glass-panel { padding: 4rem; border-radius: 40px; width: 100%; } .hero-content { gap: 4rem; padding: 0 1.5rem; } }
 
-    .hero-brand-name { display: flex; align-items: baseline; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0; }
-    .brand-heavy { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3.2rem, 9vw, 8.5rem); letter-spacing: -0.04em; color: var(--text-dark); line-height: 1; text-transform: uppercase; }
-    .brand-elegant { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(3.2rem, 9vw, 8.5rem); color: var(--text-dark); line-height: 1; letter-spacing: -0.02em; }
+    .hero-brand-name { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-direction: column; margin: 0; }
+    @media (min-width: 992px) { .hero-brand-name { flex-direction: row; gap: 1.5rem; align-items: baseline; } }
+    .brand-heavy { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2.5rem, 8vw, 8.5rem); letter-spacing: -0.04em; color: var(--text-dark); line-height: 1; text-transform: uppercase; }
+    .brand-elegant { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(2.5rem, 8vw, 8.5rem); color: var(--text-dark); line-height: 1; letter-spacing: -0.02em; }
 
-    .hero-intro { font-family: var(--font-sans); font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.5; color: var(--text-dark); max-width: 800px; margin: 0 auto; font-weight: 400; }
+    .hero-intro { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.8rem); line-height: 1.5; color: var(--text-dark); max-width: 800px; margin: 0 auto; font-weight: 400; }
 
-    .hero-pills { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0; width: 100%; }
-    .hero-pill { border: 1px solid var(--text-dark); color: var(--text-dark); padding: 0.8rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.3s, color 0.3s; }
+    .hero-pills { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin: 0; width: 100%; }
+    .hero-pill { border: 1px solid var(--text-dark); color: var(--text-dark); padding: 0.5rem 1rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.3s, color 0.3s; border-radius: 50px; }
+    @media (min-width: 992px) { .hero-pill { padding: 0.8rem 1.5rem; font-size: 0.85rem; gap: 1.5rem; } }
     .hero-pill-link { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; background: transparent; color: var(--text-dark); }
     .hero-pill-link:hover { background: rgba(42,39,36,0.05); color: var(--text-dark); }
     .hero-pill-link svg { width: 14px; height: 14px; fill: none; }
-
-    .hero-btn { display: inline-block; border: 1px solid var(--accent); background: var(--accent); padding: 1.1rem 2.5rem; color: var(--bg-light); text-decoration: none; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
-    .hero-btn:hover { background: transparent; color: var(--accent); }
 
     /* MANIFESTO (Brutalist Overhaul) */
     .manifesto { padding: 5rem 1.5rem; display: flex; flex-direction: column; gap: 3rem; background-color: var(--bg-light); color: var(--text-dark); }
