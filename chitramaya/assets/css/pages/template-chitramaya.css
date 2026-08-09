@@ -106,14 +106,12 @@ nav {
   align-items: center;
   justify-content: center;
   max-width: 1200px;
-  padding: 2rem 1rem;
   text-align: center;
   gap: 2.5rem;
 }
 @media (min-width: 992px) {
   .hero-content {
     gap: 4rem;
-    padding: 0 1.5rem;
   }
 }
 
