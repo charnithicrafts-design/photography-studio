@@ -53,13 +53,14 @@
     .brand-heavy { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2.5rem, 8vw, 8.5rem); letter-spacing: -0.04em; color: var(--text-dark); line-height: 1; text-transform: uppercase; white-space: nowrap; }
     .brand-elegant { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(2.5rem, 8vw, 8.5rem); color: var(--text-dark); line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
 
-    .hero-subject-img { width: 100%; max-width: 400px; height: 300px; object-fit: cover; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 1rem 0; }
-    @media (min-width: 992px) { .hero-subject-img { height: 400px; max-width: 600px; margin: 2rem 0; } }
-
     .hero-intro { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.5; color: var(--text-dark); max-width: 600px; margin: 0 auto; font-weight: 400; }
 
-    .hero-pills { display: none; } /* Hidden on mobile to avoid UX clutter */
-    @media (min-width: 992px) { .hero-pills { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0; width: 100%; } }
+    .hero-pills { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin: 0; width: 100%; }
+    .desktop-only-pill { display: none; }
+    @media (min-width: 992px) { 
+        .hero-pills { gap: 1.5rem; }
+        .desktop-only-pill { display: inline-flex; }
+    }
     
     .hero-pill { border: 1px solid var(--text-dark); color: var(--text-dark); padding: 0.8rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.3s, color 0.3s; border-radius: 50px; }
     .hero-pill-link { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; background: transparent; color: var(--text-dark); }
@@ -166,13 +167,10 @@
         <span class="brand-heavy"><?php echo esc_html( get_field('home_hero_title_1') ?: 'CHITHRAMAYA' ); ?></span>
         <span class="brand-elegant"><?php echo esc_html( get_field('home_hero_title_2') ?: 'Creatives' ); ?></span>
       </h1>
-      
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Chithramaya Portrait" class="hero-subject-img">
-
       <div class="hero-pills">
-        <span class="hero-pill" style="border-radius: 50px;">Commercial</span>
-        <span class="hero-pill" style="border-radius: 50px;">Portraits</span>
-        <span class="hero-pill" style="border-radius: 50px;">Podcast</span>
+        <span class="hero-pill desktop-only-pill" style="border-radius: 50px;">Commercial</span>
+        <span class="hero-pill desktop-only-pill" style="border-radius: 50px;">Portraits</span>
+        <span class="hero-pill desktop-only-pill" style="border-radius: 50px;">Podcast</span>
         <a href="#services" class="hero-pill hero-pill-link" style="border-radius: 50px;">All services
           <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-width="2" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
         </a>
