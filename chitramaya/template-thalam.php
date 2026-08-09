@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css">
 <?php
 /**
  * Template Name: Thalam Studio
@@ -20,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css">
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>

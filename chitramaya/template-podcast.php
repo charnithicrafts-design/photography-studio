@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-podcast.css">
 <?php
 /**
  * Template Name: Pillar — Podcast & Interview (Brutalist)
@@ -15,6 +14,7 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/podcast-interview')); ?>">
   <?php wp_head(); ?>
   
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-podcast.css">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

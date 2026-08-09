@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam-baby.css">
 <?php
 /**
  * Template Name: Thalam Baby & Maternity
@@ -16,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
   
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam-baby.css">
 </head>
 <body>
 

@@ -47,7 +47,7 @@
   text-align: left;
 }
 .corp-hero-sub {
-  font-size: var(--type-step-1);
+  font-size: var(--type-step-0);
   font-family: var(--font-sans, "Inter", sans-serif);
   font-weight: 500;
   line-height: 1.5;
@@ -190,7 +190,7 @@
   }
 }
 .b-accordion-list li {
-  font-size: var(--type-step-1);
+  font-size: var(--type-step-0);
   font-family: var(--font-sans, "Inter", sans-serif);
   font-weight: 500;
   color: var(--color-dark);

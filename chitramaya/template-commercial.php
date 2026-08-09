@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-commercial.css">
 <?php
 /**
  * Template Name: Pillar — Commercial (No-Photo Brutalist)
@@ -15,6 +14,7 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/commercial')); ?>">
   <?php wp_head(); ?>
   
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-commercial.css">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
