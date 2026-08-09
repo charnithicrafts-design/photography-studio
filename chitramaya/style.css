@@ -15,7 +15,6 @@ Version: 1.1.0
 
 /* Layout */
 @import url("assets/css/layout/grid.css");
-@import url("assets/css/layout/templates.css");
 
 /* Modules */
 @import url("assets/css/modules/buttons.css");
