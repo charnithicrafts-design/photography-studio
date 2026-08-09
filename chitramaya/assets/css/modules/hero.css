@@ -1,0 +1,33 @@
+   ELEMENT 07: GRAPHIC ELEMENTS (ARTISTIC ILLUSION)
+   ========================================================================== */
+.graphic-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.6;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+.graphic-orb.orb-lg { width: 40vw; height: 40vw; }
+.graphic-orb.orb-md { width: 25vw; height: 25vw; }
+.graphic-orb.color-cyan { background-color: rgba(0, 240, 255, 0.7); }
+.graphic-orb.color-magenta { background-color: rgba(255, 0, 150, 0.7); }
+.graphic-orb.color-yellow { background-color: rgba(255, 230, 0, 0.7); }
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.section-illusion-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+/* ==========================================================================

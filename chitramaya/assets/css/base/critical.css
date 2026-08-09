@@ -1,0 +1,104 @@
+:root {
+  /* Brutalist Core Variables (Preset values resolved from theme.json) */
+  --color-dark: var(--wp--preset--color--chitramaya-base-dark, #0A1128);
+  --color-light: var(--wp--preset--color--chitramaya-text-light, #FDFBF7);
+  --color-accent: var(--wp--preset--color--chitramaya-accent-vibrant, #FF6B6B);
+  --border-stark: 1px solid var(--color-dark);
+  
+  /* Typography - Chithramaya (The Brain) */
+  --font-primary: var(--wp--preset--font-family--inter, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif);
+  
+  /* Typography - Thalam (The Functional Space) */
+  --font-mono: var(--wp--preset--font-family--ibm-plex-mono, 'IBM Plex Mono', monospace);
+  
+  /* 
+   * FLUID MODULAR TYPOGRAPHY 
+   * Mobile Scale: Major Third (1.25)
+   * Desktop Scale: Perfect Fifth (1.5)
+   * Provides extreme contrast and distinct hierarchy.
+   */
+  --type-step-0: clamp(1.00rem, 0.96rem + 0.18vw, 1.125rem); /* Base */
+  --type-step-1: clamp(1.25rem, 1.125rem + 0.63vw, 1.6875rem);
+  --type-step-2: clamp(1.56rem, 1.29rem + 1.34vw, 2.53rem);
+  --type-step-3: clamp(1.95rem, 1.40rem + 2.68vw, 3.80rem);
+  --type-step-4: clamp(2.44rem, 1.51rem + 4.64vw, 5.69rem);
+  --type-step-5: clamp(3.05rem, 1.51rem + 7.77vw, 8.54rem);
+  
+  /* Reset WP Bloat */
+  --wp--style--global--padding: 0;
+  --wp--custom--spacing--outer: 0;
+}
+
+/* Global Reset & Edge-to-Edge */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Image Tactility (For Chithramaya) */
+.img-tactile {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.95);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.img-tactile:hover {
+  transform: scale(1.02);
+  filter: contrast(1.15) brightness(1);
+}
+
+/* Brutalist Utility Classes */
+.brut-container {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.brut-border-bottom { border-bottom: var(--border-stark); }
+.brut-border-right { border-right: var(--border-stark); }
+.brut-border-top { border-top: var(--border-stark); }
+
+.brut-grid { display: grid; }
+.brut-flex { display: flex; }
+
+/* Thalam Functional UI */
+.thalam-ui {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+/* Typography Overrides */
+h1, .brut-massive-text {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: var(--type-step-5);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+h2, .brut-huge-text {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: var(--type-step-4);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+

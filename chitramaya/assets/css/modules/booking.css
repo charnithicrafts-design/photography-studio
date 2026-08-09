@@ -1,0 +1,154 @@
+   MODULE: GLOBAL BOOKING OVERLAY
+   ========================================================================== */
+.booking-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-light, #FDFBF7);
+    color: var(--color-dark, #0A1128);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding: 6rem 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.booking-overlay[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+.booking-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--color-dark, #0A1128);
+    color: var(--color-light, #FDFBF7);
+    border: none;
+    font-size: 0.8rem;
+    font-family: var(--font-primary, sans-serif);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    transition: 0.3s;
+    z-index: 999999;
+}
+.booking-close:hover {
+    background: var(--color-accent, #FF6B6B);
+    color: #fff;
+}
+.booking-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto 0; /* Centers vertically if space permits, falls back safely to top if scrolling is needed */
+    padding: 2rem;
+}
+.booking-step {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInStep 0.5s ease backwards;
+}
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.booking-step.is-active {
+    display: flex;
+}
+.booking-heading {
+    font-size: var(--step-4);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-accent, #FF6B6B);
+}
+.booking-options {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.booking-choice-btn {
+    min-width: 280px;
+    background: var(--color-dark, #0A1128);
+    color: var(--color-light, #FDFBF7);
+}
+.booking-choice-btn:hover {
+    background: var(--color-accent, #FF6B6B);
+    color: #fff;
+}
+.booking-form {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 3rem;
+}
+.form-group label {
+    display: block;
+    font-size: var(--step--1);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    color: var(--color-dark, #0A1128);
+    padding: 1rem 0;
+    font-size: var(--step-1);
+    font-family: var(--font-primary, sans-serif);
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent, #FF6B6B);
+}
+/* Style the select dropdown so it matches dark theme */
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+.form-group select option {
+    background: #111;
+    color: #fff;
+}
+.booking-form .submit-btn {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--color-text, #fff);
+    color: var(--color-bg, #0a0a0a);
+}
+.booking-form .submit-btn:hover {
+    background-color: transparent;
+    color: var(--color-text, #fff);
+}
+.booking-feedback {
+    margin-top: 2rem;
+    font-size: var(--step-0);
+    text-align: center;
+    min-height: 24px;
+}
+.booking-feedback.success { color: #4CAF50; }
+.booking-feedback.error { color: #F44336; }
+
+/* ==========================================================================

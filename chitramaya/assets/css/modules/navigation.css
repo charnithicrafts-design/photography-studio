@@ -1,0 +1,55 @@
+   MODULE: GLOBAL NAVIGATION (MOBILE FIRST)
+   ========================================================================== */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; mix-blend-mode: difference; }
+.nav-logo { font-weight: 900; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #fff !important; z-index: 10001; transition: opacity 0.3s; }
+.nav-toggle { background: transparent; border: none; color: #fff !important; font-family: var(--wp--preset--font-family--inter, sans-serif); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; z-index: 10001; padding: 0.5rem; outline: none; transition: opacity 0.3s; }
+.nav-logo:hover, .nav-toggle:hover { opacity: 0.6; }
+
+/* Mobile Menu Base */
+.global-nav { position: fixed; inset: 0; background: var(--wp--preset--color--chitramaya-text-dark, #0a0a0a); color: var(--wp--preset--color--chitramaya-bg-light, #fdfbf7); z-index: 9999; display: flex; flex-direction: column; overflow-y: auto; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+.global-nav[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
+.global-nav-container { padding: 6rem 1.5rem 3rem; display: flex; flex-direction: column; gap: 2rem; min-height: 100vh; }
+
+/* The Horizontals */
+.nav-horizontal-item { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-family: var(--wp--preset--font-family--eb-garamond, serif); font-size: clamp(2rem, 8vw, 3rem); text-align: left; padding: 1.5rem 0; cursor: pointer; width: 100%; transition: color 0s; line-height: 1; }
+.nav-horizontal-item.is-active, .nav-horizontal-item:hover { color: var(--wp--preset--color--chitramaya-bg-light, #fdfbf7); border-bottom-color: var(--wp--preset--color--chitramaya-bg-light, #fdfbf7); }
+.nav-soon { font-family: var(--wp--preset--font-family--inter, sans-serif); font-size: 0.5rem; letter-spacing: 0.2em; vertical-align: top; color: var(--wp--preset--color--chitramaya-accent-vibrant, #ff4500); }
+
+/* Mobile Accordion Logic: Panels stack under their active header */
+.nav-panel { display: none; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-panel.is-active { display: flex; flex-direction: column; gap: 2rem; }
+
+/* The Verticals (Grid) */
+.nav-grid { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+.nav-panel-title { display: inline-block; font-family: monospace; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--wp--preset--color--chitramaya-accent-vibrant, #ff4500); text-decoration: none; margin-bottom: 0.5rem; transition: opacity 0.3s; }
+.nav-panel-title:hover { opacity: 0.7; }
+.nav-grid a, .nav-grid span { font-family: monospace; font-size: 0.8rem; text-transform: uppercase; color: var(--wp--preset--color--chitramaya-bg-light, #fdfbf7); text-decoration: none; transition: color 0s; }
+.nav-grid a:hover { color: var(--wp--preset--color--chitramaya-accent-vibrant, #ff4500); }
+.nav-disabled { opacity: 0.3; }
+
+/* The Brutalist Hook */
+.nav-hook { font-family: var(--wp--preset--font-family--inter, sans-serif); font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.6); max-width: 400px; border-left: 2px solid var(--wp--preset--color--chitramaya-accent-vibrant, #ff4500); padding-left: 1rem; }
+
+/* ==========================================================================
+   DESKTOP SPLIT SCREEN (Brutalist Hover)
+   ========================================================================== */
+@media (min-width: 992px) {
+    .site-header { padding: 1.5rem 3rem; }
+    .global-nav { overflow: hidden; }
+    .global-nav-container { flex-direction: row; padding: 0; height: 100vh; }
+    
+    .nav-horizontals { flex: 1; padding: 6rem 3rem; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(255,255,255,0.1); }
+    .nav-horizontal-item { font-size: clamp(2.5rem, 5vw, 5rem); padding: 1.5rem 0; border-bottom: none; }
+    
+    .nav-verticals { flex: 1; position: relative; }
+    
+    /* Desktop Logic: Panels are stacked on top of each other absolutely on the right */
+    .nav-panel { position: absolute; inset: 0; padding: 6rem 3rem; background: var(--wp--preset--color--chitramaya-text-dark, #0a0a0a); border-bottom: none; display: none; flex-direction: column; justify-content: center; gap: 4rem; }
+    .nav-panel.is-active { display: flex; }
+    
+    .nav-grid { gap: 1.5rem; }
+    .nav-grid a, .nav-grid span { font-size: 1rem; letter-spacing: -0.02em; }
+    .nav-hook { font-size: 1.2rem; max-width: 500px; }
+}
+
+/* ==========================================================================
