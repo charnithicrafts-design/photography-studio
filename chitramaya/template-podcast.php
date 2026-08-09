@@ -85,13 +85,20 @@
 <?php get_template_part('template-parts/global-nav'); ?>
 
   <!-- HERO SECTION (NO PHOTOS) -->
-  <section class="corp-hero">
+  <section class="corp-hero section-illusion-wrapper">
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+
     <div class="corp-hero-content">
       <h1 class="corp-hero-h1">Podcast &<br>Interview.</h1>
       
       <div class="corp-hero-meta">
         <p class="corp-hero-sub brut-protect-overflow">A comprehensive content creation environment combining pristine audio, cinematic multi-camera visuals, and cohesive branding.</p>
-        <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Step Into Thalam</a>
+        <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Step Into Thalam
+  <div class="btn-compound-icon">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</a>
       </div>
     </div>
   </section>
@@ -187,7 +194,11 @@
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Start Broadcasting</h2>
-    <a href="#book" class="brut-btn" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">Book The Studio</a>
+    <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Book The Studio
+  <div class="btn-compound-icon">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</a>
   </section>
 
 <script>

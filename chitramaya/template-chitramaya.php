@@ -322,7 +322,11 @@
   <section class="cta-banner" id="contact">
     <div class="cta-banner-content">
       <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'START THE PROJECT.' ); ?></h2>
-      <a href="#" class="cta-banner-btn" data-trigger="booking">Speak to a Creative Director</a>
+      <a href="#" class="btn-compound" data-trigger="booking">>Speak to a Creative Director
+  <div class="btn-compound-icon">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</a>
     </div>
   </section>
 

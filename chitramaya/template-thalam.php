@@ -228,7 +228,10 @@
 
 
 
-  <section class="hero" id="hero">
+  <section class="hero section-illusion-wrapper" id="hero">
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+
     <img class="hero-img"
       src="<?php echo esc_url( get_field('thalam_hero_img_url') ?: 'https://images.unsplash.com/photo-1664817550969-5e76adc4a3fe?w=2400&q=90&auto=format&fit=crop' ); ?>"
       alt="Top-down view of professional photography gear, Sony Alpha and Canon lenses — Thalam Studio."

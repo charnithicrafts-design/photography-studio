@@ -118,7 +118,10 @@
 
 <main class="maternity-page">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero section-illusion-wrapper">
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+
     <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1654894811904-d17107a20c29?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Maternity Hero">
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Genesis of Your <em>Legacy</em>.' ); ?></h1>

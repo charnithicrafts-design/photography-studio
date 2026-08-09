@@ -90,7 +90,10 @@
 
   <?php get_template_part('template-parts/global-nav'); ?>
 
-  <section class="hero">
+  <section class="hero section-illusion-wrapper">
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+
     <!-- Using a highly emotional, tactile image of a mother and newborn -->
     <?php 
       $hero_bg_image = get_field('hero_bg_image');
