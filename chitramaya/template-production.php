@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-production.css">
 <?php
 /**
  * Template Name: Pillar — Production & Brand Design

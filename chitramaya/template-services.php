@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-services.css">
 <?php
 /**
  * Template Name: Global Services Layout

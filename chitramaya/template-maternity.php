@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-maternity.css">
 <?php
 /**
  * Template Name: Maternity & Bump-to-Baby

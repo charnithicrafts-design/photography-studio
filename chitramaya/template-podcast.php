@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-podcast.css">
 <?php
 /**
  * Template Name: Pillar — Podcast & Interview (Brutalist)

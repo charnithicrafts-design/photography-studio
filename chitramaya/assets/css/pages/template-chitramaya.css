@@ -1,0 +1,730 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg-light: #f7f5f2; /* Warm Linen */
+  --text-dark: #2a2724; /* Espresso */
+  --warm-grey: var(--wp--preset--color--chitramaya-muted, #d6d3d1);
+  --accent: #c06547; /* Vibrant Terracotta */
+  --border: 1px solid rgba(42, 39, 36, 0.12);
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+}
+.nav-logo {
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--warm-grey);
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--text-dark);
+}
+.nav-thalam-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--bg-light) !important;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    transform 0.2s !important;
+}
+.nav-thalam-pill:hover {
+  background: var(--text-dark) !important;
+  transform: translateY(-1px);
+  color: var(--bg-light) !important;
+}
+
+/* HERO - SPACIOUS EDITORIAL PROPORTIONS */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 0;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1600px;
+  padding: 2rem 1rem;
+  text-align: center;
+  gap: 2.5rem;
+}
+@media (min-width: 992px) {
+  .hero-content {
+    gap: 4rem;
+    padding: 0 1.5rem;
+  }
+}
+
+.hero-brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .hero-brand-name {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+}
+
+.brand-heavy {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 8vw, 8.5rem);
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.brand-elegant {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 8vw, 8.5rem);
+  color: var(--text-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.hero-intro {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.hero-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+}
+.desktop-only-pill {
+  display: none;
+}
+@media (min-width: 992px) {
+  .hero-pills {
+    gap: 1.5rem;
+  }
+  .desktop-only-pill {
+    display: inline-flex;
+  }
+}
+
+.hero-pill {
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  border-radius: 50px;
+}
+.hero-pill-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: transparent;
+  color: var(--text-dark);
+}
+.hero-pill-link:hover {
+  background: rgba(42, 39, 36, 0.05);
+  color: var(--text-dark);
+}
+.hero-pill-link svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+}
+
+/* MANIFESTO (Brutalist Overhaul) */
+.manifesto {
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+.manifesto-label {
+  font-size: 0.65rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.manifesto-label::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+.manifesto-text {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text-dark);
+  max-width: 900px;
+}
+.manifesto-body {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+.manifesto-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--text-dark);
+  border-bottom: none;
+  border-right: none;
+}
+.stat-box {
+  border-bottom: 1px solid var(--text-dark);
+  border-right: 1px solid var(--text-dark);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stat-num {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: -0.05em;
+  color: var(--text-dark);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.75rem;
+}
+
+/* THALAM AD SECTION (Brutalist Overhaul) */
+.thalam-ad {
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--text-dark);
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.thalam-ad-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+.thalam-ad-eyebrow {
+  font-size: 0.65rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.thalam-ad-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+.thalam-ad-headline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 8vw, 8rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text-dark);
+}
+.thalam-ad-right {
+  display: flex;
+  flex-direction: column;
+}
+.thalam-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--text-dark);
+  margin-bottom: 3rem;
+  padding: 0;
+}
+.thalam-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  transition: padding-left 0.3s;
+}
+.thalam-list li:hover {
+  padding-left: 1rem;
+  background: rgba(28, 25, 23, 0.03);
+}
+.thalam-list-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  width: 24px;
+}
+.thalam-list-text {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.thalam-ad-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  padding: 1rem 2.5rem;
+  color: var(--bg-light);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+.thalam-ad-cta:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* SERVICES (Brutalist Accordion) */
+.services {
+  border-top: 1px solid var(--text-dark);
+  border-bottom: 1px solid var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+}
+.services-header {
+  padding: 5rem 1.5rem 2rem;
+  border-bottom: 1px solid var(--text-dark);
+  margin-bottom: 0;
+  color: var(--text-dark);
+}
+.service-item {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.5rem;
+  border-bottom: 1px solid var(--text-dark);
+  transition: background 0.3s;
+  color: var(--text-dark);
+}
+.service-item:last-child {
+  border-bottom: none;
+}
+.service-item:hover {
+  background: rgba(28, 25, 23, 0.03);
+}
+.service-item-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.service-num {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.service-title {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.service-item-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.service-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  max-width: 600px;
+}
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-left: 1px solid var(--text-dark);
+  padding-left: 1.5rem;
+}
+.service-list li {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+.service-btn {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 1rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 4px;
+  transition: all 0.2s;
+}
+.service-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* PROCESS (Brutalist Overhaul) */
+.process {
+  padding: 5rem 1.5rem;
+  background: var(--bg-light);
+  border-top: 1px solid var(--text-dark);
+  color: var(--text-dark);
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--text-dark);
+}
+.process-step {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.process-step:last-child {
+  border-bottom: none;
+}
+.step-num {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--text-dark);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.step-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.step-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  max-width: 500px;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+.testimonial-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.testimonial-quote {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.testimonial-author {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+/* CTA BANNER (Brutalist Typography) */
+.cta-banner {
+  position: relative;
+  padding: 8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg-light);
+  border-top: 1px solid var(--text-dark);
+  overflow: hidden;
+  gap: 3rem;
+}
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+.cta-banner-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 8rem);
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 0.9;
+  color: var(--text-dark);
+  width: 100%;
+}
+.cta-banner-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: var(--bg-light);
+  border: 1px solid var(--accent);
+  padding: 1.25rem 3rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cta-banner-btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* RESPONSIVE: DESKTOP OVERRIDES */
+@media (min-width: 992px) {
+  .hero-pills {
+    padding: 0 1rem;
+  }
+  .hero-portfolio-peek {
+    transform: translateY(45%);
+  }
+  .manifesto {
+    padding: 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .thalam-ad-content {
+    padding: 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .tactile-section {
+    padding: 0 3rem 8rem;
+  }
+  .tactile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: -10vh;
+    z-index: 10;
+    position: relative;
+    align-items: start;
+  }
+  .services {
+    padding: 0;
+  }
+  .services-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 8rem 3rem 2rem;
+    border-bottom: 1px solid var(--text-dark);
+  }
+  .service-item {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    padding: 5rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .service-item-content {
+    margin-top: 0;
+  }
+  .process {
+    padding: 8rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: none;
+  }
+  .process-steps {
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--text-dark);
+    margin-top: 5rem;
+  }
+  .process-step {
+    border-bottom: none;
+    border-right: 1px solid var(--text-dark);
+    padding: 3rem 2.5rem 3rem 0;
+  }
+  .process-step:not(:first-child) {
+    padding-left: 2.5rem;
+  }
+  .process-step:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  .testimonial {
+    padding: 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: none;
+  }
+}

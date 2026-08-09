@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-corporate.css">
 <?php
 /**
  * Template Name: Pillar — Corporate Brand (No-Photo Brutalist)
