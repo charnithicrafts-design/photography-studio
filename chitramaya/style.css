@@ -8,23 +8,24 @@ Description: A Brutalist, high-impact child theme for Chithramaya & Thalam Studi
 Version: 1.1.0
 */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap");
 
 /* Base */
-@import url('assets/css/base/critical.css');
+@import url("assets/css/base/critical.css");
 
 /* Layout */
-@import url('assets/css/layout/grid.css');
-@import url('assets/css/layout/templates.css');
+@import url("assets/css/layout/grid.css");
+@import url("assets/css/layout/templates.css");
 
 /* Modules */
-@import url('assets/css/modules/buttons.css');
-@import url('assets/css/modules/hero.css');
-@import url('assets/css/modules/navigation.css');
-@import url('assets/css/modules/masonry.css');
-@import url('assets/css/modules/art-showcase.css');
-@import url('assets/css/modules/services.css');
-@import url('assets/css/modules/portfolio.css');
-@import url('assets/css/modules/booking.css');
-@import url('assets/css/modules/whatsapp.css');
-@import url('assets/css/modules/accordion.css');\n@import url('assets/css/modules/cards.css');
+@import url("assets/css/modules/buttons.css");
+@import url("assets/css/modules/hero.css");
+@import url("assets/css/modules/navigation.css");
+@import url("assets/css/modules/masonry.css");
+@import url("assets/css/modules/art-showcase.css");
+@import url("assets/css/modules/services.css");
+@import url("assets/css/modules/portfolio.css");
+@import url("assets/css/modules/booking.css");
+@import url("assets/css/modules/whatsapp.css");
+@import url("assets/css/modules/accordion.css");
+@import url("assets/css/modules/cards.css");
