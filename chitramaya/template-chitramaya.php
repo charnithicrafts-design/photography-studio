@@ -152,19 +152,21 @@
 <body>
   <?php get_template_part('template-parts/global-nav'); ?>
 
-  <section class="hero" id="hero">
+  <section class="hero section-illusion-wrapper" id="hero">
+    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
+    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
 
-    <div class="hero-content">
+    <div class="hero-content glass-panel" style="padding: 4rem; border-radius: 40px; border: 1px solid rgba(0,0,0,0.05);">
       <h1 class="hero-brand-name">
         <span class="brand-heavy"><?php echo esc_html( get_field('home_hero_title_1') ?: 'CHITHRAMAYA' ); ?></span>
         <span class="brand-elegant"><?php echo esc_html( get_field('home_hero_title_2') ?: 'Creatives' ); ?></span>
       </h1>
 
       <div class="hero-pills">
-        <span class="hero-pill">Commercial</span>
-        <span class="hero-pill">Portraits</span>
-        <span class="hero-pill">Podcast</span>
-        <a href="#services" class="hero-pill hero-pill-link">All services
+        <span class="hero-pill" style="border-radius: 50px;">Commercial</span>
+        <span class="hero-pill" style="border-radius: 50px;">Portraits</span>
+        <span class="hero-pill" style="border-radius: 50px;">Podcast</span>
+        <a href="#services" class="hero-pill hero-pill-link" style="border-radius: 50px;">All services
           <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-width="2" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
         </a>
       </div>
@@ -173,7 +175,12 @@
         We capture, curate, and craft visual experiences for brands and families that demand perfection.
       </p>
 
-      <a href="#contact" class="hero-btn">Book a call</a>
+      <a href="#contact" class="btn-compound">
+        Book a call
+        <div class="btn-compound-icon">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
     </div>
   </section>
 
