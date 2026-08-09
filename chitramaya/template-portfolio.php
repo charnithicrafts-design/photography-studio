@@ -25,7 +25,7 @@
             ?>
             <h1 class="brut-massive-text"><?php echo wp_kses_post($hero_title); ?></h1>
             <?php if($hero_desc): ?>
-                <p class="portfolio-hero-desc" style="max-width: 800px; margin: 2rem auto; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);"><?php echo esc_html($hero_desc); ?></p>
+                <p class="portfolio-hero-desc" class="hero-desc-module"><?php echo esc_html($hero_desc); ?></p>
             <?php endif; ?>
         </header>
 

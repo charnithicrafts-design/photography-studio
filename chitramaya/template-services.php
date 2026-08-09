@@ -37,38 +37,7 @@
             $manifesto = get_field("h{$h}_manifesto");
         ?>
             
-            <style>
-                .service-action-link {
-                    display: inline-block;
-                    margin-top: 2rem;
-                    padding: 1rem 2rem;
-                    border: 1px solid var(--color-dark);
-                    font-family: var(--font-mono);
-                    font-size: 0.85rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.15em;
-                    color: var(--color-dark);
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                }
-                .service-action-link:hover {
-                    background: var(--color-dark);
-                    color: var(--color-light);
-                }
-                /* Ensure body has dark mode if it's the black background */
-                .services-page {
-                    background-color: #12100E;
-                    color: #F7F5F0;
-                }
-                .services-page .service-action-link {
-                    border-color: #F7F5F0;
-                    color: #F7F5F0;
-                }
-                .services-page .service-action-link:hover {
-                    background: #F7F5F0;
-                    color: #12100E;
-                }
-            </style>
+            
             
             <section class="service-horizontal">
                 <div class="horizontal-intro">

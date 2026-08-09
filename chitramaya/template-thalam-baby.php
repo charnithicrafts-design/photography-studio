@@ -14,85 +14,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
-  <style>
-    /* 1. BASE (Mobile First) */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg-dark: #0a0806;
-      --bg-light: #f9f6f0;
-      --accent-warm: #c48b5e;
-      --text-light: #fdfbf7;
-      --text-muted: rgba(253,251,247,0.6);
-      --font-sans: 'Inter', sans-serif;
-      --font-serif: 'EB Garamond', serif;
-    }
-    body { background: var(--bg-dark); color: var(--text-light); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-
-    /* 2. LAYOUT & MODULES */
-    
-    /* HERO */
-    .hero { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 100vh; overflow: hidden; padding: 3rem 1.5rem; }
-    
-    /* The Background: An emotional connection using a warm, moody Unsplash image and a deep gradient */
-    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: saturate(0.8) contrast(1.1); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,6,0.3) 0%, rgba(10,8,6,0.8) 60%, rgba(10,8,6,1) 100%); }
-    
-    .hero-content { position: relative; z-index: 2; max-width: 800px; }
-    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 1.5rem; display: block; }
-    .hero-headline { font-weight: 900; font-size: clamp(3rem, 12vw, 6.5rem); line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1.5rem; text-transform: uppercase; }
-    .hero-desc { font-family: var(--font-serif); font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.5; color: var(--text-muted); font-style: italic; max-width: 600px; }
-
-    /* MANIFESTO */
-    .manifesto { padding: 6rem 1.5rem; display: flex; flex-direction: column; gap: 2rem; background: var(--bg-dark); }
-    .manifesto-title { font-weight: 900; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
-    .manifesto-body { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 500px; }
-
-    /* JOURNEY ACCORDION */
-    .journey { padding: 4rem 1.5rem; background: var(--bg-light); color: #1a1a1a; display: flex; flex-direction: column; gap: 3rem; }
-    .journey-header { margin-bottom: 2rem; }
-    .journey-header h2 { font-weight: 900; font-size: clamp(2.5rem, 10vw, 5rem); letter-spacing: -0.04em; text-transform: uppercase; line-height: 0.9; }
-    .journey-layout { display: flex; flex-direction: column; gap: 2rem; }
-    .journey-accordion { display: flex; flex-direction: column; }
-    .journey-card { border-top: 1px solid rgba(0,0,0,0.1); }
-    .journey-card:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
-    .journey-card-toggle { width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0; cursor: pointer; font-family: inherit; color: inherit; display: flex; justify-content: space-between; align-items: center; }
-    .journey-card-step { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.5rem; display: block; }
-    .journey-card-title { font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; font-size: 2rem; transition: color 0.3s ease; }
-    .journey-card-icon { font-size: 2rem; font-weight: 300; transition: transform 0.3s ease; font-family: var(--font-sans); color: inherit; }
-    .journey-card.is-active .journey-card-icon { transform: rotate(45deg); color: var(--accent-warm); }
-    .journey-card.is-active .journey-card-title, .journey-card-toggle:hover .journey-card-title { color: var(--accent-warm); }
-    
-    .journey-card-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; }
-    .journey-card.is-active .journey-card-content { max-height: 1200px; opacity: 1; padding-bottom: 1.5rem; }
-    .journey-card-desc { font-size: 0.9rem; line-height: 1.6; color: rgba(0,0,0,0.6); margin-bottom: 1.5rem; max-width: 400px; }
-    .journey-card-img-mobile { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; }
-    
-    .journey-gallery { display: none; }
-
-    /* DESKTOP OVERRIDES */
-    @media (min-width: 992px) {
-      :root {
-        --container-pad: max(4rem, calc((100vw - 1440px) / 2));
-      }
-      .hero { padding: 6rem var(--container-pad); }
-      .manifesto { padding: 5rem var(--container-pad); flex-direction: row; gap: 6rem; align-items: flex-start; justify-content: space-between; }
-      .manifesto-body { font-size: 1.15rem; }
-      .journey { padding: 8rem var(--container-pad); }
-      .journey-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: stretch; }
-      .journey-card-img-mobile { display: none; }
-      .journey-gallery { display: block; position: relative; width: 100%; min-height: 600px; }
-      .journey-gallery-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
-      .journey-gallery-img.is-active { opacity: 1; z-index: 1; }
-    }
-  </style>
+  
 </head>
 <body>
 
   <?php get_template_part('template-parts/global-nav'); ?>
 
   <section class="hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
-    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
+    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <!-- Using a highly emotional, tactile image of a mother and newborn -->
     <?php 

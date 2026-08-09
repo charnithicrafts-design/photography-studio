@@ -14,104 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
-<style>
-  /* 1. BASE */
-  :root {
-    --bg-light: #f9f6f0;
-    --text-dark: #1a1a1a;
-    --accent-warm: #c48b5e;
-    --font-sans: 'Inter', sans-serif;
-    --font-serif: 'EB Garamond', serif;
-  }
-  body { background: var(--bg-light); color: var(--text-dark); }
-  
-  /* 2. HERO */
-  .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 2rem; overflow: hidden; background: #0a0806; color: #fff; }
-  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: saturate(0.8) contrast(1.1); }
-  .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; text-align: center; }
-  .hero-title { font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 6rem); line-height: 1; margin-bottom: 1rem; font-style: italic; }
-  .hero-desc { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 600px; color: rgba(255,255,255,0.8); margin: 0 auto 2rem; }
-  .hero-btn { display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.3s; cursor: pointer; font-family: inherit; font-size: 0.9rem; }
-  .hero-btn:hover { background: #fff; color: #000; }
 
-  /* 3. MANIFESTO */
-  .manifesto { padding: 10rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-  .manifesto-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 2rem; display: block; }
-  .manifesto h2 { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-style: italic; font-weight: 400; line-height: 1.2; color: var(--text-dark); text-transform: none; margin-bottom: 2rem; }
-  .manifesto p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 500px; }
-
-  /* 4. DUAL PANE - STUDIO VS OUTDOOR */
-  .dual-pane { display: flex; flex-direction: column; height: auto; }
-  .pane { position: relative; padding: 4rem 2rem; min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; color: #fff; cursor: pointer; }
-  .pane-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease, filter 0.8s ease; filter: brightness(0.7); }
-  .pane-content { position: relative; z-index: 2; }
-  .pane-subtitle { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--accent-warm); display: block; }
-  .pane-title { font-family: var(--font-serif); font-size: 3rem; font-style: italic; line-height: 1; margin-bottom: 1rem; }
-  .pane-desc { max-width: 400px; line-height: 1.6; opacity: 1; transform: translateY(0); transition: 0.4s ease; }
-  
-  @media (hover: hover) and (pointer: fine) {
-    .pane-desc { opacity: 0; transform: translateY(10px); }
-    .pane:hover .pane-img { transform: scale(1.05); filter: brightness(0.9); }
-    .pane:hover .pane-desc { opacity: 1; transform: translateY(0); }
-  }
-
-  @media(min-width: 768px) {
-    .dual-pane { flex-direction: row; height: 85vh; }
-    .pane { flex: 1; transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); min-height: 100%; }
-    .pane:hover { flex: 1.5; }
-  }
-
-  /* 5. STANDARD SECTIONS */
-  .info-section { display: grid; grid-template-columns: 1fr; gap: 4rem; padding: 6rem 2rem; max-width: 1400px; margin: 0 auto; align-items: center; }
-  .info-section:not(.reverse) .info-content { justify-self: start; }
-  .info-section.reverse .info-content { order: 1; justify-self: end; }
-  .info-section.reverse .info-img-wrapper { order: 2; }
-  .info-img-wrapper { position: relative; aspect-ratio: 4/5; overflow: hidden; }
-  .info-img { width: 100%; height: 100%; object-fit: cover; }
-  .info-content { max-width: 500px; padding: 0 2rem; }
-  .info-title { font-family: var(--font-serif); font-size: 3rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.1; }
-  .info-desc { font-size: 1.1rem; line-height: 1.8; color: #555; }
-  
-  @media(min-width: 768px) {
-    .info-section { grid-template-columns: 1fr 1fr; }
-  }
-
-  /* 6. BOOKING JOURNEY CTA */
-  .booking-journey { padding: 8rem 2rem; background: var(--text-dark); color: #fff; text-align: center; }
-  .booking-journey h2 { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-style: italic; margin-bottom: 4rem; }
-  .timeline { display: flex; flex-direction: column; gap: 2rem; max-width: 900px; margin: 0 auto 4rem; text-align: left; }
-  .timeline-step { display: flex; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
-  .step-num { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--accent-warm); }
-  .step-text { font-size: 1.1rem; }
-  
-  @media(min-width: 768px) {
-    .timeline { flex-direction: row; gap: 1rem; text-align: center; }
-    .timeline-step { flex-direction: column; gap: 1rem; flex: 1; align-items: center; border-top: none; border-left: 1px solid rgba(255,255,255,0.1); padding-top: 0; padding-left: 1.5rem; }
-    .timeline-step:first-child { border-left: none; padding-left: 0; }
-  }
-
-  /* 7. EMPATHETIC BRUTALISM BENTO BOXES */
-  .bento-wrapper { width: 100%; display: grid; gap: 1rem; }
-  .bento-item { overflow: hidden; border: 4px solid #111; box-shadow: 8px 8px 0px #111; background: #fff; }
-  .bento-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.9); transition: 0.4s ease; }
-  .bento-item:hover img { filter: saturate(1.1); transform: scale(1.02); }
-
-  .bento-2 { grid-template-columns: 3fr 2fr; height: 500px; }
-  .bento-2 .bento-item:nth-child(1) { grid-column: 1; grid-row: 1; }
-  .bento-2 .bento-item:nth-child(2) { grid-column: 2; grid-row: 1; }
-
-  .bento-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; height: 600px; }
-  .bento-3 .bento-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
-  .bento-3 .bento-item:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .bento-3 .bento-item:nth-child(3) { grid-column: 2; grid-row: 2; }
-
-  @media(max-width: 768px) {
-    .bento-2, .bento-3 { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
-    .bento-2 .bento-item, .bento-3 .bento-item { grid-column: 1 !important; grid-row: auto !important; aspect-ratio: 4/3; }
-    .bento-item { box-shadow: 4px 4px 0px #111; }
-  }
-
-</style>
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
@@ -119,8 +22,8 @@
 <main class="maternity-page">
   <!-- HERO -->
   <section class="hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan" style="top: -10%; left: -5%;"></div>
-    <div class="graphic-orb orb-md color-magenta" style="bottom: 10%; right: 10%;"></div>
+    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
+    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <img class="hero-img" src="<?php echo esc_url( get_field('pillar_hero_bg_url') ?: 'https://images.unsplash.com/photo-1654894811904-d17107a20c29?auto=format&fit=crop&w=2000&q=80' ); ?>" alt="Maternity Hero">
     <div class="hero-content">
