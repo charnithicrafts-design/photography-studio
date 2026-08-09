@@ -29,7 +29,7 @@
       
       <div class="corp-hero-meta">
         <p class="corp-hero-sub brut-protect-overflow">Purpose-driven photography spanning e-commerce, lifestyle, and fashion. We deliver high-quality visuals seamlessly aligned with your core marketing goals.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Commission a Project
+        <a href="#book" class="btn-compound" data-trigger="booking">Commission a Project
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -138,7 +138,7 @@
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Ready to Drive Engagement?</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Commission a Project
+    <a href="#book" class="btn-compound" data-trigger="booking">Commission a Project
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>

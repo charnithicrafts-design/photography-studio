@@ -32,7 +32,7 @@
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'Identity is a Strategic Weapon.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'From broadcast-grade podcast production to comprehensive brand design. We don’t just capture images; we architect lasting recognition.' ); ?></p>
-      <a href="#" class="btn-compound" data-trigger="booking">>Discuss Your Brand
+      <a href="#" class="btn-compound" data-trigger="booking">Discuss Your Brand
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>

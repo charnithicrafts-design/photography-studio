@@ -29,7 +29,7 @@
       
       <div class="corp-hero-meta">
         <p class="corp-hero-sub brut-protect-overflow">Preserving your family's most meaningful moments with genuine warmth and pure emotion.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Begin Your Story
+        <a href="#book" class="btn-compound" data-trigger="booking">Begin Your Story
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -161,7 +161,7 @@
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Ready to Preserve Your Legacy?</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking" style="background:var(--color-accent); color:var(--color-dark); border: 2px solid var(--color-accent);">>Reserve Your Date
+    <a href="#book" class="btn-compound" data-trigger="booking">Reserve Your Date
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
