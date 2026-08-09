@@ -86,8 +86,10 @@
                                 $image_url = wp_get_attachment_image_url($image_id, 'large');
                                 if(!$image_url) continue;
                             ?>
-                                <div class="grid-item">
+                                <div class="grid-item img-hover-container">
                                     <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" />
+                                    <!-- The floating circular button that appears on hover -->
+                                    <div class="floating-action-btn">View ↗</div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
