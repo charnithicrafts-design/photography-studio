@@ -114,17 +114,17 @@
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                padding: 5px 16px;
+                padding: 10px;
                 overflow: hidden;
             }
 
-            /* --- CONTAINER QUERY ROOT (SYNCHRONIZED CONTAINER) --- */
+            /* --- GLUED COMPOSITION BOX (WE, MODEL, AND CLICK PERMANENTLY LOCKED TOGETHER) --- */
             .composition-box {
                 container-type: size;
                 container-name: hero;
                 position: relative;
-                width: min(92vw, 1100px);
-                height: min(68vh, 560px);
+                width: min(88vw, 980px);
+                height: min(62vh, 500px);
                 aspect-ratio: 16 / 10;
                 margin: auto;
                 display: flex;
@@ -132,13 +132,13 @@
                 justify-content: center;
             }
 
-            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' */
+            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' (LOCKED TO TOP-LEFT OF COMPOSITION BOX) */
             .text-top-left {
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: 2%;
+                left: 2%;
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(3.5rem, 28cqw, 18rem);
+                font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
                 color: #dedede;
@@ -149,16 +149,16 @@
                 white-space: nowrap;
             }
 
-            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT */
+            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (SPANS 98% HEIGHT OF COMPOSITION BOX) */
             .photo-foreground-cutout {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 3;
-                height: clamp(260px, 98cqh, 560px);
+                height: 98%;
                 width: auto;
-                max-width: clamp(180px, 85cqw, 480px);
+                max-width: 88%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -179,11 +179,11 @@
                 transform: scale(1.02);
             }
 
-            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAMERA */
+            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAM (MASKS BOTTOM OF SKIRT) */
             .text-bottom-right {
                 position: absolute;
-                bottom: 0;
-                right: 0;
+                bottom: 2%;
+                right: 2%;
                 display: flex;
                 align-items: center;
                 gap: clamp(6px, 1.8cqw, 20px);
@@ -193,7 +193,7 @@
 
             .click-text {
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(3.5rem, 28cqw, 18rem);
+                font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
                 color: #dedede;
@@ -210,7 +210,7 @@
             }
 
             .camera-icon-img {
-                width: clamp(55px, 18cqw, 200px);
+                width: clamp(50px, 16cqw, 180px);
                 height: auto;
                 filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
                 transition: transform 0.3s ease;
@@ -280,40 +280,37 @@
                 color: #ffffff;
             }
 
-            /* --- SMARTPHONES & PORTRAIT SCREENS (LOCK HEIGHT VERTICALLY WITHOUT WHITE GAPS) --- */
-            @media (max-width: 600px), (max-aspect-ratio: 4/5) {
+            /* --- PORTRAIT & MOBILE DEVICE LOCK (ENTIRE 3D UNIT SCALES TOGETHER AS ONE PIECE) --- */
+            @media (max-aspect-ratio: 1/1), (max-width: 600px) {
                 .composition-box {
-                    width: min(94vw, 480px);
-                    height: calc(100% - 10px); /* Fills available height between header and footer */
-                    max-height: 680px;
-                    aspect-ratio: auto; /* Remove aspect ratio constraint on tall smartphone screens */
+                    width: min(88vw, 380px);
+                    height: min(52vh, 420px);
+                    aspect-ratio: 1 / 1.15;
                 }
 
                 .text-top-left {
-                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
-                    top: 0;
-                    left: 0;
+                    font-size: clamp(2.8rem, 30cqw, 8rem);
+                    top: 2%;
+                    left: 2%;
                 }
 
                 .text-bottom-right {
-                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
-                    bottom: 0;
-                    right: 0;
+                    font-size: clamp(2.8rem, 30cqw, 8rem);
+                    bottom: 2%;
+                    right: 2%;
                 }
 
                 .click-text {
-                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
+                    font-size: clamp(2.8rem, 30cqw, 8rem);
                 }
 
                 .photo-foreground-cutout {
-                    height: clamp(280px, 94cqh, 600px);
-                    width: auto;
-                    max-width: clamp(180px, 85cqw, 360px);
-                    transform: translate(-50%, -48%);
+                    height: 98%;
+                    max-width: 90%;
                 }
 
                 .camera-icon-img {
-                    width: clamp(45px, 15cqw, 85px);
+                    width: clamp(40px, 15cqw, 75px);
                 }
             }
         </style>
@@ -338,7 +335,7 @@
 
             <!-- HERO STAGE CONTAINER -->
             <div class="hero-stage-container">
-                <!-- BOUNDED CONTAINER QUERY ROOT -->
+                <!-- GLUED COMPOSITION BOX -->
                 <div class="composition-box">
                     <!-- LAYER 1 (z-index: 1): TOP LEFT 'WE' -->
                     <div class="text-top-left">
