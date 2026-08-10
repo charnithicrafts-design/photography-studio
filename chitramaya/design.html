@@ -28,7 +28,7 @@
                 position: relative;
             }
 
-            /* --- MINIMAL HEADER --- */
+            /* --- HEADER --- */
             header {
                 width: 100%;
                 display: flex;
@@ -92,12 +92,12 @@
                 border-color: #111111;
             }
 
-            /* --- MAIN HERO COMPOSITION --- */
+            /* --- MAIN HERO COMPOSITION WITH 3D DEPTH INTERLOCK --- */
             .hero-composition {
                 position: relative;
                 width: 100%;
                 max-width: 1360px;
-                min-height: clamp(520px, 70vh, 740px);
+                min-height: clamp(540px, 72vh, 760px);
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
@@ -105,29 +105,55 @@
                 padding: 10px 40px;
             }
 
-            /* Top Left: WE */
+            /* 1. LAYER 1: TOP LEFT 'WE' (Behind Head/Upper Body) */
             .text-top-left {
                 align-self: flex-start;
                 font-family: 'Oswald', 'Impact', sans-serif;
                 font-size: clamp(8rem, 20vw, 22rem);
                 font-weight: 700;
                 line-height: 0.8;
-                color: #dedede; /* Light gray block letters */
+                color: #dedede; /* Light gray block typography */
                 text-transform: uppercase;
                 letter-spacing: -3px;
                 user-select: none;
-                z-index: 1;
+                z-index: 1; /* Sits BEHIND the artistic photo */
                 margin-left: 1vw;
             }
 
-            /* Bottom Right: CLICK + CAMERA ICON */
+            /* 2. LAYER 2: CUTOUT PHOTO (In front of WE, tucked behind CLICK) */
+            .photo-foreground-cutout {
+                position: absolute;
+                top: 46%;
+                left: 50%;
+                transform: translate(-50%, -46%);
+                z-index: 3; /* Above 'WE' (z:1), but BEHIND 'CLICK' (z:5) */
+                width: clamp(280px, 34vw, 500px);
+                pointer-events: auto;
+            }
+
+            .artistic-cutout-img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+                /* Soft shadow popping against background and WE */
+                filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .photo-foreground-cutout:hover .artistic-cutout-img {
+                transform: scale(1.02) translateY(-4px);
+            }
+
+            /* 3. LAYER 3: BOTTOM RIGHT 'CLICK' + CAMERA (Hides cutoff skirt edge) */
             .text-bottom-right {
                 align-self: flex-end;
                 display: flex;
                 align-items: center;
                 gap: 20px;
-                z-index: 2;
+                z-index: 5; /* HIGHER THAN PHOTO (z:3) - Hides cut-off bottom edge naturally! */
                 margin-right: 1vw;
+                position: relative;
             }
 
             .click-text {
@@ -145,7 +171,7 @@
                 position: relative;
                 display: inline-block;
                 vertical-align: middle;
-                z-index: 3;
+                z-index: 6;
             }
 
             .camera-icon-img {
@@ -159,32 +185,7 @@
                 transform: scale(1.06) rotate(-2deg);
             }
 
-            /* --- CENTER FOREGROUND: TRANSPARENT CUTOUT PHOTO --- */
-            .photo-foreground-cutout {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10; /* Stands out ABOVE WE, CLICK, and Camera Icon */
-                width: clamp(280px, 34vw, 500px);
-                pointer-events: auto;
-            }
-
-            .artistic-cutout-img {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: contain;
-                filter: drop-shadow(0 20px 35px rgba(0,0,0,0.16));
-                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            }
-
-            .photo-foreground-cutout:hover .artistic-cutout-img {
-                transform: scale(1.03) translateY(-4px);
-                filter: drop-shadow(0 30px 45px rgba(0,0,0,0.22));
-            }
-
-            /* --- FOOTER CTA BUTTON --- */
+            /* --- FOOTER CTA --- */
             footer {
                 width: 100%;
                 display: flex;
@@ -240,7 +241,7 @@
                 color: #ffffff;
             }
 
-            /* --- RESPONSIVE LAYOUT --- */
+            /* --- RESPONSIVE ADJUSTMENTS --- */
             @media (max-width: 900px) {
                 header {
                     padding: 20px;
@@ -268,9 +269,10 @@
                     top: auto;
                     left: auto;
                     transform: none;
-                    margin: 20px auto;
+                    margin: -40px auto 0;
                     width: 75vw;
                     max-width: 340px;
+                    z-index: 2;
                 }
             }
         </style>
@@ -292,14 +294,22 @@
             </a>
         </header>
 
-        <!-- HERO COMPOSITION: WE (Top-Left) | FOREGROUND CUTOUT PHOTO | CLICK + CAM (Bottom-Right) -->
+        <!-- HERO COMPOSITION: 3D INTERLOCKED STACKING -->
         <main class="hero-composition">
-            <!-- 1. TOP LEFT: WE -->
+            <!-- LAYER 1 (z-index: 1): TOP-LEFT 'WE' (BEHIND HER HEAD & BODY) -->
             <div class="text-top-left">
                 WE
             </div>
 
-            <!-- 2. BOTTOM RIGHT: CLICK + CAMERA ICON -->
+            <!-- LAYER 2 (z-index: 3): TRANSPARENT CUTOUT PHOTO (IN FRONT OF 'WE', TUCKED BEHIND 'CLICK') -->
+            <div class="photo-foreground-cutout">
+                <picture>
+                    <source srcset="artistic-photo.webp" type="image/webp">
+                    <img src="artistic-photo.png" alt="Chithramaya Transparent Portrait" class="artistic-cutout-img" />
+                </picture>
+            </div>
+
+            <!-- LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAM (COVERS CUTOFF BOTTOM EDGE NATURALLY) -->
             <div class="text-bottom-right">
                 <span class="click-text">CLICK</span>
                 <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
@@ -308,14 +318,6 @@
                         <img src="camera.png" alt="Chithramaya Modern Camera Icon" class="camera-icon-img" />
                     </picture>
                 </div>
-            </div>
-
-            <!-- 3. CENTER FOREGROUND: TRANSPARENT ARTISTIC PHOTO -->
-            <div class="photo-foreground-cutout">
-                <picture>
-                    <source srcset="artistic-photo.webp" type="image/webp">
-                    <img src="artistic-photo.png" alt="Chithramaya Transparent Portrait" class="artistic-cutout-img" />
-                </picture>
             </div>
         </main>
 
