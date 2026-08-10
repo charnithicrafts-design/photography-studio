@@ -116,9 +116,12 @@
                 flex: 1;
                 width: 100%;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 padding: 10px;
+                padding-bottom: clamp(24px, 4vh, 40px);
+                gap: 0;
                 overflow: hidden;
             }
 
@@ -204,16 +207,19 @@
             }
             .camera-icon-wrapper:hover .camera-icon-img { transform: scale(1.05) rotate(-2deg); }
 
-            .hero-footer {
-                width: 100%;
-                padding-bottom: clamp(16px, 3vh, 28px);
+            .hero-cta-inline {
+                margin-top: clamp(20px, 3vh, 36px);
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                z-index: 40;
+                z-index: 20;
                 flex-shrink: 0;
-                background-color: #f7f7f9;
             }
+
+            @keyframes bounce-down {
+                0%, 100% { transform: translateY(0); }
+                50%       { transform: translateY(5px); }
+            }
+            .cta-bounce { animation: bounce-down 1.8s ease-in-out infinite; display: flex; align-items: center; justify-content: center; }
 
             .cta-pill-group {
                 display: inline-flex;
@@ -450,54 +456,76 @@
                 padding: 6px 12px;
             }
 
-            /* Studio Philosophy & Graphic Accent Card */
-            .philosophy-card {
-                background: var(--white-card);
-                border: 1px dashed #d0d0c8;
-                border-left: 3px solid var(--text-dark);
-                padding: 32px;
+            /* Manifesto block — dark inverted in white column */
+            .manifesto-block {
+                background: var(--dark-bg);
+                padding: 40px 36px;
                 position: relative;
-            }
-            .meta-crosshair-row {
+                overflow: hidden;
+                flex: 1;
+                min-height: 320px;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
-                align-items: center;
-                margin-bottom: 16px;
+            }
+            /* Ghost WE CLICK watermark inside dark block */
+            .manifesto-block::before {
+                content: 'WE CLICK';
+                position: absolute;
+                bottom: -14px;
+                right: -24px;
+                font-family: var(--display);
+                font-size: clamp(3rem, 8vw, 7rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.04em;
+                color: var(--money-green);
+                opacity: 0.05;
+                pointer-events: none;
+                user-select: none;
+                line-height: 1;
+            }
+            /* Corner crosshair */
+            .manifesto-block::after {
+                content: '+';
+                position: absolute;
+                top: 16px;
+                right: 20px;
+                font-family: var(--mono);
+                font-size: 18px;
+                color: var(--money-green);
+                opacity: 0.4;
+            }
+            .manifesto-label {
                 font-family: var(--mono);
                 font-size: 10px;
-                color: var(--text-muted-light);
-                letter-spacing: 2px;
-            }
-            .crosshair {
-                font-family: var(--mono);
-                font-size: 14px;
-                color: var(--text-dark);
-                font-weight: 600;
-            }
-            .philosophy-title {
-                font-family: var(--display);
-                font-size: clamp(1.3rem, 2vw, 1.8rem);
+                letter-spacing: 3px;
+                color: var(--money-green);
                 text-transform: uppercase;
-                line-height: 1.1;
-                margin-bottom: 16px;
-                color: var(--text-dark);
-                letter-spacing: -0.02em;
+                margin-bottom: 20px;
+                opacity: 0.7;
             }
-            .philosophy-text {
-                font-size: 13px;
-                line-height: 1.7;
-                color: var(--text-muted-light);
-                margin-bottom: 24px;
+            .manifesto-quote {
+                font-family: var(--display);
+                font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 1.05;
+                letter-spacing: -0.03em;
+                color: var(--text-white);
+                margin-bottom: 32px;
+                flex: 1;
             }
-            .tech-spec-footer {
+            .manifesto-spec-row {
                 display: flex;
                 justify-content: space-between;
                 font-family: var(--mono);
-                font-size: 9px;
+                font-size: 10px;
                 letter-spacing: 2px;
-                color: rgba(13,13,18,0.35);
-                border-top: 1px dashed var(--art-border);
-                padding-top: 14px;
+                color: var(--money-green);
+                opacity: 0.45;
+                border-top: 1px solid rgba(0, 229, 153, 0.12);
+                padding-top: 16px;
             }
 
             /* =====================================================
@@ -778,10 +806,11 @@
                 </div>
             </div>
 
-            <div class="hero-footer">
+            <!-- CTA is now INSIDE the hero stage — clear separation from section below -->
+            <div class="hero-cta-inline">
                 <div class="cta-pill-group">
-                    <a href="#services" class="cta-main-btn">WE CLICK — EXPLORE THE DUALITY</a>
-                    <a href="#services" class="cta-arrow-btn">↓</a>
+                    <a href="#services" class="cta-main-btn">WE CLICK &mdash; EXPLORE THE DUALITY</a>
+                    <a href="#services" class="cta-arrow-btn cta-bounce">↓</a>
                 </div>
             </div>
         </div>
@@ -926,21 +955,17 @@
                     </p>
                 </article>
 
-                <!-- STUDIO PHILOSOPHY & GRAPHIC ACCENT CARD -->
-                <article class="white-card philosophy-card">
-                    <div class="meta-crosshair-row">
-                        <span>[ STUDIO PHILOSOPHY ]</span>
-                        <span class="crosshair">+</span>
+                <!-- DARK INVERTED MANIFESTO BLOCK — dramatic contrast inside white column -->
+                <div class="manifesto-block">
+                    <div class="manifesto-label">[ STUDIO DIRECTIVE ]</div>
+                    <div class="manifesto-quote">
+                        Where Commercial<br>Precision Meets<br>Visual Illusion
                     </div>
-                    <h3 class="philosophy-title">Where Commercial Precision Meets Visual Illusion</h3>
-                    <p class="philosophy-text">
-                        Every frame captured at Chithramaya Creatives is a balance of structural intent and artistic depth. Whether elevating enterprise brands or capturing human emotion, we craft visual illusions that endure.
-                    </p>
-                    <div class="tech-spec-footer">
+                    <div class="manifesto-spec-row">
                         <span>FRAME / 35MM</span>
                         <span>ILLUSION / ACTIVE</span>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
 
