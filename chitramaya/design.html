@@ -285,6 +285,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 min-height: 100vh;
+                margin-top: 8vh;
             }
 
             /* --- LEFT: DARK / MONEY SERVICES --- */
@@ -458,7 +459,30 @@
 
             /* Manifesto block — dark inverted in white column */
             .manifesto-block {
-                background: var(--dark-bg);
+                /* Engraving texture: fine diagonal hatching lines over dark base */
+                background:
+                    repeating-linear-gradient(
+                        -45deg,
+                        transparent,
+                        transparent 3px,
+                        rgba(0, 229, 153, 0.025) 3px,
+                        rgba(0, 229, 153, 0.025) 4px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 12px,
+                        rgba(255,255,255,0.012) 12px,
+                        rgba(255,255,255,0.012) 13px
+                    ),
+                    var(--dark-bg);
+                /* Deep inset shadow — presses the block into the page */
+                box-shadow:
+                    inset 0 3px 16px rgba(0,0,0,0.65),
+                    inset 0 -3px 10px rgba(0,0,0,0.4),
+                    inset 3px 0 12px rgba(0,0,0,0.5),
+                    inset -3px 0 12px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(0, 229, 153, 0.1);
                 padding: 40px 36px;
                 position: relative;
                 overflow: hidden;
@@ -480,10 +504,14 @@
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 color: var(--money-green);
-                opacity: 0.05;
+                opacity: 0.06;
                 pointer-events: none;
                 user-select: none;
                 line-height: 1;
+                /* Engraved text on the watermark too */
+                text-shadow:
+                    1px 1px 0 rgba(0,0,0,0.9),
+                    -1px -1px 0 rgba(0, 229, 153, 0.08);
             }
             /* Corner crosshair */
             .manifesto-block::after {
@@ -515,6 +543,11 @@
                 color: var(--text-white);
                 margin-bottom: 32px;
                 flex: 1;
+                /* Carved letterpress text-shadow: dark recess below, subtle light above */
+                text-shadow:
+                    0 1px 0 rgba(0,0,0,0.9),
+                    0 -1px 0 rgba(255,255,255,0.06),
+                    0 2px 6px rgba(0,0,0,0.8);
             }
             .manifesto-spec-row {
                 display: flex;
@@ -539,7 +572,7 @@
                 overflow: hidden;
             }
             .split-divider-left { background: var(--dark-bg); }
-            .split-divider-right { background: var(--white-bg); }
+            .split-divider-right { background: var(--dark-bg); }
 
             /* =====================================================
                WORKFLOW PIPELINE SECTION
@@ -804,15 +837,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
             <!-- CTA is now INSIDE the hero stage — clear separation from section below -->
             <div class="hero-cta-inline">
                 <div class="cta-pill-group">
-                    <a href="#services" class="cta-main-btn">WE CLICK &mdash; EXPLORE THE DUALITY</a>
+                    <a href="#services" class="cta-main-btn">EXPLORE</a>
                     <a href="#services" class="cta-arrow-btn cta-bounce">↓</a>
                 </div>
             </div>
+            </div>
+
         </div>
 
         <!-- =====================================================
