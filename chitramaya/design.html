@@ -283,31 +283,18 @@
                 border-right: 1px solid var(--dark-border);
             }
 
-            .col-header-badge {
-                font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                padding: 6px 14px;
-                border-radius: 4px;
-                display: inline-block;
-                margin-bottom: 16px;
+            .col-intro-rule {
+                width: 48px;
+                height: 2px;
+                background: var(--money-green);
+                margin-bottom: 24px;
             }
-            .badge-money { background: var(--money-green-glow); color: var(--money-green); border: 1px solid var(--money-green); }
-            .badge-art { background: rgba(13,13,18,0.06); color: #444; border: 1px solid #ddd; }
-
-            .col-heading {
-                font-family: var(--display);
-                font-size: clamp(2rem, 3.5vw, 3.2rem);
-                font-weight: 700;
-                line-height: 1;
-                text-transform: uppercase;
-                letter-spacing: -0.02em;
-                margin-bottom: 48px;
+            .col-intro-rule-light {
+                width: 48px;
+                height: 2px;
+                background: var(--text-dark);
+                margin-bottom: 24px;
             }
-            .col-money .col-heading { color: var(--text-white); }
-            .col-art .col-heading { color: var(--text-dark); }
 
             /* --- DARK SERVICE CARD --- */
             .dark-card {
@@ -603,12 +590,38 @@
             .site-footer {
                 background: var(--dark-bg);
                 border-top: 1px solid var(--dark-border);
-                padding: 48px clamp(24px, 6vw, 80px);
+                padding: 64px clamp(24px, 6vw, 80px) 48px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 24px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .footer-ghost-text {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: var(--display);
+                font-size: clamp(3rem, 12vw, 10rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.04em;
+                color: var(--money-green);
+                opacity: 0.03;
+                pointer-events: none;
+                user-select: none;
+                white-space: nowrap;
+                z-index: 0;
+            }
+
+            .footer-content-block {
+                position: relative;
+                z-index: 1;
             }
 
             .footer-logo {
@@ -620,7 +633,7 @@
                 color: var(--text-white);
             }
 
-            .footer-tagline {
+            .footer-subline {
                 font-family: var(--mono);
                 font-size: 11px;
                 color: var(--text-muted-dark);
@@ -735,10 +748,7 @@
 
             <!-- ═══════════ LEFT COLUMN: MONEY-BASED SERVICES ═══════════ -->
             <div class="col-money">
-                <div>
-                    <span class="col-header-badge badge-money">[ COMMERCIAL RETURN ]</span>
-                    <h2 class="col-heading">MONEY&#8209;BASED<br>SERVICES</h2>
-                </div>
+                <div class="col-intro-rule"></div>
 
                 <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
                 <article class="dark-card" id="brand-corporate">
@@ -818,10 +828,7 @@
 
             <!-- ═══════════ RIGHT COLUMN: ART-BASED SERVICES ═══════════ -->
             <div class="col-art">
-                <div>
-                    <span class="col-header-badge badge-art">[ ARTISTIC EXPRESSION ]</span>
-                    <h2 class="col-heading">ART&#8209;BASED<br>SERVICES</h2>
-                </div>
+                <div class="col-intro-rule-light"></div>
 
                 <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
                 <article class="white-card" id="events-portraits">
@@ -926,14 +933,15 @@
              SITE FOOTER
              ===================================================== -->
         <footer class="site-footer">
-            <div>
+            <div class="footer-ghost-text" aria-hidden="true">ARTISTIC ILLUSION</div>
+            <div class="footer-content-block">
                 <div class="footer-logo">CHITHRAMAYA CREATIVES</div>
-                <div class="footer-tagline">Message with Artistic Illusion · We Click</div>
+                <div class="footer-subline">Studio &amp; Visual Direction</div>
             </div>
-            <a href="mailto:hello@chithramaya.com" class="footer-cta">
+            <a href="mailto:hello@chithramaya.com" class="footer-cta" style="position: relative; z-index: 1;">
                 START A PROJECT →
             </a>
-            <div class="footer-copy">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
+            <div class="footer-copy" style="position: relative; z-index: 1;">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
         </footer>
 
     </body>
