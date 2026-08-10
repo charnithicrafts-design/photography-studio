@@ -2,29 +2,40 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>CHITHRAMAYA CREATIVES — WE CLICK</title>
-        <!-- Google Fonts: Inter for UI & Oswald for Block Typography -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CHITHRAMAYA CREATIVES — We Click</title>
+        <meta name="description" content="Chithramaya Creatives — Premium commercial and artistic photography studio in India. Brand photography, events, portraits, podcast production, and brand design." />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Oswald:wght@600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
         
         <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
+            :root {
+                --dark-bg: #0d0d12;
+                --dark-card: #13131a;
+                --dark-border: #1e1e2a;
+                --money-green: #00e599;
+                --money-green-glow: rgba(0, 229, 153, 0.12);
+                --money-green-dim: rgba(0, 229, 153, 0.6);
+                --white-bg: #f8f8f5;
+                --white-card: #ffffff;
+                --art-border: #e8e8e2;
+                --text-dark: #0d0d12;
+                --text-white: #f8f8f5;
+                --text-muted-dark: rgba(248, 248, 245, 0.45);
+                --text-muted-light: rgba(13, 13, 18, 0.45);
+                --mono: 'IBM Plex Mono', monospace;
+                --display: 'Oswald', sans-serif;
+                --body: 'Inter', sans-serif;
             }
 
-            html, body {
-                width: 100%;
-                height: 100dvh;
-                background-color: #f7f7f9;
-                color: #111111;
-                font-family: 'Inter', sans-serif;
-                overflow: hidden;
-            }
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            html { scroll-behavior: smooth; }
+            body { font-family: var(--body); overflow-x: hidden; }
 
+            /* =====================================================
+               HERO SECTION (Preserved 3D Interlocked Composition)
+               ===================================================== */
             .hero-viewport {
                 width: 100vw;
                 height: 100dvh;
@@ -32,11 +43,10 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                position: relative;
+                background-color: #f7f7f9;
                 overflow: hidden;
             }
 
-            /* --- HEADER --- */
             header {
                 width: 100%;
                 height: clamp(54px, 7vh, 70px);
@@ -65,15 +75,18 @@
                 transition: all 0.2s ease;
                 text-decoration: none;
                 white-space: nowrap;
+                font-family: var(--body);
+                border: none;
+                background: none;
+                outline: none;
             }
-
-            .pill-btn:hover {
-                border-color: #bbbbca;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            .pill-btn {
+                background: #ffffff;
+                border: 1px solid #e2e2e8;
             }
 
             .logo {
-                font-family: 'Oswald', sans-serif;
+                font-family: var(--display);
                 font-size: clamp(14px, 1.8vw, 22px);
                 font-weight: 700;
                 letter-spacing: 2px;
@@ -93,32 +106,22 @@
                 justify-content: center;
                 font-size: clamp(11px, 1.2vw, 13px);
                 font-weight: 600;
-                color: #333333;
+                color: #333;
                 text-decoration: none;
                 transition: all 0.2s ease;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-                white-space: nowrap;
             }
+            .social-ig-link:hover { background: #111; color: #fff; border-color: #111; }
 
-            .social-ig-link:hover {
-                background: #111111;
-                color: #ffffff;
-                border-color: #111111;
-            }
-
-            /* --- HERO STAGE CONTAINER --- */
             .hero-stage-container {
                 flex: 1;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                position: relative;
                 padding: 10px;
                 overflow: hidden;
             }
 
-            /* --- GLUED COMPOSITION BOX (WE, MODEL, AND CLICK PERMANENTLY LOCKED TOGETHER) --- */
             .composition-box {
                 container-type: size;
                 container-name: hero;
@@ -132,12 +135,10 @@
                 justify-content: center;
             }
 
-            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' (LOCKED TO TOP-LEFT OF COMPOSITION BOX) */
             .text-top-left {
                 position: absolute;
-                top: 2%;
-                left: 2%;
-                font-family: 'Oswald', 'Impact', sans-serif;
+                top: 2%; left: 2%;
+                font-family: var(--display);
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
@@ -149,11 +150,9 @@
                 white-space: nowrap;
             }
 
-            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (SPANS 98% HEIGHT OF COMPOSITION BOX) */
             .photo-foreground-cutout {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 50%; left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 3;
                 height: 98%;
@@ -162,7 +161,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                pointer-events: auto;
             }
 
             .artistic-cutout-img {
@@ -174,16 +172,11 @@
                 filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
                 transition: transform 0.3s ease;
             }
+            .photo-foreground-cutout:hover .artistic-cutout-img { transform: scale(1.02); }
 
-            .photo-foreground-cutout:hover .artistic-cutout-img {
-                transform: scale(1.02);
-            }
-
-            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAM (MASKS BOTTOM OF SKIRT) */
             .text-bottom-right {
                 position: absolute;
-                bottom: 2%;
-                right: 2%;
+                bottom: 2%; right: 2%;
                 display: flex;
                 align-items: center;
                 gap: clamp(6px, 1.8cqw, 20px);
@@ -192,7 +185,7 @@
             }
 
             .click-text {
-                font-family: 'Oswald', 'Impact', sans-serif;
+                font-family: var(--display);
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
@@ -202,32 +195,21 @@
                 user-select: none;
             }
 
-            .camera-icon-wrapper {
-                position: relative;
-                display: inline-block;
-                vertical-align: middle;
-                z-index: 6;
-            }
-
+            .camera-icon-wrapper { display: inline-block; vertical-align: middle; z-index: 6; }
             .camera-icon-img {
                 width: clamp(50px, 16cqw, 180px);
                 height: auto;
                 filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
                 transition: transform 0.3s ease;
             }
+            .camera-icon-wrapper:hover .camera-icon-img { transform: scale(1.05) rotate(-2deg); }
 
-            .camera-icon-wrapper:hover .camera-icon-img {
-                transform: scale(1.05) rotate(-2deg);
-            }
-
-            /* --- FOOTER --- */
-            footer {
+            .hero-footer {
                 width: 100%;
                 height: clamp(54px, 7vh, 70px);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 0 clamp(16px, 4vw, 48px);
                 z-index: 40;
                 flex-shrink: 0;
                 background-color: #f7f7f9;
@@ -237,16 +219,15 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background: #ffffff;
+                background: #fff;
                 padding: 5px 6px;
                 border-radius: 40px;
                 border: 1px solid #e2e2e8;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             }
-
             .cta-main-btn {
-                background: #111111;
-                color: #ffffff;
+                background: #111;
+                color: #fff;
                 border-radius: 30px;
                 padding: clamp(8px, 1vh, 10px) clamp(16px, 2vw, 24px);
                 font-size: clamp(11px, 1.1vw, 13px);
@@ -255,11 +236,7 @@
                 transition: background 0.2s ease;
                 white-space: nowrap;
             }
-
-            .cta-main-btn:hover {
-                background: #333333;
-            }
-
+            .cta-main-btn:hover { background: #333; }
             .cta-arrow-btn {
                 width: clamp(32px, 3.5vh, 38px);
                 height: clamp(32px, 3.5vh, 38px);
@@ -274,102 +251,690 @@
                 font-size: 14px;
                 transition: all 0.2s ease;
             }
+            .cta-arrow-btn:hover { background: #111; color: #fff; }
 
-            .cta-arrow-btn:hover {
-                background: #111111;
-                color: #ffffff;
-            }
-
-            /* --- PORTRAIT & MOBILE DEVICE LOCK (ENTIRE 3D UNIT SCALES TOGETHER AS ONE PIECE) --- */
             @media (max-aspect-ratio: 1/1), (max-width: 600px) {
                 .composition-box {
                     width: min(88vw, 380px);
                     height: min(52vh, 420px);
                     aspect-ratio: 1 / 1.15;
                 }
+                .text-top-left, .click-text { font-size: clamp(2.8rem, 30cqw, 8rem); }
+                .photo-foreground-cutout { height: 98%; max-width: 90%; }
+                .camera-icon-img { width: clamp(40px, 15cqw, 75px); }
+            }
 
-                .text-top-left {
-                    font-size: clamp(2.8rem, 30cqw, 8rem);
-                    top: 2%;
-                    left: 2%;
-                }
+            /* =====================================================
+               DUALITY SPLIT — MONEY vs ART
+               ===================================================== */
+            .duality-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                min-height: 100vh;
+            }
 
-                .text-bottom-right {
-                    font-size: clamp(2.8rem, 30cqw, 8rem);
-                    bottom: 2%;
-                    right: 2%;
-                }
+            /* --- LEFT: DARK / MONEY SERVICES --- */
+            .col-money {
+                background: var(--dark-bg);
+                padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 64px);
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+                border-right: 1px solid var(--dark-border);
+            }
 
-                .click-text {
-                    font-size: clamp(2.8rem, 30cqw, 8rem);
-                }
+            .col-header-badge {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                padding: 6px 14px;
+                border-radius: 4px;
+                display: inline-block;
+                margin-bottom: 16px;
+            }
+            .badge-money { background: var(--money-green-glow); color: var(--money-green); border: 1px solid var(--money-green); }
+            .badge-art { background: rgba(13,13,18,0.06); color: #444; border: 1px solid #ddd; }
 
-                .photo-foreground-cutout {
-                    height: 98%;
-                    max-width: 90%;
-                }
+            .col-heading {
+                font-family: var(--display);
+                font-size: clamp(2rem, 3.5vw, 3.2rem);
+                font-weight: 700;
+                line-height: 1;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                margin-bottom: 48px;
+            }
+            .col-money .col-heading { color: var(--text-white); }
+            .col-art .col-heading { color: var(--text-dark); }
 
-                .camera-icon-img {
-                    width: clamp(40px, 15cqw, 75px);
+            /* --- DARK SERVICE CARD --- */
+            .dark-card {
+                background: var(--dark-card);
+                border: 1px solid var(--dark-border);
+                border-top: 2px solid var(--money-green);
+                padding: 32px;
+                transition: box-shadow 0.3s ease;
+            }
+            .dark-card:hover {
+                box-shadow: 0 0 40px var(--money-green-glow), 0 0 80px rgba(0, 229, 153, 0.04);
+            }
+
+            .service-number {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+            }
+            .dark-card .service-number { color: var(--money-green); }
+            .white-card .service-number { color: var(--text-muted-light); }
+
+            .service-title {
+                font-family: var(--display);
+                font-size: clamp(1.4rem, 2.2vw, 2rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                margin-bottom: 20px;
+                line-height: 1;
+            }
+            .dark-card .service-title { color: var(--text-white); }
+            .white-card .service-title { color: var(--text-dark); }
+
+            .service-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 24px;
+            }
+
+            .tag {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                padding: 4px 12px;
+                white-space: nowrap;
+            }
+            .tag-dark {
+                background: transparent;
+                border: 1px solid var(--dark-border);
+                color: var(--text-muted-dark);
+            }
+            .tag-dark:hover { border-color: var(--money-green); color: var(--money-green); }
+            .tag-light {
+                background: transparent;
+                border: 1px solid var(--art-border);
+                color: var(--text-muted-light);
+            }
+
+            .service-text-block {
+                font-size: 13px;
+                line-height: 1.75;
+                font-weight: 400;
+                padding-top: 20px;
+                border-top: 1px solid;
+            }
+            .dark-card .service-text-block { color: var(--text-muted-dark); border-top-color: var(--dark-border); }
+            .white-card .service-text-block { color: var(--text-muted-light); border-top-color: var(--art-border); }
+
+            /* Podcast Pillars */
+            .pillars-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+
+            .pillar {
+                padding: 16px 20px;
+                border-left: 3px solid var(--money-green);
+                background: rgba(0, 229, 153, 0.04);
+            }
+            .pillar-title {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                color: var(--money-green);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+            }
+            .pillar-items {
+                font-size: 12px;
+                color: var(--text-muted-dark);
+                line-height: 1.6;
+            }
+
+            /* --- RIGHT: WHITE / ART SERVICES --- */
+            .col-art {
+                background: var(--white-bg);
+                padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 64px);
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+            }
+
+            /* --- WHITE SERVICE CARD --- */
+            .white-card {
+                background: var(--white-card);
+                border: 1px solid var(--art-border);
+                border-top: 3px solid var(--text-dark);
+                padding: 32px;
+                transition: box-shadow 0.3s ease;
+            }
+            .white-card:hover {
+                box-shadow: 0 8px 40px rgba(13,13,18,0.06);
+            }
+
+            /* Events Portrait Subcategories */
+            .subcategory {
+                margin-bottom: 20px;
+            }
+            .subcategory-label {
+                font-family: var(--mono);
+                font-size: 10px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--text-muted-light);
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid var(--art-border);
+            }
+            .subcategory-items {
+                font-size: 13px;
+                color: var(--text-dark);
+                line-height: 1.7;
+                font-weight: 400;
+            }
+
+            /* UPCOMING Card */
+            .upcoming-card {
+                position: relative;
+                overflow: hidden;
+            }
+            .upcoming-overlay {
+                position: absolute;
+                top: 20px; right: 20px;
+                font-family: var(--mono);
+                font-size: 10px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                background: var(--text-dark);
+                color: var(--text-white);
+                padding: 6px 12px;
+            }
+
+            /* =====================================================
+               DIAGONAL SPLIT DIVIDER
+               ===================================================== */
+            .split-divider {
+                position: relative;
+                height: 80px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                overflow: hidden;
+            }
+            .split-divider-left { background: var(--dark-bg); }
+            .split-divider-right { background: var(--white-bg); }
+
+            /* =====================================================
+               WORKFLOW PIPELINE SECTION
+               ===================================================== */
+            .pipeline-section {
+                background: var(--dark-bg);
+                padding: clamp(60px, 8vw, 120px) clamp(24px, 6vw, 80px);
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Background grid texture */
+            .pipeline-section::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image:
+                    linear-gradient(to right, rgba(0, 229, 153, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 229, 153, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+                pointer-events: none;
+            }
+
+            .pipeline-label {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--money-green);
+                margin-bottom: 20px;
+            }
+
+            .pipeline-heading {
+                font-family: var(--display);
+                font-size: clamp(2rem, 5vw, 5rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.03em;
+                color: var(--text-white);
+                line-height: 0.9;
+                margin-bottom: 72px;
+            }
+
+            .pipeline-heading span {
+                color: var(--money-green);
+            }
+
+            .pipeline-steps {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0;
+                position: relative;
+            }
+
+            /* Connecting line between steps */
+            .pipeline-steps::after {
+                content: '';
+                position: absolute;
+                top: 28px;
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                background: linear-gradient(to right, var(--money-green), rgba(0, 229, 153, 0.1));
+                z-index: 0;
+            }
+
+            .step {
+                position: relative;
+                z-index: 1;
+                padding: 0 16px;
+                padding-top: 64px;
+            }
+
+            .step-marker {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 56px;
+                height: 56px;
+                border: 1px solid var(--money-green);
+                background: var(--dark-bg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: var(--mono);
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--money-green);
+                transition: background 0.3s ease;
+            }
+
+            .step:hover .step-marker {
+                background: var(--money-green);
+                color: var(--dark-bg);
+            }
+
+            .step-title {
+                font-family: var(--display);
+                font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--text-white);
+                letter-spacing: 0.02em;
+                margin-bottom: 10px;
+                text-align: center;
+                line-height: 1.2;
+            }
+
+            .step-desc {
+                font-size: 12px;
+                color: var(--text-muted-dark);
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            /* =====================================================
+               FOOTER
+               ===================================================== */
+            .site-footer {
+                background: var(--dark-bg);
+                border-top: 1px solid var(--dark-border);
+                padding: 48px clamp(24px, 6vw, 80px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .footer-logo {
+                font-family: var(--display);
+                font-size: 22px;
+                font-weight: 700;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--text-white);
+            }
+
+            .footer-tagline {
+                font-family: var(--mono);
+                font-size: 11px;
+                color: var(--text-muted-dark);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-top: 6px;
+            }
+
+            .footer-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                background: var(--money-green);
+                color: var(--dark-bg);
+                font-family: var(--display);
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 16px 32px;
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+            .footer-cta:hover {
+                background: #00ff9e;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(0, 229, 153, 0.25);
+            }
+
+            .footer-copy {
+                width: 100%;
+                font-family: var(--mono);
+                font-size: 10px;
+                color: var(--text-muted-dark);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                padding-top: 24px;
+                border-top: 1px solid var(--dark-border);
+                text-align: center;
+            }
+
+            /* =====================================================
+               RESPONSIVE MOBILE — STACK COLUMNS
+               ===================================================== */
+            @media (max-width: 900px) {
+                .duality-section {
+                    grid-template-columns: 1fr;
                 }
+                .col-money { border-right: none; border-bottom: 1px solid var(--dark-border); }
+                .pipeline-steps {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+                .pipeline-steps::after { display: none; }
+                .step { padding: 0; padding-top: 64px; }
+                .site-footer { justify-content: flex-start; }
+            }
+
+            @media (max-width: 600px) {
+                .pipeline-steps { grid-template-columns: 1fr; }
             }
         </style>
     </head>
     <body>
-        <div class="hero-viewport">
-            <!-- HEADER -->
+
+        <!-- =====================================================
+             SECTION 0: HERO (WE CLICK — 3D Interlocked Composition)
+             ===================================================== -->
+        <div class="hero-viewport" id="hero">
             <header>
                 <button class="pill-btn">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                     Menu
                 </button>
-
-                <div class="logo">
-                    CHITHRAMAYA CREATIVES
-                </div>
-
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-ig-link" title="Instagram">
-                    ig
-                </a>
+                <div class="logo">CHITHRAMAYA CREATIVES</div>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-ig-link" title="Instagram">ig</a>
             </header>
 
-            <!-- HERO STAGE CONTAINER -->
             <div class="hero-stage-container">
-                <!-- GLUED COMPOSITION BOX -->
                 <div class="composition-box">
-                    <!-- LAYER 1 (z-index: 1): TOP LEFT 'WE' -->
-                    <div class="text-top-left">
-                        WE
-                    </div>
-
-                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT -->
+                    <div class="text-top-left">WE</div>
                     <div class="photo-foreground-cutout">
                         <picture>
                             <source srcset="artistic-photo.webp" type="image/webp">
-                            <img src="artistic-photo.png" alt="Chithramaya Transparent Portrait" class="artistic-cutout-img" />
+                            <img src="artistic-photo.png" alt="Chithramaya Creative Portrait" class="artistic-cutout-img" />
                         </picture>
                     </div>
-
-                    <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM -->
                     <div class="text-bottom-right">
                         <span class="click-text">CLICK</span>
-                        <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
+                        <div class="camera-icon-wrapper">
                             <picture>
                                 <source srcset="camera.webp" type="image/webp">
-                                <img src="camera.png" alt="Chithramaya Modern Camera Icon" class="camera-icon-img" />
+                                <img src="camera.png" alt="Camera" class="camera-icon-img" />
                             </picture>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- FOOTER -->
-            <footer>
+            <div class="hero-footer">
                 <div class="cta-pill-group">
-                    <a href="#portfolio" class="cta-main-btn">Explore Portfolio</a>
-                    <a href="#portfolio" class="cta-arrow-btn">→</a>
+                    <a href="#services" class="cta-main-btn">Explore Services</a>
+                    <a href="#services" class="cta-arrow-btn">↓</a>
                 </div>
-            </footer>
+            </div>
         </div>
+
+        <!-- =====================================================
+             SECTION 1–5: DUALITY SPLIT — MONEY (DARK) vs ART (WHITE)
+             ===================================================== -->
+        <section class="duality-section" id="services">
+
+            <!-- ═══════════ LEFT COLUMN: MONEY-BASED SERVICES ═══════════ -->
+            <div class="col-money">
+                <div>
+                    <span class="col-header-badge badge-money">[ COMMERCIAL RETURN ]</span>
+                    <h2 class="col-heading">MONEY&#8209;BASED<br>SERVICES</h2>
+                </div>
+
+                <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
+                <article class="dark-card" id="brand-corporate">
+                    <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
+                    <h3 class="service-title">Brand &amp; Corporate Photography</h3>
+                    <div class="service-tags">
+                        <span class="tag tag-dark">Executive Headshots</span>
+                        <span class="tag tag-dark">Website Photography</span>
+                        <span class="tag tag-dark">Team Photography</span>
+                        <span class="tag tag-dark">Corporate Video</span>
+                        <span class="tag tag-dark">Company Profile Video</span>
+                        <span class="tag tag-dark">Company Lifestyle</span>
+                        <span class="tag tag-dark">Product Launches</span>
+                        <span class="tag tag-dark">Marketing Events</span>
+                        <span class="tag tag-dark">Seminars</span>
+                        <span class="tag tag-dark">Corporate Events</span>
+                        <span class="tag tag-dark">Conferences</span>
+                        <span class="tag tag-dark">Product Photography</span>
+                        <span class="tag tag-dark">Brand Ads / Videos</span>
+                        <span class="tag tag-dark">TVC</span>
+                    </div>
+                    <p class="service-text-block">
+                        Under the Brand and Corporate Photography category, a comprehensive range of services is offered to help businesses present a strong and authentic visual identity. From polished executive headshots and cohesive team portraits to high-production corporate videos and company profile films, every deliverable is crafted to communicate professionalism, trust, and brand authority — positioning your organisation with clarity and confidence across every visual touchpoint.
+                    </p>
+                </article>
+
+                <!-- 02 COMMERCIAL PHOTOGRAPHY -->
+                <article class="dark-card" id="commercial">
+                    <div class="service-number">— 02 / COMMERCIAL</div>
+                    <h3 class="service-title">Commercial Photography</h3>
+                    <div class="service-tags">
+                        <span class="tag tag-dark">OOH Marketing Collaterals</span>
+                        <span class="tag tag-dark">E-Commerce Catalogues</span>
+                        <span class="tag tag-dark">Food Photography</span>
+                        <span class="tag tag-dark">Lifestyle Photography</span>
+                        <span class="tag tag-dark">Product Photography</span>
+                        <span class="tag tag-dark">Fashion Photography</span>
+                        <span class="tag tag-dark">Architecture Photography</span>
+                        <span class="tag tag-dark">Civil Construction Timelapse</span>
+                        <span class="tag tag-dark">Cinematic Walkthrough</span>
+                        <span class="tag tag-dark">360 Photography</span>
+                        <span class="tag tag-dark">Social Media Campaigns</span>
+                        <span class="tag tag-dark">Personal Branding</span>
+                        <span class="tag tag-dark">PR Campaigns</span>
+                        <span class="tag tag-dark">Content Creation</span>
+                    </div>
+                    <p class="service-text-block">
+                        Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands. From out-of-home advertising and e-commerce catalogues to cinematic architecture walkthroughs and 360 immersive photography, the studio delivers content that captures attention, builds desire, and drives measurable commercial results across all media channels.
+                    </p>
+                </article>
+
+                <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
+                <article class="dark-card" id="podcast">
+                    <div class="service-number">— 04 / PODCAST &amp; INTERVIEW PRODUCTION</div>
+                    <h3 class="service-title">Podcast &amp; Interview Production</h3>
+
+                    <div class="pillars-grid">
+                        <div class="pillar">
+                            <div class="pillar-title">[ Studio &amp; Production Services ]</div>
+                            <div class="pillar-items">Professional recording studio setup, Multi-camera production, Live streaming, Video podcast production, Sound design &amp; audio post-production, Set design &amp; lighting direction</div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-title">[ Content &amp; Media Services ]</div>
+                            <div class="pillar-items">Episode editing &amp; publishing, Graphic design for thumbnails &amp; artwork, Distribution strategy, Branded intros &amp; outros, Short-form content repurposing for social media</div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-title">[ Photography &amp; Branding Services ]</div>
+                            <div class="pillar-items">Host &amp; guest headshots, Episode &amp; campaign photography, Brand photography for show identity, Promotional media kits, Behind-the-scenes content</div>
+                        </div>
+                    </div>
+
+                    <p class="service-text-block">
+                        Podcast and interview services offered by professional photography studios have evolved into comprehensive content creation solutions — combining high-quality audio and video production with strategic visual branding. From technically equipped studio setups and multi-camera interview shoots to complete content repurposing and brand photography for show identity, these services empower thought leaders, entrepreneurs, and brands to build lasting audience relationships through powerful storytelling formats.
+                    </p>
+                </article>
+            </div>
+
+            <!-- ═══════════ RIGHT COLUMN: ART-BASED SERVICES ═══════════ -->
+            <div class="col-art">
+                <div>
+                    <span class="col-header-badge badge-art">[ ARTISTIC EXPRESSION ]</span>
+                    <h2 class="col-heading">ART&#8209;BASED<br>SERVICES</h2>
+                </div>
+
+                <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
+                <article class="white-card" id="events-portraits">
+                    <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
+                    <h3 class="service-title">Events &amp; Portrait Photography</h3>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Baby Portraits</div>
+                        <div class="subcategory-items">1st Birthday · Newborn Art Themed · Infant Art Themed / House Visit · Toddler Outdoor / Studio</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Maternity</div>
+                        <div class="subcategory-items">Maternity · Bump to Baby Sessions</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Family Portraits</div>
+                        <div class="subcategory-items">Family Portrait Sessions · Individual Portraits</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Wedding</div>
+                        <div class="subcategory-items">Pre &amp; Post Wedding · Destination Wedding · Song Creation</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Family Events</div>
+                        <div class="subcategory-items">Sastiyabthapoorthi · Upanayanam · Sadhabishegam · Ear Piercing / Ayushomam</div>
+                    </div>
+                </article>
+
+                <!-- 05 BRAND DESIGN (UPCOMING) -->
+                <article class="white-card upcoming-card" id="brand-design">
+                    <div class="upcoming-overlay">UPCOMING EVOLVING SOLUTION</div>
+                    <div class="service-number">— 05 / BRAND DESIGN</div>
+                    <h3 class="service-title">Brand Design</h3>
+
+                    <div class="service-tags">
+                        <span class="tag tag-light">Logo Design</span>
+                        <span class="tag tag-light">Brand Identity</span>
+                        <span class="tag tag-light">Product Design</span>
+                        <span class="tag tag-light">Marketing Collaterals</span>
+                        <span class="tag tag-light">Illustrative Posters</span>
+                        <span class="tag tag-light">OOH Campaign Design</span>
+                        <span class="tag tag-light">Installations Design</span>
+                        <span class="tag tag-light">Brand Guidelines</span>
+                    </div>
+
+                    <p class="service-text-block">
+                        An upcoming, evolving design discipline where visual identity meets artistic strategy. Brand Design at Chithramaya Creatives will bridge the gap between commercial clarity and artistic distinctiveness — building brands that aren't just seen, but deeply felt.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SPLIT DIVIDER
+             ===================================================== -->
+        <div class="split-divider" aria-hidden="true">
+            <div class="split-divider-left"></div>
+            <div class="split-divider-right"></div>
+        </div>
+
+        <!-- =====================================================
+             WORKFLOW PIPELINE SECTION
+             ===================================================== -->
+        <section class="pipeline-section" id="pipeline">
+            <div class="pipeline-label">[ STRUCTURAL WORKFLOW ]</div>
+            <h2 class="pipeline-heading">HOW WE<br>DELIVER <span>EXCELLENCE</span></h2>
+
+            <div class="pipeline-steps">
+                <div class="step">
+                    <div class="step-marker">01</div>
+                    <div class="step-title">Initial Consultation</div>
+                    <div class="step-desc">Understanding your vision, goals, and requirements through a focused discovery session.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">02</div>
+                    <div class="step-title">Creative Brief</div>
+                    <div class="step-desc">Defining the creative direction, mood, references, timeline, and scope of the project.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">03</div>
+                    <div class="step-title">Execution Pipeline</div>
+                    <div class="step-desc">Professional shoot or production execution with precision, creativity, and technical mastery.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">04</div>
+                    <div class="step-title">Post-Production</div>
+                    <div class="step-desc">Expert colour grading, retouching, editing, and quality review to perfect every frame.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">05</div>
+                    <div class="step-title">Final Delivery</div>
+                    <div class="step-desc">Structured delivery of assets in all required formats with full usage rights handover.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SITE FOOTER
+             ===================================================== -->
+        <footer class="site-footer">
+            <div>
+                <div class="footer-logo">CHITHRAMAYA CREATIVES</div>
+                <div class="footer-tagline">Message with Artistic Illusion · We Click</div>
+            </div>
+            <a href="mailto:hello@chithramaya.com" class="footer-cta">
+                START A PROJECT →
+            </a>
+            <div class="footer-copy">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
+        </footer>
+
     </body>
 </html>
