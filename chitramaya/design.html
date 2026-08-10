@@ -114,11 +114,11 @@
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                padding: 10px 20px;
+                padding: 5px 16px;
                 overflow: hidden;
             }
 
-            /* --- CONTAINER QUERY ROOT (SYNCHRONIZES TEXT & IMAGE SCALING 1:1) --- */
+            /* --- CONTAINER QUERY ROOT (SYNCHRONIZED CONTAINER) --- */
             .composition-box {
                 container-type: size;
                 container-name: hero;
@@ -132,7 +132,7 @@
                 justify-content: center;
             }
 
-            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' (SCALES VIA CONTAINER QUERY CQW UNITS) */
+            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' */
             .text-top-left {
                 position: absolute;
                 top: 0;
@@ -145,17 +145,17 @@
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
-                z-index: 1; /* Behind hat & upper body */
+                z-index: 1;
                 white-space: nowrap;
             }
 
-            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (SCALES VIA CONTAINER QUERY CQH & CQW UNITS) */
+            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT */
             .photo-foreground-cutout {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                z-index: 3; /* In front of WE (z:1), behind CLICK (z:5) */
+                z-index: 3;
                 height: clamp(260px, 98cqh, 560px);
                 width: auto;
                 max-width: clamp(180px, 85cqw, 480px);
@@ -179,7 +179,7 @@
                 transform: scale(1.02);
             }
 
-            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAMERA (SCALES VIA CONTAINER QUERY UNITS) */
+            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAMERA */
             .text-bottom-right {
                 position: absolute;
                 bottom: 0;
@@ -187,7 +187,7 @@
                 display: flex;
                 align-items: center;
                 gap: clamp(6px, 1.8cqw, 20px);
-                z-index: 5; /* In front of photo skirt edge - completely masks cut-off legs */
+                z-index: 5;
                 white-space: nowrap;
             }
 
@@ -280,37 +280,40 @@
                 color: #ffffff;
             }
 
-            /* --- RESPONSIVE CONTAINER QUERY RATIO ADJUSTMENTS (PHONES & TABLETS) --- */
-            @media (max-aspect-ratio: 1/1) {
+            /* --- SMARTPHONES & PORTRAIT SCREENS (LOCK HEIGHT VERTICALLY WITHOUT WHITE GAPS) --- */
+            @media (max-width: 600px), (max-aspect-ratio: 4/5) {
                 .composition-box {
-                    width: min(92vw, 500px);
-                    height: min(65vh, 520px);
-                    aspect-ratio: 4 / 5;
+                    width: min(94vw, 480px);
+                    height: calc(100% - 10px); /* Fills available height between header and footer */
+                    max-height: 680px;
+                    aspect-ratio: auto; /* Remove aspect ratio constraint on tall smartphone screens */
                 }
 
                 .text-top-left {
-                    font-size: clamp(3.2rem, 32cqw, 9rem);
+                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
                     top: 0;
                     left: 0;
                 }
 
                 .text-bottom-right {
-                    font-size: clamp(3.2rem, 32cqw, 9rem);
+                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
                     bottom: 0;
                     right: 0;
                 }
 
                 .click-text {
-                    font-size: clamp(3.2rem, 32cqw, 9rem);
+                    font-size: clamp(3.8rem, 27cqw, 8.5rem);
                 }
 
                 .photo-foreground-cutout {
-                    height: clamp(260px, 98cqh, 500px);
-                    max-width: clamp(180px, 90cqw, 420px);
+                    height: clamp(280px, 94cqh, 600px);
+                    width: auto;
+                    max-width: clamp(180px, 85cqw, 360px);
+                    transform: translate(-50%, -48%);
                 }
 
                 .camera-icon-img {
-                    width: clamp(42px, 16cqw, 85px);
+                    width: clamp(45px, 15cqw, 85px);
                 }
             }
         </style>
@@ -342,7 +345,7 @@
                         WE
                     </div>
 
-                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT SYNCHRONIZED VIA CQH/CQW -->
+                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT -->
                     <div class="photo-foreground-cutout">
                         <picture>
                             <source srcset="artistic-photo.webp" type="image/webp">
