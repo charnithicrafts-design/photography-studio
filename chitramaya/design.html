@@ -36,23 +36,25 @@
                 overflow: hidden;
             }
 
-            /* --- MINIMAL HEADER --- */
+            /* --- HEADER (STRICT CONTAINER BOUNDS) --- */
             header {
                 width: 100%;
+                height: 70px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: clamp(12px, 2vh, 24px) clamp(16px, 4vw, 48px);
-                z-index: 30;
+                padding: 0 clamp(16px, 4vw, 48px);
+                z-index: 40;
                 flex-shrink: 0;
+                background-color: #f7f7f9; /* Keeps header clear of overlapping elements */
             }
 
             .pill-btn {
                 background: #ffffff;
                 border: 1px solid #e2e2e8;
                 border-radius: 30px;
-                padding: clamp(6px, 1vh, 8px) clamp(14px, 2vw, 20px);
-                font-size: clamp(11px, 1.2vw, 13px);
+                padding: 8px 20px;
+                font-size: 13px;
                 font-weight: 500;
                 color: #222222;
                 display: inline-flex;
@@ -72,7 +74,7 @@
 
             .logo {
                 font-family: 'Oswald', sans-serif;
-                font-size: clamp(15px, 2vw, 22px);
+                font-size: clamp(16px, 1.8vw, 22px);
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-transform: uppercase;
@@ -81,15 +83,15 @@
             }
 
             .social-ig-link {
-                width: clamp(32px, 4vh, 38px);
-                height: clamp(32px, 4vh, 38px);
+                width: 38px;
+                height: 38px;
                 border-radius: 50%;
                 background: #ffffff;
                 border: 1px solid #e2e2e8;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: clamp(11px, 1.2vw, 13px);
+                font-size: 13px;
                 font-weight: 600;
                 color: #333333;
                 text-decoration: none;
@@ -104,22 +106,23 @@
                 border-color: #111111;
             }
 
-            /* --- MAIN HERO STAGE (TIGHTLY CONNECTED COMPOSITION) --- */
+            /* --- HERO STAGE CONTAINER (CONSTRAINED BETWEEN HEADER & FOOTER) --- */
             .hero-stage-container {
                 flex: 1;
                 width: 100%;
+                max-width: 1400px;
+                margin: 0 auto;
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                position: relative;
-                padding: 10px 0;
+                overflow: hidden;
             }
 
             .hero-stage {
                 position: relative;
-                width: min(100vw, 1360px);
-                height: min(72vh, 680px);
-                margin: auto;
+                width: 100%;
+                height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -131,25 +134,26 @@
                 top: 0;
                 left: 2vw;
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(5.5rem, 16vw, 21rem);
+                font-size: clamp(5rem, 15vw, 19rem);
                 font-weight: 700;
                 line-height: 0.78;
                 color: #dedede;
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
-                z-index: 1; /* Behind upper body & hat */
+                z-index: 1;
                 white-space: nowrap;
             }
 
-            /* 2. LAYER 2 (z-index: 3): ARTISTIC TRANSPARENT PHOTO (BRIDGING WE & CLICK) */
+            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (STRICTLY CONSTRAINED TO HERO STAGE HEIGHT) */
             .photo-foreground-cutout {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -48%);
-                z-index: 3; /* In front of WE (z:1), behind CLICK (z:5) */
-                height: clamp(320px, 62vh, 580px);
+                transform: translate(-50%, -50%);
+                z-index: 3;
+                height: min(82%, 460px);
+                max-height: calc(100% - 20px);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -159,7 +163,7 @@
             .artistic-cutout-img {
                 height: 100%;
                 width: auto;
-                max-width: 85vw;
+                max-height: 100%;
                 display: block;
                 object-fit: contain;
                 filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
@@ -178,13 +182,13 @@
                 display: flex;
                 align-items: center;
                 gap: clamp(8px, 1.5vw, 20px);
-                z-index: 5; /* In front of cutout photo bottom edge to mask cut-off legs completely */
+                z-index: 5; /* In front of cutout photo bottom edge */
                 white-space: nowrap;
             }
 
             .click-text {
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(5.5rem, 16vw, 21rem);
+                font-size: clamp(5rem, 15vw, 19rem);
                 font-weight: 700;
                 line-height: 0.78;
                 color: #dedede;
@@ -201,7 +205,7 @@
             }
 
             .camera-icon-img {
-                width: clamp(80px, 14vw, 240px);
+                width: clamp(75px, 13vw, 220px);
                 height: auto;
                 filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
                 transition: transform 0.3s ease;
@@ -211,15 +215,17 @@
                 transform: scale(1.05) rotate(-2deg);
             }
 
-            /* --- FOOTER --- */
+            /* --- FOOTER (STRICT CONTAINER BOUNDS) --- */
             footer {
                 width: 100%;
+                height: 70px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: clamp(12px, 2vh, 24px) clamp(16px, 4vw, 48px);
-                z-index: 30;
+                padding: 0 clamp(16px, 4vw, 48px);
+                z-index: 40;
                 flex-shrink: 0;
+                background-color: #f7f7f9; /* Keeps footer clear of overlapping elements */
             }
 
             .cta-pill-group {
@@ -237,8 +243,8 @@
                 background: #111111;
                 color: #ffffff;
                 border-radius: 30px;
-                padding: clamp(8px, 1.2vh, 12px) clamp(18px, 2vw, 28px);
-                font-size: clamp(12px, 1.2vw, 14px);
+                padding: 10px 24px;
+                font-size: 13px;
                 font-weight: 600;
                 text-decoration: none;
                 transition: background 0.2s ease;
@@ -250,8 +256,8 @@
             }
 
             .cta-arrow-btn {
-                width: clamp(34px, 4vh, 42px);
-                height: clamp(34px, 4vh, 42px);
+                width: 38px;
+                height: 38px;
                 border-radius: 50%;
                 background: #f7f7f9;
                 border: 1px solid #e2e2e8;
@@ -260,7 +266,7 @@
                 justify-content: center;
                 color: #111;
                 text-decoration: none;
-                font-size: clamp(13px, 1.4vw, 16px);
+                font-size: 15px;
                 transition: all 0.2s ease;
             }
 
@@ -269,64 +275,86 @@
                 color: #ffffff;
             }
 
-            /* --- TIGHTEN PORTRAIT MODE (TABLETS & PHONES) --- */
-            @media (max-aspect-ratio: 1/1) {
-                .hero-stage {
-                    height: min(65vh, 520px);
+            /* --- ROBUST MEDIA QUERIES FOR PORTRAIT VS LANDSCAPE --- */
+
+            /* LANDSCAPE SCREENS (Wide Aspect Ratio) */
+            @media (min-aspect-ratio: 1/1) {
+                .photo-foreground-cutout {
+                    height: min(85%, 450px);
+                    top: 52%;
                 }
 
                 .text-top-left {
-                    font-size: clamp(4.5rem, 21vw, 12rem);
-                    top: 2%;
-                    left: 2%;
+                    top: 10px;
                 }
 
                 .text-bottom-right {
-                    bottom: 2%;
-                    right: 2%;
-                }
-
-                .click-text {
-                    font-size: clamp(4.5rem, 21vw, 12rem);
-                }
-
-                .photo-foreground-cutout {
-                    height: clamp(300px, 58vh, 480px);
-                    transform: translate(-50%, -46%);
-                }
-
-                .camera-icon-img {
-                    width: clamp(70px, 18vw, 140px);
+                    bottom: 10px;
                 }
             }
 
-            /* Extra Short Landscape Mode */
-            @media (max-height: 520px) and (orientation: landscape) {
-                .hero-stage {
-                    height: 82vh;
+            /* PORTRAIT SCREENS (Tall Aspect Ratio) */
+            @media (max-aspect-ratio: 1/1) {
+                .text-top-left {
+                    font-size: clamp(4.2rem, 20vw, 11rem);
+                    top: 15px;
+                    left: 3vw;
                 }
 
-                .text-top-left {
-                    font-size: clamp(3.2rem, 14vh, 7rem);
+                .text-bottom-right {
+                    font-size: clamp(4.2rem, 20vw, 11rem);
+                    bottom: 15px;
+                    right: 3vw;
                 }
 
                 .click-text {
-                    font-size: clamp(3.2rem, 14vh, 7rem);
-                }
-
-                .camera-icon-img {
-                    width: clamp(50px, 10vh, 90px);
+                    font-size: clamp(4.2rem, 20vw, 11rem);
                 }
 
                 .photo-foreground-cutout {
-                    height: 78vh;
+                    height: min(75%, 440px);
+                    top: 50%;
+                }
+
+                .camera-icon-img {
+                    width: clamp(65px, 16vw, 130px);
+                }
+            }
+
+            /* EXTRA SHORT LANDSCAPE SCREENS (e.g. Laptops with small height or Mobile sideways) */
+            @media (max-height: 600px) and (orientation: landscape) {
+                header, footer {
+                    height: 50px;
+                }
+
+                .text-top-left {
+                    font-size: clamp(3rem, 16vh, 6.5rem);
+                    top: 0;
+                }
+
+                .text-bottom-right {
+                    font-size: clamp(3rem, 16vh, 6.5rem);
+                    bottom: 0;
+                }
+
+                .click-text {
+                    font-size: clamp(3rem, 16vh, 6.5rem);
+                }
+
+                .photo-foreground-cutout {
+                    height: 85%;
+                    top: 50%;
+                }
+
+                .camera-icon-img {
+                    width: clamp(50px, 12vh, 90px);
                 }
             }
         </style>
     </head>
     <body>
         <div class="hero-viewport">
-            <!-- MINIMAL HEADER: MENU | LOGO | IG -->
+            <!-- HEADER (STRICT TOP BAR) -->
             <header>
                 <button class="pill-btn">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -342,7 +370,7 @@
                 </a>
             </header>
 
-            <!-- TIGHTLY CONNECTED HERO STAGE -->
+            <!-- HERO STAGE CONTAINER (CONSTRAINED BETWEEN HEADER & FOOTER) -->
             <div class="hero-stage-container">
                 <main class="hero-stage">
                     <!-- LAYER 1 (z-index: 1): TOP LEFT 'WE' -->
@@ -350,7 +378,7 @@
                         WE
                     </div>
 
-                    <!-- LAYER 2 (z-index: 3): CUTOUT PHOTO BRIDGING WE & CLICK -->
+                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT (CONSTRAINED SAFELY BELOW HEADER & ABOVE FOOTER) -->
                     <div class="photo-foreground-cutout">
                         <picture>
                             <source srcset="artistic-photo.webp" type="image/webp">
@@ -358,7 +386,7 @@
                         </picture>
                     </div>
 
-                    <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM (MASKS SKIRT) -->
+                    <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM (MASKS SKIRT CUTOFF) -->
                     <div class="text-bottom-right">
                         <span class="click-text">CLICK</span>
                         <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
@@ -371,7 +399,7 @@
                 </main>
             </div>
 
-            <!-- FOOTER: CTA BUTTON -->
+            <!-- FOOTER (STRICT BOTTOM BAR) -->
             <footer>
                 <div class="cta-pill-group">
                     <a href="#portfolio" class="cta-main-btn">Explore Portfolio</a>
