@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>CHITHRAMAYA CREATIVES — WE CLICK</title>
         <!-- Google Fonts: Inter for UI & Oswald for Block Typography -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,43 +16,52 @@
                 padding: 0;
             }
 
-            body {
-                font-family: 'Inter', sans-serif;
+            html, body {
+                width: 100%;
+                height: 100dvh;
                 background-color: #f7f7f9;
                 color: #111111;
-                min-height: 100vh;
+                font-family: 'Inter', sans-serif;
+                overflow: hidden; /* Prevents unwanted scrolling on mobile while retaining full layout */
+            }
+
+            .hero-viewport {
+                width: 100vw;
+                height: 100dvh;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                overflow-x: hidden;
                 position: relative;
+                overflow: hidden;
             }
 
-            /* --- HEADER --- */
+            /* --- MINIMAL HEADER --- */
             header {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 24px 48px;
+                padding: clamp(12px, 2.5vh, 24px) clamp(16px, 4vw, 48px);
                 z-index: 30;
+                flex-shrink: 0;
             }
 
             .pill-btn {
                 background: #ffffff;
                 border: 1px solid #e2e2e8;
                 border-radius: 30px;
-                padding: 8px 20px;
-                font-size: 13px;
+                padding: clamp(6px, 1vh, 8px) clamp(14px, 2vw, 20px);
+                font-size: clamp(11px, 1.2vw, 13px);
                 font-weight: 500;
                 color: #222222;
                 display: inline-flex;
                 align-items: center;
-                gap: 8px;
+                gap: 6px;
                 cursor: pointer;
                 box-shadow: 0 2px 6px rgba(0,0,0,0.02);
                 transition: all 0.2s ease;
                 text-decoration: none;
+                white-space: nowrap;
             }
 
             .pill-btn:hover {
@@ -62,28 +71,30 @@
 
             .logo {
                 font-family: 'Oswald', sans-serif;
-                font-size: 22px;
+                font-size: clamp(15px, 2vw, 22px);
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 color: #111111;
+                white-space: nowrap;
             }
 
             .social-ig-link {
-                width: 38px;
-                height: 38px;
+                width: clamp(32px, 4vh, 38px);
+                height: clamp(32px, 4vh, 38px);
                 border-radius: 50%;
                 background: #ffffff;
                 border: 1px solid #e2e2e8;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 13px;
+                font-size: clamp(11px, 1.2vw, 13px);
                 font-weight: 600;
                 color: #333333;
                 text-decoration: none;
                 transition: all 0.2s ease;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+                white-space: nowrap;
             }
 
             .social-ig-link:hover {
@@ -92,78 +103,82 @@
                 border-color: #111111;
             }
 
-            /* --- MAIN HERO COMPOSITION WITH 3D DEPTH INTERLOCK --- */
-            .hero-composition {
+            /* --- MAIN HERO CANVAS (RESPONSIVE ON ALL SCREENS & ORIENTATIONS) --- */
+            .hero-stage {
                 position: relative;
+                flex: 1;
                 width: 100%;
-                max-width: 1360px;
-                min-height: clamp(540px, 72vh, 760px);
+                max-width: 1400px;
                 margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 10px 40px;
+                overflow: hidden;
             }
 
-            /* 1. LAYER 1: TOP LEFT 'WE' (Behind Head/Upper Body) */
+            /* 1. LAYER 1 (z-index: 1): TOP LEFT 'WE' */
             .text-top-left {
-                align-self: flex-start;
+                position: absolute;
+                top: 2vh;
+                left: 3vw;
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(8rem, 20vw, 22rem);
+                font-size: clamp(5.5rem, 16vw, 21rem);
                 font-weight: 700;
                 line-height: 0.8;
-                color: #dedede; /* Light gray block typography */
+                color: #dedede;
                 text-transform: uppercase;
-                letter-spacing: -3px;
+                letter-spacing: -0.04em;
                 user-select: none;
-                z-index: 1; /* Sits BEHIND the artistic photo */
-                margin-left: 1vw;
+                z-index: 1; /* Behind top half of artistic cutout photo */
+                white-space: nowrap;
             }
 
-            /* 2. LAYER 2: CUTOUT PHOTO (In front of WE, tucked behind CLICK) */
+            /* 2. LAYER 2 (z-index: 3): ARTISTIC TRANSPARENT PHOTO (CENTER) */
             .photo-foreground-cutout {
                 position: absolute;
-                top: 46%;
+                top: 50%;
                 left: 50%;
-                transform: translate(-50%, -46%);
-                z-index: 3; /* Above 'WE' (z:1), but BEHIND 'CLICK' (z:5) */
-                width: clamp(280px, 34vw, 500px);
+                transform: translate(-50%, -50%);
+                z-index: 3; /* In front of 'WE' (z:1), behind 'CLICK' (z:5) */
+                width: clamp(230px, 32vw, 480px);
+                max-height: 68vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 pointer-events: auto;
             }
 
             .artistic-cutout-img {
                 width: 100%;
+                max-height: 68vh;
                 height: auto;
                 display: block;
                 object-fit: contain;
-                /* Soft shadow popping against background and WE */
                 filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
-                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: transform 0.3s ease;
             }
 
             .photo-foreground-cutout:hover .artistic-cutout-img {
-                transform: scale(1.02) translateY(-4px);
+                transform: scale(1.02);
             }
 
-            /* 3. LAYER 3: BOTTOM RIGHT 'CLICK' + CAMERA (Hides cutoff skirt edge) */
+            /* 3. LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAMERA ICON */
             .text-bottom-right {
-                align-self: flex-end;
+                position: absolute;
+                bottom: 2vh;
+                right: 3vw;
                 display: flex;
                 align-items: center;
-                gap: 20px;
-                z-index: 5; /* HIGHER THAN PHOTO (z:3) - Hides cut-off bottom edge naturally! */
-                margin-right: 1vw;
-                position: relative;
+                gap: clamp(8px, 1.5vw, 20px);
+                z-index: 5; /* In front of cutout photo bottom edge to mask cut-off legs */
+                white-space: nowrap;
             }
 
             .click-text {
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(8rem, 20vw, 22rem);
+                font-size: clamp(5.5rem, 16vw, 21rem);
                 font-weight: 700;
                 line-height: 0.8;
                 color: #dedede;
                 text-transform: uppercase;
-                letter-spacing: -3px;
+                letter-spacing: -0.04em;
                 user-select: none;
             }
 
@@ -175,24 +190,25 @@
             }
 
             .camera-icon-img {
-                width: clamp(120px, 18vw, 260px);
+                width: clamp(80px, 14vw, 240px);
                 height: auto;
-                filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
+                filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
                 transition: transform 0.3s ease;
             }
 
             .camera-icon-wrapper:hover .camera-icon-img {
-                transform: scale(1.06) rotate(-2deg);
+                transform: scale(1.05) rotate(-2deg);
             }
 
-            /* --- FOOTER CTA --- */
+            /* --- FOOTER --- */
             footer {
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 24px 48px;
+                padding: clamp(12px, 2.5vh, 24px) clamp(16px, 4vw, 48px);
                 z-index: 30;
+                flex-shrink: 0;
             }
 
             .cta-pill-group {
@@ -200,7 +216,7 @@
                 align-items: center;
                 gap: 8px;
                 background: #ffffff;
-                padding: 6px;
+                padding: 5px 6px;
                 border-radius: 40px;
                 border: 1px solid #e2e2e8;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.04);
@@ -210,11 +226,12 @@
                 background: #111111;
                 color: #ffffff;
                 border-radius: 30px;
-                padding: 12px 28px;
-                font-size: 14px;
+                padding: clamp(8px, 1.2vh, 12px) clamp(18px, 2vw, 28px);
+                font-size: clamp(12px, 1.2vw, 14px);
                 font-weight: 600;
                 text-decoration: none;
                 transition: background 0.2s ease;
+                white-space: nowrap;
             }
 
             .cta-main-btn:hover {
@@ -222,8 +239,8 @@
             }
 
             .cta-arrow-btn {
-                width: 42px;
-                height: 42px;
+                width: clamp(34px, 4vh, 42px);
+                height: clamp(34px, 4vh, 42px);
                 border-radius: 50%;
                 background: #f7f7f9;
                 border: 1px solid #e2e2e8;
@@ -232,7 +249,7 @@
                 justify-content: center;
                 color: #111;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: clamp(13px, 1.4vw, 16px);
                 transition: all 0.2s ease;
             }
 
@@ -241,92 +258,110 @@
                 color: #ffffff;
             }
 
-            /* --- RESPONSIVE ADJUSTMENTS --- */
-            @media (max-width: 900px) {
-                header {
-                    padding: 20px;
-                }
-
-                .hero-composition {
-                    min-height: auto;
-                    padding: 30px 20px;
-                }
-
+            /* --- PORTRAIT / LANDSCAPE SPECIFIC RATIO OPTIMIZATIONS --- */
+            @media (max-aspect-ratio: 4/5) {
+                /* Narrow / Vertical Phones & Tablets */
                 .text-top-left {
-                    align-self: center;
-                    margin-left: 0;
+                    font-size: clamp(4.2rem, 24vw, 12rem);
+                    top: 1vh;
                 }
 
                 .text-bottom-right {
-                    align-self: center;
-                    margin-right: 0;
-                    flex-direction: column;
-                    gap: 10px;
+                    font-size: clamp(4.2rem, 24vw, 12rem);
+                    bottom: 1vh;
+                }
+
+                .click-text {
+                    font-size: clamp(4.2rem, 24vw, 12rem);
                 }
 
                 .photo-foreground-cutout {
-                    position: relative;
-                    top: auto;
-                    left: auto;
-                    transform: none;
-                    margin: -40px auto 0;
-                    width: 75vw;
-                    max-width: 340px;
-                    z-index: 2;
+                    width: clamp(210px, 60vw, 360px);
+                }
+
+                .camera-icon-img {
+                    width: clamp(65px, 16vw, 140px);
+                }
+            }
+
+            @media (max-height: 500px) and (orientation: landscape) {
+                /* Short Landscape Screens (Phones sideways) */
+                .text-top-left {
+                    font-size: clamp(3.5rem, 14vh, 8rem);
+                    top: 0;
+                }
+
+                .text-bottom-right {
+                    bottom: 0;
+                }
+
+                .click-text {
+                    font-size: clamp(3.5rem, 14vh, 8rem);
+                }
+
+                .camera-icon-img {
+                    width: clamp(50px, 10vh, 100px);
+                }
+
+                .photo-foreground-cutout {
+                    max-height: 75vh;
+                    width: auto;
                 }
             }
         </style>
     </head>
     <body>
-        <!-- MINIMAL HEADER: MENU | LOGO | IG -->
-        <header>
-            <button class="pill-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                Menu
-            </button>
+        <div class="hero-viewport">
+            <!-- MINIMAL HEADER: MENU | LOGO | IG -->
+            <header>
+                <button class="pill-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    Menu
+                </button>
 
-            <div class="logo">
-                CHITHRAMAYA CREATIVES
-            </div>
+                <div class="logo">
+                    CHITHRAMAYA CREATIVES
+                </div>
 
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-ig-link" title="Instagram">
-                ig
-            </a>
-        </header>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-ig-link" title="Instagram">
+                    ig
+                </a>
+            </header>
 
-        <!-- HERO COMPOSITION: 3D INTERLOCKED STACKING -->
-        <main class="hero-composition">
-            <!-- LAYER 1 (z-index: 1): TOP-LEFT 'WE' (BEHIND HER HEAD & BODY) -->
-            <div class="text-top-left">
-                WE
-            </div>
+            <!-- MAIN HERO STAGE (COMPOSITION LOCKED ACROSS ALL SCREEN SIZES) -->
+            <main class="hero-stage">
+                <!-- LAYER 1 (z-index: 1): TOP LEFT 'WE' -->
+                <div class="text-top-left">
+                    WE
+                </div>
 
-            <!-- LAYER 2 (z-index: 3): TRANSPARENT CUTOUT PHOTO (IN FRONT OF 'WE', TUCKED BEHIND 'CLICK') -->
-            <div class="photo-foreground-cutout">
-                <picture>
-                    <source srcset="artistic-photo.webp" type="image/webp">
-                    <img src="artistic-photo.png" alt="Chithramaya Transparent Portrait" class="artistic-cutout-img" />
-                </picture>
-            </div>
-
-            <!-- LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAM (COVERS CUTOFF BOTTOM EDGE NATURALLY) -->
-            <div class="text-bottom-right">
-                <span class="click-text">CLICK</span>
-                <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
+                <!-- LAYER 2 (z-index: 3): CUTOUT PHOTO IN CENTER -->
+                <div class="photo-foreground-cutout">
                     <picture>
-                        <source srcset="camera.webp" type="image/webp">
-                        <img src="camera.png" alt="Chithramaya Modern Camera Icon" class="camera-icon-img" />
+                        <source srcset="artistic-photo.webp" type="image/webp">
+                        <img src="artistic-photo.png" alt="Chithramaya Transparent Portrait" class="artistic-cutout-img" />
                     </picture>
                 </div>
-            </div>
-        </main>
 
-        <!-- FOOTER: CTA BUTTON -->
-        <footer>
-            <div class="cta-pill-group">
-                <a href="#portfolio" class="cta-main-btn">Explore Portfolio</a>
-                <a href="#portfolio" class="cta-arrow-btn">→</a>
-            </div>
-        </footer>
+                <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM -->
+                <div class="text-bottom-right">
+                    <span class="click-text">CLICK</span>
+                    <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
+                        <picture>
+                            <source srcset="camera.webp" type="image/webp">
+                            <img src="camera.png" alt="Chithramaya Modern Camera Icon" class="camera-icon-img" />
+                        </picture>
+                    </div>
+                </div>
+            </main>
+
+            <!-- FOOTER: CTA BUTTON -->
+            <footer>
+                <div class="cta-pill-group">
+                    <a href="#portfolio" class="cta-main-btn">Explore Portfolio</a>
+                    <a href="#portfolio" class="cta-arrow-btn">→</a>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
