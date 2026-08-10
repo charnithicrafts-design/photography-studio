@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Oswald:wght@600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-        
+
         <style>
             :root {
                 --dark-bg: #0d0d12;
@@ -176,7 +176,7 @@
 
             .text-bottom-right {
                 position: absolute;
-                bottom: 2%; right: 2%;
+                bottom: -8%; right: 2%;
                 display: flex;
                 align-items: center;
                 gap: clamp(6px, 1.8cqw, 20px);
@@ -276,24 +276,11 @@
             /* --- LEFT: DARK / MONEY SERVICES --- */
             .col-money {
                 background: var(--dark-bg);
-                padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 64px);
+                padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
                 display: flex;
                 flex-direction: column;
-                gap: 64px;
+                gap: 40px;
                 border-right: 1px solid var(--dark-border);
-            }
-
-            .col-intro-rule {
-                width: 48px;
-                height: 2px;
-                background: var(--money-green);
-                margin-bottom: 24px;
-            }
-            .col-intro-rule-light {
-                width: 48px;
-                height: 2px;
-                background: var(--text-dark);
-                margin-bottom: 24px;
             }
 
             /* --- DARK SERVICE CARD --- */
@@ -398,10 +385,10 @@
             /* --- RIGHT: WHITE / ART SERVICES --- */
             .col-art {
                 background: var(--white-bg);
-                padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 64px);
+                padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
                 display: flex;
                 flex-direction: column;
-                gap: 64px;
+                gap: 40px;
             }
 
             /* --- WHITE SERVICE CARD --- */
@@ -748,7 +735,6 @@
 
             <!-- ═══════════ LEFT COLUMN: MONEY-BASED SERVICES ═══════════ -->
             <div class="col-money">
-                <div class="col-intro-rule"></div>
 
                 <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
                 <article class="dark-card" id="brand-corporate">
@@ -828,7 +814,6 @@
 
             <!-- ═══════════ RIGHT COLUMN: ART-BASED SERVICES ═══════════ -->
             <div class="col-art">
-                <div class="col-intro-rule-light"></div>
 
                 <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
                 <article class="white-card" id="events-portraits">
