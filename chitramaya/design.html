@@ -118,8 +118,10 @@
                 overflow: hidden;
             }
 
-            /* --- BOUNDED COMPOSITION BOX (LOCKS WE + MODEL + CLICK TOGETHER) --- */
+            /* --- CONTAINER QUERY ROOT (SYNCHRONIZES TEXT & IMAGE SCALING 1:1) --- */
             .composition-box {
+                container-type: size;
+                container-name: hero;
                 position: relative;
                 width: min(92vw, 1100px);
                 height: min(68vh, 560px);
@@ -130,13 +132,13 @@
                 justify-content: center;
             }
 
-            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' (LOCKED TO COMPOSITION BOX) */
+            /* 1. LAYER 1 (z-index: 1): TOP-LEFT 'WE' (SCALES VIA CONTAINER QUERY CQW UNITS) */
             .text-top-left {
                 position: absolute;
                 top: 0;
                 left: 0;
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(4.8rem, 15vw, 18rem);
+                font-size: clamp(3.5rem, 28cqw, 18rem);
                 font-weight: 700;
                 line-height: 0.76;
                 color: #dedede;
@@ -147,16 +149,16 @@
                 white-space: nowrap;
             }
 
-            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (LOCKED TO COMPOSITION BOX) */
+            /* 2. LAYER 2 (z-index: 3): MODEL CUTOUT (SCALES VIA CONTAINER QUERY CQH & CQW UNITS) */
             .photo-foreground-cutout {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 3; /* In front of WE (z:1), behind CLICK (z:5) */
-                height: 105%;
+                height: clamp(260px, 98cqh, 560px);
                 width: auto;
-                max-width: 90%;
+                max-width: clamp(180px, 85cqw, 480px);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -177,21 +179,21 @@
                 transform: scale(1.02);
             }
 
-            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAMERA (LOCKED TO COMPOSITION BOX) */
+            /* 3. LAYER 3 (z-index: 5): BOTTOM-RIGHT 'CLICK' + CAMERA (SCALES VIA CONTAINER QUERY UNITS) */
             .text-bottom-right {
                 position: absolute;
                 bottom: 0;
                 right: 0;
                 display: flex;
                 align-items: center;
-                gap: clamp(6px, 1.5vw, 20px);
-                z-index: 5; /* In front of photo skirt edge - completely masks cut-off legs! */
+                gap: clamp(6px, 1.8cqw, 20px);
+                z-index: 5; /* In front of photo skirt edge - completely masks cut-off legs */
                 white-space: nowrap;
             }
 
             .click-text {
                 font-family: 'Oswald', 'Impact', sans-serif;
-                font-size: clamp(4.8rem, 15vw, 18rem);
+                font-size: clamp(3.5rem, 28cqw, 18rem);
                 font-weight: 700;
                 line-height: 0.76;
                 color: #dedede;
@@ -208,7 +210,7 @@
             }
 
             .camera-icon-img {
-                width: clamp(60px, 11vw, 200px);
+                width: clamp(55px, 18cqw, 200px);
                 height: auto;
                 filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
                 transition: transform 0.3s ease;
@@ -278,7 +280,7 @@
                 color: #ffffff;
             }
 
-            /* --- RESPONSIVE ADJUSTMENT FOR PORTRAIT SCREENS (PHONES & TABLETS) --- */
+            /* --- RESPONSIVE CONTAINER QUERY RATIO ADJUSTMENTS (PHONES & TABLETS) --- */
             @media (max-aspect-ratio: 1/1) {
                 .composition-box {
                     width: min(92vw, 500px);
@@ -287,28 +289,28 @@
                 }
 
                 .text-top-left {
-                    font-size: clamp(3.8rem, 18vw, 8rem);
+                    font-size: clamp(3.2rem, 32cqw, 9rem);
                     top: 0;
                     left: 0;
                 }
 
                 .text-bottom-right {
-                    font-size: clamp(3.8rem, 18vw, 8rem);
+                    font-size: clamp(3.2rem, 32cqw, 9rem);
                     bottom: 0;
                     right: 0;
                 }
 
                 .click-text {
-                    font-size: clamp(3.8rem, 18vw, 8rem);
+                    font-size: clamp(3.2rem, 32cqw, 9rem);
                 }
 
                 .photo-foreground-cutout {
-                    height: 104%;
-                    max-width: 95%;
+                    height: clamp(260px, 98cqh, 500px);
+                    max-width: clamp(180px, 90cqw, 420px);
                 }
 
                 .camera-icon-img {
-                    width: clamp(45px, 12vw, 85px);
+                    width: clamp(42px, 16cqw, 85px);
                 }
             }
         </style>
@@ -333,14 +335,14 @@
 
             <!-- HERO STAGE CONTAINER -->
             <div class="hero-stage-container">
-                <!-- SINGLE BOUNDED COMPOSITION BOX (WE + MODEL + CLICK ALWAYS LOCKED TOGETHER) -->
+                <!-- BOUNDED CONTAINER QUERY ROOT -->
                 <div class="composition-box">
                     <!-- LAYER 1 (z-index: 1): TOP LEFT 'WE' -->
                     <div class="text-top-left">
                         WE
                     </div>
 
-                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT BRIDGING WE & CLICK -->
+                    <!-- LAYER 2 (z-index: 3): MODEL CUTOUT SYNCHRONIZED VIA CQH/CQW -->
                     <div class="photo-foreground-cutout">
                         <picture>
                             <source srcset="artistic-photo.webp" type="image/webp">
@@ -348,7 +350,7 @@
                         </picture>
                     </div>
 
-                    <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM (MASKS SKIRT CUTOFF) -->
+                    <!-- LAYER 3 (z-index: 5): BOTTOM RIGHT 'CLICK' + CAM -->
                     <div class="text-bottom-right">
                         <span class="click-text">CLICK</span>
                         <div class="camera-icon-wrapper" title="Web-Compressed Modern Camera">
