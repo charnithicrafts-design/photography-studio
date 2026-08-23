@@ -14,9 +14,57 @@
   <title>Thalam Studio — Ad Shoots &amp; Baby Photography</title>
   <meta name="description" content="Thalam Studio — Chithramaya's production house for ad shoots, baby &amp; newborn photography, and commercial sessions. Book your studio date in .">
   <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio')); ?>">
+
+  <!-- SEO: Structured Data (JSON-LD) — Local Business Entity ID Card -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Thalam Studio",
+    "image": "<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/og-thalam.jpg",
+    "@id": "<?php echo esc_url( home_url('/thalam-studio') ); ?>#business",
+    "url": "<?php echo esc_url( home_url('/thalam-studio') ); ?>",
+    "telephone": "+91-8098014123",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Salai Road, Near Bombay Dyeing",
+      "addressLocality": "Tiruchirappalli",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "620018",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 10.827388663646731,
+      "longitude": 78.68519161657615
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/chithramaya_creatives/"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Non-render-blocking font load (Rankability: removes font stall from LCP critical path) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;700&display=swap"
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </noscript>
+
   <?php wp_head(); ?>
   
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css">
