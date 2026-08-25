@@ -16,6 +16,9 @@ RewriteRule . /index.php [L]
 <IfModule mod_expires.c>
   ExpiresActive On
 
+  # Catch-all for any undefined file types
+  ExpiresDefault                           "access plus 1 month"
+
   # Images — 1 year
   ExpiresByType image/jpeg                 "access plus 1 year"
   ExpiresByType image/png                  "access plus 1 year"
