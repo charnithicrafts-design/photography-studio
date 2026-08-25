@@ -15,12 +15,20 @@ function chitramaya_enqueue_styles() {
     // Enqueue parent theme style
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 
-    // Enqueue child theme style
+    // Enqueue child theme compiled style (replaces @import waterfall)
     wp_enqueue_style( 'chitramaya-style',
-        get_stylesheet_directory_uri() . '/style.css',
+        get_stylesheet_directory_uri() . '/style.compiled.css',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
+
+    // Inject critical CSS inline in the <head> for instant FCP
+    $critical_css_path = get_stylesheet_directory() . '/assets/css/base/critical.css';
+    if ( file_exists( $critical_css_path ) ) {
+        $critical_css = file_get_contents( $critical_css_path );
+        // We attach it to the parent style if it's the first thing, or child style
+        wp_add_inline_style( 'chitramaya-style', $critical_css );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'chitramaya_enqueue_styles' );
 

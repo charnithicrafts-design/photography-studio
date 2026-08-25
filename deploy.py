@@ -31,7 +31,17 @@ except Exception as e:
     print(f"Error loading {secret_file}: {e}")
     sys.exit(1)
 
-# 3. Zip the necessary folders
+import subprocess
+
+# 3. Compile CSS before deployment
+print("Compiling CSS...")
+try:
+    subprocess.run([sys.executable, 'build_css.py'], check=True)
+except Exception as e:
+    print(f"CSS Compilation failed: {e}")
+    sys.exit(1)
+
+# 4. Zip the necessary folders
 print("Creating deploy.zip (compressing files locally)...")
 with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
     dirs_to_zip = ['chitramaya']

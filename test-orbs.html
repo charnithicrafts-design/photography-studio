@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfbf7;
+  overflow: hidden;
+}
+.graphic-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.graphic-orb.orb-lg { width: 40vw; height: 40vw; }
+.graphic-orb.orb-md { width: 25vw; height: 25vw; }
+.graphic-orb.color-cyan { background-color: rgba(0, 240, 255, 0.7); }
+.graphic-orb.color-magenta { background-color: rgba(255, 0, 150, 0.7); }
+.graphic-orb.orb-pos-tl { top: -10%; left: -5%; }
+.graphic-orb.orb-pos-br { bottom: 10%; right: 10%; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
+  <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
+  <h1 style="position:relative; z-index:2;">TEST</h1>
+</div>
+</body>
+</html>
