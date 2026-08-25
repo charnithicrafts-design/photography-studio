@@ -44,6 +44,12 @@ except Exception as e:
 # 4. Zip the necessary folders
 print("Creating deploy.zip (compressing files locally)...")
 with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
+    
+    # --- NEW: Add server config files to the root of the zip ---
+    if os.path.exists('.htaccess'):
+        zipf.write('.htaccess', '.htaccess')
+        print("Included .htaccess configuration file.")
+
     dirs_to_zip = ['chitramaya']
     for d in dirs_to_zip:
         for root, dirs, files in os.walk(d):
