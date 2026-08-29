@@ -6,13 +6,14 @@
   padding: 0;
 }
 :root {
-  --bg-light: #f7f5f2; /* Warm Linen */
-  --text-dark: #2a2724; /* Espresso */
-  --warm-grey: var(--wp--preset--color--chitramaya-muted, #d6d3d1);
-  --accent: #c06547; /* Vibrant Terracotta */
-  --border: 1px solid rgba(42, 39, 36, 0.12);
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "Cormorant Garamond", serif;
+  --bg-light:   var(--color-bg, #F7F4ED);
+  --text-dark:  var(--color-dark, #171E4A);
+  --accent:     var(--color-accent, #35A248);   /* Brand Green — CTAs & actions */
+  --accent-alt: var(--color-red, #9B1C26);      /* Brand Red — emotional emphasis */
+  --energy:     var(--color-yellow, #FAB417);   /* Brand Yellow — attention */
+  --border:     1px solid rgba(23, 30, 74, 0.12);
+  --font-sans:  var(--font-primary, "Lato", sans-serif);
+  --font-serif: var(--font-serif, "Roboto Slab", serif);
 }
 html {
   scroll-behavior: smooth;

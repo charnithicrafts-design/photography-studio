@@ -9,24 +9,34 @@
       "defaultPalette": false,
       "palette": [
         {
-          "color": "#FFFFFF",
-          "name": "Chithramaya Pure White",
+          "color": "#F7F4ED",
+          "name": "Chithramaya Off-White",
           "slug": "chitramaya-base-light"
         },
         {
-          "color": "#1C1917",
-          "name": "Chithramaya Charcoal",
+          "color": "#FFFFFF",
+          "name": "Chithramaya White",
+          "slug": "chitramaya-pure-white"
+        },
+        {
+          "color": "#171E4A",
+          "name": "Chithramaya Navy",
           "slug": "chitramaya-text-dark"
         },
         {
-          "color": "#A96F44",
-          "name": "Chithramaya Camel",
+          "color": "#35A248",
+          "name": "Chithramaya Green",
           "slug": "chitramaya-accent-vibrant"
         },
         {
-          "color": "#57534E",
-          "name": "Chithramaya Stone",
-          "slug": "chitramaya-muted"
+          "color": "#FAB417",
+          "name": "Chithramaya Yellow",
+          "slug": "chitramaya-yellow"
+        },
+        {
+          "color": "#9B1C26",
+          "name": "Chithramaya Red",
+          "slug": "chitramaya-red"
         },
         {
           "color": "#E3DAC9",
@@ -54,19 +64,24 @@
       "customFontSize": true,
       "fontFamilies": [
         {
-          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          "name": "Inter",
-          "slug": "inter"
+          "fontFamily": "'Lato', sans-serif",
+          "name": "Lato",
+          "slug": "lato"
+        },
+        {
+          "fontFamily": "'Roboto Slab', serif",
+          "name": "Roboto Slab",
+          "slug": "roboto-slab"
+        },
+        {
+          "fontFamily": "'Noto Sans Tamil', sans-serif",
+          "name": "Noto Sans Tamil",
+          "slug": "noto-sans-tamil"
         },
         {
           "fontFamily": "'IBM Plex Mono', monospace",
           "name": "IBM Plex Mono",
           "slug": "ibm-plex-mono"
-        },
-        {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "name": "IBM Plex Sans",
-          "slug": "ibm-plex-sans"
         }
       ]
     }
