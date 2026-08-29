@@ -25,11 +25,11 @@
     <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Podcast &<br>Interview.</h1>
+      <h1 class="corp-hero-h1">Your ideas deserve<br>better than a phone camera.</h1>
       
       <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">A comprehensive content creation environment combining pristine audio, cinematic multi-camera visuals, and cohesive branding.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Step Into Thalam
+        <p class="corp-hero-sub brut-protect-overflow">We set up the room. You bring the conversation. We handle everything from the first frame to the final cut.</p>
+        <a href="#book" class="btn-compound" data-trigger="booking">Let's record something worth sharing.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -129,7 +129,7 @@
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Start Broadcasting</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking">Book The Studio
+    <a href="#book" class="btn-compound" data-trigger="booking">One good story can become a month of content.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>

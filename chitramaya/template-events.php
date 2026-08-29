@@ -25,11 +25,11 @@
     <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Events &<br>Portrait.</h1>
+      <h1 class="corp-hero-h1">The moments<br>people don't forget.</h1>
       
       <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Preserving your family's most meaningful moments with genuine warmth and pure emotion.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Begin Your Story
+        <p class="corp-hero-sub brut-protect-overflow">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
+        <a href="#book" class="btn-compound" data-trigger="booking">Tell us about your day.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
@@ -160,8 +160,8 @@
   </section>
 
   <section class="global-cta">
-    <h2 class="global-cta-title brut-protect-overflow">Ready to Preserve Your Legacy?</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking">Reserve Your Date
+    <h2 class="global-cta-title brut-protect-overflow">Make the moment unmistakable.</h2>
+    <a href="#book" class="btn-compound" data-trigger="booking">Book your session.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>

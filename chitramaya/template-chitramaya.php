@@ -45,7 +45,7 @@
             <!-- CTA is now INSIDE the hero stage — clear separation from section below -->
             <div class="hero-cta-inline">
                 <div class="cta-pill-group">
-                    <a href="#services" class="cta-main-btn">EXPLORE</a>
+                    <a href="#services" class="cta-main-btn">Let's make something.</a>
                     <a href="#services" class="cta-arrow-btn cta-bounce">↓</a>
                 </div>
             </div>
@@ -197,7 +197,7 @@
                 <div class="manifesto-block">
                     <div class="manifesto-label">[ STUDIO DIRECTIVE ]</div>
                     <div class="manifesto-quote">
-                        Where Your NEEDS<br>FULFilleD By<br> Creative Artistic Direction
+                        One studio.<br>Two disciplines.<br>Every frame has a purpose.
                     </div>
                     <div class="manifesto-spec-row">
                         <span>FRAME / 35MM</span>
@@ -220,33 +220,32 @@
              ===================================================== -->
         <section class="pipeline-section" id="pipeline">
             <div class="pipeline-label">[ STRUCTURAL WORKFLOW ]</div>
-            <h2 class="pipeline-heading">HOW WE<br>DELIVER <span>EXCELLENCE</span></h2>
+            <h2 class="pipeline-heading">HOW WE<br>WORK.</h2>
 
             <div class="pipeline-steps">
                 <div class="step">
                     <div class="step-marker">01</div>
                     <div class="step-title">Initial Consultation</div>
-                    <div class="step-desc">Understanding your vision, goals, and requirements through a focused discovery session.</div>
+                    <div class="step-desc">We listen first. What do you need this to feel like?</div>
                 </div>
                 <div class="step">
-                    <div class="step-marker">02</div>
                     <div class="step-title">Creative Brief</div>
-                    <div class="step-desc">Defining the creative direction, mood, references, timeline, and scope of the project.</div>
+                    <div class="step-desc">We build the frame together — mood, direction, timeline, scope.</div>
                 </div>
                 <div class="step">
                     <div class="step-marker">03</div>
-                    <div class="step-title">Execution Pipeline</div>
-                    <div class="step-desc">Professional shoot or production execution with precision, creativity, and technical mastery.</div>
+                    <div class="step-title">Execution</div>
+                    <div class="step-desc">We show up. We shoot. We don't leave until it's right.</div>
                 </div>
                 <div class="step">
                     <div class="step-marker">04</div>
                     <div class="step-title">Post-Production</div>
-                    <div class="step-desc">Expert colour grading, retouching, editing, and quality review to perfect every frame.</div>
+                    <div class="step-desc">Every frame gets the same attention as the first one.</div>
                 </div>
                 <div class="step">
                     <div class="step-marker">05</div>
                     <div class="step-title">Final Delivery</div>
-                    <div class="step-desc">Structured delivery of assets in all required formats with full usage rights handover.</div>
+                    <div class="step-desc">You get everything. Every format. Every right. No chasing.</div>
                 </div>
             </div>
         </section>
@@ -258,10 +257,10 @@
             <div class="footer-ghost-text" aria-hidden="true">ARTISTIC ILLUSION</div>
             <div class="footer-content-block">
                 <div class="footer-logo">CHITHRAMAYA CREATIVES</div>
-                <div class="footer-subline">Studio &amp; Visual Direction</div>
+                <div class="footer-subline">Visual storytelling with a human pulse.</div>
             </div>
             <a href="mailto:sriramsridharan.designer@gmail.com" class="footer-cta" style="position: relative; z-index: 1;">
-                START A PROJECT →
+                Bring us the story. →
             </a>
             <div class="footer-copy" style="position: relative; z-index: 1;">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
         </footer>

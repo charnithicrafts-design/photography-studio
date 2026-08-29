@@ -27,14 +27,14 @@
     <div class="hero-content">
       <h1 class="hero-title"><?php echo wp_kses_post( get_field('pillar_hero_title') ?: 'The Genesis of Your <em>Legacy</em>.' ); ?></h1>
       <p class="hero-desc"><?php echo wp_kses_post( get_field('pillar_hero_desc') ?: 'There is a sacred quiet that comes with pregnancy. It is the feeling of holding a whole new world inside you. Before they are a person you can hold in your arms, they are a seed of wonder growing in the secret, safe sanctuary of your own heart.' ); ?></p>
-      <button class="hero-btn" data-trigger="booking">Preserve Your Legacy</button>
+      <button class="hero-btn" data-trigger="booking">Book your session.</button>
     </div>
   </section>
 
   <!-- MANIFESTO -->
-  <section class="manifesto">
-    <span class="manifesto-label">The Seed of Wonder</span>
-    <h2>Like a seed in the earth, you are growing in silence, shielded by love, ready to meet the sun.</h2>
+  <section class="maternity-manifesto">
+    <span class="manifesto-label">Before they arrive.</span>
+    <h2>There's a very short window when it looks exactly like this. We photograph it carefully.</h2>
     <p>Your body is doing holy work. We are here to archive its breathtaking power.</p>
   </section>
 

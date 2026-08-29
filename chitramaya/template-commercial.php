@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commercial Photography — Chithramaya</title>
-  <meta name="description" content="Purpose-driven visuals engineered to influence perception and drive immediate consumer desire.">
+  <meta name="description" content="Commercial photography from Chithramaya Creatives — turn what you sell into something people actually want to look at.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/commercial')); ?>">
   <?php wp_head(); ?>
   
@@ -25,11 +25,11 @@
     <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Commercial<br>Photography</h1>
+      <h1 class="corp-hero-h1">Make it look like<br>it means something.</h1>
       
       <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Purpose-driven photography spanning e-commerce, lifestyle, and fashion. We deliver high-quality visuals seamlessly aligned with your core marketing goals.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Commission a Project
+        <p class="corp-hero-sub brut-protect-overflow">Products, spaces, food, fashion. We shoot what you're selling and make people actually want it.</p>
+        <a href="#book" class="btn-compound" data-trigger="booking">Make your next launch visual.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>

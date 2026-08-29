@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand & Corporate Photography — Chithramaya</title>
-  <meta name="description" content="Visual authority engineered for B2B. Zero friction. Absolute precision.">
+  <meta name="description" content="Brand and corporate photography from Chithramaya Creatives — making the people, spaces, and products behind your brand look like they mean it.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand')); ?>">
   <?php wp_head(); ?>
   
@@ -25,11 +25,11 @@
     <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
 
     <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Brand &<br>Corporate</h1>
+      <h1 class="corp-hero-h1">Your brand,<br>made visible.</h1>
       
       <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Visual authority engineered for B2B. Zero friction. Absolute precision.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Commission a Project
+        <p class="corp-hero-sub brut-protect-overflow">We photograph the people, spaces, and products behind your brand — so your audience sees what makes you credible.</p>
+        <a href="#book" class="btn-compound" data-trigger="booking">Let's build the frame.
   <div class="btn-compound-icon">
       <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
