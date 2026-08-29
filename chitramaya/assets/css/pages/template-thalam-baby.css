@@ -7,13 +7,15 @@
   padding: 0;
 }
 :root {
-  --bg-dark: #0a0806;
-  --bg-light: #f9f6f0;
-  --accent-warm: #c48b5e;
-  --text-light: #fdfbf7;
-  --text-muted: rgba(253, 251, 247, 0.6);
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "EB Garamond", serif;
+  /* Brand-compliant tokens (Guidelines v01.0) */
+  --bg-dark:    var(--wp--preset--color--thalam-text-dark, #1C1917); /* Studio dark */
+  --bg-light:   var(--color-bg, #F7F4ED);
+  --accent:     var(--color-accent, #35A248);   /* Brand Green */
+  --accent-warm: var(--wp--preset--color--thalam-accent-bold, #A96F44); /* Retained for warm baby tones */
+  --text-light: var(--color-white, #FFFFFF);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --font-sans:  var(--font-primary, "Lato", sans-serif);
+  --font-serif: var(--wp--preset--font-family--roboto-slab, "Roboto Slab", serif);
 }
 body {
   background: var(--bg-dark);

@@ -2,9 +2,8 @@
 /**
  * Template Name: Chithramaya Creatives
  * Template Post Type: page
- * Description: Full-page enterprise portfolio landing for Chithramaya Creatives.
+ * Description: Full-page portfolio landing for Chithramaya Creatives.
  */
-// Bypass WordPress header/footer entirely — full design control
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,188 +11,260 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chithramaya Creatives — Photography Studio</title>
-  <meta name="description" content="Chithramaya Creatives — Ad shoots, baby photography, and visual storytelling from Thalam Studio, Kerala. Every image is made to be felt.">
+  <meta name="description" content="Chithramaya Creatives — Commercial photography, brand photography, events, and visual storytelling from Trichy, Tamil Nadu.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
   <?php wp_head(); ?>
-  
   <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-chitramaya.css">
 </head>
 <body>
-  <?php get_template_part('template-parts/global-nav'); ?>
+<!-- =====================================================
+             SECTION 0: HERO (WE CLICK — 3D Interlocked Composition)
+             ===================================================== -->
+        <div class="hero-viewport" id="hero">
+            <?php get_template_part('template-parts/global-nav'); ?>
 
-  <section class="hero section-illusion-wrapper" id="hero">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
+            <div class="hero-stage-container">
+                <div class="composition-box">
+                    <div class="text-top-left">WE</div>
+                    <div class="photo-foreground-cutout">
+                        <picture>
+                            <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/artistic-photo.webp" type="image/webp">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/artistic-photo.png" alt="Chithramaya Creative Portrait" class="artistic-cutout-img" />
+                        </picture>
+                    </div>
+                    <div class="text-bottom-right">
+                        <span class="click-text">CLICK</span>
+                        <div class="camera-icon-wrapper">
+                            <picture>
+                                <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/camera.webp" type="image/webp">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/camera.png" alt="Camera" class="camera-icon-img" />
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            <!-- CTA is now INSIDE the hero stage — clear separation from section below -->
+            <div class="hero-cta-inline">
+                <div class="cta-pill-group">
+                    <a href="#services" class="cta-main-btn">EXPLORE</a>
+                    <a href="#services" class="cta-arrow-btn cta-bounce">↓</a>
+                </div>
+            </div>
+            </div>
 
-    <div class="hero-content glass-panel hero-glass-panel">
-      <h1 class="hero-brand-name">
-        <span class="brand-heavy"><?php echo esc_html( get_field('home_hero_title_1') ?: 'CHITHRAMAYA' ); ?></span>
-        <span class="brand-elegant"><?php echo esc_html( get_field('home_hero_title_2') ?: 'Creatives' ); ?></span>
-      </h1>
-      <div class="hero-pills">
-        <span class="hero-pill desktop-only-pill">Commercial</span>
-        <span class="hero-pill desktop-only-pill">Portraits</span>
-        <span class="hero-pill desktop-only-pill">Podcast</span>
-        <a href="#services" class="hero-pill hero-pill-link">All services
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" stroke-width="2" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
-        </a>
-      </div>
-
-      <p class="hero-intro">
-        We capture, curate, and craft visual experiences for brands and families that demand perfection.
-      </p>
-
-      <a href="#contact" class="btn-compound">
-        Book a call
-        <div class="btn-compound-icon">
-            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-      </a>
-    </div>
-  </section>
 
-  <section class="manifesto" id="about">
-    <div>
-      <div class="manifesto-label"><?php echo esc_html( get_field('home_manifesto_label') ?: 'OUR CREED' ); ?></div>
-      <h2 class="manifesto-text"><?php echo wp_kses_post( get_field('home_manifesto_headline') ?: 'Every photograph is a physical argument that the world is worth feeling.' ); ?></h2>
-    </div>
-    <div>
-      <p class="manifesto-body"><?php echo wp_kses_post( get_field('home_manifesto_body') ?: 'We believe every image should do more than inform — it should stay with you. Through deliberate lighting, medium-format capture, and restrained post-production, we craft photographs that your audience does not just look at — they feel. Each commission begins with a single question: what must this image make someone experience?' ); ?></p>
-      <div class="manifesto-stats">
-        <div class="stat-box"><div class="stat-num">340+</div><div class="stat-label">Campaigns</div></div>
-        <div class="stat-box"><div class="stat-num">20 YR</div><div class="stat-label">Experience</div></div>
-        <div class="stat-box"><div class="stat-num">96%</div><div class="stat-label">Retention</div></div>
-        <div class="stat-box"><div class="stat-num">3 YR</div><div class="stat-label">Expansion</div></div>
-      </div>
-    </div>
-  </section>
+        <!-- =====================================================
+             SECTION 1–5: DUALITY SPLIT — MONEY (DARK) vs ART (WHITE)
+             ===================================================== -->
+        <section class="duality-section" id="services">
 
-  <section class="thalam-ad" id="thalam">
-    <div class="thalam-ad-content">
-      <div>
-        <div class="thalam-ad-eyebrow">THALAM STUDIO</div>
-        <h2 class="thalam-ad-headline">SPACE TO<br>CREATE.</h2>
-        <p style="font-family: var(--font-sans); font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 480px; margin-top: 1.5rem;">A true space to create means zero friction between your idea and its execution. We've prepared the seamless cyclorama, set the lighting, and curated the amenities—giving you the ultimate blank canvas to focus entirely on your craft.</p>
-      </div>
-      <div class="thalam-ad-right">
-        <ul class="thalam-list">
-          <li><span class="thalam-list-num">01</span><span class="thalam-list-text">Wide Cyclorama Wall</span></li>
-          <li><span class="thalam-list-num">02</span><span class="thalam-list-text">Complete Light Setup</span></li>
-          <li><span class="thalam-list-num">03</span><span class="thalam-list-text">Baby Shoot Amenities</span></li>
-        </ul>
-        <a href="<?php echo home_url('/thalam-studio'); ?>" class="thalam-ad-cta">
-          Explore Thalam Studio
-          <span>→</span>
-        </a>
-      </div>
-    </div>
-  </section>
+            <!-- ═══════════ LEFT COLUMN: MONEY-BASED SERVICES ═══════════ -->
+            <div class="col-money">
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-header services-header">
-      <h2 class="section-title">Services</h2>
-    </div>
+                <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
+                <article class="dark-card" id="brand-corporate">
+                    <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
+                    <h3 class="service-title">Brand &amp; Corporate Photography</h3>
+                    <div class="service-tags">
+                        <span class="tag tag-dark">Executive Headshots</span>
+                        <span class="tag tag-dark">Website Photography</span>
+                        <span class="tag tag-dark">Team Photography</span>
+                        <span class="tag tag-dark">Corporate Video</span>
+                        <span class="tag tag-dark">Company Profile Video</span>
+                        <span class="tag tag-dark">Company Lifestyle</span>
+                        <span class="tag tag-dark">Product Launches</span>
+                        <span class="tag tag-dark">Marketing Events</span>
+                        <span class="tag tag-dark">Seminars</span>
+                        <span class="tag tag-dark">Corporate Events</span>
+                        <span class="tag tag-dark">Conferences</span>
+                        <span class="tag tag-dark">Product Photography</span>
+                        <span class="tag tag-dark">Brand Ads / Videos</span>
+                        <span class="tag tag-dark">TVC</span>
+                    </div>
+                    <p class="service-text-block">
+                        Under the Brand and Corporate Photography category, a comprehensive range of services is offered to help businesses present a strong and authentic visual identity. From polished executive headshots and cohesive team portraits to high-production corporate videos and company profile films, every deliverable is crafted to communicate professionalism, trust, and brand authority — positioning your organisation with clarity and confidence across every visual touchpoint.
+                    </p>
+                </article>
 
-    <!-- 01: Brand & Corporate Photography -->
-    <div class="service-item">
-      <div class="service-item-header">
-        <span class="service-num">01 // Brand &amp; Corporate</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_1_title') ?: 'Executive & Corporate' ); ?></h3>
-      </div>
-      <div class="service-item-content">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_1_desc') ?: 'Your people are your most credible asset. We photograph executive portraits, team sessions, corporate events, and office environments that build immediate trust across every platform.' ); ?></p>
-        <ul class="service-list">
-          <li>Executive Headshots</li>
-          <li>Team &amp; Website Photography</li>
-          <li>Corporate Events</li>
-        </ul>
-        <a href="<?php echo esc_url(home_url('/corporate')); ?>" class="service-btn">Explore Corporate</a>
-      </div>
-    </div>
+                <!-- 02 COMMERCIAL PHOTOGRAPHY -->
+                <article class="dark-card" id="commercial">
+                    <div class="service-number">— 02 / COMMERCIAL</div>
+                    <h3 class="service-title">Commercial Photography</h3>
+                    <div class="service-tags">
+                        <span class="tag tag-dark">OOH Marketing Collaterals</span>
+                        <span class="tag tag-dark">E-Commerce Catalogues</span>
+                        <span class="tag tag-dark">Food Photography</span>
+                        <span class="tag tag-dark">Lifestyle Photography</span>
+                        <span class="tag tag-dark">Product Photography</span>
+                        <span class="tag tag-dark">Fashion Photography</span>
+                        <span class="tag tag-dark">Architecture Photography</span>
+                        <span class="tag tag-dark">Civil Construction Timelapse</span>
+                        <span class="tag tag-dark">Cinematic Walkthrough</span>
+                        <span class="tag tag-dark">360 Photography</span>
+                        <span class="tag tag-dark">Social Media Campaigns</span>
+                        <span class="tag tag-dark">Personal Branding</span>
+                        <span class="tag tag-dark">PR Campaigns</span>
+                        <span class="tag tag-dark">Content Creation</span>
+                    </div>
+                    <p class="service-text-block">
+                        Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands. From out-of-home advertising and e-commerce catalogues to cinematic architecture walkthroughs and 360 immersive photography, the studio delivers content that captures attention, builds desire, and drives measurable commercial results across all media channels.
+                    </p>
+                </article>
 
-    <!-- 02: Commercial Photography -->
-    <div class="service-item">
-      <div class="service-item-header">
-        <span class="service-num">02 // Commercial</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_2_title') ?: 'Commercial Production' ); ?></h3>
-      </div>
-      <div class="service-item-content">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_2_desc') ?: 'Every frame has a job. We deliver OOH campaigns, e-commerce catalogues, fashion, food, and lifestyle photography in close collaboration with your brief and your team.' ); ?></p>
-        <ul class="service-list">
-          <li>OOH &amp; Billboard Campaigns</li>
-          <li>E-Commerce Catalogues</li>
-          <li>Food, Fashion &amp; Lifestyle</li>
-        </ul>
-        <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="service-btn">Explore Commercial</a>
-      </div>
-    </div>
+                <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
+                <article class="dark-card" id="podcast">
+                    <div class="service-number">— 04 / PODCAST &amp; INTERVIEW PRODUCTION</div>
+                    <h3 class="service-title">Podcast &amp; Interview Production</h3>
 
-    <!-- 03: Events & Portrait Photography -->
-    <div class="service-item">
-      <div class="service-item-header">
-        <span class="service-num">03 // Events &amp; Portrait</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_3_title') ?: 'Events & Portraiture' ); ?></h3>
-      </div>
-      <div class="service-item-content">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_3_desc') ?: 'These moments happen only once. We archive maternity, newborn, toddler milestones, weddings, and multi-generational family ceremonies — studio-styled, outdoor, or at home.' ); ?></p>
-        <ul class="service-list">
-          <li>Baby &amp; Maternity Sessions</li>
-          <li>Wedding Photography</li>
-          <li>Family Portraits</li>
-        </ul>
-        <a href="<?php echo esc_url(home_url('/events')); ?>" class="service-btn">Explore Events</a>
-      </div>
-    </div>
+                    <div class="pillars-grid">
+                        <div class="pillar">
+                            <div class="pillar-title">[ Studio &amp; Production Services ]</div>
+                            <div class="pillar-items">Professional recording studio setup, Multi-camera production, Live streaming, Video podcast production, Sound design &amp; audio post-production, Set design &amp; lighting direction</div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-title">[ Content &amp; Media Services ]</div>
+                            <div class="pillar-items">Episode editing &amp; publishing, Graphic design for thumbnails &amp; artwork, Distribution strategy, Branded intros &amp; outros, Short-form content repurposing for social media</div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-title">[ Photography &amp; Branding Services ]</div>
+                            <div class="pillar-items">Host &amp; guest headshots, Episode &amp; campaign photography, Brand photography for show identity, Promotional media kits, Behind-the-scenes content</div>
+                        </div>
+                    </div>
 
-    <!-- 04: Podcast & Interview Production -->
-    <div class="service-item">
-      <div class="service-item-header">
-        <span class="service-num">04 // Podcast &amp; Interview</span>
-        <h3 class="service-title"><?php echo esc_html( get_field('home_service_4_title') ?: 'Podcast Production' ); ?></h3>
-      </div>
-      <div class="service-item-content">
-        <p class="service-desc"><?php echo wp_kses_post( get_field('home_service_4_desc') ?: 'A microphone alone does not build an audience. We provide the studio, multi-camera setup, audio production, and branding assets to make your show look and sound market-ready.' ); ?></p>
-        <ul class="service-list">
-          <li>Studio &amp; Production</li>
-          <li>Content Editing &amp; Distribution</li>
-        </ul>
-        <a href="<?php echo esc_url(home_url('/podcast')); ?>" class="service-btn">Explore Podcast</a>
-      </div>
-    </div>
-  </section>
+                    <p class="service-text-block">
+                        Podcast and interview services offered by professional photography studios have evolved into comprehensive content creation solutions — combining high-quality audio and video production with strategic visual branding. From technically equipped studio setups and multi-camera interview shoots to complete content repurposing and brand photography for show identity, these services empower thought leaders, entrepreneurs, and brands to build lasting audience relationships through powerful storytelling formats.
+                    </p>
+                </article>
+            </div>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="section-header"><h2 class="section-title">Methodology</h2></div>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-num">01</div><h3 class="step-title">Brief &amp; Discovery</h3><p class="step-desc">We spend the first week understanding your audience's psychology, competitive landscape, and the emotional response required.</p></div>
-      <div class="process-step"><div class="step-num">02</div><h3 class="step-title">Lighting & Setup</h3><p class="step-desc">Every shoot has a deliberate lighting plan drawn from the mood and quality we need to draw from the subject.</p></div>
-      <div class="process-step"><div class="step-num">03</div><h3 class="step-title">Capture &amp; Selection</h3><p class="step-desc">Shooting in medium format. From several hundred exposures, we select fewer than fifteen. Curation is vital.</p></div>
-      <div class="process-step"><div class="step-num">04</div><h3 class="step-title">Final Delivery</h3><p class="step-desc">Assets delivered as uncompressed TIFF masters alongside web-optimised versions with verified metadata.</p></div>
-    </div>
-  </section>
+            <!-- ═══════════ RIGHT COLUMN: ART-BASED SERVICES ═══════════ -->
+            <div class="col-art">
 
-  <section class="testimonial" id="testimonials">
-    <div class="testimonial-label">Client Voice</div>
-    <div>
-      <blockquote class="testimonial-quote"><?php echo wp_kses_post( get_field('home_testi_quote') ?: '"When we received the product photographs, our e-commerce team went silent. You could see the weight of the glass, the coolness of the metal. No CGI. We increased conversion on that product page by 34% within a month."' ); ?></blockquote>
-      <p class="testimonial-author"><?php echo esc_html( get_field('home_testi_author') ?: '— Priya Sundaram, Creative Director · Maison Kaur' ); ?></p>
-    </div>
-  </section>
+                <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
+                <article class="white-card" id="events-portraits">
+                    <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
+                    <h3 class="service-title">Events &amp; Portrait Photography</h3>
 
-  <section class="cta-banner" id="contact">
-    <div class="cta-banner-content">
-      <h2 class="cta-banner-title"><?php echo wp_kses_post( get_field('home_cta_title') ?: 'START THE PROJECT.' ); ?></h2>
-      <a href="#" class="btn-compound" data-trigger="booking">Speak to a Creative Director
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
-    </div>
-  </section>
+                    <div class="subcategory">
+                        <div class="subcategory-label">Baby Portraits</div>
+                        <div class="subcategory-items">1st Birthday · Newborn Art Themed · Infant Art Themed / House Visit · Toddler Outdoor / Studio</div>
+                    </div>
 
-  <?php get_template_part('template-parts/global-footer'); ?>
+                    <div class="subcategory">
+                        <div class="subcategory-label">Maternity</div>
+                        <div class="subcategory-items">Maternity · Bump to Baby Sessions</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Family Portraits</div>
+                        <div class="subcategory-items">Family Portrait Sessions · Individual Portraits</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Wedding</div>
+                        <div class="subcategory-items">Pre &amp; Post Wedding · Destination Wedding · Song Creation</div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-label">Family Events</div>
+                        <div class="subcategory-items">Sastiyabthapoorthi · Upanayanam · Sadhabishegam · Ear Piercing / Ayushomam</div>
+                    </div>
+                </article>
+
+                <!-- 05 BRAND DESIGN (UPCOMING) -->
+                <article class="white-card upcoming-card" id="brand-design">
+                    <div class="upcoming-overlay">UPCOMING EVOLVING SOLUTION</div>
+                    <div class="service-number">— 05 / BRAND DESIGN</div>
+                    <h3 class="service-title">Brand Design</h3>
+
+                    <div class="service-tags">
+                        <span class="tag tag-light">Logo Design</span>
+                        <span class="tag tag-light">Brand Identity</span>
+                        <span class="tag tag-light">Product Design</span>
+                        <span class="tag tag-light">Marketing Collaterals</span>
+                        <span class="tag tag-light">Illustrative Posters</span>
+                        <span class="tag tag-light">OOH Campaign Design</span>
+                        <span class="tag tag-light">Installations Design</span>
+                        <span class="tag tag-light">Brand Guidelines</span>
+                    </div>
+
+                    <p class="service-text-block">
+                        An upcoming, evolving design discipline where visual identity meets artistic strategy. Brand Design at Chithramaya Creatives will bridge the gap between commercial clarity and artistic distinctiveness — building brands that aren't just seen, but deeply felt.
+                    </p>
+                </article>
+
+                <!-- DARK INVERTED MANIFESTO BLOCK — dramatic contrast inside white column -->
+                <div class="manifesto-block">
+                    <div class="manifesto-label">[ STUDIO DIRECTIVE ]</div>
+                    <div class="manifesto-quote">
+                        Where Your NEEDS<br>FULFilleD By<br> Creative Artistic Direction
+                    </div>
+                    <div class="manifesto-spec-row">
+                        <span>FRAME / 35MM</span>
+                        <span>ILLUSION / ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SPLIT DIVIDER
+             ===================================================== -->
+        <div class="split-divider" aria-hidden="true">
+            <div class="split-divider-left"></div>
+            <div class="split-divider-right"></div>
+        </div>
+
+        <!-- =====================================================
+             WORKFLOW PIPELINE SECTION
+             ===================================================== -->
+        <section class="pipeline-section" id="pipeline">
+            <div class="pipeline-label">[ STRUCTURAL WORKFLOW ]</div>
+            <h2 class="pipeline-heading">HOW WE<br>DELIVER <span>EXCELLENCE</span></h2>
+
+            <div class="pipeline-steps">
+                <div class="step">
+                    <div class="step-marker">01</div>
+                    <div class="step-title">Initial Consultation</div>
+                    <div class="step-desc">Understanding your vision, goals, and requirements through a focused discovery session.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">02</div>
+                    <div class="step-title">Creative Brief</div>
+                    <div class="step-desc">Defining the creative direction, mood, references, timeline, and scope of the project.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">03</div>
+                    <div class="step-title">Execution Pipeline</div>
+                    <div class="step-desc">Professional shoot or production execution with precision, creativity, and technical mastery.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">04</div>
+                    <div class="step-title">Post-Production</div>
+                    <div class="step-desc">Expert colour grading, retouching, editing, and quality review to perfect every frame.</div>
+                </div>
+                <div class="step">
+                    <div class="step-marker">05</div>
+                    <div class="step-title">Final Delivery</div>
+                    <div class="step-desc">Structured delivery of assets in all required formats with full usage rights handover.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SITE FOOTER
+             ===================================================== -->
+        <footer class="site-footer">
+            <div class="footer-ghost-text" aria-hidden="true">ARTISTIC ILLUSION</div>
+            <div class="footer-content-block">
+                <div class="footer-logo">CHITHRAMAYA CREATIVES</div>
+                <div class="footer-subline">Studio &amp; Visual Direction</div>
+            </div>
+            <a href="mailto:sriramsridharan.designer@gmail.com" class="footer-cta" style="position: relative; z-index: 1;">
+                START A PROJECT →
+            </a>
+            <div class="footer-copy" style="position: relative; z-index: 1;">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
+        </footer>
   <?php wp_footer(); ?>
 </body>
 </html>
