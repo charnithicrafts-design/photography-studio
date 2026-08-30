@@ -65,7 +65,7 @@
             <div class="col-money">
 
                 <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
-                <article class="dark-card" id="brand-corporate">
+                <article class="brand-card brand-card-outline" id="brand-corporate">
                     <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
                     <h3 class="service-title">Brand &amp; Corporate Photography</h3>
                     <div class="service-tags">
@@ -90,7 +90,7 @@
                 </article>
 
                 <!-- 02 COMMERCIAL PHOTOGRAPHY -->
-                <article class="dark-card" id="commercial">
+                <article class="brand-card brand-card-green" id="commercial">
                     <div class="service-number">— 02 / COMMERCIAL</div>
                     <h3 class="service-title">Commercial Photography</h3>
                     <div class="service-tags">
@@ -115,7 +115,7 @@
                 </article>
 
                 <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
-                <article class="dark-card" id="podcast">
+                <article class="brand-card brand-card-navy" id="podcast">
                     <div class="service-number">— 04 / PODCAST &amp; INTERVIEW PRODUCTION</div>
                     <h3 class="service-title">Podcast &amp; Interview Production</h3>
 
@@ -144,7 +144,7 @@
             <div class="col-art">
 
                 <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
-                <article class="white-card" id="events-portraits">
+                <article class="brand-card brand-card-yellow" id="events-portraits">
                     <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
                     <h3 class="service-title">Events &amp; Portrait Photography</h3>
 
@@ -175,7 +175,7 @@
                 </article>
 
                 <!-- 05 BRAND DESIGN (UPCOMING) -->
-                <article class="white-card upcoming-card" id="brand-design">
+                <article class="brand-card brand-card-outline upcoming-card" id="brand-design">
                     <div class="upcoming-overlay">UPCOMING EVOLVING SOLUTION</div>
                     <div class="service-number">— 05 / BRAND DESIGN</div>
                     <h3 class="service-title">Brand Design</h3>

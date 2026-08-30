@@ -278,57 +278,41 @@
 
             /* --- LEFT: DARK / MONEY SERVICES --- */
             .col-money {
-                background: var(--dark-bg);
+                background: var(--white-bg);
                 padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
                 display: flex;
                 flex-direction: column;
                 gap: 40px;
-                border-right: 1px solid var(--dark-border);
+                
             }
 
-            /* --- DARK SERVICE CARD --- */
-            .dark-card {
-                background: var(--dark-card);
-                border: 1px solid var(--dark-border);
-                border-top: 2px solid var(--money-green);
+            /* --- BRAND CARDS --- */
+            .brand-card {
                 padding: 32px;
-                transition: box-shadow 0.3s ease;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-            .dark-card:hover {
-                box-shadow: 0 0 40px var(--money-green-glow), 0 0 80px rgba(53, 162, 72, 0.04);
-            }
-
-            .service-number {
-                font-family: var(--mono);
-                font-size: 13px;
-                font-weight: 700;
-                letter-spacing: 0.15em;
-                text-transform: uppercase;
-                margin-bottom: 12px;
-            }
-            .dark-card .service-number { color: var(--money-green); }
-            .white-card .service-number { color: var(--text-muted-light); }
-
-            .service-title {
-                font-family: var(--display);
-                font-size: clamp(1.4rem, 2.2vw, 2rem);
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: -0.02em;
-                margin-bottom: 20px;
-                line-height: 1;
-            }
-            .dark-card .service-title { color: var(--text-white); }
-            .white-card .service-title { color: var(--text-dark); }
-
-            .service-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-bottom: 24px;
+            .brand-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(23,30,74,0.08);
             }
 
-            .tag {
+            .brand-card-outline {
+                background: var(--white-bg);
+                border: 2px solid var(--text-dark);
+                color: var(--text-dark);
+            }
+            .brand-card-outline .service-number { color: var(--money-green); }
+            .brand-card-outline .service-title { color: var(--text-dark); }
+            .brand-card-outline .service-text-block { color: var(--text-dark); border-top-color: var(--text-dark); }
+            
+            .brand-card-green {
+                background: var(--money-green);
+                color: var(--text-white);
+            }
+            .brand-card-green .service-number { color: var(--white-bg); opacity: 0.9; }
+            .brand-card-green .service-title { color: var(--text-white); }
+            .brand-card-green .service-text-block { color: var(--text-white); border-top-color: rgba(255,255,255,0.3); }
+            .brand-card-green             .tag {
                 font-family: var(--mono);
                 font-size: 12px;
                 font-weight: 700;
@@ -336,17 +320,13 @@
                 letter-spacing: 0.05em;
                 padding: 6px 14px;
                 white-space: nowrap;
-            }
-            .tag-dark {
                 background: transparent;
-                border: 1px solid var(--dark-border);
-                color: var(--text-muted-dark);
+                border: 1px solid currentColor;
+                opacity: 0.7;
+                transition: opacity 0.2s, color 0.2s, border-color 0.2s;
             }
-            .tag-dark:hover { border-color: var(--money-green); color: var(--money-green); }
-            .tag-light {
-                background: transparent;
-                border: 1px solid var(--art-border);
-                color: var(--text-muted-light);
+            .tag:hover {
+                opacity: 1;
             }
 
             .service-text-block {
@@ -356,8 +336,6 @@
                 padding-top: 20px;
                 border-top: 1px solid;
             }
-            .dark-card .service-text-block { color: var(--text-muted-dark); border-top-color: var(--dark-border); }
-            .white-card .service-text-block { color: var(--text-muted-light); border-top-color: var(--art-border); }
 
             /* Podcast Pillars */
             .pillars-grid {
@@ -394,18 +372,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 40px;
-            }
-
-            /* --- WHITE SERVICE CARD --- */
-            .white-card {
-                background: var(--white-card);
-                border: 1px solid var(--art-border);
-                border-top: 3px solid var(--text-dark);
-                padding: 32px;
-                transition: box-shadow 0.3s ease;
-            }
-            .white-card:hover {
-                box-shadow: 0 8px 40px rgba(13,13,18,0.06);
             }
 
             /* Events Portrait Subcategories */
@@ -562,14 +528,14 @@
                 grid-template-columns: 1fr 1fr;
                 overflow: hidden;
             }
-            .split-divider-left { background: var(--dark-bg); }
-            .split-divider-right { background: var(--dark-bg); }
+            .split-divider-left { background: var(--white-bg); }
+            .split-divider-right { background: var(--white-bg); }
 
             /* =====================================================
                WORKFLOW PIPELINE SECTION
                ===================================================== */
             .pipeline-section {
-                background: var(--dark-bg);
+                background: var(--white-bg);
                 padding: clamp(60px, 8vw, 120px) clamp(24px, 6vw, 80px);
                 position: relative;
                 overflow: hidden;
@@ -646,7 +612,7 @@
                 width: 56px;
                 height: 56px;
                 border: 1px solid var(--money-green);
-                background: var(--dark-bg);
+                background: var(--white-bg);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -685,7 +651,7 @@
                FOOTER
                ===================================================== */
             .site-footer {
-                background: var(--dark-bg);
+                background: var(--white-bg);
                 border-top: 1px solid var(--dark-border);
                 padding: 64px clamp(24px, 6vw, 80px) 48px;
                 display: flex;
@@ -779,7 +745,7 @@
                 .duality-section {
                     grid-template-columns: 1fr;
                 }
-                .col-money { border-right: none; border-bottom: 1px solid var(--dark-border); }
+                .col-money { border-bottom: none; }
                 .pipeline-steps {
                     grid-template-columns: 1fr 1fr;
                     gap: 40px;
