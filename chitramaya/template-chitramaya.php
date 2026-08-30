@@ -22,6 +22,9 @@
              ===================================================== -->
         <div class="hero-viewport" id="hero">
             <?php get_template_part('template-parts/global-nav'); ?>
+            
+            <!-- Spacer to maintain flex layout since global-nav is position: fixed -->
+            <div style="height: clamp(54px, 7vh, 70px); width: 100%; flex-shrink: 0;"></div>
 
             <div class="hero-stage-container">
                 <div class="composition-box">
@@ -229,6 +232,7 @@
                     <div class="step-desc">We listen first. What do you need this to feel like?</div>
                 </div>
                 <div class="step">
+                    <div class="step-marker">02</div>
                     <div class="step-title">Creative Brief</div>
                     <div class="step-desc">We build the frame together — mood, direction, timeline, scope.</div>
                 </div>
