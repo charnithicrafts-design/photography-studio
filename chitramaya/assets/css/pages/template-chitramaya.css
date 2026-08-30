@@ -278,41 +278,62 @@
 
             /* --- LEFT: DARK / MONEY SERVICES --- */
             .col-money {
-                background: var(--white-bg);
+                background: var(--dark-bg);
                 padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
                 display: flex;
                 flex-direction: column;
                 gap: 40px;
-                
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            /* --- BRAND CARDS --- */
-            .brand-card {
+            /* --- DARK SERVICE CARD --- */
+            .dark-card {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 padding: 32px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-            .brand-card:hover {
+            .dark-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* --- WHITE SERVICE CARD --- */
+            .white-card {
+                background: var(--white-card);
+                border: 1px solid var(--art-border);
+                padding: 32px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .white-card:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 12px 40px rgba(23,30,74,0.08);
             }
 
-            .brand-card-outline {
-                background: var(--white-bg);
-                border: 2px solid var(--text-dark);
-                color: var(--text-dark);
+            .service-number {
+                font-family: var(--mono);
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
             }
-            .brand-card-outline .service-number { color: var(--money-green); }
-            .brand-card-outline .service-title { color: var(--text-dark); }
-            .brand-card-outline .service-text-block { color: var(--text-dark); border-top-color: var(--text-dark); }
-            
-            .brand-card-green {
-                background: var(--money-green);
-                color: var(--text-white);
+            .dark-card .service-number { color: var(--money-green); }
+            .white-card .service-number { color: var(--text-muted-light); }
+
+            .service-title {
+                font-family: var(--display);
+                font-size: clamp(1.4rem, 2.2vw, 2rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                margin-bottom: 20px;
+                line-height: 1;
             }
-            .brand-card-green .service-number { color: var(--white-bg); opacity: 0.9; }
-            .brand-card-green .service-title { color: var(--text-white); }
-            .brand-card-green .service-text-block { color: var(--text-white); border-top-color: rgba(255,255,255,0.3); }
-            .brand-card-green             .tag {
+            .dark-card .service-title { color: var(--text-white); }
+            .white-card .service-title { color: var(--text-dark); }
+
+            .tag {
                 font-family: var(--mono);
                 font-size: 12px;
                 font-weight: 700;
@@ -325,8 +346,17 @@
                 opacity: 0.7;
                 transition: opacity 0.2s, color 0.2s, border-color 0.2s;
             }
-            .tag:hover {
-                opacity: 1;
+            .tag:hover { opacity: 1; }
+            .dark-card .tag { color: var(--text-white); border-color: rgba(255,255,255,0.3); }
+            .dark-card .tag:hover { color: var(--money-green); border-color: var(--money-green); }
+            .white-card .tag { color: var(--text-muted-light); border-color: var(--art-border); }
+            .white-card .tag:hover { color: var(--text-dark); border-color: var(--text-dark); }
+
+            .service-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 24px;
             }
 
             .service-text-block {
@@ -336,6 +366,8 @@
                 padding-top: 20px;
                 border-top: 1px solid;
             }
+            .dark-card .service-text-block { color: var(--text-white); opacity: 0.8; border-top-color: rgba(255,255,255,0.15); }
+            .white-card .service-text-block { color: var(--text-muted-light); border-top-color: var(--art-border); }
 
             /* Podcast Pillars */
             .pillars-grid {
@@ -745,7 +777,7 @@
                 .duality-section {
                     grid-template-columns: 1fr;
                 }
-                .col-money { border-bottom: none; }
+                .col-money { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
                 .pipeline-steps {
                     grid-template-columns: 1fr 1fr;
                     gap: 40px;
