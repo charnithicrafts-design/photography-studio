@@ -1,18 +1,18 @@
 :root {
-  --dark-bg:           var(--studio-dark, #1C1917);
-  --dark-card:         rgba(28,25,23,0.95);
-  --dark-border:       rgba(255,255,255,0.08);
+  --dark-bg:           var(--color-dark, #171E4A);
+  --dark-card:         var(--color-dark, #171E4A);
+  --dark-border:       rgba(255,255,255,0.15);
   --money-green:       var(--color-accent, #35A248);
-  --money-green-glow:  rgba(53,162,72,0.12);
-  --money-green-dim:   rgba(53,162,72,0.6);
+  --money-green-glow:  rgba(53,162,72,0.15);
+  --money-green-dim:   rgba(53,162,72,0.7);
   --white-bg:          var(--color-bg, #F7F4ED);
   --white-card:        var(--color-white, #FFFFFF);
-  --art-border:        rgba(23,30,74,0.10);
+  --art-border:        rgba(23,30,74,0.15);
   --text-dark:         var(--color-dark, #171E4A);
   --text-white:        #FFFFFF;
-  --text-muted-dark:   rgba(255,255,255,0.45);
-  --text-muted-light:  rgba(23,30,74,0.45);
-  --mono:              var(--font-mono, 'IBM Plex Mono', monospace);
+  --text-muted-dark:   rgba(255,255,255,0.6);
+  --text-muted-light:  rgba(23,30,74,0.6);
+  --mono:              var(--font-primary, 'Lato', sans-serif);
   --display:           var(--font-serif, 'Roboto Slab', serif);
   --body:              var(--font-primary, 'Lato', sans-serif);
 }
@@ -31,7 +31,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                background-color: #f7f7f9;
+                background-color: var(--white-bg);
                 overflow: hidden;
             }
 
@@ -44,7 +44,7 @@
                 padding: 0 clamp(16px, 4vw, 48px);
                 z-index: 40;
                 flex-shrink: 0;
-                background-color: #f7f7f9;
+                background-color: var(--white-bg);
             }
 
             .pill-btn {
@@ -54,7 +54,7 @@
                 padding: 6px 16px;
                 font-size: clamp(11px, 1.2vw, 13px);
                 font-weight: 500;
-                color: #222222;
+                color: var(--text-dark);
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
@@ -79,7 +79,7 @@
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-transform: uppercase;
-                color: #111111;
+                color: var(--text-dark);
                 white-space: nowrap;
             }
 
@@ -98,7 +98,7 @@
                 text-decoration: none;
                 transition: all 0.2s ease;
             }
-            .social-ig-link:hover { background: #111; color: #fff; border-color: #111; }
+            .social-ig-link:hover { background: var(--text-dark); color: #fff; border-color: var(--text-dark); }
 
             .hero-stage-container {
                 flex: 1;
@@ -133,7 +133,7 @@
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
-                color: #dedede;
+                color: var(--text-muted-dark);
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
@@ -180,7 +180,7 @@
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
-                color: #dedede;
+                color: var(--text-muted-dark);
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
@@ -225,7 +225,7 @@
                 box-shadow: 0 10px 28px rgba(0,0,0,0.1);
             }
             .cta-main-btn {
-                background: #111111;
+                background: var(--text-dark);
                 color: #ffffff;
                 border-radius: 30px;
                 padding: clamp(8px, 1.2vh, 12px) clamp(20px, 2.2vw, 28px);
@@ -242,18 +242,18 @@
                 width: clamp(34px, 3.8vh, 40px);
                 height: clamp(34px, 3.8vh, 40px);
                 border-radius: 50%;
-                background: #f7f7f9;
+                background: var(--white-bg);
                 border: 1px solid #e2e2e8;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #111111;
+                color: var(--text-dark);
                 text-decoration: none;
                 font-size: 14px;
                 font-weight: 700;
                 transition: all 0.2s ease;
             }
-            .cta-arrow-btn:hover { background: #111111; color: #ffffff; }
+            .cta-arrow-btn:hover { background: var(--text-dark); color: #ffffff; }
 
             @media (max-aspect-ratio: 1/1), (max-width: 600px) {
                 .composition-box {
@@ -295,14 +295,14 @@
                 transition: box-shadow 0.3s ease;
             }
             .dark-card:hover {
-                box-shadow: 0 0 40px var(--money-green-glow), 0 0 80px rgba(0, 229, 153, 0.04);
+                box-shadow: 0 0 40px var(--money-green-glow), 0 0 80px rgba(53, 162, 72, 0.04);
             }
 
             .service-number {
                 font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
-                letter-spacing: 3px;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
                 text-transform: uppercase;
                 margin-bottom: 12px;
             }
@@ -330,9 +330,11 @@
 
             .tag {
                 font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
-                padding: 4px 12px;
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                padding: 6px 14px;
                 white-space: nowrap;
             }
             .tag-dark {
@@ -348,7 +350,7 @@
             }
 
             .service-text-block {
-                font-size: 13px;
+                font-size: 15px;
                 line-height: 1.75;
                 font-weight: 400;
                 padding-top: 20px;
@@ -368,7 +370,7 @@
             .pillar {
                 padding: 16px 20px;
                 border-left: 3px solid var(--money-green);
-                background: rgba(0, 229, 153, 0.04);
+                background: rgba(53, 162, 72, 0.04);
             }
             .pillar-title {
                 font-family: var(--mono);
@@ -380,7 +382,7 @@
                 margin-bottom: 8px;
             }
             .pillar-items {
-                font-size: 12px;
+                font-size: 14px;
                 color: var(--text-muted-dark);
                 line-height: 1.6;
             }
@@ -412,8 +414,9 @@
             }
             .subcategory-label {
                 font-family: var(--mono);
-                font-size: 10px;
-                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
                 text-transform: uppercase;
                 color: var(--text-muted-light);
                 margin-bottom: 8px;
@@ -421,7 +424,7 @@
                 border-bottom: 1px solid var(--art-border);
             }
             .subcategory-items {
-                font-size: 13px;
+                font-size: 15px;
                 color: var(--text-dark);
                 line-height: 1.7;
                 font-weight: 400;
@@ -453,8 +456,8 @@
                         -45deg,
                         transparent,
                         transparent 3px,
-                        rgba(0, 229, 153, 0.025) 3px,
-                        rgba(0, 229, 153, 0.025) 4px
+                        rgba(53, 162, 72, 0.025) 3px,
+                        rgba(53, 162, 72, 0.025) 4px
                     ),
                     repeating-linear-gradient(
                         45deg,
@@ -470,7 +473,7 @@
                     inset 0 -3px 10px rgba(0,0,0,0.4),
                     inset 3px 0 12px rgba(0,0,0,0.5),
                     inset -3px 0 12px rgba(0,0,0,0.5),
-                    0 0 0 1px rgba(0, 229, 153, 0.1);
+                    0 0 0 1px rgba(53, 162, 72, 0.1);
                 padding: 40px 36px;
                 position: relative;
                 overflow: hidden;
@@ -499,7 +502,7 @@
                 /* Engraved text on the watermark too */
                 text-shadow:
                     1px 1px 0 rgba(0,0,0,0.9),
-                    -1px -1px 0 rgba(0, 229, 153, 0.08);
+                    -1px -1px 0 rgba(53, 162, 72, 0.08);
             }
             /* Corner crosshair */
             .manifesto-block::after {
@@ -545,7 +548,7 @@
                 letter-spacing: 2px;
                 color: var(--money-green);
                 opacity: 0.45;
-                border-top: 1px solid rgba(0, 229, 153, 0.12);
+                border-top: 1px solid rgba(53, 162, 72, 0.12);
                 padding-top: 16px;
             }
 
@@ -578,8 +581,8 @@
                 position: absolute;
                 inset: 0;
                 background-image:
-                    linear-gradient(to right, rgba(0, 229, 153, 0.03) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(0, 229, 153, 0.03) 1px, transparent 1px);
+                    linear-gradient(to right, rgba(53, 162, 72, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(53, 162, 72, 0.03) 1px, transparent 1px);
                 background-size: 50px 50px;
                 pointer-events: none;
             }
@@ -624,7 +627,7 @@
                 left: 10%;
                 right: 10%;
                 height: 1px;
-                background: linear-gradient(to right, var(--money-green), rgba(0, 229, 153, 0.1));
+                background: linear-gradient(to right, var(--money-green), rgba(53, 162, 72, 0.1));
                 z-index: 0;
             }
 
@@ -752,9 +755,9 @@
                 transition: all 0.2s ease;
             }
             .footer-cta:hover {
-                background: #00ff9e;
+                background: var(--money-green);
                 transform: translateY(-2px);
-                box-shadow: 0 8px 30px rgba(0, 229, 153, 0.25);
+                box-shadow: 0 8px 30px rgba(53, 162, 72, 0.25);
             }
 
             .footer-copy {
