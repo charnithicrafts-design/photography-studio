@@ -85,7 +85,7 @@
                         <span class="tag tag-dark">TVC</span>
                     </div>
                     <p class="service-text-block">
-                        Under the Brand and Corporate Photography category, a comprehensive range of services is offered to help businesses present a strong and authentic visual identity. From polished executive headshots and cohesive team portraits to high-production corporate videos and company profile films, every deliverable is crafted to communicate professionalism, trust, and brand authority — positioning your organisation with clarity and confidence across every visual touchpoint.
+                        We photograph the people, spaces, and moments that make your business what it is. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
                     </p>
                 </article>
 
@@ -110,7 +110,7 @@
                         <span class="tag tag-dark">Content Creation</span>
                     </div>
                     <p class="service-text-block">
-                        Commercial photography focuses on creating impactful visuals for business use, with the primary goal of selling, promoting, or marketing products, services, and brands. From out-of-home advertising and e-commerce catalogues to cinematic architecture walkthroughs and 360 immersive photography, the studio delivers content that captures attention, builds desire, and drives measurable commercial results across all media channels.
+                        Products, spaces, food, fashion — we shoot what you're selling and make people actually want it. Whether it's a catalogue, a campaign, or a construction timelapse, the frame is always doing a job.
                     </p>
                 </article>
 
@@ -135,7 +135,7 @@
                     </div>
 
                     <p class="service-text-block">
-                        Podcast and interview services offered by professional photography studios have evolved into comprehensive content creation solutions — combining high-quality audio and video production with strategic visual branding. From technically equipped studio setups and multi-camera interview shoots to complete content repurposing and brand photography for show identity, these services empower thought leaders, entrepreneurs, and brands to build lasting audience relationships through powerful storytelling formats.
+                        We set up the room. You bring the conversation. One good session can become a week of content — edited, branded, ready to publish. One good story can become a month of content.
                     </p>
                 </article>
             </div>

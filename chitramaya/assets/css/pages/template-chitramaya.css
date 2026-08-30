@@ -49,7 +49,7 @@
 
             .pill-btn {
                 background: #ffffff;
-                border: 1px solid #e2e2e8;
+                border: 1px solid var(--art-border);
                 border-radius: 30px;
                 padding: 6px 16px;
                 font-size: clamp(11px, 1.2vw, 13px);
@@ -70,7 +70,7 @@
             }
             .pill-btn {
                 background: #ffffff;
-                border: 1px solid #e2e2e8;
+                border: 1px solid var(--art-border);
             }
 
             .logo {
@@ -88,13 +88,13 @@
                 height: clamp(32px, 4vh, 38px);
                 border-radius: 50%;
                 background: #ffffff;
-                border: 1px solid #e2e2e8;
+                border: 1px solid var(--art-border);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: clamp(11px, 1.2vw, 13px);
                 font-weight: 600;
-                color: #333;
+                color: var(--text-dark);
                 text-decoration: none;
                 transition: all 0.2s ease;
             }
@@ -133,7 +133,7 @@
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
-                color: var(--text-muted-dark);
+                color: rgba(23,30,74,0.08);
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
@@ -180,7 +180,7 @@
                 font-size: clamp(3rem, 26cqw, 16rem);
                 font-weight: 700;
                 line-height: 0.76;
-                color: var(--text-muted-dark);
+                color: rgba(23,30,74,0.08);
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
                 user-select: none;
@@ -216,7 +216,7 @@
                 background: #ffffff;
                 padding: 6px 8px;
                 border-radius: 40px;
-                border: 1px solid #e2e2e8;
+                border: 1px solid var(--art-border);
                 box-shadow: 0 6px 20px rgba(0,0,0,0.06);
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
             }
@@ -243,7 +243,7 @@
                 height: clamp(34px, 3.8vh, 40px);
                 border-radius: 50%;
                 background: var(--white-bg);
-                border: 1px solid #e2e2e8;
+                border: 1px solid var(--art-border);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -380,19 +380,19 @@
             .pillar {
                 padding: 16px 20px;
                 border-left: 3px solid var(--money-green);
-                background: rgba(53, 162, 72, 0.04);
+                background: rgba(53, 162, 72, 0.08);
             }
             .pillar-title {
                 font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
+                font-size: 13px;
+                font-weight: 700;
                 color: var(--money-green);
                 text-transform: uppercase;
-                letter-spacing: 2px;
+                letter-spacing: 0.1em;
                 margin-bottom: 8px;
             }
             .pillar-items {
-                font-size: 14px;
+                font-size: 15px;
                 color: var(--text-muted-dark);
                 line-height: 1.6;
             }
@@ -437,9 +437,9 @@
                 position: absolute;
                 top: 20px; right: 20px;
                 font-family: var(--mono);
-                font-size: 10px;
-                font-weight: 600;
-                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
                 background: var(--text-dark);
                 color: var(--text-white);
@@ -515,8 +515,8 @@
             }
             .manifesto-label {
                 font-family: var(--mono);
-                font-size: 10px;
-                letter-spacing: 3px;
+                font-size: 12px;
+                letter-spacing: 0.15em;
                 color: var(--money-green);
                 text-transform: uppercase;
                 margin-bottom: 20px;
@@ -542,10 +542,10 @@
                 display: flex;
                 justify-content: space-between;
                 font-family: var(--mono);
-                font-size: 10px;
-                letter-spacing: 2px;
+                font-size: 12px;
+                letter-spacing: 0.12em;
                 color: var(--money-green);
-                opacity: 0.45;
+                opacity: 0.6;
                 border-top: 1px solid rgba(53, 162, 72, 0.12);
                 padding-top: 16px;
             }
@@ -560,7 +560,7 @@
                 grid-template-columns: 1fr 1fr;
                 overflow: hidden;
             }
-            .split-divider-left { background: var(--white-bg); }
+            .split-divider-left { background: var(--dark-bg); }
             .split-divider-right { background: var(--white-bg); }
 
             /* =====================================================
@@ -587,9 +587,9 @@
 
             .pipeline-label {
                 font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
-                letter-spacing: 3px;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
                 text-transform: uppercase;
                 color: var(--money-green);
                 margin-bottom: 20px;
@@ -601,7 +601,7 @@
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: -0.03em;
-                color: var(--text-white);
+                color: var(--text-dark);
                 line-height: 0.9;
                 margin-bottom: 72px;
             }
@@ -665,7 +665,7 @@
                 font-size: clamp(0.85rem, 1.2vw, 1.1rem);
                 font-weight: 700;
                 text-transform: uppercase;
-                color: var(--text-white);
+                color: var(--text-dark);
                 letter-spacing: 0.02em;
                 margin-bottom: 10px;
                 text-align: center;
@@ -673,8 +673,8 @@
             }
 
             .step-desc {
-                font-size: 12px;
-                color: var(--text-muted-dark);
+                font-size: 14px;
+                color: var(--text-muted-light);
                 text-align: center;
                 line-height: 1.6;
             }
@@ -684,7 +684,7 @@
                ===================================================== */
             .site-footer {
                 background: var(--white-bg);
-                border-top: 1px solid var(--dark-border);
+                border-top: 1px solid var(--art-border);
                 padding: 64px clamp(24px, 6vw, 80px) 48px;
                 display: flex;
                 justify-content: space-between;
@@ -725,13 +725,13 @@
                 font-weight: 700;
                 letter-spacing: 3px;
                 text-transform: uppercase;
-                color: var(--text-white);
+                color: var(--text-dark);
             }
 
             .footer-subline {
                 font-family: var(--mono);
-                font-size: 11px;
-                color: var(--text-muted-dark);
+                font-size: 13px;
+                color: var(--text-muted-light);
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 margin-top: 6px;
@@ -761,12 +761,12 @@
             .footer-copy {
                 width: 100%;
                 font-family: var(--mono);
-                font-size: 10px;
-                color: var(--text-muted-dark);
+                font-size: 11px;
+                color: var(--text-muted-light);
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 padding-top: 24px;
-                border-top: 1px solid var(--dark-border);
+                border-top: 1px solid var(--art-border);
                 text-align: center;
             }
 
