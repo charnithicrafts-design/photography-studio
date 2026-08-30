@@ -60,6 +60,33 @@
         }
       ]
     },
+    "spacing": {
+      "customSpacingSize": true,
+      "spacingScale": {
+        "operator": "*",
+        "increment": 2,
+        "steps": 7,
+        "mediumStep": 1.5,
+        "unit": "px"
+      },
+      "spacingSizes": [
+        { "name": "Micro (4px)", "size": "4px", "slug": "0-5" },
+        { "name": "1 Unit (8px)", "size": "8px", "slug": "1" },
+        { "name": "2 Units (16px)", "size": "16px", "slug": "2" },
+        { "name": "3 Units (24px)", "size": "24px", "slug": "3" },
+        { "name": "4 Units (32px)", "size": "32px", "slug": "4" },
+        { "name": "5 Units (40px)", "size": "40px", "slug": "5" },
+        { "name": "6 Units (48px)", "size": "48px", "slug": "6" },
+        { "name": "8 Units (64px)", "size": "64px", "slug": "8" },
+        { "name": "10 Units (80px)", "size": "80px", "slug": "10" },
+        { "name": "12 Units (96px)", "size": "96px", "slug": "12" },
+        { "name": "16 Units (128px)", "size": "128px", "slug": "16" }
+      ]
+    },
+    "dimensions": {
+      "aspectRatio": true,
+      "minHeight": true
+    },
     "typography": {
       "customFontSize": true,
       "fontFamilies": [

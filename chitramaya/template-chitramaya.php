@@ -255,19 +255,9 @@
         </section>
 
         <!-- =====================================================
-             SITE FOOTER
+             GLOBAL FOOTER
              ===================================================== -->
-        <footer class="site-footer">
-            <div class="footer-ghost-text" aria-hidden="true">ARTISTIC ILLUSION</div>
-            <div class="footer-content-block">
-                <div class="footer-logo">CHITHRAMAYA CREATIVES</div>
-                <div class="footer-subline">Visual storytelling with a human pulse.</div>
-            </div>
-            <a href="mailto:sriramsridharan.designer@gmail.com" class="footer-cta" style="position: relative; z-index: 1;">
-                Bring us the story. →
-            </a>
-            <div class="footer-copy" style="position: relative; z-index: 1;">© 2026 Chithramaya Creatives. All rights reserved. Crafted with vision.</div>
-        </footer>
+        <?php get_template_part('template-parts/global-footer'); ?>
   <?php wp_footer(); ?>
 </body>
 </html>

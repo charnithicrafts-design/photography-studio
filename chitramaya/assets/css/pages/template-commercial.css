@@ -9,31 +9,31 @@
 /* NO-PHOTO HERO SECTION (SPLIT COMPOSITION) */
 .corp-hero {
   position: relative;
-  min-height: 80vh;
-  width: 100vw;
+  min-height: 75vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 1.5rem 6rem;
-  background: var(--color-light);
+  padding: var(--space-12, 96px) var(--space-4, 32px) var(--space-8, 64px);
+  background: var(--color-bg);
   color: var(--color-dark);
-  border-bottom: 2px solid var(--color-dark);
+  border-bottom: 1px solid var(--border-stark, rgba(23,30,74,0.12));
 }
 .corp-hero-content {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1360px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 4rem;
+  gap: var(--space-6, 48px);
 }
 .corp-hero-h1 {
   font-size: clamp(2.2rem, 7.5vw, 8rem);
-  font-family: var(--font-sans, "Inter", sans-serif);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   line-height: 0.85;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
 }
 .corp-hero-sub {
   font-size: var(--type-step-0);
-  font-family: var(--font-sans, "Inter", sans-serif);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-dark);
@@ -58,34 +58,56 @@
 
 @media (min-width: 992px) {
   .corp-hero {
-    padding: 10rem 4rem 6rem;
-  }
+  position: relative;
+  min-height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-12, 96px) var(--space-4, 32px) var(--space-8, 64px);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--border-stark, rgba(23,30,74,0.12));
+}
 }
 
 /* BRUTALIST SERVICES ACCORDION GRID */
 .services-wrapper {
-  padding: 8rem 1.5rem;
-  max-width: 1600px;
+  padding: var(--space-10, 80px) var(--space-4, 32px);
+  max-width: 1360px;
   margin: 0 auto;
-  background: var(--color-light);
+  background: transparent;
   color: var(--color-dark);
 }
 .services-grid {
   display: grid;
-  gap: 4rem;
+  gap: var(--space-6, 48px);
 }
 @media (min-width: 992px) {
   .services-grid {
-    grid-template-columns: 1fr 2fr;
-    gap: 8rem;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--space-8, 64px);
     align-items: start;
   }
+}
+@media (min-width: 992px) {
+  .services-grid {
+  display: grid;
+  gap: var(--space-6, 48px);
+}
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--space-8, 64px);
+    align-items: start;
+  }
+}
 }
 
 /* Left Column */
 .services-intro-title {
   font-size: var(--type-step-3);
-  font-family: var(--font-serif, "Cormorant Garamond", serif);
+  font-family: var(--font-serif, "Roboto Slab", serif);
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 2rem;
@@ -94,7 +116,7 @@
 }
 .services-intro-text {
   font-size: var(--type-step-0);
-  font-family: var(--font-sans, "Inter", sans-serif);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 500;
   line-height: 1.6;
   color: var(--color-dark);
@@ -103,27 +125,40 @@
 
 /* Right Column (Accordion) */
 .b-accordion {
-  border-top: 2px solid var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 16px);
+  border: none;
 }
 .b-accordion-group {
-  border-bottom: 2px solid var(--color-dark);
+  background: var(--color-white, #FFFFFF);
+  border: 1px solid rgba(23, 30, 74, 0.12);
+  border-radius: var(--radius-md, 16px);
+  padding: 0 var(--space-3, 24px);
+  box-shadow: 0 2px 12px rgba(23, 30, 74, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.b-accordion-group:hover {
+  border-color: var(--color-accent, #35A248);
+  box-shadow: 0 6px 20px rgba(53, 162, 72, 0.08);
 }
 .b-accordion-btn {
   width: 100%;
   background: transparent;
   border: none;
-  padding: 2rem 0;
+  padding: var(--space-3, 24px) 0;
+  min-height: var(--min-touch-target, 48px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-size: clamp(1.25rem, 3vw, 2.5rem);
-  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: clamp(1.125rem, 2.5vw, 1.75rem);
+  font-family: var(--font-serif, 'Roboto Slab', serif);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--color-dark);
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 .b-accordion-btn:hover {
   color: var(--color-accent);
@@ -136,7 +171,7 @@
   opacity: 1;
   margin-right: 1.5rem;
   color: var(--color-accent);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
 }
 .b-accordion-icon {
   font-size: 2rem;
@@ -149,12 +184,13 @@
 
 .b-accordion-panel {
   display: none;
-  padding: 0 0 2.5rem 0;
+  padding: 0 0 var(--space-3, 24px) 0;
   overflow: hidden;
 }
 .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel {
-  display: block;
-  animation: slideDown 0.3s ease forwards;
+  display: none;
+  padding: 0 0 var(--space-3, 24px) 0;
+  overflow: hidden;
 }
 @keyframes slideDown {
   from {
@@ -177,7 +213,7 @@
 }
 .b-accordion-list li {
   font-size: var(--type-step-0);
-  font-family: var(--font-sans, "Inter", sans-serif);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 500;
   color: var(--color-dark);
   opacity: 0.9;
@@ -186,16 +222,14 @@
 }
 
 .brut-impact {
-  padding: 8rem 1.5rem;
-  max-width: 1600px;
+  padding: var(--space-10, 80px) var(--space-4, 32px);
+  max-width: 1360px;
   margin: 0 auto;
-  border-top: 2px solid var(--color-dark);
-  border-bottom: 2px solid var(--color-dark);
-  background: var(--color-light);
+  background: transparent;
 }
 .brut-impact-title {
   font-size: clamp(2rem, 5vw, 5rem);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.04em;
@@ -208,8 +242,8 @@
 .brut-impact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
-  max-width: 1200px;
+  gap: var(--space-4, 32px);
+  max-width: 1360px;
   margin: 0 auto;
 }
 @media (min-width: 992px) {
@@ -217,14 +251,38 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media (min-width: 992px) {
+  .brut-impact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4, 32px);
+  max-width: 1360px;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .brut-impact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+}
 .impact-card {
+  background: var(--color-white, #FFFFFF);
+  border: 1px solid rgba(23, 30, 74, 0.12);
+  border-radius: var(--radius-md, 16px);
+  padding: var(--space-4, 32px);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-2, 16px);
+  box-shadow: 0 4px 16px rgba(23, 30, 74, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
 }
 .impact-num {
   font-size: var(--type-step-5);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   color: var(--color-accent);
   line-height: 0.8;
@@ -232,7 +290,7 @@
 }
 .impact-header {
   font-size: var(--type-step-2);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -240,7 +298,7 @@
 }
 .impact-desc {
   font-size: 1.1rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
   line-height: 1.6;
   color: var(--color-dark);
   opacity: 0.8;
@@ -248,14 +306,17 @@
 
 /* GLOBAL CTA */
 .global-cta {
-  padding: 10rem 1.5rem;
+  padding: var(--space-10, 80px) var(--space-4, 32px);
   text-align: center;
-  background: var(--color-dark);
-  color: var(--color-light);
+  background: var(--color-dark, #171E4A);
+  color: var(--color-white, #FFFFFF);
+  border-radius: var(--radius-lg, 24px);
+  max-width: 1360px;
+  margin: var(--space-8, 64px) auto;
 }
 .global-cta-title {
   font-size: clamp(3rem, 8vw, 6rem);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   letter-spacing: -0.04em;
   text-transform: uppercase;

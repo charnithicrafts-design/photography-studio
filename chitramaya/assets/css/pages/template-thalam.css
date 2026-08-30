@@ -20,7 +20,7 @@ html {
 body {
   background: var(--bg-light);
   color: var(--text-dark);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ body {
 .system-bar {
   background: var(--accent);
   color: var(--bg-light);
-  padding: 0.5rem 1rem;
+  padding: var(--space-1, 8px) var(--space-2, 16px); min-height: var(--min-touch-target, 48px); display: inline-flex; align-items: center;
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -47,7 +47,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
-  height: 60px;
+  height: var(--space-8, 64px);
 }
 .nav-meta {
   display: none;
@@ -73,7 +73,7 @@ nav {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: var(--space-1, 8px) var(--space-2, 16px); min-height: var(--min-touch-target, 48px); display: inline-flex; align-items: center;
   border-radius: 50px;
   transition: background 0.2s;
 }

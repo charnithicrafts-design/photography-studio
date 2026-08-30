@@ -34,6 +34,37 @@
   --type-step-4: clamp(2.44rem, 1.51rem + 4.64vw, 5.69rem);
   --type-step-5: clamp(3.05rem, 1.51rem + 7.77vw, 8.54rem);
 
+  /* ===================================================================
+     8PT SPATIAL GRID TOKENS
+     =================================================================== */
+  --space-0-5: 4px;   /* Micro spacing / tag internal padding */
+  --space-1:   8px;   /* Base unit / icon-text gap */
+  --space-2:   16px;  /* 2 units / card gap, element proximity */
+  --space-3:   24px;  /* 3 units / standard card padding */
+  --space-4:   32px;  /* 4 units / large card padding, module gap */
+  --space-5:   40px;  /* 5 units / section sub-gaps */
+  --space-6:   48px;  /* 6 units / min touch target, medium section gap */
+  --space-8:   64px;  /* 8 units / large section padding */
+  --space-10:  80px;  /* 10 units / major section rhythm */
+  --space-12:  96px;  /* 12 units / macro section break */
+  --space-16:  128px; /* 16 units / hero viewport rhythm */
+
+  /* Bento Geometry Tokens */
+  --radius-sm:   8px;
+  --radius-md:   16px;  /* Standard Bento card radius */
+  --radius-lg:   24px;  /* Featured hero / container radius */
+  --radius-pill: 40px;  /* Interactive pills, buttons, tags */
+  --radius-full: 9999px;
+
+  /* Line Heights on 4pt/8pt Rhythm */
+  --lh-tight:   1.125;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.75;
+
+  /* Touch Target Minimum (Fitts's Law) */
+  --min-touch-target: 48px;
+
   /* Reset WP Bloat */
   --wp--style--global--padding: 0;
   --wp--custom--spacing--outer: 0;

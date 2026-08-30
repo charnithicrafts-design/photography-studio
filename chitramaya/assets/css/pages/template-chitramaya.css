@@ -289,8 +289,12 @@
             /* --- DARK SERVICE CARD --- */
             .dark-card {
                 background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                padding: 32px;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-4, 32px);
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-2, 16px);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
             .dark-card:hover {
@@ -302,7 +306,12 @@
             .white-card {
                 background: var(--white-card);
                 border: 1px solid var(--art-border);
-                padding: 32px;
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-4, 32px);
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-2, 16px);
+                box-shadow: 0 4px 20px rgba(23, 30, 74, 0.04);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
             .white-card:hover {
@@ -338,18 +347,45 @@
                 font-size: 12px;
                 font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: 0.05em;
-                padding: 6px 14px;
+                letter-spacing: 0.06em;
+                padding: var(--space-0-5, 4px) var(--space-2, 16px);
+                border-radius: var(--radius-pill, 40px);
                 white-space: nowrap;
                 background: transparent;
                 border: 1px solid currentColor;
-                opacity: 0.7;
+                opacity: 0.75;
                 transition: opacity 0.2s, color 0.2s, border-color 0.2s;
             }
             .tag:hover { opacity: 1; }
-            .dark-card .tag { color: var(--text-white); border-color: rgba(255,255,255,0.3); }
+            .dark-card .tag {
+                font-family: var(--mono);
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                padding: var(--space-0-5, 4px) var(--space-2, 16px);
+                border-radius: var(--radius-pill, 40px);
+                white-space: nowrap;
+                background: transparent;
+                border: 1px solid currentColor;
+                opacity: 0.75;
+                transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+            }
             .dark-card .tag:hover { color: var(--money-green); border-color: var(--money-green); }
-            .white-card .tag { color: var(--text-muted-light); border-color: var(--art-border); }
+            .white-card .tag {
+                font-family: var(--mono);
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                padding: var(--space-0-5, 4px) var(--space-2, 16px);
+                border-radius: var(--radius-pill, 40px);
+                white-space: nowrap;
+                background: transparent;
+                border: 1px solid currentColor;
+                opacity: 0.75;
+                transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+            }
             .white-card .tag:hover { color: var(--text-dark); border-color: var(--text-dark); }
 
             .service-tags {
@@ -378,8 +414,9 @@
             }
 
             .pillar {
-                padding: 16px 20px;
+                padding: var(--space-2, 16px) var(--space-3, 24px);
                 border-left: 3px solid var(--money-green);
+                border-radius: var(--radius-sm, 8px);
                 background: rgba(53, 162, 72, 0.08);
             }
             .pillar-title {
@@ -466,6 +503,7 @@
                     ),
                     var(--dark-bg);
                 /* Deep inset shadow — presses the block into the page */
+                border-radius: var(--radius-md, 16px);
                 box-shadow:
                     inset 0 3px 16px rgba(0,0,0,0.65),
                     inset 0 -3px 10px rgba(0,0,0,0.4),
@@ -613,46 +651,44 @@
             .pipeline-steps {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                gap: 0;
+                gap: var(--space-3, 24px);
                 position: relative;
-            }
-
-            /* Connecting line between steps */
-            .pipeline-steps::after {
-                content: '';
-                position: absolute;
-                top: 28px;
-                left: 10%;
-                right: 10%;
-                height: 1px;
-                background: linear-gradient(to right, var(--money-green), rgba(53, 162, 72, 0.1));
-                z-index: 0;
             }
 
             .step {
                 position: relative;
                 z-index: 1;
-                padding: 0 16px;
-                padding-top: 64px;
+                background: var(--white-card);
+                border: 1px solid var(--art-border);
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
+                box-shadow: 0 4px 16px rgba(23, 30, 74, 0.03);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .step:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
             }
 
             .step-marker {
                 position: absolute;
-                top: 0;
+                top: -24px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 56px;
-                height: 56px;
-                border: 1px solid var(--money-green);
-                background: var(--white-bg);
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: 2px solid var(--money-green);
+                background: var(--white-card);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-family: var(--mono);
-                font-size: 12px;
-                font-weight: 600;
+                font-size: 13px;
+                font-weight: 700;
                 color: var(--money-green);
-                transition: background 0.3s ease;
+                box-shadow: 0 4px 12px rgba(53, 162, 72, 0.15);
+                transition: all 0.3s ease;
             }
 
             .step:hover .step-marker {
@@ -679,100 +715,7 @@
                 line-height: 1.6;
             }
 
-            /* =====================================================
-               FOOTER
-               ===================================================== */
-            .site-footer {
-                background: var(--white-bg);
-                border-top: 1px solid var(--art-border);
-                padding: 64px clamp(24px, 6vw, 80px) 48px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 24px;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .footer-ghost-text {
-                position: absolute;
-                inset: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: var(--display);
-                font-size: clamp(3rem, 12vw, 10rem);
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: -0.04em;
-                color: var(--money-green);
-                opacity: 0.03;
-                pointer-events: none;
-                user-select: none;
-                white-space: nowrap;
-                z-index: 0;
-            }
-
-            .footer-content-block {
-                position: relative;
-                z-index: 1;
-            }
-
-            .footer-logo {
-                font-family: var(--display);
-                font-size: 22px;
-                font-weight: 700;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                color: var(--text-dark);
-            }
-
-            .footer-subline {
-                font-family: var(--mono);
-                font-size: 13px;
-                color: var(--text-muted-light);
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                margin-top: 6px;
-            }
-
-            .footer-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 12px;
-                background: var(--money-green);
-                color: var(--dark-bg);
-                font-family: var(--display);
-                font-size: 16px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                padding: 16px 32px;
-                text-decoration: none;
-                transition: all 0.2s ease;
-            }
-            .footer-cta:hover {
-                background: var(--money-green);
-                transform: translateY(-2px);
-                box-shadow: 0 8px 30px rgba(53, 162, 72, 0.25);
-            }
-
-            .footer-copy {
-                width: 100%;
-                font-family: var(--mono);
-                font-size: 11px;
-                color: var(--text-muted-light);
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                padding-top: 24px;
-                border-top: 1px solid var(--art-border);
-                text-align: center;
-            }
-
-            /* =====================================================
-               RESPONSIVE MOBILE — STACK COLUMNS
-               ===================================================== */
+            /* Responsive Media Queries */
             @media (max-width: 900px) {
                 .duality-section {
                     grid-template-columns: 1fr;
@@ -780,13 +723,13 @@
                 .col-money { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
                 .pipeline-steps {
                     grid-template-columns: 1fr 1fr;
-                    gap: 40px;
+                    gap: var(--space-5, 40px) var(--space-3, 24px);
                 }
-                .pipeline-steps::after { display: none; }
-                .step { padding: 0; padding-top: 64px; }
-                .site-footer { justify-content: flex-start; }
+                .step {
+                    padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
+                }
             }
 
             @media (max-width: 600px) {
-                .pipeline-steps { grid-template-columns: 1fr; }
+                .pipeline-steps { grid-template-columns: 1fr; gap: var(--space-5, 40px); }
             }
