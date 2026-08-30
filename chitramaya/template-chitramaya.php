@@ -14,7 +14,7 @@
   <meta name="description" content="Chithramaya Creatives — Commercial photography, brand photography, events, and visual storytelling from Trichy, Tamil Nadu.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/chitramaya')); ?>">
   <?php wp_head(); ?>
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-chitramaya.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-chitramaya.css">
 </head>
 <body>
 <!-- =====================================================
