@@ -649,6 +649,13 @@
             .split-divider-left { background: var(--dark-bg); }
             .split-divider-right { background: #FFFFFF; }
 
+            @media (max-width: 900px) {
+                .split-divider {
+                    display: none;
+                }
+            }
+
+
             /* =====================================================
                WORKFLOW PIPELINE SECTION
                ===================================================== */
