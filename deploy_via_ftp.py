@@ -41,6 +41,9 @@ SKIP_DIR_SEGMENTS = [
     '__pycache__',
     '.cache',
     'src',          # Vite source — only dist/ is needed
+    'vendor',       # Composer vendor (static on server)
+    'tests',
+    '.psalm',
 ]
 
 # Automatically gather plugin files (chitramaya-proofing)
