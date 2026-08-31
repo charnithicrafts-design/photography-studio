@@ -455,8 +455,7 @@
 }
 
 .vertical-item:hover {
-  background: rgba(255, 255, 255, 0.02);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
   box-shadow: 4px 4px 0px var(--color-accent);
   border-color: var(--color-accent);
 }

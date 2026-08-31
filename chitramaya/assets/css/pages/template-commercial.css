@@ -272,10 +272,10 @@
   flex-direction: column;
   gap: var(--space-2, 16px);
   box-shadow: 0 4px 16px rgba(23, 30, 74, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .impact-card:hover {
-  transform: translateY(-4px);
+  background: var(--color-bg, #F7F4ED);
   box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
 }
 .impact-num {

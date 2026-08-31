@@ -26,6 +26,9 @@ function chitramaya_enqueue_styles() {
     $critical_css_path = get_stylesheet_directory() . '/assets/css/base/critical.css';
     if ( file_exists( $critical_css_path ) ) {
         $critical_css = file_get_contents( $critical_css_path );
+        // Rewrite relative font paths to be absolute to the theme directory
+        $theme_uri = get_stylesheet_directory_uri();
+        $critical_css = str_replace( 'url(assets/fonts/', 'url(' . $theme_uri . '/assets/fonts/', $critical_css );
         // We attach it to the parent style if it's the first thing, or child style
         wp_add_inline_style( 'chitramaya-style', $critical_css );
     }
