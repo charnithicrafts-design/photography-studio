@@ -207,51 +207,54 @@
             }
             .cta-bounce { animation: bounce-down 1.8s ease-in-out infinite; display: flex; align-items: center; justify-content: center; }
 
+            /* ── HOMEPAGE CTA PILL (unified btn-primary system) ───── */
             .cta-pill-group {
                 display: inline-flex;
                 align-items: center;
-                gap: 10px;
-                background: #ffffff;
-                padding: 6px 8px;
-                border-radius: 40px;
-                border: 1px solid var(--art-border);
-                box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                gap: 12px;
+                text-decoration: none;
+                cursor: pointer;
+                border-radius: 50px;
+                padding: 6px 6px 6px 22px;
+                min-height: 52px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-weight: 700;
+                font-size: 0.9375rem;
+                white-space: nowrap;
+                transition: border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+                border: 1.5px solid rgba(23, 30, 74, 0.15);
+                background: var(--white-bg, #F7F4ED);
+                color: var(--text-dark, #171E4A);
+                box-shadow: 0 4px 16px rgba(23, 30, 74, 0.06);
             }
             .cta-pill-group:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+                border-color: var(--money-green, #35A248);
+                color: var(--money-green, #35A248);
+                box-shadow: 0 6px 24px rgba(53, 162, 72, 0.12);
             }
             .cta-main-btn {
-                background: var(--text-dark);
-                color: #ffffff;
-                border-radius: 30px;
-                padding: clamp(8px, 1.2vh, 12px) clamp(20px, 2.2vw, 28px);
-                font-size: clamp(11px, 1.1vw, 13px);
-                font-weight: 600;
-                letter-spacing: 1px;
-                text-decoration: none;
-                transition: background 0.2s ease;
+                font-weight: 700;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.9375rem;
                 white-space: nowrap;
-                font-family: var(--body);
+                color: inherit;
             }
-            .cta-main-btn:hover { background: var(--money-green); color: var(--dark-bg); }
             .cta-arrow-btn {
-                width: clamp(34px, 3.8vh, 40px);
-                height: clamp(34px, 3.8vh, 40px);
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
                 border-radius: 50%;
-                background: var(--white-bg);
-                border: 1px solid var(--art-border);
+                background: var(--money-green, #35A248);
+                color: #ffffff;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: var(--text-dark);
                 text-decoration: none;
-                font-size: 14px;
-                font-weight: 700;
-                transition: all 0.2s ease;
+                transition: background 0.22s ease;
             }
-            .cta-arrow-btn:hover { background: var(--text-dark); color: #ffffff; }
+            .cta-pill-group:hover .cta-arrow-btn {
+                background: var(--dark-bg, #171E4A);
+            }
 
             @media (max-aspect-ratio: 1/1), (max-width: 600px) {
                 .composition-box {

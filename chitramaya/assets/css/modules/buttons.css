@@ -1,30 +1,163 @@
-/* Brutalist Buttons / Micro-interactions */
+/* =============================================================================
+   CHITHRAMAYA BUTTON SYSTEM
+   2 Types. 1 Pattern Language. Zero ambiguity.
+
+   TYPE 1: .btn-primary  — Booking / Navigation CTAs (→ right arrow)
+   TYPE 2: .btn-scroll   — Scroll / Anchor CTAs (↓ down arrow)
+
+   UX References:
+   - Fitts's Law: min 52px touch target height enforced
+   - Feedback principle: border + text color shift on hover (no translateY)
+   - Hick's Law: only 2 affordance patterns in the entire system
+   ============================================================================= */
+
+/* ── SHARED FOUNDATION ────────────────────────────────────────────────────── */
+.btn-primary,
+.btn-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 6px 6px 6px 22px;
+  min-height: 52px;
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-weight: 700;
+  font-size: var(--type-body, 0.9375rem);
+  white-space: nowrap;
+  transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+  border: 1.5px solid transparent;
+}
+
+/* ── TYPE 1: PRIMARY CTA ──────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--color-bg, #F7F4ED);
+  color: var(--color-dark, #171E4A);
+  border-color: rgba(23, 30, 74, 0.15);
+  box-shadow: 0 4px 16px rgba(23, 30, 74, 0.06);
+}
+
+.btn-primary:hover {
+  border-color: var(--color-accent, #35A248);
+  color: var(--color-accent, #35A248);
+  box-shadow: 0 6px 24px rgba(53, 162, 72, 0.12);
+}
+
+.btn-primary-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent, #35A248);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.22s ease;
+}
+
+.btn-primary:hover .btn-primary-icon {
+  background: var(--color-dark, #171E4A);
+}
+
+/* ── TYPE 2: SCROLL / ANCHOR CTA ─────────────────────────────────────────── */
+.btn-scroll {
+  background: var(--color-dark, #171E4A);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-scroll:hover {
+  border-color: var(--color-accent, #35A248);
+  color: #ffffff;
+}
+
+.btn-scroll-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.btn-scroll:hover .btn-scroll-icon {
+  background: var(--color-accent, #35A248);
+  border-color: var(--color-accent, #35A248);
+}
+
+/* ── DEPRECATION ALIAS: .btn-compound → .btn-primary ─────────────────────── */
+/* Existing templates still use this. Renders identically to .btn-primary.    */
+.btn-compound {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 6px 6px 6px 22px;
+  min-height: 52px;
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-weight: 700;
+  font-size: var(--type-body, 0.9375rem);
+  white-space: nowrap;
+  transition: border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  border: 1.5px solid rgba(23, 30, 74, 0.15);
+  background: var(--color-bg, #F7F4ED);
+  color: var(--color-dark, #171E4A);
+  box-shadow: 0 4px 16px rgba(23, 30, 74, 0.06);
+}
+
+.btn-compound:hover {
+  border-color: var(--color-accent, #35A248);
+  color: var(--color-accent, #35A248);
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(53, 162, 72, 0.12);
+}
+
+.btn-compound-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent, #35A248);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.22s ease;
+}
+
+.btn-compound:hover .btn-compound-icon {
+  background: var(--color-dark, #171E4A);
+}
+
+/* ── LEGACY: .brut-btn (editorial/decorative use only) ───────────────────── */
 .brut-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-dark);
-  color: var(--color-light);
-  border: var(--border-stark);
-  padding: 1.25rem 2.5rem;
+  color: var(--color-bg);
+  border: 1.5px solid var(--color-dark);
+  border-radius: 4px;
+  padding: 14px 28px;
   font-weight: 700;
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: var(--type-body);
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .brut-btn:hover {
-  background-color: var(--color-light);
+  background-color: transparent;
   color: var(--color-dark);
-  box-shadow: 6px 6px 0px var(--color-dark);
-  transform: translate(-2px, -2px);
-}
-
-.brut-btn-mono {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 1rem 1.5rem;
-  width: 100%;
 }
