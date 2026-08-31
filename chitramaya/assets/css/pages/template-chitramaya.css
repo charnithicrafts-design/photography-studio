@@ -105,7 +105,7 @@
                 padding: 10px;
                 padding-bottom: clamp(24px, 4vh, 40px);
                 gap: 0;
-                overflow: hidden;
+                overflow: visible;
             }
 
             .composition-box {
@@ -113,12 +113,13 @@
                 container-name: hero;
                 position: relative;
                 width: min(92vw, 1100px);
-                height: min(62vh, 520px);
+                height: min(74vh, 560px);
                 aspect-ratio: 16 / 10;
                 margin: auto;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                overflow: visible;
             }
 
             .text-top-left {
@@ -263,18 +264,46 @@
                 background: var(--dark-bg, #171E4A);
             }
 
-            @media (max-aspect-ratio: 1/1), (max-width: 600px) {
+            /* ── PORTRAIT TABLET (e.g. iPad) ──────────────────────────────── */
+            @media (max-aspect-ratio: 3/4) and (min-width: 601px) {
+                .hero-viewport {
+                    overflow: visible;
+                }
                 .composition-box {
-                    width: min(92vw, 380px);
-                    height: min(54vh, 440px);
-                    aspect-ratio: 1 / 1.15;
+                    width: min(82vw, 600px);
+                    height: min(76vh, 700px);
+                    aspect-ratio: unset;
+                    overflow: visible;
                 }
                 .text-top-left, .click-text { 
-                    font-size: clamp(65px, 20cqw, 110px); 
+                    font-size: clamp(60px, 18cqw, 160px); 
                     line-height: 0.76;
                 }
-                .photo-foreground-cutout { height: 98%; max-width: 92%; }
-                .camera-icon-img { width: clamp(45px, 14cqw, 75px); }
+                .photo-foreground-cutout { height: 90%; max-width: 80%; }
+                .camera-icon-img { width: clamp(50px, 10cqw, 90px); }
+            }
+
+            /* ── PORTRAIT MOBILE (≤600px) ──────────────────────────────────── */
+            @media (max-width: 600px) {
+                .hero-viewport {
+                    overflow: visible;
+                }
+                .composition-box {
+                    width: min(90vw, 420px);
+                    height: 76vh;
+                    aspect-ratio: unset;
+                    overflow: visible;
+                }
+                .text-top-left, .click-text { 
+                    font-size: clamp(58px, 22cqw, 120px); 
+                    line-height: 0.76;
+                }
+                .photo-foreground-cutout { height: 88%; max-width: 88%; }
+                .camera-icon-img { width: clamp(42px, 12cqw, 70px); }
+                .text-bottom-right {
+                    bottom: 0%;
+                    right: 0%;
+                }
             }
 
             /* =====================================================
