@@ -126,9 +126,8 @@ nav {
 .hero-headline {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(1.8rem, 8vw, 3rem);
+  font-size: var(--type-section);
   line-height: 1.05;
-  letter-spacing: -0.02em;
   color: #ffffff;
 }
 .hero-headline .accent-word {
@@ -287,7 +286,6 @@ nav {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.5rem;
-  letter-spacing: -0.03em;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -325,7 +323,6 @@ nav {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.1rem;
-  letter-spacing: -0.02em;
   color: var(--text-dark);
 }
 .service-cta {
@@ -400,7 +397,6 @@ nav {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 2.25rem;
-  letter-spacing: -0.06em;
   line-height: 1;
   color: var(--text-dark);
 }
@@ -455,8 +451,7 @@ nav {
 .booking-left h2 {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2rem, 8vw, 4rem);
-  letter-spacing: -0.04em;
+  font-size: var(--type-display);
   line-height: 0.95;
   margin-bottom: 1.5rem;
   color: var(--text-dark);
@@ -570,11 +565,10 @@ nav {
 }
 .cap-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: var(--type-section);
   font-weight: 400;
   color: var(--text-dark);
   line-height: 1.1;
-  letter-spacing: -0.02em;
   max-width: 700px;
   margin-bottom: 1.5rem;
 }
@@ -769,7 +763,7 @@ nav {
     border-bottom: none;
   }
   .booking-left h2 {
-    font-size: clamp(3rem, 5vw, 5rem);
+    font-size: var(--type-display);
     margin-bottom: 2rem;
   }
   .booking-left p {
@@ -868,7 +862,7 @@ nav {
     max-width: 800px;
   }
   .hero-headline {
-    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-size: var(--type-display);
     margin-bottom: 1.5rem;
   }
   .hero-body {

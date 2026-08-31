@@ -130,12 +130,11 @@
                 position: absolute;
                 top: 2%; left: 2%;
                 font-family: var(--display);
-                font-size: clamp(3rem, 26cqw, 16rem);
+                font-size: var(--type-display);
                 font-weight: 700;
                 line-height: 0.76;
                 color: rgba(23,30,74,0.08);
                 text-transform: uppercase;
-                letter-spacing: -0.04em;
                 user-select: none;
                 z-index: 1;
                 white-space: nowrap;
@@ -177,12 +176,11 @@
 
             .click-text {
                 font-family: var(--display);
-                font-size: clamp(3rem, 26cqw, 16rem);
+                font-size: var(--type-display);
                 font-weight: 700;
                 line-height: 0.76;
                 color: rgba(23,30,74,0.08);
                 text-transform: uppercase;
-                letter-spacing: -0.04em;
                 user-select: none;
             }
 
@@ -261,7 +259,7 @@
                     height: min(52vh, 420px);
                     aspect-ratio: 1 / 1.15;
                 }
-                .text-top-left, .click-text { font-size: clamp(2.8rem, 30cqw, 8rem); }
+                .text-top-left, .click-text { font-size: var(--type-display); }
                 .photo-foreground-cutout { height: 98%; max-width: 90%; }
                 .camera-icon-img { width: clamp(40px, 15cqw, 75px); }
             }
@@ -332,10 +330,9 @@
 
             .service-title {
                 font-family: var(--display);
-                font-size: clamp(1.4rem, 2.2vw, 2rem);
+                font-size: var(--type-section);
                 font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: -0.02em;
                 margin-bottom: 20px;
                 line-height: 1;
             }
@@ -505,10 +502,9 @@
                 bottom: -14px;
                 right: -24px;
                 font-family: var(--display);
-                font-size: clamp(3rem, 8vw, 7rem);
+                font-size: var(--type-display);
                 font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: -0.04em;
                 color: var(--color-dark, #171E4A);
                 opacity: 0.05;
                 pointer-events: none;
@@ -540,7 +536,6 @@
                 font-size: var(--type-display);
                 font-weight: 400; /* Regular weight for quotes */
                 line-height: 1.1;
-                letter-spacing: -0.01em;
                 color: var(--color-dark, #171E4A);
                 margin-bottom: 32px;
                 flex: 1;
@@ -604,10 +599,9 @@
 
             .pipeline-heading {
                 font-family: var(--display);
-                font-size: clamp(2rem, 5vw, 5rem);
+                font-size: var(--type-display);
                 font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: -0.03em;
                 color: var(--text-dark);
                 line-height: 0.9;
                 margin-bottom: 72px;
