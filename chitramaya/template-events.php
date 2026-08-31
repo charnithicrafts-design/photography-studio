@@ -183,12 +183,13 @@
   </section>
 
   <section class="global-cta">
-    <h2 class="global-cta-title brut-protect-overflow">Make the moment unmistakable.</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking">Book your session.
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+    <h2 class="global-cta-title brut-protect-overflow">The moments you'll remember in twenty years.</h2>
+    <a href="#book" class="btn-primary" data-trigger="booking">
+      Tell us about your day.
+      <span class="btn-primary-icon">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </section>
 
 <script>

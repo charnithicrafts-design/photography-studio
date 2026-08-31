@@ -151,12 +151,13 @@
   </section>
 
   <section class="global-cta">
-    <h2 class="global-cta-title brut-protect-overflow">Start Broadcasting</h2>
-    <a href="#book" class="btn-compound" data-trigger="booking">One good story can become a month of content.
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+    <h2 class="global-cta-title brut-protect-overflow">One good conversation. A month of content.</h2>
+    <a href="#book" class="btn-primary" data-trigger="booking">
+      Let's record something worth sharing.
+      <span class="btn-primary-icon">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </section>
 
 <script>

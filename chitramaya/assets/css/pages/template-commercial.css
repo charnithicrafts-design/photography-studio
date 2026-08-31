@@ -301,20 +301,24 @@
   opacity: 0.8;
 }
 
-/* GLOBAL CTA */
+/* GLOBAL CTA — CAMPAIGN YELLOW ENERGY */
 .global-cta {
-  padding: var(--space-10, 80px) var(--space-4, 32px);
+  padding: clamp(48px, 8vw, 80px) var(--space-4, 32px);
   text-align: center;
-  background: var(--color-dark, #171E4A);
-  color: var(--color-white, #FFFFFF);
+  background: var(--color-yellow, #FAB417);
+  color: var(--color-dark, #171E4A);
   border-radius: var(--radius-lg, 24px);
   max-width: 1360px;
   margin: var(--space-8, 64px) auto;
+  box-shadow: 0 8px 32px rgba(250, 180, 23, 0.16);
 }
 .global-cta-title {
-  font-size: var(--type-display);
+  font-size: var(--type-display, clamp(2rem, 4vw, 3.25rem));
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 4rem;
+  color: var(--color-dark, #171E4A);
+  margin-bottom: var(--space-4, 32px);
+  line-height: 1.05;
 }
+
