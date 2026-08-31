@@ -258,6 +258,27 @@
     fill: currentColor;
     flex-shrink: 0;
   }
+
+  @media (max-width: 768px) {
+    .c-whatsapp-fab {
+      bottom: 16px;
+      right: 16px;
+      width: 52px;
+      height: 52px;
+      min-height: 52px;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+    }
+    .c-whatsapp-fab span {
+      display: none;
+    }
+    .c-whatsapp-fab svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
 </style>
 
 <footer class="c-global-footer">
