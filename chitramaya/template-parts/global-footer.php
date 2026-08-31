@@ -72,6 +72,13 @@
     max-width: 440px;
   }
 
+  .c-footer-founder {
+    font-family: var(--font-serif, 'Roboto Slab', serif);
+    font-size: 0.9375rem;
+    color: var(--color-white, #FFFFFF);
+    margin: 0;
+  }
+
   .c-footer-badge {
     display: inline-flex;
     align-items: center;
@@ -262,7 +269,10 @@
         <h2 class="c-footer-logo">Chithramaya Creatives</h2>
         <p class="c-footer-tagline">Visual storytelling with a human pulse.</p>
         <p class="c-footer-desc">
-          A visual direction and photography studio based in Tiruchirappalli (Trichy), Tamil Nadu. Led by founder and visual director Sriram Sridharan.
+          A visual direction and photography studio based in Tiruchirappalli (Trichy), Tamil Nadu.
+        </p>
+        <p class="c-footer-founder">
+          Led by Sriram Sridharan / Founder &amp; Visual Director
         </p>
         <div class="c-footer-badge">
           <span class="c-footer-badge-dot"></span>
@@ -272,7 +282,7 @@
       
       <!-- 02: Studio Disciplines -->
       <div class="c-footer-col">
-        <h3 class="c-footer-col-title">[ Studio Disciplines ]</h3>
+        <h3 class="c-footer-col-title">Our Work</h3>
         <ul class="c-footer-links">
           <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Brand &amp; Corporate Photography</a></li>
           <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial &amp; Product Campaigns</a></li>
@@ -286,7 +296,7 @@
       
       <!-- 03: Direct Connect & Studio Specs -->
       <div class="c-footer-col">
-        <h3 class="c-footer-col-title">[ Studio Coordinates ]</h3>
+        <h3 class="c-footer-col-title">Reach Us</h3>
         <div class="c-footer-contact-item">
           <span class="c-footer-contact-label">Direct Email</span>
           <a href="mailto:sriramsridharan.designer@gmail.com" class="c-footer-contact-val">sriramsridharan.designer@gmail.com</a>
