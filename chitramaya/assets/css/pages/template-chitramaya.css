@@ -483,33 +483,12 @@
                 padding: 6px 12px;
             }
 
-            /* Manifesto block — dark inverted in white column */
+            /* Manifesto block — Official Campaign Quote Style (Yellow/Navy) */
             .manifesto-block {
-                /* Engraving texture: fine diagonal hatching lines over dark base */
-                background:
-                    repeating-linear-gradient(
-                        -45deg,
-                        transparent,
-                        transparent 3px,
-                        rgba(53, 162, 72, 0.025) 3px,
-                        rgba(53, 162, 72, 0.025) 4px
-                    ),
-                    repeating-linear-gradient(
-                        45deg,
-                        transparent,
-                        transparent 12px,
-                        rgba(255,255,255,0.012) 12px,
-                        rgba(255,255,255,0.012) 13px
-                    ),
-                    var(--dark-bg);
-                /* Deep inset shadow — presses the block into the page */
+                background: var(--color-yellow, #FAB417);
+                color: var(--color-dark, #171E4A);
                 border-radius: var(--radius-md, 16px);
-                box-shadow:
-                    inset 0 3px 16px rgba(0,0,0,0.65),
-                    inset 0 -3px 10px rgba(0,0,0,0.4),
-                    inset 3px 0 12px rgba(0,0,0,0.5),
-                    inset -3px 0 12px rgba(0,0,0,0.5),
-                    0 0 0 1px rgba(53, 162, 72, 0.1);
+                box-shadow: 0 12px 32px rgba(250, 180, 23, 0.15);
                 padding: 40px 36px;
                 position: relative;
                 overflow: hidden;
@@ -519,7 +498,7 @@
                 flex-direction: column;
                 justify-content: space-between;
             }
-            /* Ghost WE CLICK watermark inside dark block */
+            /* Ghost WE CLICK watermark inside yellow block */
             .manifesto-block::before {
                 content: 'WE CLICK';
                 position: absolute;
@@ -530,15 +509,11 @@
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: -0.04em;
-                color: var(--money-green);
-                opacity: 0.06;
+                color: var(--color-dark, #171E4A);
+                opacity: 0.05;
                 pointer-events: none;
                 user-select: none;
                 line-height: 1;
-                /* Engraved text on the watermark too */
-                text-shadow:
-                    1px 1px 0 rgba(0,0,0,0.9),
-                    -1px -1px 0 rgba(53, 162, 72, 0.08);
             }
             /* Corner crosshair */
             .manifesto-block::after {
@@ -548,43 +523,37 @@
                 right: 20px;
                 font-family: var(--mono);
                 font-size: 18px;
-                color: var(--money-green);
-                opacity: 0.4;
+                color: var(--color-dark, #171E4A);
+                opacity: 0.2;
             }
             .manifesto-label {
                 font-family: var(--mono);
-                font-size: 12px;
+                font-size: var(--type-micro);
                 letter-spacing: 0.15em;
-                color: var(--money-green);
+                color: var(--color-dark, #171E4A);
                 text-transform: uppercase;
                 margin-bottom: 20px;
                 opacity: 0.7;
             }
             .manifesto-quote {
-                font-family: var(--display);
-                font-size: clamp(1.5rem, 2.4vw, 2.2rem);
-                font-weight: 700;
-                text-transform: uppercase;
-                line-height: 1.05;
-                letter-spacing: -0.03em;
-                color: var(--text-white);
+                font-family: var(--font-serif); /* Roboto Slab */
+                font-size: var(--type-display);
+                font-weight: 400; /* Regular weight for quotes */
+                line-height: 1.1;
+                letter-spacing: -0.01em;
+                color: var(--color-dark, #171E4A);
                 margin-bottom: 32px;
                 flex: 1;
-                /* Carved letterpress text-shadow: dark recess below, subtle light above */
-                text-shadow:
-                    0 1px 0 rgba(0,0,0,0.9),
-                    0 -1px 0 rgba(255,255,255,0.06),
-                    0 2px 6px rgba(0,0,0,0.8);
             }
             .manifesto-spec-row {
                 display: flex;
                 justify-content: space-between;
                 font-family: var(--mono);
-                font-size: 12px;
+                font-size: var(--type-micro);
                 letter-spacing: 0.12em;
-                color: var(--money-green);
+                color: var(--color-dark, #171E4A);
                 opacity: 0.6;
-                border-top: 1px solid rgba(53, 162, 72, 0.12);
+                border-top: 1px solid rgba(23, 30, 74, 0.12);
                 padding-top: 16px;
             }
 
