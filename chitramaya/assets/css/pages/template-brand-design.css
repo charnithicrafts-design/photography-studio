@@ -186,7 +186,8 @@
   overflow: hidden;
 }
 .b-accordion-btn[aria-expanded="true"] + .b-accordion-panel {
-  display: none;
+  display: block;
+  animation: slideDown 0.3s ease forwards;
   padding: 0 0 var(--space-3, 24px) 0;
   overflow: hidden;
 }
