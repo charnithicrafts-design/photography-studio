@@ -83,6 +83,7 @@
                         <span class="tag tag-dark">Product Photography</span>
                         <span class="tag tag-dark">Brand Ads / Videos</span>
                         <span class="tag tag-dark">TVC</span>
+                        <button type="button" class="tag tag-dark tag-more" aria-label="Show 9 more services">+9 more</button>
                     </div>
                     <p class="service-text-block">
                         We photograph the people, spaces, and moments that make your business what it is. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
@@ -108,6 +109,7 @@
                         <span class="tag tag-dark">Personal Branding</span>
                         <span class="tag tag-dark">PR Campaigns</span>
                         <span class="tag tag-dark">Content Creation</span>
+                        <button type="button" class="tag tag-dark tag-more" aria-label="Show 9 more services">+9 more</button>
                     </div>
                     <p class="service-text-block">
                         Products, spaces, food, fashion — we shoot what you're selling and make people actually want it. Whether it's a catalogue, a campaign, or a construction timelapse, the frame is always doing a job.
@@ -189,6 +191,7 @@
                         <span class="tag tag-light">OOH Campaign Design</span>
                         <span class="tag tag-light">Installations Design</span>
                         <span class="tag tag-light">Brand Guidelines</span>
+                        <button type="button" class="tag tag-light tag-more" aria-label="Show 3 more services">+3 more</button>
                     </div>
 
                     <p class="service-text-block">
@@ -259,5 +262,18 @@
              ===================================================== -->
         <?php get_template_part('template-parts/global-footer'); ?>
   <?php wp_footer(); ?>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.tag-more').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parent = btn.closest('.service-tags');
+            if (parent) {
+                parent.classList.add('is-expanded');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
