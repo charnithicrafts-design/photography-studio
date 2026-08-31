@@ -264,45 +264,42 @@
                 background: var(--dark-bg, #171E4A);
             }
 
-            /* ── PORTRAIT TABLET (e.g. iPad) ──────────────────────────────── */
-            @media (max-aspect-ratio: 3/4) and (min-width: 601px) {
+            /* ── PORTRAIT TABLET & MOBILE (Aspect Ratio < 1) ─────────────── */
+            @media (max-aspect-ratio: 1/1) {
                 .hero-viewport {
                     overflow: visible;
                 }
                 .composition-box {
-                    width: min(82vw, 600px);
-                    height: min(76vh, 700px);
-                    aspect-ratio: unset;
+                    width: min(92vw, calc(66vh * 0.85));
+                    max-width: 480px;
+                    height: auto;
+                    aspect-ratio: 1 / 1.18;
+                    margin: auto;
                     overflow: visible;
                 }
-                .text-top-left, .click-text { 
-                    font-size: clamp(60px, 18cqw, 160px); 
+                .text-top-left {
+                    top: 2%;
+                    left: 0%;
+                    font-size: clamp(60px, 24cqw, 130px);
                     line-height: 0.76;
                 }
-                .photo-foreground-cutout { height: 90%; max-width: 80%; }
-                .camera-icon-img { width: clamp(50px, 10cqw, 90px); }
-            }
-
-            /* ── PORTRAIT MOBILE (≤600px) ──────────────────────────────────── */
-            @media (max-width: 600px) {
-                .hero-viewport {
-                    overflow: visible;
-                }
-                .composition-box {
-                    width: min(90vw, 420px);
-                    height: 76vh;
-                    aspect-ratio: unset;
-                    overflow: visible;
-                }
-                .text-top-left, .click-text { 
-                    font-size: clamp(58px, 22cqw, 120px); 
+                .click-text {
+                    font-size: clamp(60px, 24cqw, 130px);
                     line-height: 0.76;
                 }
-                .photo-foreground-cutout { height: 88%; max-width: 88%; }
-                .camera-icon-img { width: clamp(42px, 12cqw, 70px); }
+                .photo-foreground-cutout {
+                    height: 98%;
+                    width: 100%;
+                    max-width: 100%;
+                    bottom: 0%;
+                }
+                .camera-icon-img {
+                    width: clamp(44px, 15cqw, 80px);
+                }
                 .text-bottom-right {
                     bottom: 0%;
                     right: 0%;
+                    gap: clamp(6px, 2cqw, 16px);
                 }
             }
 
