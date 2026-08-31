@@ -109,11 +109,11 @@
             }
 
             .composition-box {
-                container-type: size;
+                container-type: inline-size;
                 container-name: hero;
                 position: relative;
-                width: min(88vw, 980px);
-                height: min(62vh, 500px);
+                width: min(92vw, 1100px);
+                height: min(62vh, 520px);
                 aspect-ratio: 16 / 10;
                 margin: auto;
                 display: flex;
@@ -123,12 +123,14 @@
 
             .text-top-left {
                 position: absolute;
-                top: 2%; left: 2%;
-                font-family: var(--display);
-                font-size: var(--type-display);
+                top: 2%; 
+                left: 2%;
+                font-family: var(--display, 'Roboto Slab', serif);
+                font-size: clamp(80px, 22cqw, 220px);
                 font-weight: 700;
                 line-height: 0.76;
-                color: rgba(23,30,74,0.08);
+                letter-spacing: -0.02em;
+                color: rgba(23, 30, 74, 0.10);
                 text-transform: uppercase;
                 user-select: none;
                 z-index: 1;
@@ -137,15 +139,17 @@
 
             .photo-foreground-cutout {
                 position: absolute;
-                top: 50%; left: 50%;
+                top: 50%; 
+                left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 3;
-                height: 98%;
+                height: 100%;
                 width: auto;
-                max-width: 88%;
+                max-width: 90%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                pointer-events: none;
             }
 
             .artistic-cutout-img {
@@ -156,40 +160,48 @@
                 object-fit: contain;
                 filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
                 transition: transform 0.3s ease;
+                pointer-events: auto;
             }
             .photo-foreground-cutout:hover .artistic-cutout-img { transform: scale(1.02); }
 
             .text-bottom-right {
                 position: absolute;
-                bottom: -8%; right: 2%;
+                bottom: -2%; 
+                right: 2%;
                 display: flex;
                 align-items: center;
-                gap: clamp(6px, 1.8cqw, 20px);
-                z-index: 5;
+                gap: clamp(8px, 2cqw, 24px);
+                z-index: 4;
                 white-space: nowrap;
             }
 
             .click-text {
-                font-family: var(--display);
-                font-size: var(--type-display);
+                font-family: var(--display, 'Roboto Slab', serif);
+                font-size: clamp(80px, 22cqw, 220px);
                 font-weight: 700;
                 line-height: 0.76;
-                color: rgba(23,30,74,0.08);
+                letter-spacing: -0.02em;
+                color: rgba(23, 30, 74, 0.10);
                 text-transform: uppercase;
                 user-select: none;
             }
 
-            .camera-icon-wrapper { display: inline-block; vertical-align: middle; z-index: 6; }
+            .camera-icon-wrapper { 
+                display: inline-flex; 
+                align-items: center; 
+                justify-content: center; 
+                z-index: 5; 
+            }
             .camera-icon-img {
-                width: clamp(50px, 16cqw, 180px);
+                width: clamp(55px, 14cqw, 140px);
                 height: auto;
-                filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
+                filter: drop-shadow(0 12px 20px rgba(0,0,0,0.10));
                 transition: transform 0.3s ease;
             }
-            .camera-icon-wrapper:hover .camera-icon-img { transform: scale(1.05) rotate(-2deg); }
+            .camera-icon-wrapper:hover .camera-icon-img { transform: scale(1.06) rotate(-2deg); }
 
             .hero-cta-inline {
-                margin-top: clamp(20px, 3vh, 36px);
+                margin-top: clamp(16px, 2.5vh, 32px);
                 display: flex;
                 justify-content: center;
                 z-index: 20;
@@ -253,13 +265,16 @@
 
             @media (max-aspect-ratio: 1/1), (max-width: 600px) {
                 .composition-box {
-                    width: min(88vw, 380px);
-                    height: min(52vh, 420px);
+                    width: min(92vw, 380px);
+                    height: min(54vh, 440px);
                     aspect-ratio: 1 / 1.15;
                 }
-                .text-top-left, .click-text { font-size: var(--type-display); }
-                .photo-foreground-cutout { height: 98%; max-width: 90%; }
-                .camera-icon-img { width: clamp(40px, 15cqw, 75px); }
+                .text-top-left, .click-text { 
+                    font-size: clamp(65px, 20cqw, 110px); 
+                    line-height: 0.76;
+                }
+                .photo-foreground-cutout { height: 98%; max-width: 92%; }
+                .camera-icon-img { width: clamp(45px, 14cqw, 75px); }
             }
 
             /* =====================================================
