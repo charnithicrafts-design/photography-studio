@@ -510,23 +510,23 @@
 
             /* Events Portrait Subcategories */
             .subcategory {
-                margin-bottom: 20px;
+                margin-bottom: 18px;
             }
             .subcategory-label {
-                font-family: var(--mono);
-                font-size: 12px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: var(--type-micro, 0.6875rem);
                 font-weight: 700;
-                letter-spacing: 0.15em;
+                letter-spacing: 0.12em;
                 text-transform: uppercase;
-                color: var(--text-muted-light);
-                margin-bottom: 8px;
-                padding-bottom: 8px;
-                border-bottom: 1px solid var(--art-border);
+                color: var(--text-muted-light, rgba(23, 30, 74, 0.6));
+                margin-bottom: 6px;
+                padding-bottom: 6px;
+                border-bottom: 1px solid var(--art-border, rgba(23, 30, 74, 0.12));
             }
             .subcategory-items {
-                font-size: 15px;
-                color: var(--text-dark);
-                line-height: 1.7;
+                font-size: 0.9375rem;
+                color: var(--text-dark, #171E4A);
+                line-height: 1.6;
                 font-weight: 400;
             }
 
@@ -537,15 +537,31 @@
             }
             .upcoming-overlay {
                 position: absolute;
-                top: 20px; right: 20px;
-                font-family: var(--mono);
-                font-size: 12px;
+                top: 24px; 
+                right: 24px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.625rem; /* 10px / 7.5pt */
                 font-weight: 700;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.12em;
                 text-transform: uppercase;
-                background: var(--text-dark);
-                color: var(--text-white);
-                padding: 6px 12px;
+                background: var(--color-dark, #171E4A);
+                color: #FFFFFF;
+                padding: 4px 10px;
+                border-radius: var(--radius-sm, 6px);
+            }
+
+            @media (max-width: 600px) {
+                .upcoming-card {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .upcoming-overlay {
+                    position: static;
+                    display: inline-block;
+                    align-self: flex-start;
+                    margin-bottom: 12px;
+                    order: -1;
+                }
             }
 
             /* Manifesto block — Official Campaign Quote Style (Yellow/Navy) */
