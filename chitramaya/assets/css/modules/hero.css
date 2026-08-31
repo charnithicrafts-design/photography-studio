@@ -1,35 +1,34 @@
 /* ==========================================================================
-   BENTO HERO ARCHITECTURE (Modular, Compact, Strict 8pt Grid)
+   BENTO HERO — UNIFIED NAVY FIELD (One field, one voice)
+   Color balance: Navy 100% surface · Green badge + CTA · White typography
    ========================================================================== */
 
 .bento-hero-section {
   position: relative;
   width: 100%;
-  padding: clamp(6rem, 14vh, 9rem) var(--space-4, 32px) var(--space-6, 48px);
-  background: var(--color-bg, #F7F4ED);
-  color: var(--color-dark, #171E4A);
+  padding: clamp(7rem, 15vh, 10rem) clamp(24px, 5vw, 80px) clamp(4rem, 8vh, 6rem);
+  background: #171E4A; /* Chithramaya Navy — structural dominant */
+  color: #FFFFFF;
 }
 
 .bento-hero-grid {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
-  gap: var(--space-4, 32px);
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
   max-width: 1280px;
   margin: 0 auto;
-  align-items: stretch;
+  align-items: center;
 }
 
-/* Primary Main Card (White elevated surface) */
+/* ==========================================================================
+   LEFT: Primary Content Column
+   ========================================================================== */
+
 .bento-hero-main {
-  background: #FFFFFF;
-  border: 1px solid rgba(23, 30, 74, 0.12);
-  border-radius: var(--radius-lg, 24px);
-  padding: clamp(28px, 4vw, 48px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-4, 32px);
-  box-shadow: 0 4px 20px rgba(23, 30, 74, 0.04);
+  gap: var(--space-3, 24px);
+  /* No background, no border, no box-shadow — pure content on Navy field */
 }
 
 .bento-hero-header {
@@ -42,61 +41,65 @@
   font-family: var(--font-primary, 'Lato', sans-serif);
   font-size: var(--type-micro, 0.6875rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-accent, #35A248);
+  color: #35A248; /* Brand Green — pillar label only */
+  margin: 0;
 }
 
 .bento-hero-h1 {
   font-family: var(--font-primary, 'Lato', sans-serif);
-  font-size: var(--type-display, clamp(2.25rem, 3.8vw, 3.25rem));
+  font-size: var(--type-display, clamp(2.5rem, 4.5vw, 3.75rem));
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.0;
   text-transform: uppercase;
-  color: var(--color-dark, #171E4A);
+  color: #FFFFFF;
   margin: 0;
   word-break: normal;
+  letter-spacing: -0.01em;
 }
 
 .bento-hero-sub {
   font-family: var(--font-primary, 'Lato', sans-serif);
   font-size: var(--type-body, 0.9375rem);
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(23, 30, 74, 0.8);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
-  max-width: 540px;
+  max-width: 500px;
 }
 
 .bento-hero-actions {
   display: flex;
   align-items: center;
   gap: var(--space-2, 16px);
-  margin-top: auto;
+  padding-top: var(--space-1, 8px);
 }
 
-/* Secondary Side Card (Off-white context / proof card) */
+/* ==========================================================================
+   RIGHT: Discipline / Proof Column
+   ========================================================================== */
+
 .bento-hero-side {
-  background: var(--color-bg, #F7F4ED);
-  border: 1px solid rgba(23, 30, 74, 0.12);
-  border-radius: var(--radius-lg, 24px);
-  padding: clamp(24px, 3.5vw, 40px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-3, 24px);
-  box-shadow: 0 4px 16px rgba(23, 30, 74, 0.02);
+  padding-left: clamp(24px, 4vw, 48px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  min-height: 200px;
+  /* No background, no card border, no shadow — lives on the same Navy field */
 }
 
 .bento-side-label {
   font-family: var(--font-primary, 'Lato', sans-serif);
   font-size: var(--type-micro, 0.6875rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(23, 30, 74, 0.6);
+  color: rgba(255, 255, 255, 0.45);
   padding-bottom: var(--space-1, 8px);
-  border-bottom: 1px solid rgba(23, 30, 74, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .bento-tag-cloud {
@@ -111,55 +114,64 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: var(--radius-pill, 40px);
-  background: #FFFFFF;
-  border: 1px solid rgba(23, 30, 74, 0.12);
-  color: var(--color-dark, #171E4A);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
   white-space: nowrap;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  cursor: default;
 }
 
 .bento-tag:hover {
-  border-color: var(--color-accent, #35A248);
-  color: var(--color-accent, #35A248);
+  border-color: #35A248;
+  color: #35A248;
+  background: rgba(53, 162, 72, 0.08);
 }
 
 .bento-proof-note {
   display: flex;
   align-items: center;
-  gap: var(--space-1, 8px);
+  gap: 10px;
   font-family: var(--font-primary, 'Lato', sans-serif);
   font-size: var(--type-micro, 0.6875rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent, #35A248);
+  color: #35A248;
   padding-top: var(--space-2, 16px);
-  border-top: 1px solid rgba(23, 30, 74, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .bento-proof-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent, #35A248);
+  background: #35A248;
   display: inline-block;
+  flex-shrink: 0;
 }
 
-/* Responsive Stack */
+/* ==========================================================================
+   RESPONSIVE — Mobile: single column, side loses vertical divider
+   ========================================================================== */
 @media (max-width: 900px) {
   .bento-hero-section {
-    padding: clamp(5rem, 10vh, 6.5rem) var(--space-2, 16px) var(--space-4, 32px);
+    padding: clamp(5.5rem, 12vh, 7rem) var(--space-2, 20px) clamp(3rem, 6vh, 4rem);
   }
 
   .bento-hero-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-3, 24px);
+    gap: var(--space-4, 32px);
   }
 
-  .bento-hero-main,
   .bento-hero-side {
-    padding: var(--space-3, 24px);
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: var(--space-3, 24px);
+    min-height: auto;
   }
 }
+

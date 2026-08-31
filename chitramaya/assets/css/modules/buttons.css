@@ -61,6 +61,31 @@
   background: var(--color-dark, #171E4A);
 }
 
+/* ── CONTEXT: .btn-primary inside the Navy Bento Hero ────────────────────── */
+/* On dark Navy field: green-filled pill, white text, Navy icon on hover.     */
+.bento-hero-section .btn-primary {
+  background: #35A248;
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(53, 162, 72, 0.25);
+}
+
+.bento-hero-section .btn-primary:hover {
+  background: #2c8c3e;
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 6px 28px rgba(53, 162, 72, 0.35);
+}
+
+.bento-hero-section .btn-primary .btn-primary-icon {
+  background: rgba(0, 0, 0, 0.15);
+  color: #FFFFFF;
+}
+
+.bento-hero-section .btn-primary:hover .btn-primary-icon {
+  background: rgba(0, 0, 0, 0.25);
+}
+
 /* ── TYPE 2: SCROLL / ANCHOR CTA ─────────────────────────────────────────── */
 .btn-scroll {
   background: var(--color-dark, #171E4A);
