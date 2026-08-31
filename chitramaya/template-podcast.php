@@ -19,22 +19,45 @@
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION (NO PHOTOS) -->
-  <section class="corp-hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
-
-    <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Your ideas deserve<br>better than a phone camera.</h1>
+  <!-- COMPACT BENTO HERO -->
+  <section class="bento-hero-section">
+    <div class="bento-hero-grid">
       
-      <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">We set up the room. You bring the conversation. We handle everything from the first frame to the final cut.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Let's record something worth sharing.
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+      <!-- Primary Action Card -->
+      <div class="bento-hero-main">
+        <div class="bento-hero-header">
+          <span class="bento-hero-badge">— 05 / THALAM PODCAST & PRODUCTION</span>
+          <h1 class="bento-hero-h1">Your ideas deserve<br>better than a phone camera.</h1>
+          <p class="bento-hero-sub">We set up the room. You bring the conversation. One good story becomes a month of high-impact content.</p>
+        </div>
+        <div class="bento-hero-actions">
+          <a href="#book" class="btn-primary" data-trigger="booking">
+            Let's record something worth sharing.
+            <span class="btn-primary-icon">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
+
+      <!-- Secondary Discipline Proof Card -->
+      <div class="bento-hero-side">
+        <div>
+          <div class="bento-side-label">Thalam Studio Specs</div>
+          <div class="bento-tag-cloud" style="margin-top: 16px;">
+            <span class="bento-tag">Multi-Camera 4K</span>
+            <span class="bento-tag">Shure Audio Suite</span>
+            <span class="bento-tag">Acoustic Treated</span>
+            <span class="bento-tag">Shorts & Reels Cut</span>
+            <span class="bento-tag">Live Switcher</span>
+          </div>
+        </div>
+        <div class="bento-proof-note">
+          <span class="bento-proof-dot"></span>
+          <span>Full Production Hub · Trichy Facility</span>
+        </div>
+      </div>
+
     </div>
   </section>
 

@@ -19,22 +19,45 @@
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION WITH NO PHOTOS -->
-  <section class="corp-hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
-
-    <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Brand<br>Design</h1>
+  <!-- COMPACT BENTO HERO -->
+  <section class="bento-hero-section">
+    <div class="bento-hero-grid">
       
-      <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Identity engineered for impact. We build visual systems that command attention and define your core.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Commission a Project
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+      <!-- Primary Action Card -->
+      <div class="bento-hero-main">
+        <div class="bento-hero-header">
+          <span class="bento-hero-badge">— 04 / BRAND DESIGN & VISUAL DIRECTION</span>
+          <h1 class="bento-hero-h1">Brand design<br>with a pulse.</h1>
+          <p class="bento-hero-sub">We build the visual identity systems that make you unforgettable — from typography and color architecture to complete brand guidelines.</p>
+        </div>
+        <div class="bento-hero-actions">
+          <a href="#book" class="btn-primary" data-trigger="booking">
+            Commission a Project
+            <span class="btn-primary-icon">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
+
+      <!-- Secondary Discipline Proof Card -->
+      <div class="bento-hero-side">
+        <div>
+          <div class="bento-side-label">Identity Disciplines</div>
+          <div class="bento-tag-cloud" style="margin-top: 16px;">
+            <span class="bento-tag">Visual Identity</span>
+            <span class="bento-tag">Logo Systems</span>
+            <span class="bento-tag">Type Architecture</span>
+            <span class="bento-tag">Brand Books</span>
+            <span class="bento-tag">Collateral Design</span>
+          </div>
+        </div>
+        <div class="bento-proof-note">
+          <span class="bento-proof-dot"></span>
+          <span>Scalable Identity Systems · Digital & Print</span>
+        </div>
+      </div>
+
     </div>
   </section>
 

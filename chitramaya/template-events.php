@@ -19,22 +19,45 @@
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION (NO PHOTOS) -->
-  <section class="corp-hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
-
-    <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">The moments<br>people don't forget.</h1>
+  <!-- COMPACT BENTO HERO -->
+  <section class="bento-hero-section">
+    <div class="bento-hero-grid">
       
-      <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Tell us about your day.
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+      <!-- Primary Action Card -->
+      <div class="bento-hero-main">
+        <div class="bento-hero-header">
+          <span class="bento-hero-badge">— 03 / EVENTS & HERITAGE PORTRAITURE</span>
+          <h1 class="bento-hero-h1">The moments<br>people don't forget.</h1>
+          <p class="bento-hero-sub">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
+        </div>
+        <div class="bento-hero-actions">
+          <a href="#book" class="btn-primary" data-trigger="booking">
+            Tell us about your day.
+            <span class="btn-primary-icon">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
+
+      <!-- Secondary Discipline Proof Card -->
+      <div class="bento-hero-side">
+        <div>
+          <div class="bento-side-label">Session Disciplines</div>
+          <div class="bento-tag-cloud" style="margin-top: 16px;">
+            <span class="bento-tag">Family Heritage</span>
+            <span class="bento-tag">Weddings</span>
+            <span class="bento-tag">Baby & Newborn</span>
+            <span class="bento-tag">Maternity Art</span>
+            <span class="bento-tag">Milestone Days</span>
+          </div>
+        </div>
+        <div class="bento-proof-note">
+          <span class="bento-proof-dot"></span>
+          <span>Documentary Style · Authentic Moments</span>
+        </div>
+      </div>
+
     </div>
   </section>
 

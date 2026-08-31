@@ -19,22 +19,46 @@
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>
 
-  <!-- HERO SECTION WITH NO PHOTOS -->
-  <section class="corp-hero section-illusion-wrapper">
-    <div class="graphic-orb orb-lg color-cyan orb-pos-tl"></div>
-    <div class="graphic-orb orb-md color-magenta orb-pos-br"></div>
-
-    <div class="corp-hero-content">
-      <h1 class="corp-hero-h1">Make it look like<br>it means something.</h1>
+  <!-- COMPACT BENTO HERO -->
+  <section class="bento-hero-section">
+    <div class="bento-hero-grid">
       
-      <div class="corp-hero-meta">
-        <p class="corp-hero-sub brut-protect-overflow">Products, spaces, food, fashion. We shoot what you're selling and make people actually want it.</p>
-        <a href="#book" class="btn-compound" data-trigger="booking">Make your next launch visual.
-  <div class="btn-compound-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</a>
+      <!-- Primary Action Card -->
+      <div class="bento-hero-main">
+        <div class="bento-hero-header">
+          <span class="bento-hero-badge">— 01 / COMMERCIAL & BRAND PHOTOGRAPHY</span>
+          <h1 class="bento-hero-h1">Make it look like<br>it means something.</h1>
+          <p class="bento-hero-sub">Products, spaces, food, fashion. We shoot what you're selling and make people actually want it.</p>
+        </div>
+        <div class="bento-hero-actions">
+          <a href="#book" class="btn-primary" data-trigger="booking">
+            Make your next launch visual.
+            <span class="btn-primary-icon">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
+
+      <!-- Secondary Discipline Proof Card -->
+      <div class="bento-hero-side">
+        <div>
+          <div class="bento-side-label">Studio Disciplines</div>
+          <div class="bento-tag-cloud" style="margin-top: 16px;">
+            <span class="bento-tag">Products</span>
+            <span class="bento-tag">Architecture</span>
+            <span class="bento-tag">Fashion</span>
+            <span class="bento-tag">Food & Beverage</span>
+            <span class="bento-tag">E-Commerce</span>
+            <span class="bento-tag">OOH Campaigns</span>
+          </div>
+        </div>
+        <div class="bento-proof-note">
+          <span class="bento-proof-dot"></span>
+          <span>Trichy & Location · High-Res Master Assets</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
