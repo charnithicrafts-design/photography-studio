@@ -17,3 +17,10 @@ import-db.php
 unzip.php
 chitramaya_dump_live.sql
 events.json
+
+# Dependencies & Build Artifacts
+node_modules/
+**/node_modules/
+.npm
+npm-debug.log*
+yarn-error.log*
