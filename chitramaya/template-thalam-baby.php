@@ -25,15 +25,17 @@
     <!-- =====================================================
          SECTION 0: BENTO HERO
          ===================================================== -->
-    <section class="hero-bento">
-      <div class="bento-hero-wrapper">
+    <section class="bento-hero-section">
+      <div class="bento-hero-grid">
         <div class="bento-hero-main">
-          <div class="bento-hero-label">[ FIRST YEAR ]</div>
-          <h1 class="bento-hero-title">They Grow So<br>Fast.</h1>
-          <p class="bento-hero-desc">
-            From newborn curled-up sleep to the first messy cake smash. We gently archive your child's fleeting early seasons with unhurried patience.
-          </p>
-          <div class="bento-hero-cta">
+          <div class="bento-hero-header">
+            <span class="bento-hero-badge">— FIRST YEAR</span>
+            <h1 class="bento-hero-h1">They Grow So<br>Fast.</h1>
+            <p class="bento-hero-sub">
+              From newborn curled-up sleep to the first messy cake smash. We gently archive your child's fleeting early seasons with unhurried patience.
+            </p>
+          </div>
+          <div class="bento-hero-actions">
             <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Baby%20or%20Newborn%20Session%20with%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
               Book a session
               <span class="btn-primary-icon">

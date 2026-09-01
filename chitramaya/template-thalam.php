@@ -65,15 +65,17 @@
     <!-- =====================================================
          SECTION 0: BENTO HERO
          ===================================================== -->
-    <section class="hero-bento">
-      <div class="bento-hero-wrapper">
+    <section class="bento-hero-section">
+      <div class="bento-hero-grid">
         <div class="bento-hero-main">
-          <div class="bento-hero-label">[ PRODUCTION FACILITY ]</div>
-          <h1 class="bento-hero-title">The Space for<br>the Story.</h1>
-          <p class="bento-hero-desc">
-            A purpose-built 2,400 sq ft production environment in Trichy engineered for broadcast audio, precision lighting, commercial sets, and portraiture.
-          </p>
-          <div class="bento-hero-cta">
+          <div class="bento-hero-header">
+            <span class="bento-hero-badge">— PRODUCTION FACILITY</span>
+            <h1 class="bento-hero-h1">The Space for<br>the Story.</h1>
+            <p class="bento-hero-sub">
+              A purpose-built 2,400 sq ft production environment in Trichy engineered for broadcast audio, precision lighting, commercial sets, and portraiture.
+            </p>
+          </div>
+          <div class="bento-hero-actions">
             <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20tour%20and%20book%20a%20session%20at%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
               Tour Thalam Studio
               <span class="btn-primary-icon">

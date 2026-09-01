@@ -25,15 +25,17 @@
     <!-- =====================================================
          SECTION 0: BENTO HERO
          ===================================================== -->
-    <section class="hero-bento">
-      <div class="bento-hero-wrapper">
+    <section class="bento-hero-section">
+      <div class="bento-hero-grid">
         <div class="bento-hero-main">
-          <div class="bento-hero-label">[ BUMP TO BABY ]</div>
-          <h1 class="bento-hero-title">Before Everything<br>Changes.</h1>
-          <p class="bento-hero-desc">
-            Quiet, beautiful portraits documenting the wait. We preserve the holy, fleeting season of pregnancy with fine-art dignity.
-          </p>
-          <div class="bento-hero-cta">
+          <div class="bento-hero-header">
+            <span class="bento-hero-badge">— BUMP TO BABY</span>
+            <h1 class="bento-hero-h1">Before Everything<br>Changes.</h1>
+            <p class="bento-hero-sub">
+              Quiet, beautiful portraits documenting the wait. We preserve the holy, fleeting season of pregnancy with fine-art dignity.
+            </p>
+          </div>
+          <div class="bento-hero-actions">
             <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Maternity%20Session%20with%20Chithramaya." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
               Book a session
               <span class="btn-primary-icon">
