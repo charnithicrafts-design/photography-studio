@@ -54,7 +54,7 @@
   </script>
 
   <?php wp_head(); ?>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-thalam.css'); ?>">
 </head>
 <body class="thalam-page">
 

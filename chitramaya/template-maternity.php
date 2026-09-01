@@ -14,7 +14,7 @@
   <meta name="description" content="Quiet, beautiful maternity and bump-to-baby portraiture in Trichy. Archiving the sacred wait and the miraculous arrival.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/maternity')); ?>">
   <?php wp_head(); ?>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-maternity.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-maternity.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-maternity.css'); ?>">
 </head>
 <body class="maternity-page">
 
