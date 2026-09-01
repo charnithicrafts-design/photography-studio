@@ -60,18 +60,11 @@ When operating across this codebase, the AI assumes the specialized perspectives
 │ Chithramaya Red   │ #9B1C26   │ Wordmark accent, emotional punch       │
 │ Off-White Canvas  │ #F7F4ED   │ Primary website canvas & background    │
 │ Pure White        │ #FFFFFF   │ Elevated cards, crisp surfaces         │
-├───────────────────┴───────────┴────────────────────────────────────────┤
-│                     THALAM STUDIO PALETTE (FACILITY ONLY)              │
-├───────────────────┬───────────┬────────────────────────────────────────┤
-│ Thalam Charcoal   │ #1C1917   │ Dark studio canvas (Thalam pages only) │
-│ Thalam Camel      │ #A96F44   │ Warm leather / baby portrait accent    │
-│ Thalam Golden     │ #E3DAC9   │ Warm interior ambient tone             │
-│ Thalam Stone      │ #57534E   │ Muted industrial technical labels      │
 └───────────────────┴───────────┴────────────────────────────────────────┘
 ```
 
 ### 🚫 Prohibitions & Anti-Patterns
-1. **NO Solid Black Canvas:** Never use `#000000`, `#111111`, or `#1C1917` as the default background for main Chithramaya pages. The canvas is **Off-White (`#F7F4ED`)**. The dark duality column uses **Brand Navy (`#171E4A`)**.
+1. **NO Solid Black Canvas:** Never use `#000000` or `#111111` as the default background. The canvas is **Off-White (`#F7F4ED`)**. The dark duality column uses **Brand Navy (`#171E4A`)**.
 2. **NO Unapproved Fonts:** Only **Lato** (Primary/Body), **Roboto Slab** (Editorial/Display), and **Noto Sans Tamil** (Tamil copy) are permitted. Monospace fonts (e.g., IBM Plex Mono) are strictly forbidden in client-facing layouts.
 3. **NO Inverted Contrast:** Never place white text (`var(--text-white)` or `rgba(255,255,255,*)`) on light or off-white backgrounds. Every text element must be checked against its direct parent container's computed background.
 4. **NO Passive / Corporate Copy:** Never write *"We offer comprehensive solutions..."* or *"Empowering B2B authority..."*. Write active, human prose: *"We photograph the people behind your brand."*
