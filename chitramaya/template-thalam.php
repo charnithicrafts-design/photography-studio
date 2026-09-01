@@ -314,84 +314,39 @@
     </section>
 
     <!-- =====================================================
-         SECTION 4: VERIFIED TELEMETRY & KPIS
+         SECTION 4: VERIFIED TELEMETRY & TRUST
          ===================================================== -->
     <section class="thalam-trust-section">
-      <div class="thalam-trust-grid">
-        
-        <!-- Left: Testimonials -->
-        <div class="thalam-trust-quotes">
-          <div class="thalam-section-label">[ VERIFIED CLIENT TELEMETRY ]</div>
-          <h2 class="thalam-trust-title">What creators and families experience.</h2>
-          
-          <div class="thalam-testimonials">
-            <blockquote class="testi-card">
-              <p class="testi-quote">"We walked in with a rough concept and walked out with a national-grade campaign. The way they manipulate light and space in that studio makes the impossible look effortless."</p>
-              <cite class="testi-author">— Commercial Ad Client</cite>
-            </blockquote>
-            <blockquote class="testi-card">
-              <p class="testi-quote">"As a new mother, I was so anxious. But the studio was a warm, quiet sanctuary. I didn't just get beautiful photos; I felt completely safe and cared for."</p>
-              <cite class="testi-author">— Maternity &amp; Newborn Client</cite>
-            </blockquote>
-            <blockquote class="testi-card">
-              <p class="testi-quote">"When we saw the gallery, we didn't just see pictures; we relived the exact emotions of that day. They gave us our memories back, preserved in breathtaking cinematic quality."</p>
-              <cite class="testi-author">— Heritage Portrait Client</cite>
-            </blockquote>
-          </div>
-        </div>
-
-        <!-- Right: Studio KPIs -->
-        <div class="thalam-kpis">
-          <div class="kpi-card">
-            <div class="kpi-val">Prime<span>.</span></div>
-            <div class="kpi-label">Thillai Nagar, Trichy</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">2.4k<span>sq ft</span></div>
-            <div class="kpi-label">Shooting Stage &amp; Lounge</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">100<span>%</span></div>
-            <div class="kpi-label">Controlled Light &amp; Acoustics</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">12<span>yr</span></div>
-            <div class="kpi-label">Production Pedigree</div>
-          </div>
-        </div>
-
+      <div class="thalam-trust-header">
+        <div class="thalam-section-label">[ VERIFIED CLIENT TELEMETRY ]</div>
+        <h2 class="thalam-trust-title">What creators and families experience.</h2>
+      </div>
+      
+      <div class="thalam-testimonials-grid">
+        <blockquote class="testi-card">
+          <p class="testi-quote">"We walked in with a rough concept and walked out with a national-grade campaign. The way they manipulate light and space in that studio makes the impossible look effortless."</p>
+          <cite class="testi-author">— Commercial Ad Client</cite>
+        </blockquote>
+        <blockquote class="testi-card">
+          <p class="testi-quote">"As a new mother, I was so anxious. But the studio was a warm, quiet sanctuary. I didn't just get beautiful photos; I felt completely safe and cared for."</p>
+          <cite class="testi-author">— Maternity &amp; Newborn Client</cite>
+        </blockquote>
+        <blockquote class="testi-card">
+          <p class="testi-quote">"When we saw the gallery, we didn't just see pictures; we relived the exact emotions of that day. They gave us our memories back, preserved in breathtaking cinematic quality."</p>
+          <cite class="testi-author">— Heritage Portrait Client</cite>
+        </blockquote>
       </div>
     </section>
 
     <!-- =====================================================
-         SECTION 5: STUDIO INVITATION & BOOKING BRIEF
-         ===================================================== -->
-    <section class="thalam-booking-section" id="booking">
-      <div class="thalam-booking-card">
-        <div class="thalam-booking-content">
-          <div class="thalam-section-label" style="color: var(--color-yellow);">[ STEP INTO THE SPACE ]</div>
-          <h2 class="thalam-booking-title">Ready to bring your project into the room?</h2>
-          <p class="thalam-booking-desc">
-            Tell us about your shoot date, concept, or session needs. We reply within 4 business hours with availability, crew allocation, and a formal quote. No pressure, no obligations.
-          </p>
-          <div class="thalam-booking-actions">
-            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20book%20a%20production%20session%20at%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-              WhatsApp Our Studio Desk →
-            </a>
-            <a href="#book" class="btn-secondary-pill" data-trigger="booking">
-              Open Booking Form
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         SECTION 6: CAMPAIGN YELLOW PRE-FOOTER
+         SECTION 5: CAMPAIGN YELLOW PRE-FOOTER (SINGLE TERMINAL CTA)
          ===================================================== -->
     <section class="global-cta">
-      <h2 class="global-cta-title brut-protect-overflow">Come see the space.</h2>
-      <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20tour%20Thalam%20Studio%20in%20Trichy." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
+      <h2 class="global-cta-title brut-protect-overflow">Ready to bring your project into the room?</h2>
+      <p class="global-cta-sub">
+        Tell us about your shoot date, commercial brief, or portrait session. We reply within 4 business hours with availability, crew allocation, and a formal quote.
+      </p>
+      <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20tour%20and%20book%20a%20session%20at%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
         Tour Thalam Studio
         <span class="btn-primary-icon">
           <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

@@ -207,37 +207,38 @@
   max-width: 1300px;
   margin: 0 auto;
 }
-.thalam-trust-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
-  align-items: start;
+.thalam-trust-header {
+  margin-bottom: 40px;
 }
 .thalam-trust-title {
   font-family: var(--font-serif, 'Roboto Slab', serif);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   color: var(--color-dark, #171E4A);
-  margin: 0 0 32px;
+  margin: 0;
+  line-height: 1.2;
 }
-.thalam-testimonials {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.thalam-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
 }
 .testi-card {
   background: var(--color-white, #FFFFFF);
-  padding: 28px 32px;
+  padding: 36px 32px;
   border-radius: var(--radius-md, 16px);
   margin: 0;
   border-left: 4px solid var(--color-accent, #35A248);
-  box-shadow: 0 4px 20px rgba(23, 30, 74, 0.04);
+  box-shadow: 0 4px 24px rgba(23, 30, 74, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .testi-quote {
   font-family: var(--font-primary);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   color: var(--color-dark, #171E4A);
-  margin: 0 0 12px;
+  margin: 0 0 20px;
   font-style: italic;
 }
 .testi-author {
@@ -250,115 +251,34 @@
   display: block;
 }
 
-.thalam-kpis {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.kpi-card {
-  background: var(--color-dark, #171E4A);
-  color: #FFFFFF;
-  padding: 32px;
-  border-radius: var(--radius-md, 16px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.kpi-val {
-  font-family: var(--font-serif, 'Roboto Slab', serif);
-  font-size: 2.75rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--color-yellow, #FAB417);
-  margin-bottom: 8px;
-}
-.kpi-val span {
-  font-size: 1.25rem;
-  color: #FFFFFF;
-  margin-left: 4px;
-}
-.kpi-label {
-  font-family: var(--font-primary);
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.8;
-}
-
-/* Booking Section */
-.thalam-booking-section {
-  padding: 40px 5% 80px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.thalam-booking-card {
-  background: var(--color-dark, #171E4A);
-  color: #FFFFFF;
-  border-radius: var(--radius-lg, 24px);
-  padding: 60px 48px;
-  box-shadow: 0 16px 48px rgba(23, 30, 74, 0.15);
-}
-.thalam-booking-content {
-  max-width: 800px;
-}
-.thalam-booking-title {
-  font-family: var(--font-serif, 'Roboto Slab', serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  color: #FFFFFF;
-  line-height: 1.15;
-  margin: 16px 0;
-}
-.thalam-booking-desc {
-  font-family: var(--font-primary);
-  font-size: 1.125rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin: 0 0 32px;
-}
-.thalam-booking-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-}
-.btn-whatsapp {
-  background-color: var(--color-accent, #35A248);
-  color: #FFFFFF;
-  padding: 16px 32px;
-  border-radius: 100px;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: var(--font-primary);
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(53, 162, 72, 0.4);
-}
-.btn-secondary-pill {
-  background: transparent;
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 16px 28px;
-  border-radius: 100px;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: var(--font-primary);
-  transition: border-color 0.25s, background 0.25s;
-}
-.btn-secondary-pill:hover {
-  border-color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
-}
-
 /* Campaign Yellow Pre-Footer */
 .global-cta {
-  background-color: var(--color-yellow, #FAB417);
+  padding: clamp(64px, 8vw, 96px) var(--space-4, 32px);
+  text-align: center;
+  background: var(--color-yellow, #FAB417);
+  color: var(--color-dark, #171E4A);
+  border-radius: var(--radius-lg, 24px);
+  max-width: 1300px;
+  margin: 60px auto 100px;
+  box-shadow: 0 12px 40px rgba(250, 180, 23, 0.18);
 }
 .global-cta .global-cta-title {
+  font-size: var(--type-display, clamp(2rem, 4vw, 3.25rem));
+  font-family: var(--font-primary, "Lato", sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
   color: var(--color-dark, #171E4A);
+  margin-bottom: var(--space-3, 20px);
+  line-height: 1.08;
+}
+.global-cta-sub {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-dark, #171E4A);
+  opacity: 0.85;
+  max-width: 680px;
+  margin: 0 auto 36px;
 }
 
 /* Responsive */
