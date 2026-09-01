@@ -208,7 +208,7 @@
                     <p class="manifesto-desc">
                         A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
                     </p>
-                    <a href="/thalam-landing.html" class="btn-primary">Step into Thalam &rarr;</a>
+                    <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
                 </div>
             </div>
         </section>
