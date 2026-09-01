@@ -158,10 +158,32 @@
 
 /* Campaign Yellow Pre-Footer */
 .global-cta {
-  background-color: var(--color-yellow, #FAB417);
+  padding: clamp(64px, 8vw, 96px) var(--space-4, 32px);
+  text-align: center;
+  background: var(--color-yellow, #FAB417);
+  color: var(--color-dark, #171E4A);
+  border-radius: var(--radius-lg, 24px);
+  max-width: 1300px;
+  margin: 80px auto 100px;
+  box-shadow: 0 12px 40px rgba(250, 180, 23, 0.18);
 }
 .global-cta .global-cta-title {
+  font-size: var(--type-display, clamp(2rem, 4vw, 3.25rem));
+  font-family: var(--font-primary, "Lato", sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
   color: var(--color-dark, #171E4A);
+  margin-bottom: var(--space-3, 20px);
+  line-height: 1.08;
+}
+.global-cta-sub {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-dark, #171E4A);
+  opacity: 0.85;
+  max-width: 680px;
+  margin: 0 auto 36px;
 }
 
 @keyframes fadeIn {

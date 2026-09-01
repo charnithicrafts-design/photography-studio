@@ -158,6 +158,9 @@
          ===================================================== -->
     <section class="global-cta">
       <h2 class="global-cta-title brut-protect-overflow">Capture the first chapter.</h2>
+      <p class="global-cta-sub">
+        Gentle, unhurried baby and milestone sessions in our climate-controlled studio or at home.
+      </p>
       <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20Baby%20or%20Newborn%20shoot." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
         Book a session
         <span class="btn-primary-icon">

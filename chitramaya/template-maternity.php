@@ -194,6 +194,9 @@
          ===================================================== -->
     <section class="global-cta">
       <h2 class="global-cta-title brut-protect-overflow">Let's document the wait.</h2>
+      <p class="global-cta-sub">
+        Quiet, sculptural portraits honoring your journey before everything changes.
+      </p>
       <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20Maternity%20portrait%20session." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
         Book a session
         <span class="btn-primary-icon">
