@@ -42,6 +42,10 @@
   padding: 0.5rem; 
   outline: none; 
   font-weight: 700; 
+  min-height: var(--min-touch-target, 48px); 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: flex-end; 
   transition: transform 0.2s, opacity 0.2s; 
 }
 .nav-toggle:hover { 
@@ -68,7 +72,7 @@
 }
 
 .c-nav-container { 
-  padding: clamp(8rem, 20vh, 12rem) var(--space-4, 32px) var(--space-8, 64px); 
+  padding: clamp(8rem, 20vh, 12rem) calc(var(--space-4, 32px) + 0.5rem) var(--space-8, 64px) var(--space-4, 32px); 
   display: flex; 
   flex-direction: column; 
   align-items: flex-end; 
@@ -76,9 +80,18 @@
   min-height: 100vh; 
   position: relative; 
   gap: var(--space-4, 32px); 
-  max-width: 1200px; 
-  margin: 0 auto; 
   width: 100%; 
+  box-sizing: border-box; 
+}
+
+@media (min-width: 992px) {
+  .site-header {
+    padding: var(--space-3, 24px) var(--space-6, 48px);
+  }
+  .c-nav-container {
+    padding-right: calc(var(--space-6, 48px) + 0.5rem);
+    padding-left: var(--space-6, 48px);
+  }
 }
 
 /* Core Links & Accordion Toggles — Display Scale (32-40pt / Lato Black 900) */
