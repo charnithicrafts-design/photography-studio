@@ -199,16 +199,16 @@
                     </p>
                 </article>
 
-                <!-- DARK INVERTED MANIFESTO BLOCK — dramatic contrast inside white column -->
-                <div class="manifesto-block">
-                    <div class="manifesto-label">[ STUDIO DIRECTIVE ]</div>
+                <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
+                <div class="manifesto-block thalam-billboard">
+                    <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
                     <div class="manifesto-quote">
-                        One studio.<br>Two disciplines.<br>Every frame has a purpose.
+                        We set the room.<br>You bring the story.
                     </div>
-                    <div class="manifesto-spec-row">
-                        <span>FRAME / 35MM</span>
-                        <span>ILLUSION / ACTIVE</span>
-                    </div>
+                    <p class="manifesto-desc">
+                        A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
+                    </p>
+                    <a href="/thalam-landing.html" class="btn-primary">Step into Thalam &rarr;</a>
                 </div>
             </div>
         </section>

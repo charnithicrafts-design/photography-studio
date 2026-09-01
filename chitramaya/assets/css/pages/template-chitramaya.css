@@ -621,19 +621,38 @@
                 font-weight: 400; /* Regular weight for quotes */
                 line-height: 1.1;
                 color: var(--color-dark, #171E4A);
+                margin-bottom: 24px;
+            }
+            .manifesto-desc {
+                font-family: var(--font-primary);
+                font-size: 1.125rem;
+                line-height: 1.6;
+                color: var(--color-dark, #171E4A);
                 margin-bottom: 32px;
                 flex: 1;
+                opacity: 0.85;
+                position: relative;
+                z-index: 2;
             }
-            .manifesto-spec-row {
-                display: flex;
-                justify-content: space-between;
-                font-family: var(--mono);
-                font-size: var(--type-micro);
-                letter-spacing: 0.12em;
-                color: var(--color-dark, #171E4A);
-                opacity: 0.6;
-                border-top: 1px solid rgba(23, 30, 74, 0.12);
-                padding-top: 16px;
+            .thalam-billboard .btn-primary {
+                align-self: flex-start;
+                background-color: var(--color-dark, #171E4A);
+                color: var(--color-white, #FFFFFF);
+                padding: 14px 28px;
+                border-radius: 100px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.875rem;
+                font-family: var(--font-primary);
+                display: inline-flex;
+                align-items: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                z-index: 2;
+            }
+            .thalam-billboard .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(23, 30, 74, 0.25);
             }
 
             /* =====================================================
