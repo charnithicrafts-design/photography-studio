@@ -16,6 +16,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * -------------------------------------------------------------------------
+ * STAGING ENVIRONMENT GUARD
+ * -------------------------------------------------------------------------
+ * If this request is on the staging domain (chithramaya.charnithi.com),
+ * inject a hard noindex/nofollow meta tag and bail out of ALL SEO output.
+ * This prevents the staging site from being indexed, appearing in SERPs,
+ * or polluting the schema entity graph with duplicate structured data.
+ * -------------------------------------------------------------------------
+ */
+define( 'CHITRAMAYA_STAGING_HOST', 'chithramaya.charnithi.com' );
+
+function chitramaya_is_staging() {
+    $host = isset( $_SERVER['HTTP_HOST'] ) ? strtolower( trim( $_SERVER['HTTP_HOST'] ) ) : '';
+    return ( $host === CHITRAMAYA_STAGING_HOST );
+}
+
+if ( chitramaya_is_staging() ) {
+    // Priority 0 — fires before any other wp_head output
+    add_action( 'wp_head', function() {
+        echo "\n  <!-- STAGING ENVIRONMENT: Search engine indexing is disabled -->\n";
+        echo "  <meta name=\"robots\" content=\"noindex, nofollow, noarchive, nosnippet\">\n";
+        echo "  <meta name=\"googlebot\" content=\"noindex, nofollow\">\n";
+    }, 0 );
+
+    // Bail — do not register any SEO, schema, or sitemap hooks below
+    return;
+}
+
+/**
  * Get current page SEO metadata mapping based on template or slug.
  */
 function chitramaya_get_seo_context() {
