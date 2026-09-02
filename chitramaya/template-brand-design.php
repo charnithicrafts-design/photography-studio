@@ -11,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand Design — Chithramaya</title>
   <meta name="description" content="Identity engineered for impact. We build visual systems that command attention and define your core.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/brand-design')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/brand-design/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-brand-design.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-brand-design.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-brand-design.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

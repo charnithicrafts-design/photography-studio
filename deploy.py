@@ -50,6 +50,10 @@ with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
         zipf.write('.htaccess', '.htaccess')
         print("Included .htaccess configuration file.")
 
+    if os.path.exists('robots.txt'):
+        zipf.write('robots.txt', 'robots.txt')
+        print("Included robots.txt configuration file.")
+
     dirs_to_zip = ['chitramaya']
     for d in dirs_to_zip:
         for root, dirs, files in os.walk(d):

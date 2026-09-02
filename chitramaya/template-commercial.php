@@ -11,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commercial Photography — Chithramaya</title>
   <meta name="description" content="Commercial photography from Chithramaya Creatives — turn what you sell into something people actually want to look at.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/commercial')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/commercial/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-commercial.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-commercial.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-commercial.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

@@ -11,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand & Corporate Photography — Chithramaya</title>
   <meta name="description" content="Brand and corporate photography from Chithramaya Creatives — making the people, spaces, and products behind your brand look like they mean it.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/corporate-brand/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-corporate.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-corporate.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-corporate.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

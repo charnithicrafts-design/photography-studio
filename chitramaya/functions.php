@@ -188,6 +188,9 @@ require_once get_stylesheet_directory() . '/inc/acf-portfolio.php';
 require_once get_stylesheet_directory() . '/inc/cpt-leads.php';
 require_once get_stylesheet_directory() . '/inc/ajax-booking.php';
 
+// Include SEO & Structured Data Engine
+require_once get_stylesheet_directory() . '/inc/seo-engine.php';
+
 // Enqueue Global AJAX variables for Frontend
 function chitramaya_frontend_ajax() {
     // Only load the script and variables if we are on a page that uses the booking engine

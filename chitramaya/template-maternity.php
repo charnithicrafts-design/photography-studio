@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maternity &amp; Bump-to-Baby — Chithramaya</title>
   <meta name="description" content="Quiet, beautiful maternity and bump-to-baby portraiture in Trichy. Archiving the sacred wait and the miraculous arrival.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/maternity')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/maternity/')); ?>">
   <?php wp_head(); ?>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-maternity.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-maternity.css'); ?>">
 </head>

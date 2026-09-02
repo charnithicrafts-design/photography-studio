@@ -11,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Podcast & Interview — Chithramaya</title>
   <meta name="description" content="A comprehensive content creation environment combining pristine audio, cinematic multi-camera visuals, and cohesive branding.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/podcast-interview')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/podcast-interview/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-podcast.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-podcast.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-podcast.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

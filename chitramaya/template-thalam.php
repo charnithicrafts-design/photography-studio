@@ -12,47 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thalam Studio — Production Facility | Chithramaya</title>
   <meta name="description" content="Thalam Studio — Chithramaya's purpose-built 2,400 sq ft production house in Trichy for ad shoots, broadcast podcasts, commercial sets, and portraiture.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio')); ?>">
-
-  <!-- SEO: Structured Data (JSON-LD) — Local Business Entity ID Card -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Thalam Studio",
-    "image": "<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/og-thalam.jpg",
-    "@id": "<?php echo esc_url( home_url('/thalam-studio') ); ?>#business",
-    "url": "<?php echo esc_url( home_url('/thalam-studio') ); ?>",
-    "telephone": "+91-8098014123",
-    "priceRange": "$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Salai Road, Near Bombay Dyeing",
-      "addressLocality": "Tiruchirappalli",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "620018",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 10.827388663646731,
-      "longitude": 78.68519161657615
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "20:00"
-    },
-    "sameAs": [
-      "https://www.instagram.com/chithramaya_creatives/"
-    ]
-  }
-  </script>
-
+  <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio/')); ?>">
   <?php wp_head(); ?>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-thalam.css'); ?>">
 </head>

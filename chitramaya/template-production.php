@@ -12,10 +12,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Production & Brand Design — Chithramaya Creatives</title>
   <meta name="description" content="From broadcast-grade podcast production to comprehensive brand design. We architect lasting recognition.">
-  <link rel="canonical" href="<?php echo esc_url(home_url('/production-brand-design')); ?>">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/production-brand-design/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-production.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-production.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-production.css'); ?>">
 </head>
 <body>
 <?php get_template_part('template-parts/global-nav'); ?>
