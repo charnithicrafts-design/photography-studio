@@ -256,6 +256,11 @@ function chitramaya_render_schema_graph() {
         'sameAs'           => array(
             'https://instagram.com/chithramaya',
             'https://wa.me/918098014123'
+        ),
+        'hasOfferCatalog'  => array(
+            '@type' => 'OfferCatalog',
+            '@id'   => home_url( '/#services' ),
+            'name'  => 'Chithramaya Creatives — Photography & Production Services'
         )
     );
 
@@ -355,7 +360,255 @@ function chitramaya_render_schema_graph() {
 add_action( 'wp_head', 'chitramaya_render_schema_graph', 2 );
 
 /**
- * 5. XML Sitemap & Security Hardening
+ * 5. Homepage Service ItemList Schema
+ *
+ * Fires only on the homepage. Defines an ItemList of 5 core services as schema.org
+ * Service entities, linked to the PhotographyBusiness organization node.
+ * This is the primary signal Google uses to generate AI Overview service summaries.
+ */
+function chitramaya_render_service_itemlist() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $site_url  = home_url( '/' );
+    $theme_uri = get_stylesheet_directory_uri();
+
+    $services = array(
+        array(
+            'position'    => 1,
+            'id'          => home_url( '/commercial/#service' ),
+            'name'        => 'Commercial & Brand Photography',
+            'description' => 'Products, spaces, food, fashion. We shoot what you\'re selling and make people actually want it. On-location across Tamil Nadu and at Thalam Studio.',
+            'url'         => home_url( '/commercial/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Commercial Photography',
+        ),
+        array(
+            'position'    => 2,
+            'id'          => home_url( '/corporate-brand/#service' ),
+            'name'        => 'Corporate & Brand Identity Photography',
+            'description' => 'We photograph the people behind your brand — executive portraits, corporate culture, and workplace visual authority that builds credibility.',
+            'url'         => home_url( '/corporate-brand/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-005.jpg',
+            'serviceType' => 'Corporate & Executive Photography',
+        ),
+        array(
+            'position'    => 3,
+            'id'          => home_url( '/events-portrait/#service' ),
+            'name'        => 'Events & Heritage Portraiture',
+            'description' => 'The moments you\'ll look at in 20 years and remember exactly how it felt. Unobtrusive documentary photography for weddings, milestones, and family heritage.',
+            'url'         => home_url( '/events-portrait/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-035.jpg',
+            'serviceType' => 'Events & Heritage Photography',
+        ),
+        array(
+            'position'    => 4,
+            'id'          => home_url( '/podcast-interview/#service' ),
+            'name'        => 'Podcast & Interview Production',
+            'description' => 'We set up the room. You bring the conversation. Broadcast-grade podcast studio with Shure SM7B audio, 4K multi-camera, and short-form video reels.',
+            'url'         => home_url( '/podcast-interview/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Podcast & Video Production',
+        ),
+        array(
+            'position'    => 5,
+            'id'          => home_url( '/brand-design/#service' ),
+            'name'        => 'Brand Design & Visual Identity Systems',
+            'description' => 'Distinctive wordmarks, typographic systems, and art direction that define your brand\'s visual authority from day one.',
+            'url'         => home_url( '/brand-design/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-010.jpg',
+            'serviceType' => 'Brand Design & Visual Identity',
+        ),
+    );
+
+    $list_items = array();
+    foreach ( $services as $svc ) {
+        $list_items[] = array(
+            '@type'    => 'ListItem',
+            'position' => $svc['position'],
+            'item'     => array(
+                '@type'       => 'Service',
+                '@id'         => $svc['id'],
+                'name'        => $svc['name'],
+                'description' => $svc['description'],
+                'url'         => $svc['url'],
+                'image'       => $svc['image'],
+                'serviceType' => $svc['serviceType'],
+                'provider'    => array( '@id' => $site_url . '#organization' ),
+                'areaServed'  => array(
+                    '@type'      => 'GeoCircle',
+                    'geoMidpoint' => array(
+                        '@type'     => 'GeoCoordinates',
+                        'latitude'  => 10.827388663646731,
+                        'longitude' => 78.68519161657615
+                    ),
+                    'geoRadius'  => '500000'
+                ),
+                'offers'      => array(
+                    '@type'              => 'Offer',
+                    'availability'       => 'https://schema.org/InStock',
+                    'priceSpecification' => array(
+                        '@type'          => 'PriceSpecification',
+                        'priceCurrency'  => 'INR',
+                        'description'    => 'Custom pricing — contact us for a tailored quote.'
+                    )
+                )
+            )
+        );
+    }
+
+    $itemlist_schema = array(
+        '@context'       => 'https://schema.org',
+        '@type'          => 'ItemList',
+        '@id'            => $site_url . '#services',
+        'name'           => 'Chithramaya Creatives — Photography & Production Services',
+        'description'    => 'Photography and production services by Chithramaya Creatives in Tiruchirappalli (Trichy), Tamil Nadu. Led by Visual Director Sriram Sridharan.',
+        'itemListOrder'  => 'https://schema.org/ItemListOrderAscending',
+        'numberOfItems'  => count( $services ),
+        'itemListElement'=> $list_items,
+    );
+
+    echo "\n  <!-- Schema.org Service ItemList — AI Overview & Rich Results -->\n";
+    echo '  <script type="application/ld+json">' . "\n";
+    echo wp_json_encode( $itemlist_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) . "\n";
+    echo "  </script>\n";
+}
+add_action( 'wp_head', 'chitramaya_render_service_itemlist', 3 );
+
+/**
+ * 6. Per-Pillar Standalone Service Schema Node
+ *
+ * Fires on each individual pillar page (not homepage). Emits a Service entity
+ * that cross-references the homepage ItemList and the PhotographyBusiness org node.
+ * This creates the full interlinked entity chain: Organization → ItemList → Service (pillar).
+ */
+function chitramaya_render_pillar_service_node() {
+    if ( is_front_page() ) {
+        return;
+    }
+
+    $c         = chitramaya_get_seo_context();
+    $theme_uri = get_stylesheet_directory_uri();
+    $site_url  = home_url( '/' );
+
+    // Map each service_id to its full Service definition
+    $service_map = array(
+        'commercial' => array(
+            'id'          => home_url( '/commercial/#service' ),
+            'name'        => 'Commercial & Brand Photography',
+            'description' => 'Products, spaces, food, fashion. We shoot what you\'re selling and make people actually want it. On-location across Tamil Nadu and at Thalam Studio, Trichy.',
+            'url'         => home_url( '/commercial/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Commercial Photography',
+        ),
+        'corporate' => array(
+            'id'          => home_url( '/corporate-brand/#service' ),
+            'name'        => 'Corporate & Brand Identity Photography',
+            'description' => 'Executive portraits, team culture documentation, and corporate visual authority engineered for credibility. On-site or at Thalam Studio.',
+            'url'         => home_url( '/corporate-brand/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-005.jpg',
+            'serviceType' => 'Corporate & Executive Photography',
+        ),
+        'events' => array(
+            'id'          => home_url( '/events-portrait/#service' ),
+            'name'        => 'Events & Heritage Portraiture',
+            'description' => 'The moments you\'ll look at in 20 years and remember exactly how it felt. Documentary wedding, milestone, and family heritage photography across India.',
+            'url'         => home_url( '/events-portrait/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-035.jpg',
+            'serviceType' => 'Events & Heritage Photography',
+        ),
+        'podcast' => array(
+            'id'          => home_url( '/podcast-interview/#service' ),
+            'name'        => 'Podcast & Interview Production',
+            'description' => 'Broadcast-grade Shure SM7B audio, 4K multi-camera angles, and short-form social video reels. Thalam Studio, Trichy.',
+            'url'         => home_url( '/podcast-interview/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Podcast & Video Production',
+        ),
+        'maternity' => array(
+            'id'          => home_url( '/maternity/#service' ),
+            'name'        => 'Maternity & Bump-to-Baby Portraiture',
+            'description' => 'Quiet, beautiful portraits documenting the sacred wait. Fine-art maternity photography in studio and natural light settings across Trichy.',
+            'url'         => home_url( '/maternity/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Maternity Photography',
+        ),
+        'baby' => array(
+            'id'          => home_url( '/thalam-baby/#service' ),
+            'name'        => 'Thalam Baby — Newborn & Infant Photography',
+            'description' => 'From the first curled-up sleep to the messy cake smash. Gentle, unhurried newborn and baby milestone sessions at Thalam Studio, Trichy.',
+            'url'         => home_url( '/thalam-baby/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-001.jpg',
+            'serviceType' => 'Newborn & Infant Photography',
+        ),
+        'design' => array(
+            'id'          => home_url( '/brand-design/#service' ),
+            'name'        => 'Brand Design & Visual Identity Systems',
+            'description' => 'Wordmarks, typographic systems, and complete visual identity art direction that define your brand\'s authority and give it a face people remember.',
+            'url'         => home_url( '/brand-design/' ),
+            'image'       => $theme_uri . '/assets/images/portfolio/img-010.jpg',
+            'serviceType' => 'Brand Design & Visual Identity',
+        ),
+        'facility' => array(
+            'id'          => home_url( '/thalam-studio/#service' ),
+            'name'        => 'Thalam Studio — Production Facility Hire',
+            'description' => 'A purpose-built 2,400 sq ft production and podcast facility with cyclorama walls, Profoto lighting, acoustic suites, and client lounge in Trichy.',
+            'url'         => home_url( '/thalam-studio/' ),
+            'image'       => $theme_uri . '/assets/img/og-thalam.jpg',
+            'serviceType' => 'Studio & Production Facility Hire',
+        ),
+    );
+
+    $service_id = isset( $c['service_id'] ) ? $c['service_id'] : '';
+    if ( empty( $service_id ) || ! isset( $service_map[ $service_id ] ) || 'general' === $service_id ) {
+        return;
+    }
+
+    $svc = $service_map[ $service_id ];
+
+    $service_schema = array(
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Service',
+        '@id'         => $svc['id'],
+        'name'        => $svc['name'],
+        'description' => $svc['description'],
+        'url'         => $svc['url'],
+        'image'       => $svc['image'],
+        'serviceType' => $svc['serviceType'],
+        'provider'    => array( '@id' => $site_url . '#organization' ),
+        'isPartOf'    => array( '@id' => $site_url . '#services' ),
+        'areaServed'  => array(
+            '@type'      => 'GeoCircle',
+            'geoMidpoint' => array(
+                '@type'     => 'GeoCoordinates',
+                'latitude'  => 10.827388663646731,
+                'longitude' => 78.68519161657615
+            ),
+            'geoRadius'  => '500000'
+        ),
+        'offers' => array(
+            '@type'              => 'Offer',
+            'availability'       => 'https://schema.org/InStock',
+            'url'                => $svc['url'],
+            'seller'             => array( '@id' => $site_url . '#organization' ),
+            'priceSpecification' => array(
+                '@type'         => 'PriceSpecification',
+                'priceCurrency' => 'INR',
+                'description'   => 'Custom pricing — contact us for a tailored quote.'
+            )
+        )
+    );
+
+    echo "\n  <!-- Schema.org Service Node — Pillar Page Entity -->\n";
+    echo '  <script type="application/ld+json">' . "\n";
+    echo wp_json_encode( $service_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) . "\n";
+    echo "  </script>\n";
+}
+add_action( 'wp_head', 'chitramaya_render_pillar_service_node', 3 );
+
+/**
+ * 7. XML Sitemap & Security Hardening
  */
 
 // Disable author/users sitemap to prevent username enumeration
