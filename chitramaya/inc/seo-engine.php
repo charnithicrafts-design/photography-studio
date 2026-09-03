@@ -349,13 +349,26 @@ function chitramaya_render_schema_graph() {
         )
     );
 
+    // 4. WebSite Node
+    $website_node = array(
+        '@type' => 'WebSite',
+        '@id'   => $site_url . '#website',
+        'url'   => $site_url,
+        'name'  => 'Chithramaya Creatives',
+        'publisher' => array(
+            '@id' => $site_url . '#organization'
+        ),
+        'inLanguage' => 'en-US'
+    );
+
     // Assemble the root @graph
     $graph = array(
         '@context' => 'https://schema.org',
         '@graph'   => array(
             $org_node,
             $person_node,
-            $facility_node
+            $facility_node,
+            $website_node
         )
     );
 
@@ -670,3 +683,47 @@ function chitramaya_enforce_canonical_slash( $canonical_url ) {
     return $canonical_url;
 }
 add_filter( 'wp_get_canonical_url', 'chitramaya_enforce_canonical_slash', 10, 1 );
+
+/**
+ * 8. Site Navigation Schema (SiteNavigationElement)
+ * 
+ * Explicitly maps out the top-level navigational hierarchy for Google to consider
+ * when assigning automated Sitelinks to the brand's search results.
+ */
+function chitramaya_render_site_navigation_schema() {
+    // Only output on the homepage to concentrate the signal where sitelinks are actually generated
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $nav_items = array(
+        array( 'name' => 'Commercial Photography', 'url' => home_url( '/commercial/' ) ),
+        array( 'name' => 'Brand & Corporate', 'url' => home_url( '/corporate-brand/' ) ),
+        array( 'name' => 'Events & Portrait', 'url' => home_url( '/events-portrait/' ) ),
+        array( 'name' => 'Thalam Studio Facility', 'url' => home_url( '/thalam-studio/' ) ),
+        array( 'name' => 'Podcast & Interview', 'url' => home_url( '/podcast-interview/' ) ),
+        array( 'name' => 'Brand Design', 'url' => home_url( '/brand-design/' ) ),
+        array( 'name' => 'Maternity & Art', 'url' => home_url( '/maternity/' ) ),
+        array( 'name' => 'Baby & Newborn', 'url' => home_url( '/thalam-baby/' ) )
+    );
+
+    $nav_schema_elements = array();
+    foreach ( $nav_items as $item ) {
+        $nav_schema_elements[] = array(
+            '@type' => 'SiteNavigationElement',
+            'name'  => $item['name'],
+            'url'   => $item['url']
+        );
+    }
+
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@graph'   => $nav_schema_elements
+    );
+
+    echo "\n  <!-- Schema.org SiteNavigationElement — Sitelinks Hint -->\n";
+    echo '  <script type="application/ld+json">' . "\n";
+    echo wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) . "\n";
+    echo "  </script>\n";
+}
+add_action( 'wp_head', 'chitramaya_render_site_navigation_schema', 3 );

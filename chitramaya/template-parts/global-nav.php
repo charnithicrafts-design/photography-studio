@@ -195,7 +195,7 @@
     </button>
 </header>
 
-<div class="c-global-nav" id="cGlobalNav" aria-hidden="true">
+<nav class="c-global-nav" id="cGlobalNav" aria-hidden="true">
     <div class="c-nav-container">
         
         <!-- Direct Links -->
@@ -223,7 +223,7 @@
         <a href="<?php echo esc_url(home_url('/brand-design')); ?>" class="c-nav-link">Brand Design</a>
 
     </div>
-</div>
+</nav>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
