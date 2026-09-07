@@ -325,7 +325,36 @@
   font-family: var(--font-serif, 'Roboto Slab', serif);
   font-size: 1.5rem;
   color: var(--color-dark, #171E4A);
-  margin: 0 0 16px;
+  margin: 0 0 12px;
+}
+.service-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.service-tag {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: var(--type-micro, 0.6875rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 40px);
+  background: rgba(23, 30, 74, 0.04);
+  color: var(--color-dark, #171E4A);
+  border: 1px solid rgba(23, 30, 74, 0.1);
+  white-space: nowrap;
+}
+.service-tag-connector {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: var(--type-micro, 0.6875rem);
+  color: var(--color-dark, #171E4A);
+  opacity: 0.5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .service-desc {
   font-family: var(--font-primary);
