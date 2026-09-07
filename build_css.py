@@ -25,17 +25,13 @@ header = header_match.group(0) + '\n' if header_match else ''
 compiled_content = header
 
 # Find all @import url("...");
-# We will skip http/https imports (like Google Fonts) and leave them or remove them?
-# Wait, the plan was to remove blocking fonts, so we should KEEP font imports if they are there, OR move them to HTML.
-# But style.css currently has @import url("https://fonts.googleapis.com..."); 
-# We should remove it from the CSS entirely and rely on the HTML <link> tags which are non-blocking.
+# Chithramaya brand rule: 100% self-hosted local fonts in critical.css. Zero external font imports.
 imports = re.findall(r'@import\s+url\([\'"]?([^\'"\)]+)[\'"]?\);', content)
 
 css_payload = ""
 for imp in imports:
     if imp.startswith('http'):
-        print(f"Skipping external import: {imp} (should be handled via HTML for perf)")
-        continue
+        raise ValueError(f"Brand violation: External import '{imp}' forbidden. All fonts must be 100% self-hosted local fonts.")
     
     file_path = os.path.join(THEME_DIR, imp)
     if os.path.exists(file_path):

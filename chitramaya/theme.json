@@ -104,11 +104,6 @@
           "fontFamily": "'Noto Sans Tamil', sans-serif",
           "name": "Noto Sans Tamil",
           "slug": "noto-sans-tamil"
-        },
-        {
-          "fontFamily": "'IBM Plex Mono', monospace",
-          "name": "IBM Plex Mono",
-          "slug": "ibm-plex-mono"
         }
       ]
     }
