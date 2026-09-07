@@ -1,58 +1,165 @@
 ==========================================================================
   */
-  .thalam-art-showcase {
-  background: var(--color-dark);
-  color: var(--color-light);
+.thalam-art-showcase {
+  padding: clamp(60px, 8vw, 100px) 5%;
+  background: var(--color-bg, #F7F4ED);
 }
-.art-split-layout {
+
+.art-bento-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.art-bento-card {
+  background: var(--color-white, #FFFFFF);
+  border-radius: var(--radius-lg, 24px);
+  padding: clamp(36px, 5vw, 64px);
+  box-shadow: 0 12px 40px rgba(23, 30, 74, 0.04);
+  border: 1px solid rgba(23, 30, 74, 0.08);
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+
+.art-bento-content {
   display: flex;
   flex-direction: column;
 }
-.art-text-pane {
-  padding: 4rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.art-headline {
-  font-family: var(--font-primary);
-  font-weight: 900;
-  font-size: var(--type-step-4);
-  line-height: 1.05;
+
+.art-section-label {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: var(--type-micro, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
-}
-.headline-gap {
-  display: block;
-  height: 0.35em;
-}
-.art-image-pane {
-  position: relative;
-  min-height: 60vh;
-}
-.art-image-pane img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 70% 50%;
-  filter: saturate(0.8) contrast(1.2);
+  color: var(--color-accent, #35A248);
+  margin-bottom: 16px;
 }
 
-@media (min-width: 992px) {
-  .art-split-layout {
-    flex-direction: row;
-    min-height: 100vh;
+.art-headline {
+  font-family: var(--font-serif, 'Roboto Slab', serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--color-dark, #171E4A);
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.art-headline .headline-gap {
+  display: block;
+}
+
+.art-lead {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-dark, #171E4A);
+  opacity: 0.85;
+  margin: 0 0 36px;
+  max-width: 580px;
+}
+
+/* 3 Craft Proof Points */
+.art-craft-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgba(23, 30, 74, 0.08);
+  padding-top: 28px;
+}
+
+.art-craft-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.art-craft-num {
+  font-family: var(--font-serif, 'Roboto Slab', serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-accent, #35A248);
+  line-height: 1.2;
+  padding-top: 2px;
+}
+
+.art-craft-text {
+  flex: 1;
+}
+
+.art-craft-title {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-dark, #171E4A);
+  margin: 0 0 4px;
+}
+
+.art-craft-desc {
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-dark, #171E4A);
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* Right: Tactile Media Frame */
+.art-bento-media {
+  display: flex;
+  flex-direction: column;
+}
+
+.art-media-frame {
+  position: relative;
+  border-radius: var(--radius-md, 16px);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(23, 30, 74, 0.08);
+  border: 1px solid rgba(23, 30, 74, 0.08);
+  background: var(--color-white, #FFFFFF);
+}
+
+.art-media-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.art-media-caption {
+  padding: 14px 18px;
+  background: var(--color-white, #FFFFFF);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  font-size: var(--type-micro, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-dark, #171E4A);
+  opacity: 0.75;
+  border-top: 1px solid rgba(23, 30, 74, 0.06);
+}
+
+.caption-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent, #35A248);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .art-bento-card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 36px;
   }
-  .art-text-pane {
-    flex: 1;
-    padding: 5rem;
-    text-align: left;
-  }
-  .art-image-pane {
-    flex: 1;
-    min-height: 100vh;
+  .art-media-frame img {
+    height: 360px;
   }
 }
