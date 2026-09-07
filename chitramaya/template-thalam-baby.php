@@ -171,7 +171,7 @@
               <span class="service-tag-connector">or</span>
               <span class="service-tag">In-Home Lifestyle</span>
             </div>
-            <p class="service-desc">Gentle, whisper-quiet sessions within the first weeks. Calibrated around feeding, soothing, and unhurried sleep in our 26&deg;C climate sanctuary or your living room.</p>
+            <p class="service-desc">Gentle, whisper-quiet sessions within the first weeks. Shaped around feeding, soothing, and unhurried sleep in our warm studio sanctuary or the comfort of your home.</p>
             <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20The%20Newborn%20Session%20with%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="service-cta" data-trigger="booking">
               Tell us about your baby &rarr;
             </a>
@@ -218,7 +218,7 @@
     <section class="global-cta">
       <h2 class="global-cta-title brut-protect-overflow">Capture the first chapter.</h2>
       <p class="global-cta-sub">
-        Gentle, unhurried baby and milestone sessions in our climate-controlled studio or at home.
+        Gentle, unhurried baby and milestone sessions in our warm studio sanctuary or at home.
       </p>
       <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20Baby%20or%20Newborn%20shoot." target="_blank" rel="noopener noreferrer" class="btn-primary" data-trigger="booking">
         Book a session
