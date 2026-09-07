@@ -154,7 +154,66 @@
     <?php get_template_part('template-parts/content-art-showcase'); ?>
 
     <!-- =====================================================
-         SECTION 4: CAMPAIGN YELLOW PRE-FOOTER
+         SECTION 4: GBP SERVICES & PRICING
+         ===================================================== -->
+    <section class="baby-services-section">
+      <div class="services-container">
+        <div class="baby-section-label">[ STUDIO SERVICES ]</div>
+        <h2 class="services-title">Choose Your Archive</h2>
+        
+        <div class="services-grid">
+          
+          <!-- Service 1: The Newborn Session -->
+          <div class="service-card">
+            <h4 class="service-name">The Newborn Session</h4>
+            <div class="service-tags">
+              <span class="service-tag">Studio Sanctuary</span>
+              <span class="service-tag-connector">or</span>
+              <span class="service-tag">In-Home Lifestyle</span>
+            </div>
+            <p class="service-desc">Gentle, whisper-quiet sessions within the first weeks. Calibrated around feeding, soothing, and unhurried sleep in our 26&deg;C climate sanctuary or your living room.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20The%20Newborn%20Session%20with%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="service-cta" data-trigger="booking">
+              Tell us about your baby &rarr;
+            </a>
+          </div>
+
+          <!-- Service 2: The First Year Archive (Most Booked) -->
+          <div class="service-card premium-card">
+            <div class="premium-badge">Most Booked</div>
+            <h4 class="service-name">The First Year Archive</h4>
+            <div class="service-tags">
+              <span class="service-tag">Newborn</span>
+              <span class="service-tag-connector">+</span>
+              <span class="service-tag">Sitter</span>
+              <span class="service-tag-connector">+</span>
+              <span class="service-tag">1st Birthday</span>
+            </div>
+            <p class="service-desc">The unbroken chronicle of their first circle around the sun. Includes their newborn session, a sitting milestone, and a joyful 1st birthday portrait suite.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20build%20our%20First%20Year%20Archive%20with%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="service-cta premium-cta" data-trigger="booking">
+              Build your archive &rarr;
+            </a>
+          </div>
+
+          <!-- Service 3: Milestones & 1st Birthday -->
+          <div class="service-card">
+            <h4 class="service-name">Milestones &amp; 1st Birthday</h4>
+            <div class="service-tags">
+              <span class="service-tag">Cake Smash</span>
+              <span class="service-tag-connector">&amp;</span>
+              <span class="service-tag">Family Celebrations</span>
+            </div>
+            <p class="service-desc">Unscripted giggles, wobbly first steps, and cake smash celebrations. We archive your child's emerging personality and the family surrounding them.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%201st%20Birthday%20%26%20Milestone%20portraits%20with%20Thalam%20Studio." target="_blank" rel="noopener noreferrer" class="service-cta" data-trigger="booking">
+              Plan your celebration &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: CAMPAIGN YELLOW PRE-FOOTER
          ===================================================== -->
     <section class="global-cta">
       <h2 class="global-cta-title brut-protect-overflow">Capture the first chapter.</h2>
