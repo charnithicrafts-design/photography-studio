@@ -190,7 +190,49 @@
     </section>
 
     <!-- =====================================================
-         SECTION 6: CAMPAIGN YELLOW PRE-FOOTER
+         SECTION 6: GBP SERVICES & PRICING
+         ===================================================== -->
+    <section class="maternity-services-section">
+      <div class="services-container">
+        <div class="maternity-section-label">[ STUDIO SERVICES ]</div>
+        <h2 class="services-title">Choose Your Archive</h2>
+        
+        <div class="services-grid">
+          
+          <!-- Service 1 -->
+          <div class="service-card">
+            <h4 class="service-name">The Maternity Session</h4>
+            <p class="service-desc">Studio or Outdoor setting. A dedicated session focusing on the quiet power and sculptural beauty of your pregnancy.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20The%20Maternity%20Session." target="_blank" rel="noopener noreferrer" class="service-cta" data-trigger="booking">
+              Tell us about your session &rarr;
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card premium-card">
+            <div class="premium-badge">Most Booked</div>
+            <h4 class="service-name">The Bump-to-Baby Archive</h4>
+            <p class="service-desc">The complete narrative. Includes both your Maternity Session and a beautifully paced Newborn Session in our studio.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20build%20my%20Bump-to-Baby%20Archive." target="_blank" rel="noopener noreferrer" class="service-cta premium-cta" data-trigger="booking">
+              Build your archive &rarr;
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <h4 class="service-name">Baby Shower &amp; Events</h4>
+            <p class="service-desc">Joyful, documentary-style coverage of your Valaikaappu, Seemantham, or intimate family gathering.</p>
+            <a href="https://wa.me/918098014123?text=Hi%2C%20I%27d%20like%20to%20discuss%20event%20coverage%20for%20my%20Baby%20Shower." target="_blank" rel="noopener noreferrer" class="service-cta" data-trigger="booking">
+              Tell us about your event &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7: CAMPAIGN YELLOW PRE-FOOTER
          ===================================================== -->
     <section class="global-cta">
       <h2 class="global-cta-title brut-protect-overflow">Let's document the wait.</h2>
