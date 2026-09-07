@@ -12,56 +12,30 @@ $final_image_url = ($image && is_array($image)) ? $image['sizes']['large'] : $im
 ?>
 
 <section class="thalam-art-showcase">
-  <div class="art-bento-container">
-    <div class="art-bento-card">
+  <div class="art-bento-grid">
+    
+    <!-- Left: Editorial Storytelling & Craft Badges -->
+    <div class="art-bento-content">
+      <div class="baby-section-label">[ THE THALAM ARCHIVE ]</div>
+      <h2 class="art-block-title">Not just a photograph.<br>An heirloom crafted to outlive screens.</h2>
       
-      <!-- Left: Editorial Storytelling & Craft Proof Points -->
-      <div class="art-bento-content">
-        <div class="art-section-label">[ THE CRAFT BEHIND THE ARCHIVE ]</div>
-        <h2 class="art-headline"><?php echo wp_kses_post($heading); ?></h2>
-        
-        <p class="art-lead">
-          We don't rush through generic poses or force artificial smiles. Inside Thalam Studio, we sculpt painterly portraits that capture the quiet reverence of new life—created with museum-grade patience to outlive phone screens and social feeds.
-        </p>
+      <p class="art-block-desc">
+        We don’t rush through generic poses or force artificial smiles. Inside Thalam Studio, we sculpt painterly portraits that capture the quiet reverence of new life—crafted with whisper-quiet continuous light, gentle 26&deg;C warmth, and museum-grade cotton rag prints designed to be held fifty years from today.
+      </p>
 
-        <div class="art-craft-grid">
-          <div class="art-craft-item">
-            <span class="art-craft-num">01</span>
-            <div class="art-craft-text">
-              <h4 class="art-craft-title">Whisper-Quiet Ambient Light</h4>
-              <p class="art-craft-desc">Continuous, soft cinematic light. Zero jarring strobes or blinding flashes around sensitive infant eyes.</p>
-            </div>
-          </div>
-
-          <div class="art-craft-item">
-            <span class="art-craft-num">02</span>
-            <div class="art-craft-text">
-              <h4 class="art-craft-title">Climate-Controlled Sanctuary</h4>
-              <p class="art-craft-desc">Calibrated to a gentle 26&deg;C warmth so newborns stay deep in comfortable, undisturbed sleep.</p>
-            </div>
-          </div>
-
-          <div class="art-craft-item">
-            <span class="art-craft-num">03</span>
-            <div class="art-craft-text">
-              <h4 class="art-craft-title">Museum Archival Inks</h4>
-              <p class="art-craft-desc">Printed on 100% cotton rag heirloom paper with pigment inks guaranteed to resist fading for a century.</p>
-            </div>
-          </div>
-        </div>
+      <div class="art-spec-pills">
+        <span class="art-spec-pill">Whisper-Quiet Ambient Light</span>
+        <span class="art-spec-pill">26&deg;C Climate Sanctuary</span>
+        <span class="art-spec-pill">100-Year Archival Inks</span>
       </div>
-
-      <!-- Right: Tactile Framed Portrait -->
-      <div class="art-bento-media">
-        <div class="art-media-frame">
-          <img src="<?php echo esc_url($final_image_url); ?>" alt="Thalam Studio Fine Art Newborn Portrait" loading="lazy" class="img-tactile" />
-          <div class="art-media-caption">
-            <span class="caption-dot"></span>
-            <span>Documentary &amp; Fine Art &middot; Thalam Studio, Trichy</span>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Right: Tactile Media Portrait -->
+    <div class="art-bento-media">
+      <div class="art-img-wrap">
+        <img src="<?php echo esc_url($final_image_url); ?>" alt="Thalam Studio Fine Art Newborn Portrait" loading="lazy" class="img-tactile" />
+      </div>
+    </div>
+
   </div>
 </section>
