@@ -20,13 +20,33 @@ $final_image_url = ($image && is_array($image)) ? $image['sizes']['large'] : $im
       <h2 class="art-block-title">Not just a photograph.<br>An heirloom crafted to outlive screens.</h2>
       
       <p class="art-block-desc">
-        We don’t rush through generic poses or force artificial smiles. Inside Thalam Studio, we sculpt painterly portraits that capture the quiet reverence of new life—crafted with whisper-quiet continuous light, gentle 26&deg;C warmth, and museum-grade cotton rag prints designed to be held fifty years from today.
+        We don't rush through generic poses or force stiff smiles. Inside Thalam Studio, every element is designed around your baby's comfort, warmth, and fine-art dignity:
       </p>
 
-      <div class="art-spec-pills">
-        <span class="art-spec-pill">Whisper-Quiet Ambient Light</span>
-        <span class="art-spec-pill">26&deg;C Climate Sanctuary</span>
-        <span class="art-spec-pill">100-Year Archival Inks</span>
+      <div class="art-craft-grid">
+        <div class="art-craft-item">
+          <span class="art-craft-num">01</span>
+          <div class="art-craft-text">
+            <h4 class="art-craft-title">Whisper-Quiet Ambient Light</h4>
+            <p class="art-craft-desc">Continuous, soft cinematic light. Zero jarring strobes or blinding flashes around sensitive infant eyes.</p>
+          </div>
+        </div>
+
+        <div class="art-craft-item">
+          <span class="art-craft-num">02</span>
+          <div class="art-craft-text">
+            <h4 class="art-craft-title">Climate-Controlled Sanctuary</h4>
+            <p class="art-craft-desc">Calibrated to a gentle 26&deg;C warmth so newborns stay deep in comfortable, undisturbed sleep.</p>
+          </div>
+        </div>
+
+        <div class="art-craft-item">
+          <span class="art-craft-num">03</span>
+          <div class="art-craft-text">
+            <h4 class="art-craft-title">100-Year Archival Inks</h4>
+            <p class="art-craft-desc">Printed on 100% cotton rag heirloom paper with pigment inks guaranteed to resist fading for a century.</p>
+          </div>
+        </div>
       </div>
     </div>
 
