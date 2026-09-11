@@ -21,19 +21,7 @@ ftp.login(FTP_USER, FTP_PASS)
 print("Connecting to FTP...")
 ftp.cwd('chithramaya.charnithi.com')
 
-files_to_upload = []
-# Automatically gather all files in the chitramaya theme folder
-for root, dirs, files in os.walk('chitramaya'):
-    for file in files:
-        if file.startswith('.'):
-            continue
-        local_path = os.path.join(root, file)
-        # Convert OS path separator to FTP path separator
-        local_path = local_path.replace('\\', '/')
-        remote_path = 'wp-content/themes/' + local_path
-        files_to_upload.append((local_path, remote_path))
-
-# Directories to never upload to the server
+# Directories to never upload to the server — applied to ALL os.walk loops
 SKIP_DIR_SEGMENTS = [
     'node_modules',
     '.git',
@@ -45,6 +33,25 @@ SKIP_DIR_SEGMENTS = [
     'tests',
     '.psalm',
 ]
+
+files_to_upload = []
+# Automatically gather all files in the chitramaya theme folder
+for root, dirs, files in os.walk('chitramaya'):
+    # Prune walk in-place — prevents descending into dev/build dirs
+    dirs[:] = [d for d in dirs if d not in SKIP_DIR_SEGMENTS]
+    # Also skip if any ancestor path segment is in the skip list
+    if any(seg in root.replace('\\', '/').split('/') for seg in SKIP_DIR_SEGMENTS):
+        continue
+    for file in files:
+        if file.startswith('.'):
+            continue
+        local_path = os.path.join(root, file)
+        # Convert OS path separator to FTP path separator
+        local_path = local_path.replace('\\', '/')
+        remote_path = 'wp-content/themes/' + local_path
+        files_to_upload.append((local_path, remote_path))
+
+# Directories to never upload to the server
 
 # Automatically gather plugin files (chitramaya-proofing)
 plugin_local_dir = 'wp-content/plugins/chitramaya-proofing'
