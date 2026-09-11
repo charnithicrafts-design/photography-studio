@@ -1,3 +1,25 @@
+# ==============================================================================
+# SECURITY: Force HTTPS & Strict Transport Security (HSTS)
+# ==============================================================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Exempt localhost and local IP addresses from HTTPS redirects
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
+RewriteCond %{HTTP_HOST} !\.local$ [NC]
+
+# Force 301 redirect to HTTPS for live and staging domains
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HSTS: instruct browsers to only use HTTPS for 1 year
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
