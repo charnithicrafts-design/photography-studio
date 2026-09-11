@@ -9,6 +9,21 @@ if ( ! function_exists( 'get_field' ) ) {
     }
 }
 
+// Enforce HTTPS for site and home URLs on production and staging
+function chitramaya_enforce_https_url( $url ) {
+    if ( is_string( $url ) && strpos( $url, 'http://' ) === 0 ) {
+        $host = isset( $_SERVER['HTTP_HOST'] ) ? strtolower( $_SERVER['HTTP_HOST'] ) : '';
+        if ( $host && ! in_array( $host, array( 'localhost', '127.0.0.1' ), true ) && ! str_ends_with( $host, '.local' ) ) {
+            return 'https://' . substr( $url, 7 );
+        }
+    }
+    return $url;
+}
+add_filter( 'option_home', 'chitramaya_enforce_https_url' );
+add_filter( 'option_siteurl', 'chitramaya_enforce_https_url' );
+add_filter( 'home_url', 'chitramaya_enforce_https_url' );
+add_filter( 'site_url', 'chitramaya_enforce_https_url' );
+
 function chitramaya_enqueue_styles() {
     $parent_style = 'twentytwentyfive-style';
 
