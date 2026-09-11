@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAB417" />
+      <stop offset="100%" stop-color="#35A248" />
+    </linearGradient>
+    <radialGradient id="glassReflection" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background: Chithramaya Navy Container -->
+  <rect width="512" height="512" rx="112" fill="#171E4A" />
+
+  <!-- Camera Body Silhouette -->
+  <rect x="96" y="152" width="320" height="232" rx="36" fill="#F7F4ED" />
+  
+  <!-- Camera Prism / Flash Housing -->
+  <path d="M 184 152 L 216 104 L 296 104 L 328 152 Z" fill="#F7F4ED" />
+
+  <!-- Recording / Power Accent Dot (Chithramaya Red) -->
+  <circle cx="152" cy="192" r="14" fill="#9B1C26" />
+
+  <!-- Viewfinder Window (Chithramaya Navy) -->
+  <rect x="336" y="180" width="44" height="24" rx="6" fill="#171E4A" />
+
+  <!-- Outer Lens Ring -->
+  <circle cx="256" cy="268" r="88" fill="#171E4A" />
+  <circle cx="256" cy="268" r="76" fill="#F7F4ED" />
+  <circle cx="256" cy="268" r="66" fill="#171E4A" />
+
+  <!-- Vibrant Aperture Core (Brand Gradient: Yellow to Green) -->
+  <circle cx="256" cy="268" r="54" fill="url(#lensGrad)" />
+
+  <!-- Inner Optical Pupil -->
+  <circle cx="256" cy="268" r="26" fill="#171E4A" />
+  
+  <!-- Lens Glass Light Glint -->
+  <circle cx="256" cy="268" r="54" fill="url(#glassReflection)" />
+  <circle cx="242" cy="254" r="7" fill="#FFFFFF" opacity="0.8" />
+</svg>
