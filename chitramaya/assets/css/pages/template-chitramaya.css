@@ -379,85 +379,81 @@
             .dark-card .service-title { color: var(--text-white); }
             .white-card .service-title { color: var(--text-dark); }
 
-            /* ── BRAND GUIDELINES MICRO TYPE (7-8pt / Lato Medium / Uppercase) ── */
-            .tag {
-                font-family: var(--font-primary, 'Lato', sans-serif);
-                font-size: 0.625rem; /* 10px / 7.5pt */
-                font-weight: 500;    /* Lato Medium */
-                text-transform: uppercase;
-                letter-spacing: 0.06em;
-                padding: 4px 10px;
-                border-radius: var(--radius-pill, 40px);
-                white-space: nowrap;
-                transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            /* ── SERVICE CTA LINKS — Editorial Arrow Navigation ── */
+            .service-cta {
                 display: inline-flex;
                 align-items: center;
-            }
-            .dark-card .tag {
-                background: rgba(255, 255, 255, 0.06);
-                border: 1px solid rgba(255, 255, 255, 0.22);
-                color: rgba(255, 255, 255, 0.90);
-            }
-            .dark-card .tag:hover { 
-                background: var(--money-green, #35A248); 
-                border-color: var(--money-green, #35A248); 
-                color: var(--dark-bg, #171E4A); 
-            }
-            .white-card .tag {
-                background: rgba(23, 30, 74, 0.04);
-                border: 1px solid rgba(23, 30, 74, 0.15);
-                color: var(--text-dark, #171E4A);
-            }
-            .white-card .tag:hover { 
-                background: var(--text-dark, #171E4A); 
-                border-color: var(--text-dark, #171E4A); 
-                color: #ffffff; 
-            }
-
-            .tag-more {
-                cursor: pointer;
+                gap: 4px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.875rem;
                 font-weight: 700;
-                display: none; /* hidden on desktop */
+                text-decoration: none;
+                letter-spacing: 0.02em;
+                margin-top: 8px;
+                transition: gap 0.2s ease, opacity 0.2s ease, color 0.2s ease;
             }
-            .dark-card .tag-more {
-                background: rgba(53, 162, 72, 0.12);
-                border: 1px dashed var(--money-green, #35A248);
+            .dark-card .service-cta {
                 color: var(--money-green, #35A248);
             }
-            .dark-card .tag-more:hover {
-                background: var(--money-green, #35A248);
-                color: var(--dark-bg, #171E4A);
+            .dark-card .service-cta:hover {
+                gap: 8px;
+                opacity: 0.85;
             }
-            .white-card .tag-more {
-                background: rgba(23, 30, 74, 0.06);
-                border: 1px dashed rgba(23, 30, 74, 0.35);
+            .white-card .service-cta {
                 color: var(--text-dark, #171E4A);
             }
-            .white-card .tag-more:hover {
-                background: var(--text-dark, #171E4A);
-                color: #ffffff;
+            .white-card .service-cta:hover {
+                gap: 8px;
+                color: var(--money-green, #35A248);
             }
 
-            .service-tags {
+            /* ── EVENTS MULTI-LINK CLUSTER — 3 direct sub-vertical links ── */
+            .service-links-cluster {
                 display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                margin-bottom: 20px;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--art-border, rgba(23, 30, 74, 0.12));
+            }
+            .service-cta-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: var(--text-dark, #171E4A);
+                transition: gap 0.2s ease, color 0.2s ease;
+            }
+            .service-cta-link:hover {
+                gap: 8px;
+                color: var(--money-green, #35A248);
             }
 
-            @media (max-width: 768px) {
-                .service-tags .tag:nth-child(n+6):not(.tag-more) {
-                    display: none;
-                }
-                .service-tags.is-expanded .tag:nth-child(n+6) {
-                    display: inline-flex;
-                }
-                .tag-more {
-                    display: inline-flex;
-                }
-                .service-tags.is-expanded .tag-more {
-                    display: none;
-                }
+            /* ── SERVICE BADGE — Inline flow badge replacing absolute overlay ── */
+            .service-badge {
+                display: inline-block;
+                align-self: flex-start;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.625rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                background: var(--color-dark, #171E4A);
+                color: #FFFFFF;
+                padding: 4px 10px;
+                border-radius: var(--radius-sm, 6px);
+                margin-bottom: 12px;
+            }
+
+            /* ── SERVICE CARD — Hover border accent lift ── */
+            .dark-card.service-card:hover {
+                border-color: rgba(53, 162, 72, 0.35);
+            }
+            .white-card.service-card:hover {
+                border-color: rgba(23, 30, 74, 0.3);
             }
 
             .service-text-block {
@@ -470,35 +466,6 @@
             .dark-card .service-text-block { color: var(--text-white); opacity: 0.85; border-top-color: rgba(255,255,255,0.15); }
             .white-card .service-text-block { color: var(--text-muted-light); border-top-color: var(--art-border); }
 
-            /* Podcast Pillars */
-            .pillars-grid {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 16px;
-                margin-bottom: 24px;
-            }
-
-            .pillar {
-                padding: var(--space-2, 16px) var(--space-3, 24px);
-                border-left: 3px solid var(--money-green);
-                border-radius: var(--radius-sm, 8px);
-                background: rgba(53, 162, 72, 0.08);
-            }
-            .pillar-title {
-                font-family: var(--mono);
-                font-size: 13px;
-                font-weight: 700;
-                color: var(--money-green);
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin-bottom: 8px;
-            }
-            .pillar-items {
-                font-size: 15px;
-                color: var(--text-muted-dark);
-                line-height: 1.6;
-            }
-
             /* --- RIGHT: WHITE / ART SERVICES --- */
             .col-art {
                 background: #FFFFFF;
@@ -506,62 +473,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 40px;
-            }
-
-            /* Events Portrait Subcategories */
-            .subcategory {
-                margin-bottom: 18px;
-            }
-            .subcategory-label {
-                font-family: var(--font-primary, 'Lato', sans-serif);
-                font-size: var(--type-micro, 0.6875rem);
-                font-weight: 700;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                color: var(--text-muted-light, rgba(23, 30, 74, 0.6));
-                margin-bottom: 6px;
-                padding-bottom: 6px;
-                border-bottom: 1px solid var(--art-border, rgba(23, 30, 74, 0.12));
-            }
-            .subcategory-items {
-                font-size: 0.9375rem;
-                color: var(--text-dark, #171E4A);
-                line-height: 1.6;
-                font-weight: 400;
-            }
-
-            /* UPCOMING Card */
-            .upcoming-card {
-                position: relative;
-                overflow: hidden;
-            }
-            .upcoming-overlay {
-                position: absolute;
-                top: 24px; 
-                right: 24px;
-                font-family: var(--font-primary, 'Lato', sans-serif);
-                font-size: 0.625rem; /* 10px / 7.5pt */
-                font-weight: 700;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                background: var(--color-dark, #171E4A);
-                color: #FFFFFF;
-                padding: 4px 10px;
-                border-radius: var(--radius-sm, 6px);
-            }
-
-            @media (max-width: 600px) {
-                .upcoming-card {
-                    display: flex;
-                    flex-direction: column;
-                }
-                .upcoming-overlay {
-                    position: static;
-                    display: inline-block;
-                    align-self: flex-start;
-                    margin-bottom: 12px;
-                    order: -1;
-                }
             }
 
             /* Manifesto block — Official Campaign Quote Style (Yellow/Navy) */
