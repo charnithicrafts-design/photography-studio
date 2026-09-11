@@ -245,6 +245,35 @@ function chitramaya_render_seo_social_meta() {
 add_action( 'wp_head', 'chitramaya_render_seo_social_meta', 1 );
 
 /**
+ * Output Brand Favicon and App Icons in wp_head
+ */
+function chitramaya_render_favicons() {
+    $theme_uri = get_stylesheet_directory_uri();
+    ?>
+  <!-- Chithramaya Official Brand Favicons & Search Engine App Icons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="<?php echo esc_url( $theme_uri . '/assets/images/favicon/favicon-48x48.png' ); ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( $theme_uri . '/assets/images/favicon/favicon-32x32.png' ); ?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( $theme_uri . '/assets/images/favicon/favicon-16x16.png' ); ?>">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( $theme_uri . '/assets/images/favicon/apple-touch-icon.png' ); ?>">
+  <link rel="shortcut icon" href="<?php echo esc_url( home_url( '/favicon.ico' ) ); ?>">
+    <?php
+}
+add_action( 'wp_head', 'chitramaya_render_favicons', 1 );
+
+// Enforce brand site icon across WordPress core hooks (PWA, Admin, RSS)
+add_filter( 'get_site_icon_url', function( $url, $size ) {
+    $theme_uri = get_stylesheet_directory_uri();
+    if ( $size <= 32 ) {
+        return $theme_uri . '/assets/images/favicon/favicon-32x32.png';
+    } elseif ( $size <= 48 ) {
+        return $theme_uri . '/assets/images/favicon/favicon-48x48.png';
+    } elseif ( $size <= 180 ) {
+        return $theme_uri . '/assets/images/favicon/apple-touch-icon.png';
+    }
+    return $theme_uri . '/assets/images/favicon/favicon-512x512.png';
+}, 10, 2 );
+
+/**
  * Output Structured Data Knowledge Graph (@graph JSON-LD)
  */
 function chitramaya_render_schema_graph() {
