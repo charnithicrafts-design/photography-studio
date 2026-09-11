@@ -33,6 +33,19 @@ class Chitramaya_Proofing_API {
 			'callback'            => array( $this, 'api_get_session' ),
 			'permission_callback' => '__return_true',
 		) );
+
+		// Desktop Sync App endpoint — authenticates via access code, returns selected filename stems
+		register_rest_route( 'chitramaya/v1', '/proofing/sync', array(
+			'methods'             => 'GET',
+			'callback'            => array( $this, 'api_sync_selections' ),
+			'permission_callback' => '__return_true',
+			'args'                => array(
+				'code' => array(
+					'required'          => true,
+					'sanitize_callback' => 'sanitize_text_field',
+				),
+			),
+		) );
 	}
 
 	private function validate_api_request( $request ) {
@@ -148,6 +161,69 @@ class Chitramaya_Proofing_API {
 			'total_count'    => count( $photos ),
 			'selected_count' => $selected_count,
 			'photos'         => $photos
+		) );
+	}
+
+	/**
+	 * Desktop Sync App endpoint.
+	 *
+	 * Looks up a proofing session by its access code (not session ID),
+	 * and returns only the selected filename stems for local RAW matching.
+	 */
+	public function api_sync_selections( $request ) {
+		$code = $request->get_param( 'code' );
+
+		if ( empty( $code ) || strlen( $code ) < 4 ) {
+			return new WP_Error(
+				'invalid_code',
+				'A valid access code is required.',
+				array( 'status' => 400 )
+			);
+		}
+
+		// Find the proofing session that owns this access code.
+		$sessions = get_posts( array(
+			'post_type'      => 'proofing_session',
+			'posts_per_page' => 1,
+			'post_status'    => 'publish',
+			'meta_query'     => array(
+				array(
+					'key'   => '_proofing_access_code',
+					'value' => $code,
+				),
+			),
+		) );
+
+		if ( empty( $sessions ) ) {
+			return new WP_Error(
+				'session_not_found',
+				'No proofing session found for this access code.',
+				array( 'status' => 404 )
+			);
+		}
+
+		$post = $sessions[0];
+
+		// Extract selected photos and strip extensions to produce filename stems.
+		$photos_json = get_post_meta( $post->ID, '_proofing_photos_json', true );
+		$photos      = json_decode( $photos_json, true );
+		if ( ! is_array( $photos ) ) {
+			$photos = array();
+		}
+
+		$selected_stems = array();
+		foreach ( $photos as $p ) {
+			if ( isset( $p['status'] ) && $p['status'] === 'selected' && ! empty( $p['filename'] ) ) {
+				$info             = pathinfo( $p['filename'] );
+				$selected_stems[] = $info['filename']; // stem only, no extension
+			}
+		}
+
+		return rest_ensure_response( array(
+			'session_title'      => $post->post_title,
+			'client_name'        => get_post_meta( $post->ID, '_proofing_client_name', true ),
+			'selected_count'     => count( $selected_stems ),
+			'selected_filenames' => $selected_stems,
 		) );
 	}
 }
