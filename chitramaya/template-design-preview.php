@@ -2,7 +2,7 @@
 /**
  * Template Name: Design Comparison Preview
  * Template Post Type: page
- * Description: Side-by-side design comparison between Option 1 (Editorial Action) and Option 2 (Minimalist Brutalist) for client review.
+ * Description: Side-by-side design comparison between Option 1 (Editorial Action with NN/g 680px measure) and Option 2 (Minimalist Brutalist Monolith matching agency reference).
  */
 ?>
 <!DOCTYPE html>
@@ -10,12 +10,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Comparison Preview — Chithramaya Creatives</title>
+  <title>Service Pillars Direction — Chithramaya Creatives Review</title>
   <meta name="robots" content="noindex, nofollow">
   <?php wp_head(); ?>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-design-preview.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-design-preview.css'); ?>">
 </head>
-<body>
+<body class="mode-single">
 
   <!-- ==============================================================================
        STICKY COMPARISON CONTROL BAR (Client Review Mode)
@@ -23,267 +23,354 @@
   <header class="preview-control-bar" role="banner">
     <div class="preview-meta">
       <span class="preview-badge">Client Review</span>
-      <span class="preview-title">Service Pillars Direction</span>
+      <span class="preview-title">Homepage Service Pillars Direction</span>
     </div>
 
     <div class="preview-switch-group" role="tablist" aria-label="Design variant selector">
       <button type="button" class="preview-switch-btn active" id="btn-opt-1" role="tab" aria-selected="true" aria-controls="option-1-view">
-        Option 1: Editorial Action
+        Option 1: Editorial Action (680px)
       </button>
       <button type="button" class="preview-switch-btn" id="btn-opt-2" role="tab" aria-selected="false" aria-controls="option-2-view">
-        Option 2: Brutalist Minimalist
+        Option 2: Brutalist Monolith (Reference)
+      </button>
+      <button type="button" class="preview-switch-btn" id="btn-opt-both" role="tab" aria-selected="false">
+        Compare Both (Stacked)
       </button>
     </div>
 
-    <div class="preview-hint">Tap buttons to toggle between styles</div>
+    <div class="preview-hint">Tap to switch styles &amp; compare line length and reading speed</div>
   </header>
 
   <!-- ==============================================================================
        OPTION 1: HIGH-CONTRAST EDITORIAL ACTION
+       Stanford Web Credibility & Nielsen Norman Group 680px Optimal Reading Measure
        ============================================================================== -->
   <main id="option-1-view" class="design-view-section is-active" role="tabpanel" aria-labelledby="btn-opt-1">
     
     <div class="option-intro-banner">
-      <div class="option-intro-tag">Direction 01 / Selected Default</div>
+      <div class="option-intro-tag">Direction 01 — Editorial Action (NN/g Measure)</div>
       <h1 class="option-intro-heading">High-Contrast Editorial Action</h1>
       <p class="option-intro-desc">
-        Tight, high-conviction editorial storytelling with explicit action text in brand accent green. Designed for commercial authority and instant reading clarity.
+        Engineered per Nielsen Norman Group typography guidelines (strict ≤680px reading line-length) and Stanford Web Credibility research. Front-loaded 5–7 word impression headline with punchy prose and explicit action links.
       </p>
     </div>
 
-    <section class="duality-section" style="margin-top: 0;">
+    <section class="editorial-layout-split">
       
       <!-- LEFT COLUMN: MONEY-BASED SERVICES (NAVY #171E4A) -->
-      <div class="col-money">
+      <div class="editorial-col-money">
+        <div class="editorial-measure-wrapper">
 
-        <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
-        <article class="dark-card service-card" id="opt1-brand-corporate">
-          <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
-          <h2 class="service-title">Brand &amp; Corporate Photography</h2>
-          <p class="service-text-block">
-            We photograph the people, spaces, and moments that make your business credible. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
-          </p>
-          <a href="/corporate-brand/" class="service-cta" aria-label="Explore Corporate &amp; Executive Photography work">Explore Corporate &amp; Executive Work ↗</a>
-        </article>
+          <!-- 01 BRAND & CORPORATE -->
+          <article class="editorial-card" id="opt1-corporate">
+            <div class="editorial-card-num">— 01 / BRAND &amp; CORPORATE</div>
+            <h2 class="editorial-card-title">Brand &amp; Corporate Photography</h2>
+            <div class="editorial-impact-headline">Executive portraits that build market credibility.</div>
+            <p class="editorial-card-body">
+              We photograph the people, spaces, and moments that make your business credible. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
+            </p>
+            <a href="/corporate-brand/" class="editorial-cta-link" aria-label="Explore Corporate &amp; Executive Photography work">
+              Explore Corporate &amp; Executive Work ↗
+            </a>
+          </article>
 
-        <!-- 02 COMMERCIAL PHOTOGRAPHY -->
-        <article class="dark-card service-card" id="opt1-commercial">
-          <div class="service-number">— 02 / COMMERCIAL</div>
-          <h2 class="service-title">Commercial Photography</h2>
-          <p class="service-text-block">
-            Products, spaces, food, fashion. We shoot what you're selling and make people actually want it. Whether it's an advertising campaign, an architectural space, or a catalog, the frame is always doing a commercial job.
-          </p>
-          <a href="/commercial/" class="service-cta" aria-label="Explore Commercial Photography Campaigns">Explore Commercial Campaigns ↗</a>
-        </article>
+          <!-- 02 COMMERCIAL -->
+          <article class="editorial-card" id="opt1-commercial">
+            <div class="editorial-card-num">— 02 / COMMERCIAL</div>
+            <h2 class="editorial-card-title">Commercial Photography</h2>
+            <div class="editorial-impact-headline">Products and spaces documented to sell.</div>
+            <p class="editorial-card-body">
+              Products, spaces, food, fashion. We shoot what you're selling and make people actually want it. Whether it's an advertising campaign, an architectural space, or a catalog, the frame is always doing a commercial job.
+            </p>
+            <a href="/commercial/" class="editorial-cta-link" aria-label="Explore Commercial Photography Campaigns">
+              Explore Commercial Campaigns ↗
+            </a>
+          </article>
 
-        <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
-        <article class="dark-card service-card" id="opt1-podcast">
-          <div class="service-number">— 04 / PODCAST &amp; PRODUCTION</div>
-          <h2 class="service-title">Podcast &amp; Interview Production</h2>
-          <p class="service-text-block">
-            We set up the room. You bring the conversation. Broadcast-grade Shure SM7B audio, cinema 4K multi-camera angles, and acoustic isolation in Trichy. One good recording session becomes a month of edited, branded, publish-ready content.
-          </p>
-          <a href="/podcast-interview/" class="service-cta" aria-label="Book Podcast Studio &amp; Production">Book Studio &amp; Production ↗</a>
-        </article>
+          <!-- 04 PODCAST & PRODUCTION -->
+          <article class="editorial-card" id="opt1-podcast">
+            <div class="editorial-card-num">— 04 / PODCAST &amp; PRODUCTION</div>
+            <h2 class="editorial-card-title">Podcast &amp; Interview Production</h2>
+            <div class="editorial-impact-headline">Broadcast acoustic rooms and 4K cinema.</div>
+            <p class="editorial-card-body">
+              We set up the room. You bring the conversation. Broadcast-grade Shure SM7B audio, cinema 4K multi-camera angles, and acoustic isolation in Trichy. One good recording session becomes a month of edited, branded, publish-ready content.
+            </p>
+            <a href="/podcast-interview/" class="editorial-cta-link" aria-label="Book Podcast Studio &amp; Production">
+              Book Studio &amp; Production ↗
+            </a>
+          </article>
+
+        </div>
       </div>
 
       <!-- RIGHT COLUMN: ART-BASED SERVICES (OFF-WHITE #F7F4ED) -->
-      <div class="col-art">
+      <div class="editorial-col-art">
+        <div class="editorial-measure-wrapper">
 
-        <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
-        <article class="white-card service-card" id="opt1-events-portraits">
-          <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
-          <h2 class="service-title">Events &amp; Heritage Portraiture</h2>
-          <p class="service-text-block">
-            The moments you'll look at in 20 years and remember exactly how it felt. Unobtrusive, documentary observation for milestone weddings, sacred rituals, and generational family heritage across South India.
-          </p>
-          <nav class="service-links-cluster" aria-label="Events &amp; Portrait sub-verticals">
-            <a href="/events-portrait/" class="service-cta-link" aria-label="Events &amp; Weddings photography">Events &amp; Weddings ↗</a>
-            <a href="/maternity/" class="service-cta-link" aria-label="Maternity &amp; Bump-to-Baby photography">Maternity &amp; Bump-to-Baby ↗</a>
-            <a href="/thalam-baby/" class="service-cta-link" aria-label="Baby &amp; Infant Art photography">Baby &amp; Infant Art ↗</a>
-          </nav>
-        </article>
+          <!-- 03 EVENTS & HERITAGE -->
+          <article class="editorial-card" id="opt1-events">
+            <div class="editorial-card-num">— 03 / EVENTS &amp; PORTRAIT</div>
+            <h2 class="editorial-card-title">Events &amp; Heritage Portraiture</h2>
+            <div class="editorial-impact-headline">Documentary heritage for generations to remember.</div>
+            <p class="editorial-card-body">
+              The moments you'll look at in 20 years and remember exactly how it felt. Unobtrusive, documentary observation for milestone weddings, sacred rituals, and generational family heritage across South India.
+            </p>
+            <nav class="service-links-cluster" aria-label="Events &amp; Portrait sub-verticals" style="margin-top: 12px; padding-top: 14px; border-top: 1px solid rgba(23,30,74,0.12); display: flex; flex-direction: column; gap: 8px;">
+              <a href="/events-portrait/" class="service-cta-link" style="font-weight: 700; color: #171E4A; text-decoration: none;">Events &amp; Weddings ↗</a>
+              <a href="/maternity/" class="service-cta-link" style="font-weight: 700; color: #171E4A; text-decoration: none;">Maternity &amp; Bump-to-Baby ↗</a>
+              <a href="/thalam-baby/" class="service-cta-link" style="font-weight: 700; color: #171E4A; text-decoration: none;">Baby &amp; Infant Art ↗</a>
+            </nav>
+          </article>
 
-        <!-- 05 BRAND DESIGN (EVOLVING SERVICE) -->
-        <article class="white-card service-card" id="opt1-brand-design">
-          <div class="service-badge">EVOLVING STUDIO SERVICE</div>
-          <div class="service-number">— 05 / BRAND DESIGN</div>
-          <h2 class="service-title">Brand Design &amp; Visual Systems</h2>
-          <p class="service-text-block">
-            Where visual identity meets artistic strategy. We build distinctive typographic systems, wordmarks, and art direction that define your brand essence — giving your business a face people remember.
-          </p>
-          <a href="/brand-design/" class="service-cta" aria-label="Collaborate on Brand Identity Design">Collaborate on Brand Identity ↗</a>
-        </article>
+          <!-- 05 BRAND DESIGN -->
+          <article class="editorial-card" id="opt1-design">
+            <div class="service-badge" style="align-self: flex-start; background: #171E4A; color: #FFF; font-size: 0.625rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px;">Evolving Studio Service</div>
+            <div class="editorial-card-num">— 05 / BRAND DESIGN</div>
+            <h2 class="editorial-card-title">Brand Design &amp; Visual Systems</h2>
+            <div class="editorial-impact-headline">Distinctive wordmarks and memorable visual systems.</div>
+            <p class="editorial-card-body">
+              Where visual identity meets artistic strategy. We build distinctive typographic systems, wordmarks, and art direction that define your brand essence — giving your business a face people remember.
+            </p>
+            <a href="/brand-design/" class="editorial-cta-link" aria-label="Collaborate on Brand Identity Design">
+              Collaborate on Brand Identity ↗
+            </a>
+          </article>
 
-        <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
-        <div class="manifesto-block thalam-billboard">
-          <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
-          <div class="manifesto-quote">
-            We set the room.<br>You bring the story.
+          <!-- THALAM BILLBOARD -->
+          <div class="manifesto-block thalam-billboard" style="background: #FAB417; border-radius: 14px; padding: 36px 32px; color: #171E4A; display: flex; flex-direction: column; gap: 14px;">
+            <div class="manifesto-label" style="font-family: var(--mono); font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8;">[ THALAM STUDIO, TRICHY ]</div>
+            <h3 style="font-family: var(--display); font-size: 1.75rem; font-weight: 700; line-height: 1.15;">We set the room.<br>You bring the story.</h3>
+            <div class="editorial-impact-headline" style="color: #171E4A; padding-bottom: 0;">Purpose-built 2,400 sq ft production suite.</div>
+            <p style="font-family: var(--font-primary); font-size: 0.9375rem; line-height: 1.6; opacity: 0.9;">
+              A purpose-built production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
+            </p>
+            <a href="/thalam-studio/" class="btn-primary" style="align-self: flex-start; background: #171E4A; color: #FFF; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.875rem; margin-top: 6px;">
+              Step into Thalam &rarr;
+            </a>
           </div>
-          <p class="manifesto-desc">
-            A purpose-built 2,400 sq ft production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
-          </p>
-          <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
+
         </div>
       </div>
+
     </section>
   </main>
 
+  <div class="stacked-divider" aria-hidden="true"></div>
+
   <!-- ==============================================================================
-       OPTION 2: MINIMALIST BRUTALIST MONOLITH (Reference Image Match)
+       OPTION 2: MINIMALIST BRUTALIST MONOLITH
+       Matches the Agency Reference Image: Multi-Column Strip, Hairlines, 5-7 Words
        ============================================================================== -->
   <main id="option-2-view" class="design-view-section" role="tabpanel" aria-labelledby="btn-opt-2">
     
     <div class="option-intro-banner">
-      <div class="option-intro-tag">Direction 02 / Brutalist Minimalist</div>
+      <div class="option-intro-tag">Direction 02 — Brutalist Monolith (Reference Match)</div>
       <h1 class="option-intro-heading">Minimalist Brutalist Monolith</h1>
       <p class="option-intro-desc">
-        Inspired by the agency reference design: prominent accent numerals (01–05), tight 2-line uppercase statements, floating corner arrows, and full-card touch targets.
+        Faithful to the agency reference design: horizontal multi-column architectural grid with hairline dividers, vertical rotated [WHAT WE DO] side tag, prominent numerals, and exact 5–7 word punchy work impact statements.
       </p>
     </div>
 
-    <section class="duality-section" style="margin-top: 0;">
+    <section class="brutalist-duality-split">
       
-      <!-- LEFT COLUMN: MONEY-BASED SERVICES (NAVY #171E4A) -->
-      <div class="col-money">
-
-        <!-- 01 BRAND & CORPORATE -->
-        <a href="/corporate-brand/" class="brutalist-card" id="opt2-brand-corporate" aria-label="01 Brand &amp; Corporate Photography">
-          <div class="brutalist-header">
-            <div class="brutalist-num">01</div>
-            <h2 class="brutalist-title">Brand &amp; Corporate</h2>
-          </div>
-          <p class="brutalist-statement">
-            Executive portraits, team visuals, and corporate video engineered to build brand credibility.
-          </p>
-          <div class="brutalist-arrow-box">
-            <span class="brutalist-arrow" aria-hidden="true">↗</span>
-          </div>
-        </a>
-
-        <!-- 02 COMMERCIAL -->
-        <a href="/commercial/" class="brutalist-card" id="opt2-commercial" aria-label="02 Commercial Photography">
-          <div class="brutalist-header">
-            <div class="brutalist-num">02</div>
-            <h2 class="brutalist-title">Commercial Work</h2>
-          </div>
-          <p class="brutalist-statement">
-            Products, architectural spaces, food, and high-impact advertising campaigns built to sell.
-          </p>
-          <div class="brutalist-arrow-box">
-            <span class="brutalist-arrow" aria-hidden="true">↗</span>
-          </div>
-        </a>
-
-        <!-- 04 PODCAST & INTERVIEW -->
-        <a href="/podcast-interview/" class="brutalist-card" id="opt2-podcast" aria-label="04 Podcast &amp; Interview Production">
-          <div class="brutalist-header">
-            <div class="brutalist-num">04</div>
-            <h2 class="brutalist-title">Podcast Production</h2>
-          </div>
-          <p class="brutalist-statement">
-            Broadcast-grade Shure SM7B audio, 4K multi-camera video, and acoustic isolation in Trichy.
-          </p>
-          <div class="brutalist-arrow-box">
-            <span class="brutalist-arrow" aria-hidden="true">↗</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- RIGHT COLUMN: ART-BASED SERVICES (OFF-WHITE #F7F4ED) -->
-      <div class="col-art">
-
-        <!-- 03 EVENTS & HERITAGE PORTRAITURE -->
-        <article class="brutalist-card" id="opt2-events-portraits" style="cursor: default;">
-          <div class="brutalist-header">
-            <div class="brutalist-num">03</div>
-            <h2 class="brutalist-title">Events &amp; Heritage</h2>
-          </div>
-          <p class="brutalist-statement">
-            Documentary observation for milestone weddings, sacred rituals, and generational family heritage.
-          </p>
-          <nav class="brutalist-sublinks" aria-label="Events sub-verticals">
-            <a href="/events-portrait/" class="brutalist-sublink-item">
-              <span>03.1 Events &amp; Weddings</span>
-              <span class="brutalist-sublink-arrow">↗</span>
-            </a>
-            <a href="/maternity/" class="brutalist-sublink-item">
-              <span>03.2 Maternity &amp; Baby</span>
-              <span class="brutalist-sublink-arrow">↗</span>
-            </a>
-            <a href="/thalam-baby/" class="brutalist-sublink-item">
-              <span>03.3 Infant Art &amp; House Visit</span>
-              <span class="brutalist-sublink-arrow">↗</span>
-            </a>
-          </nav>
-        </article>
-
-        <!-- 05 BRAND DESIGN -->
-        <a href="/brand-design/" class="brutalist-card" id="opt2-brand-design" aria-label="05 Brand Design &amp; Visual Systems">
-          <div class="brutalist-header">
-            <span class="brutalist-badge">Evolving</span>
-            <div class="brutalist-num">05</div>
-            <h2 class="brutalist-title">Brand Design</h2>
-          </div>
-          <p class="brutalist-statement">
-            Distinctive wordmarks, typography systems, and art direction that define brand essence.
-          </p>
-          <div class="brutalist-arrow-box">
-            <span class="brutalist-arrow" aria-hidden="true">↗</span>
-          </div>
-        </a>
-
-        <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
-        <div class="manifesto-block thalam-billboard">
-          <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
-          <div class="manifesto-quote">
-            We set the room.<br>You bring the story.
-          </div>
-          <p class="manifesto-desc">
-            A purpose-built 2,400 sq ft production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
-          </p>
-          <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
+      <!-- LEFT HALF: MONEY / B2B COMMERCIAL (NAVY #171E4A) -->
+      <div class="brutalist-half-money">
+        
+        <div class="brutalist-half-header">
+          <span class="brutalist-half-label">[ B2B COMMERCIAL &amp; PRODUCTION ]</span>
+          <span style="font-family: var(--mono); font-size: 0.6875rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">01 — 04</span>
         </div>
+
+        <div class="brutalist-row-container">
+          
+          <!-- Vertical Rotated Section Tag -->
+          <div class="brutalist-side-tag" aria-hidden="true">
+            <span class="brutalist-side-tag-text">WHAT WE DO</span>
+          </div>
+
+          <!-- 3 Columns Side-by-Side: 01, 02, 04 -->
+          <div class="brutalist-cols-grid">
+            
+            <!-- 01 BRAND & CORPORATE -->
+            <a href="/corporate-brand/" class="brutalist-col-cell" id="opt2-cell-01">
+              <div>
+                <div class="brutalist-cell-num">01</div>
+                <h3 class="brutalist-cell-title">BRAND &amp;<br>CORPORATE</h3>
+                <p class="brutalist-cell-statement">
+                  EXECUTIVE PORTRAITS THAT BUILD MARKET CREDIBILITY.
+                </p>
+              </div>
+              <div class="brutalist-cell-footer">
+                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
+              </div>
+            </a>
+
+            <!-- 02 COMMERCIAL WORK -->
+            <a href="/commercial/" class="brutalist-col-cell" id="opt2-cell-02">
+              <div>
+                <div class="brutalist-cell-num">02</div>
+                <h3 class="brutalist-cell-title">COMMERCIAL<br>CAMPAIGNS</h3>
+                <p class="brutalist-cell-statement">
+                  PRODUCTS AND SPACES DOCUMENTED TO SELL.
+                </p>
+              </div>
+              <div class="brutalist-cell-footer">
+                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
+              </div>
+            </a>
+
+            <!-- 04 PODCAST & INTERVIEW -->
+            <a href="/podcast-interview/" class="brutalist-col-cell" id="opt2-cell-04">
+              <div>
+                <div class="brutalist-cell-num">04</div>
+                <h3 class="brutalist-cell-title">PODCAST &amp;<br>PRODUCTION</h3>
+                <p class="brutalist-cell-statement">
+                  BROADCAST ACOUSTIC ROOMS AND 4K CINEMA.
+                </p>
+              </div>
+              <div class="brutalist-cell-footer">
+                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
       </div>
+
+      <!-- RIGHT HALF: CULTURAL & HUMAN ART (OFF-WHITE #F7F4ED) -->
+      <div class="brutalist-half-art">
+        
+        <div class="brutalist-half-header">
+          <span class="brutalist-half-label">[ HERITAGE &amp; HUMAN STORIES ]</span>
+          <span style="font-family: var(--mono); font-size: 0.6875rem; color: rgba(23,30,74,0.4); text-transform: uppercase;">03 — 05</span>
+        </div>
+
+        <div class="brutalist-row-container">
+          
+          <!-- Vertical Rotated Section Tag -->
+          <div class="brutalist-side-tag" aria-hidden="true">
+            <span class="brutalist-side-tag-text">HERITAGE &amp; ART</span>
+          </div>
+
+          <!-- 2 Columns Side-by-Side: 03, 05 -->
+          <div class="brutalist-cols-grid">
+            
+            <!-- 03 EVENTS & PORTRAIT -->
+            <div class="brutalist-col-cell" id="opt2-cell-03" style="cursor: default;">
+              <div>
+                <div class="brutalist-cell-num">03</div>
+                <h3 class="brutalist-cell-title">EVENTS &amp;<br>HERITAGE</h3>
+                <p class="brutalist-cell-statement">
+                  DOCUMENTARY HERITAGE FOR GENERATIONS TO REMEMBER.
+                </p>
+                <nav class="brutalist-sublinks-stack" aria-label="Events sub-links">
+                  <a href="/events-portrait/" class="brutalist-sublink-entry">
+                    <span>03.1 Weddings</span>
+                    <span>↗</span>
+                  </a>
+                  <a href="/maternity/" class="brutalist-sublink-entry">
+                    <span>03.2 Maternity</span>
+                    <span>↗</span>
+                  </a>
+                  <a href="/thalam-baby/" class="brutalist-sublink-entry">
+                    <span>03.3 Infant Art</span>
+                    <span>↗</span>
+                  </a>
+                </nav>
+              </div>
+              <div class="brutalist-cell-footer">
+                <span class="brutalist-cell-arrow" style="color: #35A248;" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+            <!-- 05 BRAND DESIGN -->
+            <a href="/brand-design/" class="brutalist-col-cell" id="opt2-cell-05">
+              <div>
+                <div style="font-family: var(--mono); font-size: 0.625rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #35A248; margin-bottom: 6px;">[ EVOLVING ]</div>
+                <div class="brutalist-cell-num">05</div>
+                <h3 class="brutalist-cell-title">BRAND<br>DESIGN</h3>
+                <p class="brutalist-cell-statement">
+                  DISTINCTIVE WORDMARKS AND MEMORABLE VISUAL SYSTEMS.
+                </p>
+              </div>
+              <div class="brutalist-cell-footer">
+                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Thalam Billboard in Brutalist Row -->
+        <a href="/thalam-studio/" class="brutalist-thalam-fullwidth" id="opt2-thalam">
+          <div>
+            <div class="brutalist-thalam-label">[ THALAM STUDIO, TRICHY ]</div>
+            <h3 class="brutalist-thalam-title">WE SET THE ROOM. YOU BRING THE STORY.</h3>
+            <p class="brutalist-thalam-statement">
+              PURPOSE-BUILT 2,400 SQ FT PRODUCTION SUITE.
+            </p>
+          </div>
+          <div class="brutalist-thalam-cta">
+            <span>STEP INTO THALAM</span>
+            <span style="font-size: 1.25rem;">→</span>
+          </div>
+        </a>
+
+      </div>
+
     </section>
   </main>
 
   <!-- ==============================================================================
-       INTERACTION SCRIPT — TABS
+       INTERACTIVE SWITCHER SCRIPT
        ============================================================================== -->
   <script>
     (function() {
       const btn1 = document.getElementById('btn-opt-1');
       const btn2 = document.getElementById('btn-opt-2');
+      const btnBoth = document.getElementById('btn-opt-both');
       const view1 = document.getElementById('option-1-view');
       const view2 = document.getElementById('option-2-view');
 
-      function switchView(target) {
-        if (target === 1) {
-          btn1.classList.add('active');
-          btn1.setAttribute('aria-selected', 'true');
-          btn2.classList.remove('active');
-          btn2.setAttribute('aria-selected', 'false');
+      function setActive(btn) {
+        [btn1, btn2, btnBoth].forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+      }
+
+      function showOption(opt) {
+        document.body.classList.remove('mode-stacked');
+        if (opt === 1) {
+          setActive(btn1);
           view1.classList.add('is-active');
           view2.classList.remove('is-active');
-        } else {
-          btn2.classList.add('active');
-          btn2.setAttribute('aria-selected', 'true');
-          btn1.classList.remove('active');
-          btn1.setAttribute('aria-selected', 'false');
+        } else if (opt === 2) {
+          setActive(btn2);
           view2.classList.add('is-active');
           view1.classList.remove('is-active');
+        } else if (opt === 'both') {
+          setActive(btnBoth);
+          document.body.classList.add('mode-stacked');
+          view1.classList.add('is-active');
+          view2.classList.add('is-active');
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      btn1.addEventListener('click', () => switchView(1));
-      btn2.addEventListener('click', () => switchView(2));
+      btn1.addEventListener('click', () => showOption(1));
+      btn2.addEventListener('click', () => showOption(2));
+      btnBoth.addEventListener('click', () => showOption('both'));
 
-      // Support URL hash (?option=2 or #option2)
-      if (window.location.search.includes('option=2') || window.location.hash === '#option2') {
-        switchView(2);
+      // Check URL param or hash
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('option') === '2' || window.location.hash === '#option2') {
+        showOption(2);
+      } else if (params.get('option') === 'both' || window.location.hash === '#both') {
+        showOption('both');
       }
     })();
   </script>
