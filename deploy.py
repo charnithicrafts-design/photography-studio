@@ -54,6 +54,10 @@ with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
         zipf.write('robots.txt', 'robots.txt')
         print("Included robots.txt configuration file.")
 
+    if os.path.exists('favicon.ico'):
+        zipf.write('favicon.ico', 'favicon.ico')
+        print("Included favicon.ico root icon.")
+
     dirs_to_zip = ['chitramaya']
     for d in dirs_to_zip:
         for root, dirs, files in os.walk(d):
