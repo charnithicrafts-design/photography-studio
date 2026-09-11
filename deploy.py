@@ -66,6 +66,10 @@ with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
         zipf.write('favicon.ico', 'favicon.ico')
         print("Included favicon.ico root icon.")
 
+    if os.path.exists('design-preview.html'):
+        zipf.write('design-preview.html', 'design-preview.html')
+        print("Included design-preview.html comparison page.")
+
     dirs_to_zip = ['chitramaya']
     for d in dirs_to_zip:
         for root, dirs, files in os.walk(d):

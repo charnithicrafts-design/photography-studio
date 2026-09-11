@@ -85,6 +85,7 @@ files_to_upload.append(('.htaccess', '.htaccess'))
 files_to_upload.append(('favicon.ico', 'favicon.ico'))
 files_to_upload.append(('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'))
 files_to_upload.append(('chitramaya/thalam-landing.html', 'thalam-landing.html'))
+files_to_upload.append(('design-preview.html', 'design-preview.html'))
 
 import time
 
