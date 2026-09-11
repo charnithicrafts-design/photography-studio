@@ -1,5 +1,15 @@
 import ftplib
 import os
+import sys
+import subprocess
+
+# 0. Enforce Pre-Flight Gate
+print("Running Chithramaya Pre-Flight Release Gate...")
+try:
+    subprocess.run([sys.executable, 'preflight.py'], check=True)
+except Exception as e:
+    print(f"Pre-flight gate check failed: {e}")
+    sys.exit(1)
 
 try:
     with open('.ftp-secret', 'r') as f:

@@ -41,6 +41,14 @@ except Exception as e:
     print(f"CSS Compilation failed: {e}")
     sys.exit(1)
 
+# 3.5 Run Preflight Release Gate
+print("Running Chithramaya Pre-Flight Release Gate...")
+try:
+    subprocess.run([sys.executable, 'preflight.py'], check=True)
+except Exception as e:
+    print(f"Pre-flight gate check failed: {e}")
+    sys.exit(1)
+
 # 4. Zip the necessary folders
 print("Creating deploy.zip (compressing files locally)...")
 with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
