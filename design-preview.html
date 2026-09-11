@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Comparison Preview — Chithramaya Creatives</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/chitramaya/assets/images/favicon/favicon-32x32.png">
+  <style>
+:root {
+  /* ===================================================================
+     BRAND DESIGN TOKENS (Official Chithramaya Creatives Guidelines v01.0)
+     =================================================================== */
+
+  /* Colour Palette */
+  --color-bg:     var(--wp--preset--color--chitramaya-base-light, #F7F4ED);
+  --color-white:  var(--wp--preset--color--chitramaya-pure-white, #FFFFFF);
+  --color-dark:   var(--wp--preset--color--chitramaya-text-dark, #171E4A);
+  --color-accent: var(--wp--preset--color--chitramaya-accent-vibrant, #35A248);
+  --color-yellow: var(--wp--preset--color--chitramaya-yellow, #FAB417);
+  --color-red:    var(--wp--preset--color--chitramaya-red, #9B1C26);
+
+  /* Legacy alias kept for compatibility with modules that use --color-light */
+  --color-light:  var(--color-white);
+
+  --border-stark: 1px solid var(--color-dark);
+
+  /* Typography — Brand Typefaces (Lato primary, Roboto Slab editorial) */
+  --font-primary: 'Lato', sans-serif;
+  --font-serif: 'Roboto Slab', serif;
+  --font-tamil: 'Noto Sans Tamil', sans-serif;
+
+  /* 
+   * EDITORIAL TYPOGRAPHY SCALE 
+   * Strict adherence to brand guidelines (9-11pt body to 32-40pt display)
+   */
+  --type-micro: 0.6875rem; /* ~11px / 7-8pt */
+  --type-body: clamp(0.75rem, 1vw, 0.9375rem); /* ~12-15px / 9-11pt */
+  --type-subhead: clamp(0.9375rem, 1.2vw, 1.125rem); /* ~15-18px / 11-14pt */
+  --type-section: clamp(1.5rem, 2vw, 2rem); /* ~24-32px / 18-24pt */
+  --type-display: clamp(2.5rem, 4vw, 3.25rem); /* ~40-52px / 32-40pt */
+
+  /* ===================================================================
+     8PT SPATIAL GRID TOKENS
+     =================================================================== */
+  --space-0-5: 4px;   /* Micro spacing / tag internal padding */
+  --space-1:   8px;   /* Base unit / icon-text gap */
+  --space-2:   16px;  /* 2 units / card gap, element proximity */
+  --space-3:   24px;  /* 3 units / standard card padding */
+  --space-4:   32px;  /* 4 units / large card padding, module gap */
+  --space-5:   40px;  /* 5 units / section sub-gaps */
+  --space-6:   48px;  /* 6 units / min touch target, medium section gap */
+  --space-8:   64px;  /* 8 units / large section padding */
+  --space-10:  80px;  /* 10 units / major section rhythm */
+  --space-12:  96px;  /* 12 units / macro section break */
+  --space-16:  128px; /* 16 units / hero viewport rhythm */
+
+  /* Bento Geometry Tokens */
+  --radius-sm:   8px;
+  --radius-md:   16px;  /* Standard Bento card radius */
+  --radius-lg:   24px;  /* Featured hero / container radius */
+  --radius-pill: 40px;  /* Interactive pills, buttons, tags */
+  --radius-full: 9999px;
+
+  /* Line Heights on 4pt/8pt Rhythm */
+  --lh-tight:   1.125;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.75;
+
+  /* Touch Target Minimum (Fitts's Law) */
+  --min-touch-target: 48px;
+
+  /* Reset WP Bloat */
+  --wp--style--global--padding: 0;
+  --wp--custom--spacing--outer: 0;
+}
+
+/* Global Reset & Edge-to-Edge */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Image Tactility (For Chithramaya) */
+.img-tactile {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.95);
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.img-tactile:hover {
+  transform: scale(1.02);
+  filter: contrast(1.15) brightness(1);
+}
+
+/* Brutalist Utility Classes */
+.brut-container {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.brut-border-bottom {
+  border-bottom: var(--border-stark);
+}
+.brut-border-right {
+  border-right: var(--border-stark);
+}
+.brut-border-top {
+  border-top: var(--border-stark);
+}
+
+.brut-grid {
+  display: grid;
+}
+.brut-flex {
+  display: flex;
+}
+
+/* Thalam Functional UI */
+.thalam-ui {
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+/* Typography Overrides */
+h1,
+.brut-massive-text {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: var(--type-display);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+h2,
+.brut-huge-text {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: var(--type-section);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u8w4BMUTPHjxsAUi-qJCY.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u8w4BMUTPHjxsAXC-q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufA5qW54A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufJ5qW54A.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufB5qW54A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufO5qW54A.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufC5qW54A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufD5qW54A.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufN5qU.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufA5qW54A.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufJ5qW54A.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufB5qW54A.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufO5qW54A.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufC5qW54A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufD5qW54A.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/BngMUXZYTXPIvIBgJJSb6ufN5qU.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* tamil */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048cFpwEFI.woff2) format('woff2');
+  unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048dlpwEFI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048ddpwA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* tamil */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048cFpwEFI.woff2) format('woff2');
+  unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048dlpwEFI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/wp-content/themes/chitramaya/assets/fonts/ieVp2YdFI3GCY6SyQy1KfStzYKZgzN1z4LKDbeZce-048ddpwA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --dark-bg:           var(--color-dark, #171E4A);
+  --dark-card:         var(--color-dark, #171E4A);
+  --dark-border:       rgba(255,255,255,0.15);
+  --money-green:       var(--color-accent, #35A248);
+  --money-green-glow:  rgba(53,162,72,0.15);
+  --money-green-dim:   rgba(53,162,72,0.7);
+  --white-bg:          var(--color-bg, #F7F4ED);
+  --white-card:        var(--color-white, #FFFFFF);
+  --art-border:        rgba(23,30,74,0.15);
+  --text-dark:         var(--color-dark, #171E4A);
+  --text-white:        #FFFFFF;
+  --text-muted-dark:   rgba(255,255,255,0.6);
+  --text-muted-light:  rgba(23,30,74,0.6);
+  --mono:              var(--font-primary, 'Lato', sans-serif);
+  --display:           var(--font-serif, 'Roboto Slab', serif);
+  --body:              var(--font-primary, 'Lato', sans-serif);
+}
+
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            html { scroll-behavior: smooth; }
+            body { font-family: var(--body); overflow-x: hidden; }
+
+            /* =====================================================
+               HERO SECTION (Preserved 3D Interlocked Composition)
+               ===================================================== */
+            .hero-viewport {
+                width: 100vw;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                background-color: var(--white-bg);
+                overflow: hidden;
+            }
+
+            header,
+            .site-header {
+                width: 100%;
+                background: transparent !important;
+                background-color: transparent !important;
+            }
+
+            .pill-btn {
+                background: #ffffff;
+                border: 1px solid var(--art-border);
+                border-radius: 30px;
+                padding: 6px 16px;
+                font-size: clamp(11px, 1.2vw, 13px);
+                font-weight: 500;
+                color: var(--text-dark);
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+                transition: all 0.2s ease;
+                text-decoration: none;
+                white-space: nowrap;
+                font-family: var(--body);
+                border: none;
+                background: none;
+                outline: none;
+            }
+            .pill-btn {
+                background: #ffffff;
+                border: 1px solid var(--art-border);
+            }
+
+            .logo {
+                font-family: var(--display);
+                font-size: clamp(14px, 1.8vw, 22px);
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--text-dark);
+                white-space: nowrap;
+            }
+
+            .social-ig-link {
+                width: clamp(32px, 4vh, 38px);
+                height: clamp(32px, 4vh, 38px);
+                border-radius: 50%;
+                background: #ffffff;
+                border: 1px solid var(--art-border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(11px, 1.2vw, 13px);
+                font-weight: 600;
+                color: var(--text-dark);
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+            .social-ig-link:hover { background: var(--text-dark); color: #fff; border-color: var(--text-dark); }
+
+            .hero-stage-container {
+                flex: 1;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                padding-bottom: clamp(24px, 4vh, 40px);
+                gap: 0;
+                overflow: visible;
+            }
+
+            .composition-box {
+                container-type: inline-size;
+                container-name: hero;
+                position: relative;
+                width: min(92vw, 1100px);
+                height: min(74vh, 560px);
+                aspect-ratio: 16 / 10;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: visible;
+            }
+
+            .text-top-left {
+                position: absolute;
+                top: 2%; 
+                left: 2%;
+                font-family: var(--display, 'Roboto Slab', serif);
+                font-size: clamp(80px, 22cqw, 220px);
+                font-weight: 700;
+                line-height: 0.76;
+                letter-spacing: -0.02em;
+                color: rgba(23, 30, 74, 0.10);
+                text-transform: uppercase;
+                user-select: none;
+                z-index: 1;
+                white-space: nowrap;
+            }
+
+            .photo-foreground-cutout {
+                position: absolute;
+                bottom: 0%; 
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+                height: 94%;
+                width: auto;
+                max-width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                pointer-events: none;
+            }
+
+            .artistic-cutout-img {
+                height: 100%;
+                width: auto;
+                max-width: 100%;
+                display: block;
+                object-fit: contain;
+                filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));
+                transition: transform 0.3s ease;
+                pointer-events: auto;
+            }
+            .photo-foreground-cutout:hover .artistic-cutout-img { transform: scale(1.02); }
+
+            .text-bottom-right {
+                position: absolute;
+                bottom: 0%; 
+                right: 2%;
+                display: flex;
+                align-items: center;
+                gap: clamp(8px, 2cqw, 24px);
+                z-index: 4;
+                white-space: nowrap;
+            }
+
+            .click-text {
+                font-family: var(--display, 'Roboto Slab', serif);
+                font-size: clamp(80px, 22cqw, 220px);
+                font-weight: 700;
+                line-height: 0.76;
+                letter-spacing: -0.02em;
+                color: #D2D7E2;
+                text-transform: uppercase;
+                user-select: none;
+            }
+
+            .camera-icon-wrapper { 
+                display: inline-flex; 
+                align-items: center; 
+                justify-content: center; 
+                z-index: 5; 
+            }
+            .camera-icon-img {
+                width: clamp(55px, 14cqw, 140px);
+                height: auto;
+                filter: drop-shadow(0 12px 20px rgba(0,0,0,0.10));
+                transition: transform 0.3s ease;
+            }
+            .camera-icon-wrapper:hover .camera-icon-img { transform: scale(1.06) rotate(-2deg); }
+
+            .hero-cta-inline {
+                margin-top: clamp(16px, 2.5vh, 32px);
+                display: flex;
+                justify-content: center;
+                z-index: 20;
+                flex-shrink: 0;
+            }
+
+            @keyframes bounce-down {
+                0%, 100% { transform: translateY(0); }
+                50%       { transform: translateY(5px); }
+            }
+            .cta-bounce { animation: bounce-down 1.8s ease-in-out infinite; display: flex; align-items: center; justify-content: center; }
+
+            /* ── HOMEPAGE CTA PILL (unified btn-primary system) ───── */
+            .cta-pill-group {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                cursor: pointer;
+                border-radius: 50px;
+                padding: 6px 6px 6px 22px;
+                min-height: 52px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-weight: 700;
+                font-size: 0.9375rem;
+                white-space: nowrap;
+                transition: border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+                border: 1.5px solid rgba(23, 30, 74, 0.15);
+                background: var(--white-bg, #F7F4ED);
+                color: var(--text-dark, #171E4A);
+                box-shadow: 0 4px 16px rgba(23, 30, 74, 0.06);
+            }
+            .cta-pill-group:hover {
+                border-color: var(--money-green, #35A248);
+                color: var(--money-green, #35A248);
+                box-shadow: 0 6px 24px rgba(53, 162, 72, 0.12);
+            }
+            .cta-main-btn {
+                font-weight: 700;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.9375rem;
+                white-space: nowrap;
+                color: inherit;
+            }
+            .cta-arrow-btn {
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: var(--money-green, #35A248);
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: background 0.22s ease;
+            }
+            .cta-pill-group:hover .cta-arrow-btn {
+                background: var(--dark-bg, #171E4A);
+            }
+
+            /* ── PORTRAIT TABLET & MOBILE (Aspect Ratio < 1) ─────────────── */
+            @media (max-aspect-ratio: 1/1) {
+                .hero-viewport {
+                    overflow: visible;
+                }
+                .composition-box {
+                    width: min(92vw, calc(66vh * 0.85));
+                    max-width: 480px;
+                    height: auto;
+                    aspect-ratio: 1 / 1.18;
+                    margin: auto;
+                    overflow: visible;
+                }
+                .text-top-left {
+                    top: 2%;
+                    left: 0%;
+                    font-size: clamp(60px, 24cqw, 130px);
+                    line-height: 0.76;
+                }
+                .click-text {
+                    font-size: clamp(60px, 24cqw, 130px);
+                    line-height: 0.76;
+                }
+                .photo-foreground-cutout {
+                    height: 98%;
+                    width: 100%;
+                    max-width: 100%;
+                    bottom: 0%;
+                }
+                .camera-icon-img {
+                    width: clamp(44px, 15cqw, 80px);
+                }
+                .text-bottom-right {
+                    bottom: 0%;
+                    right: 0%;
+                    gap: clamp(6px, 2cqw, 16px);
+                }
+            }
+
+            /* =====================================================
+               DUALITY SPLIT — MONEY vs ART
+               ===================================================== */
+            .duality-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                min-height: 100vh;
+                margin-top: 8vh;
+            }
+
+            /* --- LEFT: DARK / MONEY SERVICES --- */
+            .col-money {
+                background: var(--dark-bg);
+                padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* --- DARK SERVICE CARD --- */
+            .dark-card {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-4, 32px);
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-2, 16px);
+                transition: background 0.3s ease, box-shadow 0.3s ease;
+            }
+            .dark-card:hover {
+                background: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* --- WHITE SERVICE CARD --- */
+            .white-card {
+                background: var(--color-bg, #F7F4ED);
+                border: 1px solid var(--art-border, rgba(23, 30, 74, 0.12));
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-4, 32px);
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-2, 16px);
+                box-shadow: 0 4px 20px rgba(23, 30, 74, 0.04);
+                transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            }
+            .white-card:hover {
+                background: #FFFFFF;
+                border-color: rgba(23, 30, 74, 0.25);
+                box-shadow: 0 12px 40px rgba(23, 30, 74, 0.08);
+            }
+
+            .service-number {
+                font-family: var(--mono);
+                font-size: var(--type-micro, 0.6875rem);
+                font-weight: 700;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+            }
+            .dark-card .service-number { color: var(--money-green); }
+            .white-card .service-number { color: var(--text-muted-light); }
+
+            .service-title {
+                font-family: var(--display);
+                font-size: var(--type-section);
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                line-height: 1;
+            }
+            .dark-card .service-title { color: var(--text-white); }
+            .white-card .service-title { color: var(--text-dark); }
+
+            /* ── SERVICE CTA LINKS — Editorial Arrow Navigation ── */
+            .service-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.875rem;
+                font-weight: 700;
+                text-decoration: none;
+                letter-spacing: 0.02em;
+                margin-top: 8px;
+                transition: gap 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+            }
+            .dark-card .service-cta {
+                color: var(--money-green, #35A248);
+            }
+            .dark-card .service-cta:hover {
+                gap: 8px;
+                opacity: 0.85;
+            }
+            .white-card .service-cta {
+                color: var(--text-dark, #171E4A);
+            }
+            .white-card .service-cta:hover {
+                gap: 8px;
+                color: var(--money-green, #35A248);
+            }
+
+            /* ── EVENTS MULTI-LINK CLUSTER — 3 direct sub-vertical links ── */
+            .service-links-cluster {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--art-border, rgba(23, 30, 74, 0.12));
+            }
+            .service-cta-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: var(--text-dark, #171E4A);
+                transition: gap 0.2s ease, color 0.2s ease;
+            }
+            .service-cta-link:hover {
+                gap: 8px;
+                color: var(--money-green, #35A248);
+            }
+
+            /* ── SERVICE BADGE — Inline flow badge replacing absolute overlay ── */
+            .service-badge {
+                display: inline-block;
+                align-self: flex-start;
+                font-family: var(--font-primary, 'Lato', sans-serif);
+                font-size: 0.625rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                background: var(--color-dark, #171E4A);
+                color: #FFFFFF;
+                padding: 4px 10px;
+                border-radius: var(--radius-sm, 6px);
+                margin-bottom: 12px;
+            }
+
+            /* ── SERVICE CARD — Hover border accent lift ── */
+            .dark-card.service-card:hover {
+                border-color: rgba(53, 162, 72, 0.35);
+            }
+            .white-card.service-card:hover {
+                border-color: rgba(23, 30, 74, 0.3);
+            }
+
+            .service-text-block {
+                font-size: 15px;
+                line-height: 1.75;
+                font-weight: 400;
+                padding-top: 20px;
+                border-top: 1px solid;
+            }
+            .dark-card .service-text-block { color: var(--text-white); opacity: 0.85; border-top-color: rgba(255,255,255,0.15); }
+            .white-card .service-text-block { color: var(--text-muted-light); border-top-color: var(--art-border); }
+
+            /* --- RIGHT: WHITE / ART SERVICES --- */
+            .col-art {
+                background: #FFFFFF;
+                padding: clamp(32px, 4vw, 48px) clamp(20px, 3vw, 48px);
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            /* Manifesto block — Official Campaign Quote Style (Yellow/Navy) */
+            .manifesto-block {
+                background: var(--color-yellow, #FAB417);
+                color: var(--color-dark, #171E4A);
+                border-radius: var(--radius-md, 16px);
+                box-shadow: 0 12px 32px rgba(250, 180, 23, 0.15);
+                padding: 40px 36px;
+                position: relative;
+                overflow: hidden;
+                flex: 1;
+                min-height: 320px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            /* Ghost WE CLICK watermark inside yellow block */
+            .manifesto-block::before {
+                content: 'WE CLICK';
+                position: absolute;
+                bottom: -14px;
+                right: -24px;
+                font-family: var(--display);
+                font-size: var(--type-display);
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--color-dark, #171E4A);
+                opacity: 0.05;
+                pointer-events: none;
+                user-select: none;
+                line-height: 1;
+            }
+            /* Corner crosshair */
+            .manifesto-block::after {
+                content: '+';
+                position: absolute;
+                top: 16px;
+                right: 20px;
+                font-family: var(--mono);
+                font-size: 18px;
+                color: var(--color-dark, #171E4A);
+                opacity: 0.2;
+            }
+            .manifesto-label {
+                font-family: var(--mono);
+                font-size: var(--type-micro);
+                letter-spacing: 0.15em;
+                color: var(--color-dark, #171E4A);
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                opacity: 0.7;
+            }
+            .manifesto-quote {
+                font-family: var(--font-serif); /* Roboto Slab */
+                font-size: var(--type-display);
+                font-weight: 400; /* Regular weight for quotes */
+                line-height: 1.1;
+                color: var(--color-dark, #171E4A);
+                margin-bottom: 24px;
+            }
+            .manifesto-desc {
+                font-family: var(--font-primary);
+                font-size: 1.125rem;
+                line-height: 1.6;
+                color: var(--color-dark, #171E4A);
+                margin-bottom: 32px;
+                flex: 1;
+                opacity: 0.85;
+                position: relative;
+                z-index: 2;
+            }
+            .thalam-billboard .btn-primary {
+                align-self: flex-start;
+                background-color: var(--color-dark, #171E4A);
+                color: var(--color-white, #FFFFFF);
+                padding: 14px 28px;
+                border-radius: 100px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.875rem;
+                font-family: var(--font-primary);
+                display: inline-flex;
+                align-items: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                z-index: 2;
+            }
+            .thalam-billboard .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(23, 30, 74, 0.25);
+            }
+
+            /* =====================================================
+               DIAGONAL SPLIT DIVIDER
+               ===================================================== */
+            .split-divider {
+                position: relative;
+                height: 80px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                overflow: hidden;
+            }
+            .split-divider-left { background: var(--dark-bg); }
+            .split-divider-right { background: #FFFFFF; }
+
+            @media (max-width: 900px) {
+                .split-divider {
+                    display: none;
+                }
+            }
+
+
+            /* =====================================================
+               WORKFLOW PIPELINE SECTION
+               ===================================================== */
+            .pipeline-section {
+                background: var(--white-bg);
+                padding: clamp(60px, 8vw, 120px) clamp(24px, 6vw, 80px);
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Background grid texture */
+            .pipeline-section::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image:
+                    linear-gradient(to right, rgba(53, 162, 72, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(53, 162, 72, 0.03) 1px, transparent 1px);
+                background-size: 50px 50px;
+                pointer-events: none;
+            }
+
+            .pipeline-label {
+                font-family: var(--mono);
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--money-green);
+                margin-bottom: 20px;
+            }
+
+            .pipeline-heading {
+                font-family: var(--display);
+                font-size: var(--type-display);
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--text-dark);
+                line-height: 0.9;
+                margin-bottom: 72px;
+            }
+
+            .pipeline-heading span {
+                color: var(--money-green);
+            }
+
+            .pipeline-steps {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: var(--space-3, 24px);
+                position: relative;
+            }
+
+            .step {
+                position: relative;
+                z-index: 1;
+                background: var(--white-card);
+                border: 1px solid var(--art-border);
+                border-radius: var(--radius-md, 16px);
+                padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
+                box-shadow: 0 4px 16px rgba(23, 30, 74, 0.03);
+                transition: background 0.3s ease, box-shadow 0.3s ease;
+            }
+            .step:hover {
+                background: var(--color-bg, #F7F4ED);
+                box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
+            }
+
+            .step-marker {
+                position: absolute;
+                top: -24px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: 2px solid var(--money-green);
+                background: var(--white-card);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: var(--mono);
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--money-green);
+                box-shadow: 0 4px 12px rgba(53, 162, 72, 0.15);
+                transition: all 0.3s ease;
+            }
+
+            .step:hover .step-marker {
+                background: var(--money-green);
+                color: var(--dark-bg);
+            }
+
+            .step-title {
+                font-family: var(--display);
+                font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--text-dark);
+                letter-spacing: 0.02em;
+                margin-bottom: 10px;
+                text-align: center;
+                line-height: 1.2;
+            }
+
+            .step-desc {
+                font-size: 14px;
+                color: var(--text-muted-light);
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            /* Responsive Media Queries */
+            @media (max-width: 900px) {
+                .duality-section {
+                    grid-template-columns: 1fr;
+                }
+                .col-money { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+                .pipeline-steps {
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--space-5, 40px) var(--space-3, 24px);
+                }
+                .step {
+                    padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .pipeline-steps { grid-template-columns: 1fr; gap: var(--space-5, 40px); }
+            }
+/* ==============================================================================
+   CHITHRAMAYA CREATIVES — DESIGN COMPARISON PREVIEW
+   Option 1: High-Contrast Editorial Action
+   Option 2: Minimalist Brutalist Monolith (Reference Design Match)
+   ============================================================================== */
+
+
+
+/* --- Sticky Comparison Control Bar --- */
+.preview-control-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #171E4A;
+    color: #F7F4ED;
+    border-bottom: 2px solid #35A248;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.preview-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.preview-badge {
+    background: #35A248;
+    color: #171E4A;
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.preview-title {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.preview-switch-group {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 3px;
+    gap: 4px;
+}
+
+.preview-switch-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+}
+
+.preview-switch-btn:hover {
+    color: #FFFFFF;
+}
+
+.preview-switch-btn.active {
+    background: #35A248;
+    color: #171E4A;
+    box-shadow: 0 2px 10px rgba(53, 162, 72, 0.4);
+}
+
+.preview-hint {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- View Toggle Logic --- */
+.design-view-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.design-view-section.is-active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- Option Section Header Banners --- */
+.option-intro-banner {
+    padding: 32px 24px 20px;
+    background: #F7F4ED;
+    border-bottom: 1px solid rgba(23, 30, 74, 0.1);
+    text-align: center;
+}
+
+.option-intro-tag {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #35A248;
+    margin-bottom: 8px;
+}
+
+.option-intro-heading {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #171E4A;
+    margin-bottom: 8px;
+}
+
+.option-intro-desc {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.9375rem;
+    color: rgba(23, 30, 74, 0.7);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ==============================================================================
+   OPTION 2: MINIMALIST BRUTALIST SYSTEM (Reference Image Match)
+   Clean, monolithic, typography-driven, 2-line statement, corner arrow ↗
+   ============================================================================== */
+
+.brutalist-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    padding: 36px 32px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+    cursor: pointer;
+}
+
+/* Dark Card (Money Column) */
+.col-money .brutalist-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.col-money .brutalist-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #35A248;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Light Card (Art Column) */
+.col-art .brutalist-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(23, 30, 74, 0.14);
+}
+
+.col-art .brutalist-card:hover {
+    background: #FFFFFF;
+    border-color: #171E4A;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(23, 30, 74, 0.09);
+}
+
+/* Numeral Header */
+.brutalist-num {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.col-money .brutalist-num {
+    color: #35A248;
+}
+
+.col-art .brutalist-num {
+    color: #171E4A;
+}
+
+/* Title */
+.brutalist-title {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.col-money .brutalist-title {
+    color: #FFFFFF;
+}
+
+.col-art .brutalist-title {
+    color: #171E4A;
+}
+
+/* 2-Line Tight Statement */
+.brutalist-statement {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.col-money .brutalist-statement {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.col-art .brutalist-statement {
+    color: rgba(23, 30, 74, 0.7);
+}
+
+/* Floating Corner Arrow */
+.brutalist-arrow-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.brutalist-arrow {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
+}
+
+.col-money .brutalist-arrow {
+    color: #35A248;
+}
+
+.col-art .brutalist-arrow {
+    color: #171E4A;
+}
+
+.brutalist-card:hover .brutalist-arrow {
+    transform: translate(4px, -4px);
+}
+
+.col-art .brutalist-card:hover .brutalist-arrow {
+    color: #35A248;
+}
+
+/* Stacked Sub-links for Pillar 03 (Events) */
+.brutalist-sublinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(23, 30, 74, 0.12);
+}
+
+.brutalist-sublink-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #171E4A;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(23, 30, 74, 0.04);
+    transition: all 0.2s ease;
+}
+
+.brutalist-sublink-item:hover {
+    background: rgba(53, 162, 72, 0.1);
+    color: #35A248;
+    padding-left: 16px;
+}
+
+.brutalist-sublink-arrow {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.brutalist-sublink-item:hover .brutalist-sublink-arrow {
+    transform: translate(2px, -2px);
+}
+
+/* Pillar 05 Evolving Badge */
+.brutalist-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: #171E4A;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preview-control-bar {
+        padding: 10px 16px;
+    }
+    .preview-switch-group {
+        width: 100%;
+        justify-content: center;
+    }
+    .preview-switch-btn {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+    .brutalist-card {
+        padding: 24px 20px 20px;
+        min-height: 220px;
+    }
+}
+
+  </style>
+</head>
+<body style="background-color: var(--white-bg, #F7F4ED); margin: 0; padding: 0;">
+<header class="preview-control-bar" role="banner">
+    <div class="preview-meta">
+      <span class="preview-badge">Client Review</span>
+      <span class="preview-title">Service Pillars Direction</span>
+    </div>
+
+    <div class="preview-switch-group" role="tablist" aria-label="Design variant selector">
+      <button type="button" class="preview-switch-btn active" id="btn-opt-1" role="tab" aria-selected="true" aria-controls="option-1-view">
+        Option 1: Editorial Action
+      </button>
+      <button type="button" class="preview-switch-btn" id="btn-opt-2" role="tab" aria-selected="false" aria-controls="option-2-view">
+        Option 2: Brutalist Minimalist
+      </button>
+    </div>
+
+    <div class="preview-hint">Tap buttons to toggle between styles</div>
+  </header>
+
+  <!-- ==============================================================================
+       OPTION 1: HIGH-CONTRAST EDITORIAL ACTION
+       ============================================================================== -->
+  <main id="option-1-view" class="design-view-section is-active" role="tabpanel" aria-labelledby="btn-opt-1">
+    
+    <div class="option-intro-banner">
+      <div class="option-intro-tag">Direction 01 / Selected Default</div>
+      <h1 class="option-intro-heading">High-Contrast Editorial Action</h1>
+      <p class="option-intro-desc">
+        Tight, high-conviction editorial storytelling with explicit action text in brand accent green. Designed for commercial authority and instant reading clarity.
+      </p>
+    </div>
+
+    <section class="duality-section" style="margin-top: 0;">
+      
+      <!-- LEFT COLUMN: MONEY-BASED SERVICES (NAVY #171E4A) -->
+      <div class="col-money">
+
+        <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
+        <article class="dark-card service-card" id="opt1-brand-corporate">
+          <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
+          <h2 class="service-title">Brand &amp; Corporate Photography</h2>
+          <p class="service-text-block">
+            We photograph the people, spaces, and moments that make your business credible. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
+          </p>
+          <a href="/corporate-brand/" class="service-cta" aria-label="Explore Corporate &amp; Executive Photography work">Explore Corporate &amp; Executive Work ↗</a>
+        </article>
+
+        <!-- 02 COMMERCIAL PHOTOGRAPHY -->
+        <article class="dark-card service-card" id="opt1-commercial">
+          <div class="service-number">— 02 / COMMERCIAL</div>
+          <h2 class="service-title">Commercial Photography</h2>
+          <p class="service-text-block">
+            Products, spaces, food, fashion. We shoot what you're selling and make people actually want it. Whether it's an advertising campaign, an architectural space, or a catalog, the frame is always doing a commercial job.
+          </p>
+          <a href="/commercial/" class="service-cta" aria-label="Explore Commercial Photography Campaigns">Explore Commercial Campaigns ↗</a>
+        </article>
+
+        <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
+        <article class="dark-card service-card" id="opt1-podcast">
+          <div class="service-number">— 04 / PODCAST &amp; PRODUCTION</div>
+          <h2 class="service-title">Podcast &amp; Interview Production</h2>
+          <p class="service-text-block">
+            We set up the room. You bring the conversation. Broadcast-grade Shure SM7B audio, cinema 4K multi-camera angles, and acoustic isolation in Trichy. One good recording session becomes a month of edited, branded, publish-ready content.
+          </p>
+          <a href="/podcast-interview/" class="service-cta" aria-label="Book Podcast Studio &amp; Production">Book Studio &amp; Production ↗</a>
+        </article>
+      </div>
+
+      <!-- RIGHT COLUMN: ART-BASED SERVICES (OFF-WHITE #F7F4ED) -->
+      <div class="col-art">
+
+        <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
+        <article class="white-card service-card" id="opt1-events-portraits">
+          <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
+          <h2 class="service-title">Events &amp; Heritage Portraiture</h2>
+          <p class="service-text-block">
+            The moments you'll look at in 20 years and remember exactly how it felt. Unobtrusive, documentary observation for milestone weddings, sacred rituals, and generational family heritage across South India.
+          </p>
+          <nav class="service-links-cluster" aria-label="Events &amp; Portrait sub-verticals">
+            <a href="/events-portrait/" class="service-cta-link" aria-label="Events &amp; Weddings photography">Events &amp; Weddings ↗</a>
+            <a href="/maternity/" class="service-cta-link" aria-label="Maternity &amp; Bump-to-Baby photography">Maternity &amp; Bump-to-Baby ↗</a>
+            <a href="/thalam-baby/" class="service-cta-link" aria-label="Baby &amp; Infant Art photography">Baby &amp; Infant Art ↗</a>
+          </nav>
+        </article>
+
+        <!-- 05 BRAND DESIGN (EVOLVING SERVICE) -->
+        <article class="white-card service-card" id="opt1-brand-design">
+          <div class="service-badge">EVOLVING STUDIO SERVICE</div>
+          <div class="service-number">— 05 / BRAND DESIGN</div>
+          <h2 class="service-title">Brand Design &amp; Visual Systems</h2>
+          <p class="service-text-block">
+            Where visual identity meets artistic strategy. We build distinctive typographic systems, wordmarks, and art direction that define your brand essence — giving your business a face people remember.
+          </p>
+          <a href="/brand-design/" class="service-cta" aria-label="Collaborate on Brand Identity Design">Collaborate on Brand Identity ↗</a>
+        </article>
+
+        <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
+        <div class="manifesto-block thalam-billboard">
+          <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
+          <div class="manifesto-quote">
+            We set the room.<br>You bring the story.
+          </div>
+          <p class="manifesto-desc">
+            A purpose-built 2,400 sq ft production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
+          </p>
+          <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================================
+       OPTION 2: MINIMALIST BRUTALIST MONOLITH (Reference Image Match)
+       ============================================================================== -->
+  <main id="option-2-view" class="design-view-section" role="tabpanel" aria-labelledby="btn-opt-2">
+    
+    <div class="option-intro-banner">
+      <div class="option-intro-tag">Direction 02 / Brutalist Minimalist</div>
+      <h1 class="option-intro-heading">Minimalist Brutalist Monolith</h1>
+      <p class="option-intro-desc">
+        Inspired by the agency reference design: prominent accent numerals (01–05), tight 2-line uppercase statements, floating corner arrows, and full-card touch targets.
+      </p>
+    </div>
+
+    <section class="duality-section" style="margin-top: 0;">
+      
+      <!-- LEFT COLUMN: MONEY-BASED SERVICES (NAVY #171E4A) -->
+      <div class="col-money">
+
+        <!-- 01 BRAND & CORPORATE -->
+        <a href="/corporate-brand/" class="brutalist-card" id="opt2-brand-corporate" aria-label="01 Brand &amp; Corporate Photography">
+          <div class="brutalist-header">
+            <div class="brutalist-num">01</div>
+            <h2 class="brutalist-title">Brand &amp; Corporate</h2>
+          </div>
+          <p class="brutalist-statement">
+            Executive portraits, team visuals, and corporate video engineered to build brand credibility.
+          </p>
+          <div class="brutalist-arrow-box">
+            <span class="brutalist-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <!-- 02 COMMERCIAL -->
+        <a href="/commercial/" class="brutalist-card" id="opt2-commercial" aria-label="02 Commercial Photography">
+          <div class="brutalist-header">
+            <div class="brutalist-num">02</div>
+            <h2 class="brutalist-title">Commercial Work</h2>
+          </div>
+          <p class="brutalist-statement">
+            Products, architectural spaces, food, and high-impact advertising campaigns built to sell.
+          </p>
+          <div class="brutalist-arrow-box">
+            <span class="brutalist-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <!-- 04 PODCAST & INTERVIEW -->
+        <a href="/podcast-interview/" class="brutalist-card" id="opt2-podcast" aria-label="04 Podcast &amp; Interview Production">
+          <div class="brutalist-header">
+            <div class="brutalist-num">04</div>
+            <h2 class="brutalist-title">Podcast Production</h2>
+          </div>
+          <p class="brutalist-statement">
+            Broadcast-grade Shure SM7B audio, 4K multi-camera video, and acoustic isolation in Trichy.
+          </p>
+          <div class="brutalist-arrow-box">
+            <span class="brutalist-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- RIGHT COLUMN: ART-BASED SERVICES (OFF-WHITE #F7F4ED) -->
+      <div class="col-art">
+
+        <!-- 03 EVENTS & HERITAGE PORTRAITURE -->
+        <article class="brutalist-card" id="opt2-events-portraits" style="cursor: default;">
+          <div class="brutalist-header">
+            <div class="brutalist-num">03</div>
+            <h2 class="brutalist-title">Events &amp; Heritage</h2>
+          </div>
+          <p class="brutalist-statement">
+            Documentary observation for milestone weddings, sacred rituals, and generational family heritage.
+          </p>
+          <nav class="brutalist-sublinks" aria-label="Events sub-verticals">
+            <a href="/events-portrait/" class="brutalist-sublink-item">
+              <span>03.1 Events &amp; Weddings</span>
+              <span class="brutalist-sublink-arrow">↗</span>
+            </a>
+            <a href="/maternity/" class="brutalist-sublink-item">
+              <span>03.2 Maternity &amp; Baby</span>
+              <span class="brutalist-sublink-arrow">↗</span>
+            </a>
+            <a href="/thalam-baby/" class="brutalist-sublink-item">
+              <span>03.3 Infant Art &amp; House Visit</span>
+              <span class="brutalist-sublink-arrow">↗</span>
+            </a>
+          </nav>
+        </article>
+
+        <!-- 05 BRAND DESIGN -->
+        <a href="/brand-design/" class="brutalist-card" id="opt2-brand-design" aria-label="05 Brand Design &amp; Visual Systems">
+          <div class="brutalist-header">
+            <span class="brutalist-badge">Evolving</span>
+            <div class="brutalist-num">05</div>
+            <h2 class="brutalist-title">Brand Design</h2>
+          </div>
+          <p class="brutalist-statement">
+            Distinctive wordmarks, typography systems, and art direction that define brand essence.
+          </p>
+          <div class="brutalist-arrow-box">
+            <span class="brutalist-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
+        <div class="manifesto-block thalam-billboard">
+          <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
+          <div class="manifesto-quote">
+            We set the room.<br>You bring the story.
+          </div>
+          <p class="manifesto-desc">
+            A purpose-built 2,400 sq ft production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
+          </p>
+          <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================================
+       INTERACTION SCRIPT — TABS
+       ============================================================================== -->
+  <script>
+    (function() {
+      const btn1 = document.getElementById('btn-opt-1');
+      const btn2 = document.getElementById('btn-opt-2');
+      const view1 = document.getElementById('option-1-view');
+      const view2 = document.getElementById('option-2-view');
+
+      function switchView(target) {
+        if (target === 1) {
+          btn1.classList.add('active');
+          btn1.setAttribute('aria-selected', 'true');
+          btn2.classList.remove('active');
+          btn2.setAttribute('aria-selected', 'false');
+          view1.classList.add('is-active');
+          view2.classList.remove('is-active');
+        } else {
+          btn2.classList.add('active');
+          btn2.setAttribute('aria-selected', 'true');
+          btn1.classList.remove('active');
+          btn1.setAttribute('aria-selected', 'false');
+          view2.classList.add('is-active');
+          view1.classList.remove('is-active');
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      btn1.addEventListener('click', () => switchView(1));
+      btn2.addEventListener('click', () => switchView(2));
+
+      // Support URL hash (?option=2 or #option2)
+      if (window.location.search.includes('option=2') || window.location.hash === '#option2') {
+        switchView(2);
+      }
+    })();
+  </script>
+
+  
+</body>
+</html>

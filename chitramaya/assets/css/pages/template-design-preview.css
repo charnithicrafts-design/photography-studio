@@ -1,0 +1,355 @@
+/* ==============================================================================
+   CHITHRAMAYA CREATIVES — DESIGN COMPARISON PREVIEW
+   Option 1: High-Contrast Editorial Action
+   Option 2: Minimalist Brutalist Monolith (Reference Design Match)
+   ============================================================================== */
+
+@import url('./template-chitramaya.css');
+
+/* --- Sticky Comparison Control Bar --- */
+.preview-control-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #171E4A;
+    color: #F7F4ED;
+    border-bottom: 2px solid #35A248;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.preview-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.preview-badge {
+    background: #35A248;
+    color: #171E4A;
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.preview-title {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.preview-switch-group {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 3px;
+    gap: 4px;
+}
+
+.preview-switch-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+}
+
+.preview-switch-btn:hover {
+    color: #FFFFFF;
+}
+
+.preview-switch-btn.active {
+    background: #35A248;
+    color: #171E4A;
+    box-shadow: 0 2px 10px rgba(53, 162, 72, 0.4);
+}
+
+.preview-hint {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- View Toggle Logic --- */
+.design-view-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.design-view-section.is-active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- Option Section Header Banners --- */
+.option-intro-banner {
+    padding: 32px 24px 20px;
+    background: #F7F4ED;
+    border-bottom: 1px solid rgba(23, 30, 74, 0.1);
+    text-align: center;
+}
+
+.option-intro-tag {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #35A248;
+    margin-bottom: 8px;
+}
+
+.option-intro-heading {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #171E4A;
+    margin-bottom: 8px;
+}
+
+.option-intro-desc {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.9375rem;
+    color: rgba(23, 30, 74, 0.7);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ==============================================================================
+   OPTION 2: MINIMALIST BRUTALIST SYSTEM (Reference Image Match)
+   Clean, monolithic, typography-driven, 2-line statement, corner arrow ↗
+   ============================================================================== */
+
+.brutalist-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    padding: 36px 32px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+    cursor: pointer;
+}
+
+/* Dark Card (Money Column) */
+.col-money .brutalist-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.col-money .brutalist-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #35A248;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Light Card (Art Column) */
+.col-art .brutalist-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(23, 30, 74, 0.14);
+}
+
+.col-art .brutalist-card:hover {
+    background: #FFFFFF;
+    border-color: #171E4A;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(23, 30, 74, 0.09);
+}
+
+/* Numeral Header */
+.brutalist-num {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.col-money .brutalist-num {
+    color: #35A248;
+}
+
+.col-art .brutalist-num {
+    color: #171E4A;
+}
+
+/* Title */
+.brutalist-title {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.col-money .brutalist-title {
+    color: #FFFFFF;
+}
+
+.col-art .brutalist-title {
+    color: #171E4A;
+}
+
+/* 2-Line Tight Statement */
+.brutalist-statement {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.col-money .brutalist-statement {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.col-art .brutalist-statement {
+    color: rgba(23, 30, 74, 0.7);
+}
+
+/* Floating Corner Arrow */
+.brutalist-arrow-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.brutalist-arrow {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
+}
+
+.col-money .brutalist-arrow {
+    color: #35A248;
+}
+
+.col-art .brutalist-arrow {
+    color: #171E4A;
+}
+
+.brutalist-card:hover .brutalist-arrow {
+    transform: translate(4px, -4px);
+}
+
+.col-art .brutalist-card:hover .brutalist-arrow {
+    color: #35A248;
+}
+
+/* Stacked Sub-links for Pillar 03 (Events) */
+.brutalist-sublinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(23, 30, 74, 0.12);
+}
+
+.brutalist-sublink-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #171E4A;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(23, 30, 74, 0.04);
+    transition: all 0.2s ease;
+}
+
+.brutalist-sublink-item:hover {
+    background: rgba(53, 162, 72, 0.1);
+    color: #35A248;
+    padding-left: 16px;
+}
+
+.brutalist-sublink-arrow {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.brutalist-sublink-item:hover .brutalist-sublink-arrow {
+    transform: translate(2px, -2px);
+}
+
+/* Pillar 05 Evolving Badge */
+.brutalist-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: #171E4A;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preview-control-bar {
+        padding: 10px 16px;
+    }
+    .preview-switch-group {
+        width: 100%;
+        justify-content: center;
+    }
+    .preview-switch-btn {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+    .brutalist-card {
+        padding: 24px 20px 20px;
+        min-height: 220px;
+    }
+}
