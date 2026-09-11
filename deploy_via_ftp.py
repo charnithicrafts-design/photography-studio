@@ -64,14 +64,30 @@ if os.path.exists(plugin_local_dir):
             files_to_upload.append((local_path, remote_path))
 
 # Root files (optional but good for consistency)
+files_to_upload.append(('.htaccess', '.htaccess'))
+files_to_upload.append(('favicon.ico', 'favicon.ico'))
 files_to_upload.append(('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'))
 files_to_upload.append(('chitramaya/thalam-landing.html', 'thalam-landing.html'))
 
+import time
+
+def get_ftp():
+    f = ftplib.FTP(FTP_HOST, timeout=30)
+    f.login(FTP_USER, FTP_PASS)
+    f.cwd('chithramaya.charnithi.com')
+    return f
+
+ftp = get_ftp()
+print("Connected to FTP.")
+
 for local_path, remote_path in files_to_upload:
-    if os.path.exists(local_path):
-        print(f"Uploading {local_path} to {remote_path}...")
+    if not os.path.exists(local_path):
+        continue
+
+    uploaded = False
+    for attempt in range(3):
         try:
-            # Create remote directory if it doesn't exist
+            # Create remote directory if needed
             remote_dir = os.path.dirname(remote_path)
             if remote_dir:
                 dirs = remote_dir.split('/')
@@ -81,14 +97,32 @@ for local_path, remote_path in files_to_upload:
                     try:
                         ftp.mkd(current_dir)
                     except ftplib.error_perm:
-                        pass # Directory already exists
-                        
+                        pass
+
             with open(local_path, 'rb') as f:
                 ftp.storbinary(f'STOR {remote_path}', f)
+            print(f"Uploaded: {remote_path}")
+            uploaded = True
+            break
         except Exception as e:
-            print(f"Failed to upload {remote_path}: {e}")
-    else:
-        print(f"Local file {local_path} not found!")
+            print(f"Transfer error on {remote_path} (attempt {attempt+1}): {e}")
+            try:
+                ftp.close()
+            except Exception:
+                pass
+            time.sleep(1)
+            try:
+                ftp = get_ftp()
+            except Exception as conn_err:
+                print(f"Reconnect failed: {conn_err}")
+                time.sleep(2)
 
-ftp.quit()
+    if not uploaded:
+        print(f"FAILED permanently to upload {remote_path}")
+
+try:
+    ftp.quit()
+except Exception:
+    ftp.close()
+
 print("Direct FTP Deploy complete!")
