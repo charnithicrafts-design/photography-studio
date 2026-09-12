@@ -181,10 +181,7 @@
       
       <!-- TOP SUB-HEADER BAR -->
       <div class="brutalist-meta-bar">
-        <div class="brutalist-meta-left">
-          <span class="meta-tag">[ CORE CAPABILITIES &amp; STUDIOS ]</span>
-          <span class="meta-sub">CHITHRAMAYA CREATIVES DIRECTORY</span>
-        </div>
+        <div class="brutalist-meta-left"><span class="meta-tag">[ WHAT WE DO ]</span></div>
         <div class="brutalist-meta-right">
           <span>INDEX: 01 &mdash; 05</span>
         </div>
@@ -193,10 +190,7 @@
       <!-- COMPACT SERVICE RIBBON (MATCHES REFERENCE HORIZONTAL STRIP) -->
       <div class="brutalist-ribbon-container">
         
-        <!-- ROTATED VERTICAL LABEL -->
-        <div class="brutalist-vertical-tab" aria-hidden="true">
-          <span>WHAT WE DO</span>
-        </div>
+        <!-- VERTICAL TAB REMOVED FOR LEGIBILITY -->
 
         <!-- 5 EQUAL ARCHITECTURAL COLUMNS -->
         <div class="brutalist-ribbon-grid">
@@ -204,7 +198,7 @@
           <!-- 01 BRAND & CORPORATE -->
           <a href="/corporate-brand/" class="brutalist-card-unit col-dark" id="opt2-cell-01">
             <div class="unit-top">
-              <span class="unit-num num-green">01</span>
+              <div class="unit-num-row"><span class="unit-num num-green">01</span></div>
               <h3 class="unit-title">BRAND &amp;<br>CORPORATE</h3>
               <p class="unit-statement">EXECUTIVE PORTRAITS THAT BUILD MARKET CREDIBILITY.</p>
             </div>
@@ -216,7 +210,7 @@
           <!-- 02 COMMERCIAL CAMPAIGNS -->
           <a href="/commercial/" class="brutalist-card-unit col-dark" id="opt2-cell-02">
             <div class="unit-top">
-              <span class="unit-num num-green">02</span>
+              <div class="unit-num-row"><span class="unit-num num-green">02</span></div>
               <h3 class="unit-title">COMMERCIAL<br>CAMPAIGNS</h3>
               <p class="unit-statement">PRODUCTS AND SPACES DOCUMENTED TO SELL.</p>
             </div>
@@ -228,7 +222,7 @@
           <!-- 03 PODCAST & PRODUCTION -->
           <a href="/podcast-interview/" class="brutalist-card-unit col-dark" id="opt2-cell-04">
             <div class="unit-top">
-              <span class="unit-num num-green">03</span>
+              <div class="unit-num-row"><span class="unit-num num-green">03</span></div>
               <h3 class="unit-title">PODCAST &amp;<br>PRODUCTION</h3>
               <p class="unit-statement">BROADCAST ACOUSTIC ROOMS AND 4K CINEMA.</p>
             </div>
@@ -240,7 +234,7 @@
           <!-- 04 EVENTS & HERITAGE -->
           <div class="brutalist-card-unit col-light" id="opt2-cell-03">
             <div class="unit-top">
-              <span class="unit-num num-navy">04</span>
+              <div class="unit-num-row"><span class="unit-num num-navy">04</span></div>
               <h3 class="unit-title text-navy">EVENTS &amp;<br>HERITAGE</h3>
               <p class="unit-statement text-muted-navy">DOCUMENTARY HERITAGE FOR GENERATIONS TO REMEMBER.</p>
               <div class="unit-subpills">
@@ -257,8 +251,10 @@
           <!-- 05 BRAND DESIGN -->
           <a href="/brand-design/" class="brutalist-card-unit col-light" id="opt2-cell-05">
             <div class="unit-top">
-              <div class="unit-evolving-tag">[ EVOLVING ]</div>
-              <span class="unit-num num-navy">05</span>
+              <div class="unit-num-row">
+                <span class="unit-num num-navy">05</span>
+                <span class="unit-evolving-inline">[ EVOLVING ]</span>
+              </div>
               <h3 class="unit-title text-navy">BRAND<br>DESIGN</h3>
               <p class="unit-statement text-muted-navy">DISTINCTIVE WORDMARKS AND VISUAL SYSTEMS.</p>
             </div>
