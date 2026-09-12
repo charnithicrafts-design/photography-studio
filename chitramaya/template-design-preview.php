@@ -269,23 +269,21 @@
       <!-- FULL-WIDTH BILLBOARD BELOW (MATCHES REFERENCE: "STOP USING BORING...") -->
       <div class="brutalist-billboard-section">
         <div class="billboard-left">
-          <span class="billboard-eyebrow">[ THALAM PRODUCTION STUDIO &bull; TRICHY ]</span>
+          <span class="billboard-eyebrow">[ THALAM STUDIO, TRICHY ]</span>
           <h2 class="billboard-headline">
-            WE SET THE ROOM.<br>
-            YOU BRING THE STORY.
+            We set the room.<br>
+            You bring the story.
           </h2>
+          <p class="billboard-desc">
+            A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
+          </p>
         </div>
         <div class="billboard-right">
-          <p class="billboard-desc">
-            STAND OUT. BREAK PATTERNS. BUILD VISUAL AUTHORITY.<br>
-            A 2,400 SQ FT ACOUSTIC PODCAST &amp; CINEMATIC PHOTO STUDIO.
-          </p>
           <a href="/thalam-studio/" class="billboard-cta-btn">
-            STEP INTO THALAM STUDIO ↗
+            Step into Thalam &rarr;
           </a>
         </div>
       </div>
-
     </section>
   </main>
 
