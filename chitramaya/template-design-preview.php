@@ -172,86 +172,72 @@
         </div>
       </div>
 
-      <!-- COMPACT SERVICE RIBBON (MATCHES REFERENCE HORIZONTAL STRIP) -->
+      <!-- COMPACT SERVICE RIBBON: ALL 5 COLUMNS DARK (UNIFIED COMMON REGION) -->
       <div class="brutalist-ribbon-container">
-
-        <!-- VERTICAL TAB REMOVED FOR LEGIBILITY -->
-
-        <!-- 5 EQUAL ARCHITECTURAL COLUMNS -->
         <div class="brutalist-ribbon-grid">
 
           <!-- 01 BRAND & CORPORATE -->
-          <a href="/corporate-brand/" class="brutalist-card-unit col-dark" id="opt2-cell-01">
+          <a href="/corporate-brand/" class="brutalist-card-unit" id="opt2-cell-01">
             <div class="unit-top">
-              <div class="unit-num-row"><span class="unit-num num-green">01</span></div>
+              <div class="unit-num-row"><span class="unit-num">01</span></div>
               <h3 class="unit-title">Brand &amp;<br>Corporate</h3>
               <p class="unit-statement">Executive portraits that build market credibility.</p>
             </div>
-            <div class="unit-bottom">
-              <span class="unit-arrow">↗</span>
-            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
 
           <!-- 02 COMMERCIAL CAMPAIGNS -->
-          <a href="/commercial/" class="brutalist-card-unit col-dark" id="opt2-cell-02">
+          <a href="/commercial/" class="brutalist-card-unit" id="opt2-cell-02">
             <div class="unit-top">
-              <div class="unit-num-row"><span class="unit-num num-green">02</span></div>
+              <div class="unit-num-row"><span class="unit-num">02</span></div>
               <h3 class="unit-title">Commercial<br>Campaigns</h3>
               <p class="unit-statement">Products and spaces documented to sell.</p>
             </div>
-            <div class="unit-bottom">
-              <span class="unit-arrow">↗</span>
-            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
 
           <!-- 03 PODCAST & PRODUCTION -->
-          <a href="/podcast-interview/" class="brutalist-card-unit col-dark" id="opt2-cell-04">
+          <a href="/podcast-interview/" class="brutalist-card-unit" id="opt2-cell-03">
             <div class="unit-top">
-              <div class="unit-num-row"><span class="unit-num num-green">03</span></div>
+              <div class="unit-num-row"><span class="unit-num">03</span></div>
               <h3 class="unit-title">Podcast &amp;<br>Production</h3>
               <p class="unit-statement">Broadcast acoustic rooms and 4K cinema.</p>
             </div>
-            <div class="unit-bottom">
-              <span class="unit-arrow">↗</span>
-            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
 
-          <!-- 04 EVENTS & HERITAGE -->
-          <div class="brutalist-card-unit col-light" id="opt2-cell-03">
+          <!-- 04 EVENTS & HERITAGE (dark, pills styled for dark bg) -->
+          <a href="/events-portrait/" class="brutalist-card-unit" id="opt2-cell-04">
             <div class="unit-top">
-              <div class="unit-num-row"><span class="unit-num num-navy">04</span></div>
-              <h3 class="unit-title text-navy">Events &amp;<br>Heritage</h3>
-              <p class="unit-statement text-muted-navy">Documentary heritage for generations to remember.</p>
+              <div class="unit-num-row"><span class="unit-num">04</span></div>
+              <h3 class="unit-title">Events &amp;<br>Heritage</h3>
+              <p class="unit-statement">Documentary heritage for generations to remember.</p>
               <div class="unit-subpills">
-                <a href="/events-portrait/" class="subpill">Weddings ↗</a>
-                <a href="/maternity/" class="subpill">Maternity ↗</a>
-                <a href="/thalam-baby/" class="subpill">Infant Art ↗</a>
+                <span class="subpill">Weddings ↗</span>
+                <span class="subpill">Maternity ↗</span>
+                <span class="subpill">Infant Art ↗</span>
               </div>
             </div>
-            <div class="unit-bottom">
-              <span class="unit-arrow text-navy">↗</span>
-            </div>
-          </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
 
           <!-- 05 BRAND DESIGN -->
-          <a href="/brand-design/" class="brutalist-card-unit col-light" id="opt2-cell-05">
+          <a href="/brand-design/" class="brutalist-card-unit" id="opt2-cell-05">
             <div class="unit-top">
               <div class="unit-num-row">
-                <span class="unit-num num-navy">05</span>
-                <span class="unit-evolving-inline">[ EVOLVING ]</span>
+                <span class="unit-num">05</span>
+                <span class="unit-evolving-inline">[ Evolving ]</span>
               </div>
-              <h3 class="unit-title text-navy">Brand<br>Design</h3>
-              <p class="unit-statement text-muted-navy">Distinctive wordmarks and visual systems.</p>
+              <h3 class="unit-title">Brand<br>Design</h3>
+              <p class="unit-statement">Distinctive wordmarks and visual systems.</p>
             </div>
-            <div class="unit-bottom">
-              <span class="unit-arrow text-navy">↗</span>
-            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
 
         </div>
       </div>
 
-      <!-- FULL-WIDTH BILLBOARD BELOW (MATCHES REFERENCE: "STOP USING BORING...") -->
+      <!-- BILLBOARD: HEADLINE LEFT / DESC+CTA GROUPED RIGHT (LAW OF PROXIMITY) -->
       <div class="brutalist-billboard-section">
         <div class="billboard-left">
           <span class="billboard-eyebrow">[ THALAM STUDIO, TRICHY ]</span>
