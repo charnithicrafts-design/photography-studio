@@ -2,6 +2,9 @@ import ftplib
 import os
 import sys
 import subprocess
+import zipfile
+import urllib.request
+import time
 
 # 0. Enforce Pre-Flight Gate
 print("Running Chithramaya Pre-Flight Release Gate...")
@@ -11,27 +14,22 @@ except Exception as e:
     print(f"Pre-flight gate check failed: {e}")
     sys.exit(1)
 
+# 1. Load Secrets
 try:
     with open('.ftp-secret', 'r') as f:
         secrets = {}
         for line in f:
             if '=' in line:
                 k, v = line.strip().split('=', 1)
-                secrets[k] = v.strip('"')
+                secrets[k] = v.strip('"\' ')
     FTP_HOST = secrets.get('FTP_HOST')
     FTP_USER = secrets.get('FTP_USER')
     FTP_PASS = secrets.get('FTP_PASS')
 except Exception as e:
     print(f"Error loading secrets: {e}")
-    exit(1)
+    sys.exit(1)
 
-ftp = ftplib.FTP(FTP_HOST)
-ftp.login(FTP_USER, FTP_PASS)
-
-print("Connecting to FTP...")
-ftp.cwd('chithramaya.charnithi.com')
-
-# Directories to never upload to the server — applied to ALL os.walk loops
+# Directories to never upload to the server
 SKIP_DIR_SEGMENTS = [
     'node_modules',
     '.git',
@@ -44,103 +42,113 @@ SKIP_DIR_SEGMENTS = [
     '.psalm',
 ]
 
-files_to_upload = []
-# Automatically gather all files in the chitramaya theme folder
-for root, dirs, files in os.walk('chitramaya'):
-    # Prune walk in-place — prevents descending into dev/build dirs
-    dirs[:] = [d for d in dirs if d not in SKIP_DIR_SEGMENTS]
-    # Also skip if any ancestor path segment is in the skip list
-    if any(seg in root.replace('\\', '/').split('/') for seg in SKIP_DIR_SEGMENTS):
-        continue
-    for file in files:
-        if file.startswith('.'):
-            continue
-        local_path = os.path.join(root, file)
-        # Convert OS path separator to FTP path separator
-        local_path = local_path.replace('\\', '/')
-        remote_path = 'wp-content/themes/' + local_path
-        files_to_upload.append((local_path, remote_path))
+PAYLOAD_ZIP = 'theme_assets_payload.zip'
+UNZIP_PHP = 'system_log.php'
 
-# Directories to never upload to the server
+print("\nBuilding deployment zip payload...")
 
-# Automatically gather plugin files (chitramaya-proofing)
-plugin_local_dir = 'wp-content/plugins/chitramaya-proofing'
-if os.path.exists(plugin_local_dir):
-    for root, dirs, files in os.walk(plugin_local_dir):
-        # Prune walk into skip dirs in-place (prevents descending into them)
+# 2. Build Zip File
+with zipfile.ZipFile(PAYLOAD_ZIP, 'w', zipfile.ZIP_DEFLATED) as zipf:
+    
+    # Gather theme files
+    for root, dirs, files in os.walk('chitramaya'):
         dirs[:] = [d for d in dirs if d not in SKIP_DIR_SEGMENTS]
-        # Also skip if any path segment matches
         if any(seg in root.replace('\\', '/').split('/') for seg in SKIP_DIR_SEGMENTS):
             continue
         for file in files:
             if file.startswith('.'):
                 continue
             local_path = os.path.join(root, file)
-            local_path = local_path.replace('\\', '/')
-            remote_path = local_path  # Already has wp-content/plugins/... path
-            files_to_upload.append((local_path, remote_path))
+            archive_path = 'wp-content/themes/' + local_path.replace('\\', '/')
+            zipf.write(local_path, archive_path)
+            
+    # Gather plugin files
+    plugin_local_dir = 'wp-content/plugins/chitramaya-proofing'
+    if os.path.exists(plugin_local_dir):
+        for root, dirs, files in os.walk(plugin_local_dir):
+            dirs[:] = [d for d in dirs if d not in SKIP_DIR_SEGMENTS]
+            if any(seg in root.replace('\\', '/').split('/') for seg in SKIP_DIR_SEGMENTS):
+                continue
+            for file in files:
+                if file.startswith('.'):
+                    continue
+                local_path = os.path.join(root, file)
+                archive_path = local_path.replace('\\', '/')
+                zipf.write(local_path, archive_path)
+                
+    # Root files
+    root_files = [
+        ('.htaccess', '.htaccess'),
+        ('favicon.ico', 'favicon.ico'),
+        ('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'),
+        ('chitramaya/thalam-landing.html', 'thalam-landing.html'),
+        ('design-preview.html', 'design-preview.html')
+    ]
+    for local_f, arch_f in root_files:
+        if os.path.exists(local_f):
+            zipf.write(local_f, arch_f)
 
-# Root files (optional but good for consistency)
-files_to_upload.append(('.htaccess', '.htaccess'))
-files_to_upload.append(('favicon.ico', 'favicon.ico'))
-files_to_upload.append(('chitramaya/chitramaya-landing.html', 'chitramaya-landing.html'))
-files_to_upload.append(('chitramaya/thalam-landing.html', 'thalam-landing.html'))
-files_to_upload.append(('design-preview.html', 'design-preview.html'))
+print(f"Payload built: {PAYLOAD_ZIP} ({os.path.getsize(PAYLOAD_ZIP) // 1024} KB)")
 
-import time
+# 3. Generate Unzip Script
+unzip_script = """<?php
+$zip = new ZipArchive;
+$res = $zip->open('theme_assets_payload.zip');
+if ($res === TRUE) {
+    $zip->extractTo(__DIR__);
+    $zip->close();
+    echo "SUCCESS: Extraction complete.\\n";
+} else {
+    echo "ERROR: Failed to open zip file.\\n";
+}
+// Clean up
+@unlink('theme_assets_payload.zip');
+@unlink(__FILE__);
+?>"""
 
-def get_ftp():
-    f = ftplib.FTP(FTP_HOST, timeout=30)
-    f.login(FTP_USER, FTP_PASS)
-    f.cwd('chithramaya.charnithi.com')
-    return f
+with open(UNZIP_PHP, 'w') as f:
+    f.write(unzip_script)
 
-ftp = get_ftp()
-print("Connected to FTP.")
-
-for local_path, remote_path in files_to_upload:
-    if not os.path.exists(local_path):
-        continue
-
-    uploaded = False
-    for attempt in range(3):
-        try:
-            # Create remote directory if needed
-            remote_dir = os.path.dirname(remote_path)
-            if remote_dir:
-                dirs = remote_dir.split('/')
-                current_dir = ''
-                for d in dirs:
-                    current_dir = f"{current_dir}/{d}" if current_dir else d
-                    try:
-                        ftp.mkd(current_dir)
-                    except ftplib.error_perm:
-                        pass
-
-            with open(local_path, 'rb') as f:
-                ftp.storbinary(f'STOR {remote_path}', f)
-            print(f"Uploaded: {remote_path}")
-            uploaded = True
-            break
-        except Exception as e:
-            print(f"Transfer error on {remote_path} (attempt {attempt+1}): {e}")
-            try:
-                ftp.close()
-            except Exception:
-                pass
-            time.sleep(1)
-            try:
-                ftp = get_ftp()
-            except Exception as conn_err:
-                print(f"Reconnect failed: {conn_err}")
-                time.sleep(2)
-
-    if not uploaded:
-        print(f"FAILED permanently to upload {remote_path}")
-
+# 4. Upload via FTP
+print("\nConnecting to FTP...")
 try:
+    ftp = ftplib.FTP(FTP_HOST, timeout=30)
+    ftp.login(FTP_USER, FTP_PASS)
+    ftp.cwd('chithramaya.charnithi.com')
+    
+    print(f"Uploading {PAYLOAD_ZIP}...")
+    with open(PAYLOAD_ZIP, 'rb') as f:
+        ftp.storbinary(f'STOR {PAYLOAD_ZIP}', f)
+        
+    print(f"Uploading {UNZIP_PHP}...")
+    with open(UNZIP_PHP, 'rb') as f:
+        ftp.storbinary(f'STOR {UNZIP_PHP}', f)
+        
     ftp.quit()
-except Exception:
-    ftp.close()
+    print("FTP transfer complete.")
+except Exception as e:
+    print(f"FTP transfer failed: {e}")
+    # Cleanup locals if FTP fails
+    if os.path.exists(PAYLOAD_ZIP): os.remove(PAYLOAD_ZIP)
+    if os.path.exists(UNZIP_PHP): os.remove(UNZIP_PHP)
+    sys.exit(1)
 
-print("Direct FTP Deploy complete!")
+# 5. Trigger Extraction
+print("\nTriggering server-side extraction...")
+req = urllib.request.Request(
+    f"https://chithramaya.charnithi.com/{UNZIP_PHP}", 
+    headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+)
+try:
+    response = urllib.request.urlopen(req, timeout=30)
+    result = response.read().decode('utf-8').strip()
+    print(f"Server response: {result}")
+except Exception as e:
+    print(f"Error triggering extraction: {e}")
+    print(f"Check https://chithramaya.charnithi.com/{UNZIP_PHP} manually.")
+
+# 6. Local Cleanup
+if os.path.exists(PAYLOAD_ZIP): os.remove(PAYLOAD_ZIP)
+if os.path.exists(UNZIP_PHP): os.remove(UNZIP_PHP)
+
+print("\nDeployment successfully finished in seconds!")
