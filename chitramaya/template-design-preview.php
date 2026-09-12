@@ -161,162 +161,133 @@
        OPTION 2: MINIMALIST BRUTALIST MONOLITH
        Matches the Agency Reference Image: Multi-Column Strip, Hairlines, 5-7 Words
        ============================================================================== -->
+    <!-- ==============================================================================
+       OPTION 2: MINIMALIST BRUTALIST MONOLITH (ACCURATE REFERENCE ARCHITECTURE)
+       Matches the Agency Reference 1:1:
+       1. Compact Architectural Service Strip (~240px tall, tight proximity, corner arrows)
+       2. Full-Width Billboard Below ("WE SET THE ROOM..." with giant typography & CTA)
+       ============================================================================== -->
   <main id="option-2-view" class="design-view-section" role="tabpanel" aria-labelledby="btn-opt-2">
     
     <div class="option-intro-banner">
-      <div class="option-intro-tag">Direction 02 — Brutalist Monolith (Reference Match)</div>
-      <h1 class="option-intro-heading">Minimalist Brutalist Monolith</h1>
-      <p class="option-intro-desc">
-        Faithful to the agency reference design: horizontal multi-column architectural grid with hairline dividers, vertical rotated [WHAT WE DO] side tag, prominent numerals, and exact 5–7 word punchy work impact statements.
+      <div class="option-intro-tag">Direction 02 — Brutalist Architectural Monolith (Reference Match)</div>
+      <h1 class="option-intro-title">COMPACT HORIZONTAL RIBBON + BILLBOARD</h1>
+      <p class="option-intro-sub">
+        Zero wasted negative space. Strict Gestalt proximity. Monolithic 5-column service ribbon anchored above a full-width high-impact Thalam studio statement.
       </p>
     </div>
 
-    <section class="brutalist-duality-split">
+    <section class="brutalist-monolith-wrapper" aria-label="Services and Studios Monolith">
       
-      <!-- LEFT HALF: MONEY / B2B COMMERCIAL (NAVY #171E4A) -->
-      <div class="brutalist-half-money">
-        
-        <div class="brutalist-half-header">
-          <span class="brutalist-half-label">[ B2B COMMERCIAL &amp; PRODUCTION ]</span>
-          <span style="font-family: var(--mono); font-size: 0.6875rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">01 — 04</span>
+      <!-- TOP SUB-HEADER BAR -->
+      <div class="brutalist-meta-bar">
+        <div class="brutalist-meta-left">
+          <span class="meta-tag">[ CORE CAPABILITIES &amp; STUDIOS ]</span>
+          <span class="meta-sub">CHITHRAMAYA CREATIVES DIRECTORY</span>
         </div>
-
-        <div class="brutalist-row-container">
-          
-          <!-- Vertical Rotated Section Tag -->
-          <div class="brutalist-side-tag" aria-hidden="true">
-            <span class="brutalist-side-tag-text">WHAT WE DO</span>
-          </div>
-
-          <!-- 3 Columns Side-by-Side: 01, 02, 04 -->
-          <div class="brutalist-cols-grid">
-            
-            <!-- 01 BRAND & CORPORATE -->
-            <a href="/corporate-brand/" class="brutalist-col-cell" id="opt2-cell-01">
-              <div>
-                <div class="brutalist-cell-num">01</div>
-                <h3 class="brutalist-cell-title">BRAND &amp;<br>CORPORATE</h3>
-                <p class="brutalist-cell-statement">
-                  EXECUTIVE PORTRAITS THAT BUILD MARKET CREDIBILITY.
-                </p>
-              </div>
-              <div class="brutalist-cell-footer">
-                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
-            <!-- 02 COMMERCIAL WORK -->
-            <a href="/commercial/" class="brutalist-col-cell" id="opt2-cell-02">
-              <div>
-                <div class="brutalist-cell-num">02</div>
-                <h3 class="brutalist-cell-title">COMMERCIAL<br>CAMPAIGNS</h3>
-                <p class="brutalist-cell-statement">
-                  PRODUCTS AND SPACES DOCUMENTED TO SELL.
-                </p>
-              </div>
-              <div class="brutalist-cell-footer">
-                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
-            <!-- 04 PODCAST & INTERVIEW -->
-            <a href="/podcast-interview/" class="brutalist-col-cell" id="opt2-cell-04">
-              <div>
-                <div class="brutalist-cell-num">04</div>
-                <h3 class="brutalist-cell-title">PODCAST &amp;<br>PRODUCTION</h3>
-                <p class="brutalist-cell-statement">
-                  BROADCAST ACOUSTIC ROOMS AND 4K CINEMA.
-                </p>
-              </div>
-              <div class="brutalist-cell-footer">
-                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
-          </div>
+        <div class="brutalist-meta-right">
+          <span>INDEX: 01 &mdash; 05</span>
         </div>
-
       </div>
 
-      <!-- RIGHT HALF: CULTURAL & HUMAN ART (OFF-WHITE #F7F4ED) -->
-      <div class="brutalist-half-art">
+      <!-- COMPACT SERVICE RIBBON (MATCHES REFERENCE HORIZONTAL STRIP) -->
+      <div class="brutalist-ribbon-container">
         
-        <div class="brutalist-half-header">
-          <span class="brutalist-half-label">[ HERITAGE &amp; HUMAN STORIES ]</span>
-          <span style="font-family: var(--mono); font-size: 0.6875rem; color: rgba(23,30,74,0.4); text-transform: uppercase;">03 — 05</span>
+        <!-- ROTATED VERTICAL LABEL -->
+        <div class="brutalist-vertical-tab" aria-hidden="true">
+          <span>WHAT WE DO</span>
         </div>
 
-        <div class="brutalist-row-container">
+        <!-- 5 EQUAL ARCHITECTURAL COLUMNS -->
+        <div class="brutalist-ribbon-grid">
           
-          <!-- Vertical Rotated Section Tag -->
-          <div class="brutalist-side-tag" aria-hidden="true">
-            <span class="brutalist-side-tag-text">HERITAGE &amp; ART</span>
-          </div>
+          <!-- 01 BRAND & CORPORATE -->
+          <a href="/corporate-brand/" class="brutalist-card-unit col-dark" id="opt2-cell-01">
+            <div class="unit-top">
+              <span class="unit-num num-green">01</span>
+              <h3 class="unit-title">BRAND &amp;<br>CORPORATE</h3>
+              <p class="unit-statement">EXECUTIVE PORTRAITS THAT BUILD MARKET CREDIBILITY.</p>
+            </div>
+            <div class="unit-bottom">
+              <span class="unit-arrow">↗</span>
+            </div>
+          </a>
 
-          <!-- 2 Columns Side-by-Side: 03, 05 -->
-          <div class="brutalist-cols-grid">
-            
-            <!-- 03 EVENTS & PORTRAIT -->
-            <div class="brutalist-col-cell" id="opt2-cell-03" style="cursor: default;">
-              <div>
-                <div class="brutalist-cell-num">03</div>
-                <h3 class="brutalist-cell-title">EVENTS &amp;<br>HERITAGE</h3>
-                <p class="brutalist-cell-statement">
-                  DOCUMENTARY HERITAGE FOR GENERATIONS TO REMEMBER.
-                </p>
-                <nav class="brutalist-sublinks-stack" aria-label="Events sub-links">
-                  <a href="/events-portrait/" class="brutalist-sublink-entry">
-                    <span>03.1 Weddings</span>
-                    <span>↗</span>
-                  </a>
-                  <a href="/maternity/" class="brutalist-sublink-entry">
-                    <span>03.2 Maternity</span>
-                    <span>↗</span>
-                  </a>
-                  <a href="/thalam-baby/" class="brutalist-sublink-entry">
-                    <span>03.3 Infant Art</span>
-                    <span>↗</span>
-                  </a>
-                </nav>
-              </div>
-              <div class="brutalist-cell-footer">
-                <span class="brutalist-cell-arrow" style="color: #35A248;" aria-hidden="true">↗</span>
+          <!-- 02 COMMERCIAL CAMPAIGNS -->
+          <a href="/commercial/" class="brutalist-card-unit col-dark" id="opt2-cell-02">
+            <div class="unit-top">
+              <span class="unit-num num-green">02</span>
+              <h3 class="unit-title">COMMERCIAL<br>CAMPAIGNS</h3>
+              <p class="unit-statement">PRODUCTS AND SPACES DOCUMENTED TO SELL.</p>
+            </div>
+            <div class="unit-bottom">
+              <span class="unit-arrow">↗</span>
+            </div>
+          </a>
+
+          <!-- 03 PODCAST & PRODUCTION -->
+          <a href="/podcast-interview/" class="brutalist-card-unit col-dark" id="opt2-cell-04">
+            <div class="unit-top">
+              <span class="unit-num num-green">03</span>
+              <h3 class="unit-title">PODCAST &amp;<br>PRODUCTION</h3>
+              <p class="unit-statement">BROADCAST ACOUSTIC ROOMS AND 4K CINEMA.</p>
+            </div>
+            <div class="unit-bottom">
+              <span class="unit-arrow">↗</span>
+            </div>
+          </a>
+
+          <!-- 04 EVENTS & HERITAGE -->
+          <div class="brutalist-card-unit col-light" id="opt2-cell-03">
+            <div class="unit-top">
+              <span class="unit-num num-navy">04</span>
+              <h3 class="unit-title text-navy">EVENTS &amp;<br>HERITAGE</h3>
+              <p class="unit-statement text-muted-navy">DOCUMENTARY HERITAGE FOR GENERATIONS TO REMEMBER.</p>
+              <div class="unit-subpills">
+                <a href="/events-portrait/" class="subpill">Weddings ↗</a>
+                <a href="/maternity/" class="subpill">Maternity ↗</a>
+                <a href="/thalam-baby/" class="subpill">Infant Art ↗</a>
               </div>
             </div>
-
-            <!-- 05 BRAND DESIGN -->
-            <a href="/brand-design/" class="brutalist-col-cell" id="opt2-cell-05">
-              <div>
-                <div style="font-family: var(--mono); font-size: 0.625rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #35A248; margin-bottom: 6px;">[ EVOLVING ]</div>
-                <div class="brutalist-cell-num">05</div>
-                <h3 class="brutalist-cell-title">BRAND<br>DESIGN</h3>
-                <p class="brutalist-cell-statement">
-                  DISTINCTIVE WORDMARKS AND MEMORABLE VISUAL SYSTEMS.
-                </p>
-              </div>
-              <div class="brutalist-cell-footer">
-                <span class="brutalist-cell-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
+            <div class="unit-bottom">
+              <span class="unit-arrow text-navy">↗</span>
+            </div>
           </div>
+
+          <!-- 05 BRAND DESIGN -->
+          <a href="/brand-design/" class="brutalist-card-unit col-light" id="opt2-cell-05">
+            <div class="unit-top">
+              <div class="unit-evolving-tag">[ EVOLVING ]</div>
+              <span class="unit-num num-navy">05</span>
+              <h3 class="unit-title text-navy">BRAND<br>DESIGN</h3>
+              <p class="unit-statement text-muted-navy">DISTINCTIVE WORDMARKS AND VISUAL SYSTEMS.</p>
+            </div>
+            <div class="unit-bottom">
+              <span class="unit-arrow text-navy">↗</span>
+            </div>
+          </a>
+
         </div>
+      </div>
 
-        <!-- Thalam Billboard in Brutalist Row -->
-        <a href="/thalam-studio/" class="brutalist-thalam-fullwidth" id="opt2-thalam">
-          <div>
-            <div class="brutalist-thalam-label">[ THALAM STUDIO, TRICHY ]</div>
-            <h3 class="brutalist-thalam-title">WE SET THE ROOM. YOU BRING THE STORY.</h3>
-            <p class="brutalist-thalam-statement">
-              PURPOSE-BUILT 2,400 SQ FT PRODUCTION SUITE.
-            </p>
-          </div>
-          <div class="brutalist-thalam-cta">
-            <span>STEP INTO THALAM</span>
-            <span style="font-size: 1.25rem;">→</span>
-          </div>
-        </a>
-
+      <!-- FULL-WIDTH BILLBOARD BELOW (MATCHES REFERENCE: "STOP USING BORING...") -->
+      <div class="brutalist-billboard-section">
+        <div class="billboard-left">
+          <span class="billboard-eyebrow">[ THALAM PRODUCTION SUITE &bull; TRICHY ]</span>
+          <h2 class="billboard-headline">
+            WE SET THE ROOM.<br>
+            YOU BRING THE STORY.
+          </h2>
+        </div>
+        <div class="billboard-right">
+          <p class="billboard-desc">
+            STAND OUT. BREAK PATTERNS. BUILD VISUAL AUTHORITY.<br>
+            A 2,400 SQ FT ACOUSTIC PODCAST &amp; CINEMATIC PHOTO STUDIO.
+          </p>
+          <a href="/thalam-studio/" class="billboard-cta-btn">
+            STEP INTO THALAM STUDIO ↗
+          </a>
+        </div>
       </div>
 
     </section>

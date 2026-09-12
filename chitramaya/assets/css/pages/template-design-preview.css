@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     z-index: 99999;
-    background: #171E4A;
+    background: #171E4A !important;
     color: #F7F4ED;
     border-bottom: 2px solid #35A248;
     box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
@@ -150,7 +150,7 @@ body.mode-stacked .design-view-section {
 body.mode-stacked .stacked-divider {
     display: block;
     height: 48px;
-    background: #171E4A;
+    background: #171E4A !important;
     border-top: 2px solid #FAB417;
     border-bottom: 2px solid #35A248;
     margin: 40px 0;
@@ -173,7 +173,7 @@ body.mode-stacked .stacked-divider {
 }
 
 .editorial-col-money {
-    background: #171E4A;
+    background: #171E4A !important;
     padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 48px);
     display: flex;
     flex-direction: column;
@@ -336,379 +336,357 @@ body.mode-stacked .stacked-divider {
    Compact Architectural Columns with Hairline Borders & Vertical Section Tag
    ============================================================================== */
 
-.brutalist-duality-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    border-bottom: 1px solid rgba(23, 30, 74, 0.2);
-}
 
-/* Left Half (Money / Dark Navy) */
-.brutalist-half-money {
+/* ==============================================================================
+   DIRECTION 02: BRUTALIST ARCHITECTURAL MONOLITH (ACCURATE REFERENCE MATCH)
+   Strict Gestalt proximity, compact ~260px horizontal ribbon, no dead space,
+   followed by full-width high-impact billboard.
+   ============================================================================== */
+
+.brutalist-monolith-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 60px;
+    border: 1px solid rgba(23, 30, 74, 0.15);
     background: #171E4A;
-    border-right: 2px solid rgba(255, 255, 255, 0.18);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Right Half (Art / Off-White) */
-.brutalist-half-art {
-    background: #F7F4ED;
+/* ─── META HEADER BAR ───────────────────────────────────────────────────────── */
+.brutalist-meta-bar {
     display: flex;
-    flex-direction: column;
-}
-
-/* Header strip within each half */
-.brutalist-half-header {
-    padding: 24px 32px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid;
-}
-
-.brutalist-half-money .brutalist-half-header {
-    border-color: rgba(255, 255, 255, 0.12);
-    color: #FFFFFF;
-}
-
-.brutalist-half-art .brutalist-half-header {
-    border-color: rgba(23, 30, 74, 0.12);
-    color: #171E4A;
-}
-
-.brutalist-half-label {
+    align-items: center;
+    padding: 12px 24px;
+    background: #0F1435;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-family: var(--mono, 'Lato', sans-serif);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.brutalist-half-money .brutalist-half-label {
+.meta-tag {
     color: #35A248;
+    margin-right: 12px;
 }
 
-.brutalist-half-art .brutalist-half-label {
-    color: #171E4A;
-}
-
-/* Multi-Column Grid Row with Side Tag — Exactly like reference */
-.brutalist-row-container {
+/* ─── COMPACT HORIZONTAL RIBBON ────────────────────────────────────────────── */
+.brutalist-ribbon-container {
     display: flex;
-    flex: 1;
-    position: relative;
+    width: 100%;
+    min-height: 260px;
+    background: #171E4A;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Vertical Rotated Side Label (WHAT WE DO) */
-.brutalist-side-tag {
-    width: 44px;
+/* Vertical Rotated Tab [ WHAT WE DO ] */
+.brutalist-vertical-tab {
+    width: 48px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid;
-    padding: 24px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.2);
     user-select: none;
 }
 
-.brutalist-half-money .brutalist-side-tag {
-    border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(0, 0, 0, 0.15);
-}
-
-.brutalist-half-art .brutalist-side-tag {
-    border-color: rgba(23, 30, 74, 0.12);
-    background: rgba(23, 30, 74, 0.02);
-}
-
-.brutalist-side-tag-text {
+.brutalist-vertical-tab span {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-family: var(--mono, 'Lato', sans-serif);
     font-size: 0.6875rem;
     font-weight: 800;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
 }
 
-.brutalist-half-money .brutalist-side-tag-text {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.brutalist-half-art .brutalist-side-tag-text {
-    color: rgba(23, 30, 74, 0.6);
-}
-
-/* Columns container */
-.brutalist-cols-grid {
+/* 5 Column Grid */
+.brutalist-ribbon-grid {
     flex: 1;
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
-.brutalist-half-money .brutalist-cols-grid {
-    grid-template-columns: repeat(3, 1fr); /* 01, 02, 04 side by side */
-}
-
-.brutalist-half-art .brutalist-cols-grid {
-    grid-template-columns: repeat(2, 1fr); /* 03, 05 side by side */
-}
-
-/* The Individual Column Cell (Reference Design Architecture) */
-.brutalist-col-cell {
-    padding: 32px 24px 28px;
-    border-right: 1px solid;
-    border-bottom: 1px solid;
+/* Individual Card Unit */
+.brutalist-card-unit {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 24px 20px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
     text-decoration: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    cursor: pointer;
-    min-height: 380px;
+    transition: background 0.2s ease, transform 0.2s ease;
     position: relative;
 }
 
-.brutalist-col-cell:last-child {
+.brutalist-card-unit:last-child {
     border-right: none;
 }
 
-/* Dark Cell Styles */
-.brutalist-half-money .brutalist-col-cell {
-    border-color: rgba(255, 255, 255, 0.12);
-    background: transparent;
+/* Dark Column (B2B Money Pillars 01, 02, 03) */
+.brutalist-card-unit.col-dark {
+    background: #171E4A;
+    color: #FFFFFF;
 }
 
-.brutalist-half-money .brutalist-col-cell:hover {
-    background: rgba(255, 255, 255, 0.05);
+.brutalist-card-unit.col-dark:hover {
+    background: #1D255E;
 }
 
-/* Light Cell Styles */
-.brutalist-half-art .brutalist-col-cell {
-    border-color: rgba(23, 30, 74, 0.12);
+/* Light Column (Cultural & Heritage Pillars 04, 05) */
+.brutalist-card-unit.col-light {
+    background: #F7F4ED;
+    border-right-color: rgba(23, 30, 74, 0.12);
+    color: #171E4A;
+}
+
+.brutalist-card-unit.col-light:hover {
     background: #FFFFFF;
 }
 
-.brutalist-half-art .brutalist-col-cell:hover {
-    background: #faf8f3;
+/* Unit Content Typography (Strict Gestalt Proximity) */
+.unit-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Accent Numeral */
-.brutalist-cell-num {
+.unit-num {
     font-family: var(--mono, 'Lato', sans-serif);
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
-    margin-bottom: 14px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
 }
 
-.brutalist-half-money .brutalist-cell-num {
-    color: #35A248; /* Reference orange translated to brand green */
+.num-green {
+    color: #35A248;
 }
 
-.brutalist-half-art .brutalist-cell-num {
+.num-navy {
     color: #171E4A;
 }
 
-/* Bold Uppercase Condensed Title */
-.brutalist-cell-title {
-    font-family: var(--font-primary, 'Lato', sans-serif);
-    font-size: 1.125rem;
+.unit-evolving-tag {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.5625rem;
     font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #35A248;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: -4px;
 }
 
-.brutalist-half-money .brutalist-cell-title {
+.unit-title {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0;
     color: #FFFFFF;
 }
 
-.brutalist-half-art .brutalist-cell-title {
+.unit-title.text-navy {
     color: #171E4A;
 }
 
-/* Exact 5-7 Word Work Impression / Impact Statement */
-.brutalist-cell-statement {
+.unit-statement {
     font-family: var(--font-primary, 'Lato', sans-serif);
-    font-size: 0.8125rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.65);
 }
 
-.brutalist-half-money .brutalist-cell-statement {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.brutalist-half-art .brutalist-cell-statement {
+.unit-statement.text-muted-navy {
     color: rgba(23, 30, 74, 0.7);
 }
 
-/* Bottom Corner Arrow — Hover shift */
-.brutalist-cell-footer {
-    margin-top: auto;
+/* Pillar 04 Subpills */
+.unit-subpills {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 16px;
-}
-
-.brutalist-cell-arrow {
-    font-family: var(--mono, 'Lato', sans-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    display: inline-flex;
-    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
-}
-
-.brutalist-half-money .brutalist-cell-arrow {
-    color: #35A248;
-}
-
-.brutalist-half-art .brutalist-cell-arrow {
-    color: #171E4A;
-}
-
-.brutalist-col-cell:hover .brutalist-cell-arrow {
-    transform: translate(4px, -4px);
-}
-
-.brutalist-half-art .brutalist-col-cell:hover .brutalist-cell-arrow {
-    color: #35A248;
-}
-
-/* Pillar 03 Stacked Sublinks in Brutalist style */
-.brutalist-sublinks-stack {
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 14px;
+    margin-top: 6px;
 }
 
-.brutalist-sublink-entry {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.subpill {
     font-family: var(--font-primary, 'Lato', sans-serif);
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #171E4A;
     text-decoration: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    background: rgba(23, 30, 74, 0.05);
-    transition: all 0.2s ease;
+    color: #171E4A;
+    background: rgba(23, 30, 74, 0.06);
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid rgba(23, 30, 74, 0.12);
+    transition: all 0.15s ease;
 }
 
-.brutalist-sublink-entry:hover {
+.subpill:hover {
     background: #35A248;
     color: #FFFFFF;
+    border-color: #35A248;
 }
 
-/* Thalam Billboard in Brutalist row */
-.brutalist-thalam-fullwidth {
-    background: #FAB417;
-    padding: 32px;
+/* Corner Arrow */
+.unit-bottom {
+    padding-top: 14px;
+}
+
+.unit-arrow {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #35A248;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.unit-arrow.text-navy {
+    color: #171E4A;
+}
+
+.brutalist-card-unit:hover .unit-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* ─── FULL-WIDTH BILLBOARD SECTION (MATCHES REFERENCE) ───────────────────────── */
+.brutalist-billboard-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    padding: 56px 40px;
+    background: #0F1435;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.billboard-left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
-    color: #171E4A;
-    border-top: 1px solid rgba(23, 30, 74, 0.15);
-    min-height: 200px;
-    transition: background-color 0.2s ease;
+    gap: 12px;
 }
 
-.brutalist-thalam-fullwidth:hover {
-    background: #f5af11;
-}
-
-.brutalist-thalam-label {
+.billboard-eyebrow {
     font-family: var(--mono, 'Lato', sans-serif);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin-bottom: 8px;
-    opacity: 0.8;
+    color: #FAB417;
 }
 
-.brutalist-thalam-title {
-    font-family: var(--display, 'Roboto Slab', serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 8px;
+.billboard-headline {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
 }
 
-.brutalist-thalam-statement {
+.billboard-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.billboard-desc {
     font-family: var(--font-primary, 'Lato', sans-serif);
     font-size: 0.875rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
 }
 
-.brutalist-thalam-cta {
+.billboard-cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    background: #35A248;
+    color: #FFFFFF;
+    text-decoration: none;
     font-family: var(--font-primary, 'Lato', sans-serif);
     font-size: 0.875rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    color: #171E4A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 4px;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 18px rgba(53, 162, 72, 0.35);
 }
 
-/* ─── RESPONSIVE BREAKPOINTS ─────────────────────────────────────────────────── */
-@media (max-width: 1100px) {
-    .editorial-layout-split,
-    .brutalist-duality-split {
-        grid-template-columns: 1fr;
+.billboard-cta-btn:hover {
+    background: #2E8D3E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(53, 162, 72, 0.5);
+    color: #FFFFFF;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .brutalist-ribbon-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
     
-    .editorial-col-money,
-    .brutalist-half-money {
+    .brutalist-card-unit:nth-child(3) {
         border-right: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    .brutalist-card-unit {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .brutalist-billboard-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 40px 24px;
     }
 }
 
-@media (max-width: 768px) {
-    .brutalist-half-money .brutalist-cols-grid,
-    .brutalist-half-art .brutalist-cols-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 680px) {
+    .brutalist-ribbon-container {
+        flex-direction: column;
     }
     
-    .brutalist-col-cell {
-        border-right: none;
-        min-height: auto;
-        padding: 24px 20px;
-    }
-    
-    .preview-control-bar {
-        padding: 10px 16px;
-    }
-    
-    .preview-switch-group {
+    .brutalist-vertical-tab {
         width: 100%;
-        justify-content: center;
+        height: 36px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     
-    .preview-switch-btn {
-        flex: 1;
-        text-align: center;
-        padding: 8px 10px;
-        font-size: 0.75rem;
+    .brutalist-vertical-tab span {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+    
+    .brutalist-ribbon-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .brutalist-card-unit {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 20px 16px;
     }
 }
