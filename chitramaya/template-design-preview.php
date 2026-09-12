@@ -46,7 +46,7 @@
        Stanford Web Credibility & Nielsen Norman Group 680px Optimal Reading Measure
        ============================================================================== -->
   <main id="option-1-view" class="design-view-section is-active" role="tabpanel" aria-labelledby="btn-opt-1">
-    
+
     <div class="option-intro-banner">
       <div class="option-intro-tag">Direction 01 — Editorial Action (NN/g Measure)</div>
       <h1 class="option-intro-heading">High-Contrast Editorial Action</h1>
@@ -56,7 +56,7 @@
     </div>
 
     <section class="editorial-layout-split">
-      
+
       <!-- LEFT COLUMN: MONEY-BASED SERVICES (NAVY #171E4A) -->
       <div class="editorial-col-money">
         <div class="editorial-measure-wrapper">
@@ -168,7 +168,7 @@
        2. Full-Width Billboard Below ("WE SET THE ROOM..." with giant typography & CTA)
        ============================================================================== -->
   <main id="option-2-view" class="design-view-section" role="tabpanel" aria-labelledby="btn-opt-2">
-    
+
     <div class="option-intro-banner">
       <div class="option-intro-tag">Direction 02 — Brutalist Architectural Monolith (Reference Match)</div>
       <h1 class="option-intro-title">COMPACT HORIZONTAL RIBBON + BILLBOARD</h1>
@@ -178,7 +178,7 @@
     </div>
 
     <section class="brutalist-monolith-wrapper" aria-label="Services and Studios Monolith">
-      
+
       <!-- TOP SUB-HEADER BAR -->
       <div class="brutalist-meta-bar">
         <div class="brutalist-meta-left"><span class="meta-tag">[ WHAT WE DO ]</span></div>
@@ -189,18 +189,18 @@
 
       <!-- COMPACT SERVICE RIBBON (MATCHES REFERENCE HORIZONTAL STRIP) -->
       <div class="brutalist-ribbon-container">
-        
+
         <!-- VERTICAL TAB REMOVED FOR LEGIBILITY -->
 
         <!-- 5 EQUAL ARCHITECTURAL COLUMNS -->
         <div class="brutalist-ribbon-grid">
-          
+
           <!-- 01 BRAND & CORPORATE -->
           <a href="/corporate-brand/" class="brutalist-card-unit col-dark" id="opt2-cell-01">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num num-green">01</span></div>
-              <h3 class="unit-title">BRAND &amp;<br>CORPORATE</h3>
-              <p class="unit-statement">EXECUTIVE PORTRAITS THAT BUILD MARKET CREDIBILITY.</p>
+              <h3 class="unit-title">Brand &amp;<br>Corporate</h3>
+              <p class="unit-statement">Executive portraits that build market credibility.</p>
             </div>
             <div class="unit-bottom">
               <span class="unit-arrow">↗</span>
@@ -211,8 +211,8 @@
           <a href="/commercial/" class="brutalist-card-unit col-dark" id="opt2-cell-02">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num num-green">02</span></div>
-              <h3 class="unit-title">COMMERCIAL<br>CAMPAIGNS</h3>
-              <p class="unit-statement">PRODUCTS AND SPACES DOCUMENTED TO SELL.</p>
+              <h3 class="unit-title">Commercial<br>Campaigns</h3>
+              <p class="unit-statement">Products and spaces documented to sell.</p>
             </div>
             <div class="unit-bottom">
               <span class="unit-arrow">↗</span>
@@ -223,8 +223,8 @@
           <a href="/podcast-interview/" class="brutalist-card-unit col-dark" id="opt2-cell-04">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num num-green">03</span></div>
-              <h3 class="unit-title">PODCAST &amp;<br>PRODUCTION</h3>
-              <p class="unit-statement">BROADCAST ACOUSTIC ROOMS AND 4K CINEMA.</p>
+              <h3 class="unit-title">Podcast &amp;<br>Production</h3>
+              <p class="unit-statement">Broadcast acoustic rooms and 4K cinema.</p>
             </div>
             <div class="unit-bottom">
               <span class="unit-arrow">↗</span>
@@ -235,8 +235,8 @@
           <div class="brutalist-card-unit col-light" id="opt2-cell-03">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num num-navy">04</span></div>
-              <h3 class="unit-title text-navy">EVENTS &amp;<br>HERITAGE</h3>
-              <p class="unit-statement text-muted-navy">DOCUMENTARY HERITAGE FOR GENERATIONS TO REMEMBER.</p>
+              <h3 class="unit-title text-navy">Events &amp;<br>Heritage</h3>
+              <p class="unit-statement text-muted-navy">Documentary heritage for generations to remember.</p>
               <div class="unit-subpills">
                 <a href="/events-portrait/" class="subpill">Weddings ↗</a>
                 <a href="/maternity/" class="subpill">Maternity ↗</a>
@@ -255,8 +255,8 @@
                 <span class="unit-num num-navy">05</span>
                 <span class="unit-evolving-inline">[ EVOLVING ]</span>
               </div>
-              <h3 class="unit-title text-navy">BRAND<br>DESIGN</h3>
-              <p class="unit-statement text-muted-navy">DISTINCTIVE WORDMARKS AND VISUAL SYSTEMS.</p>
+              <h3 class="unit-title text-navy">Brand<br>Design</h3>
+              <p class="unit-statement text-muted-navy">Distinctive wordmarks and visual systems.</p>
             </div>
             <div class="unit-bottom">
               <span class="unit-arrow text-navy">↗</span>
@@ -269,7 +269,7 @@
       <!-- FULL-WIDTH BILLBOARD BELOW (MATCHES REFERENCE: "STOP USING BORING...") -->
       <div class="brutalist-billboard-section">
         <div class="billboard-left">
-          <span class="billboard-eyebrow">[ THALAM PRODUCTION SUITE &bull; TRICHY ]</span>
+          <span class="billboard-eyebrow">[ THALAM PRODUCTION STUDIO &bull; TRICHY ]</span>
           <h2 class="billboard-headline">
             WE SET THE ROOM.<br>
             YOU BRING THE STORY.
