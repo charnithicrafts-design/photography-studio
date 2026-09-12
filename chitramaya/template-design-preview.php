@@ -259,11 +259,11 @@
             We set the room.<br>
             You bring the story.
           </h2>
+        </div>
+        <div class="billboard-right">
           <p class="billboard-desc">
             A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
           </p>
-        </div>
-        <div class="billboard-right">
           <a href="/thalam-studio/" class="billboard-cta-btn">
             Step into Thalam &rarr;
           </a>

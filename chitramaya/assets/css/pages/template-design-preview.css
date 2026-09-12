@@ -487,12 +487,12 @@ body.mode-stacked .stacked-divider {
 /* Bold Condensed Titles (Strict 2 lines) */
 .unit-title {
     font-family: var(--font-primary, 'Lato', sans-serif);
-    font-size: 1.0625rem;
+    font-size: clamp(1.125rem, 1.35vw, 1.25rem); /* 18px-20px: calibrated for 232px column width */
     font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
     text-transform: none;
-    min-height: 2.6em;
+    min-height: 2.4em;
     margin: 0 0 8px 0;
     color: #FFFFFF;
 }
@@ -610,8 +610,10 @@ body.mode-stacked .stacked-divider {
 .billboard-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    max-width: 440px;
 }
 
 .billboard-desc {
@@ -622,7 +624,7 @@ body.mode-stacked .stacked-divider {
     letter-spacing: 0;
     text-transform: none;
     color: #171E4A;
-    opacity: 0.9;
+    opacity: 0.92;
     margin: 0;
 }
 
@@ -638,9 +640,9 @@ body.mode-stacked .stacked-divider {
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: none;
-    padding: 14px 32px;
+    padding: 15px 34px;
     border-radius: 50px;
-    box-shadow: none; /* Removed fuzzy blur shadow that caused out-of-focus effect */
+    box-shadow: none;
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
     white-space: nowrap;
 }
@@ -677,6 +679,23 @@ body.mode-stacked .stacked-divider {
     .brutalist-ribbon-grid {
         grid-template-columns: 1fr;
     }
+    
+    .brutalist-card-unit {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px 18px;
+    }
+    
+    .unit-title {
+        font-size: 1.375rem;
+    }
+    
+    .billboard-cta-btn {
+        width: 100%;
+        height: 52px;
+        box-sizing: border-box;
+    }
+}
     
     .brutalist-card-unit {
         border-right: none;
