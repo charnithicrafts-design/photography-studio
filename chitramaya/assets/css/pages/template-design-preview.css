@@ -383,29 +383,7 @@ body.mode-stacked .stacked-divider {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Vertical Rotated Tab [ WHAT WE DO ] */
-.brutalist-vertical-tab {
-    width: 48px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.2);
-    user-select: none;
-}
 
-.brutalist-vertical-tab span {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-family: var(--mono, 'Lato', sans-serif);
-    font-size: 0.6875rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
-    white-space: nowrap;
-}
 
 /* 5 Column Grid */
 .brutalist-ribbon-grid {
@@ -679,17 +657,9 @@ body.mode-stacked .stacked-divider {
         flex-direction: column;
     }
     
-    .brutalist-vertical-tab {
-        width: 100%;
-        height: 36px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
     
-    .brutalist-vertical-tab span {
-        writing-mode: horizontal-tb;
-        transform: none;
-    }
+    
+    
     
     .brutalist-ribbon-grid {
         grid-template-columns: 1fr;
