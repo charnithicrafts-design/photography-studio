@@ -284,7 +284,7 @@
 <footer class="c-global-footer">
   <div class="c-footer-container">
     <div class="c-footer-grid">
-      
+
       <!-- 01: Brand & Studio Profile -->
       <div class="c-footer-brand">
         <h2 class="c-footer-logo">Chithramaya Creatives</h2>
@@ -300,10 +300,10 @@
           <span>Thalam Studio — Production &amp; Podcast Suites</span>
         </div>
       </div>
-      
+
       <!-- 02: Studio Disciplines -->
       <div class="c-footer-col">
-        <h3 class="c-footer-col-title">Our Work</h3>
+        <h3 class="c-footer-col-title">Our Services</h3>
         <ul class="c-footer-links">
           <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Brand &amp; Corporate Photography</a></li>
           <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial &amp; Product Campaigns</a></li>
@@ -314,7 +314,7 @@
           <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Brand Design Systems</a></li>
         </ul>
       </div>
-      
+
       <!-- 03: Direct Connect & Studio Specs -->
       <div class="c-footer-col">
         <h3 class="c-footer-col-title">Reach Us</h3>
@@ -334,14 +334,14 @@
           <span class="c-footer-contact-label">Visual Journal</span>
           <a href="https://www.instagram.com/chithramaya_creatives/" target="_blank" rel="noopener noreferrer" class="c-footer-contact-val">Instagram @chithramaya_creatives</a>
         </div>
-        
+
         <button class="c-footer-cta-btn" data-trigger="booking">
           Bring us the story. &rarr;
         </button>
       </div>
 
     </div>
-    
+
     <!-- Bottom Legal Bar -->
     <div class="c-footer-bottom">
       <span>&copy; <?php echo date('Y'); ?> Chithramaya Creatives. All rights reserved.</span>
@@ -364,11 +364,11 @@
     bookingTriggers.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         let msg = "Hi Sriram! I'm interested in discussing a project with Chithramaya Creatives.";
         const path = window.location.pathname;
         const id = btn.id;
-        
+
         if (btn.hasAttribute('data-wa-msg')) {
            msg = btn.getAttribute('data-wa-msg');
         } else if (path.includes('brand-design') || path.includes('drawer-brand')) {
@@ -388,7 +388,7 @@
         } else if (path.includes('thalam-studio')) {
            msg = "Hi Sriram! I'm interested in booking the Thalam Production Studio facility.";
         }
-        
+
         const whatsappUrl = 'https://wa.me/918098014123?text=' + encodeURIComponent(msg);
         window.open(whatsappUrl, '_blank');
       });
