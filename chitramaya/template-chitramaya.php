@@ -58,91 +58,100 @@
         <!-- =====================================================
              SECTION 1–5: DUALITY SPLIT — MONEY (DARK) vs ART (WHITE)
              ===================================================== -->
-        <section class="duality-section" id="services">
+        <section class="brutalist-monolith-wrapper" id="services" aria-label="Services and Studios Monolith">
 
-            <!-- ═══════════ LEFT COLUMN: MONEY-BASED SERVICES ═══════════ -->
-            <div class="col-money">
-
-                <!-- 01 BRAND & CORPORATE PHOTOGRAPHY -->
-                <article class="dark-card service-card" id="brand-corporate">
-                    <div class="service-number">— 01 / BRAND &amp; CORPORATE</div>
-                    <h3 class="service-title">Brand &amp; Corporate Photography</h3>
-                    <p class="service-text-block">
-                        We photograph the people, spaces, and moments that make your business credible. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
-                    </p>
-                    <a href="/corporate-brand/" class="service-cta" aria-label="Explore Corporate &amp; Executive Photography work">Explore Corporate &amp; Executive Work ↗</a>
-                </article>
-
-                <!-- 02 COMMERCIAL PHOTOGRAPHY -->
-                <article class="dark-card service-card" id="commercial">
-                    <div class="service-number">— 02 / COMMERCIAL</div>
-                    <h3 class="service-title">Commercial Photography</h3>
-                    <p class="service-text-block">
-                        Products, spaces, food, fashion. We shoot what you're selling and make people actually want it. Whether it's an advertising campaign, an architectural space, or a catalog, the frame is always doing a commercial job.
-                    </p>
-                    <a href="/commercial/" class="service-cta" aria-label="Explore Commercial Photography Campaigns">Explore Commercial Campaigns ↗</a>
-                </article>
-
-                <!-- 04 PODCAST & INTERVIEW PRODUCTION -->
-                <article class="dark-card service-card" id="podcast">
-                    <div class="service-number">— 04 / PODCAST &amp; PRODUCTION</div>
-                    <h3 class="service-title">Podcast &amp; Interview Production</h3>
-                    <p class="service-text-block">
-                        We set up the room. You bring the conversation. Broadcast-grade Shure SM7B audio, cinema 4K multi-camera angles, and acoustic isolation in Trichy. One good recording session becomes a month of edited, branded, publish-ready content.
-                    </p>
-                    <a href="/podcast-interview/" class="service-cta" aria-label="Book Podcast Studio &amp; Production">Book Studio &amp; Production ↗</a>
-                </article>
-            </div>
-
-            <!-- ═══════════ RIGHT COLUMN: ART-BASED SERVICES ═══════════ -->
-            <div class="col-art">
-
-                <!-- 03 EVENTS & PORTRAIT PHOTOGRAPHY -->
-                <article class="white-card service-card" id="events-portraits">
-                    <div class="service-number">— 03 / EVENTS &amp; PORTRAIT</div>
-                    <h3 class="service-title">Events &amp; Heritage Portraiture</h3>
-                    <p class="service-text-block">
-                        The moments you'll look at in 20 years and remember exactly how it felt. Unobtrusive, documentary observation for milestone weddings, sacred rituals, and generational family heritage across South India.
-                    </p>
-                    <nav class="service-links-cluster" aria-label="Events &amp; Portrait sub-verticals">
-                        <a href="/events-portrait/" class="service-cta-link" aria-label="Events &amp; Weddings photography">Events &amp; Weddings ↗</a>
-                        <a href="/maternity/" class="service-cta-link" aria-label="Maternity &amp; Bump-to-Baby photography">Maternity &amp; Bump-to-Baby ↗</a>
-                        <a href="/thalam-baby/" class="service-cta-link" aria-label="Baby &amp; Infant Art photography">Baby &amp; Infant Art ↗</a>
-                    </nav>
-                </article>
-
-                <!-- 05 BRAND DESIGN (EVOLVING SERVICE) -->
-                <article class="white-card service-card" id="brand-design">
-                    <div class="service-badge">EVOLVING STUDIO SERVICE</div>
-                    <div class="service-number">— 05 / BRAND DESIGN</div>
-                    <h3 class="service-title">Brand Design &amp; Visual Systems</h3>
-                    <p class="service-text-block">
-                        Where visual identity meets artistic strategy. We build distinctive typographic systems, wordmarks, and art direction that define your brand essence — giving your business a face people remember.
-                    </p>
-                    <a href="/brand-design/" class="service-cta" aria-label="Collaborate on Brand Identity Design">Collaborate on Brand Identity ↗</a>
-                </article>
-
-                <!-- THALAM STUDIO BILLBOARD ADVERTISEMENT -->
-                <div class="manifesto-block thalam-billboard">
-                    <div class="manifesto-label">[ THALAM STUDIO, TRICHY ]</div>
-                    <div class="manifesto-quote">
-                        We set the room.<br>You bring the story.
-                    </div>
-                    <p class="manifesto-desc">
-                        A purpose-built 2,400 sq ft production environment in Thillai Nagar engineered for broadcast audio, precision strobe lighting, and commercial sets.
-                    </p>
-                    <a href="/thalam-studio/" class="btn-primary">Step into Thalam &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             SPLIT DIVIDER
-             ===================================================== -->
-        <div class="split-divider" aria-hidden="true">
-            <div class="split-divider-left"></div>
-            <div class="split-divider-right"></div>
+      <!-- TOP SUB-HEADER BAR -->
+      <div class="brutalist-meta-bar">
+        <div class="brutalist-meta-left"><span class="meta-tag">[ WHAT WE DO ]</span></div>
+        <div class="brutalist-meta-right">
+          <span>INDEX: 01 &mdash; 05</span>
         </div>
+      </div>
+
+      <!-- COMPACT SERVICE RIBBON: ALL 5 COLUMNS DARK (UNIFIED COMMON REGION) -->
+      <div class="brutalist-ribbon-container">
+        <div class="brutalist-ribbon-grid">
+
+          <!-- 01 BRAND & CORPORATE -->
+          <a href="/corporate-brand/" class="brutalist-card-unit" id="opt2-cell-01">
+            <div class="unit-top">
+              <div class="unit-num-row"><span class="unit-num">01</span></div>
+              <h3 class="unit-title">Brand &amp;<br>Corporate</h3>
+              <p class="unit-statement">Executive portraits that build market credibility.</p>
+            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
+
+          <!-- 02 COMMERCIAL CAMPAIGNS -->
+          <a href="/commercial/" class="brutalist-card-unit" id="opt2-cell-02">
+            <div class="unit-top">
+              <div class="unit-num-row"><span class="unit-num">02</span></div>
+              <h3 class="unit-title">Commercial<br>Campaigns</h3>
+              <p class="unit-statement">Products and spaces documented to sell.</p>
+            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
+
+          <!-- 03 PODCAST & PRODUCTION -->
+          <a href="/podcast-interview/" class="brutalist-card-unit" id="opt2-cell-03">
+            <div class="unit-top">
+              <div class="unit-num-row"><span class="unit-num">03</span></div>
+              <h3 class="unit-title">Podcast &amp;<br>Production</h3>
+              <p class="unit-statement">Broadcast acoustic rooms and 4K cinema.</p>
+            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
+
+          <!-- 04 EVENTS & HERITAGE (dark, pills styled for dark bg) -->
+          <a href="/events-portrait/" class="brutalist-card-unit" id="opt2-cell-04">
+            <div class="unit-top">
+              <div class="unit-num-row"><span class="unit-num">04</span></div>
+              <h3 class="unit-title">Events &amp;<br>Heritage</h3>
+              <p class="unit-statement">Documentary heritage for generations to remember.</p>
+              <div class="unit-subpills">
+                <span class="subpill">Weddings ↗</span>
+                <span class="subpill">Maternity ↗</span>
+                <span class="subpill">Infant Art ↗</span>
+              </div>
+            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
+
+          <!-- 05 BRAND DESIGN -->
+          <a href="/brand-design/" class="brutalist-card-unit" id="opt2-cell-05">
+            <div class="unit-top">
+              <div class="unit-num-row">
+                <span class="unit-num">05</span>
+                <span class="unit-evolving-inline">[ Evolving ]</span>
+              </div>
+              <h3 class="unit-title">Brand<br>Design</h3>
+              <p class="unit-statement">Distinctive wordmarks and visual systems.</p>
+            </div>
+            <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- BILLBOARD: HEADLINE LEFT / DESC+CTA GROUPED RIGHT (LAW OF PROXIMITY) -->
+      <div class="brutalist-billboard-section">
+        <div class="billboard-left">
+          <span class="billboard-eyebrow">[ THALAM STUDIO, TRICHY ]</span>
+          <h2 class="billboard-headline">
+            We set the room.<br>
+            You bring the story.
+          </h2>
+        </div>
+        <div class="billboard-right">
+          <p class="billboard-desc">
+            A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
+          </p>
+          <a href="/thalam-studio/" class="billboard-cta-btn">
+            Step into Thalam &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
 
         <!-- =====================================================
              WORKFLOW PIPELINE SECTION
