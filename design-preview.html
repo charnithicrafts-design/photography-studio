@@ -916,12 +916,12 @@ body.mode-stacked .stacked-divider {
    ============================================================================== */
 
 .brutalist-monolith-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    width: calc(100% - 48px);
+    max-width: 1360px;
+    margin: 32px auto 60px;
     border: none;
-    background: transparent;
-    box-shadow: none;
+    background: #0A0D22; /* Underlying background matches dark services to prevent any subpixel white line */
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
     overflow: hidden;
 }
 
@@ -953,8 +953,8 @@ body.mode-stacked .stacked-divider {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: transparent;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background: #0A0D22;
+    border-bottom: none; /* ELIMINATED white line */
 }
 
 /* 5 Column Grid - Equal height, flush bottom */
@@ -1137,7 +1137,7 @@ body.mode-stacked .stacked-divider {
     padding: 56px 44px;
     background: #FAB417;
     color: #171E4A;
-    border-top: 2px solid rgba(23, 30, 74, 0.12);
+    border-top: none;
 }
 
 .billboard-left {
