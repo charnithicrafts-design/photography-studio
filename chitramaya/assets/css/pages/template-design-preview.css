@@ -168,21 +168,21 @@ body.mode-stacked .stacked-divider {
 .editorial-layout-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    border-bottom: 1px solid rgba(23, 30, 74, 0.15);
+    background: #F7F4ED;
+    border-bottom: 1px solid rgba(23, 30, 74, 0.12);
 }
 
 .editorial-col-money {
-    background: #171E4A !important;
+    background: transparent !important; /* Removed 50% dark background */
     padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 48px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: 1px solid rgba(23, 30, 74, 0.12);
 }
 
 .editorial-col-art {
-    background: #F7F4ED;
+    background: transparent;
     padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 48px);
     display: flex;
     flex-direction: column;
@@ -209,15 +209,17 @@ body.mode-stacked .stacked-divider {
 
 /* Dark Editorial Card */
 .editorial-col-money .editorial-card {
-    background: rgba(255, 255, 255, 0.04);
+    background: #171E4A; /* Solid navy card panel */
+    color: #FFFFFF;
     border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 32px rgba(23, 30, 74, 0.12);
 }
 
 .editorial-col-money .editorial-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(53, 162, 72, 0.4);
+    background: #1D255E;
+    border-color: rgba(53, 162, 72, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 16px 40px rgba(23, 30, 74, 0.22);
 }
 
 /* Light Editorial Card */
@@ -254,16 +256,24 @@ body.mode-stacked .stacked-divider {
     font-family: var(--display, 'Roboto Slab', serif);
     font-size: clamp(1.35rem, 2vw, 1.75rem);
     font-weight: 700;
-    line-height: 1.15;
-    text-transform: uppercase;
+    line-height: 1.2;
+    text-transform: none; /* Removed all caps */
 }
 
 .editorial-col-money .editorial-card-title {
-    color: #FFFFFF;
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: none; /* Removed all caps */
 }
 
 .editorial-col-art .editorial-card-title {
-    color: #171E4A;
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: none; /* Removed all caps */
 }
 
 /* 5-7 Word Work Impression Headline */

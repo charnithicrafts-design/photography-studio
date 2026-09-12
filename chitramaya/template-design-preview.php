@@ -51,7 +51,7 @@
       <div class="option-intro-tag">Direction 01 — Editorial Action (NN/g Measure)</div>
       <h1 class="option-intro-heading">High-Contrast Editorial Action</h1>
       <p class="option-intro-desc">
-        Engineered per Nielsen Norman Group typography guidelines (strict ≤680px reading line-length) and Stanford Web Credibility research. Front-loaded 5–7 word impression headline with punchy prose and explicit action links.
+        Engineered per Nielsen Norman Group typography guidelines (strict ≤680px reading line-length) and Stanford Web Credibility research. Front-loaded 5–7 word impression statements with explicit action links.
       </p>
     </div>
 
@@ -66,9 +66,6 @@
             <div class="editorial-card-num">— 01 / BRAND &amp; CORPORATE</div>
             <h2 class="editorial-card-title">Brand &amp; Corporate Photography</h2>
             <div class="editorial-impact-headline">Executive portraits that build market credibility.</div>
-            <p class="editorial-card-body">
-              We photograph the people, spaces, and moments that make your business credible. Executive portraits that actually look like the person. Team shoots people want to be in. Corporate events documented like they matter — because they do.
-            </p>
             <a href="/corporate-brand/" class="editorial-cta-link" aria-label="Explore Corporate &amp; Executive Photography work">
               Explore Corporate &amp; Executive Work ↗
             </a>
@@ -79,9 +76,6 @@
             <div class="editorial-card-num">— 02 / COMMERCIAL</div>
             <h2 class="editorial-card-title">Commercial Photography</h2>
             <div class="editorial-impact-headline">Products and spaces documented to sell.</div>
-            <p class="editorial-card-body">
-              Products, spaces, food, fashion. We shoot what you're selling and make people actually want it. Whether it's an advertising campaign, an architectural space, or a catalog, the frame is always doing a commercial job.
-            </p>
             <a href="/commercial/" class="editorial-cta-link" aria-label="Explore Commercial Photography Campaigns">
               Explore Commercial Campaigns ↗
             </a>
@@ -92,9 +86,6 @@
             <div class="editorial-card-num">— 04 / PODCAST &amp; PRODUCTION</div>
             <h2 class="editorial-card-title">Podcast &amp; Interview Production</h2>
             <div class="editorial-impact-headline">Broadcast acoustic rooms and 4K cinema.</div>
-            <p class="editorial-card-body">
-              We set up the room. You bring the conversation. Broadcast-grade Shure SM7B audio, cinema 4K multi-camera angles, and acoustic isolation in Trichy. One good recording session becomes a month of edited, branded, publish-ready content.
-            </p>
             <a href="/podcast-interview/" class="editorial-cta-link" aria-label="Book Podcast Studio &amp; Production">
               Book Studio &amp; Production ↗
             </a>
@@ -112,9 +103,6 @@
             <div class="editorial-card-num">— 03 / EVENTS &amp; PORTRAIT</div>
             <h2 class="editorial-card-title">Events &amp; Heritage Portraiture</h2>
             <div class="editorial-impact-headline">Documentary heritage for generations to remember.</div>
-            <p class="editorial-card-body">
-              The moments you'll look at in 20 years and remember exactly how it felt. Unobtrusive, documentary observation for milestone weddings, sacred rituals, and generational family heritage across South India.
-            </p>
             <nav class="service-links-cluster" aria-label="Events &amp; Portrait sub-verticals" style="margin-top: 12px; padding-top: 14px; border-top: 1px solid rgba(23,30,74,0.12); display: flex; flex-direction: column; gap: 8px;">
               <a href="/events-portrait/" class="service-cta-link" style="font-weight: 700; color: #171E4A; text-decoration: none;">Events &amp; Weddings ↗</a>
               <a href="/maternity/" class="service-cta-link" style="font-weight: 700; color: #171E4A; text-decoration: none;">Maternity &amp; Bump-to-Baby ↗</a>
@@ -128,9 +116,6 @@
             <div class="editorial-card-num">— 05 / BRAND DESIGN</div>
             <h2 class="editorial-card-title">Brand Design &amp; Visual Systems</h2>
             <div class="editorial-impact-headline">Distinctive wordmarks and memorable visual systems.</div>
-            <p class="editorial-card-body">
-              Where visual identity meets artistic strategy. We build distinctive typographic systems, wordmarks, and art direction that define your brand essence — giving your business a face people remember.
-            </p>
             <a href="/brand-design/" class="editorial-cta-link" aria-label="Collaborate on Brand Identity Design">
               Collaborate on Brand Identity ↗
             </a>
