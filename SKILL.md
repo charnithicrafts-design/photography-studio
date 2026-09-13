@@ -91,8 +91,8 @@ Before any commit or deployment, run this 5-point audit checklist:
        grep -iE "#000000|#111111|#333333|#e2e2e8" chitramaya/assets/css/pages/*.css
 [ ] 4. PHP SYNTAX VALIDATION:
        php -l chitramaya/template-[slug].php
-[ ] 5. RESPONSIVE BREAKPOINT AUDIT:
-       Verify desktop (1200px+), tablet (900px), and mobile (600px / 380px) layouts.
+[ ] 5. RESPONSIVE BREAKPOINT AUDIT (Mobile-First 8pt System):
+       Verify desktop (1440px+), laptop (960px), tablet (768px), and mobile (320px) layouts.
 ```
 
 ---

@@ -91,3 +91,11 @@ When operating across this codebase, the AI assumes the specialized perspectives
 - **CSS Architecture:** SMACSS modular structure inside `chitramaya/assets/css/` compiled into `style.compiled.css`.
 - **Page-Specific CSS:** `chitramaya/assets/css/pages/template-[slug].css` loaded synchronously to eliminate FOUC.
 - **Font Strategy:** 100% self-hosted local `.woff2` fonts inside `chitramaya/assets/fonts/` with `@font-face` definitions in `critical.css`. Zero external Google Fonts HTTP requests.
+
+## 6. Layout & Responsive Breakpoints
+- **Mobile-First Paradigm:** All base styles target mobile. Use `min-width` media queries to scale up.
+- **Breakpoints (8pt System):**
+  - `$bp-mobile`: `320px` (Minimum target/baseline)
+  - `$bp-tablet`: `768px`
+  - `$bp-laptop`: `960px`
+  - `$bp-desktop`: `1440px`

@@ -168,3 +168,17 @@ When presenting work, components, or campaign launches, follow Steve Jobs’ iPo
    - `Let's make something.`
    - `Bring us the story. →`
    - `Tell us about your day.`
+
+---
+
+## 4. Responsive Architecture (8pt Mobile-First)
+
+The brand adheres strictly to a Mobile-First paradigm, scaling upwards systematically on an 8pt grid logic. 
+
+**Standard Breakpoints:**
+- **Mobile (`$bp-mobile`):** `320px` (Base styling applies from here upwards)
+- **Tablet (`$bp-tablet`):** `768px`
+- **Laptop (`$bp-laptop`):** `960px`
+- **Desktop (`$bp-desktop`):** `1440px`
+
+*Implementation Note: All CSS layouts must invert legacy desktop-first approaches. Write core styles for mobile and layer enhancements in `min-width` queries.*
