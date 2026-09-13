@@ -28,7 +28,7 @@
         <div class="bento-hero-header">
           <span class="bento-hero-badge">— 04 / BRAND DESIGN & VISUAL DIRECTION</span>
           <h1 class="bento-hero-h1">Brand design<br>with a pulse.</h1>
-          <p class="bento-hero-sub">We build the visual identity systems that make you unforgettable — from typography and color architecture to complete brand guidelines.</p>
+          <p class="bento-hero-sub">We build the visual identities that make you unforgettable — from typography and color palettes to complete brand guidelines.</p>
         </div>
         <div class="bento-hero-actions">
           <a href="#book" class="btn-primary" data-trigger="booking">
@@ -43,18 +43,18 @@
       <!-- Secondary Discipline Proof Card -->
       <div class="bento-hero-side">
         <div>
-          <div class="bento-side-label">Identity Disciplines</div>
+          <div class="bento-side-label">Design Services</div>
           <div class="bento-tag-cloud" style="margin-top: 16px;">
             <span class="bento-tag">Visual Identity</span>
-            <span class="bento-tag">Logo Systems</span>
-            <span class="bento-tag">Type Architecture</span>
+            <span class="bento-tag">Logo Design</span>
+            <span class="bento-tag">Typography</span>
             <span class="bento-tag">Brand Books</span>
             <span class="bento-tag">Collateral Design</span>
           </div>
         </div>
         <div class="bento-proof-note">
           <span class="bento-proof-dot"></span>
-          <span>Scalable Identity Systems · Digital & Print</span>
+          <span>Brand Guidelines · Digital & Print</span>
         </div>
       </div>
 
@@ -130,12 +130,12 @@
       <div class="impact-card">
         <span class="impact-num">01</span>
         <h3 class="impact-header">Instant Connection</h3>
-        <p class="impact-desc">Your identity is your first handshake. We engineer visual assets that instantly connect with your audience and leave a memorable mark.</p>
+        <p class="impact-desc">Your identity is your first handshake. We design assets that instantly connect with your audience and leave a memorable mark.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
         <h3 class="impact-header">Absolute Trust</h3>
-        <p class="impact-desc">A unified design system proves your reliability. We forge a cohesive visual language that builds deep, unwavering trust across every touchpoint.</p>
+        <p class="impact-desc">A unified visual identity proves your reliability. We forge a cohesive visual language that builds deep, unwavering trust across every touchpoint.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
