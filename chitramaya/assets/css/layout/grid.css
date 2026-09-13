@@ -171,7 +171,7 @@
 /* ==========================================================================
    DESKTOP SPLIT SCREEN (Brutalist Hover)
    ========================================================================== */
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .site-header {
     padding: 1.5rem 3rem;
   }
@@ -262,7 +262,7 @@
 }
 
 /* The Tactile Hover Effect */
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .thalam-masonry-garden {
     padding: 8rem max(4rem, calc((100vw - 1440px) / 2));
   }
@@ -392,7 +392,7 @@
   color: var(--color-accent);
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .services-header {
     padding: 8rem 3rem 4rem;
   }
@@ -460,7 +460,7 @@
   margin-bottom: 4rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .project-meta {
     flex-direction: row;
     justify-content: flex-start;
@@ -743,7 +743,7 @@
 .whatsapp-fab span {
   display: none;
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .whatsapp-fab span {
     display: inline;
   }

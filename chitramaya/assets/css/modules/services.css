@@ -111,7 +111,7 @@
   color: var(--color-accent);
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .services-header {
     padding: 8rem 3rem 4rem;
   }

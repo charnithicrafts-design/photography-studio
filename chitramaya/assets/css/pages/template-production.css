@@ -83,7 +83,7 @@ nav {
   justify-content: center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .hero {
     align-items: center;
     padding: 6rem 3rem;
@@ -144,8 +144,14 @@ nav {
 }
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: $bp-laptop) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
 }
 
 .service-card {
@@ -398,15 +404,4 @@ nav {
   transform: translateX(5px);
 }
 
-@media (max-width: 1024px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .services-container {
-    padding: 4rem 1.5rem;
-  }
-  .card-content {
-    padding: 2rem;
-  }
-}
+

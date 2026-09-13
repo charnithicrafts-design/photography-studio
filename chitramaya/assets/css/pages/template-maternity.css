@@ -49,8 +49,13 @@
 }
 .maternity-dual-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
+}
+@media (min-width: $bp-laptop) {
+  .maternity-dual-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .maternity-pane-card {
   background: var(--color-white, #FFFFFF);
@@ -110,33 +115,50 @@
 }
 .maternity-bento-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 48px;
   align-items: center;
   background: var(--color-white, #FFFFFF);
-  padding: 48px;
+  padding: 32px 24px;
   border-radius: var(--radius-lg, 24px);
   box-shadow: 0 8px 32px rgba(23, 30, 74, 0.04);
   border: 1px solid rgba(23, 30, 74, 0.08);
 }
-.maternity-bento-section.reverse .maternity-bento-grid {
-  grid-template-columns: 1fr 1.2fr;
-}
 .maternity-bento-section.reverse .maternity-bento-images {
-  order: 2;
+  order: 0;
+}
+@media (min-width: $bp-laptop) {
+  .maternity-bento-grid {
+    grid-template-columns: 1.2fr 1fr;
+    padding: 48px;
+  }
+  .maternity-bento-section.reverse .maternity-bento-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .maternity-bento-section.reverse .maternity-bento-images {
+    order: 2;
+  }
 }
 
 .bento-2-images {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 16px;
-  height: 320px;
+  height: 240px;
 }
 .bento-3-images {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  height: 280px;
+  height: 240px;
+}
+@media (min-width: $bp-laptop) {
+  .bento-2-images {
+    height: 320px;
+  }
+  .bento-3-images {
+    height: 280px;
+  }
 }
 .bento-img-wrap {
   border-radius: var(--radius-md, 16px);
@@ -176,17 +198,17 @@
 }
 .timeline-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
-@media (max-width: 992px) {
+@media (min-width: $bp-tablet) {
   .timeline-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
+@media (min-width: $bp-laptop) {
   .timeline-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .timeline-card {
@@ -249,27 +271,7 @@
   margin: 0 auto 36px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .maternity-dual-grid {
-    grid-template-columns: 1fr;
-  }
-  .maternity-bento-grid,
-  .maternity-bento-section.reverse .maternity-bento-grid {
-    grid-template-columns: 1fr;
-    padding: 32px 24px;
-  }
-  .maternity-bento-section.reverse .maternity-bento-images {
-    order: 0;
-  }
-  .bento-2-images,
-  .bento-3-images {
-    height: 240px;
-  }
-  .manifesto-card {
-    padding: 36px 24px;
-  }
-}
+
 
 /* GBP Services & Pricing Section */
 .maternity-services-section {
@@ -285,12 +287,12 @@
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 32px;
 }
-@media (max-width: 900px) {
+@media (min-width: $bp-laptop) {
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .service-card {

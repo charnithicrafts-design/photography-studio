@@ -191,18 +191,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .baby-journey-grid {
-    grid-template-columns: 1fr;
-  }
-  .journey-gallery-col {
-    display: none;
-  }
-  .journey-mobile-img {
-    display: block;
-  }
-}
+
 
 /* ==========================================================================
    GBP SERVICES & PRICING SECTION (Bento 3-Tier Grid)
@@ -223,15 +212,16 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 32px;
 }
-
-@media (max-width: 900px) {
+@media (min-width: $bp-laptop) {
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
 
 .service-card {
   background: var(--color-white, #FFFFFF);

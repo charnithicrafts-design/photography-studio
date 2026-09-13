@@ -789,7 +789,7 @@
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media (max-width: $bp-laptop-max) {
     .brutalist-ribbon-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -810,7 +810,7 @@
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: $bp-tablet-max) {
     .brutalist-ribbon-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -954,7 +954,7 @@
             }
 
             /* Responsive Media Queries */
-            @media (max-width: 900px) {
+            @media (max-width: $bp-laptop-max) {
                 .duality-section {
                     grid-template-columns: 1fr;
                 }
@@ -968,6 +968,6 @@
                 }
             }
 
-            @media (max-width: 600px) {
+            @media (max-width: $bp-mobile-max) {
                 .pipeline-steps { grid-template-columns: 1fr; gap: var(--space-5, 40px); }
             }

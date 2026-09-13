@@ -36,7 +36,7 @@
 .whatsapp-fab span {
   display: none;
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .whatsapp-fab span {
     display: inline;
   }

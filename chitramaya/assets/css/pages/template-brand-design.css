@@ -55,7 +55,7 @@
   margin-bottom: 3rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .corp-hero {
   position: relative;
   min-height: 75vh;
@@ -82,19 +82,19 @@
   display: grid;
   gap: var(--space-6, 48px);
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .services-grid {
     grid-template-columns: 1fr 1.6fr;
     gap: var(--space-8, 64px);
     align-items: start;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .services-grid {
   display: grid;
   gap: var(--space-6, 48px);
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .services-grid {
     grid-template-columns: 1fr 1.6fr;
     gap: var(--space-8, 64px);
@@ -275,12 +275,12 @@
   max-width: 1360px;
   margin: 0 auto;
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .brut-impact-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .brut-impact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -288,7 +288,7 @@
   max-width: 1360px;
   margin: 0 auto;
 }
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .brut-impact-grid {
     grid-template-columns: repeat(3, 1fr);
   }

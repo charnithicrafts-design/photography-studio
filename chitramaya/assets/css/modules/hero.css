@@ -6,15 +6,15 @@
 .bento-hero-section {
   position: relative;
   width: 100%;
-  padding: clamp(7rem, 15vh, 10rem) clamp(24px, 5vw, 80px) clamp(4rem, 8vh, 6rem);
+  padding: clamp(5.5rem, 12vh, 7rem) var(--space-2, 20px) clamp(3rem, 6vh, 4rem);
   background: #171E4A; /* Chithramaya Navy — structural dominant */
   color: #FFFFFF;
 }
 
 .bento-hero-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
+  grid-template-columns: 1fr;
+  gap: var(--space-4, 32px);
   max-width: 1280px;
   margin: 0 auto;
   align-items: center;
@@ -85,10 +85,11 @@
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-3, 24px);
-  padding-left: clamp(24px, 4vw, 48px);
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  min-height: 200px;
-  /* No background, no card border, no shadow — lives on the same Navy field */
+  padding-left: 0;
+  border-left: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  padding-top: var(--space-3, 24px);
+  min-height: auto;
 }
 
 .bento-side-label {
@@ -154,24 +155,23 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE — Mobile: single column, side loses vertical divider
+   RESPONSIVE — Laptop & Desktop
    ========================================================================== */
-@media (max-width: 900px) {
+@media (min-width: $bp-laptop) {
   .bento-hero-section {
-    padding: clamp(5.5rem, 12vh, 7rem) var(--space-2, 20px) clamp(3rem, 6vh, 4rem);
+    padding: clamp(7rem, 15vh, 10rem) clamp(24px, 5vw, 80px) clamp(4rem, 8vh, 6rem);
   }
 
   .bento-hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4, 32px);
+    grid-template-columns: 1.6fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
   }
 
   .bento-hero-side {
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
-    padding-top: var(--space-3, 24px);
-    min-height: auto;
+    padding-left: clamp(24px, 4vw, 48px);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: none;
+    padding-top: 0;
+    min-height: 200px;
   }
 }
-

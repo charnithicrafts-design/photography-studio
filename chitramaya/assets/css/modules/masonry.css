@@ -25,7 +25,7 @@
   will-change: transform;
 }
 
-@media (min-width: 992px) {
+@media (min-width: $bp-laptop) {
   .thalam-masonry-garden {
     padding: 8rem max(4rem, calc((100vw - 1440px) / 2));
   }
