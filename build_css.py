@@ -54,7 +54,8 @@ BREAKPOINTS = {
     '$bp-tablet-max': '767px',
     '$bp-mobile-max': '599px',
 }
-for token, value in BREAKPOINTS.items():
+# Sort tokens by length descending to prevent partial replacements (e.g. $bp-laptop vs $bp-laptop-max)
+for token, value in sorted(BREAKPOINTS.items(), key=lambda x: len(x[0]), reverse=True):
     css_payload = css_payload.replace(token, value)
 
 minified = minify_css(css_payload)
@@ -64,3 +65,24 @@ with open(COMPILED_CSS, 'w') as f:
     f.write(compiled_content)
 
 print(f"Compilation complete! Wrote {len(minified)} bytes to {COMPILED_CSS}")
+
+
+# Process Page-Specific CSS
+print("Building page-specific CSS...")
+PAGES_DIR = os.path.join(THEME_DIR, 'assets', 'css', 'pages')
+if os.path.exists(PAGES_DIR):
+    for filename in os.listdir(PAGES_DIR):
+        if filename.endswith('.css') and not filename.endswith('.compiled.css'):
+            source_path = os.path.join(PAGES_DIR, filename)
+            compiled_path = os.path.join(PAGES_DIR, filename.replace('.css', '.compiled.css'))
+            
+            with open(source_path, 'r') as f:
+                page_css = f.read()
+                
+            for token, value in sorted(BREAKPOINTS.items(), key=lambda x: len(x[0]), reverse=True):
+                page_css = page_css.replace(token, value)
+                
+            minified_page = minify_css(page_css)
+            with open(compiled_path, 'w') as f:
+                f.write(minified_page)
+            print(f"Compiled {filename} -> {os.path.basename(compiled_path)}")

@@ -13,7 +13,7 @@
   <title>Chithramaya Creatives — Photography Studio</title>
   <meta name="description" content="Chithramaya Creatives — Commercial photography, brand photography, events, and visual storytelling from Trichy, Tamil Nadu.">
   <?php wp_head(); ?>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-chitramaya.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-chitramaya.css'); ?>">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-chitramaya.compiled.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-chitramaya.compiled.css'); ?>">
 </head>
 <body>
 <!-- =====================================================

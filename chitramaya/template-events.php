@@ -14,7 +14,7 @@
   <link rel="canonical" href="<?php echo esc_url(home_url('/events-portrait/')); ?>">
   <?php wp_head(); ?>
   
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-events.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-events.css'); ?>">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-events.compiled.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-events.compiled.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
 <?php get_template_part('template-parts/global-nav'); ?>

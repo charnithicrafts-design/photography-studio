@@ -14,7 +14,7 @@
   <meta name="description" content="Thalam Studio — Chithramaya's purpose-built 2,400 sq ft production house in Trichy for ad shoots, broadcast podcasts, commercial sets, and portraiture.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/thalam-studio/')); ?>">
   <?php wp_head(); ?>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-thalam.css'); ?>">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-thalam.compiled.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-thalam.compiled.css'); ?>">
 </head>
 <body class="thalam-page">
 

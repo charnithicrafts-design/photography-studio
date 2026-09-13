@@ -12,7 +12,7 @@
   <title>Our Architecture — Chithramaya & Thalam Studio</title>
   <link rel="canonical" href="<?php echo esc_url(home_url('/services/')); ?>">
   <?php wp_head(); ?>
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-services.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-services.css'); ?>">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-services.compiled.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-services.compiled.css'); ?>">
 </head>
 <body <?php body_class(); ?>>
   <?php get_template_part('template-parts/global-nav'); ?>
