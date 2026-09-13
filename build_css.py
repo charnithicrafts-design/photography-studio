@@ -40,6 +40,23 @@ for imp in imports:
     else:
         print(f"Warning: File not found {file_path}")
 
+# Preprocessor: Replace Responsive Breakpoint Tokens
+BREAKPOINTS = {
+    # Mobile-First (min-width)
+    '$bp-mobile': '320px',
+    '$bp-tablet': '768px',
+    '$bp-laptop': '960px',
+    '$bp-desktop': '1440px',
+    
+    # Legacy Desktop-First (max-width) fallbacks
+    '$bp-desktop-max': '1439px',
+    '$bp-laptop-max': '959px',
+    '$bp-tablet-max': '767px',
+    '$bp-mobile-max': '599px',
+}
+for token, value in BREAKPOINTS.items():
+    css_payload = css_payload.replace(token, value)
+
 minified = minify_css(css_payload)
 compiled_content += minified
 
