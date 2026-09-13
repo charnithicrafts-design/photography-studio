@@ -68,7 +68,7 @@
       
       <div class="services-left">
         <h2 class="services-intro-title">SERVICES —</h2>
-        <p class="services-intro-text">From clinical studio perfection to authentic real-life scenarios.</p>
+        <p class="services-intro-text">From studio setups to authentic real-life scenarios.</p>
         <p class="services-intro-text">We capture, enhance, and deliver purpose-driven imagery that influences consumer perception and drives deep engagement.</p>
       </div>
 
@@ -138,27 +138,15 @@
     </div>
   </section>
 
-  <!-- IMPACT OF PROFESSIONAL ASSETS -->
-  <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">Purpose-Driven Influence</h2>
-    <div class="brut-impact-grid">
-      <div class="impact-card">
-        <span class="impact-num">01</span>
-        <h3 class="impact-header">Collaborative Creation</h3>
-        <p class="impact-desc">We work in tight sync with your art directors to meticulously craft visuals that align perfectly with your clearly defined creative brief.</p>
-      </div>
-      <div class="impact-card">
-        <span class="impact-num">02</span>
-        <h3 class="impact-header">Campaign Velocity</h3>
-        <p class="impact-desc">Fast, scalable content pipelines delivering campaign-ready assets at the speed of modern retail.</p>
-      </div>
-      <div class="impact-card">
-        <span class="impact-num">03</span>
-        <h3 class="impact-header">Market Conversion</h3>
-        <p class="impact-desc">Visually compelling and strategically effective assets designed to influence consumer perception, drive deep engagement, and actively sell your product.</p>
-      </div>
-    </div>
+  
+  <!-- MASSIVE TAGLINE -->
+  <section class="brut-impact" style="padding: 120px 40px; text-align: center; background: #0A0D22; color: #FFFFFF;">
+    <div style="font-family: var(--mono, 'Lato', sans-serif); font-size: 0.875rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #FAB417; margin-bottom: 24px;">[ INFLUENCE ]</div>
+    <h2 style="font-family: var(--font-primary, 'Lato', sans-serif); font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin: 0; text-transform: none;">
+      Collaborative creation &mdash; Faster delivery &mdash; Faster execution
+    </h2>
   </section>
+
 
   <section class="global-cta">
     <h2 class="global-cta-title brut-protect-overflow">Make what you sell something people want to look at.</h2>

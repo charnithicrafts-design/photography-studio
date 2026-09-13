@@ -26,7 +26,7 @@
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 03 / EVENTS & HERITAGE PORTRAITURE</span>
+          <span class="bento-hero-badge">— 03 / EVENTS & PORTRAITURE</span>
           <h1 class="bento-hero-h1">The moments<br>people don't forget.</h1>
           <p class="bento-hero-sub">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
         </div>
@@ -45,7 +45,7 @@
         <div>
           <div class="bento-side-label">Session Disciplines</div>
           <div class="bento-tag-cloud" style="margin-top: 16px;">
-            <span class="bento-tag">Family Heritage</span>
+            <span class="bento-tag">Family Portraits</span>
             <span class="bento-tag">Weddings</span>
             <span class="bento-tag">Baby & Newborn</span>
             <span class="bento-tag">Maternity Art</span>

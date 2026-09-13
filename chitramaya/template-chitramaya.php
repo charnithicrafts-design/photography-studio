@@ -106,8 +106,8 @@
           <a href="/events-portrait/" class="brutalist-card-unit" id="opt2-cell-04">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num">04</span></div>
-              <h3 class="unit-title">Events &amp;<br>Heritage</h3>
-              <p class="unit-statement">Documentary heritage for generations to remember.</p>
+              <h3 class="unit-title">Events &amp;<br>Portraiture</h3>
+              <p class="unit-statement">Documentary for generations to remember.</p>
               <div class="unit-subpills">
                 <span class="subpill">Weddings ↗</span>
                 <span class="subpill">Maternity ↗</span>

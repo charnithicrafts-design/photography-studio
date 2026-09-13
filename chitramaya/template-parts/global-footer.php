@@ -297,7 +297,7 @@
         </p>
         <div class="c-footer-badge">
           <span class="c-footer-badge-dot"></span>
-          <span>Thalam Studio — Production &amp; Podcast Suites</span>
+          <span>Thalam Studio — Production &amp; Podcast Studio</span>
         </div>
       </div>
 
@@ -306,12 +306,12 @@
         <h3 class="c-footer-col-title">Our Services</h3>
         <ul class="c-footer-links">
           <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Brand &amp; Corporate Photography</a></li>
-          <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial &amp; Product Campaigns</a></li>
-          <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Events &amp; Heritage Portraits</a></li>
+          <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial &amp; Product</a></li>
+          <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Events &amp; Portraiture</a></li>
           <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>">Thalam Production Studio</a></li>
-          <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast &amp; Interview Suites</a></li>
-          <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Maternity &amp; Milestone Art</a></li>
-          <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Brand Design Systems</a></li>
+          <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast &amp; Interview Studio</a></li>
+          <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Bump to Baby &amp; Maternity</a></li>
+          <li><a href="<?php echo esc_url(home_url('/brand-design')); ?>">Brand Design</a></li>
         </ul>
       </div>
 
@@ -372,17 +372,17 @@
         if (btn.hasAttribute('data-wa-msg')) {
            msg = btn.getAttribute('data-wa-msg');
         } else if (path.includes('brand-design') || path.includes('drawer-brand')) {
-           msg = "Hi Sriram! I'd like to discuss Brand Design and visual identity systems for my brand.";
+           msg = "Hi Sriram! I'd like to discuss Brand Design and visual identity for my brand.";
         } else if (path.includes('commercial')) {
-           msg = "Hi Sriram! I'd like to commission a Commercial Photography campaign.";
+           msg = "Hi Sriram! I'd like to commission a Commercial Photography.";
         } else if (path.includes('corporate')) {
-           msg = "Hi Sriram! I'm interested in booking Brand & Corporate Identity photography.";
+           msg = "Hi Sriram! I'm interested in booking Brand & Corporate photography.";
         } else if (path.includes('events-portrait')) {
            msg = "Hi Sriram! I'd like to check availability for an upcoming Event & Portrait session.";
         } else if (path.includes('podcast')) {
            msg = "Hi Sriram! I'd like to book the Thalam Podcast & Interview Studio.";
         } else if (path.includes('maternity')) {
-           msg = "Hi Sriram! I'd like to reserve a Maternity & Milestone photography session.";
+           msg = "Hi Sriram! I'd like to reserve a Bump to Baby & Maternity photography session.";
         } else if (path.includes('thalam-baby')) {
            msg = "Hi Sriram! I'd like to book a Thalam Baby portrait session.";
         } else if (path.includes('thalam-studio')) {
