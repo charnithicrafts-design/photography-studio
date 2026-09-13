@@ -203,7 +203,7 @@
         
         <a href="<?php echo esc_url(home_url('/commercial')); ?>" class="c-nav-link">Commercial</a>
         
-        <a href="<?php echo esc_url(home_url('/events-portrait')); ?>" class="c-nav-link">Events & Portrait</a>
+        <a href="<?php echo esc_url(home_url('/events-portrait')); ?>" class="c-nav-link">Events & Portraits</a>
         
         <!-- Simple Accordion -->
         <div class="c-nav-group">

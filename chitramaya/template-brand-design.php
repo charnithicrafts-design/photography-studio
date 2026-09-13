@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand Design — Chithramaya</title>
-  <meta name="description" content="Identity engineered for impact. We build visual systems that command attention and define your core.">
+  <meta name="description" content="Identity engineered for impact. We build visual identities that command attention and define your core.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/brand-design/')); ?>">
   <?php wp_head(); ?>
   

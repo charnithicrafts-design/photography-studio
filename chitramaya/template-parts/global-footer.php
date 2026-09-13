@@ -307,7 +307,7 @@
         <ul class="c-footer-links">
           <li><a href="<?php echo esc_url(home_url('/corporate-brand')); ?>">Brand &amp; Corporate Photography</a></li>
           <li><a href="<?php echo esc_url(home_url('/commercial')); ?>">Commercial &amp; Product</a></li>
-          <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Events &amp; Portraiture</a></li>
+          <li><a href="<?php echo esc_url(home_url('/events-portrait')); ?>">Events &amp; Portraits</a></li>
           <li><a href="<?php echo esc_url(home_url('/thalam-studio')); ?>">Thalam Production Studio</a></li>
           <li><a href="<?php echo esc_url(home_url('/podcast-interview')); ?>">Podcast &amp; Interview Studio</a></li>
           <li><a href="<?php echo esc_url(home_url('/maternity')); ?>">Bump to Baby &amp; Maternity</a></li>

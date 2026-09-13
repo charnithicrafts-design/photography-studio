@@ -106,7 +106,7 @@
           <a href="/events-portrait/" class="brutalist-card-unit" id="opt2-cell-04">
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num">04</span></div>
-              <h3 class="unit-title">Events &amp;<br>Portraiture</h3>
+              <h3 class="unit-title">Events &amp;<br>Portraits</h3>
               <p class="unit-statement">Documentary for generations to remember.</p>
               <div class="unit-subpills">
                 <span class="subpill">Weddings ↗</span>
@@ -125,7 +125,7 @@
                 <span class="unit-evolving-inline">[ Evolving ]</span>
               </div>
               <h3 class="unit-title">Brand<br>Design</h3>
-              <p class="unit-statement">Distinctive wordmarks and visual systems.</p>
+              <p class="unit-statement">Distinctive wordmarks and visual identities.</p>
             </div>
             <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
