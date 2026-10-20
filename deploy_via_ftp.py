@@ -5,6 +5,7 @@ import subprocess
 import zipfile
 import urllib.request
 import time
+import secrets
 
 # 0. Enforce Pre-Flight Gate
 print("Running Chithramaya Pre-Flight Release Gate...")
@@ -90,17 +91,22 @@ with zipfile.ZipFile(PAYLOAD_ZIP, 'w', zipfile.ZIP_DEFLATED) as zipf:
 
 print(f"Payload built: {PAYLOAD_ZIP} ({os.path.getsize(PAYLOAD_ZIP) // 1024} KB)")
 
-# 3. Generate Unzip Script
-unzip_script = """<?php
+# 3. Generate Secure Unzip Script with One-Time Token
+deploy_token = secrets.token_urlsafe(32)
+unzip_script = f"""<?php
+if (!isset($_GET['token']) || $_GET['token'] !== '{deploy_token}') {{
+    http_response_code(403);
+    die('Forbidden: Invalid deployment token.');
+}}
 $zip = new ZipArchive;
 $res = $zip->open('theme_assets_payload.zip');
-if ($res === TRUE) {
+if ($res === TRUE) {{
     $zip->extractTo(__DIR__);
     $zip->close();
     echo "SUCCESS: Extraction complete.\\n";
-} else {
+}} else {{
     echo "ERROR: Failed to open zip file.\\n";
-}
+}}
 // Clean up
 @unlink('theme_assets_payload.zip');
 @unlink(__FILE__);
@@ -109,11 +115,14 @@ if ($res === TRUE) {
 with open(UNZIP_PHP, 'w') as f:
     f.write(unzip_script)
 
-# 4. Upload via FTP
-print("\nConnecting to FTP...")
+# 4. Upload securely via FTPS (FTP over TLS)
+print("\nConnecting securely to FTPS...")
 try:
-    ftp = ftplib.FTP(FTP_HOST, timeout=30)
+    ftp = ftplib.FTP_TLS(timeout=30)
+    ftp.connect(FTP_HOST, 21)
+    ftp.auth()
     ftp.login(FTP_USER, FTP_PASS)
+    ftp.prot_p()  # Enforce encrypted TLS data connection
     ftp.cwd('chithramaya.charnithi.com')
     
     print(f"Uploading {PAYLOAD_ZIP}...")
@@ -125,18 +134,18 @@ try:
         ftp.storbinary(f'STOR {UNZIP_PHP}', f)
         
     ftp.quit()
-    print("FTP transfer complete.")
+    print("Secure FTPS transfer complete.")
 except Exception as e:
-    print(f"FTP transfer failed: {e}")
+    print(f"FTPS transfer failed: {e}")
     # Cleanup locals if FTP fails
     if os.path.exists(PAYLOAD_ZIP): os.remove(PAYLOAD_ZIP)
     if os.path.exists(UNZIP_PHP): os.remove(UNZIP_PHP)
     sys.exit(1)
 
-# 5. Trigger Extraction
+# 5. Trigger Extraction via HTTP with One-Time Token
 print("\nTriggering server-side extraction...")
 req = urllib.request.Request(
-    f"https://chithramaya.charnithi.com/{UNZIP_PHP}", 
+    f"https://chithramaya.charnithi.com/{UNZIP_PHP}?token={deploy_token}", 
     headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 )
 try:

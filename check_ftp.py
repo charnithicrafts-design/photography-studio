@@ -15,8 +15,12 @@ except Exception as e:
     print(f"Error loading secrets: {e}")
     exit(1)
 
-ftp = ftplib.FTP(FTP_HOST)
+print("Testing secure FTPS connection...")
+ftp = ftplib.FTP_TLS(timeout=20)
+ftp.connect(FTP_HOST, 21)
+ftp.auth()
 ftp.login(FTP_USER, FTP_PASS)
+ftp.prot_p()
 
 print("Root directory contents:")
 ftp.dir()

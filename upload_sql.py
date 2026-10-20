@@ -1,9 +1,10 @@
 import ftplib
 import urllib.request
 import os
+import secrets
 
 try:
-    with open('.ftp-secret', 'r') as f:
+    with open('.ftp-secret.staging', 'r') as f:
         secrets = {}
         for line in f:
             if '=' in line:
@@ -43,20 +44,22 @@ if os.path.exists(SQL_FILE):
 db_host_clean = DB_HOST.split(':')[0] if ':' in DB_HOST else DB_HOST
 db_port_clean = int(DB_HOST.split(':')[1]) if ':' in DB_HOST else 3306
 
+# Generate a secure one-time token for remote import execution
+import_token = secrets.token_urlsafe(32)
+
 # Generate a one-time PHP importer that reads and executes the SQL, then self-deletes
 importer_php = "<?php\n" \
+               "if (!isset($_GET['token']) || $_GET['token'] !== '" + import_token + "') {\n" \
+               "    http_response_code(403);\n" \
+               "    die('Forbidden: Invalid import token.');\n" \
+               "}\n" \
                "error_reporting(E_ALL);\n" \
                "ini_set('display_errors', 1);\n" \
                "@ini_set('memory_limit', '512M');\n" \
                "@set_time_limit(300);\n\n" \
-               "if (file_exists(__DIR__ . '/wp-config.php')) {\n" \
-               "    require_once __DIR__ . '/wp-config.php';\n" \
-               "    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);\n" \
-               "    $prefix = isset($table_prefix) ? $table_prefix : 'wp_';\n" \
-               "} else {\n" \
                f"    $conn = new mysqli('{db_host_clean}', '{DB_USER}', '{DB_PASS}', '{DB_NAME}', {db_port_clean});\n" \
                "    $prefix = 'wp_';\n" \
-               "}\n\n" \
+               "\n" \
                "if ($conn->connect_error) {\n" \
                "    die('DB connect failed: ' . $conn->connect_error);\n" \
                "}\n\n" \
@@ -73,38 +76,37 @@ importer_php = "<?php\n" \
                "        if ($res = @$conn->store_result()) { @$res->free(); }\n" \
                "    }\n" \
                "}\n\n" \
-               "// 3. Guarantee 'admin' account exists in ACTIVE prefix tables ({$prefix}users)\n" \
-               "$pass_hash = '\\$wp\\$2y\\$12\\$3xNrUtX9gcGe0BxAHUTEpuefV5Yp7AhA.7A0OS8VeTlrJhs0e3jWG';\n" \
-               "$conn->query(\"INSERT INTO {$prefix}users (ID, user_login, user_pass, user_nicename, user_email, user_registered, user_status, display_name) VALUES (1, 'admin', '$pass_hash', 'admin', 'admin@example.com', NOW(), 0, 'admin') ON DUPLICATE KEY UPDATE user_login='admin', user_pass='$pass_hash', user_email='admin@example.com';\");\n" \
-               "$conn->query(\"INSERT INTO {$prefix}usermeta (user_id, meta_key, meta_value) VALUES (1, '{$prefix}capabilities', 'a:1:{s:13:\\\"administrator\\\";b:1;}') ON DUPLICATE KEY UPDATE meta_value='a:1:{s:13:\\\"administrator\\\";b:1;}';\");\n" \
-               "$conn->query(\"INSERT INTO {$prefix}usermeta (user_id, meta_key, meta_value) VALUES (1, '{$prefix}user_level', '10') ON DUPLICATE KEY UPDATE meta_value='10';\");\n\n" \
                "$conn->close();\n" \
                "@unlink(__FILE__);\n" \
                "@unlink(__DIR__ . '/chitramaya_dump_live.sql');\n" \
-               "echo 'DB import complete. Admin account verified for prefix: ' . $prefix;\n" \
+               "echo 'DB import complete for prefix: ' . $prefix;\n" \
                "?>"
 
 with open('./db_import.php', 'w') as f:
     f.write(importer_php)
 
-ftp = ftplib.FTP(FTP_HOST)
+print("Connecting securely via FTPS (FTP over TLS)...")
+ftp = ftplib.FTP_TLS(timeout=30)
+ftp.connect(FTP_HOST, 21)
+ftp.auth()
 ftp.login(FTP_USER, FTP_PASS)
-ftp.cwd('chithramaya.charnithi.com')
+ftp.prot_p()  # Enforce TLS encryption for both control and data streams
+ftp.cwd('/')
 
-print("Uploading SQL dump...")
+print("Uploading SQL dump securely...")
 with open(SQL_FILE, 'rb') as f:
     ftp.storbinary('STOR chitramaya_dump_live.sql', f)
 
-print("Uploading DB importer...")
+print("Uploading tokenized DB importer...")
 with open('./db_import.php', 'rb') as f:
     ftp.storbinary('STOR db_import.php', f)
 
 ftp.quit()
 os.remove('./db_import.php')
 
-print("Triggering remote DB import...")
+print("Triggering remote DB import with token...")
 req = urllib.request.Request(
-    "https://chithramaya.charnithi.com/db_import.php",
+    f"https://chithramaya.charnithi.com/db_import.php?token={import_token}",
     headers={'User-Agent': 'Mozilla/5.0'}
 )
 try:
@@ -114,3 +116,4 @@ except urllib.error.HTTPError as e:
     print(f"HTTP Error {e.code}: {e.read().decode('utf-8', errors='ignore')}")
 except Exception as e:
     print(f"Error triggering DB import: {e}")
+

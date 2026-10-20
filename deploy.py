@@ -5,6 +5,7 @@ import urllib.request
 import ssl
 import argparse
 import sys
+import secrets
 
 # 1. Parse Environment
 parser = argparse.ArgumentParser(description='Deploy Chithramaya Framework')
@@ -80,28 +81,36 @@ with zipfile.ZipFile('deploy.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
                     archive_path = 'wp-content/themes/' + file_path
                     zipf.write(file_path, archive_path)
 
-# 4. Create the unzip script
-unzip_php_code = """<?php
+# 4. Create the secure unzip script with one-time execution token
+deploy_token = secrets.token_urlsafe(32)
+unzip_php_code = f"""<?php
+if (!isset($_GET['token']) || $_GET['token'] !== '{deploy_token}') {{
+    http_response_code(403);
+    die('Forbidden: Invalid deployment token.');
+}}
 $zip = new ZipArchive;
-if ($zip->open('deploy.zip') === TRUE) {
+if ($zip->open('deploy.zip') === TRUE) {{
     $zip->extractTo('./');
     $zip->close();
     echo 'SUCCESS: Files extracted. ';
-} else {
+}} else {{
     echo 'FAILED to extract zip. ';
-}
-unlink('deploy.zip');
-unlink(__FILE__);
+}}
+@unlink('deploy.zip');
+@unlink(__FILE__);
 ?>"""
 
 with open('deploy_unzip.php', 'w') as f:
     f.write(unzip_php_code)
 
-# 5. Upload via FTP
-print(f"Uploading to {FTP_HOST}...")
+# 5. Upload via FTPS (FTP over TLS)
+print(f"Uploading securely to {FTP_HOST} via FTPS...")
 try:
-    ftp = ftplib.FTP(FTP_HOST)
+    ftp = ftplib.FTP_TLS(timeout=30)
+    ftp.connect(FTP_HOST, 21)
+    ftp.auth()
     ftp.login(FTP_USER, FTP_PASS)
+    ftp.prot_p()  # Enforce TLS encryption on data connection
     if TARGET_DIR != '/':
         ftp.cwd(TARGET_DIR)
     
@@ -111,17 +120,19 @@ try:
         ftp.storbinary('STOR deploy_unzip.php', f)
     
     ftp.quit()
+    print("Secure FTPS transfer complete.")
 except Exception as e:
-    print(f"FTP Upload Failed: {e}")
+    print(f"FTPS Upload Failed: {e}")
     # Don't exit yet, clean up local files first
 
-# 6. Trigger unzip via HTTP
-print("Triggering extraction on server...")
+# 6. Trigger unzip via HTTP with one-time token
+print("Triggering secure extraction on server...")
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 try:
-    req = urllib.request.Request(TRIGGER_URL, headers={'User-Agent': 'Mozilla/5.0'})
+    token_trigger_url = f"{TRIGGER_URL}?token={deploy_token}"
+    req = urllib.request.Request(token_trigger_url, headers={'User-Agent': 'Mozilla/5.0'})
     response = urllib.request.urlopen(req, context=ctx)
     print("Server Response:", response.read().decode('utf-8'))
 except Exception as e:
