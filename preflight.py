@@ -170,7 +170,7 @@ def check_css_freshness():
     stale_sources = []
     for root, dirs, files in os.walk(CSS_SOURCE_DIR):
         for f in files:
-            if f.endswith('.css'):
+            if f.endswith('.css') and not f.endswith('.compiled.css'):
                 fpath = os.path.join(root, f)
                 if os.path.getmtime(fpath) > compiled_mtime:
                     stale_sources.append(fpath)
@@ -209,6 +209,31 @@ def check_dangerous_files():
         fatal=False,  # Warning — they won't be in the theme zip/ftp but still messy
     )
 
+# ─── CHECK 7: Enforce FTPS / SFTP (No Plain FTP) ──────────────────────────────
+
+def check_secure_transport():
+    print(f'\n{BOLD}[7] Security — Enforce FTPS / SFTP (No Plain FTP){RESET}')
+    plain_ftp_scripts = []
+    for root, dirs, files in os.walk('.'):
+        if '.git' in root or 'node_modules' in root:
+            continue
+        for f in files:
+            if f.endswith('.py') and f != 'preflight.py':
+                full_path = os.path.join(root, f)
+                try:
+                    with open(full_path, 'r', encoding='utf-8', errors='ignore') as fp:
+                        content = fp.read()
+                        if re.search(r'ftplib\.FTP\(', content) and not re.search(r'ftplib\.FTP_TLS\(', content):
+                            plain_ftp_scripts.append(full_path)
+                except Exception:
+                    pass
+    check(
+        'Zero plain unencrypted FTP connections across codebase',
+        len(plain_ftp_scripts) == 0,
+        detail='Insecure plain FTP detected in:\n       ' + '\n       '.join(plain_ftp_scripts) + '\n       Must use ftplib.FTP_TLS with prot_p() or SFTP to prevent plaintext credential interception.',
+        fatal=True,
+    )
+
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
@@ -223,6 +248,7 @@ if __name__ == '__main__':
     check_css_freshness()
     check_git_clean()
     check_dangerous_files()
+    check_secure_transport()
 
     print()
     if failures:
