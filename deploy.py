@@ -17,17 +17,17 @@ print(f"=== INITIALIZING {args.env.upper()} DEPLOYMENT ===")
 # 2. Load Environment Secrets
 secret_file = f".ftp-secret.{args.env}"
 try:
+    env_config = {}
     with open(secret_file, 'r') as f:
-        secrets = {}
         for line in f:
             if '=' in line:
                 k, v = line.strip().split('=', 1)
-                secrets[k] = v.strip('"')
-    FTP_HOST = secrets.get('FTP_HOST')
-    FTP_USER = secrets.get('FTP_USER')
-    FTP_PASS = secrets.get('FTP_PASS')
-    TARGET_DIR = secrets.get('TARGET_DIR', '/')
-    TRIGGER_URL = secrets.get('TRIGGER_URL')
+                env_config[k] = v.strip('"')
+    FTP_HOST = env_config.get('FTP_HOST')
+    FTP_USER = env_config.get('FTP_USER')
+    FTP_PASS = env_config.get('FTP_PASS')
+    TARGET_DIR = env_config.get('TARGET_DIR', '/')
+    TRIGGER_URL = env_config.get('TRIGGER_URL')
 except Exception as e:
     print(f"Error loading {secret_file}: {e}")
     sys.exit(1)
