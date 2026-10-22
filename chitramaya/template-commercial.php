@@ -139,12 +139,26 @@
   </section>
 
   
-  <!-- MASSIVE TAGLINE -->
-  <section class="brut-impact" style="padding: 120px 40px; text-align: center; background: #0A0D22; color: #FFFFFF;">
-    <div style="font-family: var(--mono, 'Lato', sans-serif); font-size: 0.875rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #FAB417; margin-bottom: 24px;">[ INFLUENCE ]</div>
-    <h2 style="font-family: var(--font-primary, 'Lato', sans-serif); font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin: 0; text-transform: none;">
-      Collaborative creation &mdash; Faster delivery &mdash; Faster execution
-    </h2>
+  <!-- WORKFLOW IMPACT SECTION -->
+  <section class="brut-impact">
+    <h2 class="brut-impact-title brut-protect-overflow">The Commercial Workflow</h2>
+    <div class="brut-impact-grid">
+      <div class="impact-card">
+        <span class="impact-num">01</span>
+        <h3 class="impact-header">Collaborative Creation</h3>
+        <p class="impact-desc">We work directly with your creative leads to align on mood, styling, and art direction before a single frame is shot.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">02</span>
+        <h3 class="impact-header">Faster Delivery</h3>
+        <p class="impact-desc">Streamlined studio pipelines deliver calibrated, campaign-ready master files without stalling your launch schedule.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">03</span>
+        <h3 class="impact-header">Faster Execution</h3>
+        <p class="impact-desc">High-resolution assets formatted for print, digital ads, and e-commerce that immediately go to work for your brand.</p>
+      </div>
+    </div>
   </section>
 
 

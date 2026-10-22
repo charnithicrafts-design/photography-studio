@@ -155,11 +155,26 @@
   </section>
 
   
-  <!-- MASSIVE TAGLINE -->
-  <section class="brut-impact" style="padding: 120px 40px; text-align: center; background: #0A0D22; color: #FFFFFF;">
-    <h2 style="font-family: var(--font-primary, 'Lato', sans-serif); font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin: 0; text-transform: none;">
-      Consistency &mdash; Speed &mdash; Quality
-    </h2>
+  <!-- WORKFLOW IMPACT SECTION -->
+  <section class="brut-impact">
+    <h2 class="brut-impact-title brut-protect-overflow">The Impact of Professional Assets</h2>
+    <div class="brut-impact-grid">
+      <div class="impact-card">
+        <span class="impact-num">01</span>
+        <h3 class="impact-header">Consistency</h3>
+        <p class="impact-desc">A unified visual language across every director, team member, and workplace — building genuine trust wherever your brand appears.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">02</span>
+        <h3 class="impact-header">Speed</h3>
+        <p class="impact-desc">Efficient, on-location workflows that respect demanding leadership schedules, with rapid turnaround times for press and board deadlines.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">03</span>
+        <h3 class="impact-header">Quality</h3>
+        <p class="impact-desc">Observant portraits and candid workplace documentation that capture approachable, credible leadership — never stiff, never generic.</p>
+      </div>
+    </div>
   </section>
 
 
