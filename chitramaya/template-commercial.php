@@ -145,18 +145,18 @@
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Collaborative Creation</h3>
-        <p class="impact-desc">We work directly with your creative leads to align on mood, styling, and art direction before a single frame is shot.</p>
+        <h3 class="impact-header">Creative Direction</h3>
+        <p class="impact-desc">We review your brief, reference shots, and product styling with you before shoot day so there are no surprises.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Faster Delivery</h3>
-        <p class="impact-desc">Streamlined studio pipelines deliver calibrated, campaign-ready master files without stalling your launch schedule.</p>
+        <h3 class="impact-header">Studio Production</h3>
+        <p class="impact-desc">Lighting, propping, and shooting in our Trichy studio or on location &mdash; framed specifically for your packaging, print, or web formats.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Faster Execution</h3>
-        <p class="impact-desc">High-resolution assets formatted for print, digital ads, and e-commerce that immediately go to work for your brand.</p>
+        <h3 class="impact-header">Final Assets</h3>
+        <p class="impact-desc">Color-accurate, high-resolution photos ready for billboards, e-commerce catalogues, and social campaigns.</p>
       </div>
     </div>
   </section>

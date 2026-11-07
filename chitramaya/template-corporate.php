@@ -162,17 +162,17 @@
       <div class="impact-card">
         <span class="impact-num">01</span>
         <h3 class="impact-header">Consistency</h3>
-        <p class="impact-desc">A unified visual language across every director, team member, and workplace — building genuine trust wherever your brand appears.</p>
+        <p class="impact-desc">Founders, leadership teams, and new hires photographed under the same clean lighting &mdash; so your company looks cohesive across annual reports, press, and LinkedIn.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Speed</h3>
-        <p class="impact-desc">Efficient, on-location workflows that respect demanding leadership schedules, with rapid turnaround times for press and board deadlines.</p>
+        <h3 class="impact-header">On-Location Setup</h3>
+        <p class="impact-desc">We bring studio lighting directly to your office. Leaders step in for ten minutes and get right back to work.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Quality</h3>
-        <p class="impact-desc">Observant portraits and candid workplace documentation that capture approachable, credible leadership — never stiff, never generic.</p>
+        <h3 class="impact-header">Fast Delivery</h3>
+        <p class="impact-desc">Final, retouched portraits delivered within 48 hours for urgent press announcements and website launches.</p>
       </div>
     </div>
   </section>
