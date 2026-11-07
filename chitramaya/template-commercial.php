@@ -141,22 +141,22 @@
   
   <!-- WORKFLOW IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">The Commercial Workflow</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">Turn What You Sell Into Something People Want To Look At</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Creative Direction</h3>
-        <p class="impact-desc">We review your brief, reference shots, and product styling with you before shoot day so there are no surprises.</p>
+        <h3 class="impact-header">Impactful Visuals</h3>
+        <p class="impact-desc">Product, food, fashion, and architectural photography crafted to stand out across packaging, e-commerce stores, and large-scale billboards.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Studio Production</h3>
-        <p class="impact-desc">Lighting, propping, and shooting in our Trichy studio or on location &mdash; framed specifically for your packaging, print, or web formats.</p>
+        <h3 class="impact-header">Purpose-Driven</h3>
+        <p class="impact-desc">Every frame is lit and composed with clear intent &mdash; designed to influence buyer perception, spark interest, and actively sell what you make.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Final Assets</h3>
-        <p class="impact-desc">Color-accurate, high-resolution photos ready for billboards, e-commerce catalogues, and social campaigns.</p>
+        <h3 class="impact-header">Close Collaboration</h3>
+        <p class="impact-desc">We work directly with your art directors and marketing teams to translate your creative brief into images built to fulfill their exact commercial purpose &mdash; from product catalogues to architectural portfolios and lifestyle campaigns.</p>
       </div>
     </div>
   </section>
