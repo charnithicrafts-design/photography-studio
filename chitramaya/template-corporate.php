@@ -157,22 +157,22 @@
   
   <!-- WORKFLOW IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">The Impact of Professional Assets</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">Show What Makes You Credible</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Consistency</h3>
-        <p class="impact-desc">Founders, leadership teams, and new hires photographed under the same clean lighting &mdash; so your company looks cohesive across annual reports, press, and LinkedIn.</p>
+        <h3 class="impact-header">Authentic Visuals</h3>
+        <p class="impact-desc">Executive headshots and team portraits in your natural workspace &mdash; humanizing your brand across websites, annual reports, and LinkedIn.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">On-Location Setup</h3>
-        <p class="impact-desc">We bring studio lighting directly to your office. Leaders step in for ten minutes and get right back to work.</p>
+        <h3 class="impact-header">Event Coverage</h3>
+        <p class="impact-desc">Conferences, seminars, and product launches documented with observant coverage that captures the genuine energy and scale of the room.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Fast Delivery</h3>
-        <p class="impact-desc">Final, retouched portraits delivered within 48 hours for urgent press announcements and website launches.</p>
+        <h3 class="impact-header">Trust Building</h3>
+        <p class="impact-desc">Workplace and facility photography that showcases your real infrastructure &mdash; building confidence with clients, partners, and stakeholders.</p>
       </div>
     </div>
   </section>
