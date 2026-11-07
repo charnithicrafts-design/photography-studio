@@ -97,7 +97,7 @@
             <div class="unit-top">
               <div class="unit-num-row"><span class="unit-num">03</span></div>
               <h3 class="unit-title">Podcast &amp;<br>Production</h3>
-              <p class="unit-statement">Broadcast acoustic rooms and 4K cinema.</p>
+              <p class="unit-statement">A welcoming studio and multi-cam 4K cinema.</p>
             </div>
             <div class="unit-bottom"><span class="unit-arrow">↗</span></div>
           </a>
