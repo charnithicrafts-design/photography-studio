@@ -123,24 +123,24 @@
     </div>
   </section>
 
-  <!-- IMPACT OF PROFESSIONAL ASSETS -->
+  <!-- IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">The Value of Identity</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">Build A Visual Language</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Instant Connection</h3>
-        <p class="impact-desc">Your identity is your first handshake. We design assets that instantly connect with your audience and leave a memorable mark.</p>
+        <h3 class="impact-header">Brand Essence</h3>
+        <p class="impact-desc">We translate what your business stands for into clear visual elements &mdash; custom logos, distinct color palettes, and typography that represent who you are.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Absolute Trust</h3>
-        <p class="impact-desc">A unified visual identity proves your reliability. We forge a cohesive visual language that builds deep, unwavering trust across every touchpoint.</p>
+        <h3 class="impact-header">Strong Presence</h3>
+        <p class="impact-desc">Applied consistently across your website, packaging, and marketing so your company looks coherent and recognizable everywhere.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Market Authority</h3>
-        <p class="impact-desc">Aesthetic dictates value. We elevate your brand's visual presence so you can confidently command market leadership and premium pricing.</p>
+        <h3 class="impact-header">Lasting Impression</h3>
+        <p class="impact-desc">A distinct visual identity that builds customer trust from the first glance and stays memorable over time.</p>
       </div>
     </div>
   </section>

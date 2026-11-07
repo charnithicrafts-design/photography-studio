@@ -162,22 +162,22 @@
 
   <!-- IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">A Lasting Legacy</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">Make The Moment Unmistakable</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Authentic Connection</h3>
-        <p class="impact-desc">We document every event by focusing on the real, unfiltered emotions and genuine connections between your loved ones.</p>
+        <h3 class="impact-header">Quiet Observation</h3>
+        <p class="impact-desc">We stay in the background and watch closely &mdash; capturing natural moments without interrupting your family or staging forced poses.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Honoring Traditions</h3>
-        <p class="impact-desc">Deep respect and understanding of your family's unique traditions, ensuring your beautiful heritage is celebrated.</p>
+        <h3 class="impact-header">Real Emotion</h3>
+        <p class="impact-desc">The unprompted laughs, quiet traditions, and genuine hugs &mdash; documented exactly as they felt in the room.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">A Lasting Legacy</h3>
-        <p class="impact-desc">Creating timeless, heartfelt portraits that will hang on the walls of your family's home for decades.</p>
+        <h3 class="impact-header">Photos That Last</h3>
+        <p class="impact-desc">Finished portraits and printed albums you will look back on twenty years from now and still feel the same warmth.</p>
       </div>
     </div>
   </section>

@@ -130,22 +130,22 @@
 
   <!-- IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">The Power of High-Fidelity</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">One Story. A Month of Content.</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
-        <h3 class="impact-header">Authority</h3>
-        <p class="impact-desc">Elevate your brand perception with broadcast-quality visuals and sound that immediately establish trust.</p>
+        <h3 class="impact-header">Friendly Environment</h3>
+        <p class="impact-desc">A welcoming, well-lit studio where you and your guest feel completely at ease &mdash; with cameras, lighting, and sound taken care of before you sit down.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">02</span>
-        <h3 class="impact-header">Engagement</h3>
-        <p class="impact-desc">Capture and retain your audience's attention across all platforms with professionally paced, multi-cam edits.</p>
+        <h3 class="impact-header">Engaging Content</h3>
+        <p class="impact-desc">Multi-camera edits and short-form video clips crafted with crisp pacing to hold attention across YouTube, Spotify, and social feeds.</p>
       </div>
       <div class="impact-card">
         <span class="impact-num">03</span>
-        <h3 class="impact-header">Velocity</h3>
-        <p class="impact-desc">Turn a single studio recording session into a month's worth of multi-channel promotional content.</p>
+        <h3 class="impact-header">Market-Ready</h3>
+        <p class="impact-desc">Promotional host portraits, episode cover artwork, and branded assets that make your show look established, credible, and ready to launch.</p>
       </div>
     </div>
   </section>
