@@ -317,8 +317,8 @@
   z-index: 1;
 }
 .services-header h1 {
-  font-size: var(--type-step-4);
-} /* Slightly scale down page title on mobile */
+  font-size: var(--type-display);
+}
 
 .service-horizontal {
   padding: 3rem 1.5rem;
@@ -334,21 +334,21 @@
   gap: 1rem;
 }
 .horizontal-intro h2 {
-  font-size: var(--type-step-3);
+  font-size: var(--type-section);
   line-height: 1.1;
   margin-bottom: 0.5rem;
-} /* Reduce from step-4 to step-3 to prevent clashing */
+}
 .horizontal-headline {
   font-family: var(--font-primary);
   font-weight: 700;
-  font-size: var(--type-step-1);
+  font-size: var(--type-subhead);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0;
 }
 .horizontal-manifesto {
   font-family: var(--font-primary);
-  font-size: 1.1rem;
+  font-size: var(--type-body);
   line-height: 1.6;
   opacity: 0.8;
   margin: 0;
@@ -397,7 +397,7 @@
     padding: 8rem 3rem 4rem;
   }
   .services-header h1 {
-    font-size: var(--type-step-5);
+    font-size: var(--type-display);
   }
 
   .service-horizontal {
@@ -413,11 +413,11 @@
     height: max-content;
   }
   .horizontal-intro h2 {
-    font-size: var(--type-step-4);
+    font-size: var(--type-section);
     margin-bottom: 1rem;
   }
   .horizontal-manifesto {
-    font-size: var(--type-step-0);
+    font-size: var(--type-body);
   }
 
   .verticals-grid {
@@ -479,15 +479,15 @@
 }
 
 .project-title {
-  font-size: var(--type-step-3);
+  font-size: var(--type-section);
   text-transform: uppercase;
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
 
 .project-details {
-  font-family: var(--font-mono);
-  font-size: 1rem;
+  font-family: var(--font-primary);
+  font-size: var(--type-subhead);
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -496,15 +496,15 @@
 
 .project-manifesto p {
   font-family: var(--font-primary);
-  font-size: var(--type-step-0);
+  font-size: var(--type-body);
   line-height: 1.6;
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .project-credits {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-family: var(--font-primary);
+  font-size: var(--type-micro);
   color: rgba(255, 255, 255, 0.6);
   border-left: 2px solid var(--color-accent);
   padding-left: 1rem;

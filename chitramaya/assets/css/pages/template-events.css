@@ -46,9 +46,9 @@
   text-align: left;
 }
 .corp-hero-sub {
-  font-size: var(--type-step-0);
+  font-size: var(--type-subhead);
   font-family: var(--font-primary, "Lato", sans-serif);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.5;
   color: var(--color-dark);
   opacity: 0.8;
@@ -105,7 +105,7 @@
 
 /* Left Column */
 .services-intro-title {
-  font-size: var(--type-step-3);
+  font-size: var(--type-section);
   font-family: var(--font-serif, "Roboto Slab", serif);
   font-weight: 400;
   text-transform: uppercase;
@@ -114,9 +114,9 @@
   padding-bottom: 0.5rem;
 }
 .services-intro-text {
-  font-size: var(--type-step-0);
+  font-size: var(--type-body);
   font-family: var(--font-primary, "Lato", sans-serif);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--color-dark);
   margin-bottom: 2rem;
@@ -245,9 +245,9 @@
   gap: 1rem;
 }
 .b-accordion-list li {
-  font-size: var(--type-step-0);
+  font-size: var(--type-body);
   font-family: var(--font-primary, "Lato", sans-serif);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-dark);
   opacity: 0.9;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -314,7 +314,7 @@
   box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
 }
 .impact-num {
-  font-size: var(--type-step-5);
+  font-size: var(--type-display);
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   color: var(--color-accent);
@@ -322,15 +322,16 @@
   margin-bottom: 1rem;
 }
 .impact-header {
-  font-size: var(--type-step-2);
+  font-size: var(--type-section);
   font-family: var(--font-primary, "Lato", sans-serif);
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--color-dark);
 }
 .impact-desc {
-  font-size: 1.1rem;
+  font-size: var(--type-body);
   font-family: var(--font-primary, "Lato", sans-serif);
+  font-weight: 400;
   line-height: 1.6;
   color: var(--color-dark);
   opacity: 0.8;
