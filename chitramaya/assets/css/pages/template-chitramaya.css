@@ -326,15 +326,22 @@
    - Studio Billboard CTA: Canonical Chithramaya Green Action Pill (.btn-primary .billboard-cta-pill)
    ============================================================================== */
 
+.monolith-section-outer {
+    width: 100%;
+    padding: 0 var(--space-4, 32px);
+    box-sizing: border-box;
+}
+
 .brutalist-monolith-wrapper {
-    width: calc(100% - 48px);
+    width: 100%;
     max-width: 1360px;
-    margin: 32px auto 60px;
+    margin: var(--space-4, 32px) auto var(--space-8, 64px);
     background: #F7F4ED;
     border: 1px solid rgba(23, 30, 74, 0.16);
     border-radius: 16px;
     box-shadow: 0 16px 48px rgba(23, 30, 74, 0.08);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* ─── META HEADER BAR ───────────────────────────────────────────────────────── */
@@ -673,9 +680,12 @@
 }
 
 @media (max-width: 480px) {
+    .monolith-section-outer {
+        padding: 0 var(--space-2, 16px);
+    }
+
     .brutalist-monolith-wrapper {
-        width: calc(100% - 24px);
-        margin: 24px auto 48px;
+        margin: var(--space-3, 24px) auto var(--space-6, 48px);
     }
 
     .brutalist-ribbon-grid {
@@ -692,134 +702,171 @@
 }
 
 
-            /* =====================================================
-               WORKFLOW PIPELINE SECTION
-               ===================================================== */
-            .pipeline-section {
-                background: var(--white-bg);
-                padding: clamp(60px, 8vw, 120px) clamp(24px, 6vw, 80px);
-                position: relative;
-                overflow: hidden;
-            }
+/* ==============================================================================
+   WORKFLOW PIPELINE SECTION (STRICT 8pt GRID HARMONY & 1360px ALIGNMENT)
+   - Matches exactly the 1360px container width of Services and Global Footer.
+   - All paddings, gaps, and margins use strict 8pt grid tokens.
+   ============================================================================== */
+.pipeline-section {
+    background: var(--white-bg, #F7F4ED);
+    padding: var(--space-12, 96px) var(--space-4, 32px);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
-            /* Background grid texture */
-            .pipeline-section::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-image:
-                    linear-gradient(to right, rgba(53, 162, 72, 0.03) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(53, 162, 72, 0.03) 1px, transparent 1px);
-                background-size: 50px 50px;
-                pointer-events: none;
-            }
+/* Background grid texture (8pt aligned: 48px = 6 * 8) */
+.pipeline-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(53, 162, 72, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(53, 162, 72, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+}
 
-            .pipeline-label {
-                font-family: var(--mono);
-                font-size: 13px;
-                font-weight: 700;
-                letter-spacing: 0.15em;
-                text-transform: uppercase;
-                color: var(--money-green);
-                margin-bottom: 20px;
-            }
+/* 1360px Centered Container — Pixel-perfect alignment with monolith and footer */
+.pipeline-container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
 
-            .pipeline-heading {
-                font-family: var(--display);
-                font-size: var(--type-display);
-                font-weight: 700;
-                text-transform: uppercase;
-                color: var(--text-dark);
-                line-height: 0.9;
-                margin-bottom: 72px;
-            }
+.pipeline-label {
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: var(--type-micro, 0.8125rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--money-green, #35A248);
+    margin-bottom: var(--space-2, 16px);
+}
 
-            .pipeline-heading span {
-                color: var(--money-green);
-            }
+.pipeline-heading {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: var(--type-display, clamp(2.5rem, 4.5vw, 3.75rem));
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dark, #171E4A);
+    line-height: 0.95;
+    margin: 0 0 var(--space-8, 64px) 0;
+    letter-spacing: -0.02em;
+}
 
-            .pipeline-steps {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: var(--space-3, 24px);
-                position: relative;
-            }
+.pipeline-heading span {
+    color: var(--money-green, #35A248);
+}
 
-            .step {
-                position: relative;
-                z-index: 1;
-                background: var(--white-card);
-                border: 1px solid var(--art-border);
-                border-radius: var(--radius-md, 16px);
-                padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
-                box-shadow: 0 4px 16px rgba(23, 30, 74, 0.03);
-                transition: background 0.3s ease, box-shadow 0.3s ease;
-            }
-            .step:hover {
-                background: var(--color-bg, #F7F4ED);
-                box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
-            }
+.pipeline-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-3, 24px);
+    position: relative;
+}
 
-            .step-marker {
-                position: absolute;
-                top: -24px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                border: 2px solid var(--money-green);
-                background: var(--white-card);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: var(--mono);
-                font-size: 13px;
-                font-weight: 700;
-                color: var(--money-green);
-                box-shadow: 0 4px 12px rgba(53, 162, 72, 0.15);
-                transition: all 0.3s ease;
-            }
+.step {
+    position: relative;
+    z-index: 1;
+    background: var(--white-card, #FFFFFF);
+    border: 1px solid rgba(23, 30, 74, 0.12);
+    border-radius: var(--radius-md, 16px);
+    padding: var(--space-6, 48px) var(--space-3, 24px) var(--space-4, 32px);
+    box-shadow: 0 4px 16px rgba(23, 30, 74, 0.03);
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    box-sizing: border-box;
+}
 
-            .step:hover .step-marker {
-                background: var(--money-green);
-                color: var(--dark-bg);
-            }
+.step:hover {
+    background: var(--color-bg, #F7F4ED);
+    box-shadow: 0 12px 32px rgba(23, 30, 74, 0.08);
+    transform: translateY(-2px);
+}
 
-            .step-title {
-                font-family: var(--display);
-                font-size: clamp(0.85rem, 1.2vw, 1.1rem);
-                font-weight: 700;
-                text-transform: uppercase;
-                color: var(--text-dark);
-                letter-spacing: 0.02em;
-                margin-bottom: 10px;
-                text-align: center;
-                line-height: 1.2;
-            }
+.step-marker {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--money-green, #35A248);
+    background: var(--white-card, #FFFFFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono, 'Lato', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--money-green, #35A248);
+    box-shadow: 0 4px 12px rgba(53, 162, 72, 0.15);
+    transition: all 0.25s ease;
+}
 
-            .step-desc {
-                font-size: 14px;
-                color: var(--text-muted-light);
-                text-align: center;
-                line-height: 1.6;
-            }
+.step:hover .step-marker {
+    background: var(--money-green, #35A248);
+    color: #FFFFFF;
+}
 
-            /* Responsive Media Queries */
-            @media (max-width: $bp-laptop-max) {
-                .duality-section {
-                    grid-template-columns: 1fr;
-                }
-                .col-money { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-                .pipeline-steps {
-                    grid-template-columns: 1fr 1fr;
-                    gap: var(--space-5, 40px) var(--space-3, 24px);
-                }
-                .step {
-                    padding: var(--space-6, 48px) var(--space-2, 16px) var(--space-3, 24px);
-                }
-            }
+.step-title {
+    font-family: var(--display, 'Roboto Slab', serif);
+    font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dark, #171E4A);
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-1, 8px);
+    text-align: center;
+    line-height: 1.25;
+}
 
-            @media (max-width: $bp-mobile-max) {
-                .pipeline-steps { grid-template-columns: 1fr; gap: var(--space-5, 40px); }
-            }
+.step-desc {
+    font-family: var(--font-primary, 'Lato', sans-serif);
+    font-size: 0.875rem;
+    color: rgba(23, 30, 74, 0.72);
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: $bp-laptop-max) {
+    .pipeline-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5, 40px) var(--space-3, 24px);
+    }
+}
+
+@media (max-width: $bp-tablet-max) {
+    .pipeline-section {
+        padding: var(--space-8, 64px) var(--space-3, 24px);
+    }
+
+    .pipeline-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5, 40px) var(--space-3, 24px);
+    }
+
+    .step:last-child {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: $bp-mobile-max) {
+    .pipeline-section {
+        padding: var(--space-8, 64px) var(--space-2, 16px);
+    }
+
+    .pipeline-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-5, 40px);
+    }
+}

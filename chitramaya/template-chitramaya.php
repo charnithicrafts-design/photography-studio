@@ -59,7 +59,8 @@
         <!-- =====================================================
              SECTION 1–5: DUALITY SPLIT — MONEY (DARK) vs ART (WHITE)
              ===================================================== -->
-        <section class="brutalist-monolith-wrapper" id="services" aria-label="Services and Studios Monolith">
+        <div class="monolith-section-outer">
+          <section class="brutalist-monolith-wrapper" id="services" aria-label="Services and Studios Monolith">
 
       <!-- TOP SUB-HEADER BAR -->
       <div class="brutalist-meta-bar">
@@ -156,11 +157,13 @@
         </div>
       </div>
     </section>
+  </div>
 
         <!-- =====================================================
-             WORKFLOW PIPELINE SECTION
+             WORKFLOW PIPELINE SECTION (8pt Grid Harmonized)
              ===================================================== -->
-        <section class="pipeline-section" id="pipeline">
+        <section class="pipeline-section" id="pipeline" aria-label="Structural Workflow Pipeline">
+          <div class="pipeline-container">
             <div class="pipeline-label">[ STRUCTURAL WORKFLOW ]</div>
             <h2 class="pipeline-heading">HOW WE<br>WORK.</h2>
 
@@ -191,6 +194,7 @@
                     <div class="step-desc">You get everything. Every format. Every right. No chasing.</div>
                 </div>
             </div>
+          </div>
         </section>
 
         <!-- =====================================================
