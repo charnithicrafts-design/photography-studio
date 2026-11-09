@@ -27,6 +27,7 @@
 
             <div class="hero-stage-container">
                 <div class="composition-box">
+                    <div class="hero-warm-glow" aria-hidden="true"></div>
                     <div class="text-top-left">WE</div>
                     <div class="photo-foreground-cutout">
                         <picture>

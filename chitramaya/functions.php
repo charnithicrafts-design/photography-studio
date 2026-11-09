@@ -13,7 +13,8 @@ if ( ! function_exists( 'get_field' ) ) {
 function chitramaya_enforce_https_url( $url ) {
     if ( is_string( $url ) && strpos( $url, 'http://' ) === 0 ) {
         $host = isset( $_SERVER['HTTP_HOST'] ) ? strtolower( $_SERVER['HTTP_HOST'] ) : '';
-        if ( $host && ! in_array( $host, array( 'localhost', '127.0.0.1' ), true ) && ! str_ends_with( $host, '.local' ) ) {
+        $host_no_port = preg_replace( '/:\d+$/', '', $host );
+        if ( $host && ! in_array( $host_no_port, array( 'localhost', '127.0.0.1', '[::1]' ), true ) && ! str_ends_with( $host, '.local' ) ) {
             return 'https://' . substr( $url, 7 );
         }
     }

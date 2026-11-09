@@ -122,6 +122,20 @@
                 overflow: visible;
             }
 
+            .hero-warm-glow {
+                position: absolute;
+                top: 48%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: clamp(280px, 48cqw, 540px);
+                height: clamp(280px, 48cqw, 540px);
+                background: radial-gradient(circle, rgba(250, 180, 23, 0.35) 0%, rgba(250, 180, 23, 0.14) 42%, rgba(250, 180, 23, 0) 70%);
+                border-radius: 50%;
+                filter: blur(48px);
+                z-index: 1;
+                pointer-events: none;
+            }
+
             .text-top-left {
                 position: absolute;
                 top: 2%; 
@@ -131,7 +145,8 @@
                 font-weight: 700;
                 line-height: 0.76;
                 letter-spacing: -0.02em;
-                color: rgba(23, 30, 74, 0.10);
+                color: #FAB417; /* Chithramaya Yellow for attention */
+                text-shadow: 0 4px 24px rgba(250, 180, 23, 0.30);
                 text-transform: uppercase;
                 user-select: none;
                 z-index: 1;
@@ -182,7 +197,8 @@
                 font-weight: 700;
                 line-height: 0.76;
                 letter-spacing: -0.02em;
-                color: #D2D7E2;
+                color: #35A248; /* Chithramaya Green for action */
+                text-shadow: 0 4px 24px rgba(53, 162, 72, 0.25);
                 text-transform: uppercase;
                 user-select: none;
             }
