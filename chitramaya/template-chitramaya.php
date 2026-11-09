@@ -147,8 +147,11 @@
           <p class="billboard-desc">
             A purpose-built production environment for broadcast audio, portraiture, and commercial shoots.
           </p>
-          <a href="/thalam-studio/" class="billboard-cta-btn">
-            Step into Thalam &rarr;
+          <a href="/thalam-studio/" class="btn-primary billboard-cta-pill">
+            Step into Thalam
+            <span class="btn-primary-icon">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </a>
         </div>
       </div>
