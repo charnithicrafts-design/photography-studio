@@ -125,7 +125,7 @@
 
   <!-- IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">Build A Visual Language</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">A Visual Language That Moves People</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
@@ -146,7 +146,7 @@
   </section>
 
   <section class="global-cta">
-    <h2 class="global-cta-title brut-protect-overflow">Visual identity with a pulse.</h2>
+    <h2 class="global-cta-title brut-protect-overflow">Build a visual language people remember.</h2>
     <a href="#book" class="btn-primary" data-trigger="booking">
       Let's make something unforgettable.
       <span class="btn-primary-icon">

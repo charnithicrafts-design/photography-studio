@@ -27,7 +27,7 @@
       <div class="bento-hero-main">
         <div class="bento-hero-header">
           <span class="bento-hero-badge">— 03 / EVENTS & PORTRAITS</span>
-          <h1 class="bento-hero-h1">The moments<br>people don't forget.</h1>
+          <h1 class="bento-hero-h1">The moments<br>people want to live again.</h1>
           <p class="bento-hero-sub">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
         </div>
         <div class="bento-hero-actions">
@@ -162,7 +162,7 @@
 
   <!-- IMPACT SECTION -->
   <section class="brut-impact">
-    <h2 class="brut-impact-title brut-protect-overflow">Make The Moment Unmistakable</h2>
+    <h2 class="brut-impact-title brut-protect-overflow">Make The Moment Unmissable</h2>
     <div class="brut-impact-grid">
       <div class="impact-card">
         <span class="impact-num">01</span>
