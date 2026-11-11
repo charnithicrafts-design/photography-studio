@@ -206,7 +206,7 @@
   font-weight: 700;
   font-family: var(--font-primary, 'Lato', sans-serif);
   font-size: var(--type-body);
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;

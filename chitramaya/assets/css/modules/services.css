@@ -61,7 +61,7 @@
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: var(--type-subhead);
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--color-accent);
   margin: 0;
 }
@@ -88,7 +88,7 @@
   font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0 0 0.5rem 0;
   color: var(--color-light);
   transition: color 0.3s ease;

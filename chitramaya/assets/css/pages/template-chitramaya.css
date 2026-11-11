@@ -138,7 +138,7 @@
 
             .text-top-left {
                 position: absolute;
-                top: 2%; 
+                top: 2%;
                 left: 2%;
                 font-family: var(--display, 'Roboto Slab', serif);
                 font-size: clamp(80px, 22cqw, 220px);
@@ -155,7 +155,7 @@
 
             .photo-foreground-cutout {
                 position: absolute;
-                bottom: 0%; 
+                bottom: 0%;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 2;
@@ -182,7 +182,7 @@
 
             .text-bottom-right {
                 position: absolute;
-                bottom: 0%; 
+                bottom: 0%;
                 right: 2%;
                 display: flex;
                 align-items: center;
@@ -203,11 +203,11 @@
                 user-select: none;
             }
 
-            .camera-icon-wrapper { 
-                display: inline-flex; 
-                align-items: center; 
-                justify-content: center; 
-                z-index: 5; 
+            .camera-icon-wrapper {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 5;
             }
             .camera-icon-img {
                 width: clamp(55px, 14cqw, 140px);
@@ -356,7 +356,7 @@
     font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 0.14em;
-    text-transform: uppercase;
+    text-transform: none;
     color: rgba(23, 30, 74, 0.65);
 }
 
@@ -545,7 +545,7 @@
     font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 0.15em;
-    text-transform: uppercase;
+    text-transform: none;
     color: rgba(23, 30, 74, 0.75);
 }
 
@@ -742,7 +742,7 @@
     font-size: var(--type-micro, 0.8125rem);
     font-weight: 700;
     letter-spacing: 0.15em;
-    text-transform: uppercase;
+    text-transform: none;
     color: var(--money-green, #35A248);
     margin-bottom: var(--space-2, 16px);
 }
@@ -751,7 +751,7 @@
     font-family: var(--display, 'Roboto Slab', serif);
     font-size: var(--type-display, clamp(2.5rem, 4.5vw, 3.75rem));
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: none;
     color: var(--text-dark, #171E4A);
     line-height: 0.95;
     margin: 0 0 var(--space-8, 64px) 0;
@@ -817,7 +817,7 @@
     font-family: var(--display, 'Roboto Slab', serif);
     font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: none;
     color: var(--text-dark, #171E4A);
     letter-spacing: 0.02em;
     margin-bottom: var(--space-1, 8px);

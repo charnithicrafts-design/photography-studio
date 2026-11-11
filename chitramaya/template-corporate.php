@@ -26,7 +26,7 @@
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 02 / BRAND & CORPORATE PHOTOGRAPHY</span>
+          <span class="bento-hero-badge">— 02 / Brand & Corporate Photography</span>
           <h1 class="bento-hero-h1">Your brand,<br>made visible.</h1>
           <p class="bento-hero-sub">We photograph the people, spaces, and products behind your brand — so your audience sees what makes you credible.</p>
         </div>
@@ -68,7 +68,7 @@
     <div class="services-grid">
       
       <div class="services-left">
-        <h2 class="services-intro-title">SERVICES —</h2>
+        <h2 class="services-intro-title">Services —</h2>
         <p class="services-intro-text">Your first impression is your only impression.</p>
         <p class="services-intro-text">We arm your executive and marketing teams with assets that demand respect and close deals.</p>
       </div>

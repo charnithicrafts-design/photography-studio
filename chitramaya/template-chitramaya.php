@@ -21,14 +21,14 @@
              ===================================================== -->
         <div class="hero-viewport" id="hero">
             <?php get_template_part('template-parts/global-nav'); ?>
-            
+
             <!-- Spacer to maintain flex layout since global-nav is position: fixed -->
             <div style="height: clamp(54px, 7vh, 70px); width: 100%; flex-shrink: 0;"></div>
 
             <div class="hero-stage-container">
                 <div class="composition-box">
                     <div class="hero-warm-glow" aria-hidden="true"></div>
-                    <div class="text-top-left">WE</div>
+                    <div class="text-top-left">We</div>
                     <div class="photo-foreground-cutout">
                         <picture>
                             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/artistic-photo.webp" type="image/webp">
@@ -36,7 +36,7 @@
                         </picture>
                     </div>
                     <div class="text-bottom-right">
-                        <span class="click-text">CLICK</span>
+                        <span class="click-text">Click</span>
                         <div class="camera-icon-wrapper">
                             <picture>
                                 <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/camera.webp" type="image/webp">
@@ -164,8 +164,8 @@
              ===================================================== -->
         <section class="pipeline-section" id="pipeline" aria-label="Structural Workflow Pipeline">
           <div class="pipeline-container">
-            <div class="pipeline-label">[ STRUCTURAL WORKFLOW ]</div>
-            <h2 class="pipeline-heading">HOW WE<br>WORK.</h2>
+            <div class="pipeline-label">[ Structural Workflow ]</div>
+            <h2 class="pipeline-heading">How We<br>Work.</h2>
 
             <div class="pipeline-steps">
                 <div class="step">

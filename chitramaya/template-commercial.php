@@ -13,7 +13,7 @@
   <meta name="description" content="Commercial photography from Chithramaya Creatives — turn what you sell into something people actually want to look at.">
   <link rel="canonical" href="<?php echo esc_url(home_url('/commercial/')); ?>">
   <?php wp_head(); ?>
-  
+
   <link rel="stylesheet" media="print" onload="this.media='all'" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/pages/template-commercial.compiled.css?ver=<?php echo filemtime(get_stylesheet_directory() . '/assets/css/pages/template-commercial.compiled.css'); ?>">
 </head>
 <body style="background: var(--color-light); color: var(--color-dark);">
@@ -22,11 +22,11 @@
   <!-- COMPACT BENTO HERO -->
   <section class="bento-hero-section">
     <div class="bento-hero-grid">
-      
+
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 01 / COMMERCIAL & BRAND PHOTOGRAPHY</span>
+          <span class="bento-hero-badge">— 01 / Commercial & Brand Photography</span>
           <h1 class="bento-hero-h1">Make it look like<br>it means something.</h1>
           <p class="bento-hero-sub">Products, spaces, food, fashion. We shoot what you're selling and make people actually want it.</p>
         </div>
@@ -65,16 +65,16 @@
   <!-- NO-PHOTO SERVICES ACCORDION -->
   <section class="services-wrapper">
     <div class="services-grid">
-      
+
       <div class="services-left">
-        <h2 class="services-intro-title">SERVICES —</h2>
+        <h2 class="services-intro-title">Services —</h2>
         <p class="services-intro-text">From studio setups to authentic real-life scenarios.</p>
         <p class="services-intro-text">We capture, enhance, and deliver purpose-driven imagery that influences consumer perception and drives deep engagement.</p>
       </div>
 
       <div class="services-right">
         <div class="b-accordion">
-          
+
           <div class="b-accordion-group">
             <button class="b-accordion-btn" aria-expanded="true">
               <span><span class="b-accordion-num">01</span> OOH & E-Commerce</span>
@@ -138,7 +138,7 @@
     </div>
   </section>
 
-  
+
   <!-- WORKFLOW IMPACT SECTION -->
   <section class="brut-impact">
     <h2 class="brut-impact-title brut-protect-overflow">Turn What You Sell Into Something People Want To Look At</h2>

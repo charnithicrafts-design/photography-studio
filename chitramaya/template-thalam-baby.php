@@ -29,7 +29,7 @@
       <div class="bento-hero-grid">
         <div class="bento-hero-main">
           <div class="bento-hero-header">
-            <span class="bento-hero-badge">— FIRST YEAR</span>
+            <span class="bento-hero-badge">— First Year</span>
             <h1 class="bento-hero-h1">They Grow So<br>Fast.</h1>
             <p class="bento-hero-sub">
               From newborn curled-up sleep to the first messy cake smash. We gently archive your child's fleeting early seasons with unhurried patience.
@@ -70,7 +70,7 @@
       <div class="baby-journey-container">
         
         <div class="baby-journey-header">
-          <div class="baby-section-label">[ THE ARCHIVE OF YOU ]</div>
+          <div class="baby-section-label">[ The Archive of You ]</div>
           <h2 class="baby-journey-title">Four chapters of your child's beginnings.</h2>
           <p class="baby-journey-sub">A seamless, documentary-style archiving of your entire first year. Because you shouldn't have to choose which memory to keep.</p>
         </div>
@@ -158,7 +158,7 @@
          ===================================================== -->
     <section class="baby-services-section">
       <div class="services-container">
-        <div class="baby-section-label">[ STUDIO SERVICES ]</div>
+        <div class="baby-section-label">[ Studio Services ]</div>
         <h2 class="services-title">Choose Your Archive</h2>
         
         <div class="services-grid">

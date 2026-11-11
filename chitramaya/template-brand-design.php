@@ -26,7 +26,7 @@
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 04 / BRAND DESIGN & VISUAL DIRECTION</span>
+          <span class="bento-hero-badge">— 04 / Brand Design & Visual Direction</span>
           <h1 class="bento-hero-h1">Brand design<br>with a pulse.</h1>
           <p class="bento-hero-sub">We build the visual identities that make you unforgettable — from typography and color palettes to complete brand guidelines.</p>
         </div>
@@ -68,7 +68,7 @@
     <div class="services-grid">
       
       <div class="services-left">
-        <h2 class="services-intro-title">SERVICES —</h2>
+        <h2 class="services-intro-title">Services —</h2>
         <p class="services-intro-text">Consistency builds trust.</p>
         <p class="services-intro-text">We forge tangible visual assets that enforce your market positioning across every touchpoint.</p>
       </div>

@@ -107,7 +107,7 @@
   cursor: pointer; 
   display: block; 
   text-decoration: none; 
-  text-transform: uppercase; 
+  text-transform: none; 
   line-height: 1.05; 
   letter-spacing: -0.01em; 
   transition: color 0.22s ease; 
@@ -177,7 +177,7 @@
   font-family: var(--font-primary, 'Lato', sans-serif); 
   font-size: var(--type-subhead, clamp(0.9375rem, 1.2vw, 1.125rem)); 
   font-weight: 700; 
-  text-transform: uppercase; 
+  text-transform: none; 
   letter-spacing: 0.08em; 
   color: var(--color-dark, #171E4A); 
   text-decoration: none; 

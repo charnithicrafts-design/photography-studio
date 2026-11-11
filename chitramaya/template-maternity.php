@@ -29,7 +29,7 @@
       <div class="bento-hero-grid">
         <div class="bento-hero-main">
           <div class="bento-hero-header">
-            <span class="bento-hero-badge">— BUMP TO BABY</span>
+            <span class="bento-hero-badge">— Bump to Baby</span>
             <h1 class="bento-hero-h1">Before Everything<br>Changes.</h1>
             <p class="bento-hero-sub">
               Quiet, beautiful portraits documenting the wait. We preserve the holy, fleeting season of pregnancy with fine-art dignity.
@@ -194,7 +194,7 @@
          ===================================================== -->
     <section class="maternity-services-section">
       <div class="services-container">
-        <div class="maternity-section-label">[ STUDIO SERVICES ]</div>
+        <div class="maternity-section-label">[ Studio Services ]</div>
         <h2 class="services-title">Choose Your Archive</h2>
         
         <div class="services-grid">

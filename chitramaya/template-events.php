@@ -26,7 +26,7 @@
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 03 / EVENTS & PORTRAITS</span>
+          <span class="bento-hero-badge">— 03 / Events & Portraits</span>
           <h1 class="bento-hero-h1">The moments<br>people want to live again.</h1>
           <p class="bento-hero-sub">Weddings. Birthdays. Milestones. The ones you'll look at in 20 years and remember exactly how it felt.</p>
         </div>
@@ -66,7 +66,7 @@
     <div class="services-grid">
       
       <div class="services-left">
-        <h2 class="services-intro-title">SERVICES —</h2>
+        <h2 class="services-intro-title">Services —</h2>
         <p class="services-intro-text">Your Family's Story.</p>
         <p class="services-intro-text">We honor the quiet, intimate moments and the grand celebrations that shape your lives.</p>
       </div>

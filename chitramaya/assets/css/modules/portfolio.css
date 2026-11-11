@@ -46,7 +46,7 @@
 
 .project-title {
   font-size: var(--type-section);
-  text-transform: uppercase;
+  text-transform: none;
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
@@ -55,7 +55,7 @@
   font-family: var(--font-primary);
   font-size: var(--type-subhead);
   color: var(--color-accent);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: -0.02em;
   font-weight: 700;
 }
@@ -84,7 +84,7 @@
 
 .credit-role {
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--color-light);
 }
 

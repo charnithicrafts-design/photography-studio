@@ -36,7 +36,7 @@
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
   line-height: 0.85;
-  text-transform: uppercase;
+  text-transform: none;
   color: inherit;
   margin: 0;
   word-break: normal;
@@ -108,7 +108,7 @@
   font-size: var(--type-section);
   font-family: var(--font-serif, "Roboto Slab", serif);
   font-weight: 400;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 2rem;
   border-bottom: 2px solid var(--color-dark);
   padding-bottom: 0.5rem;
@@ -154,7 +154,6 @@
   font-size: clamp(1.125rem, 2.5vw, 1.75rem);
   font-family: var(--font-serif, 'Roboto Slab', serif);
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--color-dark);
   transition: color 0.2s ease;
 }
@@ -230,7 +229,7 @@
   font-size: var(--type-display);
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
-  text-transform: uppercase;
+  text-transform: none;
   text-align: center;
   margin: 0 auto 6rem auto;
   max-width: 1200px;
@@ -248,20 +247,6 @@
   .brut-impact-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-@media (min-width: $bp-laptop) {
-  .brut-impact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4, 32px);
-  max-width: 1360px;
-  margin: 0 auto;
-}
-@media (min-width: $bp-laptop) {
-  .brut-impact-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 }
 .impact-card {
   background: var(--color-white, #FFFFFF);
@@ -290,7 +275,7 @@
   font-size: var(--type-section);
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--color-dark);
 }
 .impact-desc {
@@ -317,9 +302,8 @@
   font-size: var(--type-display, clamp(2rem, 4vw, 3.25rem));
   font-family: var(--font-primary, "Lato", sans-serif);
   font-weight: 900;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--color-dark, #171E4A);
   margin-bottom: var(--space-4, 32px);
   line-height: 1.05;
 }
-

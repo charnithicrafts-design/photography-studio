@@ -26,7 +26,7 @@
       <!-- Primary Action Card -->
       <div class="bento-hero-main">
         <div class="bento-hero-header">
-          <span class="bento-hero-badge">— 05 / THALAM PODCAST & PRODUCTION</span>
+          <span class="bento-hero-badge">— 05 / Thalam Podcast & Production</span>
           <h1 class="bento-hero-h1">Your ideas deserve<br>better than a phone camera.</h1>
           <p class="bento-hero-sub">We set up the room. You bring the conversation. One good story becomes a month of high-impact content.</p>
         </div>
@@ -66,7 +66,7 @@
     <div class="services-grid">
       
       <div class="services-left">
-        <h2 class="services-intro-title">SERVICES —</h2>
+        <h2 class="services-intro-title">Services —</h2>
         <p class="services-intro-text">The Broadcast Standard.</p>
         <p class="services-intro-text">A pristine environment engineered for uncompromised audio and cinematic multi-camera visuals.</p>
       </div>

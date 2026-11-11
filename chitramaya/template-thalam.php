@@ -29,7 +29,7 @@
       <div class="bento-hero-grid">
         <div class="bento-hero-main">
           <div class="bento-hero-header">
-            <span class="bento-hero-badge">— PRODUCTION FACILITY</span>
+            <span class="bento-hero-badge">— Production Facility</span>
             <h1 class="bento-hero-h1">The Space for<br>the Story.</h1>
             <p class="bento-hero-sub">
               A purpose-built 2,400 sq ft production environment in Trichy engineered for broadcast audio, precision lighting, commercial sets, and portraiture.
@@ -93,7 +93,7 @@
          ===================================================== -->
     <section class="thalam-services-section">
       <div class="thalam-section-header">
-        <div class="thalam-section-label">[ DISCIPLINE DIRECTORY ]</div>
+        <div class="thalam-section-label">[ Discipline Directory ]</div>
         <h2 class="thalam-section-title">Five specialized production zones.</h2>
         <p class="thalam-section-sub">Engineered for commercial brands, broadcast creators, and private family milestones.</p>
       </div>
@@ -253,7 +253,7 @@
          ===================================================== -->
     <section class="thalam-gallery-section">
       <div class="thalam-gallery-header">
-        <div class="thalam-section-label">[ STUDIO ARCHIVE ]</div>
+        <div class="thalam-section-label">[ Studio Archive ]</div>
         <h2 class="thalam-section-title">Created inside these walls.</h2>
       </div>
       <div class="thalam-gallery-strip">
@@ -280,7 +280,7 @@
          ===================================================== -->
     <section class="thalam-trust-section">
       <div class="thalam-trust-header">
-        <div class="thalam-section-label">[ VERIFIED CLIENT TELEMETRY ]</div>
+        <div class="thalam-section-label">[ Verified Client Telemetry ]</div>
         <h2 class="thalam-trust-title">What creators and families experience.</h2>
       </div>
       

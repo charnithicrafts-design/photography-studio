@@ -128,8 +128,8 @@ body {
 /* Thalam Functional UI */
 .thalam-ui {
   font-family: var(--font-primary);
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 /* Typography Overrides */
@@ -139,9 +139,9 @@ h1,
   font-weight: 900;
   font-size: var(--type-display);
   line-height: 1.05;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 h2,
@@ -150,9 +150,9 @@ h2,
   font-weight: 900;
   font-size: var(--type-section);
   line-height: 1.05;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 
